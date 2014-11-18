@@ -1,0 +1,37 @@
+grammar org.DataCentricDSL with org.eclipse.xtext.xbase.Xbase
+
+generate dataCentricDSL "http://www.DataCentricDSL.org"
+
+DataCentricDSL:
+	elements += Function*
+;
+
+Function:
+	'func' name = ValidID
+			'('(params += FullJvmFormalParameter
+			(',' params += FullJvmFormalParameter)*)?')' '{'
+			
+		(functionElements += Field*)?
+		
+	'}'
+;
+
+Field:
+	PredefinedFunction | Property
+;
+
+PredefinedFunction:
+	Query
+;
+
+Property:
+	'datatype' name = ValidID
+;
+
+Query:
+	'query('queryParams += STRING ('+' queryParams += STRING)*');'
+;
+
+
+
+
