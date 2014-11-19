@@ -267,6 +267,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionAccess().getParamsAssignment_3_0(), "rule__Function__ParamsAssignment_3_0");
 					put(grammarAccess.getFunctionAccess().getParamsAssignment_3_1_1(), "rule__Function__ParamsAssignment_3_1_1");
 					put(grammarAccess.getFunctionAccess().getFunctionElementsAssignment_6(), "rule__Function__FunctionElementsAssignment_6");
+					put(grammarAccess.getPropertyAccess().getTypeAssignment_0(), "rule__Property__TypeAssignment_0");
 					put(grammarAccess.getPropertyAccess().getNameAssignment_1(), "rule__Property__NameAssignment_1");
 					put(grammarAccess.getQueryAccess().getQueryParamsAssignment_1(), "rule__Query__QueryParamsAssignment_1");
 					put(grammarAccess.getQueryAccess().getQueryParamsAssignment_2_1(), "rule__Query__QueryParamsAssignment_2_1");

@@ -2,6 +2,7 @@
  */
 package org.dataCentricDSL;
 
+import org.eclipse.xtext.common.types.JvmTypeReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,6 +12,7 @@ package org.dataCentricDSL;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.dataCentricDSL.Property#getType <em>Type</em>}</li>
  *   <li>{@link org.dataCentricDSL.Property#getName <em>Name</em>}</li>
  * </ul>
  * </p>
@@ -21,6 +23,32 @@ package org.dataCentricDSL;
  */
 public interface Property extends Field
 {
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(JvmTypeReference)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getProperty_Type()
+   * @model containment="true"
+   * @generated
+   */
+  JvmTypeReference getType();
+
+  /**
+   * Sets the value of the '{@link org.dataCentricDSL.Property#getType <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
+   * @generated
+   */
+  void setType(JvmTypeReference value);
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->

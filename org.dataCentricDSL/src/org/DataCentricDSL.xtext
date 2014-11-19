@@ -11,7 +11,7 @@ Function:
 			'('(params += FullJvmFormalParameter
 			(',' params += FullJvmFormalParameter)*)?')' '{'
 			
-		(functionElements += Field*)?
+		functionElements += Field*
 		
 	'}'
 ;
@@ -25,13 +25,9 @@ PredefinedFunction:
 ;
 
 Property:
-	'datatype' name = ValidID
+	type = JvmTypeReference name = ValidID';'
 ;
 
 Query:
 	'query('queryParams += STRING ('+' queryParams += STRING)*');'
 ;
-
-
-
-

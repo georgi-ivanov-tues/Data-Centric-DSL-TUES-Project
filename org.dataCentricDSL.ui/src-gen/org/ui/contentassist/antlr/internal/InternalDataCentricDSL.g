@@ -3776,7 +3776,7 @@ rule__Function__Group__6__Impl
 :
 (
 { before(grammarAccess.getFunctionAccess().getFunctionElementsAssignment_6()); }
-(rule__Function__FunctionElementsAssignment_6)?
+(rule__Function__FunctionElementsAssignment_6)*
 { after(grammarAccess.getFunctionAccess().getFunctionElementsAssignment_6()); }
 )
 
@@ -3974,11 +3974,9 @@ rule__Property__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getPropertyAccess().getDatatypeKeyword_0()); }
-
-	'datatype' 
-
-{ after(grammarAccess.getPropertyAccess().getDatatypeKeyword_0()); }
+{ before(grammarAccess.getPropertyAccess().getTypeAssignment_0()); }
+(rule__Property__TypeAssignment_0)
+{ after(grammarAccess.getPropertyAccess().getTypeAssignment_0()); }
 )
 
 ;
@@ -3993,6 +3991,7 @@ rule__Property__Group__1
     }
 :
 	rule__Property__Group__1__Impl
+	rule__Property__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -4013,6 +4012,38 @@ rule__Property__Group__1__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__Property__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Property__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Property__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPropertyAccess().getSemicolonKeyword_2()); }
+
+	';' 
+
+{ after(grammarAccess.getPropertyAccess().getSemicolonKeyword_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -17811,6 +17842,21 @@ rule__Function__FunctionElementsAssignment_6
 (
 { before(grammarAccess.getFunctionAccess().getFunctionElementsFieldParserRuleCall_6_0()); }
 	ruleField{ after(grammarAccess.getFunctionAccess().getFunctionElementsFieldParserRuleCall_6_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Property__TypeAssignment_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPropertyAccess().getTypeJvmTypeReferenceParserRuleCall_0_0()); }
+	ruleJvmTypeReference{ after(grammarAccess.getPropertyAccess().getTypeJvmTypeReferenceParserRuleCall_0_0()); }
 )
 
 ;

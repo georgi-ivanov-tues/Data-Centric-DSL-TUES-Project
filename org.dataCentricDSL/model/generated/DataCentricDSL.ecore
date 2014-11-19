@@ -16,6 +16,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Field"/>
   <eClassifiers xsi:type="ecore:EClass" name="PredefinedFunction" eSuperTypes="#//Field"/>
   <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//Field">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmTypeReference"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="#//PredefinedFunction">

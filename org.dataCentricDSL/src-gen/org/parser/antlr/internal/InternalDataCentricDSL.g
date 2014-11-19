@@ -208,7 +208,7 @@ ruleFunction returns [EObject current=null]
 	    }
 
 )
-)?	otherlv_9='}' 
+)*	otherlv_9='}' 
     {
     	newLeafNode(otherlv_9, grammarAccess.getFunctionAccess().getRightCurlyBracketKeyword_7());
     }
@@ -303,11 +303,25 @@ ruleProperty returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='datatype' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getPropertyAccess().getDatatypeKeyword_0());
-    }
+((
 (
+		{ 
+	        newCompositeNode(grammarAccess.getPropertyAccess().getTypeJvmTypeReferenceParserRuleCall_0_0()); 
+	    }
+		lv_type_0_0=ruleJvmTypeReference		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPropertyRule());
+	        }
+       		set(
+       			$current, 
+       			"type",
+        		lv_type_0_0, 
+        		"JvmTypeReference");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getPropertyAccess().getNameValidIDParserRuleCall_1_0()); 
@@ -325,7 +339,11 @@ ruleProperty returns [EObject current=null]
 	    }
 
 )
-))
+)	otherlv_2=';' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getPropertyAccess().getSemicolonKeyword_2());
+    }
+)
 ;
 
 

@@ -231,9 +231,19 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getProperty_Type()
+  {
+    return (EReference)propertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getProperty_Name()
   {
-    return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)propertyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -299,6 +309,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     predefinedFunctionEClass = createEClass(PREDEFINED_FUNCTION);
 
     propertyEClass = createEClass(PROPERTY);
+    createEReference(propertyEClass, PROPERTY__TYPE);
     createEAttribute(propertyEClass, PROPERTY__NAME);
 
     queryEClass = createEClass(QUERY);
@@ -355,6 +366,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(predefinedFunctionEClass, PredefinedFunction.class, "PredefinedFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProperty_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

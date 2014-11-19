@@ -1222,7 +1222,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID (params+=FullJvmFormalParameter params+=FullJvmFormalParameter*)? functionElements+=Field?)
+	 *     (name=ValidID (params+=FullJvmFormalParameter params+=FullJvmFormalParameter*)? functionElements+=Field*)
 	 */
 	protected void sequence_Function(EObject context, Function semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1231,15 +1231,18 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     name=ValidID
+	 *     (type=JvmTypeReference name=ValidID)
 	 */
 	protected void sequence_Property(EObject context, Property semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PROPERTY__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PROPERTY__TYPE));
 			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PROPERTY__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PROPERTY__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPropertyAccess().getTypeJvmTypeReferenceParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getPropertyAccess().getNameValidIDParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}

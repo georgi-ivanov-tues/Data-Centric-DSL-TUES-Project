@@ -18,6 +18,7 @@
     <genClasses ecoreClass="DataCentricDSL.ecore#//Field"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//PredefinedFunction"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Property">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Property/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Property/name"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Query">

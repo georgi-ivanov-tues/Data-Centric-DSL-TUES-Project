@@ -57,11 +57,11 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Function:
 		//	"func" name=ValidID "(" (params+=FullJvmFormalParameter ("," params+=FullJvmFormalParameter)*)? ")" "{"
-		//	functionElements+=Field? "}";
+		//	functionElements+=Field* "}";
 		public ParserRule getRule() { return rule; }
 
 		//"func" name=ValidID "(" (params+=FullJvmFormalParameter ("," params+=FullJvmFormalParameter)*)? ")" "{"
-		//functionElements+=Field? "}"
+		//functionElements+=Field* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"func"
@@ -103,7 +103,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
-		//functionElements+=Field?
+		//functionElements+=Field*
 		public Assignment getFunctionElementsAssignment_6() { return cFunctionElementsAssignment_6; }
 
 		//Field
@@ -148,25 +148,33 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class PropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Property");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDatatypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTypeJvmTypeReferenceParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameValidIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Property:
-		//	"datatype" name=ValidID;
+		//	type=JvmTypeReference name=ValidID ";";
 		public ParserRule getRule() { return rule; }
 
-		//"datatype" name=ValidID
+		//type=JvmTypeReference name=ValidID ";"
 		public Group getGroup() { return cGroup; }
 
-		//"datatype"
-		public Keyword getDatatypeKeyword_0() { return cDatatypeKeyword_0; }
+		//type=JvmTypeReference
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+
+		//JvmTypeReference
+		public RuleCall getTypeJvmTypeReferenceParserRuleCall_0_0() { return cTypeJvmTypeReferenceParserRuleCall_0_0; }
 
 		//name=ValidID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_1_0() { return cNameValidIDParserRuleCall_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
 	public class QueryElements extends AbstractParserRuleElementFinder {
@@ -277,7 +285,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Function:
 	//	"func" name=ValidID "(" (params+=FullJvmFormalParameter ("," params+=FullJvmFormalParameter)*)? ")" "{"
-	//	functionElements+=Field? "}";
+	//	functionElements+=Field* "}";
 	public FunctionElements getFunctionAccess() {
 		return pFunction;
 	}
@@ -307,7 +315,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Property:
-	//	"datatype" name=ValidID;
+	//	type=JvmTypeReference name=ValidID ";";
 	public PropertyElements getPropertyAccess() {
 		return pProperty;
 	}

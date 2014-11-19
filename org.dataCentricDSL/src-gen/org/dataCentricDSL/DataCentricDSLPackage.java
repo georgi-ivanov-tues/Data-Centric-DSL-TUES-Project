@@ -179,13 +179,22 @@ public interface DataCentricDSLPackage extends EPackage
   int PROPERTY = 4;
 
   /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY__TYPE = FIELD_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY__NAME = FIELD_FEATURE_COUNT + 0;
+  int PROPERTY__NAME = FIELD_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Property</em>' class.
@@ -194,7 +203,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY_FEATURE_COUNT = FIELD_FEATURE_COUNT + 1;
+  int PROPERTY_FEATURE_COUNT = FIELD_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.QueryImpl <em>Query</em>}' class.
@@ -318,6 +327,17 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EClass getProperty();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.Property#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.dataCentricDSL.Property#getType()
+   * @see #getProperty()
+   * @generated
+   */
+  EReference getProperty_Type();
 
   /**
    * Returns the meta object for the attribute '{@link org.dataCentricDSL.Property#getName <em>Name</em>}'.
@@ -455,6 +475,14 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EClass PROPERTY = eINSTANCE.getProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROPERTY__TYPE = eINSTANCE.getProperty_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
