@@ -22,17 +22,125 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class DataCentricDSLElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataCentricDSL");
 		private final Assignment cElementsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cElementsFunctionParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
+		private final RuleCall cElementsPackageDeclarationParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
 		
 		//DataCentricDSL:
-		//	elements+=Function*;
+		//	elements+=PackageDeclaration;
 		public ParserRule getRule() { return rule; }
 
-		//elements+=Function*
+		//elements+=PackageDeclaration
 		public Assignment getElementsAssignment() { return cElementsAssignment; }
 
+		//PackageDeclaration
+		public RuleCall getElementsPackageDeclarationParserRuleCall_0() { return cElementsPackageDeclarationParserRuleCall_0; }
+	}
+
+	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PackageDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cElementsAbstractElementParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
+		
+		//PackageDeclaration:
+		//	"package" name=QualifiedName ";" elements+=AbstractElement*;
+		public ParserRule getRule() { return rule; }
+
+		//"package" name=QualifiedName ";" elements+=AbstractElement*
+		public Group getGroup() { return cGroup; }
+
+		//"package"
+		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
+
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+
+		//elements+=AbstractElement*
+		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
+
+		//AbstractElement
+		public RuleCall getElementsAbstractElementParserRuleCall_3_0() { return cElementsAbstractElementParserRuleCall_3_0; }
+	}
+
+	public class AbstractElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cImportParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFunctionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cFieldParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//AbstractElement:
+		//	Import | Function | Field;
+		public ParserRule getRule() { return rule; }
+
+		//Import | Function | Field
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Import
+		public RuleCall getImportParserRuleCall_0() { return cImportParserRuleCall_0; }
+
 		//Function
-		public RuleCall getElementsFunctionParserRuleCall_0() { return cElementsFunctionParserRuleCall_0; }
+		public RuleCall getFunctionParserRuleCall_1() { return cFunctionParserRuleCall_1; }
+
+		//Field
+		public RuleCall getFieldParserRuleCall_2() { return cFieldParserRuleCall_2; }
+	}
+
+	public class ImportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportedNamespaceQualifiedNameWildCardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//Import:
+		//	"import" importedNamespace=QualifiedNameWildCard ";";
+		public ParserRule getRule() { return rule; }
+
+		//"import" importedNamespace=QualifiedNameWildCard ";"
+		public Group getGroup() { return cGroup; }
+
+		//"import"
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
+
+		//importedNamespace=QualifiedNameWildCard
+		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
+
+		//QualifiedNameWildCard
+		public RuleCall getImportedNamespaceQualifiedNameWildCardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWildCardParserRuleCall_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
+
+	public class QualifiedNameWildCardElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameWildCard");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cQualifiedNameParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cFullStopAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//QualifiedNameWildCard:
+		//	QualifiedName ".*"?;
+		public ParserRule getRule() { return rule; }
+
+		//QualifiedName ".*"?
+		public Group getGroup() { return cGroup; }
+
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
+
+		//".*"?
+		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
 
 	public class FunctionElements extends AbstractParserRuleElementFinder {
@@ -197,48 +305,56 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Query");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cQueryKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cQueryParamsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cQueryParamsSTRINGTerminalRuleCall_1_0 = (RuleCall)cQueryParamsAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cPlusSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cQueryParamsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cQueryParamsSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cQueryParamsAssignment_2_1.eContents().get(0);
-		private final Keyword cRightParenthesisSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cQueryParamsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cQueryParamsSTRINGTerminalRuleCall_2_0 = (RuleCall)cQueryParamsAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cPlusSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cQueryParamsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cQueryParamsSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cQueryParamsAssignment_3_1.eContents().get(0);
+		private final Keyword cRightParenthesisSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Query:
-		//	"query(" queryParams+=STRING ("+" queryParams+=STRING)* ");";
+		//	"query" "(" queryParams+=STRING ("+" queryParams+=STRING)* ");";
 		public ParserRule getRule() { return rule; }
 
-		//"query(" queryParams+=STRING ("+" queryParams+=STRING)* ");"
+		//"query" "(" queryParams+=STRING ("+" queryParams+=STRING)* ");"
 		public Group getGroup() { return cGroup; }
 
-		//"query("
+		//"query"
 		public Keyword getQueryKeyword_0() { return cQueryKeyword_0; }
 
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
 		//queryParams+=STRING
-		public Assignment getQueryParamsAssignment_1() { return cQueryParamsAssignment_1; }
+		public Assignment getQueryParamsAssignment_2() { return cQueryParamsAssignment_2; }
 
 		//STRING
-		public RuleCall getQueryParamsSTRINGTerminalRuleCall_1_0() { return cQueryParamsSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getQueryParamsSTRINGTerminalRuleCall_2_0() { return cQueryParamsSTRINGTerminalRuleCall_2_0; }
 
 		//("+" queryParams+=STRING)*
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_3() { return cGroup_3; }
 
 		//"+"
-		public Keyword getPlusSignKeyword_2_0() { return cPlusSignKeyword_2_0; }
+		public Keyword getPlusSignKeyword_3_0() { return cPlusSignKeyword_3_0; }
 
 		//queryParams+=STRING
-		public Assignment getQueryParamsAssignment_2_1() { return cQueryParamsAssignment_2_1; }
+		public Assignment getQueryParamsAssignment_3_1() { return cQueryParamsAssignment_3_1; }
 
 		//STRING
-		public RuleCall getQueryParamsSTRINGTerminalRuleCall_2_1_0() { return cQueryParamsSTRINGTerminalRuleCall_2_1_0; }
+		public RuleCall getQueryParamsSTRINGTerminalRuleCall_3_1_0() { return cQueryParamsSTRINGTerminalRuleCall_3_1_0; }
 
 		//");"
-		public Keyword getRightParenthesisSemicolonKeyword_3() { return cRightParenthesisSemicolonKeyword_3; }
+		public Keyword getRightParenthesisSemicolonKeyword_4() { return cRightParenthesisSemicolonKeyword_4; }
 	}
 	
 	
 	private final DataCentricDSLElements pDataCentricDSL;
+	private final PackageDeclarationElements pPackageDeclaration;
+	private final AbstractElementElements pAbstractElement;
+	private final ImportElements pImport;
+	private final QualifiedNameWildCardElements pQualifiedNameWildCard;
 	private final FunctionElements pFunction;
 	private final FieldElements pField;
 	private final PredefinedFunctionElements pPredefinedFunction;
@@ -255,6 +371,10 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaXbase = gaXbase;
 		this.pDataCentricDSL = new DataCentricDSLElements();
+		this.pPackageDeclaration = new PackageDeclarationElements();
+		this.pAbstractElement = new AbstractElementElements();
+		this.pImport = new ImportElements();
+		this.pQualifiedNameWildCard = new QualifiedNameWildCardElements();
 		this.pFunction = new FunctionElements();
 		this.pField = new FieldElements();
 		this.pPredefinedFunction = new PredefinedFunctionElements();
@@ -290,13 +410,53 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//DataCentricDSL:
-	//	elements+=Function*;
+	//	elements+=PackageDeclaration;
 	public DataCentricDSLElements getDataCentricDSLAccess() {
 		return pDataCentricDSL;
 	}
 	
 	public ParserRule getDataCentricDSLRule() {
 		return getDataCentricDSLAccess().getRule();
+	}
+
+	//PackageDeclaration:
+	//	"package" name=QualifiedName ";" elements+=AbstractElement*;
+	public PackageDeclarationElements getPackageDeclarationAccess() {
+		return pPackageDeclaration;
+	}
+	
+	public ParserRule getPackageDeclarationRule() {
+		return getPackageDeclarationAccess().getRule();
+	}
+
+	//AbstractElement:
+	//	Import | Function | Field;
+	public AbstractElementElements getAbstractElementAccess() {
+		return pAbstractElement;
+	}
+	
+	public ParserRule getAbstractElementRule() {
+		return getAbstractElementAccess().getRule();
+	}
+
+	//Import:
+	//	"import" importedNamespace=QualifiedNameWildCard ";";
+	public ImportElements getImportAccess() {
+		return pImport;
+	}
+	
+	public ParserRule getImportRule() {
+		return getImportAccess().getRule();
+	}
+
+	//QualifiedNameWildCard:
+	//	QualifiedName ".*"?;
+	public QualifiedNameWildCardElements getQualifiedNameWildCardAccess() {
+		return pQualifiedNameWildCard;
+	}
+	
+	public ParserRule getQualifiedNameWildCardRule() {
+		return getQualifiedNameWildCardAccess().getRule();
 	}
 
 	//Function:
@@ -341,7 +501,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Query:
-	//	"query(" queryParams+=STRING ("+" queryParams+=STRING)* ");";
+	//	"query" "(" queryParams+=STRING ("+" queryParams+=STRING)* ");";
 	public QueryElements getQueryAccess() {
 		return pQuery;
 	}

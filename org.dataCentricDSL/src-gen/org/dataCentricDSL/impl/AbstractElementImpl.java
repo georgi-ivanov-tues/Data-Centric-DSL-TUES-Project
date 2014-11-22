@@ -2,28 +2,30 @@
  */
 package org.dataCentricDSL.impl;
 
+import org.dataCentricDSL.AbstractElement;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Field;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Field</b></em>'.
+ * An implementation of the model object '<em><b>Abstract Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class FieldImpl extends AbstractElementImpl implements Field
+public class AbstractElementImpl extends MinimalEObjectImpl.Container implements AbstractElement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FieldImpl()
+  protected AbstractElementImpl()
   {
     super();
   }
@@ -36,7 +38,7 @@ public class FieldImpl extends AbstractElementImpl implements Field
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.FIELD;
+    return DataCentricDSLPackage.Literals.ABSTRACT_ELEMENT;
   }
 
-} //FieldImpl
+} //AbstractElementImpl

@@ -4,8 +4,6 @@ package org.dataCentricDSL;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 
 /**
@@ -26,7 +24,7 @@ import org.eclipse.xtext.common.types.JvmFormalParameter;
  * @model
  * @generated
  */
-public interface Function extends EObject
+public interface Function extends AbstractElement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

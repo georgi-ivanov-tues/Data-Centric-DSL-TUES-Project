@@ -2,11 +2,14 @@
  */
 package org.dataCentricDSL.impl;
 
+import org.dataCentricDSL.AbstractElement;
 import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.DataCentricDSLFactory;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Field;
 import org.dataCentricDSL.Function;
+import org.dataCentricDSL.Import;
+import org.dataCentricDSL.PackageDeclaration;
 import org.dataCentricDSL.PredefinedFunction;
 import org.dataCentricDSL.Property;
 import org.dataCentricDSL.Query;
@@ -36,6 +39,27 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * @generated
    */
   private EClass dataCentricDSLEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass packageDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass abstractElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass importEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -156,6 +180,66 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
   public EReference getDataCentricDSL_Elements()
   {
     return (EReference)dataCentricDSLEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPackageDeclaration()
+  {
+    return packageDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPackageDeclaration_Name()
+  {
+    return (EAttribute)packageDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPackageDeclaration_Elements()
+  {
+    return (EReference)packageDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAbstractElement()
+  {
+    return abstractElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getImport()
+  {
+    return importEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getImport_ImportedNamespace()
+  {
+    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -311,6 +395,15 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     dataCentricDSLEClass = createEClass(DATA_CENTRIC_DSL);
     createEReference(dataCentricDSLEClass, DATA_CENTRIC_DSL__ELEMENTS);
 
+    packageDeclarationEClass = createEClass(PACKAGE_DECLARATION);
+    createEAttribute(packageDeclarationEClass, PACKAGE_DECLARATION__NAME);
+    createEReference(packageDeclarationEClass, PACKAGE_DECLARATION__ELEMENTS);
+
+    abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
+
+    importEClass = createEClass(IMPORT);
+    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
+
     functionEClass = createEClass(FUNCTION);
     createEAttribute(functionEClass, FUNCTION__NAME);
     createEReference(functionEClass, FUNCTION__PARAMS);
@@ -362,13 +455,25 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    importEClass.getESuperTypes().add(this.getAbstractElement());
+    functionEClass.getESuperTypes().add(this.getAbstractElement());
+    fieldEClass.getESuperTypes().add(this.getAbstractElement());
     predefinedFunctionEClass.getESuperTypes().add(this.getField());
     propertyEClass.getESuperTypes().add(this.getField());
     queryEClass.getESuperTypes().add(this.getPredefinedFunction());
 
     // Initialize classes and features; add operations and parameters
     initEClass(dataCentricDSLEClass, DataCentricDSL.class, "DataCentricDSL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDataCentricDSL_Elements(), this.getFunction(), null, "elements", null, 0, -1, DataCentricDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDataCentricDSL_Elements(), this.getPackageDeclaration(), null, "elements", null, 0, -1, DataCentricDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(packageDeclarationEClass, PackageDeclaration.class, "PackageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPackageDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, PackageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPackageDeclaration_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, PackageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

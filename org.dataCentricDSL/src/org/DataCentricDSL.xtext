@@ -3,7 +3,24 @@ grammar org.DataCentricDSL with org.eclipse.xtext.xbase.Xbase
 generate dataCentricDSL "http://www.DataCentricDSL.org"
 
 DataCentricDSL:
-	elements += Function*
+	elements += PackageDeclaration
+;
+
+PackageDeclaration:
+	'package' name = QualifiedName ';'
+	(elements += AbstractElement)*
+;
+
+AbstractElement:
+	Import | Function | Field
+;
+
+Import:
+	'import' importedNamespace = QualifiedNameWildCard ';'
+;
+
+QualifiedNameWildCard:
+	QualifiedName '.*'?
 ;
 
 Function:
@@ -29,5 +46,5 @@ Property:
 ;
 
 Query:
-	'query('queryParams += STRING ('+' queryParams += STRING)*');'
+	'query' '('queryParams += STRING ('+' queryParams += STRING)*');'
 ;

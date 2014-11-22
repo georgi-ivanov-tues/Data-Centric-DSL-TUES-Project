@@ -5,6 +5,8 @@ import com.google.inject.Provider;
 import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Function;
+import org.dataCentricDSL.Import;
+import org.dataCentricDSL.PackageDeclaration;
 import org.dataCentricDSL.Property;
 import org.dataCentricDSL.Query;
 import org.eclipse.emf.ecore.EObject;
@@ -18,11 +20,14 @@ import org.eclipse.xtext.common.types.JvmUpperBound;
 import org.eclipse.xtext.common.types.JvmWildcardTypeReference;
 import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
+import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.eclipse.xtext.xbase.XAssignment;
 import org.eclipse.xtext.xbase.XBasicForLoopExpression;
 import org.eclipse.xtext.xbase.XBinaryOperation;
@@ -77,20 +82,36 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case DataCentricDSLPackage.FUNCTION:
-				if(context == grammarAccess.getFunctionRule()) {
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getFunctionRule()) {
 					sequence_Function(context, (Function) semanticObject); 
 					return; 
 				}
 				else break;
+			case DataCentricDSLPackage.IMPORT:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getImportRule()) {
+					sequence_Import(context, (Import) semanticObject); 
+					return; 
+				}
+				else break;
+			case DataCentricDSLPackage.PACKAGE_DECLARATION:
+				if(context == grammarAccess.getPackageDeclarationRule()) {
+					sequence_PackageDeclaration(context, (PackageDeclaration) semanticObject); 
+					return; 
+				}
+				else break;
 			case DataCentricDSLPackage.PROPERTY:
-				if(context == grammarAccess.getFieldRule() ||
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getFieldRule() ||
 				   context == grammarAccess.getPropertyRule()) {
 					sequence_Property(context, (Property) semanticObject); 
 					return; 
 				}
 				else break;
 			case DataCentricDSLPackage.QUERY:
-				if(context == grammarAccess.getFieldRule() ||
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getFieldRule() ||
 				   context == grammarAccess.getPredefinedFunctionRule() ||
 				   context == grammarAccess.getQueryRule()) {
 					sequence_Query(context, (Query) semanticObject); 
@@ -1210,7 +1231,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     elements+=Function*
+	 *     elements+=PackageDeclaration
 	 */
 	protected void sequence_DataCentricDSL(EObject context, DataCentricDSL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1222,6 +1243,31 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (name=ValidID (params+=FullJvmFormalParameter params+=FullJvmFormalParameter*)? functionElements+=Field*)
 	 */
 	protected void sequence_Function(EObject context, Function semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     importedNamespace=QualifiedNameWildCard
+	 */
+	protected void sequence_Import(EObject context, Import semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.IMPORT__IMPORTED_NAMESPACE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWildCardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=QualifiedName elements+=AbstractElement*)
+	 */
+	protected void sequence_PackageDeclaration(EObject context, PackageDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

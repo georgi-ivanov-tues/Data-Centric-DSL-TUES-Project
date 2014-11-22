@@ -2,7 +2,6 @@
  */
 package org.dataCentricDSL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Field extends EObject
+public interface Field extends AbstractElement
 {
 } // Field

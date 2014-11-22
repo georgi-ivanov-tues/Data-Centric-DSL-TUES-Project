@@ -10,6 +10,14 @@
     <genClasses ecoreClass="DataCentricDSL.ecore#//DataCentricDSL">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//DataCentricDSL/elements"/>
     </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//PackageDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//PackageDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//PackageDeclaration/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//AbstractElement"/>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Import/importedNamespace"/>
+    </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Function">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Function/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Function/params"/>

@@ -85,14 +85,14 @@ public interface DataCentricDSLPackage extends EPackage
   int DATA_CENTRIC_DSL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.FunctionImpl <em>Function</em>}' class.
+   * The meta object id for the '{@link org.dataCentricDSL.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.FunctionImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunction()
+   * @see org.dataCentricDSL.impl.PackageDeclarationImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPackageDeclaration()
    * @generated
    */
-  int FUNCTION = 1;
+  int PACKAGE_DECLARATION = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -101,7 +101,91 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__NAME = 0;
+  int PACKAGE_DECLARATION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE_DECLARATION__ELEMENTS = 1;
+
+  /**
+   * The number of structural features of the '<em>Package Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE_DECLARATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.AbstractElementImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getAbstractElement()
+   * @generated
+   */
+  int ABSTRACT_ELEMENT = 2;
+
+  /**
+   * The number of structural features of the '<em>Abstract Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.ImportImpl <em>Import</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.ImportImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getImport()
+   * @generated
+   */
+  int IMPORT = 3;
+
+  /**
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT__IMPORTED_NAMESPACE = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Import</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.FunctionImpl <em>Function</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.FunctionImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunction()
+   * @generated
+   */
+  int FUNCTION = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -110,7 +194,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__PARAMS = 1;
+  int FUNCTION__PARAMS = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Function Elements</b></em>' containment reference list.
@@ -119,7 +203,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__FUNCTION_ELEMENTS = 2;
+  int FUNCTION__FUNCTION_ELEMENTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Function</em>' class.
@@ -128,7 +212,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_FEATURE_COUNT = 3;
+  int FUNCTION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.FieldImpl <em>Field</em>}' class.
@@ -138,7 +222,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getField()
    * @generated
    */
-  int FIELD = 2;
+  int FIELD = 5;
 
   /**
    * The number of structural features of the '<em>Field</em>' class.
@@ -147,7 +231,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIELD_FEATURE_COUNT = 0;
+  int FIELD_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.PredefinedFunctionImpl <em>Predefined Function</em>}' class.
@@ -157,7 +241,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPredefinedFunction()
    * @generated
    */
-  int PREDEFINED_FUNCTION = 3;
+  int PREDEFINED_FUNCTION = 6;
 
   /**
    * The number of structural features of the '<em>Predefined Function</em>' class.
@@ -176,7 +260,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 4;
+  int PROPERTY = 7;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -222,7 +306,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getQuery()
    * @generated
    */
-  int QUERY = 5;
+  int QUERY = 8;
 
   /**
    * The feature id for the '<em><b>Query Params</b></em>' attribute list.
@@ -263,6 +347,69 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EReference getDataCentricDSL_Elements();
+
+  /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.PackageDeclaration <em>Package Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Package Declaration</em>'.
+   * @see org.dataCentricDSL.PackageDeclaration
+   * @generated
+   */
+  EClass getPackageDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.PackageDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.dataCentricDSL.PackageDeclaration#getName()
+   * @see #getPackageDeclaration()
+   * @generated
+   */
+  EAttribute getPackageDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.PackageDeclaration#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see org.dataCentricDSL.PackageDeclaration#getElements()
+   * @see #getPackageDeclaration()
+   * @generated
+   */
+  EReference getPackageDeclaration_Elements();
+
+  /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.AbstractElement <em>Abstract Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Abstract Element</em>'.
+   * @see org.dataCentricDSL.AbstractElement
+   * @generated
+   */
+  EClass getAbstractElement();
+
+  /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.Import <em>Import</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import</em>'.
+   * @see org.dataCentricDSL.Import
+   * @generated
+   */
+  EClass getImport();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see org.dataCentricDSL.Import#getImportedNamespace()
+   * @see #getImport()
+   * @generated
+   */
+  EAttribute getImport_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.Function <em>Function</em>}'.
@@ -431,6 +578,60 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EReference DATA_CENTRIC_DSL__ELEMENTS = eINSTANCE.getDataCentricDSL_Elements();
+
+    /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.PackageDeclarationImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPackageDeclaration()
+     * @generated
+     */
+    EClass PACKAGE_DECLARATION = eINSTANCE.getPackageDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PACKAGE_DECLARATION__NAME = eINSTANCE.getPackageDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PACKAGE_DECLARATION__ELEMENTS = eINSTANCE.getPackageDeclaration_Elements();
+
+    /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.AbstractElementImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getAbstractElement()
+     * @generated
+     */
+    EClass ABSTRACT_ELEMENT = eINSTANCE.getAbstractElement();
+
+    /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.ImportImpl <em>Import</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.ImportImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getImport()
+     * @generated
+     */
+    EClass IMPORT = eINSTANCE.getImport();
+
+    /**
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.FunctionImpl <em>Function</em>}' class.

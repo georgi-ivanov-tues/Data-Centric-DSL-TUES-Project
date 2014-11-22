@@ -4,9 +4,9 @@ package org.dataCentricDSL.impl;
 
 import java.util.Collection;
 
+import org.dataCentricDSL.AbstractElement;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Field;
-import org.dataCentricDSL.Function;
+import org.dataCentricDSL.PackageDeclaration;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -17,28 +17,26 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.xtext.common.types.JvmFormalParameter;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Function</b></em>'.
+ * An implementation of the model object '<em><b>Package Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.FunctionImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.FunctionImpl#getParams <em>Params</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.FunctionImpl#getFunctionElements <em>Function Elements</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.PackageDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.PackageDeclarationImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionImpl extends AbstractElementImpl implements Function
+public class PackageDeclarationImpl extends MinimalEObjectImpl.Container implements PackageDeclaration
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -61,31 +59,21 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParams()
+   * @see #getElements()
    * @generated
    * @ordered
    */
-  protected EList<JvmFormalParameter> params;
-
-  /**
-   * The cached value of the '{@link #getFunctionElements() <em>Function Elements</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFunctionElements()
-   * @generated
-   * @ordered
-   */
-  protected EList<Field> functionElements;
+  protected EList<AbstractElement> elements;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FunctionImpl()
+  protected PackageDeclarationImpl()
   {
     super();
   }
@@ -98,7 +86,7 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.FUNCTION;
+    return DataCentricDSLPackage.Literals.PACKAGE_DECLARATION;
   }
 
   /**
@@ -121,7 +109,7 @@ public class FunctionImpl extends AbstractElementImpl implements Function
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.FUNCTION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.PACKAGE_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -129,27 +117,13 @@ public class FunctionImpl extends AbstractElementImpl implements Function
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<JvmFormalParameter> getParams()
+  public EList<AbstractElement> getElements()
   {
-    if (params == null)
+    if (elements == null)
     {
-      params = new EObjectContainmentEList<JvmFormalParameter>(JvmFormalParameter.class, this, DataCentricDSLPackage.FUNCTION__PARAMS);
+      elements = new EObjectContainmentEList<AbstractElement>(AbstractElement.class, this, DataCentricDSLPackage.PACKAGE_DECLARATION__ELEMENTS);
     }
-    return params;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Field> getFunctionElements()
-  {
-    if (functionElements == null)
-    {
-      functionElements = new EObjectContainmentEList<Field>(Field.class, this, DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS);
-    }
-    return functionElements;
+    return elements;
   }
 
   /**
@@ -162,10 +136,8 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION__PARAMS:
-        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
-      case DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS:
-        return ((InternalEList<?>)getFunctionElements()).basicRemove(otherEnd, msgs);
+      case DataCentricDSLPackage.PACKAGE_DECLARATION__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -180,12 +152,10 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION__NAME:
+      case DataCentricDSLPackage.PACKAGE_DECLARATION__NAME:
         return getName();
-      case DataCentricDSLPackage.FUNCTION__PARAMS:
-        return getParams();
-      case DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS:
-        return getFunctionElements();
+      case DataCentricDSLPackage.PACKAGE_DECLARATION__ELEMENTS:
+        return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -201,16 +171,12 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION__NAME:
+      case DataCentricDSLPackage.PACKAGE_DECLARATION__NAME:
         setName((String)newValue);
         return;
-      case DataCentricDSLPackage.FUNCTION__PARAMS:
-        getParams().clear();
-        getParams().addAll((Collection<? extends JvmFormalParameter>)newValue);
-        return;
-      case DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS:
-        getFunctionElements().clear();
-        getFunctionElements().addAll((Collection<? extends Field>)newValue);
+      case DataCentricDSLPackage.PACKAGE_DECLARATION__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends AbstractElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -226,14 +192,11 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION__NAME:
+      case DataCentricDSLPackage.PACKAGE_DECLARATION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case DataCentricDSLPackage.FUNCTION__PARAMS:
-        getParams().clear();
-        return;
-      case DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS:
-        getFunctionElements().clear();
+      case DataCentricDSLPackage.PACKAGE_DECLARATION__ELEMENTS:
+        getElements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -249,12 +212,10 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION__NAME:
+      case DataCentricDSLPackage.PACKAGE_DECLARATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DataCentricDSLPackage.FUNCTION__PARAMS:
-        return params != null && !params.isEmpty();
-      case DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS:
-        return functionElements != null && !functionElements.isEmpty();
+      case DataCentricDSLPackage.PACKAGE_DECLARATION__ELEMENTS:
+        return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -276,4 +237,4 @@ public class FunctionImpl extends AbstractElementImpl implements Function
     return result.toString();
   }
 
-} //FunctionImpl
+} //PackageDeclarationImpl

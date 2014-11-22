@@ -65,6 +65,9 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
     switch (eClass.getClassifierID())
     {
       case DataCentricDSLPackage.DATA_CENTRIC_DSL: return createDataCentricDSL();
+      case DataCentricDSLPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
+      case DataCentricDSLPackage.ABSTRACT_ELEMENT: return createAbstractElement();
+      case DataCentricDSLPackage.IMPORT: return createImport();
       case DataCentricDSLPackage.FUNCTION: return createFunction();
       case DataCentricDSLPackage.FIELD: return createField();
       case DataCentricDSLPackage.PREDEFINED_FUNCTION: return createPredefinedFunction();
@@ -84,6 +87,39 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     DataCentricDSLImpl dataCentricDSL = new DataCentricDSLImpl();
     return dataCentricDSL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PackageDeclaration createPackageDeclaration()
+  {
+    PackageDeclarationImpl packageDeclaration = new PackageDeclarationImpl();
+    return packageDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AbstractElement createAbstractElement()
+  {
+    AbstractElementImpl abstractElement = new AbstractElementImpl();
+    return abstractElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Import createImport()
+  {
+    ImportImpl import_ = new ImportImpl();
+    return import_;
   }
 
   /**
