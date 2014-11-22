@@ -17,7 +17,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	@Check
 	def checkIfQueryIsEmpty(org.dataCentricDSL.Query que){
 		if(que.queryParams.toString.equals("[]")){
-			error("Query string cannot be empty!", DataCentricDSLPackage$Literals::QUERY__QUERY_PARAMS);
+			error("Query string cannot be empty.", DataCentricDSLPackage$Literals::QUERY__QUERY_PARAMS);
 		}
 	}
 	
@@ -28,7 +28,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 			for(i1 : 1..< Array.length) {
 				if(i != i1){ // does not work with &&...
 					if(Array.get(i).toString.equals(Array.get(i1).toString)){
-						error("There cannot be two parameters with the same name!", DataCentricDSLPackage$Literals::FUNCTION__PARAMS)
+						error("There cannot be two parameters with the same name.", DataCentricDSLPackage$Literals::FUNCTION__PARAMS)
 					}
 				}
 			}

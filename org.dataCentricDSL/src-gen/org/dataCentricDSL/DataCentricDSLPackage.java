@@ -197,13 +197,22 @@ public interface DataCentricDSLPackage extends EPackage
   int PROPERTY__NAME = FIELD_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Init</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY__INIT = FIELD_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Property</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY_FEATURE_COUNT = FIELD_FEATURE_COUNT + 2;
+  int PROPERTY_FEATURE_COUNT = FIELD_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.QueryImpl <em>Query</em>}' class.
@@ -351,6 +360,17 @@ public interface DataCentricDSLPackage extends EPackage
   EAttribute getProperty_Name();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.Property#getInit <em>Init</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Init</em>'.
+   * @see org.dataCentricDSL.Property#getInit()
+   * @see #getProperty()
+   * @generated
+   */
+  EReference getProperty_Init();
+
+  /**
    * Returns the meta object for class '{@link org.dataCentricDSL.Query <em>Query</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -491,6 +511,14 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EAttribute PROPERTY__NAME = eINSTANCE.getProperty_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Init</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROPERTY__INIT = eINSTANCE.getProperty_Init();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.QueryImpl <em>Query</em>}' class.

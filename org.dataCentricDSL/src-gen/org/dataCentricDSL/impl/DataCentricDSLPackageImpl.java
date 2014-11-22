@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.xtext.common.types.TypesPackage;
 
+import org.eclipse.xtext.xbase.XbasePackage;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
@@ -119,7 +121,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     isInited = true;
 
     // Initialize simple dependencies
-    TypesPackage.eINSTANCE.eClass();
+    XbasePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theDataCentricDSLPackage.createPackageContents();
@@ -251,6 +253,16 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getProperty_Init()
+  {
+    return (EReference)propertyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getQuery()
   {
     return queryEClass;
@@ -311,6 +323,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     propertyEClass = createEClass(PROPERTY);
     createEReference(propertyEClass, PROPERTY__TYPE);
     createEAttribute(propertyEClass, PROPERTY__NAME);
+    createEReference(propertyEClass, PROPERTY__INIT);
 
     queryEClass = createEClass(QUERY);
     createEAttribute(queryEClass, QUERY__QUERY_PARAMS);
@@ -342,6 +355,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
 
     // Obtain other dependent packages
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+    XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
 
     // Create type parameters
 
@@ -368,6 +382,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getProperty_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProperty_Init(), theXbasePackage.getXExpression(), null, "init", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getQuery_QueryParams(), ecorePackage.getEString(), "queryParams", null, 0, -1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

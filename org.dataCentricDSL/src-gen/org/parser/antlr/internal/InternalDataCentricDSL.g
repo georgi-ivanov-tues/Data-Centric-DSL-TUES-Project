@@ -339,9 +339,31 @@ ruleProperty returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2=';' 
+)(	otherlv_2='=' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getPropertyAccess().getSemicolonKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getPropertyAccess().getEqualsSignKeyword_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPropertyAccess().getInitXExpressionParserRuleCall_2_1_0()); 
+	    }
+		lv_init_3_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPropertyRule());
+	        }
+       		set(
+       			$current, 
+       			"init",
+        		lv_init_3_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_4=';' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getPropertyAccess().getSemicolonKeyword_3());
     }
 )
 ;

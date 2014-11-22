@@ -4,6 +4,8 @@ package org.dataCentricDSL;
 
 import org.eclipse.xtext.common.types.JvmTypeReference;
 
+import org.eclipse.xtext.xbase.XExpression;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Property</b></em>'.
@@ -14,6 +16,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * <ul>
  *   <li>{@link org.dataCentricDSL.Property#getType <em>Type</em>}</li>
  *   <li>{@link org.dataCentricDSL.Property#getName <em>Name</em>}</li>
+ *   <li>{@link org.dataCentricDSL.Property#getInit <em>Init</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +77,31 @@ public interface Property extends Field
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Init</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Init</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Init</em>' containment reference.
+   * @see #setInit(XExpression)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getProperty_Init()
+   * @model containment="true"
+   * @generated
+   */
+  XExpression getInit();
+
+  /**
+   * Sets the value of the '{@link org.dataCentricDSL.Property#getInit <em>Init</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Init</em>' containment reference.
+   * @see #getInit()
+   * @generated
+   */
+  void setInit(XExpression value);
 
 } // Property

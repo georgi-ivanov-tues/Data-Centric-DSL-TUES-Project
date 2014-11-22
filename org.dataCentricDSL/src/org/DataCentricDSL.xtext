@@ -25,7 +25,7 @@ PredefinedFunction:
 ;
 
 Property:
-	type = JvmTypeReference name = ValidID';'
+	type = JvmTypeReference name = ValidID ('=' init=XExpression)?';'
 ;
 
 Query:

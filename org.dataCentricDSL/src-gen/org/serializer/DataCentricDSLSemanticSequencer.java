@@ -18,14 +18,11 @@ import org.eclipse.xtext.common.types.JvmUpperBound;
 import org.eclipse.xtext.common.types.JvmWildcardTypeReference;
 import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.eclipse.xtext.xbase.XAssignment;
 import org.eclipse.xtext.xbase.XBasicForLoopExpression;
 import org.eclipse.xtext.xbase.XBinaryOperation;
@@ -1231,20 +1228,10 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (type=JvmTypeReference name=ValidID)
+	 *     (type=JvmTypeReference name=ValidID init=XExpression?)
 	 */
 	protected void sequence_Property(EObject context, Property semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PROPERTY__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PROPERTY__TYPE));
-			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PROPERTY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PROPERTY__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPropertyAccess().getTypeJvmTypeReferenceParserRuleCall_0_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getPropertyAccess().getNameValidIDParserRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

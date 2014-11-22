@@ -152,13 +152,17 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeJvmTypeReferenceParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameValidIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cEqualsSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cInitAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cInitXExpressionParserRuleCall_2_1_0 = (RuleCall)cInitAssignment_2_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Property:
-		//	type=JvmTypeReference name=ValidID ";";
+		//	type=JvmTypeReference name=ValidID ("=" init=XExpression)? ";";
 		public ParserRule getRule() { return rule; }
 
-		//type=JvmTypeReference name=ValidID ";"
+		//type=JvmTypeReference name=ValidID ("=" init=XExpression)? ";"
 		public Group getGroup() { return cGroup; }
 
 		//type=JvmTypeReference
@@ -173,8 +177,20 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_1_0() { return cNameValidIDParserRuleCall_1_0; }
 
+		//("=" init=XExpression)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_2_0() { return cEqualsSignKeyword_2_0; }
+
+		//init=XExpression
+		public Assignment getInitAssignment_2_1() { return cInitAssignment_2_1; }
+
+		//XExpression
+		public RuleCall getInitXExpressionParserRuleCall_2_1_0() { return cInitXExpressionParserRuleCall_2_1_0; }
+
 		//";"
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 
 	public class QueryElements extends AbstractParserRuleElementFinder {
@@ -315,7 +331,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Property:
-	//	type=JvmTypeReference name=ValidID ";";
+	//	type=JvmTypeReference name=ValidID ("=" init=XExpression)? ";";
 	public PropertyElements getPropertyAccess() {
 		return pProperty;
 	}

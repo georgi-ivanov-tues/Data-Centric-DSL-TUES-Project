@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.xtext.common.types.JvmTypeReference;
 
+import org.eclipse.xtext.xbase.XExpression;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Property</b></em>'.
@@ -24,6 +26,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * <ul>
  *   <li>{@link org.dataCentricDSL.impl.PropertyImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.PropertyImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.PropertyImpl#getInit <em>Init</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +63,16 @@ public class PropertyImpl extends FieldImpl implements Property
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getInit() <em>Init</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInit()
+   * @generated
+   * @ordered
+   */
+  protected XExpression init;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,6 +171,54 @@ public class PropertyImpl extends FieldImpl implements Property
    * <!-- end-user-doc -->
    * @generated
    */
+  public XExpression getInit()
+  {
+    return init;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetInit(XExpression newInit, NotificationChain msgs)
+  {
+    XExpression oldInit = init;
+    init = newInit;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.PROPERTY__INIT, oldInit, newInit);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInit(XExpression newInit)
+  {
+    if (newInit != init)
+    {
+      NotificationChain msgs = null;
+      if (init != null)
+        msgs = ((InternalEObject)init).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.PROPERTY__INIT, null, msgs);
+      if (newInit != null)
+        msgs = ((InternalEObject)newInit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.PROPERTY__INIT, null, msgs);
+      msgs = basicSetInit(newInit, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.PROPERTY__INIT, newInit, newInit));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -165,6 +226,8 @@ public class PropertyImpl extends FieldImpl implements Property
     {
       case DataCentricDSLPackage.PROPERTY__TYPE:
         return basicSetType(null, msgs);
+      case DataCentricDSLPackage.PROPERTY__INIT:
+        return basicSetInit(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -183,6 +246,8 @@ public class PropertyImpl extends FieldImpl implements Property
         return getType();
       case DataCentricDSLPackage.PROPERTY__NAME:
         return getName();
+      case DataCentricDSLPackage.PROPERTY__INIT:
+        return getInit();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -202,6 +267,9 @@ public class PropertyImpl extends FieldImpl implements Property
         return;
       case DataCentricDSLPackage.PROPERTY__NAME:
         setName((String)newValue);
+        return;
+      case DataCentricDSLPackage.PROPERTY__INIT:
+        setInit((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -223,6 +291,9 @@ public class PropertyImpl extends FieldImpl implements Property
       case DataCentricDSLPackage.PROPERTY__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case DataCentricDSLPackage.PROPERTY__INIT:
+        setInit((XExpression)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -241,6 +312,8 @@ public class PropertyImpl extends FieldImpl implements Property
         return type != null;
       case DataCentricDSLPackage.PROPERTY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DataCentricDSLPackage.PROPERTY__INIT:
+        return init != null;
     }
     return super.eIsSet(featureID);
   }

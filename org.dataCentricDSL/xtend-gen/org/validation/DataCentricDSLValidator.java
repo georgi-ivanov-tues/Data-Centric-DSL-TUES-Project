@@ -26,7 +26,7 @@ public class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
     String _string = _queryParams.toString();
     boolean _equals = _string.equals("[]");
     if (_equals) {
-      this.error("Query string cannot be empty!", DataCentricDSLPackage.Literals.QUERY__QUERY_PARAMS);
+      this.error("Query string cannot be empty.", DataCentricDSLPackage.Literals.QUERY__QUERY_PARAMS);
     }
   }
   
@@ -48,7 +48,7 @@ public class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
           String _string_1 = _get_1.toString();
           boolean _equals = _string.equals(_string_1);
           if (_equals) {
-            this.error("There cannot be two parameters with the same name!", DataCentricDSLPackage.Literals.FUNCTION__PARAMS);
+            this.error("There cannot be two parameters with the same name.", DataCentricDSLPackage.Literals.FUNCTION__PARAMS);
           }
         }
       }
