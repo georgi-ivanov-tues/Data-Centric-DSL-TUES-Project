@@ -8,6 +8,7 @@ import org.dataCentricDSL.DataCentricDSLFactory;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Field;
 import org.dataCentricDSL.Function;
+import org.dataCentricDSL.FunctionCall;
 import org.dataCentricDSL.Import;
 import org.dataCentricDSL.PackageDeclaration;
 import org.dataCentricDSL.PredefinedFunction;
@@ -88,6 +89,13 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * @generated
    */
   private EClass propertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionCallEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -347,6 +355,36 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFunctionCall()
+  {
+    return functionCallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFunctionCall_Name()
+  {
+    return (EAttribute)functionCallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionCall_Arguments()
+  {
+    return (EReference)functionCallEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getQuery()
   {
     return queryEClass;
@@ -357,9 +395,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getQuery_QueryParams()
+  public EReference getQuery_QueryParams()
   {
-    return (EAttribute)queryEClass.getEStructuralFeatures().get(0);
+    return (EReference)queryEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -418,8 +456,12 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     createEAttribute(propertyEClass, PROPERTY__NAME);
     createEReference(propertyEClass, PROPERTY__INIT);
 
+    functionCallEClass = createEClass(FUNCTION_CALL);
+    createEAttribute(functionCallEClass, FUNCTION_CALL__NAME);
+    createEReference(functionCallEClass, FUNCTION_CALL__ARGUMENTS);
+
     queryEClass = createEClass(QUERY);
-    createEAttribute(queryEClass, QUERY__QUERY_PARAMS);
+    createEReference(queryEClass, QUERY__QUERY_PARAMS);
   }
 
   /**
@@ -460,6 +502,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     fieldEClass.getESuperTypes().add(this.getAbstractElement());
     predefinedFunctionEClass.getESuperTypes().add(this.getField());
     propertyEClass.getESuperTypes().add(this.getField());
+    functionCallEClass.getESuperTypes().add(this.getField());
     queryEClass.getESuperTypes().add(this.getPredefinedFunction());
 
     // Initialize classes and features; add operations and parameters
@@ -489,8 +532,12 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProperty_Init(), theXbasePackage.getXExpression(), null, "init", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFunctionCall_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionCall_Arguments(), theXbasePackage.getXExpression(), null, "arguments", null, 0, -1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getQuery_QueryParams(), ecorePackage.getEString(), "queryParams", null, 0, -1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQuery_QueryParams(), theXbasePackage.getXExpression(), null, "queryParams", null, 0, -1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

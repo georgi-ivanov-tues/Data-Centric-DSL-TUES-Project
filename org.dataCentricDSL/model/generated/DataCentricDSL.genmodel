@@ -30,8 +30,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Property/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Property/init"/>
     </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//FunctionCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//FunctionCall/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//FunctionCall/arguments"/>
+    </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Query">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Query/queryParams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Query/queryParams"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -135,6 +135,15 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DataCentricDSLPackage.FUNCTION_CALL:
+      {
+        FunctionCall functionCall = (FunctionCall)theEObject;
+        T result = caseFunctionCall(functionCall);
+        if (result == null) result = caseField(functionCall);
+        if (result == null) result = caseAbstractElement(functionCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DataCentricDSLPackage.QUERY:
       {
         Query query = (Query)theEObject;
@@ -273,6 +282,22 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseProperty(Property object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionCall(FunctionCall object)
   {
     return null;
   }

@@ -7,11 +7,17 @@ import java.util.Collection;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Query;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,14 +35,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class QueryImpl extends PredefinedFunctionImpl implements Query
 {
   /**
-   * The cached value of the '{@link #getQueryParams() <em>Query Params</em>}' attribute list.
+   * The cached value of the '{@link #getQueryParams() <em>Query Params</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getQueryParams()
    * @generated
    * @ordered
    */
-  protected EList<String> queryParams;
+  protected EList<XExpression> queryParams;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,13 +70,29 @@ public class QueryImpl extends PredefinedFunctionImpl implements Query
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getQueryParams()
+  public EList<XExpression> getQueryParams()
   {
     if (queryParams == null)
     {
-      queryParams = new EDataTypeEList<String>(String.class, this, DataCentricDSLPackage.QUERY__QUERY_PARAMS);
+      queryParams = new EObjectContainmentEList<XExpression>(XExpression.class, this, DataCentricDSLPackage.QUERY__QUERY_PARAMS);
     }
     return queryParams;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DataCentricDSLPackage.QUERY__QUERY_PARAMS:
+        return ((InternalEList<?>)getQueryParams()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -102,7 +124,7 @@ public class QueryImpl extends PredefinedFunctionImpl implements Query
     {
       case DataCentricDSLPackage.QUERY__QUERY_PARAMS:
         getQueryParams().clear();
-        getQueryParams().addAll((Collection<? extends String>)newValue);
+        getQueryParams().addAll((Collection<? extends XExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,23 +161,6 @@ public class QueryImpl extends PredefinedFunctionImpl implements Query
         return queryParams != null && !queryParams.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (queryParams: ");
-    result.append(queryParams);
-    result.append(')');
-    return result.toString();
   }
 
 } //QueryImpl

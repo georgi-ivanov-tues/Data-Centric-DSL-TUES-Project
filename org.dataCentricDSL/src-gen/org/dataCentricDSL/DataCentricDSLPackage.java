@@ -299,6 +299,43 @@ public interface DataCentricDSLPackage extends EPackage
   int PROPERTY_FEATURE_COUNT = FIELD_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.FunctionCallImpl <em>Function Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.FunctionCallImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunctionCall()
+   * @generated
+   */
+  int FUNCTION_CALL = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__NAME = FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__ARGUMENTS = FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Function Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL_FEATURE_COUNT = FIELD_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.QueryImpl <em>Query</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -306,10 +343,10 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getQuery()
    * @generated
    */
-  int QUERY = 8;
+  int QUERY = 9;
 
   /**
-   * The feature id for the '<em><b>Query Params</b></em>' attribute list.
+   * The feature id for the '<em><b>Query Params</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -518,6 +555,38 @@ public interface DataCentricDSLPackage extends EPackage
   EReference getProperty_Init();
 
   /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.FunctionCall <em>Function Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Call</em>'.
+   * @see org.dataCentricDSL.FunctionCall
+   * @generated
+   */
+  EClass getFunctionCall();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.FunctionCall#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.dataCentricDSL.FunctionCall#getName()
+   * @see #getFunctionCall()
+   * @generated
+   */
+  EAttribute getFunctionCall_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.FunctionCall#getArguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arguments</em>'.
+   * @see org.dataCentricDSL.FunctionCall#getArguments()
+   * @see #getFunctionCall()
+   * @generated
+   */
+  EReference getFunctionCall_Arguments();
+
+  /**
    * Returns the meta object for class '{@link org.dataCentricDSL.Query <em>Query</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -528,15 +597,15 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getQuery();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.dataCentricDSL.Query#getQueryParams <em>Query Params</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.Query#getQueryParams <em>Query Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Query Params</em>'.
+   * @return the meta object for the containment reference list '<em>Query Params</em>'.
    * @see org.dataCentricDSL.Query#getQueryParams()
    * @see #getQuery()
    * @generated
    */
-  EAttribute getQuery_QueryParams();
+  EReference getQuery_QueryParams();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -722,6 +791,32 @@ public interface DataCentricDSLPackage extends EPackage
     EReference PROPERTY__INIT = eINSTANCE.getProperty_Init();
 
     /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.FunctionCallImpl <em>Function Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.FunctionCallImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunctionCall()
+     * @generated
+     */
+    EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_CALL__NAME = eINSTANCE.getFunctionCall_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_CALL__ARGUMENTS = eINSTANCE.getFunctionCall_Arguments();
+
+    /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.QueryImpl <em>Query</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -732,12 +827,12 @@ public interface DataCentricDSLPackage extends EPackage
     EClass QUERY = eINSTANCE.getQuery();
 
     /**
-     * The meta object literal for the '<em><b>Query Params</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Query Params</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute QUERY__QUERY_PARAMS = eINSTANCE.getQuery_QueryParams();
+    EReference QUERY__QUERY_PARAMS = eINSTANCE.getQuery_QueryParams();
 
   }
 

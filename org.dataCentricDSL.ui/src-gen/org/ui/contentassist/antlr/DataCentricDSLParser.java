@@ -86,6 +86,9 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionAccess().getGroup_3_1(), "rule__Function__Group_3_1__0");
 					put(grammarAccess.getPropertyAccess().getGroup(), "rule__Property__Group__0");
 					put(grammarAccess.getPropertyAccess().getGroup_2(), "rule__Property__Group_2__0");
+					put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
+					put(grammarAccess.getFunctionCallAccess().getGroup_2(), "rule__FunctionCall__Group_2__0");
+					put(grammarAccess.getFunctionCallAccess().getGroup_2_1(), "rule__FunctionCall__Group_2_1__0");
 					put(grammarAccess.getQueryAccess().getGroup(), "rule__Query__Group__0");
 					put(grammarAccess.getQueryAccess().getGroup_3(), "rule__Query__Group_3__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
@@ -278,6 +281,9 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPropertyAccess().getTypeAssignment_0(), "rule__Property__TypeAssignment_0");
 					put(grammarAccess.getPropertyAccess().getNameAssignment_1(), "rule__Property__NameAssignment_1");
 					put(grammarAccess.getPropertyAccess().getInitAssignment_2_1(), "rule__Property__InitAssignment_2_1");
+					put(grammarAccess.getFunctionCallAccess().getNameAssignment_0(), "rule__FunctionCall__NameAssignment_0");
+					put(grammarAccess.getFunctionCallAccess().getArgumentsAssignment_2_0(), "rule__FunctionCall__ArgumentsAssignment_2_0");
+					put(grammarAccess.getFunctionCallAccess().getArgumentsAssignment_2_1_1(), "rule__FunctionCall__ArgumentsAssignment_2_1_1");
 					put(grammarAccess.getQueryAccess().getQueryParamsAssignment_2(), "rule__Query__QueryParamsAssignment_2");
 					put(grammarAccess.getQueryAccess().getQueryParamsAssignment_3_1(), "rule__Query__QueryParamsAssignment_3_1");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");

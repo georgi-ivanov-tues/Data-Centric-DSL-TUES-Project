@@ -5,6 +5,7 @@ import com.google.inject.Provider;
 import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Function;
+import org.dataCentricDSL.FunctionCall;
 import org.dataCentricDSL.Import;
 import org.dataCentricDSL.PackageDeclaration;
 import org.dataCentricDSL.Property;
@@ -85,6 +86,14 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getFunctionRule()) {
 					sequence_Function(context, (Function) semanticObject); 
+					return; 
+				}
+				else break;
+			case DataCentricDSLPackage.FUNCTION_CALL:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getFieldRule() ||
+				   context == grammarAccess.getFunctionCallRule()) {
+					sequence_FunctionCall(context, (FunctionCall) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1240,6 +1249,15 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (name=ValidID (arguments+=XExpression arguments+=XExpression*)?)
+	 */
+	protected void sequence_FunctionCall(EObject context, FunctionCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ValidID (params+=FullJvmFormalParameter params+=FullJvmFormalParameter*)? functionElements+=Field*)
 	 */
 	protected void sequence_Function(EObject context, Function semanticObject) {
@@ -1283,7 +1301,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (queryParams+=STRING queryParams+=STRING*)
+	 *     (queryParams+=XExpression queryParams+=XExpression*)
 	 */
 	protected void sequence_Query(EObject context, Query semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

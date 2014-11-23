@@ -10,6 +10,7 @@ import org.dataCentricDSL.Query;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 import org.validation.AbstractDataCentricDSLValidator;
 
@@ -22,7 +23,7 @@ import org.validation.AbstractDataCentricDSLValidator;
 public class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
   @Check
   public void checkIfQueryIsEmpty(final Query que) {
-    EList<String> _queryParams = que.getQueryParams();
+    EList<XExpression> _queryParams = que.getQueryParams();
     String _string = _queryParams.toString();
     boolean _equals = _string.equals("[]");
     if (_equals) {

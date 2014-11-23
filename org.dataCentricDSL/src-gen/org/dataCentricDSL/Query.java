@@ -4,6 +4,8 @@ package org.dataCentricDSL;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.xtext.xbase.XExpression;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Query</b></em>'.
@@ -23,19 +25,19 @@ import org.eclipse.emf.common.util.EList;
 public interface Query extends PredefinedFunction
 {
   /**
-   * Returns the value of the '<em><b>Query Params</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Query Params</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.xtext.xbase.XExpression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Query Params</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Query Params</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Query Params</em>' attribute list.
+   * @return the value of the '<em>Query Params</em>' containment reference list.
    * @see org.dataCentricDSL.DataCentricDSLPackage#getQuery_QueryParams()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getQueryParams();
+  EList<XExpression> getQueryParams();
 
 } // Query

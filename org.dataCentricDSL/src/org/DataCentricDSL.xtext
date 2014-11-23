@@ -34,7 +34,7 @@ Function:
 ;
 
 Field:
-	PredefinedFunction | Property
+	PredefinedFunction | Property | FunctionCall
 ;
 
 PredefinedFunction:
@@ -42,9 +42,14 @@ PredefinedFunction:
 ;
 
 Property:
-	type = JvmTypeReference name = ValidID ('=' init=XExpression)?';'
+	type = JvmTypeReference name = ValidID ('=' init=XExpression)? ';'
+;
+
+FunctionCall:
+	name = ValidID '('(arguments += XExpression
+					(',' arguments += XExpression)*)?')'';'
 ;
 
 Query:
-	'query' '('queryParams += STRING ('+' queryParams += STRING)*');'
+	'query' '('queryParams += XExpression ('+' queryParams += XExpression)*')'';'
 ;
