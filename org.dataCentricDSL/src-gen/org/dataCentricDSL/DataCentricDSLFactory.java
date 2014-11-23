@@ -95,6 +95,15 @@ public interface DataCentricDSLFactory extends EFactory
   Property createProperty();
 
   /**
+   * Returns a new object of class '<em>Property Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Property Usage</em>'.
+   * @generated
+   */
+  PropertyUsage createPropertyUsage();
+
+  /**
    * Returns a new object of class '<em>Function Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

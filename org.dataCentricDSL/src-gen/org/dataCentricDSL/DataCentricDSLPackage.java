@@ -299,6 +299,43 @@ public interface DataCentricDSLPackage extends EPackage
   int PROPERTY_FEATURE_COUNT = FIELD_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.PropertyUsageImpl <em>Property Usage</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.PropertyUsageImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPropertyUsage()
+   * @generated
+   */
+  int PROPERTY_USAGE = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_USAGE__NAME = FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_USAGE__EXPRESSION = FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Property Usage</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_USAGE_FEATURE_COUNT = FIELD_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.FunctionCallImpl <em>Function Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -306,7 +343,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunctionCall()
    * @generated
    */
-  int FUNCTION_CALL = 8;
+  int FUNCTION_CALL = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -343,7 +380,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getQuery()
    * @generated
    */
-  int QUERY = 9;
+  int QUERY = 10;
 
   /**
    * The feature id for the '<em><b>Query Params</b></em>' containment reference list.
@@ -553,6 +590,38 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EReference getProperty_Init();
+
+  /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.PropertyUsage <em>Property Usage</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Property Usage</em>'.
+   * @see org.dataCentricDSL.PropertyUsage
+   * @generated
+   */
+  EClass getPropertyUsage();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.PropertyUsage#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.dataCentricDSL.PropertyUsage#getName()
+   * @see #getPropertyUsage()
+   * @generated
+   */
+  EAttribute getPropertyUsage_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.PropertyUsage#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.dataCentricDSL.PropertyUsage#getExpression()
+   * @see #getPropertyUsage()
+   * @generated
+   */
+  EReference getPropertyUsage_Expression();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.FunctionCall <em>Function Call</em>}'.
@@ -789,6 +858,32 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EReference PROPERTY__INIT = eINSTANCE.getProperty_Init();
+
+    /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.PropertyUsageImpl <em>Property Usage</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.PropertyUsageImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPropertyUsage()
+     * @generated
+     */
+    EClass PROPERTY_USAGE = eINSTANCE.getPropertyUsage();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROPERTY_USAGE__NAME = eINSTANCE.getPropertyUsage_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROPERTY_USAGE__EXPRESSION = eINSTANCE.getPropertyUsage_Expression();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.FunctionCallImpl <em>Function Call</em>}' class.

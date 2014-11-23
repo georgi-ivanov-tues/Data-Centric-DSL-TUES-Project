@@ -34,7 +34,7 @@ Function:
 ;
 
 Field:
-	PredefinedFunction | Property | FunctionCall
+	PredefinedFunction | Property | FunctionCall | PropertyUsage
 ;
 
 PredefinedFunction:
@@ -43,6 +43,10 @@ PredefinedFunction:
 
 Property:
 	type = JvmTypeReference name = ValidID ('=' init=XExpression)? ';'
+;
+
+PropertyUsage:
+	name = ValidID '=' expression = XExpression ';'
 ;
 
 FunctionCall:

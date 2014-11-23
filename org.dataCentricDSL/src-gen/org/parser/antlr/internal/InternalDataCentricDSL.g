@@ -462,6 +462,16 @@ ruleField returns [EObject current=null]
         $current = $this_FunctionCall_2.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getFieldAccess().getPropertyUsageParserRuleCall_3()); 
+    }
+    this_PropertyUsage_3=rulePropertyUsage
+    { 
+        $current = $this_PropertyUsage_3.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -574,6 +584,71 @@ ruleProperty returns [EObject current=null]
 ))?	otherlv_4=';' 
     {
     	newLeafNode(otherlv_4, grammarAccess.getPropertyAccess().getSemicolonKeyword_3());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRulePropertyUsage
+entryRulePropertyUsage returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPropertyUsageRule()); }
+	 iv_rulePropertyUsage=rulePropertyUsage 
+	 { $current=$iv_rulePropertyUsage.current; } 
+	 EOF 
+;
+
+// Rule PropertyUsage
+rulePropertyUsage returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPropertyUsageAccess().getNameValidIDParserRuleCall_0_0()); 
+	    }
+		lv_name_0_0=ruleValidID		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPropertyUsageRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"ValidID");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_1='=' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getPropertyUsageAccess().getEqualsSignKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPropertyUsageAccess().getExpressionXExpressionParserRuleCall_2_0()); 
+	    }
+		lv_expression_2_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPropertyUsageRule());
+	        }
+       		set(
+       			$current, 
+       			"expression",
+        		lv_expression_2_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3=';' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getPropertyUsageAccess().getSemicolonKeyword_3());
     }
 )
 ;

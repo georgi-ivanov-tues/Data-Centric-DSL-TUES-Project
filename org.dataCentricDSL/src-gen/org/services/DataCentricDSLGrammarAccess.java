@@ -227,12 +227,13 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPredefinedFunctionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cPropertyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cFunctionCallParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cPropertyUsageParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Field:
-		//	PredefinedFunction | Property | FunctionCall;
+		//	PredefinedFunction | Property | FunctionCall | PropertyUsage;
 		public ParserRule getRule() { return rule; }
 
-		//PredefinedFunction | Property | FunctionCall
+		//PredefinedFunction | Property | FunctionCall | PropertyUsage
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//PredefinedFunction
@@ -243,6 +244,9 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//FunctionCall
 		public RuleCall getFunctionCallParserRuleCall_2() { return cFunctionCallParserRuleCall_2; }
+
+		//PropertyUsage
+		public RuleCall getPropertyUsageParserRuleCall_3() { return cPropertyUsageParserRuleCall_3; }
 	}
 
 	public class PredefinedFunctionElements extends AbstractParserRuleElementFinder {
@@ -300,6 +304,42 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//XExpression
 		public RuleCall getInitXExpressionParserRuleCall_2_1_0() { return cInitXExpressionParserRuleCall_2_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+	}
+
+	public class PropertyUsageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PropertyUsage");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameValidIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionXExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//PropertyUsage:
+		//	name=ValidID "=" expression=XExpression ";";
+		public ParserRule getRule() { return rule; }
+
+		//name=ValidID "=" expression=XExpression ";"
+		public Group getGroup() { return cGroup; }
+
+		//name=ValidID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+
+		//ValidID
+		public RuleCall getNameValidIDParserRuleCall_0_0() { return cNameValidIDParserRuleCall_0_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+
+		//expression=XExpression
+		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+
+		//XExpression
+		public RuleCall getExpressionXExpressionParserRuleCall_2_0() { return cExpressionXExpressionParserRuleCall_2_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
@@ -427,6 +467,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final FieldElements pField;
 	private final PredefinedFunctionElements pPredefinedFunction;
 	private final PropertyElements pProperty;
+	private final PropertyUsageElements pPropertyUsage;
 	private final FunctionCallElements pFunctionCall;
 	private final QueryElements pQuery;
 	
@@ -448,6 +489,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pField = new FieldElements();
 		this.pPredefinedFunction = new PredefinedFunctionElements();
 		this.pProperty = new PropertyElements();
+		this.pPropertyUsage = new PropertyUsageElements();
 		this.pFunctionCall = new FunctionCallElements();
 		this.pQuery = new QueryElements();
 	}
@@ -541,7 +583,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Field:
-	//	PredefinedFunction | Property | FunctionCall;
+	//	PredefinedFunction | Property | FunctionCall | PropertyUsage;
 	public FieldElements getFieldAccess() {
 		return pField;
 	}
@@ -568,6 +610,16 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getPropertyRule() {
 		return getPropertyAccess().getRule();
+	}
+
+	//PropertyUsage:
+	//	name=ValidID "=" expression=XExpression ";";
+	public PropertyUsageElements getPropertyUsageAccess() {
+		return pPropertyUsage;
+	}
+	
+	public ParserRule getPropertyUsageRule() {
+		return getPropertyUsageAccess().getRule();
 	}
 
 	//FunctionCall:

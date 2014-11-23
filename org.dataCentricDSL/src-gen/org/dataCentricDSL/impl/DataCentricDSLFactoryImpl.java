@@ -72,6 +72,7 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.FIELD: return createField();
       case DataCentricDSLPackage.PREDEFINED_FUNCTION: return createPredefinedFunction();
       case DataCentricDSLPackage.PROPERTY: return createProperty();
+      case DataCentricDSLPackage.PROPERTY_USAGE: return createPropertyUsage();
       case DataCentricDSLPackage.FUNCTION_CALL: return createFunctionCall();
       case DataCentricDSLPackage.QUERY: return createQuery();
       default:
@@ -165,6 +166,17 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     PropertyImpl property = new PropertyImpl();
     return property;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PropertyUsage createPropertyUsage()
+  {
+    PropertyUsageImpl propertyUsage = new PropertyUsageImpl();
+    return propertyUsage;
   }
 
   /**

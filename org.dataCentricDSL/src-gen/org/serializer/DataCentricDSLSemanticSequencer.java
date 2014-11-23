@@ -9,6 +9,7 @@ import org.dataCentricDSL.FunctionCall;
 import org.dataCentricDSL.Import;
 import org.dataCentricDSL.PackageDeclaration;
 import org.dataCentricDSL.Property;
+import org.dataCentricDSL.PropertyUsage;
 import org.dataCentricDSL.Query;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
@@ -115,6 +116,14 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getFieldRule() ||
 				   context == grammarAccess.getPropertyRule()) {
 					sequence_Property(context, (Property) semanticObject); 
+					return; 
+				}
+				else break;
+			case DataCentricDSLPackage.PROPERTY_USAGE:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getFieldRule() ||
+				   context == grammarAccess.getPropertyUsageRule()) {
+					sequence_PropertyUsage(context, (PropertyUsage) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1287,6 +1296,25 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 */
 	protected void sequence_PackageDeclaration(EObject context, PackageDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ValidID expression=XExpression)
+	 */
+	protected void sequence_PropertyUsage(EObject context, PropertyUsage semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PROPERTY_USAGE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PROPERTY_USAGE__NAME));
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PROPERTY_USAGE__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PROPERTY_USAGE__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPropertyUsageAccess().getNameValidIDParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getPropertyUsageAccess().getExpressionXExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.finish();
 	}
 	
 	

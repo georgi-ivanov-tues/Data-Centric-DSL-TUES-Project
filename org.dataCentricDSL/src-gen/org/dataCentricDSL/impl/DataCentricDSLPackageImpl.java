@@ -13,6 +13,7 @@ import org.dataCentricDSL.Import;
 import org.dataCentricDSL.PackageDeclaration;
 import org.dataCentricDSL.PredefinedFunction;
 import org.dataCentricDSL.Property;
+import org.dataCentricDSL.PropertyUsage;
 import org.dataCentricDSL.Query;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -89,6 +90,13 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * @generated
    */
   private EClass propertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass propertyUsageEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -355,6 +363,36 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getPropertyUsage()
+  {
+    return propertyUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPropertyUsage_Name()
+  {
+    return (EAttribute)propertyUsageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPropertyUsage_Expression()
+  {
+    return (EReference)propertyUsageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFunctionCall()
   {
     return functionCallEClass;
@@ -456,6 +494,10 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     createEAttribute(propertyEClass, PROPERTY__NAME);
     createEReference(propertyEClass, PROPERTY__INIT);
 
+    propertyUsageEClass = createEClass(PROPERTY_USAGE);
+    createEAttribute(propertyUsageEClass, PROPERTY_USAGE__NAME);
+    createEReference(propertyUsageEClass, PROPERTY_USAGE__EXPRESSION);
+
     functionCallEClass = createEClass(FUNCTION_CALL);
     createEAttribute(functionCallEClass, FUNCTION_CALL__NAME);
     createEReference(functionCallEClass, FUNCTION_CALL__ARGUMENTS);
@@ -502,6 +544,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     fieldEClass.getESuperTypes().add(this.getAbstractElement());
     predefinedFunctionEClass.getESuperTypes().add(this.getField());
     propertyEClass.getESuperTypes().add(this.getField());
+    propertyUsageEClass.getESuperTypes().add(this.getField());
     functionCallEClass.getESuperTypes().add(this.getField());
     queryEClass.getESuperTypes().add(this.getPredefinedFunction());
 
@@ -531,6 +574,10 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEReference(getProperty_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProperty_Init(), theXbasePackage.getXExpression(), null, "init", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(propertyUsageEClass, PropertyUsage.class, "PropertyUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPropertyUsage_Name(), ecorePackage.getEString(), "name", null, 0, 1, PropertyUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPropertyUsage_Expression(), theXbasePackage.getXExpression(), null, "expression", null, 0, 1, PropertyUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionCall_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
