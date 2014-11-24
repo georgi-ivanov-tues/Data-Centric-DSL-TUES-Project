@@ -2,6 +2,7 @@ grammar DataCentricDSL;
 
 options {
   language = Java;
+  output=AST;
 }
 
 @header {
@@ -12,12 +13,30 @@ options {
 	package org.dataCentricDSL;
 }
 
-rule: STRING+;
+program: 
+//	package_declaration // They don't work for some reason...
+//	import_declaration*
+	(query^)*
+	;
+	
+package_declaration:
+	'package' STRING ';'
+;
 
-//QUERY: 'query' '(' queryParams += STRING ('+' queryParams += STRING)* ')' ';';
+import_declaration:
+	'import' STRING ';'
+;
 
-//'query' '('queryParams += XExpression ('+' queryParams += XExpression)*')'';'
+query: 
+	'query'^ '('! request ')'! ';'!
+;
+// READ THIS:
+// http://stackoverflow.com/questions/4931346/how-to-output-the-ast-built-using-antlr/4933963#4933963
 
-STRING: ('a'..'z' | 'A'..'Z' | '0'..'9')+;
+request:
+	REQUEST_STRING
+;
 
-WS: (' ' | '\t' | '\n' | '\r')+ {$channel = HIDDEN;};
+STRING: ('a'..'z' | 'A'..'Z')('a'..'z' | 'A'..'Z' | '0'..'9')*;
+REQUEST_STRING: ('a'..'z' | 'A'..'Z')('a'..'z' | 'A'..'Z' | '0'..'9' | ' ')*;
+WS: (' ' | '\t' | '\n' | '\r' | '\f')+ {$channel = HIDDEN;};

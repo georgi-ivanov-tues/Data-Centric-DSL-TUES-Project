@@ -1,2 +1,15 @@
-STRING=4
-WS=5
+T__7=7
+T__8=8
+T__9=9
+T__10=10
+T__11=11
+T__12=12
+REQUEST_STRING=4
+STRING=5
+WS=6
+'('=7
+')'=8
+';'=9
+'import'=10
+'package'=11
+'query'=12
