@@ -16,6 +16,7 @@ And from From the <b>GEF (Graphical Editing Framework)</b> plugin repository ins
 Once both are installed, you can install ANTLR IDE from http://antlrv3ide.sourceforge.net/updates plugin repository. 
 
 <b>Configure the ANTLR IDE:</b>
+
 1.  In the Eclipse main window, click Window then Preferences.
 2.  In the left pane, expand ANTLR and select Builder.
 3.  In the right pane, click the Add… button.
