@@ -4,7 +4,7 @@
 * Download Eclipse from: https://eclipse.org/downloads/
 * Download ANTLR3 jar file:  https://www.antlr3.org/download/antlr-3.5.2-complete.jar and save it in an appropriate permanent location
 
-Once you start up Eclipse go to <b>Help -> Install New Updated</b><br>
+Once you start up Eclipse go to <b>Help -> Install New Software</b><br>
 In the <b>Work with</b> section type in: http://download.eclipse.org/releases/indigo/<br>
 Under the <b>"General Purpose Tools"</b> group, install <b>"Dynamic Languages Toolkit - Core Framework" (v3.x)</b>
 
@@ -18,9 +18,9 @@ Once both are installed, you can install ANTLR IDE from http://antlrv3ide.source
 <b>Configure the ANTLR IDE:</b>
 1. In the Eclipse main window, click Window then Preferences.
 2. In the left pane, expand ANTLR and select Builder.
-3. In the right pane, click the Add… button.
-4. In the Add ANTLR Package window, click Directory… and navigate to the location of the antlr.jar and click OK.
+3. In the right pane, click the Addâ€¦ button.
+4. In the Add ANTLR Package window, click Directoryâ€¦ and navigate to the location of the antlr.jar and click OK.
 5. Click OK to close the Add ANTLR Package window.
 6. Select Code Generator in the left pane and click on Project relative folder in the right pane. Type a folder name. Examples: antlr-java or antlr-generated.
-7. Select any other configuration parameters but DO NOT check –nfa or –dfa in the under General in the Building window. If checked, these will cause ANTLR errors preventing java files from being generated in the output folder.
+7. Select any other configuration parameters but DO NOT check â€“nfa or â€“dfa in the under General in the Building window. If checked, these will cause ANTLR errors preventing java files from being generated in the output folder.
 8. Click OK to close the Preferences window.
