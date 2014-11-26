@@ -2,7 +2,6 @@ package org.dataCentricDSL;
 
 import java.util.List;
 import java.util.Scanner;
-
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -10,7 +9,6 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.TokenStream;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.dataCentricDSL.DataCentricDSLParser.program_return;
-
 
 public class Test {
 
@@ -35,5 +33,7 @@ public class Test {
 		for(String query : queries) {
 			System.out.println(query);
 		}
+		
+		System.out.println(builder);
 	}
 }

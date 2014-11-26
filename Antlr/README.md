@@ -8,12 +8,12 @@ Once you start up Eclipse go to <b>Help -> Install New Software</b><br>
 In the <b>Work with</b> section type in: http://download.eclipse.org/releases/indigo/<br>
 Under the <b>"General Purpose Tools"</b> group, install <b>"Dynamic Languages Toolkit - Core Framework" (v3.x)</b>
 
-Then type in the <b>Work with</b> section: http://download.eclipse.org/tools/gef/updates/releases/<br>
+Then in the <b>Work with</b> section type: http://download.eclipse.org/tools/gef/updates/releases/<br>
 And from From the <b>GEF (Graphical Editing Framework)</b> plugin repository install <b>"Zest Visualization Toolkit" (v1.x)</b>
 
 <b>Notice that you are installing the correct versions!</b> Installing too advanced version will prevent you from installing some or all features of ANTLR IDE.
 
-Once both are installed, you can install ANTLR IDE from http://antlrv3ide.sourceforge.net/updates plugin repository. 
+Once both are installed, you can install ANTLR IDE by putting http://antlrv3ide.sourceforge.net/updates in <b>Work with</b> in <b>Help -> Install New Software</b>. 
 
 <b>Configure the ANTLR IDE:</b>
 
