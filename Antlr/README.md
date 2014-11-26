@@ -25,3 +25,14 @@ Once both are installed, you can install ANTLR IDE from http://antlrv3ide.source
 6.  Select Code Generator in the left pane and click on Project relative folder in the right pane. Type a folder name. Examples: antlr-java or antlr-generated.
 7.  Select any other configuration parameters but DO NOT check –nfa or –dfa in the under General in the Building window. If checked, these will cause ANTLR errors preventing java files from being generated in the output folder.
 8.  Click OK to close the Preferences window.
+
+
+##Try the language
+* Run Test.java from the project
+* Write your code
+* When you're done with your input, write end
+* The code you just wrote will execute
+
+<b>Grammar</b>
+
+Currently, the language supports just one function - query, which takes a string as argument.
