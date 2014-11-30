@@ -31,11 +31,16 @@ public class Test {
 		walker.program();
 		
 		/*	Example:
-		  	print(query("asd"););
-			end
+		  	a = query("abc");
+		  	b = a;
+		  	print(b);
+		  	end
 			
 			Expected:
-			asd
+			abc
+			
+			Note:
+			if more than one prints are passed, the tree stops at the first one
 		*/
 		
 //		for(String query : queries) {

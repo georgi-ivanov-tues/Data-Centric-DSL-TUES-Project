@@ -17,7 +17,7 @@ options {
 @lexer::members {
   private void processEscapeSequence(String text, StringBuilder builder) {
     if(text == null) { //This shouldn't happen, but you never know
-      return;
+      return; 
     }
     if(text.length() < 2) { //This neither
       return;
@@ -39,7 +39,7 @@ options {
 }
 
 program: 
-	(query | print)* (';'! | EOF!)
+	(query | print | variableDecl)* (';'! | EOF!)
 	;
 
 query: 
@@ -47,7 +47,15 @@ query:
 ;
 
 print:
-  'print'^ '('! (STRING_LITERAL | query) ')'!
+  'print'^ '('! (STRING_LITERAL | query | variableCall) ')'!
+;
+
+variableDecl:
+  IDENT '='! ( query | STRING_LITERAL | variableCall ) ';'!
+;
+
+variableCall:
+  IDENT
 ;
 
 STRING_LITERAL
@@ -67,3 +75,6 @@ fragment ESCAPE[StringBuilder builder]
 WS: (' ' | '\t' | '\n' | '\r' | '\f')+ {$channel = HIDDEN;};
 COMMENT: '//' ~('\n' | '\r')* ('\n' | '\r')? {$channel = HIDDEN;};
 MULTILINE_COMMENT: '/*' .* '*/' {$channel = HIDDEN;};
+fragment DIGIT : '0'..'9';
+fragment LETTER : ('a'..'z' | 'A'..'Z');
+IDENT : LETTER (LETTER | DIGIT)*; 
