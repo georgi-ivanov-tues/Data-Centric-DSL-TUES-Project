@@ -1,7 +1,5 @@
 package org.dataCentricDSL.tests;
 
-import static org.junit.Assert.*;
-
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;

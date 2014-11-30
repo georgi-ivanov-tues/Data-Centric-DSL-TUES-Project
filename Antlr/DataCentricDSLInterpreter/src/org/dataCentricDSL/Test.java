@@ -1,6 +1,5 @@
 package org.dataCentricDSL;
 
-import java.util.List;
 import java.util.Scanner;
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
@@ -29,11 +28,20 @@ public class Test {
 		
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.tree);
 		ProgramWalker walker = new ProgramWalker(nodeStream);
-		List<String> queries = walker.program();
-		for(String query : queries) {
-			System.out.println(query);
-		}
+		walker.program();
 		
-		System.out.println(builder);
+		/*	Example:
+		  	print(query("asd"););
+			end
+			
+			Expected:
+			asd
+		*/
+		
+//		for(String query : queries) {
+//			System.out.println(query);
+//		}
+		
+		//System.out.println(builder);
 	}
 }

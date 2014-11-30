@@ -39,28 +39,16 @@ options {
 }
 
 program: 
-//	package_declaration // They don't work for some reason...
-//	import_declaration*
-	(query)* EOF!
+	(query | print)* (';'! | EOF!)
 	;
-	
-//package_declaration:
-//	'package' STRING ';'
-//;
-
-//import_declaration:
-//	'import' STRING ';'
-//;
 
 query: 
-	'query'^ '('! STRING_LITERAL ')'! ';'!
+	'query'^ '('! STRING_LITERAL ')'!
 ;
-// READ THIS:
-// http://stackoverflow.com/questions/4931346/how-to-output-the-ast-built-using-antlr/4933963#4933963
 
-//request:
-//	REQUEST_STRING
-//;
+print:
+  'print'^ '('! (STRING_LITERAL | query) ')'!
+;
 
 STRING_LITERAL
   @init{final StringBuilder builder = new StringBuilder();}
@@ -75,9 +63,7 @@ STRING_LITERAL
 fragment ESCAPE[StringBuilder builder]
   : '\\' . {processEscapeSequence(getText(), $builder);}
   ;
-  
-//STRING: ('a'..'z' | 'A'..'Z')('a'..'z' | 'A'..'Z' | '0'..'9')*;
-//REQUEST_STRING: ('a'..'z' | 'A'..'Z')('a'..'z' | 'A'..'Z' | '0'..'9' | ' ')*;
+
 WS: (' ' | '\t' | '\n' | '\r' | '\f')+ {$channel = HIDDEN;};
 COMMENT: '//' ~('\n' | '\r')* ('\n' | '\r')? {$channel = HIDDEN;};
 MULTILINE_COMMENT: '/*' .* '*/' {$channel = HIDDEN;};

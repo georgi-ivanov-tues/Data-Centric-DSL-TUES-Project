@@ -1,7 +1,5 @@
 package org.dataCentricDSL.tests;
 
-import static org.junit.Assert.*;
-import java.util.List;
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -16,7 +14,7 @@ import org.junit.Test;
 public class CommentedQueryTest {
 
 	@Test(expected=NullPointerException.class)
-	public void EmptyQueryTest() throws RecognitionException {
+	public void CommentedQueryTest() throws RecognitionException {
 		CharStream cs = new ANTLRStringStream("//query(\"something\");");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
