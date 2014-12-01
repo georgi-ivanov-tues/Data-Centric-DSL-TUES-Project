@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g 2014-11-30 20:21:46
+// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g 2014-12-01 21:50:30
 
 	package org.dataCentricDSL;
 
@@ -58,7 +58,7 @@ public class DataCentricDSLParser extends Parser {
 		return adaptor;
 	}
 	@Override public String[] getTokenNames() { return DataCentricDSLParser.tokenNames; }
-	@Override public String getGrammarFileName() { return "C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g"; }
+	@Override public String getGrammarFileName() { return "D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g"; }
 
 
 	public static class program_return extends ParserRuleReturnScope {
@@ -69,7 +69,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "program"
-	// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:41:1: program : ( query | print | variableDecl )* ( ';' !| EOF !) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:41:1: program : ( query | print | variableDecl )* ( ';' !| EOF !) ;
 	public final DataCentricDSLParser.program_return program() throws RecognitionException {
 		DataCentricDSLParser.program_return retval = new DataCentricDSLParser.program_return();
 		retval.start = input.LT(1);
@@ -86,13 +86,13 @@ public class DataCentricDSLParser extends Parser {
 		CommonTree EOF5_tree=null;
 
 		try {
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:41:8: ( ( query | print | variableDecl )* ( ';' !| EOF !) )
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:2: ( query | print | variableDecl )* ( ';' !| EOF !)
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:41:8: ( ( query | print | variableDecl )* ( ';' !| EOF !) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:2: ( query | print | variableDecl )* ( ';' !| EOF !)
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:2: ( query | print | variableDecl )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:2: ( query | print | variableDecl )*
 			loop1:
 			while (true) {
 				int alt1=4;
@@ -115,7 +115,7 @@ public class DataCentricDSLParser extends Parser {
 				}
 				switch (alt1) {
 				case 1 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:3: query
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:3: query
 					{
 					pushFollow(FOLLOW_query_in_program65);
 					query1=query();
@@ -126,7 +126,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:11: print
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:11: print
 					{
 					pushFollow(FOLLOW_print_in_program69);
 					print2=print();
@@ -137,7 +137,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:19: variableDecl
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:19: variableDecl
 					{
 					pushFollow(FOLLOW_variableDecl_in_program73);
 					variableDecl3=variableDecl();
@@ -153,7 +153,7 @@ public class DataCentricDSLParser extends Parser {
 				}
 			}
 
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:34: ( ';' !| EOF !)
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:34: ( ';' !| EOF !)
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0==14) ) {
@@ -171,13 +171,13 @@ public class DataCentricDSLParser extends Parser {
 
 			switch (alt2) {
 				case 1 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:35: ';' !
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:35: ';' !
 					{
 					char_literal4=(Token)match(input,14,FOLLOW_14_in_program78); 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:42: EOF !
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:42: EOF !
 					{
 					EOF5=(Token)match(input,EOF,FOLLOW_EOF_in_program83); 
 					}
@@ -214,7 +214,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "query"
-	// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:45:1: query : 'query' ^ '(' ! STRING_LITERAL ')' !;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:45:1: query : 'query' ^ '(' ! STRING_LITERAL ')' !;
 	public final DataCentricDSLParser.query_return query() throws RecognitionException {
 		DataCentricDSLParser.query_return retval = new DataCentricDSLParser.query_return();
 		retval.start = input.LT(1);
@@ -232,8 +232,8 @@ public class DataCentricDSLParser extends Parser {
 		CommonTree char_literal9_tree=null;
 
 		try {
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:45:6: ( 'query' ^ '(' ! STRING_LITERAL ')' !)
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:46:2: 'query' ^ '(' ! STRING_LITERAL ')' !
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:45:6: ( 'query' ^ '(' ! STRING_LITERAL ')' !)
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:46:2: 'query' ^ '(' ! STRING_LITERAL ')' !
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -277,7 +277,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "print"
-	// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:49:1: print : 'print' ^ '(' ! ( STRING_LITERAL | query | variableCall ) ')' !;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:49:1: print : 'print' ^ '(' ! ( STRING_LITERAL | query | variableCall ) ')' !;
 	public final DataCentricDSLParser.print_return print() throws RecognitionException {
 		DataCentricDSLParser.print_return retval = new DataCentricDSLParser.print_return();
 		retval.start = input.LT(1);
@@ -297,8 +297,8 @@ public class DataCentricDSLParser extends Parser {
 		CommonTree char_literal15_tree=null;
 
 		try {
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:49:6: ( 'print' ^ '(' ! ( STRING_LITERAL | query | variableCall ) ')' !)
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:50:3: 'print' ^ '(' ! ( STRING_LITERAL | query | variableCall ) ')' !
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:49:6: ( 'print' ^ '(' ! ( STRING_LITERAL | query | variableCall ) ')' !)
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:50:3: 'print' ^ '(' ! ( STRING_LITERAL | query | variableCall ) ')' !
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -308,7 +308,7 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (CommonTree)adaptor.becomeRoot(string_literal10_tree, root_0);
 
 			char_literal11=(Token)match(input,12,FOLLOW_12_in_print118); 
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:50:17: ( STRING_LITERAL | query | variableCall )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:50:17: ( STRING_LITERAL | query | variableCall )
 			int alt3=3;
 			switch ( input.LA(1) ) {
 			case STRING_LITERAL:
@@ -333,7 +333,7 @@ public class DataCentricDSLParser extends Parser {
 			}
 			switch (alt3) {
 				case 1 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:50:18: STRING_LITERAL
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:50:18: STRING_LITERAL
 					{
 					STRING_LITERAL12=(Token)match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_print122); 
 					STRING_LITERAL12_tree = (CommonTree)adaptor.create(STRING_LITERAL12);
@@ -342,7 +342,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:50:35: query
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:50:35: query
 					{
 					pushFollow(FOLLOW_query_in_print126);
 					query13=query();
@@ -353,7 +353,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:50:43: variableCall
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:50:43: variableCall
 					{
 					pushFollow(FOLLOW_variableCall_in_print130);
 					variableCall14=variableCall();
@@ -396,7 +396,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "variableDecl"
-	// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:53:1: variableDecl : IDENT '=' ! ( query | STRING_LITERAL | variableCall ) ';' !;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:53:1: variableDecl : IDENT '=' ! ( query | STRING_LITERAL | variableCall ) ';' !;
 	public final DataCentricDSLParser.variableDecl_return variableDecl() throws RecognitionException {
 		DataCentricDSLParser.variableDecl_return retval = new DataCentricDSLParser.variableDecl_return();
 		retval.start = input.LT(1);
@@ -416,8 +416,8 @@ public class DataCentricDSLParser extends Parser {
 		CommonTree char_literal21_tree=null;
 
 		try {
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:53:13: ( IDENT '=' ! ( query | STRING_LITERAL | variableCall ) ';' !)
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:54:3: IDENT '=' ! ( query | STRING_LITERAL | variableCall ) ';' !
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:53:13: ( IDENT '=' ! ( query | STRING_LITERAL | variableCall ) ';' !)
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:54:3: IDENT '=' ! ( query | STRING_LITERAL | variableCall ) ';' !
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -427,7 +427,7 @@ public class DataCentricDSLParser extends Parser {
 			adaptor.addChild(root_0, IDENT16_tree);
 
 			char_literal17=(Token)match(input,15,FOLLOW_15_in_variableDecl146); 
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:54:14: ( query | STRING_LITERAL | variableCall )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:54:14: ( query | STRING_LITERAL | variableCall )
 			int alt4=3;
 			switch ( input.LA(1) ) {
 			case 17:
@@ -452,7 +452,7 @@ public class DataCentricDSLParser extends Parser {
 			}
 			switch (alt4) {
 				case 1 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:54:16: query
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:54:16: query
 					{
 					pushFollow(FOLLOW_query_in_variableDecl151);
 					query18=query();
@@ -463,7 +463,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:54:24: STRING_LITERAL
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:54:24: STRING_LITERAL
 					{
 					STRING_LITERAL19=(Token)match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_variableDecl155); 
 					STRING_LITERAL19_tree = (CommonTree)adaptor.create(STRING_LITERAL19);
@@ -472,7 +472,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:54:41: variableCall
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:54:41: variableCall
 					{
 					pushFollow(FOLLOW_variableCall_in_variableDecl159);
 					variableCall20=variableCall();
@@ -515,7 +515,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "variableCall"
-	// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:57:1: variableCall : IDENT ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:57:1: variableCall : IDENT ;
 	public final DataCentricDSLParser.variableCall_return variableCall() throws RecognitionException {
 		DataCentricDSLParser.variableCall_return retval = new DataCentricDSLParser.variableCall_return();
 		retval.start = input.LT(1);
@@ -527,8 +527,8 @@ public class DataCentricDSLParser extends Parser {
 		CommonTree IDENT22_tree=null;
 
 		try {
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:57:13: ( IDENT )
-			// C:\\Users\\Home\\git\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:58:3: IDENT
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:57:13: ( IDENT )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:58:3: IDENT
 			{
 			root_0 = (CommonTree)adaptor.nil();
 

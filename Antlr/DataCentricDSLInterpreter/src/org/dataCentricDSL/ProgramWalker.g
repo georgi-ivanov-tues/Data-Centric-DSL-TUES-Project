@@ -31,7 +31,12 @@ print:
    ^('print' 
     (
     STRING_LITERAL {System.out.println($STRING_LITERAL.text);}
-    | query {System.out.println($query.request);}
+    | query {
+	    try {
+	      org.dataCentricDSL.derbyDB.QueryExectution.executeQuery($query.request);
+	    } catch (java.sql.SQLException e) {
+	      e.printStackTrace();
+	    }} 
     | variableCall { System.out.println($variableCall.value); })
     )
 ;

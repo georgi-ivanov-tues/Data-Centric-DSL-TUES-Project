@@ -30,7 +30,19 @@ public class Test {
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		walker.program();
 		
-		/*	Example:
+		/*	
+		  Example:
+		  	print(query("SELECT * FROM people"));
+		  	
+		  	returns:
+		  	(print (query SELECT * FROM people))
+		         	FIRST_NAME|         LAST_NAME|
+		           	Georgi|             Ivanov|
+		            Bojidar|            Nikolov|
+		            Kiril|        		Kostadinov|
+				  
+		  
+		   Example 2:
 		  	a = query("abc");
 		  	b = a;
 		  	print(b);
