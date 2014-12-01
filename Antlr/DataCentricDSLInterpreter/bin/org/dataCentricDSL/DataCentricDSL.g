@@ -43,7 +43,7 @@ program:
 	;
 
 query: 
-	'query'^ '('! STRING_LITERAL ')'!
+	'query'^ '('! (STRING_LITERAL | variableCall) ')'!
 ;
 
 print:

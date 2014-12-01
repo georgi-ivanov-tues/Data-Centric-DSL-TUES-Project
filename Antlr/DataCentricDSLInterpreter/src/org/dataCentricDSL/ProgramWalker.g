@@ -24,7 +24,10 @@ program returns [List<String> result]:  // Samo za da minat testovete :D
   ;
   
 query returns [String request]: 
-  ^('query' STRING_LITERAL) {request = $STRING_LITERAL.text; queries.add($STRING_LITERAL.text);}
+  ^('query'
+   (  STRING_LITERAL {request = $STRING_LITERAL.text; queries.add($STRING_LITERAL.text);}
+   |  variableCall { request = $variableCall.value; queries.add($variableCall.value); }) 
+   )
 ;
 
 print:
