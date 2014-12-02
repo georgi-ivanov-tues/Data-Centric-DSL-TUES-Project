@@ -65,16 +65,14 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
     switch (eClass.getClassifierID())
     {
       case DataCentricDSLPackage.DATA_CENTRIC_DSL: return createDataCentricDSL();
-      case DataCentricDSLPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
-      case DataCentricDSLPackage.ABSTRACT_ELEMENT: return createAbstractElement();
-      case DataCentricDSLPackage.IMPORT: return createImport();
-      case DataCentricDSLPackage.FUNCTION: return createFunction();
-      case DataCentricDSLPackage.FIELD: return createField();
-      case DataCentricDSLPackage.PREDEFINED_FUNCTION: return createPredefinedFunction();
-      case DataCentricDSLPackage.PROPERTY: return createProperty();
-      case DataCentricDSLPackage.PROPERTY_USAGE: return createPropertyUsage();
-      case DataCentricDSLPackage.FUNCTION_CALL: return createFunctionCall();
+      case DataCentricDSLPackage.PROGRAM_ELEMENT: return createProgramElement();
       case DataCentricDSLPackage.QUERY: return createQuery();
+      case DataCentricDSLPackage.PRINT: return createPrint();
+      case DataCentricDSLPackage.PRINT_PARAMETER: return createPrintParameter();
+      case DataCentricDSLPackage.VARIABLE_DECL: return createVariableDecl();
+      case DataCentricDSLPackage.VARIABLE_VALUE: return createVariableValue();
+      case DataCentricDSLPackage.VARIABLE_CALL: return createVariableCall();
+      case DataCentricDSLPackage.LITERAL: return createLiteral();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -96,98 +94,10 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public PackageDeclaration createPackageDeclaration()
+  public ProgramElement createProgramElement()
   {
-    PackageDeclarationImpl packageDeclaration = new PackageDeclarationImpl();
-    return packageDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AbstractElement createAbstractElement()
-  {
-    AbstractElementImpl abstractElement = new AbstractElementImpl();
-    return abstractElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import createImport()
-  {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Function createFunction()
-  {
-    FunctionImpl function = new FunctionImpl();
-    return function;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Field createField()
-  {
-    FieldImpl field = new FieldImpl();
-    return field;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PredefinedFunction createPredefinedFunction()
-  {
-    PredefinedFunctionImpl predefinedFunction = new PredefinedFunctionImpl();
-    return predefinedFunction;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Property createProperty()
-  {
-    PropertyImpl property = new PropertyImpl();
-    return property;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PropertyUsage createPropertyUsage()
-  {
-    PropertyUsageImpl propertyUsage = new PropertyUsageImpl();
-    return propertyUsage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FunctionCall createFunctionCall()
-  {
-    FunctionCallImpl functionCall = new FunctionCallImpl();
-    return functionCall;
+    ProgramElementImpl programElement = new ProgramElementImpl();
+    return programElement;
   }
 
   /**
@@ -199,6 +109,72 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     QueryImpl query = new QueryImpl();
     return query;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Print createPrint()
+  {
+    PrintImpl print = new PrintImpl();
+    return print;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrintParameter createPrintParameter()
+  {
+    PrintParameterImpl printParameter = new PrintParameterImpl();
+    return printParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableDecl createVariableDecl()
+  {
+    VariableDeclImpl variableDecl = new VariableDeclImpl();
+    return variableDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableValue createVariableValue()
+  {
+    VariableValueImpl variableValue = new VariableValueImpl();
+    return variableValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableCall createVariableCall()
+  {
+    VariableCallImpl variableCall = new VariableCallImpl();
+    return variableCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Literal createLiteral()
+  {
+    LiteralImpl literal = new LiteralImpl();
+    return literal;
   }
 
   /**

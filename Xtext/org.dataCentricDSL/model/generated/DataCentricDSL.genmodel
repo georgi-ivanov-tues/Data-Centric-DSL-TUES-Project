@@ -4,42 +4,30 @@
     editorDirectory="/org.dataCentricDSL.editor/src" modelPluginID="org.dataCentricDSL"
     forceOverwrite="true" modelName="DataCentricDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.dataCentricDSL.edit"
-    editorPluginID="org.dataCentricDSL.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    editorPluginID="org.dataCentricDSL.editor" runtimeVersion="2.10">
   <genPackages prefix="DataCentricDSL" basePackage="org" disposableProviderFactory="true"
       fileExtensions="dd" ecorePackage="DataCentricDSL.ecore#/">
     <genClasses ecoreClass="DataCentricDSL.ecore#//DataCentricDSL">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//DataCentricDSL/elements"/>
     </genClasses>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//PackageDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//PackageDeclaration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//PackageDeclaration/elements"/>
-    </genClasses>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//AbstractElement"/>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//Import">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Import/importedNamespace"/>
-    </genClasses>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//Function">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Function/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Function/params"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Function/functionElements"/>
-    </genClasses>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//Field"/>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//PredefinedFunction"/>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//Property">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Property/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Property/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Property/init"/>
-    </genClasses>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//PropertyUsage">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//PropertyUsage/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//PropertyUsage/expression"/>
-    </genClasses>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//FunctionCall">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//FunctionCall/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//FunctionCall/arguments"/>
-    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//ProgramElement"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Query">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Query/queryParams"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Query/queryParam"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//Print">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Print/printValue"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//PrintParameter"/>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//VariableDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableDecl/value"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//VariableValue"/>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//VariableCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableCall/name"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Literal/literalValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -2,43 +2,33 @@
  */
 package org.dataCentricDSL.impl;
 
-import java.util.Collection;
-
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Field;
-import org.dataCentricDSL.Function;
+import org.dataCentricDSL.VariableDecl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.eclipse.xtext.common.types.JvmFormalParameter;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Function</b></em>'.
+ * An implementation of the model object '<em><b>Variable Decl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.FunctionImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.FunctionImpl#getParams <em>Params</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.FunctionImpl#getFunctionElements <em>Function Elements</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.VariableDeclImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.VariableDeclImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionImpl extends AbstractElementImpl implements Function
+public class VariableDeclImpl extends ProgramElementImpl implements VariableDecl
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -61,31 +51,21 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParams()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected EList<JvmFormalParameter> params;
-
-  /**
-   * The cached value of the '{@link #getFunctionElements() <em>Function Elements</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFunctionElements()
-   * @generated
-   * @ordered
-   */
-  protected EList<Field> functionElements;
+  protected EObject value;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FunctionImpl()
+  protected VariableDeclImpl()
   {
     super();
   }
@@ -98,7 +78,7 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.FUNCTION;
+    return DataCentricDSLPackage.Literals.VARIABLE_DECL;
   }
 
   /**
@@ -121,7 +101,7 @@ public class FunctionImpl extends AbstractElementImpl implements Function
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.FUNCTION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_DECL__NAME, oldName, name));
   }
 
   /**
@@ -129,13 +109,9 @@ public class FunctionImpl extends AbstractElementImpl implements Function
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<JvmFormalParameter> getParams()
+  public EObject getValue()
   {
-    if (params == null)
-    {
-      params = new EObjectContainmentEList<JvmFormalParameter>(JvmFormalParameter.class, this, DataCentricDSLPackage.FUNCTION__PARAMS);
-    }
-    return params;
+    return value;
   }
 
   /**
@@ -143,13 +119,37 @@ public class FunctionImpl extends AbstractElementImpl implements Function
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Field> getFunctionElements()
+  public NotificationChain basicSetValue(EObject newValue, NotificationChain msgs)
   {
-    if (functionElements == null)
+    EObject oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
     {
-      functionElements = new EObjectContainmentEList<Field>(Field.class, this, DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_DECL__VALUE, oldValue, newValue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return functionElements;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValue(EObject newValue)
+  {
+    if (newValue != value)
+    {
+      NotificationChain msgs = null;
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.VARIABLE_DECL__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.VARIABLE_DECL__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_DECL__VALUE, newValue, newValue));
   }
 
   /**
@@ -162,10 +162,8 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION__PARAMS:
-        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
-      case DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS:
-        return ((InternalEList<?>)getFunctionElements()).basicRemove(otherEnd, msgs);
+      case DataCentricDSLPackage.VARIABLE_DECL__VALUE:
+        return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -180,12 +178,10 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION__NAME:
+      case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         return getName();
-      case DataCentricDSLPackage.FUNCTION__PARAMS:
-        return getParams();
-      case DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS:
-        return getFunctionElements();
+      case DataCentricDSLPackage.VARIABLE_DECL__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -195,22 +191,16 @@ public class FunctionImpl extends AbstractElementImpl implements Function
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION__NAME:
+      case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         setName((String)newValue);
         return;
-      case DataCentricDSLPackage.FUNCTION__PARAMS:
-        getParams().clear();
-        getParams().addAll((Collection<? extends JvmFormalParameter>)newValue);
-        return;
-      case DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS:
-        getFunctionElements().clear();
-        getFunctionElements().addAll((Collection<? extends Field>)newValue);
+      case DataCentricDSLPackage.VARIABLE_DECL__VALUE:
+        setValue((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -226,14 +216,11 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION__NAME:
+      case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case DataCentricDSLPackage.FUNCTION__PARAMS:
-        getParams().clear();
-        return;
-      case DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS:
-        getFunctionElements().clear();
+      case DataCentricDSLPackage.VARIABLE_DECL__VALUE:
+        setValue((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -249,12 +236,10 @@ public class FunctionImpl extends AbstractElementImpl implements Function
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION__NAME:
+      case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DataCentricDSLPackage.FUNCTION__PARAMS:
-        return params != null && !params.isEmpty();
-      case DataCentricDSLPackage.FUNCTION__FUNCTION_ELEMENTS:
-        return functionElements != null && !functionElements.isEmpty();
+      case DataCentricDSLPackage.VARIABLE_DECL__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
   }
@@ -276,4 +261,4 @@ public class FunctionImpl extends AbstractElementImpl implements Function
     return result.toString();
   }
 
-} //FunctionImpl
+} //VariableDeclImpl

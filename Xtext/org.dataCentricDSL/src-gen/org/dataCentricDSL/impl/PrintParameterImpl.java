@@ -2,8 +2,8 @@
  */
 package org.dataCentricDSL.impl;
 
-import org.dataCentricDSL.AbstractElement;
 import org.dataCentricDSL.DataCentricDSLPackage;
+import org.dataCentricDSL.PrintParameter;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -11,21 +11,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Abstract Element</b></em>'.
+ * An implementation of the model object '<em><b>Print Parameter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class AbstractElementImpl extends MinimalEObjectImpl.Container implements AbstractElement
+public class PrintParameterImpl extends MinimalEObjectImpl.Container implements PrintParameter
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AbstractElementImpl()
+  protected PrintParameterImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public class AbstractElementImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.ABSTRACT_ELEMENT;
+    return DataCentricDSLPackage.Literals.PRINT_PARAMETER;
   }
 
-} //AbstractElementImpl
+} //PrintParameterImpl

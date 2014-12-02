@@ -3,9 +3,9 @@
  */
 package org.validation
 
-import org.eclipse.xtext.validation.Check
 import org.dataCentricDSL.DataCentricDSLPackage
-import org.dataCentricDSL.Function
+import org.dataCentricDSL.Query
+import org.eclipse.xtext.validation.Check
 
 /**
  * Custom validation rules. 
@@ -15,25 +15,25 @@ import org.dataCentricDSL.Function
 class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
-	def checkIfQueryIsEmpty(org.dataCentricDSL.Query que){
-		if(que.queryParams.toString.equals("[]")){
-			error("Query string cannot be empty.", DataCentricDSLPackage$Literals::QUERY__QUERY_PARAMS);
+	def checkIfQueryIsEmpty(Query que){
+		if(que.queryParam.toString.equals("")){
+			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__QUERY_PARAM);
 		}
 	}
-	
-	@Check
-	def checkIfFunctionParametersAreUnique(Function fun){
-		val Array = fun.params.toArray
-		for(i : 0..< Array.length) {
-			for(i1 : 1..< Array.length) {
-				if(i != i1){ // does not work with &&...
-					if(Array.get(i).toString.equals(Array.get(i1).toString)){
-						error("There cannot be two parameters with the same name.", DataCentricDSLPackage$Literals::FUNCTION__PARAMS)
-					}
-				}
-			}
-		}
-	}
+//	
+//	@Check
+//	def checkIfFunctionParametersAreUnique(Function fun){
+//		val Array = fun.params.toArray
+//		for(i : 0..< Array.length) {
+//			for(i1 : 1..< Array.length) {
+//				if(i != i1){ // does not work with &&...
+//					if(Array.get(i).toString.equals(Array.get(i1).toString)){
+//						error("There cannot be two parameters with the same name.", DataCentricDSLPackage$Literals::FUNCTION__PARAMS)
+//					}
+//				}
+//			}
+//		}
+//	}
 	
 // Unable by default. Still leaving it here for later.
 //		

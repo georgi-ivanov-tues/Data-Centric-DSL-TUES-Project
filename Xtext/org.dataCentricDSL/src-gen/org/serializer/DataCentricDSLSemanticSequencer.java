@@ -4,13 +4,11 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Function;
-import org.dataCentricDSL.FunctionCall;
-import org.dataCentricDSL.Import;
-import org.dataCentricDSL.PackageDeclaration;
-import org.dataCentricDSL.Property;
-import org.dataCentricDSL.PropertyUsage;
+import org.dataCentricDSL.Literal;
+import org.dataCentricDSL.Print;
 import org.dataCentricDSL.Query;
+import org.dataCentricDSL.VariableCall;
+import org.dataCentricDSL.VariableDecl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
@@ -83,56 +81,41 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
-			case DataCentricDSLPackage.FUNCTION:
-				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getFunctionRule()) {
-					sequence_Function(context, (Function) semanticObject); 
+			case DataCentricDSLPackage.LITERAL:
+				if(context == grammarAccess.getLiteralRule() ||
+				   context == grammarAccess.getPrintParameterRule() ||
+				   context == grammarAccess.getVariableValueRule()) {
+					sequence_Literal(context, (Literal) semanticObject); 
 					return; 
 				}
 				else break;
-			case DataCentricDSLPackage.FUNCTION_CALL:
-				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getFieldRule() ||
-				   context == grammarAccess.getFunctionCallRule()) {
-					sequence_FunctionCall(context, (FunctionCall) semanticObject); 
-					return; 
-				}
-				else break;
-			case DataCentricDSLPackage.IMPORT:
-				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getImportRule()) {
-					sequence_Import(context, (Import) semanticObject); 
-					return; 
-				}
-				else break;
-			case DataCentricDSLPackage.PACKAGE_DECLARATION:
-				if(context == grammarAccess.getPackageDeclarationRule()) {
-					sequence_PackageDeclaration(context, (PackageDeclaration) semanticObject); 
-					return; 
-				}
-				else break;
-			case DataCentricDSLPackage.PROPERTY:
-				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getFieldRule() ||
-				   context == grammarAccess.getPropertyRule()) {
-					sequence_Property(context, (Property) semanticObject); 
-					return; 
-				}
-				else break;
-			case DataCentricDSLPackage.PROPERTY_USAGE:
-				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getFieldRule() ||
-				   context == grammarAccess.getPropertyUsageRule()) {
-					sequence_PropertyUsage(context, (PropertyUsage) semanticObject); 
+			case DataCentricDSLPackage.PRINT:
+				if(context == grammarAccess.getPrintRule() ||
+				   context == grammarAccess.getProgramElementRule()) {
+					sequence_Print(context, (Print) semanticObject); 
 					return; 
 				}
 				else break;
 			case DataCentricDSLPackage.QUERY:
-				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getFieldRule() ||
-				   context == grammarAccess.getPredefinedFunctionRule() ||
+				if(context == grammarAccess.getPrintParameterRule() ||
+				   context == grammarAccess.getProgramElementRule() ||
 				   context == grammarAccess.getQueryRule()) {
 					sequence_Query(context, (Query) semanticObject); 
+					return; 
+				}
+				else break;
+			case DataCentricDSLPackage.VARIABLE_CALL:
+				if(context == grammarAccess.getPrintParameterRule() ||
+				   context == grammarAccess.getVariableCallRule() ||
+				   context == grammarAccess.getVariableValueRule()) {
+					sequence_VariableCall(context, (VariableCall) semanticObject); 
+					return; 
+				}
+				else break;
+			case DataCentricDSLPackage.VARIABLE_DECL:
+				if(context == grammarAccess.getProgramElementRule() ||
+				   context == grammarAccess.getVariableDeclRule()) {
+					sequence_VariableDecl(context, (VariableDecl) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1249,7 +1232,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     elements+=PackageDeclaration
+	 *     elements+=ProgramElement*
 	 */
 	protected void sequence_DataCentricDSL(EObject context, DataCentricDSL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1258,80 +1241,66 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID (arguments+=XExpression arguments+=XExpression*)?)
+	 *     literalValue=STRING
 	 */
-	protected void sequence_FunctionCall(EObject context, FunctionCall semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ValidID (params+=FullJvmFormalParameter params+=FullJvmFormalParameter*)? functionElements+=Field*)
-	 */
-	protected void sequence_Function(EObject context, Function semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     importedNamespace=QualifiedNameWildCard
-	 */
-	protected void sequence_Import(EObject context, Import semanticObject) {
+	protected void sequence_Literal(EObject context, Literal semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.IMPORT__IMPORTED_NAMESPACE));
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.LITERAL__LITERAL_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.LITERAL__LITERAL_VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWildCardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.accept(grammarAccess.getLiteralAccess().getLiteralValueSTRINGTerminalRuleCall_0(), semanticObject.getLiteralValue());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName elements+=AbstractElement*)
+	 *     printValue+=PrintParameter
 	 */
-	protected void sequence_PackageDeclaration(EObject context, PackageDeclaration semanticObject) {
+	protected void sequence_Print(EObject context, Print semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID expression=XExpression)
-	 */
-	protected void sequence_PropertyUsage(EObject context, PropertyUsage semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PROPERTY_USAGE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PROPERTY_USAGE__NAME));
-			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PROPERTY_USAGE__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PROPERTY_USAGE__EXPRESSION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPropertyUsageAccess().getNameValidIDParserRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getPropertyUsageAccess().getExpressionXExpressionParserRuleCall_2_0(), semanticObject.getExpression());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (type=JvmTypeReference name=ValidID init=XExpression?)
-	 */
-	protected void sequence_Property(EObject context, Property semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (queryParams+=XExpression queryParams+=XExpression*)
+	 *     queryParam=STRING
 	 */
 	protected void sequence_Query(EObject context, Query semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.QUERY__QUERY_PARAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.QUERY__QUERY_PARAM));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getQueryAccess().getQueryParamSTRINGTerminalRuleCall_1_0(), semanticObject.getQueryParam());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ValidID
+	 */
+	protected void sequence_VariableCall(EObject context, VariableCall semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.VARIABLE_CALL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.VARIABLE_CALL__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getVariableCallAccess().getNameValidIDParserRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ValidID (value=VariableValue | value=Query))
+	 */
+	protected void sequence_VariableDecl(EObject context, VariableDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

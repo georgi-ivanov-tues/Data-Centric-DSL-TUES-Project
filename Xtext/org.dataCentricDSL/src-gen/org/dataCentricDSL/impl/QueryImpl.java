@@ -2,22 +2,14 @@
  */
 package org.dataCentricDSL.impl;
 
-import java.util.Collection;
-
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Query;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.eclipse.xtext.xbase.XExpression;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,23 +18,33 @@ import org.eclipse.xtext.xbase.XExpression;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.QueryImpl#getQueryParams <em>Query Params</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.QueryImpl#getQueryParam <em>Query Param</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class QueryImpl extends PredefinedFunctionImpl implements Query
+public class QueryImpl extends ProgramElementImpl implements Query
 {
   /**
-   * The cached value of the '{@link #getQueryParams() <em>Query Params</em>}' containment reference list.
+   * The default value of the '{@link #getQueryParam() <em>Query Param</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQueryParams()
+   * @see #getQueryParam()
    * @generated
    * @ordered
    */
-  protected EList<XExpression> queryParams;
+  protected static final String QUERY_PARAM_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getQueryParam() <em>Query Param</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQueryParam()
+   * @generated
+   * @ordered
+   */
+  protected String queryParam = QUERY_PARAM_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,13 +72,9 @@ public class QueryImpl extends PredefinedFunctionImpl implements Query
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<XExpression> getQueryParams()
+  public String getQueryParam()
   {
-    if (queryParams == null)
-    {
-      queryParams = new EObjectContainmentEList<XExpression>(XExpression.class, this, DataCentricDSLPackage.QUERY__QUERY_PARAMS);
-    }
-    return queryParams;
+    return queryParam;
   }
 
   /**
@@ -84,15 +82,12 @@ public class QueryImpl extends PredefinedFunctionImpl implements Query
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setQueryParam(String newQueryParam)
   {
-    switch (featureID)
-    {
-      case DataCentricDSLPackage.QUERY__QUERY_PARAMS:
-        return ((InternalEList<?>)getQueryParams()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldQueryParam = queryParam;
+    queryParam = newQueryParam;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.QUERY__QUERY_PARAM, oldQueryParam, queryParam));
   }
 
   /**
@@ -105,8 +100,8 @@ public class QueryImpl extends PredefinedFunctionImpl implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__QUERY_PARAMS:
-        return getQueryParams();
+      case DataCentricDSLPackage.QUERY__QUERY_PARAM:
+        return getQueryParam();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -116,15 +111,13 @@ public class QueryImpl extends PredefinedFunctionImpl implements Query
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__QUERY_PARAMS:
-        getQueryParams().clear();
-        getQueryParams().addAll((Collection<? extends XExpression>)newValue);
+      case DataCentricDSLPackage.QUERY__QUERY_PARAM:
+        setQueryParam((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,8 +133,8 @@ public class QueryImpl extends PredefinedFunctionImpl implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__QUERY_PARAMS:
-        getQueryParams().clear();
+      case DataCentricDSLPackage.QUERY__QUERY_PARAM:
+        setQueryParam(QUERY_PARAM_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -157,10 +150,27 @@ public class QueryImpl extends PredefinedFunctionImpl implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__QUERY_PARAMS:
-        return queryParams != null && !queryParams.isEmpty();
+      case DataCentricDSLPackage.QUERY__QUERY_PARAM:
+        return QUERY_PARAM_EDEFAULT == null ? queryParam != null : !QUERY_PARAM_EDEFAULT.equals(queryParam);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (queryParam: ");
+    result.append(queryParam);
+    result.append(')');
+    return result.toString();
   }
 
 } //QueryImpl

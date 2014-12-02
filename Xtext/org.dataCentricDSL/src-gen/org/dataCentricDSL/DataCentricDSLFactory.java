@@ -32,85 +32,13 @@ public interface DataCentricDSLFactory extends EFactory
   DataCentricDSL createDataCentricDSL();
 
   /**
-   * Returns a new object of class '<em>Package Declaration</em>'.
+   * Returns a new object of class '<em>Program Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Package Declaration</em>'.
+   * @return a new object of class '<em>Program Element</em>'.
    * @generated
    */
-  PackageDeclaration createPackageDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Abstract Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Abstract Element</em>'.
-   * @generated
-   */
-  AbstractElement createAbstractElement();
-
-  /**
-   * Returns a new object of class '<em>Import</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import</em>'.
-   * @generated
-   */
-  Import createImport();
-
-  /**
-   * Returns a new object of class '<em>Function</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function</em>'.
-   * @generated
-   */
-  Function createFunction();
-
-  /**
-   * Returns a new object of class '<em>Field</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Field</em>'.
-   * @generated
-   */
-  Field createField();
-
-  /**
-   * Returns a new object of class '<em>Predefined Function</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predefined Function</em>'.
-   * @generated
-   */
-  PredefinedFunction createPredefinedFunction();
-
-  /**
-   * Returns a new object of class '<em>Property</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Property</em>'.
-   * @generated
-   */
-  Property createProperty();
-
-  /**
-   * Returns a new object of class '<em>Property Usage</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Property Usage</em>'.
-   * @generated
-   */
-  PropertyUsage createPropertyUsage();
-
-  /**
-   * Returns a new object of class '<em>Function Call</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Call</em>'.
-   * @generated
-   */
-  FunctionCall createFunctionCall();
+  ProgramElement createProgramElement();
 
   /**
    * Returns a new object of class '<em>Query</em>'.
@@ -120,6 +48,60 @@ public interface DataCentricDSLFactory extends EFactory
    * @generated
    */
   Query createQuery();
+
+  /**
+   * Returns a new object of class '<em>Print</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Print</em>'.
+   * @generated
+   */
+  Print createPrint();
+
+  /**
+   * Returns a new object of class '<em>Print Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Print Parameter</em>'.
+   * @generated
+   */
+  PrintParameter createPrintParameter();
+
+  /**
+   * Returns a new object of class '<em>Variable Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Decl</em>'.
+   * @generated
+   */
+  VariableDecl createVariableDecl();
+
+  /**
+   * Returns a new object of class '<em>Variable Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Value</em>'.
+   * @generated
+   */
+  VariableValue createVariableValue();
+
+  /**
+   * Returns a new object of class '<em>Variable Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Call</em>'.
+   * @generated
+   */
+  VariableCall createVariableCall();
+
+  /**
+   * Returns a new object of class '<em>Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Literal</em>'.
+   * @generated
+   */
+  Literal createLiteral();
 
   /**
    * Returns the package supported by this factory.

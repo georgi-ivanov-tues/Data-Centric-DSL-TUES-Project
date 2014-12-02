@@ -3,7 +3,7 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Import;
+import org.dataCentricDSL.Literal;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,45 +13,45 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Import</b></em>'.
+ * An implementation of the model object '<em><b>Literal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.ImportImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.LiteralImpl#getLiteralValue <em>Literal Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ImportImpl extends AbstractElementImpl implements Import
+public class LiteralImpl extends PrintParameterImpl implements Literal
 {
   /**
-   * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
+   * The default value of the '{@link #getLiteralValue() <em>Literal Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportedNamespace()
+   * @see #getLiteralValue()
    * @generated
    * @ordered
    */
-  protected static final String IMPORTED_NAMESPACE_EDEFAULT = null;
+  protected static final String LITERAL_VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
+   * The cached value of the '{@link #getLiteralValue() <em>Literal Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportedNamespace()
+   * @see #getLiteralValue()
    * @generated
    * @ordered
    */
-  protected String importedNamespace = IMPORTED_NAMESPACE_EDEFAULT;
+  protected String literalValue = LITERAL_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ImportImpl()
+  protected LiteralImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class ImportImpl extends AbstractElementImpl implements Import
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.IMPORT;
+    return DataCentricDSLPackage.Literals.LITERAL;
   }
 
   /**
@@ -72,9 +72,9 @@ public class ImportImpl extends AbstractElementImpl implements Import
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getImportedNamespace()
+  public String getLiteralValue()
   {
-    return importedNamespace;
+    return literalValue;
   }
 
   /**
@@ -82,12 +82,12 @@ public class ImportImpl extends AbstractElementImpl implements Import
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setImportedNamespace(String newImportedNamespace)
+  public void setLiteralValue(String newLiteralValue)
   {
-    String oldImportedNamespace = importedNamespace;
-    importedNamespace = newImportedNamespace;
+    String oldLiteralValue = literalValue;
+    literalValue = newLiteralValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.IMPORT__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.LITERAL__LITERAL_VALUE, oldLiteralValue, literalValue));
   }
 
   /**
@@ -100,8 +100,8 @@ public class ImportImpl extends AbstractElementImpl implements Import
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.IMPORT__IMPORTED_NAMESPACE:
-        return getImportedNamespace();
+      case DataCentricDSLPackage.LITERAL__LITERAL_VALUE:
+        return getLiteralValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -116,8 +116,8 @@ public class ImportImpl extends AbstractElementImpl implements Import
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.IMPORT__IMPORTED_NAMESPACE:
-        setImportedNamespace((String)newValue);
+      case DataCentricDSLPackage.LITERAL__LITERAL_VALUE:
+        setLiteralValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -133,8 +133,8 @@ public class ImportImpl extends AbstractElementImpl implements Import
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.IMPORT__IMPORTED_NAMESPACE:
-        setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
+      case DataCentricDSLPackage.LITERAL__LITERAL_VALUE:
+        setLiteralValue(LITERAL_VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -150,8 +150,8 @@ public class ImportImpl extends AbstractElementImpl implements Import
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.IMPORT__IMPORTED_NAMESPACE:
-        return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
+      case DataCentricDSLPackage.LITERAL__LITERAL_VALUE:
+        return LITERAL_VALUE_EDEFAULT == null ? literalValue != null : !LITERAL_VALUE_EDEFAULT.equals(literalValue);
     }
     return super.eIsSet(featureID);
   }
@@ -167,10 +167,10 @@ public class ImportImpl extends AbstractElementImpl implements Import
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (importedNamespace: ");
-    result.append(importedNamespace);
+    result.append(" (literalValue: ");
+    result.append(literalValue);
     result.append(')');
     return result.toString();
   }
 
-} //ImportImpl
+} //LiteralImpl

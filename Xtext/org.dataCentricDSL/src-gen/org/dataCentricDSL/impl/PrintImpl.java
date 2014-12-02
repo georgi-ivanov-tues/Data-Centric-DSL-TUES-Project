@@ -4,9 +4,9 @@ package org.dataCentricDSL.impl;
 
 import java.util.Collection;
 
-import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.ProgramElement;
+import org.dataCentricDSL.Print;
+import org.dataCentricDSL.PrintParameter;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -15,42 +15,40 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data Centric DSL</b></em>'.
+ * An implementation of the model object '<em><b>Print</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.DataCentricDSLImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.PrintImpl#getPrintValue <em>Print Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements DataCentricDSL
+public class PrintImpl extends ProgramElementImpl implements Print
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getPrintValue() <em>Print Value</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getPrintValue()
    * @generated
    * @ordered
    */
-  protected EList<ProgramElement> elements;
+  protected EList<PrintParameter> printValue;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DataCentricDSLImpl()
+  protected PrintImpl()
   {
     super();
   }
@@ -63,7 +61,7 @@ public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.DATA_CENTRIC_DSL;
+    return DataCentricDSLPackage.Literals.PRINT;
   }
 
   /**
@@ -71,13 +69,13 @@ public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ProgramElement> getElements()
+  public EList<PrintParameter> getPrintValue()
   {
-    if (elements == null)
+    if (printValue == null)
     {
-      elements = new EObjectContainmentEList<ProgramElement>(ProgramElement.class, this, DataCentricDSLPackage.DATA_CENTRIC_DSL__ELEMENTS);
+      printValue = new EObjectContainmentEList<PrintParameter>(PrintParameter.class, this, DataCentricDSLPackage.PRINT__PRINT_VALUE);
     }
-    return elements;
+    return printValue;
   }
 
   /**
@@ -90,8 +88,8 @@ public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.DATA_CENTRIC_DSL__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case DataCentricDSLPackage.PRINT__PRINT_VALUE:
+        return ((InternalEList<?>)getPrintValue()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +104,8 @@ public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.DATA_CENTRIC_DSL__ELEMENTS:
-        return getElements();
+      case DataCentricDSLPackage.PRINT__PRINT_VALUE:
+        return getPrintValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +121,9 @@ public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.DATA_CENTRIC_DSL__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends ProgramElement>)newValue);
+      case DataCentricDSLPackage.PRINT__PRINT_VALUE:
+        getPrintValue().clear();
+        getPrintValue().addAll((Collection<? extends PrintParameter>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +139,8 @@ public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.DATA_CENTRIC_DSL__ELEMENTS:
-        getElements().clear();
+      case DataCentricDSLPackage.PRINT__PRINT_VALUE:
+        getPrintValue().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +156,10 @@ public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.DATA_CENTRIC_DSL__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case DataCentricDSLPackage.PRINT__PRINT_VALUE:
+        return printValue != null && !printValue.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //DataCentricDSLImpl
+} //PrintImpl

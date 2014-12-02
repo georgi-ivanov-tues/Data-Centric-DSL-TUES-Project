@@ -3,27 +3,29 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Field;
+import org.dataCentricDSL.VariableValue;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Field</b></em>'.
+ * An implementation of the model object '<em><b>Variable Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class FieldImpl extends AbstractElementImpl implements Field
+public class VariableValueImpl extends MinimalEObjectImpl.Container implements VariableValue
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FieldImpl()
+  protected VariableValueImpl()
   {
     super();
   }
@@ -36,7 +38,7 @@ public class FieldImpl extends AbstractElementImpl implements Field
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.FIELD;
+    return DataCentricDSLPackage.Literals.VARIABLE_VALUE;
   }
 
-} //FieldImpl
+} //VariableValueImpl

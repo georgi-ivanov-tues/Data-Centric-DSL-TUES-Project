@@ -2,41 +2,29 @@
  */
 package org.dataCentricDSL.impl;
 
-import java.util.Collection;
-
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.FunctionCall;
+import org.dataCentricDSL.VariableCall;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.eclipse.xtext.xbase.XExpression;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Function Call</b></em>'.
+ * An implementation of the model object '<em><b>Variable Call</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.FunctionCallImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.FunctionCallImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.VariableCallImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionCallImpl extends FieldImpl implements FunctionCall
+public class VariableCallImpl extends PrintParameterImpl implements VariableCall
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -59,21 +47,11 @@ public class FunctionCallImpl extends FieldImpl implements FunctionCall
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getArguments()
-   * @generated
-   * @ordered
-   */
-  protected EList<XExpression> arguments;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FunctionCallImpl()
+  protected VariableCallImpl()
   {
     super();
   }
@@ -86,7 +64,7 @@ public class FunctionCallImpl extends FieldImpl implements FunctionCall
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.FUNCTION_CALL;
+    return DataCentricDSLPackage.Literals.VARIABLE_CALL;
   }
 
   /**
@@ -109,37 +87,7 @@ public class FunctionCallImpl extends FieldImpl implements FunctionCall
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.FUNCTION_CALL__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<XExpression> getArguments()
-  {
-    if (arguments == null)
-    {
-      arguments = new EObjectContainmentEList<XExpression>(XExpression.class, this, DataCentricDSLPackage.FUNCTION_CALL__ARGUMENTS);
-    }
-    return arguments;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case DataCentricDSLPackage.FUNCTION_CALL__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_CALL__NAME, oldName, name));
   }
 
   /**
@@ -152,10 +100,8 @@ public class FunctionCallImpl extends FieldImpl implements FunctionCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_CALL__NAME:
+      case DataCentricDSLPackage.VARIABLE_CALL__NAME:
         return getName();
-      case DataCentricDSLPackage.FUNCTION_CALL__ARGUMENTS:
-        return getArguments();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -165,18 +111,13 @@ public class FunctionCallImpl extends FieldImpl implements FunctionCall
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_CALL__NAME:
+      case DataCentricDSLPackage.VARIABLE_CALL__NAME:
         setName((String)newValue);
-        return;
-      case DataCentricDSLPackage.FUNCTION_CALL__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends XExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -192,11 +133,8 @@ public class FunctionCallImpl extends FieldImpl implements FunctionCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_CALL__NAME:
+      case DataCentricDSLPackage.VARIABLE_CALL__NAME:
         setName(NAME_EDEFAULT);
-        return;
-      case DataCentricDSLPackage.FUNCTION_CALL__ARGUMENTS:
-        getArguments().clear();
         return;
     }
     super.eUnset(featureID);
@@ -212,10 +150,8 @@ public class FunctionCallImpl extends FieldImpl implements FunctionCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_CALL__NAME:
+      case DataCentricDSLPackage.VARIABLE_CALL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DataCentricDSLPackage.FUNCTION_CALL__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -237,4 +173,4 @@ public class FunctionCallImpl extends FieldImpl implements FunctionCall
     return result.toString();
   }
 
-} //FunctionCallImpl
+} //VariableCallImpl

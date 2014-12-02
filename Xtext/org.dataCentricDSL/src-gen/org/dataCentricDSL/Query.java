@@ -2,9 +2,6 @@
  */
 package org.dataCentricDSL;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +11,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.Query#getQueryParams <em>Query Params</em>}</li>
+ *   <li>{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,22 +19,32 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface Query extends PredefinedFunction
+public interface Query extends ProgramElement, PrintParameter
 {
   /**
-   * Returns the value of the '<em><b>Query Params</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.xtext.xbase.XExpression}.
+   * Returns the value of the '<em><b>Query Param</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Query Params</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Query Param</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Query Params</em>' containment reference list.
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getQuery_QueryParams()
-   * @model containment="true"
+   * @return the value of the '<em>Query Param</em>' attribute.
+   * @see #setQueryParam(String)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getQuery_QueryParam()
+   * @model
    * @generated
    */
-  EList<XExpression> getQueryParams();
+  String getQueryParam();
+
+  /**
+   * Sets the value of the '{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Query Param</em>' attribute.
+   * @see #getQueryParam()
+   * @generated
+   */
+  void setQueryParam(String value);
 
 } // Query
