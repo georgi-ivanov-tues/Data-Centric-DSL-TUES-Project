@@ -30,31 +30,6 @@ public class Test {
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		walker.program();
 		
-		/*	
-		  Example:
-		  	print(query("SELECT * FROM people"));
-		  	
-		  	returns:
-		  	(print (query SELECT * FROM people))
-		         	FIRST_NAME|         LAST_NAME|
-		           	Georgi|             Ivanov|
-		            Bojidar|            Nikolov|
-		            Kiril|        		Kostadinov|
-				  
-		  
-		   Example 2:
-		  	a = query("abc");
-		  	b = a;
-		  	print(b);
-		  	end
-			
-			Expected:
-			abc
-			
-			Note:
-			if more than one prints are passed, the tree stops at the first one
-		*/
-		
 //		for(String query : queries) {
 //			System.out.println(query);
 //		}
@@ -62,3 +37,15 @@ public class Test {
 		//System.out.println(builder);
 	}
 }
+
+
+/*
+str = "SELECT * FROM people";
+result = query(str);
+print(result);
+end
+
+
+
+
+*/

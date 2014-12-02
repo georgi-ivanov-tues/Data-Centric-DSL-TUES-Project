@@ -15,8 +15,9 @@ public class CreateDB {
 		connection.createStatement().execute("create table people(first_name varchar(20), last_name varchar(20))");
 		connection.createStatement().execute("insert into people values "+
 											"('Georgi', 'Ivanov'), " +
-											"('Bojidar', 'Nikolov'), " +
-											"('Kiril', 'Kostadinov')");
+											"('Kiril', 'Kostadinov'), " +
+											"('Nedelcho', 'Delchev'), " +
+											"('Bojidar', 'Nikolov')");
 		System.out.println("DB created!");
 		
 	}

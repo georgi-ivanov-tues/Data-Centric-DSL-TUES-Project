@@ -15,18 +15,32 @@ options {
 }
 
 @members {
-  private List<String> queries = new ArrayList<String>();
-  private Map<String, String> variables = new HashMap<>();
+  public ArrayList<String[]> queries = new ArrayList<String[]>();
+  public Map<String, String> variables = new HashMap<>();
+  public Map<String, ArrayList<String[]>> queryVariables = new HashMap<>();
 }
 
-program returns [List<String> result]:  // Samo za da minat testovete :D
-  (query {result = queries;} | print | variableDecl)*
+program:
+  (query | print | variableDecl)*
   ;
   
-query returns [String request]: 
+query returns [ArrayList<String[\]> result]: 
   ^('query'
-   (  STRING_LITERAL {request = $STRING_LITERAL.text; queries.add($STRING_LITERAL.text);}
-   |  variableCall { request = $variableCall.value; queries.add($variableCall.value); }) 
+   (  STRING_LITERAL  {
+      try {
+        result = org.dataCentricDSL.derbyDB.QueryExectution.executeQuery($STRING_LITERAL.text);
+        queries.addAll(result);
+      } catch (java.sql.SQLException e) {
+        e.printStackTrace();
+      }} 
+   |  variableCall {
+      try {
+        result = org.dataCentricDSL.derbyDB.QueryExectution.executeQuery(variables.get($variableCall.value));
+        queries.addAll(result);
+      } catch (java.sql.SQLException e) {
+        e.printStackTrace();
+      }}
+   ) 
    )
 ;
 
@@ -34,24 +48,34 @@ print:
    ^('print' 
     (
     STRING_LITERAL {System.out.println($STRING_LITERAL.text);}
-    | query {
+    | query 
+    {
 	    try {
-	      org.dataCentricDSL.derbyDB.QueryExectution.executeQuery($query.request);
+	      org.dataCentricDSL.derbyDB.QueryExectution.printQueryResult($query.result);
 	    } catch (java.sql.SQLException e) {
 	      e.printStackTrace();
 	    }} 
-    | variableCall { System.out.println($variableCall.value); })
+    | variableCall { 
+        if(variables.get($variableCall.value) != null){
+          System.out.println(variables.get($variableCall.value)); 
+        }else if(queryVariables.get($variableCall.value) != null)
+	        try {
+	          org.dataCentricDSL.derbyDB.QueryExectution.printQueryResult(queryVariables.get($variableCall.value));
+	        } catch (java.sql.SQLException e) {
+	          e.printStackTrace();
+	        } 
+      }) 
     )
 ;
 
 variableDecl:
   IDENT 
-  ( q=query { variables.put($IDENT.text, q); }
-  | v=variableCall { variables.put($IDENT.text, v); }
+  ( q=query {queryVariables.put($IDENT.text,q);}
+  | v=variableCall { variables.put($IDENT.text, variables.get($variableCall.value)); }
   | STRING_LITERAL { variables.put($IDENT.text, $STRING_LITERAL.text); }
   )
 ;
 
 variableCall returns [String value]:
-  IDENT { value=variables.get($IDENT.text); }
+  IDENT {value=$IDENT.text; }
 ;
