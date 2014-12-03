@@ -23,8 +23,9 @@ public class Test {
 //		Scanner input = new Scanner(System.in);
 		StringBuilder builder = new StringBuilder();
 		String line;
-		while(!((line = input.nextLine()).equalsIgnoreCase("end"))) {
-			builder.append(line);
+		while(input.hasNextLine()) {
+			builder.append(input.nextLine());
+			builder.append("\n");
 		}
 		input.close();
 		CharStream charStream = new ANTLRStringStream(builder.toString());

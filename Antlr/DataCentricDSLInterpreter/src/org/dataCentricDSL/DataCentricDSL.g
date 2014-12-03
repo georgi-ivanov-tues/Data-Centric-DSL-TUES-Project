@@ -39,7 +39,7 @@ options {
 }
 
 program: 
-	(query | print | variableDecl)* (';'! | EOF!)
+	((query | print | variableDecl) ';'!)* EOF!
 	;
 
 query: 
@@ -51,7 +51,7 @@ print:
 ;
 
 variableDecl:
-  IDENT '='! ( query | STRING_LITERAL | variableCall ) ';'!
+  IDENT '='! ( query | STRING_LITERAL | variableCall ) 
 ;
 
 variableCall:
