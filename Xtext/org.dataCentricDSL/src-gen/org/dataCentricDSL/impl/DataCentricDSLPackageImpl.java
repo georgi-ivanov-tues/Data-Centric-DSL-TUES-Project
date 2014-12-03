@@ -10,6 +10,7 @@ import org.dataCentricDSL.Print;
 import org.dataCentricDSL.PrintParameter;
 import org.dataCentricDSL.ProgramElement;
 import org.dataCentricDSL.Query;
+import org.dataCentricDSL.QueryParameter;
 import org.dataCentricDSL.VariableCall;
 import org.dataCentricDSL.VariableDecl;
 import org.dataCentricDSL.VariableValue;
@@ -49,6 +50,13 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * @generated
    */
   private EClass queryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass queryParameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -200,9 +208,19 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getQuery_QueryParam()
+  public EReference getQuery_QueryParam()
   {
-    return (EAttribute)queryEClass.getEStructuralFeatures().get(0);
+    return (EReference)queryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQueryParameter()
+  {
+    return queryParameterEClass;
   }
 
   /**
@@ -351,7 +369,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     programElementEClass = createEClass(PROGRAM_ELEMENT);
 
     queryEClass = createEClass(QUERY);
-    createEAttribute(queryEClass, QUERY__QUERY_PARAM);
+    createEReference(queryEClass, QUERY__QUERY_PARAM);
+
+    queryParameterEClass = createEClass(QUERY_PARAMETER);
 
     printEClass = createEClass(PRINT);
     createEReference(printEClass, PRINT__PRINT_VALUE);
@@ -401,11 +421,12 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
 
     // Add supertypes to classes
     queryEClass.getESuperTypes().add(this.getProgramElement());
-    queryEClass.getESuperTypes().add(this.getPrintParameter());
     printEClass.getESuperTypes().add(this.getProgramElement());
     variableDeclEClass.getESuperTypes().add(this.getProgramElement());
+    variableCallEClass.getESuperTypes().add(this.getQueryParameter());
     variableCallEClass.getESuperTypes().add(this.getPrintParameter());
     variableCallEClass.getESuperTypes().add(this.getVariableValue());
+    literalEClass.getESuperTypes().add(this.getQueryParameter());
     literalEClass.getESuperTypes().add(this.getPrintParameter());
     literalEClass.getESuperTypes().add(this.getVariableValue());
 
@@ -416,10 +437,12 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(programElementEClass, ProgramElement.class, "ProgramElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getQuery_QueryParam(), ecorePackage.getEString(), "queryParam", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQuery_QueryParam(), this.getQueryParameter(), null, "queryParam", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(queryParameterEClass, QueryParameter.class, "QueryParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(printEClass, Print.class, "Print", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPrint_PrintValue(), this.getPrintParameter(), null, "printValue", null, 0, -1, Print.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPrint_PrintValue(), ecorePackage.getEObject(), null, "printValue", null, 0, -1, Print.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(printParameterEClass, PrintParameter.class, "PrintParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

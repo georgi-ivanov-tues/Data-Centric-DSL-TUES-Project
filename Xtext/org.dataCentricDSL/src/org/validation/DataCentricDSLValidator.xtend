@@ -20,6 +20,12 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__QUERY_PARAM);
 		}
 	}
+	
+	def checkIfQueryParamIsString(Query que){
+		if(!que.queryParam.toString.equals(String)){
+			error("Query parameters has to be String", DataCentricDSLPackage.Literals::QUERY__QUERY_PARAM)
+		}
+	}
 //	
 //	@Check
 //	def checkIfFunctionParametersAreUnique(Function fun){

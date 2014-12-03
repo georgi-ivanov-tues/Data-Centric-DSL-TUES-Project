@@ -67,6 +67,7 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.DATA_CENTRIC_DSL: return createDataCentricDSL();
       case DataCentricDSLPackage.PROGRAM_ELEMENT: return createProgramElement();
       case DataCentricDSLPackage.QUERY: return createQuery();
+      case DataCentricDSLPackage.QUERY_PARAMETER: return createQueryParameter();
       case DataCentricDSLPackage.PRINT: return createPrint();
       case DataCentricDSLPackage.PRINT_PARAMETER: return createPrintParameter();
       case DataCentricDSLPackage.VARIABLE_DECL: return createVariableDecl();
@@ -109,6 +110,17 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     QueryImpl query = new QueryImpl();
     return query;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QueryParameter createQueryParameter()
+  {
+    QueryParameterImpl queryParameter = new QueryParameterImpl();
+    return queryParameter;
   }
 
   /**

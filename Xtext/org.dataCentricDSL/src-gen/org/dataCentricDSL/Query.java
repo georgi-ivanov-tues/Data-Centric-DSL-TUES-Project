@@ -19,32 +19,32 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface Query extends ProgramElement, PrintParameter
+public interface Query extends ProgramElement
 {
   /**
-   * Returns the value of the '<em><b>Query Param</b></em>' attribute.
+   * Returns the value of the '<em><b>Query Param</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Query Param</em>' attribute isn't clear,
+   * If the meaning of the '<em>Query Param</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Query Param</em>' attribute.
-   * @see #setQueryParam(String)
+   * @return the value of the '<em>Query Param</em>' containment reference.
+   * @see #setQueryParam(QueryParameter)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getQuery_QueryParam()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getQueryParam();
+  QueryParameter getQueryParam();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Query Param</em>' attribute.
+   * @param value the new value of the '<em>Query Param</em>' containment reference.
    * @see #getQueryParam()
    * @generated
    */
-  void setQueryParam(String value);
+  void setQueryParam(QueryParameter value);
 
 } // Query

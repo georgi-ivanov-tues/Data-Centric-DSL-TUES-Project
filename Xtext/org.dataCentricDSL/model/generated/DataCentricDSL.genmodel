@@ -12,8 +12,9 @@
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//ProgramElement"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Query">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Query/queryParam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Query/queryParam"/>
     </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//QueryParameter"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Print">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Print/printValue"/>
     </genClasses>

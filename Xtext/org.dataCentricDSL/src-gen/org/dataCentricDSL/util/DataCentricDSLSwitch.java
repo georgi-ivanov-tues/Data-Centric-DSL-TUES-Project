@@ -91,7 +91,13 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         Query query = (Query)theEObject;
         T result = caseQuery(query);
         if (result == null) result = caseProgramElement(query);
-        if (result == null) result = casePrintParameter(query);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DataCentricDSLPackage.QUERY_PARAMETER:
+      {
+        QueryParameter queryParameter = (QueryParameter)theEObject;
+        T result = caseQueryParameter(queryParameter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -129,6 +135,7 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         VariableCall variableCall = (VariableCall)theEObject;
         T result = caseVariableCall(variableCall);
+        if (result == null) result = caseQueryParameter(variableCall);
         if (result == null) result = casePrintParameter(variableCall);
         if (result == null) result = caseVariableValue(variableCall);
         if (result == null) result = defaultCase(theEObject);
@@ -138,6 +145,7 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         Literal literal = (Literal)theEObject;
         T result = caseLiteral(literal);
+        if (result == null) result = caseQueryParameter(literal);
         if (result == null) result = casePrintParameter(literal);
         if (result == null) result = caseVariableValue(literal);
         if (result == null) result = defaultCase(theEObject);
@@ -191,6 +199,22 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseQuery(Query object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Query Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Query Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQueryParameter(QueryParameter object)
   {
     return null;
   }

@@ -19,7 +19,7 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface VariableCall extends PrintParameter, VariableValue
+public interface VariableCall extends QueryParameter, PrintParameter, VariableValue
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

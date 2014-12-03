@@ -64,69 +64,40 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cQueryKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cQueryParamAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cQueryParamSTRINGTerminalRuleCall_1_0 = (RuleCall)cQueryParamAssignment_1.eContents().get(0);
+		private final RuleCall cQueryParamQueryParameterParserRuleCall_1_0 = (RuleCall)cQueryParamAssignment_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Query:
-		//	"query" queryParam=STRING ";";
+		//	"query" queryParam=QueryParameter ";";
 		public ParserRule getRule() { return rule; }
 
-		//"query" queryParam=STRING ";"
+		//"query" queryParam=QueryParameter ";"
 		public Group getGroup() { return cGroup; }
 
 		//"query"
 		public Keyword getQueryKeyword_0() { return cQueryKeyword_0; }
 
-		//queryParam=STRING
+		//queryParam=QueryParameter
 		public Assignment getQueryParamAssignment_1() { return cQueryParamAssignment_1; }
 
-		//STRING
-		public RuleCall getQueryParamSTRINGTerminalRuleCall_1_0() { return cQueryParamSTRINGTerminalRuleCall_1_0; }
+		//QueryParameter
+		public RuleCall getQueryParamQueryParameterParserRuleCall_1_0() { return cQueryParamQueryParameterParserRuleCall_1_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
-	public class PrintElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Print");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPrintKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cPrintValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPrintValuePrintParameterParserRuleCall_1_0 = (RuleCall)cPrintValueAssignment_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		
-		//Print:
-		//	"print" printValue+=PrintParameter ";";
-		public ParserRule getRule() { return rule; }
-
-		//"print" printValue+=PrintParameter ";"
-		public Group getGroup() { return cGroup; }
-
-		//"print"
-		public Keyword getPrintKeyword_0() { return cPrintKeyword_0; }
-
-		//printValue+=PrintParameter
-		public Assignment getPrintValueAssignment_1() { return cPrintValueAssignment_1; }
-
-		//PrintParameter
-		public RuleCall getPrintValuePrintParameterParserRuleCall_1_0() { return cPrintValuePrintParameterParserRuleCall_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
-	}
-
-	public class PrintParameterElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PrintParameter");
+	public class QueryParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QueryParameter");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cLiteralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cVariableCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cQueryParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//PrintParameter:
-		//	Literal | VariableCall | Query;
+		//QueryParameter:
+		//	Literal | VariableCall;
 		public ParserRule getRule() { return rule; }
 
-		//Literal | VariableCall | Query
+		//Literal | VariableCall
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Literal
@@ -134,9 +105,70 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//VariableCall
 		public RuleCall getVariableCallParserRuleCall_1() { return cVariableCallParserRuleCall_1; }
+	}
+
+	public class PrintElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Print");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPrintKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
+		private final Assignment cPrintValueAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
+		private final RuleCall cPrintValuePrintParameterParserRuleCall_1_0_0_0 = (RuleCall)cPrintValueAssignment_1_0_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Assignment cPrintValueAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cPrintValueQueryParserRuleCall_1_1_0 = (RuleCall)cPrintValueAssignment_1_1.eContents().get(0);
+		
+		//Print:
+		//	"print" (printValue+=PrintParameter ";" | printValue+=Query);
+		public ParserRule getRule() { return rule; }
+
+		//"print" (printValue+=PrintParameter ";" | printValue+=Query)
+		public Group getGroup() { return cGroup; }
+
+		//"print"
+		public Keyword getPrintKeyword_0() { return cPrintKeyword_0; }
+
+		//printValue+=PrintParameter ";" | printValue+=Query
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//printValue+=PrintParameter ";"
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
+		//printValue+=PrintParameter
+		public Assignment getPrintValueAssignment_1_0_0() { return cPrintValueAssignment_1_0_0; }
+
+		//PrintParameter
+		public RuleCall getPrintValuePrintParameterParserRuleCall_1_0_0_0() { return cPrintValuePrintParameterParserRuleCall_1_0_0_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_1_0_1() { return cSemicolonKeyword_1_0_1; }
+
+		//printValue+=Query
+		public Assignment getPrintValueAssignment_1_1() { return cPrintValueAssignment_1_1; }
 
 		//Query
-		public RuleCall getQueryParserRuleCall_2() { return cQueryParserRuleCall_2; }
+		public RuleCall getPrintValueQueryParserRuleCall_1_1_0() { return cPrintValueQueryParserRuleCall_1_1_0; }
+	}
+
+	public class PrintParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PrintParameter");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cLiteralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cVariableCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//PrintParameter:
+		//	Literal | VariableCall;
+		public ParserRule getRule() { return rule; }
+
+		//Literal | VariableCall
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Literal
+		public RuleCall getLiteralParserRuleCall_0() { return cLiteralParserRuleCall_0; }
+
+		//VariableCall
+		public RuleCall getVariableCallParserRuleCall_1() { return cVariableCallParserRuleCall_1; }
 	}
 
 	public class VariableDeclElements extends AbstractParserRuleElementFinder {
@@ -301,6 +333,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final DataCentricDSLElements pDataCentricDSL;
 	private final ProgramElementElements pProgramElement;
 	private final QueryElements pQuery;
+	private final QueryParameterElements pQueryParameter;
 	private final PrintElements pPrint;
 	private final PrintParameterElements pPrintParameter;
 	private final VariableDeclElements pVariableDecl;
@@ -320,6 +353,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDataCentricDSL = new DataCentricDSLElements();
 		this.pProgramElement = new ProgramElementElements();
 		this.pQuery = new QueryElements();
+		this.pQueryParameter = new QueryParameterElements();
 		this.pPrint = new PrintElements();
 		this.pPrintParameter = new PrintParameterElements();
 		this.pVariableDecl = new VariableDeclElements();
@@ -376,7 +410,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Query:
-	//	"query" queryParam=STRING ";";
+	//	"query" queryParam=QueryParameter ";";
 	public QueryElements getQueryAccess() {
 		return pQuery;
 	}
@@ -385,8 +419,18 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getQueryAccess().getRule();
 	}
 
+	//QueryParameter:
+	//	Literal | VariableCall;
+	public QueryParameterElements getQueryParameterAccess() {
+		return pQueryParameter;
+	}
+	
+	public ParserRule getQueryParameterRule() {
+		return getQueryParameterAccess().getRule();
+	}
+
 	//Print:
-	//	"print" printValue+=PrintParameter ";";
+	//	"print" (printValue+=PrintParameter ";" | printValue+=Query);
 	public PrintElements getPrintAccess() {
 		return pPrint;
 	}
@@ -396,7 +440,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PrintParameter:
-	//	Literal | VariableCall | Query;
+	//	Literal | VariableCall;
 	public PrintParameterElements getPrintParameterAccess() {
 		return pPrintParameter;
 	}

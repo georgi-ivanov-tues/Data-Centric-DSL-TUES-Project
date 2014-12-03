@@ -114,7 +114,7 @@ public interface DataCentricDSLPackage extends EPackage
   int QUERY = 2;
 
   /**
-   * The feature id for the '<em><b>Query Param</b></em>' attribute.
+   * The feature id for the '<em><b>Query Param</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -132,6 +132,25 @@ public interface DataCentricDSLPackage extends EPackage
   int QUERY_FEATURE_COUNT = PROGRAM_ELEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.QueryParameterImpl <em>Query Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.QueryParameterImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getQueryParameter()
+   * @generated
+   */
+  int QUERY_PARAMETER = 3;
+
+  /**
+   * The number of structural features of the '<em>Query Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_PARAMETER_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.PrintImpl <em>Print</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,7 +158,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPrint()
    * @generated
    */
-  int PRINT = 3;
+  int PRINT = 4;
 
   /**
    * The feature id for the '<em><b>Print Value</b></em>' containment reference list.
@@ -167,7 +186,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPrintParameter()
    * @generated
    */
-  int PRINT_PARAMETER = 4;
+  int PRINT_PARAMETER = 5;
 
   /**
    * The number of structural features of the '<em>Print Parameter</em>' class.
@@ -186,7 +205,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableDecl()
    * @generated
    */
-  int VARIABLE_DECL = 5;
+  int VARIABLE_DECL = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -223,7 +242,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableValue()
    * @generated
    */
-  int VARIABLE_VALUE = 6;
+  int VARIABLE_VALUE = 7;
 
   /**
    * The number of structural features of the '<em>Variable Value</em>' class.
@@ -242,7 +261,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableCall()
    * @generated
    */
-  int VARIABLE_CALL = 7;
+  int VARIABLE_CALL = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -251,7 +270,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_CALL__NAME = PRINT_PARAMETER_FEATURE_COUNT + 0;
+  int VARIABLE_CALL__NAME = QUERY_PARAMETER_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Variable Call</em>' class.
@@ -260,7 +279,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_CALL_FEATURE_COUNT = PRINT_PARAMETER_FEATURE_COUNT + 1;
+  int VARIABLE_CALL_FEATURE_COUNT = QUERY_PARAMETER_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.LiteralImpl <em>Literal</em>}' class.
@@ -270,7 +289,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 8;
+  int LITERAL = 9;
 
   /**
    * The feature id for the '<em><b>Literal Value</b></em>' attribute.
@@ -279,7 +298,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL__LITERAL_VALUE = PRINT_PARAMETER_FEATURE_COUNT + 0;
+  int LITERAL__LITERAL_VALUE = QUERY_PARAMETER_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Literal</em>' class.
@@ -288,7 +307,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_FEATURE_COUNT = PRINT_PARAMETER_FEATURE_COUNT + 1;
+  int LITERAL_FEATURE_COUNT = QUERY_PARAMETER_FEATURE_COUNT + 1;
 
 
   /**
@@ -333,15 +352,25 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getQuery();
 
   /**
-   * Returns the meta object for the attribute '{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}'.
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Query Param</em>'.
+   * @return the meta object for the containment reference '<em>Query Param</em>'.
    * @see org.dataCentricDSL.Query#getQueryParam()
    * @see #getQuery()
    * @generated
    */
-  EAttribute getQuery_QueryParam();
+  EReference getQuery_QueryParam();
+
+  /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.QueryParameter <em>Query Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Query Parameter</em>'.
+   * @see org.dataCentricDSL.QueryParameter
+   * @generated
+   */
+  EClass getQueryParameter();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.Print <em>Print</em>}'.
@@ -520,12 +549,22 @@ public interface DataCentricDSLPackage extends EPackage
     EClass QUERY = eINSTANCE.getQuery();
 
     /**
-     * The meta object literal for the '<em><b>Query Param</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Query Param</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute QUERY__QUERY_PARAM = eINSTANCE.getQuery_QueryParam();
+    EReference QUERY__QUERY_PARAM = eINSTANCE.getQuery_QueryParam();
+
+    /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.QueryParameterImpl <em>Query Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.QueryParameterImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getQueryParameter()
+     * @generated
+     */
+    EClass QUERY_PARAMETER = eINSTANCE.getQueryParameter();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.PrintImpl <em>Print</em>}' class.

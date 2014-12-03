@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class LiteralImpl extends PrintParameterImpl implements Literal
+public class LiteralImpl extends QueryParameterImpl implements Literal
 {
   /**
    * The default value of the '{@link #getLiteralValue() <em>Literal Value</em>}' attribute.

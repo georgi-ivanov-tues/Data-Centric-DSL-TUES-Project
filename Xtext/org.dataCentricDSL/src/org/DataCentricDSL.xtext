@@ -19,11 +19,11 @@ QueryParameter:
 ;
 
 Print:
-	'print' printValue+=PrintParameter ';'
+	'print' ((printValue+=PrintParameter ';') | (printValue+=Query))
 ;
 
 PrintParameter:
-	Literal | VariableCall | Query
+	Literal | VariableCall
 ;
 
 VariableDecl:

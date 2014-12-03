@@ -84,6 +84,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 			case DataCentricDSLPackage.LITERAL:
 				if(context == grammarAccess.getLiteralRule() ||
 				   context == grammarAccess.getPrintParameterRule() ||
+				   context == grammarAccess.getQueryParameterRule() ||
 				   context == grammarAccess.getVariableValueRule()) {
 					sequence_Literal(context, (Literal) semanticObject); 
 					return; 
@@ -97,8 +98,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case DataCentricDSLPackage.QUERY:
-				if(context == grammarAccess.getPrintParameterRule() ||
-				   context == grammarAccess.getProgramElementRule() ||
+				if(context == grammarAccess.getProgramElementRule() ||
 				   context == grammarAccess.getQueryRule()) {
 					sequence_Query(context, (Query) semanticObject); 
 					return; 
@@ -106,6 +106,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				else break;
 			case DataCentricDSLPackage.VARIABLE_CALL:
 				if(context == grammarAccess.getPrintParameterRule() ||
+				   context == grammarAccess.getQueryParameterRule() ||
 				   context == grammarAccess.getVariableCallRule() ||
 				   context == grammarAccess.getVariableValueRule()) {
 					sequence_VariableCall(context, (VariableCall) semanticObject); 
@@ -1257,7 +1258,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     printValue+=PrintParameter
+	 *     (printValue+=PrintParameter | printValue+=Query)
 	 */
 	protected void sequence_Print(EObject context, Print semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1266,7 +1267,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     queryParam=STRING
+	 *     queryParam=QueryParameter
 	 */
 	protected void sequence_Query(EObject context, Query semanticObject) {
 		if(errorAcceptor != null) {
@@ -1275,7 +1276,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getQueryAccess().getQueryParamSTRINGTerminalRuleCall_1_0(), semanticObject.getQueryParam());
+		feeder.accept(grammarAccess.getQueryAccess().getQueryParamQueryParameterParserRuleCall_1_0(), semanticObject.getQueryParam());
 		feeder.finish();
 	}
 	

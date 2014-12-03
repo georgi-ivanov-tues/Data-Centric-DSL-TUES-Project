@@ -19,7 +19,7 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface Literal extends PrintParameter, VariableValue
+public interface Literal extends QueryParameter, PrintParameter, VariableValue
 {
   /**
    * Returns the value of the '<em><b>Literal Value</b></em>' attribute.

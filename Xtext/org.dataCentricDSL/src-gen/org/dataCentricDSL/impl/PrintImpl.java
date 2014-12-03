@@ -6,13 +6,13 @@ import java.util.Collection;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Print;
-import org.dataCentricDSL.PrintParameter;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -41,7 +41,7 @@ public class PrintImpl extends ProgramElementImpl implements Print
    * @generated
    * @ordered
    */
-  protected EList<PrintParameter> printValue;
+  protected EList<EObject> printValue;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class PrintImpl extends ProgramElementImpl implements Print
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<PrintParameter> getPrintValue()
+  public EList<EObject> getPrintValue()
   {
     if (printValue == null)
     {
-      printValue = new EObjectContainmentEList<PrintParameter>(PrintParameter.class, this, DataCentricDSLPackage.PRINT__PRINT_VALUE);
+      printValue = new EObjectContainmentEList<EObject>(EObject.class, this, DataCentricDSLPackage.PRINT__PRINT_VALUE);
     }
     return printValue;
   }
@@ -123,7 +123,7 @@ public class PrintImpl extends ProgramElementImpl implements Print
     {
       case DataCentricDSLPackage.PRINT__PRINT_VALUE:
         getPrintValue().clear();
-        getPrintValue().addAll((Collection<? extends PrintParameter>)newValue);
+        getPrintValue().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

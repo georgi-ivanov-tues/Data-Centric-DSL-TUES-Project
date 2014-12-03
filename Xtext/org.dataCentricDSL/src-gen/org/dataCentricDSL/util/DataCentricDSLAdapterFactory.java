@@ -90,6 +90,11 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createQueryAdapter();
       }
       @Override
+      public Adapter caseQueryParameter(QueryParameter object)
+      {
+        return createQueryParameterAdapter();
+      }
+      @Override
       public Adapter casePrint(Print object)
       {
         return createPrintAdapter();
@@ -182,6 +187,21 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createQueryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.QueryParameter <em>Query Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.dataCentricDSL.QueryParameter
+   * @generated
+   */
+  public Adapter createQueryParameterAdapter()
   {
     return null;
   }

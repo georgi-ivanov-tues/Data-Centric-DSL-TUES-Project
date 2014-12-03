@@ -50,6 +50,15 @@ public interface DataCentricDSLFactory extends EFactory
   Query createQuery();
 
   /**
+   * Returns a new object of class '<em>Query Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Query Parameter</em>'.
+   * @generated
+   */
+  QueryParameter createQueryParameter();
+
+  /**
    * Returns a new object of class '<em>Print</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
