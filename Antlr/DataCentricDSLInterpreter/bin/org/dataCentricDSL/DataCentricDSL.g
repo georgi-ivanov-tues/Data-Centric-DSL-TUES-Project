@@ -10,7 +10,7 @@ options {
 	package org.dataCentricDSL;
 } 
 
-@lexer::header {
+@lexer::header { 
 	package org.dataCentricDSL;
 }
 

@@ -14,7 +14,7 @@ options {
   import java.util.HashMap;
 }
 
-@members {
+@members { 
   public ArrayList<String[]> queries = new ArrayList<String[]>();
   public Map<String, String> variables = new HashMap<>();
   public Map<String, ArrayList<String[]>> queryVariables = new HashMap<>();

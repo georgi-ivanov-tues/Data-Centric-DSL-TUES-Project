@@ -1,0 +1,24 @@
+print("Boko izvadi si lichna karta!");
+end
+
+/*
+
+q = "SELECT * FROM people";
+print(query(q));
+end
+
+q = query("SELECT * FROM people");
+print(q);
+end
+
+str = "SELECT * FROM people";
+result = query(str);
+print(result);
+end
+
+r = query("SELECT * FROM people");
+r = query("SELECT last_name FROM people");
+print(r);
+end
+
+*/

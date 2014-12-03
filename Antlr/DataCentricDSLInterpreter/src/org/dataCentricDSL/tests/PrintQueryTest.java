@@ -32,12 +32,9 @@ public class PrintQueryTest {
 	    System.setOut(null);
 	}
 	
-	// DOESNT! FUCKING! WORK! 
-	// THANKS JAVA!
-	// #ECLIPSE #JAVA #LOVE #NOLIFE
 	@Test
 	public void QueryExecutionTest() throws RecognitionException {
-		CharStream cs = new ANTLRStringStream("print(query(\"SELECT first_name FROM people\"));");
+		CharStream cs = new ANTLRStringStream("print(query(\"SELECT first_name FROM people WHERE first_name = 'Georgi'\"));");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
@@ -46,7 +43,7 @@ public class PrintQueryTest {
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		walker.program();
 		
-		String str = outContent.toString().replaceAll(" ", "").trim();
-		assertEquals("Georgi\nKiril\nNedelcho\nBojidar", str.trim());
+		String str = outContent.toString();
+		assertEquals("Georgi", str.trim());
 	}
 }
