@@ -19,7 +19,7 @@ QueryParam returns Query:
 ;
 
 VariableCall returns QueryParam:
-	value=ValidID
+	{VariableCall} value=ValidID
 ;
 
 //DataCentricDSL:

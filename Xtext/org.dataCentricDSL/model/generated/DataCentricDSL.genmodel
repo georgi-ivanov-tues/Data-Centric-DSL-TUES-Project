@@ -18,5 +18,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Query/value"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//QueryParam"/>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//VariableCall"/>
   </genPackages>
 </genmodel:GenModel>

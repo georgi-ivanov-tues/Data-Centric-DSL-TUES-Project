@@ -68,6 +68,7 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.VARIABLE_DECL: return createVariableDecl();
       case DataCentricDSLPackage.QUERY: return createQuery();
       case DataCentricDSLPackage.QUERY_PARAM: return createQueryParam();
+      case DataCentricDSLPackage.VARIABLE_CALL: return createVariableCall();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -115,6 +116,17 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     QueryParamImpl queryParam = new QueryParamImpl();
     return queryParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableCall createVariableCall()
+  {
+    VariableCallImpl variableCall = new VariableCallImpl();
+    return variableCall;
   }
 
   /**

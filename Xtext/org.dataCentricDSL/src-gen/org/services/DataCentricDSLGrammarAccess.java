@@ -129,8 +129,10 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class VariableCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableCall");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueValidIDParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cVariableCallAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueValidIDParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		////DataCentricDSL:
 		////	elements += PackageDeclaration
@@ -187,14 +189,20 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		////Query:
 		////	'query' '('queryParams += XExpression ('+' queryParams += XExpression)*')'';'
 		////; VariableCall returns QueryParam:
-		//	value=ValidID;
+		//	{VariableCall} value=ValidID;
 		public ParserRule getRule() { return rule; }
 
+		//{VariableCall} value=ValidID
+		public Group getGroup() { return cGroup; }
+
+		//{VariableCall}
+		public Action getVariableCallAction_0() { return cVariableCallAction_0; }
+
 		//value=ValidID
-		public Assignment getValueAssignment() { return cValueAssignment; }
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 
 		//ValidID
-		public RuleCall getValueValidIDParserRuleCall_0() { return cValueValidIDParserRuleCall_0; }
+		public RuleCall getValueValidIDParserRuleCall_1_0() { return cValueValidIDParserRuleCall_1_0; }
 	}
 	
 	
@@ -342,7 +350,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	////Query:
 	////	'query' '('queryParams += XExpression ('+' queryParams += XExpression)*')'';'
 	////; VariableCall returns QueryParam:
-	//	value=ValidID;
+	//	{VariableCall} value=ValidID;
 	public VariableCallElements getVariableCallAccess() {
 		return pVariableCall;
 	}

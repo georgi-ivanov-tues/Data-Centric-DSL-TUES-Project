@@ -282,25 +282,31 @@ ruleVariableCall returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getVariableCallAccess().getVariableCallAction_0(),
+            $current);
+    }
+)(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVariableCallAccess().getValueValidIDParserRuleCall_0()); 
+	        newCompositeNode(grammarAccess.getVariableCallAccess().getValueValidIDParserRuleCall_1_0()); 
 	    }
-		lv_value_0_0=ruleValidID		{
+		lv_value_1_0=ruleValidID		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getVariableCallRule());
 	        }
        		set(
        			$current, 
        			"value",
-        		lv_value_0_0, 
+        		lv_value_1_0, 
         		"ValidID");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)
+))
 ;
 
 

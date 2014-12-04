@@ -7,6 +7,7 @@ import org.dataCentricDSL.DataCentricDSLFactory;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Query;
 import org.dataCentricDSL.QueryParam;
+import org.dataCentricDSL.VariableCall;
 import org.dataCentricDSL.VariableDecl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -51,6 +52,13 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * @generated
    */
   private EClass queryParamEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableCallEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -200,6 +208,16 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getVariableCall()
+  {
+    return variableCallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DataCentricDSLFactory getDataCentricDSLFactory()
   {
     return (DataCentricDSLFactory)getEFactoryInstance();
@@ -236,6 +254,8 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     createEAttribute(queryEClass, QUERY__VALUE);
 
     queryParamEClass = createEClass(QUERY_PARAM);
+
+    variableCallEClass = createEClass(VARIABLE_CALL);
   }
 
   /**
@@ -268,6 +288,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
 
     // Add supertypes to classes
     queryParamEClass.getESuperTypes().add(this.getQuery());
+    variableCallEClass.getESuperTypes().add(this.getQueryParam());
 
     // Initialize classes and features; add operations and parameters
     initEClass(dataCentricDSLEClass, DataCentricDSL.class, "DataCentricDSL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -281,6 +302,8 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEAttribute(getQuery_Value(), ecorePackage.getEString(), "value", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(queryParamEClass, QueryParam.class, "QueryParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(variableCallEClass, VariableCall.class, "VariableCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

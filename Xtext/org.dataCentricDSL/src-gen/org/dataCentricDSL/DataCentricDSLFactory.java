@@ -59,6 +59,15 @@ public interface DataCentricDSLFactory extends EFactory
   QueryParam createQueryParam();
 
   /**
+   * Returns a new object of class '<em>Variable Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Call</em>'.
+   * @generated
+   */
+  VariableCall createVariableCall();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -185,9 +185,9 @@ ruleVariableCall
     }
 	:
 (
-{ before(grammarAccess.getVariableCallAccess().getValueAssignment()); }
-(rule__VariableCall__ValueAssignment)
-{ after(grammarAccess.getVariableCallAccess().getValueAssignment()); }
+{ before(grammarAccess.getVariableCallAccess().getGroup()); }
+(rule__VariableCall__Group__0)
+{ after(grammarAccess.getVariableCallAccess().getGroup()); }
 )
 
 ;
@@ -3777,6 +3777,69 @@ rule__Query__Group__1__Impl
 { before(grammarAccess.getQueryAccess().getQueryParamParserRuleCall_1()); }
 	ruleQueryParam
 { after(grammarAccess.getQueryAccess().getQueryParamParserRuleCall_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__VariableCall__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__VariableCall__Group__0__Impl
+	rule__VariableCall__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VariableCall__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getVariableCallAccess().getVariableCallAction_0()); }
+(
+
+)
+{ after(grammarAccess.getVariableCallAccess().getVariableCallAction_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__VariableCall__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__VariableCall__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VariableCall__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getVariableCallAccess().getValueAssignment_1()); }
+(rule__VariableCall__ValueAssignment_1)
+{ after(grammarAccess.getVariableCallAccess().getValueAssignment_1()); }
 )
 
 ;
@@ -17384,14 +17447,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__VariableCall__ValueAssignment
+rule__VariableCall__ValueAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getVariableCallAccess().getValueValidIDParserRuleCall_0()); }
-	ruleValidID{ after(grammarAccess.getVariableCallAccess().getValueValidIDParserRuleCall_0()); }
+{ before(grammarAccess.getVariableCallAccess().getValueValidIDParserRuleCall_1_0()); }
+	ruleValidID{ after(grammarAccess.getVariableCallAccess().getValueValidIDParserRuleCall_1_0()); }
 )
 
 ;

@@ -177,6 +177,34 @@ public interface DataCentricDSLPackage extends EPackage
    */
   int QUERY_PARAM_FEATURE_COUNT = QUERY_FEATURE_COUNT + 0;
 
+  /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.VariableCallImpl <em>Variable Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.VariableCallImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableCall()
+   * @generated
+   */
+  int VARIABLE_CALL = 4;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_CALL__VALUE = QUERY_PARAM__VALUE;
+
+  /**
+   * The number of structural features of the '<em>Variable Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_CALL_FEATURE_COUNT = QUERY_PARAM_FEATURE_COUNT + 0;
+
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.DataCentricDSL <em>Data Centric DSL</em>}'.
@@ -261,6 +289,16 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EClass getQueryParam();
+
+  /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.VariableCall <em>Variable Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable Call</em>'.
+   * @see org.dataCentricDSL.VariableCall
+   * @generated
+   */
+  EClass getVariableCall();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -356,6 +394,16 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EClass QUERY_PARAM = eINSTANCE.getQueryParam();
+
+    /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.VariableCallImpl <em>Variable Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.VariableCallImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableCall()
+     * @generated
+     */
+    EClass VARIABLE_CALL = eINSTANCE.getVariableCall();
 
   }
 

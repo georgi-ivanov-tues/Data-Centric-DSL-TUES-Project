@@ -6,6 +6,7 @@ package org.validation
 import org.dataCentricDSL.DataCentricDSL
 import org.dataCentricDSL.DataCentricDSLPackage
 import org.dataCentricDSL.Query
+import org.dataCentricDSL.VariableCall
 import org.dataCentricDSL.VariableDecl
 import org.eclipse.xtext.validation.Check
 
@@ -25,12 +26,12 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 
 	//for now it only works for query
 	@Check
-	def void checkIfAssignedVariableExists(Query que) {
-		val Array = (que.eContainer() as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
+	def void checkIfAssignedVariableExists(VariableCall vc) {
+		val Array = (vc.eContainer() as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
 		var found = 0;
 		for(i : 0..< Array.length) {
 			if(found == 0) {
-				if(Array.get(i).name.toString.equals(que.value.toString)) {
+				if(Array.get(i).name.toString.equals(vc.value.toString)) {
 					found = 1;
 				}
 			} else {
