@@ -33,6 +33,8 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 				if(Array.get(i).name.toString.equals(que.value.toString)) {
 					found = 1;
 				}
+			} else {
+				return;
 			}
 		}
 		if(found == 0) {
