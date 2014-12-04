@@ -3,29 +3,27 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.ProgramElement;
+import org.dataCentricDSL.QueryParam;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Program Element</b></em>'.
+ * An implementation of the model object '<em><b>Query Param</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ProgramElementImpl extends MinimalEObjectImpl.Container implements ProgramElement
+public class QueryParamImpl extends QueryImpl implements QueryParam
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ProgramElementImpl()
+  protected QueryParamImpl()
   {
     super();
   }
@@ -38,7 +36,7 @@ public class ProgramElementImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.PROGRAM_ELEMENT;
+    return DataCentricDSLPackage.Literals.QUERY_PARAM;
   }
 
-} //ProgramElementImpl
+} //QueryParamImpl

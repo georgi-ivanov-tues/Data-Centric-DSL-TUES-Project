@@ -37,12 +37,8 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getProgramElementAccess().getAlternatives(), "rule__ProgramElement__Alternatives");
-					put(grammarAccess.getQueryParameterAccess().getAlternatives(), "rule__QueryParameter__Alternatives");
-					put(grammarAccess.getPrintAccess().getAlternatives_1(), "rule__Print__Alternatives_1");
-					put(grammarAccess.getPrintParameterAccess().getAlternatives(), "rule__PrintParameter__Alternatives");
-					put(grammarAccess.getVariableDeclAccess().getAlternatives_2(), "rule__VariableDecl__Alternatives_2");
-					put(grammarAccess.getVariableValueAccess().getAlternatives(), "rule__VariableValue__Alternatives");
+					put(grammarAccess.getDataCentricDSLAccess().getElementsAlternatives_0_0(), "rule__DataCentricDSL__ElementsAlternatives_0_0");
+					put(grammarAccess.getQueryParamAccess().getAlternatives(), "rule__QueryParam__Alternatives");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
 					put(grammarAccess.getOpMultiAssignAccess().getAlternatives(), "rule__OpMultiAssign__Alternatives");
 					put(grammarAccess.getOpEqualityAccess().getAlternatives(), "rule__OpEquality__Alternatives");
@@ -82,11 +78,9 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
 					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1(), "rule__XImportDeclaration__Alternatives_1");
 					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1_0_3(), "rule__XImportDeclaration__Alternatives_1_0_3");
-					put(grammarAccess.getQueryAccess().getGroup(), "rule__Query__Group__0");
-					put(grammarAccess.getPrintAccess().getGroup(), "rule__Print__Group__0");
-					put(grammarAccess.getPrintAccess().getGroup_1_0(), "rule__Print__Group_1_0__0");
+					put(grammarAccess.getDataCentricDSLAccess().getGroup(), "rule__DataCentricDSL__Group__0");
 					put(grammarAccess.getVariableDeclAccess().getGroup(), "rule__VariableDecl__Group__0");
-					put(grammarAccess.getVariableDeclAccess().getGroup_2_0(), "rule__VariableDecl__Group_2_0__0");
+					put(grammarAccess.getQueryAccess().getGroup(), "rule__Query__Group__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1(), "rule__XAssignment__Group_1__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1_1(), "rule__XAssignment__Group_1_1__0");
@@ -266,15 +260,11 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXImportDeclarationAccess().getGroup(), "rule__XImportDeclaration__Group__0");
 					put(grammarAccess.getXImportDeclarationAccess().getGroup_1_0(), "rule__XImportDeclaration__Group_1_0__0");
 					put(grammarAccess.getQualifiedNameInStaticImportAccess().getGroup(), "rule__QualifiedNameInStaticImport__Group__0");
-					put(grammarAccess.getDataCentricDSLAccess().getElementsAssignment(), "rule__DataCentricDSL__ElementsAssignment");
-					put(grammarAccess.getQueryAccess().getQueryParamAssignment_1(), "rule__Query__QueryParamAssignment_1");
-					put(grammarAccess.getPrintAccess().getPrintValueAssignment_1_0_0(), "rule__Print__PrintValueAssignment_1_0_0");
-					put(grammarAccess.getPrintAccess().getPrintValueAssignment_1_1(), "rule__Print__PrintValueAssignment_1_1");
+					put(grammarAccess.getDataCentricDSLAccess().getElementsAssignment_0(), "rule__DataCentricDSL__ElementsAssignment_0");
 					put(grammarAccess.getVariableDeclAccess().getNameAssignment_0(), "rule__VariableDecl__NameAssignment_0");
-					put(grammarAccess.getVariableDeclAccess().getValueAssignment_2_0_0(), "rule__VariableDecl__ValueAssignment_2_0_0");
-					put(grammarAccess.getVariableDeclAccess().getValueAssignment_2_1(), "rule__VariableDecl__ValueAssignment_2_1");
-					put(grammarAccess.getVariableCallAccess().getNameAssignment(), "rule__VariableCall__NameAssignment");
-					put(grammarAccess.getLiteralAccess().getLiteralValueAssignment(), "rule__Literal__LiteralValueAssignment");
+					put(grammarAccess.getVariableDeclAccess().getValueAssignment_2(), "rule__VariableDecl__ValueAssignment_2");
+					put(grammarAccess.getQueryParamAccess().getValueAssignment_0(), "rule__QueryParam__ValueAssignment_0");
+					put(grammarAccess.getVariableCallAccess().getValueAssignment(), "rule__VariableCall__ValueAssignment");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_1_1_0_0_1(), "rule__XAssignment__FeatureAssignment_1_1_0_0_1");

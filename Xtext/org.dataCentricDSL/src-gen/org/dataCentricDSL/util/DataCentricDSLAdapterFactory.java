@@ -80,9 +80,9 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createDataCentricDSLAdapter();
       }
       @Override
-      public Adapter caseProgramElement(ProgramElement object)
+      public Adapter caseVariableDecl(VariableDecl object)
       {
-        return createProgramElementAdapter();
+        return createVariableDeclAdapter();
       }
       @Override
       public Adapter caseQuery(Query object)
@@ -90,39 +90,9 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createQueryAdapter();
       }
       @Override
-      public Adapter caseQueryParameter(QueryParameter object)
+      public Adapter caseQueryParam(QueryParam object)
       {
-        return createQueryParameterAdapter();
-      }
-      @Override
-      public Adapter casePrint(Print object)
-      {
-        return createPrintAdapter();
-      }
-      @Override
-      public Adapter casePrintParameter(PrintParameter object)
-      {
-        return createPrintParameterAdapter();
-      }
-      @Override
-      public Adapter caseVariableDecl(VariableDecl object)
-      {
-        return createVariableDeclAdapter();
-      }
-      @Override
-      public Adapter caseVariableValue(VariableValue object)
-      {
-        return createVariableValueAdapter();
-      }
-      @Override
-      public Adapter caseVariableCall(VariableCall object)
-      {
-        return createVariableCallAdapter();
-      }
-      @Override
-      public Adapter caseLiteral(Literal object)
-      {
-        return createLiteralAdapter();
+        return createQueryParamAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -162,16 +132,16 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.ProgramElement <em>Program Element</em>}'.
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableDecl <em>Variable Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.dataCentricDSL.ProgramElement
+   * @see org.dataCentricDSL.VariableDecl
    * @generated
    */
-  public Adapter createProgramElementAdapter()
+  public Adapter createVariableDeclAdapter()
   {
     return null;
   }
@@ -192,106 +162,16 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.QueryParameter <em>Query Parameter</em>}'.
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.QueryParam <em>Query Param</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.dataCentricDSL.QueryParameter
+   * @see org.dataCentricDSL.QueryParam
    * @generated
    */
-  public Adapter createQueryParameterAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.Print <em>Print</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.Print
-   * @generated
-   */
-  public Adapter createPrintAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.PrintParameter <em>Print Parameter</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.PrintParameter
-   * @generated
-   */
-  public Adapter createPrintParameterAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableDecl <em>Variable Decl</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.VariableDecl
-   * @generated
-   */
-  public Adapter createVariableDeclAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableValue <em>Variable Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.VariableValue
-   * @generated
-   */
-  public Adapter createVariableValueAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableCall <em>Variable Call</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.VariableCall
-   * @generated
-   */
-  public Adapter createVariableCallAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.Literal <em>Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.Literal
-   * @generated
-   */
-  public Adapter createLiteralAdapter()
+  public Adapter createQueryParamAdapter()
   {
     return null;
   }

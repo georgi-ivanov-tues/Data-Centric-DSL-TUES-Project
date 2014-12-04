@@ -3,29 +3,14 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dataCentricDSL" nsURI="http://www.DataCentricDSL.org" nsPrefix="dataCentricDSL">
   <eClassifiers xsi:type="ecore:EClass" name="DataCentricDSL">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//ProgramElement" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgramElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="#//ProgramElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="queryParam" eType="#//QueryParameter"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QueryParameter"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Print" eSuperTypes="#//ProgramElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="printValue" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrintParameter"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableDecl" eSuperTypes="#//ProgramElement">
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDecl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableCall" eSuperTypes="#//QueryParameter #//PrintParameter #//VariableValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Query">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="#//QueryParameter #//PrintParameter #//VariableValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literalValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QueryParam" eSuperTypes="#//Query"/>
 </ecore:EPackage>

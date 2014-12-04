@@ -32,13 +32,13 @@ public interface DataCentricDSLFactory extends EFactory
   DataCentricDSL createDataCentricDSL();
 
   /**
-   * Returns a new object of class '<em>Program Element</em>'.
+   * Returns a new object of class '<em>Variable Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Program Element</em>'.
+   * @return a new object of class '<em>Variable Decl</em>'.
    * @generated
    */
-  ProgramElement createProgramElement();
+  VariableDecl createVariableDecl();
 
   /**
    * Returns a new object of class '<em>Query</em>'.
@@ -50,67 +50,13 @@ public interface DataCentricDSLFactory extends EFactory
   Query createQuery();
 
   /**
-   * Returns a new object of class '<em>Query Parameter</em>'.
+   * Returns a new object of class '<em>Query Param</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Query Parameter</em>'.
+   * @return a new object of class '<em>Query Param</em>'.
    * @generated
    */
-  QueryParameter createQueryParameter();
-
-  /**
-   * Returns a new object of class '<em>Print</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Print</em>'.
-   * @generated
-   */
-  Print createPrint();
-
-  /**
-   * Returns a new object of class '<em>Print Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Print Parameter</em>'.
-   * @generated
-   */
-  PrintParameter createPrintParameter();
-
-  /**
-   * Returns a new object of class '<em>Variable Decl</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Decl</em>'.
-   * @generated
-   */
-  VariableDecl createVariableDecl();
-
-  /**
-   * Returns a new object of class '<em>Variable Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Value</em>'.
-   * @generated
-   */
-  VariableValue createVariableValue();
-
-  /**
-   * Returns a new object of class '<em>Variable Call</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Call</em>'.
-   * @generated
-   */
-  VariableCall createVariableCall();
-
-  /**
-   * Returns a new object of class '<em>Literal</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Literal</em>'.
-   * @generated
-   */
-  Literal createLiteral();
+  QueryParam createQueryParam();
 
   /**
    * Returns the package supported by this factory.

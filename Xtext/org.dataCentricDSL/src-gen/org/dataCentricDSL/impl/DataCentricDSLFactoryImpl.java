@@ -65,15 +65,9 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
     switch (eClass.getClassifierID())
     {
       case DataCentricDSLPackage.DATA_CENTRIC_DSL: return createDataCentricDSL();
-      case DataCentricDSLPackage.PROGRAM_ELEMENT: return createProgramElement();
-      case DataCentricDSLPackage.QUERY: return createQuery();
-      case DataCentricDSLPackage.QUERY_PARAMETER: return createQueryParameter();
-      case DataCentricDSLPackage.PRINT: return createPrint();
-      case DataCentricDSLPackage.PRINT_PARAMETER: return createPrintParameter();
       case DataCentricDSLPackage.VARIABLE_DECL: return createVariableDecl();
-      case DataCentricDSLPackage.VARIABLE_VALUE: return createVariableValue();
-      case DataCentricDSLPackage.VARIABLE_CALL: return createVariableCall();
-      case DataCentricDSLPackage.LITERAL: return createLiteral();
+      case DataCentricDSLPackage.QUERY: return createQuery();
+      case DataCentricDSLPackage.QUERY_PARAM: return createQueryParam();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -95,10 +89,10 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProgramElement createProgramElement()
+  public VariableDecl createVariableDecl()
   {
-    ProgramElementImpl programElement = new ProgramElementImpl();
-    return programElement;
+    VariableDeclImpl variableDecl = new VariableDeclImpl();
+    return variableDecl;
   }
 
   /**
@@ -117,76 +111,10 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public QueryParameter createQueryParameter()
+  public QueryParam createQueryParam()
   {
-    QueryParameterImpl queryParameter = new QueryParameterImpl();
-    return queryParameter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Print createPrint()
-  {
-    PrintImpl print = new PrintImpl();
-    return print;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PrintParameter createPrintParameter()
-  {
-    PrintParameterImpl printParameter = new PrintParameterImpl();
-    return printParameter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableDecl createVariableDecl()
-  {
-    VariableDeclImpl variableDecl = new VariableDeclImpl();
-    return variableDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableValue createVariableValue()
-  {
-    VariableValueImpl variableValue = new VariableValueImpl();
-    return variableValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableCall createVariableCall()
-  {
-    VariableCallImpl variableCall = new VariableCallImpl();
-    return variableCall;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Literal createLiteral()
-  {
-    LiteralImpl literal = new LiteralImpl();
-    return literal;
+    QueryParamImpl queryParam = new QueryParamImpl();
+    return queryParam;
   }
 
   /**

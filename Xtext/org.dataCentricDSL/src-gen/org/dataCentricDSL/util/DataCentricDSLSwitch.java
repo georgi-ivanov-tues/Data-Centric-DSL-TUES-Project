@@ -79,10 +79,10 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DataCentricDSLPackage.PROGRAM_ELEMENT:
+      case DataCentricDSLPackage.VARIABLE_DECL:
       {
-        ProgramElement programElement = (ProgramElement)theEObject;
-        T result = caseProgramElement(programElement);
+        VariableDecl variableDecl = (VariableDecl)theEObject;
+        T result = caseVariableDecl(variableDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -90,64 +90,14 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         Query query = (Query)theEObject;
         T result = caseQuery(query);
-        if (result == null) result = caseProgramElement(query);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DataCentricDSLPackage.QUERY_PARAMETER:
+      case DataCentricDSLPackage.QUERY_PARAM:
       {
-        QueryParameter queryParameter = (QueryParameter)theEObject;
-        T result = caseQueryParameter(queryParameter);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DataCentricDSLPackage.PRINT:
-      {
-        Print print = (Print)theEObject;
-        T result = casePrint(print);
-        if (result == null) result = caseProgramElement(print);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DataCentricDSLPackage.PRINT_PARAMETER:
-      {
-        PrintParameter printParameter = (PrintParameter)theEObject;
-        T result = casePrintParameter(printParameter);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DataCentricDSLPackage.VARIABLE_DECL:
-      {
-        VariableDecl variableDecl = (VariableDecl)theEObject;
-        T result = caseVariableDecl(variableDecl);
-        if (result == null) result = caseProgramElement(variableDecl);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DataCentricDSLPackage.VARIABLE_VALUE:
-      {
-        VariableValue variableValue = (VariableValue)theEObject;
-        T result = caseVariableValue(variableValue);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DataCentricDSLPackage.VARIABLE_CALL:
-      {
-        VariableCall variableCall = (VariableCall)theEObject;
-        T result = caseVariableCall(variableCall);
-        if (result == null) result = caseQueryParameter(variableCall);
-        if (result == null) result = casePrintParameter(variableCall);
-        if (result == null) result = caseVariableValue(variableCall);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DataCentricDSLPackage.LITERAL:
-      {
-        Literal literal = (Literal)theEObject;
-        T result = caseLiteral(literal);
-        if (result == null) result = caseQueryParameter(literal);
-        if (result == null) result = casePrintParameter(literal);
-        if (result == null) result = caseVariableValue(literal);
+        QueryParam queryParam = (QueryParam)theEObject;
+        T result = caseQueryParam(queryParam);
+        if (result == null) result = caseQuery(queryParam);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -172,17 +122,17 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Program Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Variable Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Program Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Variable Decl</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseProgramElement(ProgramElement object)
+  public T caseVariableDecl(VariableDecl object)
   {
     return null;
   }
@@ -204,113 +154,17 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Query Parameter</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Query Param</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Query Parameter</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Query Param</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseQueryParameter(QueryParameter object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Print</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Print</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePrint(Print object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Print Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Print Parameter</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePrintParameter(PrintParameter object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Decl</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Decl</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariableDecl(VariableDecl object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariableValue(VariableValue object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Call</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Call</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariableCall(VariableCall object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Literal</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Literal</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLiteral(Literal object)
+  public T caseQueryParam(QueryParam object)
   {
     return null;
   }

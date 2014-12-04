@@ -3,8 +3,10 @@
  */
 package org.validation
 
+import org.dataCentricDSL.DataCentricDSL
 import org.dataCentricDSL.DataCentricDSLPackage
 import org.dataCentricDSL.Query
+import org.dataCentricDSL.VariableDecl
 import org.eclipse.xtext.validation.Check
 
 /**
@@ -15,15 +17,36 @@ import org.eclipse.xtext.validation.Check
 class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
-	def checkIfQueryIsEmpty(Query que){
-		if(que.queryParam.toString.equals("")){
-			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__QUERY_PARAM);
+	def void checkIfQueryStringIsEmpty(Query que){
+		if(que.value.toString.equals("")){
+			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__VALUE);
+		}
+	}
+
+	//for now it only works for query
+	@Check
+	def void checkIfAssignedVariableExists(Query que) {
+		val Array = (que.eContainer() as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
+		var found = 0;
+		for(i : 0..< Array.length) {
+			if(found == 0) {
+				if(Array.get(i).name.toString.equals(que.value.toString)) {
+					found = 1;
+				}
+			}
+		}
+		if(found == 0) {
+			error("Undeclared variable.", DataCentricDSLPackage.Literals::QUERY__VALUE);
 		}
 	}
 	
-	def checkIfQueryParamIsString(Query que){
-		if(!que.queryParam.toString.equals(String)){
-			error("Query parameters has to be String", DataCentricDSLPackage.Literals::QUERY__QUERY_PARAM)
+	@Check
+	def void checkIfVariableNameIsUnique(VariableDecl vd) {
+		val Array = (vd.eContainer() as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
+		for(i : 0..<Array.length - 1) {
+			if(Array.get(i).name.toString.equals(Array.get(i + 1).name.toString)) {
+				error("Variable with the same identifier already exists.", DataCentricDSLPackage.Literals::VARIABLE_DECL__NAME);
+			}
 		}
 	}
 //	

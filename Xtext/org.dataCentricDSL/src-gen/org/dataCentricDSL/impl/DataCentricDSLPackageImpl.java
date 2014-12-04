@@ -5,15 +5,9 @@ package org.dataCentricDSL.impl;
 import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.DataCentricDSLFactory;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Literal;
-import org.dataCentricDSL.Print;
-import org.dataCentricDSL.PrintParameter;
-import org.dataCentricDSL.ProgramElement;
 import org.dataCentricDSL.Query;
-import org.dataCentricDSL.QueryParameter;
-import org.dataCentricDSL.VariableCall;
+import org.dataCentricDSL.QueryParam;
 import org.dataCentricDSL.VariableDecl;
-import org.dataCentricDSL.VariableValue;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -42,7 +36,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass programElementEClass = null;
+  private EClass variableDeclEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -56,49 +50,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass queryParameterEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass printEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass printParameterEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass variableDeclEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass variableValueEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass variableCallEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass literalEClass = null;
+  private EClass queryParamEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -188,76 +140,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getProgramElement()
-  {
-    return programElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getQuery()
-  {
-    return queryEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getQuery_QueryParam()
-  {
-    return (EReference)queryEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getQueryParameter()
-  {
-    return queryParameterEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getPrint()
-  {
-    return printEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPrint_PrintValue()
-  {
-    return (EReference)printEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getPrintParameter()
-  {
-    return printParameterEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getVariableDecl()
   {
     return variableDeclEClass;
@@ -278,9 +160,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariableDecl_Value()
+  public EAttribute getVariableDecl_Value()
   {
-    return (EReference)variableDeclEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)variableDeclEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -288,9 +170,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariableValue()
+  public EClass getQuery()
   {
-    return variableValueEClass;
+    return queryEClass;
   }
 
   /**
@@ -298,9 +180,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariableCall()
+  public EAttribute getQuery_Value()
   {
-    return variableCallEClass;
+    return (EAttribute)queryEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -308,29 +190,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableCall_Name()
+  public EClass getQueryParam()
   {
-    return (EAttribute)variableCallEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getLiteral()
-  {
-    return literalEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getLiteral_LiteralValue()
-  {
-    return (EAttribute)literalEClass.getEStructuralFeatures().get(0);
+    return queryParamEClass;
   }
 
   /**
@@ -366,29 +228,14 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     dataCentricDSLEClass = createEClass(DATA_CENTRIC_DSL);
     createEReference(dataCentricDSLEClass, DATA_CENTRIC_DSL__ELEMENTS);
 
-    programElementEClass = createEClass(PROGRAM_ELEMENT);
-
-    queryEClass = createEClass(QUERY);
-    createEReference(queryEClass, QUERY__QUERY_PARAM);
-
-    queryParameterEClass = createEClass(QUERY_PARAMETER);
-
-    printEClass = createEClass(PRINT);
-    createEReference(printEClass, PRINT__PRINT_VALUE);
-
-    printParameterEClass = createEClass(PRINT_PARAMETER);
-
     variableDeclEClass = createEClass(VARIABLE_DECL);
     createEAttribute(variableDeclEClass, VARIABLE_DECL__NAME);
-    createEReference(variableDeclEClass, VARIABLE_DECL__VALUE);
+    createEAttribute(variableDeclEClass, VARIABLE_DECL__VALUE);
 
-    variableValueEClass = createEClass(VARIABLE_VALUE);
+    queryEClass = createEClass(QUERY);
+    createEAttribute(queryEClass, QUERY__VALUE);
 
-    variableCallEClass = createEClass(VARIABLE_CALL);
-    createEAttribute(variableCallEClass, VARIABLE_CALL__NAME);
-
-    literalEClass = createEClass(LITERAL);
-    createEAttribute(literalEClass, LITERAL__LITERAL_VALUE);
+    queryParamEClass = createEClass(QUERY_PARAM);
   }
 
   /**
@@ -420,43 +267,20 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    queryEClass.getESuperTypes().add(this.getProgramElement());
-    printEClass.getESuperTypes().add(this.getProgramElement());
-    variableDeclEClass.getESuperTypes().add(this.getProgramElement());
-    variableCallEClass.getESuperTypes().add(this.getQueryParameter());
-    variableCallEClass.getESuperTypes().add(this.getPrintParameter());
-    variableCallEClass.getESuperTypes().add(this.getVariableValue());
-    literalEClass.getESuperTypes().add(this.getQueryParameter());
-    literalEClass.getESuperTypes().add(this.getPrintParameter());
-    literalEClass.getESuperTypes().add(this.getVariableValue());
+    queryParamEClass.getESuperTypes().add(this.getQuery());
 
     // Initialize classes and features; add operations and parameters
     initEClass(dataCentricDSLEClass, DataCentricDSL.class, "DataCentricDSL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDataCentricDSL_Elements(), this.getProgramElement(), null, "elements", null, 0, -1, DataCentricDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(programElementEClass, ProgramElement.class, "ProgramElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getQuery_QueryParam(), this.getQueryParameter(), null, "queryParam", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(queryParameterEClass, QueryParameter.class, "QueryParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(printEClass, Print.class, "Print", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPrint_PrintValue(), ecorePackage.getEObject(), null, "printValue", null, 0, -1, Print.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(printParameterEClass, PrintParameter.class, "PrintParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDataCentricDSL_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, DataCentricDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableDeclEClass, VariableDecl.class, "VariableDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariableDecl_Value(), ecorePackage.getEObject(), null, "value", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariableDecl_Value(), ecorePackage.getEString(), "value", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(variableValueEClass, VariableValue.class, "VariableValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQuery_Value(), ecorePackage.getEString(), "value", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(variableCallEClass, VariableCall.class, "VariableCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariableCall_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLiteral_LiteralValue(), ecorePackage.getEString(), "literalValue", null, 0, 1, Literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(queryParamEClass, QueryParam.class, "QueryParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

@@ -3,43 +3,23 @@ grammar org.DataCentricDSL with org.eclipse.xtext.xbase.Xbase
 generate dataCentricDSL "http://www.DataCentricDSL.org"
 
 DataCentricDSL:
-	(elements += ProgramElement)*
-;
-
-ProgramElement:
-	Query | Print | VariableDecl
-;
-
-Query:
-	'query' queryParam=QueryParameter';'
-;
-
-QueryParameter:
-	Literal | VariableCall
-;
-
-Print:
-	'print' ((printValue+=PrintParameter ';') | (printValue+=Query))
-;
-
-PrintParameter:
-	Literal | VariableCall
+	(elements += (VariableDecl | Query) ';')*
 ;
 
 VariableDecl:
-	name=ValidID '=' ((value=VariableValue ';') | (value=Query))
+	name=ValidID '=' value=STRING
 ;
 
-VariableValue:
-	Literal | VariableCall
+Query:
+	'query' QueryParam
 ;
 
-VariableCall:
-	name=ValidID
+QueryParam returns Query:
+	(value=STRING | VariableCall)
 ;
 
-Literal:
-	literalValue=STRING
+VariableCall returns QueryParam:
+	value=ValidID
 ;
 
 //DataCentricDSL:

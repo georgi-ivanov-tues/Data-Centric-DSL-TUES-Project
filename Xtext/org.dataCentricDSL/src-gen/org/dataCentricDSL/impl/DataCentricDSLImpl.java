@@ -6,13 +6,13 @@ import java.util.Collection;
 
 import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.ProgramElement;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -43,7 +43,7 @@ public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected EList<ProgramElement> elements;
+  protected EList<EObject> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ProgramElement> getElements()
+  public EList<EObject> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<ProgramElement>(ProgramElement.class, this, DataCentricDSLPackage.DATA_CENTRIC_DSL__ELEMENTS);
+      elements = new EObjectContainmentEList<EObject>(EObject.class, this, DataCentricDSLPackage.DATA_CENTRIC_DSL__ELEMENTS);
     }
     return elements;
   }
@@ -125,7 +125,7 @@ public class DataCentricDSLImpl extends MinimalEObjectImpl.Container implements 
     {
       case DataCentricDSLPackage.DATA_CENTRIC_DSL__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends ProgramElement>)newValue);
+        getElements().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

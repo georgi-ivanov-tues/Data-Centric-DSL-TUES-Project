@@ -2,6 +2,7 @@
  */
 package org.dataCentricDSL;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,7 +12,7 @@ package org.dataCentricDSL;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}</li>
+ *   <li>{@link org.dataCentricDSL.Query#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -19,32 +20,32 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface Query extends ProgramElement
+public interface Query extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Query Param</b></em>' containment reference.
+   * Returns the value of the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Query Param</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Value</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Query Param</em>' containment reference.
-   * @see #setQueryParam(QueryParameter)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getQuery_QueryParam()
-   * @model containment="true"
+   * @return the value of the '<em>Value</em>' attribute.
+   * @see #setValue(String)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getQuery_Value()
+   * @model
    * @generated
    */
-  QueryParameter getQueryParam();
+  String getValue();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}' containment reference.
+   * Sets the value of the '{@link org.dataCentricDSL.Query#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Query Param</em>' containment reference.
-   * @see #getQueryParam()
+   * @param value the new value of the '<em>Value</em>' attribute.
+   * @see #getValue()
    * @generated
    */
-  void setQueryParam(QueryParameter value);
+  void setValue(String value);
 
 } // Query
