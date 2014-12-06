@@ -122,6 +122,34 @@ public interface DataCentricDSLPackage extends EPackage
   int VARIABLE_DECL_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.PrintImpl <em>Print</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.PrintImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPrint()
+   * @generated
+   */
+  int PRINT = 3;
+
+  /**
+   * The feature id for the '<em><b>Print Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRINT__PRINT_VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Print</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRINT_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.QueryImpl <em>Query</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -132,13 +160,22 @@ public interface DataCentricDSLPackage extends EPackage
   int QUERY = 2;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Print Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUERY__VALUE = 0;
+  int QUERY__PRINT_VALUE = PRINT__PRINT_VALUE;
+
+  /**
+   * The feature id for the '<em><b>Query Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY__QUERY_VALUE = PRINT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Query</em>' class.
@@ -147,35 +184,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.QueryParamImpl <em>Query Param</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.QueryParamImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getQueryParam()
-   * @generated
-   */
-  int QUERY_PARAM = 3;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUERY_PARAM__VALUE = QUERY__VALUE;
-
-  /**
-   * The number of structural features of the '<em>Query Param</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUERY_PARAM_FEATURE_COUNT = QUERY_FEATURE_COUNT + 0;
+  int QUERY_FEATURE_COUNT = PRINT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.VariableCallImpl <em>Variable Call</em>}' class.
@@ -188,13 +197,31 @@ public interface DataCentricDSLPackage extends EPackage
   int VARIABLE_CALL = 4;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Print Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_CALL__VALUE = QUERY_PARAM__VALUE;
+  int VARIABLE_CALL__PRINT_VALUE = QUERY__PRINT_VALUE;
+
+  /**
+   * The feature id for the '<em><b>Query Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_CALL__QUERY_VALUE = QUERY__QUERY_VALUE;
+
+  /**
+   * The feature id for the '<em><b>Variable Call</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_CALL__VARIABLE_CALL = QUERY_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Variable Call</em>' class.
@@ -203,7 +230,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_CALL_FEATURE_COUNT = QUERY_PARAM_FEATURE_COUNT + 0;
+  int VARIABLE_CALL_FEATURE_COUNT = QUERY_FEATURE_COUNT + 1;
 
 
   /**
@@ -270,25 +297,36 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getQuery();
 
   /**
-   * Returns the meta object for the attribute '{@link org.dataCentricDSL.Query#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.Query#getQueryValue <em>Query Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.dataCentricDSL.Query#getValue()
+   * @return the meta object for the attribute '<em>Query Value</em>'.
+   * @see org.dataCentricDSL.Query#getQueryValue()
    * @see #getQuery()
    * @generated
    */
-  EAttribute getQuery_Value();
+  EAttribute getQuery_QueryValue();
 
   /**
-   * Returns the meta object for class '{@link org.dataCentricDSL.QueryParam <em>Query Param</em>}'.
+   * Returns the meta object for class '{@link org.dataCentricDSL.Print <em>Print</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Query Param</em>'.
-   * @see org.dataCentricDSL.QueryParam
+   * @return the meta object for class '<em>Print</em>'.
+   * @see org.dataCentricDSL.Print
    * @generated
    */
-  EClass getQueryParam();
+  EClass getPrint();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.Print#getPrintValue <em>Print Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Print Value</em>'.
+   * @see org.dataCentricDSL.Print#getPrintValue()
+   * @see #getPrint()
+   * @generated
+   */
+  EAttribute getPrint_PrintValue();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.VariableCall <em>Variable Call</em>}'.
@@ -299,6 +337,17 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EClass getVariableCall();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableCall#getVariableCall <em>Variable Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Variable Call</em>'.
+   * @see org.dataCentricDSL.VariableCall#getVariableCall()
+   * @see #getVariableCall()
+   * @generated
+   */
+  EAttribute getVariableCall_VariableCall();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -378,22 +427,30 @@ public interface DataCentricDSLPackage extends EPackage
     EClass QUERY = eINSTANCE.getQuery();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Query Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute QUERY__VALUE = eINSTANCE.getQuery_Value();
+    EAttribute QUERY__QUERY_VALUE = eINSTANCE.getQuery_QueryValue();
 
     /**
-     * The meta object literal for the '{@link org.dataCentricDSL.impl.QueryParamImpl <em>Query Param</em>}' class.
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.PrintImpl <em>Print</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.dataCentricDSL.impl.QueryParamImpl
-     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getQueryParam()
+     * @see org.dataCentricDSL.impl.PrintImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPrint()
      * @generated
      */
-    EClass QUERY_PARAM = eINSTANCE.getQueryParam();
+    EClass PRINT = eINSTANCE.getPrint();
+
+    /**
+     * The meta object literal for the '<em><b>Print Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PRINT__PRINT_VALUE = eINSTANCE.getPrint_PrintValue();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.VariableCallImpl <em>Variable Call</em>}' class.
@@ -404,6 +461,14 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EClass VARIABLE_CALL = eINSTANCE.getVariableCall();
+
+    /**
+     * The meta object literal for the '<em><b>Variable Call</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_CALL__VARIABLE_CALL = eINSTANCE.getVariableCall_VariableCall();
 
   }
 

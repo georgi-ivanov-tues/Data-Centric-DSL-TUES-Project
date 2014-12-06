@@ -19,8 +19,8 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
 	def void checkIfQueryStringIsEmpty(Query que){
-		if(que.value.toString.equals("")){
-			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__VALUE);
+		if(que.queryValue.toString.equals("")){
+			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__QUERY_VALUE);
 		}
 	}
 
@@ -31,7 +31,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		var found = 0;
 		for(i : 0..< Array.length) {
 			if(found == 0) {
-				if(Array.get(i).name.toString.equals(vc.value.toString)) {
+				if(Array.get(i).name.toString.equals(vc.variableCall.toString)) {
 					found = 1;
 				}
 			} else {
@@ -39,7 +39,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 			}
 		}
 		if(found == 0) {
-			error("Undeclared variable.", DataCentricDSLPackage.Literals::QUERY__VALUE);
+			error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
 		}
 	}
 	

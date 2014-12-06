@@ -2,7 +2,6 @@
  */
 package org.dataCentricDSL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.Query#getValue <em>Value</em>}</li>
+ *   <li>{@link org.dataCentricDSL.Query#getQueryValue <em>Query Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -20,32 +19,32 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Query extends EObject
+public interface Query extends Print
 {
   /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Query Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' attribute isn't clear,
+   * If the meaning of the '<em>Query Value</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getQuery_Value()
+   * @return the value of the '<em>Query Value</em>' attribute.
+   * @see #setQueryValue(String)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getQuery_QueryValue()
    * @model
    * @generated
    */
-  String getValue();
+  String getQueryValue();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.Query#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.Query#getQueryValue <em>Query Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
-   * @see #getValue()
+   * @param value the new value of the '<em>Query Value</em>' attribute.
+   * @see #getQueryValue()
    * @generated
    */
-  void setValue(String value);
+  void setQueryValue(String value);
 
 } // Query

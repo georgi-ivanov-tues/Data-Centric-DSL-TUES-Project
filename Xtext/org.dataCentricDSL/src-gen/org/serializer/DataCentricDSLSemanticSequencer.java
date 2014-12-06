@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.DataCentricDSLPackage;
+import org.dataCentricDSL.Print;
 import org.dataCentricDSL.Query;
 import org.dataCentricDSL.VariableCall;
 import org.dataCentricDSL.VariableDecl;
@@ -79,15 +80,26 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
+			case DataCentricDSLPackage.PRINT:
+				if(context == grammarAccess.getPrintRule() ||
+				   context == grammarAccess.getPrintParamRule()) {
+					sequence_PrintParam(context, (Print) semanticObject); 
+					return; 
+				}
+				else break;
 			case DataCentricDSLPackage.QUERY:
-				if(context == grammarAccess.getQueryRule() ||
+				if(context == grammarAccess.getPrintRule() ||
+				   context == grammarAccess.getPrintParamRule() ||
+				   context == grammarAccess.getQueryRule() ||
 				   context == grammarAccess.getQueryParamRule()) {
 					sequence_QueryParam(context, (Query) semanticObject); 
 					return; 
 				}
 				else break;
 			case DataCentricDSLPackage.VARIABLE_CALL:
-				if(context == grammarAccess.getQueryRule() ||
+				if(context == grammarAccess.getPrintRule() ||
+				   context == grammarAccess.getPrintParamRule() ||
+				   context == grammarAccess.getQueryRule() ||
 				   context == grammarAccess.getQueryParamRule() ||
 				   context == grammarAccess.getVariableCallRule()) {
 					sequence_VariableCall(context, (VariableCall) semanticObject); 
@@ -1213,7 +1225,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (elements+=VariableDecl | elements+=Query)*
+	 *     (elements+=VariableDecl | elements+=Query | elements+=Print)*
 	 */
 	protected void sequence_DataCentricDSL(EObject context, DataCentricDSL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1222,33 +1234,35 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     value=STRING
+	 *     printValue=STRING
 	 */
-	protected void sequence_QueryParam(EObject context, Query semanticObject) {
+	protected void sequence_PrintParam(EObject context, Print semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.QUERY__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.QUERY__VALUE));
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PRINT__PRINT_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PRINT__PRINT_VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getQueryParamAccess().getValueSTRINGTerminalRuleCall_0_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getPrintParamAccess().getPrintValueSTRINGTerminalRuleCall_0_0(), semanticObject.getPrintValue());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     value=ValidID
+	 *     queryValue=STRING
+	 */
+	protected void sequence_QueryParam(EObject context, Query semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     variableCall=ValidID
 	 */
 	protected void sequence_VariableCall(EObject context, VariableCall semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.QUERY__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.QUERY__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVariableCallAccess().getValueValidIDParserRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

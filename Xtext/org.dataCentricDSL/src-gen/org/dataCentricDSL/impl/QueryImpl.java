@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,33 +18,33 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.QueryImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.QueryImpl#getQueryValue <em>Query Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class QueryImpl extends MinimalEObjectImpl.Container implements Query
+public class QueryImpl extends PrintImpl implements Query
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getQueryValue() <em>Query Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getQueryValue()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
+  protected static final String QUERY_VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getQueryValue() <em>Query Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getQueryValue()
    * @generated
    * @ordered
    */
-  protected String value = VALUE_EDEFAULT;
+  protected String queryValue = QUERY_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +72,9 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public String getQueryValue()
   {
-    return value;
+    return queryValue;
   }
 
   /**
@@ -83,12 +82,12 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  public void setQueryValue(String newQueryValue)
   {
-    String oldValue = value;
-    value = newValue;
+    String oldQueryValue = queryValue;
+    queryValue = newQueryValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.QUERY__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.QUERY__QUERY_VALUE, oldQueryValue, queryValue));
   }
 
   /**
@@ -101,8 +100,8 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__VALUE:
-        return getValue();
+      case DataCentricDSLPackage.QUERY__QUERY_VALUE:
+        return getQueryValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +116,8 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__VALUE:
-        setValue((String)newValue);
+      case DataCentricDSLPackage.QUERY__QUERY_VALUE:
+        setQueryValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +133,8 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case DataCentricDSLPackage.QUERY__QUERY_VALUE:
+        setQueryValue(QUERY_VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +150,8 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case DataCentricDSLPackage.QUERY__QUERY_VALUE:
+        return QUERY_VALUE_EDEFAULT == null ? queryValue != null : !QUERY_VALUE_EDEFAULT.equals(queryValue);
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +167,8 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
+    result.append(" (queryValue: ");
+    result.append(queryValue);
     result.append(')');
     return result.toString();
   }

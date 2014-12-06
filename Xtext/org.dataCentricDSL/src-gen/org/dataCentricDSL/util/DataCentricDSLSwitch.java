@@ -90,14 +90,14 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         Query query = (Query)theEObject;
         T result = caseQuery(query);
+        if (result == null) result = casePrint(query);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DataCentricDSLPackage.QUERY_PARAM:
+      case DataCentricDSLPackage.PRINT:
       {
-        QueryParam queryParam = (QueryParam)theEObject;
-        T result = caseQueryParam(queryParam);
-        if (result == null) result = caseQuery(queryParam);
+        Print print = (Print)theEObject;
+        T result = casePrint(print);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -105,8 +105,8 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         VariableCall variableCall = (VariableCall)theEObject;
         T result = caseVariableCall(variableCall);
-        if (result == null) result = caseQueryParam(variableCall);
         if (result == null) result = caseQuery(variableCall);
+        if (result == null) result = casePrint(variableCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -163,17 +163,17 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Query Param</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Print</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Query Param</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Print</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseQueryParam(QueryParam object)
+  public T casePrint(Print object)
   {
     return null;
   }

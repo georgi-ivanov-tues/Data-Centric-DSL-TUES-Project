@@ -15,9 +15,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/value"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Query">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Query/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Query/queryValue"/>
     </genClasses>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//QueryParam"/>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//VariableCall"/>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//Print">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Print/printValue"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//VariableCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableCall/variableCall"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

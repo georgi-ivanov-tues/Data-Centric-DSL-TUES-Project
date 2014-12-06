@@ -110,6 +110,21 @@ ruleDataCentricDSL returns [EObject current=null]
 	        afterParserOrEnumRuleCall();
 	    }
 
+    |		{ 
+	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsPrintParserRuleCall_0_0_2()); 
+	    }
+		lv_elements_0_3=rulePrint		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDataCentricDSLRule());
+	        }
+       		add(
+       			$current, 
+       			"elements",
+        		lv_elements_0_3, 
+        		"Print");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
 
 )
@@ -235,9 +250,9 @@ ruleQueryParam returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_value_0_0=RULE_STRING
+		lv_queryValue_0_0=RULE_STRING
 		{
-			newLeafNode(lv_value_0_0, grammarAccess.getQueryParamAccess().getValueSTRINGTerminalRuleCall_0_0()); 
+			newLeafNode(lv_queryValue_0_0, grammarAccess.getQueryParamAccess().getQueryValueSTRINGTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -245,8 +260,8 @@ ruleQueryParam returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"value",
-        		lv_value_0_0, 
+       			"queryValue",
+        		lv_queryValue_0_0, 
         		"STRING");
 	    }
 
@@ -259,6 +274,99 @@ ruleQueryParam returns [EObject current=null]
     this_VariableCall_1=ruleVariableCall
     { 
         $current = $this_VariableCall_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRulePrint
+entryRulePrint returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPrintRule()); }
+	 iv_rulePrint=rulePrint 
+	 { $current=$iv_rulePrint.current; } 
+	 EOF 
+;
+
+// Rule Print
+rulePrint returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='print' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getPrintAccess().getPrintKeyword_0());
+    }
+
+    { 
+        newCompositeNode(grammarAccess.getPrintAccess().getPrintParamParserRuleCall_1()); 
+    }
+    this_PrintParam_1=rulePrintParam
+    { 
+        $current = $this_PrintParam_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRulePrintParam
+entryRulePrintParam returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPrintParamRule()); }
+	 iv_rulePrintParam=rulePrintParam 
+	 { $current=$iv_rulePrintParam.current; } 
+	 EOF 
+;
+
+// Rule PrintParam
+rulePrintParam returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_printValue_0_0=RULE_STRING
+		{
+			newLeafNode(lv_printValue_0_0, grammarAccess.getPrintParamAccess().getPrintValueSTRINGTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPrintParamRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"printValue",
+        		lv_printValue_0_0, 
+        		"STRING");
+	    }
+
+)
+)
+    |
+    { 
+        newCompositeNode(grammarAccess.getPrintParamAccess().getVariableCallParserRuleCall_1()); 
+    }
+    this_VariableCall_1=ruleVariableCall
+    { 
+        $current = $this_VariableCall_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getPrintParamAccess().getQueryParserRuleCall_2()); 
+    }
+    this_Query_2=ruleQuery
+    { 
+        $current = $this_Query_2.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -291,16 +399,16 @@ ruleVariableCall returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVariableCallAccess().getValueValidIDParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getVariableCallAccess().getVariableCallValidIDParserRuleCall_1_0()); 
 	    }
-		lv_value_1_0=ruleValidID		{
+		lv_variableCall_1_0=ruleValidID		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getVariableCallRule());
 	        }
        		set(
        			$current, 
-       			"value",
-        		lv_value_1_0, 
+       			"variableCall",
+        		lv_variableCall_1_0, 
         		"ValidID");
 	        afterParserOrEnumRuleCall();
 	    }

@@ -18,6 +18,7 @@ import org.services.DataCentricDSLGrammarAccess;
 public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DataCentricDSLGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Query_QueryKeyword_0_q;
 	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
 	protected AbstractElementAlias match_XExpressionInClosure_SemicolonKeyword_1_1_q;
 	protected AbstractElementAlias match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q;
@@ -28,6 +29,7 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DataCentricDSLGrammarAccess) access;
+		match_Query_QueryKeyword_0_q = new TokenAlias(false, true, grammarAccess.getQueryAccess().getQueryKeyword_0());
 		match_XBlockExpression_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
 		match_XExpressionInClosure_SemicolonKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getXExpressionInClosureAccess().getSemicolonKeyword_1_1());
 		match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getXFunctionTypeRefAccess().getLeftParenthesisKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_2()));
@@ -73,7 +75,9 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_XBlockExpression_SemicolonKeyword_2_1_q.equals(syntax))
+			if(match_Query_QueryKeyword_0_q.equals(syntax))
+				emit_Query_QueryKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_XBlockExpression_SemicolonKeyword_2_1_q.equals(syntax))
 				emit_XBlockExpression_SemicolonKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XExpressionInClosure_SemicolonKeyword_1_1_q.equals(syntax))
 				emit_XExpressionInClosure_SemicolonKeyword_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -89,6 +93,14 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     'query'?
+	 */
+	protected void emit_Query_QueryKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     ';'?

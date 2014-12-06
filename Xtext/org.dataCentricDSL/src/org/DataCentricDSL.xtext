@@ -3,7 +3,7 @@ grammar org.DataCentricDSL with org.eclipse.xtext.xbase.Xbase
 generate dataCentricDSL "http://www.DataCentricDSL.org"
 
 DataCentricDSL:
-	(elements += (VariableDecl | Query) ';')*
+	(elements += (VariableDecl | Query | Print) ';')*
 ;
 
 VariableDecl:
@@ -15,11 +15,19 @@ Query:
 ;
 
 QueryParam returns Query:
-	(value=STRING | VariableCall)
+	(queryValue=STRING | VariableCall)
 ;
 
-VariableCall returns QueryParam:
-	{VariableCall} value=ValidID
+Print:
+	'print' PrintParam
+;
+
+PrintParam returns Print:
+	(printValue=STRING | VariableCall | Query)
+;
+
+VariableCall:
+	{VariableCall} variableCall=ValidID
 ;
 
 //DataCentricDSL:

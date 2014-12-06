@@ -26,19 +26,20 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cElementsAlternatives_0_0 = (Alternatives)cElementsAssignment_0.eContents().get(0);
 		private final RuleCall cElementsVariableDeclParserRuleCall_0_0_0 = (RuleCall)cElementsAlternatives_0_0.eContents().get(0);
 		private final RuleCall cElementsQueryParserRuleCall_0_0_1 = (RuleCall)cElementsAlternatives_0_0.eContents().get(1);
+		private final RuleCall cElementsPrintParserRuleCall_0_0_2 = (RuleCall)cElementsAlternatives_0_0.eContents().get(2);
 		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//DataCentricDSL:
-		//	(elements+=(VariableDecl | Query) ";")*;
+		//	(elements+=(VariableDecl | Query | Print) ";")*;
 		public ParserRule getRule() { return rule; }
 
-		//(elements+=(VariableDecl | Query) ";")*
+		//(elements+=(VariableDecl | Query | Print) ";")*
 		public Group getGroup() { return cGroup; }
 
-		//elements+=(VariableDecl | Query)
+		//elements+=(VariableDecl | Query | Print)
 		public Assignment getElementsAssignment_0() { return cElementsAssignment_0; }
 
-		//VariableDecl | Query
+		//VariableDecl | Query | Print
 		public Alternatives getElementsAlternatives_0_0() { return cElementsAlternatives_0_0; }
 
 		//VariableDecl
@@ -46,6 +47,9 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Query
 		public RuleCall getElementsQueryParserRuleCall_0_0_1() { return cElementsQueryParserRuleCall_0_0_1; }
+
+		//Print
+		public RuleCall getElementsPrintParserRuleCall_0_0_2() { return cElementsPrintParserRuleCall_0_0_2; }
 
 		//";"
 		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
@@ -106,33 +110,81 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class QueryParamElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QueryParam");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
+		private final Assignment cQueryValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cQueryValueSTRINGTerminalRuleCall_0_0 = (RuleCall)cQueryValueAssignment_0.eContents().get(0);
 		private final RuleCall cVariableCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//QueryParam returns Query:
-		//	value=STRING | VariableCall;
+		//	queryValue=STRING | VariableCall;
 		public ParserRule getRule() { return rule; }
 
-		//value=STRING | VariableCall
+		//queryValue=STRING | VariableCall
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//value=STRING
-		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
+		//queryValue=STRING
+		public Assignment getQueryValueAssignment_0() { return cQueryValueAssignment_0; }
 
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_0_0() { return cValueSTRINGTerminalRuleCall_0_0; }
+		public RuleCall getQueryValueSTRINGTerminalRuleCall_0_0() { return cQueryValueSTRINGTerminalRuleCall_0_0; }
 
 		//VariableCall
 		public RuleCall getVariableCallParserRuleCall_1() { return cVariableCallParserRuleCall_1; }
+	}
+
+	public class PrintElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Print");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPrintKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cPrintParamParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//Print:
+		//	"print" PrintParam;
+		public ParserRule getRule() { return rule; }
+
+		//"print" PrintParam
+		public Group getGroup() { return cGroup; }
+
+		//"print"
+		public Keyword getPrintKeyword_0() { return cPrintKeyword_0; }
+
+		//PrintParam
+		public RuleCall getPrintParamParserRuleCall_1() { return cPrintParamParserRuleCall_1; }
+	}
+
+	public class PrintParamElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PrintParam");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cPrintValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cPrintValueSTRINGTerminalRuleCall_0_0 = (RuleCall)cPrintValueAssignment_0.eContents().get(0);
+		private final RuleCall cVariableCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cQueryParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//PrintParam returns Print:
+		//	printValue=STRING | VariableCall | Query;
+		public ParserRule getRule() { return rule; }
+
+		//printValue=STRING | VariableCall | Query
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//printValue=STRING
+		public Assignment getPrintValueAssignment_0() { return cPrintValueAssignment_0; }
+
+		//STRING
+		public RuleCall getPrintValueSTRINGTerminalRuleCall_0_0() { return cPrintValueSTRINGTerminalRuleCall_0_0; }
+
+		//VariableCall
+		public RuleCall getVariableCallParserRuleCall_1() { return cVariableCallParserRuleCall_1; }
+
+		//Query
+		public RuleCall getQueryParserRuleCall_2() { return cQueryParserRuleCall_2; }
 	}
 
 	public class VariableCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cVariableCallAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValueValidIDParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final Assignment cVariableCallAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVariableCallValidIDParserRuleCall_1_0 = (RuleCall)cVariableCallAssignment_1.eContents().get(0);
 		
 		////DataCentricDSL:
 		////	elements += PackageDeclaration
@@ -188,21 +240,21 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		////
 		////Query:
 		////	'query' '('queryParams += XExpression ('+' queryParams += XExpression)*')'';'
-		////; VariableCall returns QueryParam:
-		//	{VariableCall} value=ValidID;
+		////; VariableCall:
+		//	{VariableCall} variableCall=ValidID;
 		public ParserRule getRule() { return rule; }
 
-		//{VariableCall} value=ValidID
+		//{VariableCall} variableCall=ValidID
 		public Group getGroup() { return cGroup; }
 
 		//{VariableCall}
 		public Action getVariableCallAction_0() { return cVariableCallAction_0; }
 
-		//value=ValidID
-		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+		//variableCall=ValidID
+		public Assignment getVariableCallAssignment_1() { return cVariableCallAssignment_1; }
 
 		//ValidID
-		public RuleCall getValueValidIDParserRuleCall_1_0() { return cValueValidIDParserRuleCall_1_0; }
+		public RuleCall getVariableCallValidIDParserRuleCall_1_0() { return cVariableCallValidIDParserRuleCall_1_0; }
 	}
 	
 	
@@ -210,6 +262,8 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final VariableDeclElements pVariableDecl;
 	private final QueryElements pQuery;
 	private final QueryParamElements pQueryParam;
+	private final PrintElements pPrint;
+	private final PrintParamElements pPrintParam;
 	private final VariableCallElements pVariableCall;
 	
 	private final Grammar grammar;
@@ -225,6 +279,8 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pVariableDecl = new VariableDeclElements();
 		this.pQuery = new QueryElements();
 		this.pQueryParam = new QueryParamElements();
+		this.pPrint = new PrintElements();
+		this.pPrintParam = new PrintParamElements();
 		this.pVariableCall = new VariableCallElements();
 	}
 	
@@ -256,7 +312,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//DataCentricDSL:
-	//	(elements+=(VariableDecl | Query) ";")*;
+	//	(elements+=(VariableDecl | Query | Print) ";")*;
 	public DataCentricDSLElements getDataCentricDSLAccess() {
 		return pDataCentricDSL;
 	}
@@ -286,13 +342,33 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QueryParam returns Query:
-	//	value=STRING | VariableCall;
+	//	queryValue=STRING | VariableCall;
 	public QueryParamElements getQueryParamAccess() {
 		return pQueryParam;
 	}
 	
 	public ParserRule getQueryParamRule() {
 		return getQueryParamAccess().getRule();
+	}
+
+	//Print:
+	//	"print" PrintParam;
+	public PrintElements getPrintAccess() {
+		return pPrint;
+	}
+	
+	public ParserRule getPrintRule() {
+		return getPrintAccess().getRule();
+	}
+
+	//PrintParam returns Print:
+	//	printValue=STRING | VariableCall | Query;
+	public PrintParamElements getPrintParamAccess() {
+		return pPrintParam;
+	}
+	
+	public ParserRule getPrintParamRule() {
+		return getPrintParamAccess().getRule();
 	}
 
 	////DataCentricDSL:
@@ -349,8 +425,8 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	////
 	////Query:
 	////	'query' '('queryParams += XExpression ('+' queryParams += XExpression)*')'';'
-	////; VariableCall returns QueryParam:
-	//	{VariableCall} value=ValidID;
+	////; VariableCall:
+	//	{VariableCall} variableCall=ValidID;
 	public VariableCallElements getVariableCallAccess() {
 		return pVariableCall;
 	}
