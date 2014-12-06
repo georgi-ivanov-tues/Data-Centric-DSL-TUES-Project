@@ -3,30 +3,31 @@ package org.dataCentricDSL.tests
 import com.google.inject.Inject
 import org.DataCentricDSLInjectorProvider
 import org.dataCentricDSL.DataCentricDSL
+import org.dataCentricDSL.VariableCall
 import org.dataCentricDSL.VariableDecl
-import org.dataCentricDSL.VariableParam
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper
 import org.junit.Test
 import org.junit.runner.RunWith
 
-import static org.junit.Assert.*
-
 @InjectWith(DataCentricDSLInjectorProvider)
 @RunWith(XtextRunner)
-class VariableStringValueTest {
+class TestSomething {
 	
 	@Inject
 	ParseHelper<DataCentricDSL> parser
 	
 	@Test
-	def testVariableStringValue() {
+	def void test() {
 		val model = parser.parse(
-			"queryString = \"SELECT * FROM table\";"
+			"a = \"dasdas\";
+			 b = a;
+			"
 		)
-		val variableDecl = model.elements.head as VariableDecl
-		assertEquals("SELECT * FROM table", (variableDecl.variableValue as VariableParam).variableStringParam);
+		for(i : 0..< model.elements.size) {
+			print(((model.elements.get(i) as VariableDecl).variableValue as VariableCall).variableCall)
+		}
 	}
 	
 }

@@ -38,6 +38,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getDataCentricDSLAccess().getElementsAlternatives_0_0(), "rule__DataCentricDSL__ElementsAlternatives_0_0");
+					put(grammarAccess.getVariableParamAccess().getAlternatives_1(), "rule__VariableParam__Alternatives_1");
 					put(grammarAccess.getQueryParamAccess().getAlternatives(), "rule__QueryParam__Alternatives");
 					put(grammarAccess.getPrintParamAccess().getAlternatives(), "rule__PrintParam__Alternatives");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
@@ -81,6 +82,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1_0_3(), "rule__XImportDeclaration__Alternatives_1_0_3");
 					put(grammarAccess.getDataCentricDSLAccess().getGroup(), "rule__DataCentricDSL__Group__0");
 					put(grammarAccess.getVariableDeclAccess().getGroup(), "rule__VariableDecl__Group__0");
+					put(grammarAccess.getVariableParamAccess().getGroup(), "rule__VariableParam__Group__0");
 					put(grammarAccess.getQueryAccess().getGroup(), "rule__Query__Group__0");
 					put(grammarAccess.getPrintAccess().getGroup(), "rule__Print__Group__0");
 					put(grammarAccess.getVariableCallAccess().getGroup(), "rule__VariableCall__Group__0");
@@ -265,7 +267,10 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameInStaticImportAccess().getGroup(), "rule__QualifiedNameInStaticImport__Group__0");
 					put(grammarAccess.getDataCentricDSLAccess().getElementsAssignment_0(), "rule__DataCentricDSL__ElementsAssignment_0");
 					put(grammarAccess.getVariableDeclAccess().getNameAssignment_0(), "rule__VariableDecl__NameAssignment_0");
-					put(grammarAccess.getVariableDeclAccess().getValueAssignment_2(), "rule__VariableDecl__ValueAssignment_2");
+					put(grammarAccess.getVariableDeclAccess().getVariableValueAssignment_2(), "rule__VariableDecl__VariableValueAssignment_2");
+					put(grammarAccess.getVariableParamAccess().getVariableStringParamAssignment_1_0(), "rule__VariableParam__VariableStringParamAssignment_1_0");
+					put(grammarAccess.getVariableParamAccess().getVariableVarParamAssignment_1_1(), "rule__VariableParam__VariableVarParamAssignment_1_1");
+					put(grammarAccess.getVariableParamAccess().getVariableQueryParamAssignment_1_2(), "rule__VariableParam__VariableQueryParamAssignment_1_2");
 					put(grammarAccess.getQueryParamAccess().getQueryValueAssignment_0(), "rule__QueryParam__QueryValueAssignment_0");
 					put(grammarAccess.getPrintParamAccess().getPrintValueAssignment_0(), "rule__PrintParam__PrintValueAssignment_0");
 					put(grammarAccess.getVariableCallAccess().getVariableCallAssignment_1(), "rule__VariableCall__VariableCallAssignment_1");

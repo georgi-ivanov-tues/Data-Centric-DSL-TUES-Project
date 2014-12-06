@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.dataCentricDSL.VariableDecl#getName <em>Name</em>}</li>
- *   <li>{@link org.dataCentricDSL.VariableDecl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.dataCentricDSL.VariableDecl#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,29 +50,29 @@ public interface VariableDecl extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Variable Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' attribute isn't clear,
+   * If the meaning of the '<em>Variable Value</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableDecl_Value()
-   * @model
+   * @return the value of the '<em>Variable Value</em>' containment reference.
+   * @see #setVariableValue(VariableDecl)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableDecl_VariableValue()
+   * @model containment="true"
    * @generated
    */
-  String getValue();
+  VariableDecl getVariableValue();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.VariableDecl#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.VariableDecl#getVariableValue <em>Variable Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
-   * @see #getValue()
+   * @param value the new value of the '<em>Variable Value</em>' containment reference.
+   * @see #getVariableValue()
    * @generated
    */
-  void setValue(String value);
+  void setVariableValue(VariableDecl value);
 
 } // VariableDecl
