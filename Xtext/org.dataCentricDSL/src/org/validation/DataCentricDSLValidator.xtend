@@ -27,7 +27,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	//for now it only works for query
 	@Check
 	def void checkIfAssignedVariableExists(VariableCall vc) {
-		val Array = (vc.eContainer() as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
+		val Array = (vc.eContainer as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
 		var found = 0;
 		for(i : 0..< Array.length) {
 			if(found == 0) {

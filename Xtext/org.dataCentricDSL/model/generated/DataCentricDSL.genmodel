@@ -12,7 +12,7 @@
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableDecl/variableValue"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Query">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Query/queryValue"/>
@@ -22,6 +22,11 @@
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableCall">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableCall/variableCall"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//VariableParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableParam/variableStringParam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableParam/variableVarParam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableParam/variableQueryParam"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

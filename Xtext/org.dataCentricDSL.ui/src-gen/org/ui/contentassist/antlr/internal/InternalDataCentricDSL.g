@@ -113,6 +113,34 @@ finally {
 
 
 
+// Entry rule entryRuleVariableParam
+entryRuleVariableParam 
+:
+{ before(grammarAccess.getVariableParamRule()); }
+	 ruleVariableParam
+{ after(grammarAccess.getVariableParamRule()); } 
+	 EOF 
+;
+
+// Rule VariableParam
+ruleVariableParam
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getVariableParamAccess().getGroup()); }
+(rule__VariableParam__Group__0)
+{ after(grammarAccess.getVariableParamAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleQuery
 entryRuleQuery 
 :
@@ -2409,6 +2437,34 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__VariableParam__Alternatives_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getVariableParamAccess().getVariableStringParamAssignment_1_0()); }
+(rule__VariableParam__VariableStringParamAssignment_1_0)
+{ after(grammarAccess.getVariableParamAccess().getVariableStringParamAssignment_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getVariableParamAccess().getVariableVarParamAssignment_1_1()); }
+(rule__VariableParam__VariableVarParamAssignment_1_1)
+{ after(grammarAccess.getVariableParamAccess().getVariableVarParamAssignment_1_1()); }
+)
+
+    |(
+{ before(grammarAccess.getVariableParamAccess().getVariableQueryParamAssignment_1_2()); }
+(rule__VariableParam__VariableQueryParamAssignment_1_2)
+{ after(grammarAccess.getVariableParamAccess().getVariableQueryParamAssignment_1_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__QueryParam__Alternatives
     @init {
 		int stackSize = keepStackSize();
@@ -3799,9 +3855,9 @@ rule__VariableDecl__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getVariableDeclAccess().getValueAssignment_2()); }
-(rule__VariableDecl__ValueAssignment_2)
-{ after(grammarAccess.getVariableDeclAccess().getValueAssignment_2()); }
+{ before(grammarAccess.getVariableDeclAccess().getVariableValueAssignment_2()); }
+(rule__VariableDecl__VariableValueAssignment_2)
+{ after(grammarAccess.getVariableDeclAccess().getVariableValueAssignment_2()); }
 )
 
 ;
@@ -3810,6 +3866,69 @@ finally {
 }
 
 
+
+
+
+
+
+
+rule__VariableParam__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__VariableParam__Group__0__Impl
+	rule__VariableParam__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VariableParam__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getVariableParamAccess().getVariableParamAction_0()); }
+(
+
+)
+{ after(grammarAccess.getVariableParamAccess().getVariableParamAction_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__VariableParam__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__VariableParam__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VariableParam__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getVariableParamAccess().getAlternatives_1()); }
+(rule__VariableParam__Alternatives_1)
+{ after(grammarAccess.getVariableParamAccess().getAlternatives_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 
@@ -17570,14 +17689,59 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__VariableDecl__ValueAssignment_2
+rule__VariableDecl__VariableValueAssignment_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getVariableDeclAccess().getValueSTRINGTerminalRuleCall_2_0()); }
-	RULE_STRING{ after(grammarAccess.getVariableDeclAccess().getValueSTRINGTerminalRuleCall_2_0()); }
+{ before(grammarAccess.getVariableDeclAccess().getVariableValueVariableParamParserRuleCall_2_0()); }
+	ruleVariableParam{ after(grammarAccess.getVariableDeclAccess().getVariableValueVariableParamParserRuleCall_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VariableParam__VariableStringParamAssignment_1_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getVariableParamAccess().getVariableStringParamSTRINGTerminalRuleCall_1_0_0()); }
+	RULE_STRING{ after(grammarAccess.getVariableParamAccess().getVariableStringParamSTRINGTerminalRuleCall_1_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VariableParam__VariableVarParamAssignment_1_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getVariableParamAccess().getVariableVarParamVariableCallParserRuleCall_1_1_0()); }
+	ruleVariableCall{ after(grammarAccess.getVariableParamAccess().getVariableVarParamVariableCallParserRuleCall_1_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VariableParam__VariableQueryParamAssignment_1_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getVariableParamAccess().getVariableQueryParamQueryParserRuleCall_1_2_0()); }
+	ruleQuery{ after(grammarAccess.getVariableParamAccess().getVariableQueryParamQueryParserRuleCall_1_2_0()); }
 )
 
 ;

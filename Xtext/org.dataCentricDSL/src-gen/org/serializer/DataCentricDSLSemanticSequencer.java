@@ -8,6 +8,7 @@ import org.dataCentricDSL.Print;
 import org.dataCentricDSL.Query;
 import org.dataCentricDSL.VariableCall;
 import org.dataCentricDSL.VariableDecl;
+import org.dataCentricDSL.VariableParam;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
@@ -109,6 +110,12 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 			case DataCentricDSLPackage.VARIABLE_DECL:
 				if(context == grammarAccess.getVariableDeclRule()) {
 					sequence_VariableDecl(context, (VariableDecl) semanticObject); 
+					return; 
+				}
+				else break;
+			case DataCentricDSLPackage.VARIABLE_PARAM:
+				if(context == grammarAccess.getVariableParamRule()) {
+					sequence_VariableParam(context, (VariableParam) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1268,19 +1275,28 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID value=STRING)
+	 *     (name=ValidID variableValue=VariableParam)
 	 */
 	protected void sequence_VariableDecl(EObject context, VariableDecl semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.VARIABLE_DECL__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.VARIABLE_DECL__NAME));
-			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.VARIABLE_DECL__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.VARIABLE_DECL__VALUE));
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.VARIABLE_DECL__VARIABLE_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.VARIABLE_DECL__VARIABLE_VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getVariableDeclAccess().getNameValidIDParserRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getVariableDeclAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getVariableDeclAccess().getVariableValueVariableParamParserRuleCall_2_0(), semanticObject.getVariableValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (variableStringParam=STRING | variableVarParam=VariableCall | variableQueryParam=Query)
+	 */
+	protected void sequence_VariableParam(EObject context, VariableParam semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }

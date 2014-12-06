@@ -6,8 +6,10 @@ import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.VariableDecl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -20,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.dataCentricDSL.impl.VariableDeclImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.VariableDeclImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.VariableDeclImpl#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,24 +51,14 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getVariableValue() <em>Variable Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getVariableValue()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
+  protected VariableDecl variableValue;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,9 +109,9 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public VariableDecl getVariableValue()
   {
-    return value;
+    return variableValue;
   }
 
   /**
@@ -127,12 +119,53 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  public NotificationChain basicSetVariableValue(VariableDecl newVariableValue, NotificationChain msgs)
   {
-    String oldValue = value;
-    value = newValue;
+    VariableDecl oldVariableValue = variableValue;
+    variableValue = newVariableValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_DECL__VALUE, oldValue, value));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE, oldVariableValue, newVariableValue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVariableValue(VariableDecl newVariableValue)
+  {
+    if (newVariableValue != variableValue)
+    {
+      NotificationChain msgs = null;
+      if (variableValue != null)
+        msgs = ((InternalEObject)variableValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE, null, msgs);
+      if (newVariableValue != null)
+        msgs = ((InternalEObject)newVariableValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE, null, msgs);
+      msgs = basicSetVariableValue(newVariableValue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE, newVariableValue, newVariableValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
+        return basicSetVariableValue(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -147,8 +180,8 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
     {
       case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         return getName();
-      case DataCentricDSLPackage.VARIABLE_DECL__VALUE:
-        return getValue();
+      case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
+        return getVariableValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -166,8 +199,8 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
       case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         setName((String)newValue);
         return;
-      case DataCentricDSLPackage.VARIABLE_DECL__VALUE:
-        setValue((String)newValue);
+      case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
+        setVariableValue((VariableDecl)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -186,8 +219,8 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
       case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case DataCentricDSLPackage.VARIABLE_DECL__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
+        setVariableValue((VariableDecl)null);
         return;
     }
     super.eUnset(featureID);
@@ -205,8 +238,8 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
     {
       case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DataCentricDSLPackage.VARIABLE_DECL__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
+        return variableValue != null;
     }
     return super.eIsSet(featureID);
   }
@@ -224,8 +257,6 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", value: ");
-    result.append(value);
     result.append(')');
     return result.toString();
   }

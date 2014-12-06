@@ -104,13 +104,13 @@ public interface DataCentricDSLPackage extends EPackage
   int VARIABLE_DECL__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Variable Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL__VALUE = 1;
+  int VARIABLE_DECL__VARIABLE_VALUE = 1;
 
   /**
    * The number of structural features of the '<em>Variable Decl</em>' class.
@@ -232,6 +232,70 @@ public interface DataCentricDSLPackage extends EPackage
    */
   int VARIABLE_CALL_FEATURE_COUNT = QUERY_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.VariableParamImpl <em>Variable Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.VariableParamImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableParam()
+   * @generated
+   */
+  int VARIABLE_PARAM = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_PARAM__NAME = VARIABLE_DECL__NAME;
+
+  /**
+   * The feature id for the '<em><b>Variable Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_PARAM__VARIABLE_VALUE = VARIABLE_DECL__VARIABLE_VALUE;
+
+  /**
+   * The feature id for the '<em><b>Variable String Param</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_PARAM__VARIABLE_STRING_PARAM = VARIABLE_DECL_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Variable Var Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_PARAM__VARIABLE_VAR_PARAM = VARIABLE_DECL_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Variable Query Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_PARAM__VARIABLE_QUERY_PARAM = VARIABLE_DECL_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Variable Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_PARAM_FEATURE_COUNT = VARIABLE_DECL_FEATURE_COUNT + 3;
+
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.DataCentricDSL <em>Data Centric DSL</em>}'.
@@ -276,15 +340,15 @@ public interface DataCentricDSLPackage extends EPackage
   EAttribute getVariableDecl_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableDecl#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.VariableDecl#getVariableValue <em>Variable Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.dataCentricDSL.VariableDecl#getValue()
+   * @return the meta object for the containment reference '<em>Variable Value</em>'.
+   * @see org.dataCentricDSL.VariableDecl#getVariableValue()
    * @see #getVariableDecl()
    * @generated
    */
-  EAttribute getVariableDecl_Value();
+  EReference getVariableDecl_VariableValue();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.Query <em>Query</em>}'.
@@ -350,6 +414,49 @@ public interface DataCentricDSLPackage extends EPackage
   EAttribute getVariableCall_VariableCall();
 
   /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.VariableParam <em>Variable Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable Param</em>'.
+   * @see org.dataCentricDSL.VariableParam
+   * @generated
+   */
+  EClass getVariableParam();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableParam#getVariableStringParam <em>Variable String Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Variable String Param</em>'.
+   * @see org.dataCentricDSL.VariableParam#getVariableStringParam()
+   * @see #getVariableParam()
+   * @generated
+   */
+  EAttribute getVariableParam_VariableStringParam();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.VariableParam#getVariableVarParam <em>Variable Var Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable Var Param</em>'.
+   * @see org.dataCentricDSL.VariableParam#getVariableVarParam()
+   * @see #getVariableParam()
+   * @generated
+   */
+  EReference getVariableParam_VariableVarParam();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.VariableParam#getVariableQueryParam <em>Variable Query Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable Query Param</em>'.
+   * @see org.dataCentricDSL.VariableParam#getVariableQueryParam()
+   * @see #getVariableParam()
+   * @generated
+   */
+  EReference getVariableParam_VariableQueryParam();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -409,12 +516,12 @@ public interface DataCentricDSLPackage extends EPackage
     EAttribute VARIABLE_DECL__NAME = eINSTANCE.getVariableDecl_Name();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Variable Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE_DECL__VALUE = eINSTANCE.getVariableDecl_Value();
+    EReference VARIABLE_DECL__VARIABLE_VALUE = eINSTANCE.getVariableDecl_VariableValue();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.QueryImpl <em>Query</em>}' class.
@@ -469,6 +576,40 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EAttribute VARIABLE_CALL__VARIABLE_CALL = eINSTANCE.getVariableCall_VariableCall();
+
+    /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.VariableParamImpl <em>Variable Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.VariableParamImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableParam()
+     * @generated
+     */
+    EClass VARIABLE_PARAM = eINSTANCE.getVariableParam();
+
+    /**
+     * The meta object literal for the '<em><b>Variable String Param</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_PARAM__VARIABLE_STRING_PARAM = eINSTANCE.getVariableParam_VariableStringParam();
+
+    /**
+     * The meta object literal for the '<em><b>Variable Var Param</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_PARAM__VARIABLE_VAR_PARAM = eINSTANCE.getVariableParam_VariableVarParam();
+
+    /**
+     * The meta object literal for the '<em><b>Variable Query Param</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_PARAM__VARIABLE_QUERY_PARAM = eINSTANCE.getVariableParam_VariableQueryParam();
 
   }
 
