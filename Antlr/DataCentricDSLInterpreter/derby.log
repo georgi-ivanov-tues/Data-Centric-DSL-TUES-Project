@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Thu Dec 04 00:28:57 EET 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-014a-1245-46cb-000003bef0e8 
-on database directory D:\DataCentricDSLInterpreter\Data-Centric-DSL-TUES-Project\Antlr\DataCentricDSLInterpreter\test_database with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
-Loaded from file:/D:/DataCentricDSLInterpreter/Data-Centric-DSL-TUES-Project/Antlr/DataCentricDSLInterpreter/lib/derby.jar
+Sat Dec 06 20:14:36 EET 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-014a-20cf-7a72-000003b01200 
+on database directory D:\Language-GIT\Data-Centric-DSL-TUES-Project\Antlr\DataCentricDSLInterpreter\test_database with class loader sun.misc.Launcher$AppClassLoader@55f96302 
+Loaded from file:/D:/Language-GIT/Data-Centric-DSL-TUES-Project/Antlr/DataCentricDSLInterpreter/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0-b132
-user.dir=D:\DataCentricDSLInterpreter\Data-Centric-DSL-TUES-Project\Antlr\DataCentricDSLInterpreter
+user.dir=D:\Language-GIT\Data-Centric-DSL-TUES-Project\Antlr\DataCentricDSLInterpreter
 os.name=Windows 8.1
 os.arch=amd64
 os.version=6.3

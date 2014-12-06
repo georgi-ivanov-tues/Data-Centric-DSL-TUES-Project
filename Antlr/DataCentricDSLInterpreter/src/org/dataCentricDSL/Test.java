@@ -4,6 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 import org.antlr.runtime.ANTLRStringStream;
@@ -13,6 +17,7 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.TokenStream;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.dataCentricDSL.DataCentricDSLParser.program_return;
+import org.dataCentricDSL.derbyDB.CreateDB;
 
 public class Test {
 
@@ -22,7 +27,6 @@ public class Test {
 		Scanner input = new Scanner(inputFile);
 //		Scanner input = new Scanner(System.in);
 		StringBuilder builder = new StringBuilder();
-		String line;
 		while(input.hasNextLine()) {
 			builder.append(input.nextLine());
 			builder.append("\n");
@@ -37,14 +41,16 @@ public class Test {
 //		System.out.println();
 		
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.tree);
-		ProgramWalker walker = new ProgramWalker(nodeStream);
+		Map<String, Object> myMap = new HashMap<String, Object>();
+		myMap.put("testVariable", "YESSS");
+		try {
+			myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
 		walker.program();
-		
-//		for(String query : queries) {
-//			System.out.println(query);
-//		}
-		
-		//System.out.println(builder);
+		System.out.println(myMap.get("str"));
 	}
 }
 
@@ -54,8 +60,4 @@ str = "SELECT * FROM people";
 result = query(str);
 print(result);
 end
-
-
-
-
 */

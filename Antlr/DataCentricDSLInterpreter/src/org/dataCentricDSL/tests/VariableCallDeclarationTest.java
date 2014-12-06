@@ -26,9 +26,9 @@ public class VariableCallDeclarationTest {
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		
 		walker.variableDecl(); 
-		String str = walker.variables.get("str");
+		String str = (String) walker.context.get("str");
 		walker.variableDecl();
-		String str2 = walker.variables.get("str2");
+		String str2 = (String) walker.context.get("str2");
 		assertEquals(str, str2);
 	}
 }

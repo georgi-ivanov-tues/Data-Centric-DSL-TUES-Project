@@ -2,7 +2,11 @@ package org.dataCentricDSL.tests;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
@@ -11,8 +15,9 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.dataCentricDSL.DataCentricDSLLexer;
 import org.dataCentricDSL.DataCentricDSLParser;
-import org.dataCentricDSL.ProgramWalker;
 import org.dataCentricDSL.DataCentricDSLParser.program_return;
+import org.dataCentricDSL.ProgramWalker;
+import org.dataCentricDSL.derbyDB.CreateDB;
 import org.junit.Test;
 
 public class VariableQueryDeclarationTest {
@@ -25,14 +30,27 @@ public class VariableQueryDeclarationTest {
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
 		program_return program = parser.program();
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.getTree());
-		ProgramWalker walker = new ProgramWalker(nodeStream);
+		Map<String, Object> myMap = new HashMap<String, Object>();
+		try {
+			myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
 		
 		walker.variableDecl();
-		ArrayList<String[]> result = walker.queryVariables.get("result");
-		assertEquals(result.size(), 4);
-		assertEquals(result.get(0)[0], "Georgi");
-		assertEquals(result.get(1)[0], "Kiril");
-		assertEquals(result.get(2)[0], "Nedelcho");
-		assertEquals(result.get(3)[0], "Bojidar");
+		ResultSet result = (ResultSet) walker.context.get("result");
+		try {
+			result.next();
+			assertEquals(result.getString(1), "Georgi");
+			result.next();
+			assertEquals(result.getString(1), "Kiril");
+			result.next();
+			assertEquals(result.getString(1), "Nedelcho");
+			result.next();
+			assertEquals(result.getString(1), "Bojidar");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

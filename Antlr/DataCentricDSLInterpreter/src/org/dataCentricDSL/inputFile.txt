@@ -1,5 +1,5 @@
 str = "SELECT * FROM people";
-result = query(str);
-print(result);
-print("Will I see this");
+//result = query(str);
+print(query(str));
+print(testVariable);
 

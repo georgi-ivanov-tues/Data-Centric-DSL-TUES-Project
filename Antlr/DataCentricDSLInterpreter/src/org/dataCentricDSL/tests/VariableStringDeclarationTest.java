@@ -25,7 +25,7 @@ public class VariableStringDeclarationTest {
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		
 		walker.variableDecl();
-		String result = walker.variables.get("str");
+		String result = (String) walker.context.get("str");
 		assertEquals(result, "Hello World");
 	}
 }

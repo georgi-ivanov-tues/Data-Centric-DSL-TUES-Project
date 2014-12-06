@@ -12,67 +12,89 @@ options {
   import java.util.ArrayList;
   import java.util.Map;
   import java.util.HashMap;
+  import java.sql.Connection;
+  import java.sql.ResultSet;
+  import java.sql.Statement;
+  import java.sql.SQLException;
+  import java.sql.ResultSetMetaData;
 }
 
 @members { 
-  public ArrayList<String[]> queries = new ArrayList<String[]>();
-  public Map<String, String> variables = new HashMap<>();
-  public Map<String, ArrayList<String[]>> queryVariables = new HashMap<>();
+  public ProgramWalker(TreeNodeStream input, Map<String, Object> context) {
+    super(input, new RecognizerSharedState());
+    this.context = context;
+  }
+  
+  public ProgramWalker(TreeNodeStream input, RecognizerSharedState state, Map<String, Object> context) {
+    super(input, state);
+    this.context = context;
+  }
+  
+  public Map<String, Object> context = new HashMap<String, Object>();
+  
+  public ResultSet executeQuery(String sqlStatement, Connection connection) throws SQLException {
+    Statement statement = connection.createStatement();
+    ResultSet result = statement.executeQuery(sqlStatement);
+    //if(statement != null) statement.close();
+    return result;
+  }
+  
+  public void printResultSet(ResultSet resultSet) throws SQLException {
+    ResultSetMetaData metaData = resultSet.getMetaData();
+    int columnCount = metaData.getColumnCount();
+    while(resultSet.next()) {
+      for(int i = 1; i <= columnCount; i++) {
+        if(i > 1) System.out.print(" ");
+        String columnValue = resultSet.getString(i);
+        System.out.printf("\%15s", columnValue);
+      }
+      System.out.println("");
+    }
+  }
 }
 
 program:
   (query | print | variableDecl)*
   ;
   
-query returns [ArrayList<String[\]> result]: 
+query returns [ResultSet result]: 
+  {String sqlStatement = "";}
   ^('query'
-   (  STRING_LITERAL  {
-      try {
-        result = org.dataCentricDSL.derbyDB.QueryExectution.executeQuery($STRING_LITERAL.text);
-        queries.addAll(result);
-      } catch (java.sql.SQLException e) {
-        e.printStackTrace();
-      }} 
-   |  variableCall {
-      try {
-        result = org.dataCentricDSL.derbyDB.QueryExectution.executeQuery(variables.get($variableCall.value));
-        queries.addAll(result);
-      } catch (java.sql.SQLException e) {
-        e.printStackTrace();
-      }}
-   ) 
+   (  STRING_LITERAL  {sqlStatement = $STRING_LITERAL.text;} 
+   |  variableCall {sqlStatement = (String) context.get($variableCall.value);}
+   )
+   {try {
+      result = executeQuery(sqlStatement, (Connection) context.get("dataSource"));
+      context.put("lastResult", result);
+    } catch (java.sql.SQLException e) {
+      e.printStackTrace();
+    }} 
    )
 ;
 
 print:
    ^('print' 
-    (
-    STRING_LITERAL {System.out.println($STRING_LITERAL.text);}
+    ( STRING_LITERAL {System.out.println($STRING_LITERAL.text);}
     | query 
-    {
-	    try {
-	      org.dataCentricDSL.derbyDB.QueryExectution.printQueryResult($query.result);
-	    } catch (java.sql.SQLException e) {
-	      e.printStackTrace();
-	    }} 
-    | variableCall { 
-        if(variables.get($variableCall.value) != null){
-          System.out.println(variables.get($variableCall.value)); 
-        }else if(queryVariables.get($variableCall.value) != null)
-	        try {
-	          org.dataCentricDSL.derbyDB.QueryExectution.printQueryResult(queryVariables.get($variableCall.value));
-	        } catch (java.sql.SQLException e) {
-	          e.printStackTrace();
-	        } 
+      { try {
+          printResultSet($query.result);
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }} 
+    | variableCall 
+      { String text = (String) context.get($variableCall.value); 
+        if(text != null){
+          System.out.println(text); 
+        } 
       }) 
     )
 ;
 
 variableDecl:
   IDENT 
-  ( q=query {queryVariables.put($IDENT.text,q);}
-  | v=variableCall { variables.put($IDENT.text, variables.get($variableCall.value)); }
-  | STRING_LITERAL { variables.put($IDENT.text, $STRING_LITERAL.text); }
+  ( query {context.put($IDENT.text, $query.result);}
+  | variableCall { context.put($IDENT.text, context.get($variableCall.value)); }
+  | STRING_LITERAL { context.put($IDENT.text, $STRING_LITERAL.text); }
   )
 ;
 
