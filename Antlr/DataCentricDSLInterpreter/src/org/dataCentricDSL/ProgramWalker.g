@@ -39,6 +39,11 @@ options {
     return result;
   }
   
+  public void print(Object obj) throws SQLException {
+    if(obj instanceof String) System.out.println(obj);
+    else if (obj instanceof ResultSet) printResultSet((ResultSet) obj);
+  }
+  
   public void printResultSet(ResultSet resultSet) throws SQLException {
     ResultSetMetaData metaData = resultSet.getMetaData();
     int columnCount = metaData.getColumnCount();
@@ -82,9 +87,13 @@ print:
           e.printStackTrace();
         }} 
     | variableCall 
-      { String text = (String) context.get($variableCall.value); 
+      { Object text = context.get($variableCall.value); 
         if(text != null){
-          System.out.println(text); 
+          try {
+            print(text);
+          } catch (SQLException e) {
+            e.printStackTrace();
+          } 
         } 
       }) 
     )
