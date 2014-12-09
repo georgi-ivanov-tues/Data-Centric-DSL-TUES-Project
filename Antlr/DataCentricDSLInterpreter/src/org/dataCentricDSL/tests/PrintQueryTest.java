@@ -39,7 +39,7 @@ public class PrintQueryTest {
 	
 	@Test
 	public void QueryExecutionTest() throws RecognitionException {
-		CharStream cs = new ANTLRStringStream("print(query(\"SELECT first_name FROM people WHERE first_name = 'Georgi'\"));");
+		CharStream cs = new ANTLRStringStream("print query \"SELECT first_name FROM people WHERE first_name = 'Georgi'\";");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

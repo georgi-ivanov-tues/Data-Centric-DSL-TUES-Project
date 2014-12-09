@@ -50,7 +50,7 @@ public class Test {
 		}
 		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
 		walker.program();
-		System.out.println(myMap.get("str"));
+//		System.out.println(myMap.get("str"));
 		
 	}
 }

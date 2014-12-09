@@ -6,7 +6,7 @@ options {
   ASTLabelType = CommonTree;
 }
 
-@header {
+@header { 
   package org.dataCentricDSL;
   import java.util.List;
   import java.util.ArrayList;
@@ -19,7 +19,7 @@ options {
   import java.sql.ResultSetMetaData;
 }
 
-@members { 
+@members {  
   public ProgramWalker(TreeNodeStream input, Map<String, Object> context) {
     super(input, new RecognizerSharedState());
     this.context = context;
@@ -29,7 +29,7 @@ options {
     super(input, state);
     this.context = context;
   }
-  
+   
   public Map<String, Object> context = new HashMap<String, Object>();
   
   public ResultSet executeQuery(String sqlStatement, Connection connection) throws SQLException {
@@ -40,8 +40,13 @@ options {
   }
   
   public void print(Object obj) throws SQLException {
-    if(obj instanceof String) System.out.println(obj);
+    if(obj instanceof String) System.out.println("STRING = " + obj);
+    else if(obj instanceof Integer) System.out.println("INTEGER = " + obj);
+    else if(obj instanceof Float) System.out.println("FLOAT = " + obj);
+    else if(obj instanceof Character) System.out.println("CHAR = " + obj);
+    else if(obj instanceof Boolean) System.out.println("BOOLEAN = " + obj);
     else if (obj instanceof ResultSet) printResultSet((ResultSet) obj);
+    else System.out.println("sorry...");
   }
   
   public void printResultSet(ResultSet resultSet) throws SQLException {
@@ -88,12 +93,13 @@ print:
         }} 
     | variableCall 
       { Object text = context.get($variableCall.value); 
+//        System.out.println(text.getClass());
         if(text != null){
           try {
             print(text);
           } catch (SQLException e) {
             e.printStackTrace();
-          } 
+          }
         } 
       }) 
     )
@@ -103,10 +109,15 @@ variableDecl:
   IDENT 
   ( query {context.put($IDENT.text, $query.result);}
   | variableCall { context.put($IDENT.text, context.get($variableCall.value)); }
-  | STRING_LITERAL { context.put($IDENT.text, $STRING_LITERAL.text); }
+  | STRING_LITERAL 
+  { if($STRING_LITERAL.text.length() == 1) context.put($IDENT.text, $STRING_LITERAL.text.charAt(0)); // It's a char
+    else context.put($IDENT.text, $STRING_LITERAL.text);} // It's a string
+  | INTEGER { context.put($IDENT.text, Integer.parseInt($INTEGER.text));}
+  | FLOAT { context.put($IDENT.text, Float.parseFloat($FLOAT.text)); }
+  | BOOLEAN { context.put($IDENT.text, Boolean.parseBoolean($BOOLEAN.text)); }
   )
 ;
 
 variableCall returns [String value]:
-  IDENT {value=$IDENT.text; }
+  IDENT {value=$IDENT.text;}
 ;

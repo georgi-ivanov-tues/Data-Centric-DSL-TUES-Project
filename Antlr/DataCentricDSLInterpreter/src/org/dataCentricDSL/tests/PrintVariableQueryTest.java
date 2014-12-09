@@ -38,7 +38,7 @@ public class PrintVariableQueryTest {
 	
 	@Test
 	public void QueryExecutionTest() throws RecognitionException {
-		CharStream cs = new ANTLRStringStream("r = query(\"SELECT first_name FROM people WHERE first_name = 'Georgi'\"); print(r);");
+		CharStream cs = new ANTLRStringStream("r = query \"SELECT first_name FROM people WHERE first_name = 'Georgi'\"; print r;");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

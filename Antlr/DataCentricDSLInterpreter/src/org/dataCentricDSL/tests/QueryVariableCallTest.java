@@ -23,7 +23,7 @@ import org.junit.Test;
 public class QueryVariableCallTest {
 	@Test
 	public void QueryExecutionTest() throws RecognitionException {
-		CharStream cs = new ANTLRStringStream("str = \"SELECT first_name FROM people\"; query(str);");
+		CharStream cs = new ANTLRStringStream("str = \"SELECT first_name FROM people\"; query str;");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

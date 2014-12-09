@@ -24,7 +24,7 @@ public class QueryTest {
 
 	@Test
 	public void QueryExecutionTest() throws RecognitionException {
-		CharStream cs = new ANTLRStringStream("query(\"SELECT first_name FROM people\");");
+		CharStream cs = new ANTLRStringStream("query \"SELECT first_name FROM people\";");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
