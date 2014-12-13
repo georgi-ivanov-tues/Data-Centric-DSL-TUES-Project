@@ -6,6 +6,10 @@ options {
   ASTLabelType=CommonTree;
 }
 
+tokens {
+  NEGATION;
+}
+
 @header {
 	package org.dataCentricDSL;
 } 
@@ -51,12 +55,34 @@ print:
 ;
 
 variableDecl:
-  IDENT '='! ( query | STRING_LITERAL | variableCall | INTEGER | FLOAT | BOOLEAN)
+  IDENT '='! ( query | STRING_LITERAL | FLOAT | BOOLEAN | expression)
 ;
 
 variableCall:
   IDENT
 ;
+
+term
+  : variableCall
+  | '('! expression ')'!
+  | INTEGER
+  ;
+  
+unary
+  : ('+'! | negation^)* term
+  ;
+
+negation
+  : '-' -> NEGATION
+  ;
+
+mult
+  : unary (('*'^ | '/'^ | 'mod'^) unary)*
+  ;
+  
+expression
+  : mult (('+'^ | '-'^) mult)*
+  ;
 
 STRING_LITERAL
   @init{final StringBuilder builder = new StringBuilder();}
@@ -77,7 +103,7 @@ COMMENT: '//' ~('\n' | '\r')* ('\n' | '\r')? {$channel = HIDDEN;};
 MULTILINE_COMMENT: '/*' .* '*/' {$channel = HIDDEN;};
 fragment DIGIT : '0'..'9';
 fragment LETTER : ('a'..'z' | 'A'..'Z');
-INTEGER : '1'..'9' DIGIT*;
+INTEGER : DIGIT+;
 FLOAT : '0'..'9' DIGIT* '.' DIGIT*;
 BOOLEAN: 'true' | 'false';
 IDENT : LETTER (LETTER | DIGIT)*; 

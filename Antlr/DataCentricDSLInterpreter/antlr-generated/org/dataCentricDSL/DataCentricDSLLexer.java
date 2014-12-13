@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g 2014-12-13 13:53:12
+// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g 2014-12-13 17:34:05
  
 	package org.dataCentricDSL;
 
@@ -11,10 +11,17 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class DataCentricDSLLexer extends Lexer {
 	public static final int EOF=-1;
-	public static final int T__15=15;
 	public static final int T__16=16;
 	public static final int T__17=17;
 	public static final int T__18=18;
+	public static final int T__19=19;
+	public static final int T__20=20;
+	public static final int T__21=21;
+	public static final int T__22=22;
+	public static final int T__23=23;
+	public static final int T__24=24;
+	public static final int T__25=25;
+	public static final int T__26=26;
 	public static final int BOOLEAN=4;
 	public static final int COMMENT=5;
 	public static final int DIGIT=6;
@@ -24,8 +31,9 @@ public class DataCentricDSLLexer extends Lexer {
 	public static final int INTEGER=10;
 	public static final int LETTER=11;
 	public static final int MULTILINE_COMMENT=12;
-	public static final int STRING_LITERAL=13;
-	public static final int WS=14;
+	public static final int NEGATION=13;
+	public static final int STRING_LITERAL=14;
+	public static final int WS=15;
 
 	  private void processEscapeSequence(String text, StringBuilder builder) {
 	    if(text == null) { //This shouldn't happen, but you never know
@@ -65,35 +73,15 @@ public class DataCentricDSLLexer extends Lexer {
 	}
 	@Override public String getGrammarFileName() { return "D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g"; }
 
-	// $ANTLR start "T__15"
-	public final void mT__15() throws RecognitionException {
-		try {
-			int _type = T__15;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:34:7: ( ';' )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:34:9: ';'
-			{
-			match(';'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__15"
-
 	// $ANTLR start "T__16"
 	public final void mT__16() throws RecognitionException {
 		try {
 			int _type = T__16;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:35:7: ( '=' )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:35:9: '='
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:34:7: ( '(' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:34:9: '('
 			{
-			match('='); 
+			match('('); 
 			}
 
 			state.type = _type;
@@ -110,11 +98,10 @@ public class DataCentricDSLLexer extends Lexer {
 		try {
 			int _type = T__17;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:36:7: ( 'print' )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:36:9: 'print'
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:35:7: ( ')' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:35:9: ')'
 			{
-			match("print"); 
-
+			match(')'); 
 			}
 
 			state.type = _type;
@@ -131,8 +118,170 @@ public class DataCentricDSLLexer extends Lexer {
 		try {
 			int _type = T__18;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:37:7: ( 'query' )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:37:9: 'query'
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:36:7: ( '*' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:36:9: '*'
+			{
+			match('*'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__18"
+
+	// $ANTLR start "T__19"
+	public final void mT__19() throws RecognitionException {
+		try {
+			int _type = T__19;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:37:7: ( '+' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:37:9: '+'
+			{
+			match('+'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__19"
+
+	// $ANTLR start "T__20"
+	public final void mT__20() throws RecognitionException {
+		try {
+			int _type = T__20;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:38:7: ( '-' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:38:9: '-'
+			{
+			match('-'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__20"
+
+	// $ANTLR start "T__21"
+	public final void mT__21() throws RecognitionException {
+		try {
+			int _type = T__21;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:39:7: ( '/' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:39:9: '/'
+			{
+			match('/'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__21"
+
+	// $ANTLR start "T__22"
+	public final void mT__22() throws RecognitionException {
+		try {
+			int _type = T__22;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:40:7: ( ';' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:40:9: ';'
+			{
+			match(';'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__22"
+
+	// $ANTLR start "T__23"
+	public final void mT__23() throws RecognitionException {
+		try {
+			int _type = T__23;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:41:7: ( '=' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:41:9: '='
+			{
+			match('='); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__23"
+
+	// $ANTLR start "T__24"
+	public final void mT__24() throws RecognitionException {
+		try {
+			int _type = T__24;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:7: ( 'mod' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:42:9: 'mod'
+			{
+			match("mod"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__24"
+
+	// $ANTLR start "T__25"
+	public final void mT__25() throws RecognitionException {
+		try {
+			int _type = T__25;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:43:7: ( 'print' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:43:9: 'print'
+			{
+			match("print"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__25"
+
+	// $ANTLR start "T__26"
+	public final void mT__26() throws RecognitionException {
+		try {
+			int _type = T__26;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:44:7: ( 'query' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:44:9: 'query'
 			{
 			match("query"); 
 
@@ -145,7 +294,7 @@ public class DataCentricDSLLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "T__18"
+	// $ANTLR end "T__26"
 
 	// $ANTLR start "STRING_LITERAL"
 	public final void mSTRING_LITERAL() throws RecognitionException {
@@ -155,11 +304,11 @@ public class DataCentricDSLLexer extends Lexer {
 			int c;
 
 			final StringBuilder builder = new StringBuilder();
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:63:3: ( '\"' ( ESCAPE[builder] |c=~ ( '\\\\' | '\"' | '\\r' | '\\n' ) )* '\"' )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:63:5: '\"' ( ESCAPE[builder] |c=~ ( '\\\\' | '\"' | '\\r' | '\\n' ) )* '\"'
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:89:3: ( '\"' ( ESCAPE[builder] |c=~ ( '\\\\' | '\"' | '\\r' | '\\n' ) )* '\"' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:89:5: '\"' ( ESCAPE[builder] |c=~ ( '\\\\' | '\"' | '\\r' | '\\n' ) )* '\"'
 			{
 			match('\"'); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:64:5: ( ESCAPE[builder] |c=~ ( '\\\\' | '\"' | '\\r' | '\\n' ) )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:90:5: ( ESCAPE[builder] |c=~ ( '\\\\' | '\"' | '\\r' | '\\n' ) )*
 			loop1:
 			while (true) {
 				int alt1=3;
@@ -173,14 +322,14 @@ public class DataCentricDSLLexer extends Lexer {
 
 				switch (alt1) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:64:6: ESCAPE[builder]
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:90:6: ESCAPE[builder]
 					{
 					mESCAPE(builder); 
 
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:65:7: c=~ ( '\\\\' | '\"' | '\\r' | '\\n' )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:91:7: c=~ ( '\\\\' | '\"' | '\\r' | '\\n' )
 					{
 					c= input.LA(1);
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
@@ -216,8 +365,8 @@ public class DataCentricDSLLexer extends Lexer {
 	// $ANTLR start "ESCAPE"
 	public final void mESCAPE(StringBuilder builder) throws RecognitionException {
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:72:3: ( '\\\\' . )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:72:5: '\\\\' .
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:98:3: ( '\\\\' . )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:98:5: '\\\\' .
 			{
 			match('\\'); 
 			matchAny(); 
@@ -236,10 +385,10 @@ public class DataCentricDSLLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:75:3: ( ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+ )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:75:5: ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:101:3: ( ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+ )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:101:5: ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+
 			{
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:75:5: ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:101:5: ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+
 			int cnt2=0;
 			loop2:
 			while (true) {
@@ -289,12 +438,12 @@ public class DataCentricDSLLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:76:8: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\n' | '\\r' )? )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:76:10: '//' (~ ( '\\n' | '\\r' ) )* ( '\\n' | '\\r' )?
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:102:8: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\n' | '\\r' )? )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:102:10: '//' (~ ( '\\n' | '\\r' ) )* ( '\\n' | '\\r' )?
 			{
 			match("//"); 
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:76:15: (~ ( '\\n' | '\\r' ) )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:102:15: (~ ( '\\n' | '\\r' ) )*
 			loop3:
 			while (true) {
 				int alt3=2;
@@ -323,7 +472,7 @@ public class DataCentricDSLLexer extends Lexer {
 				}
 			}
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:76:31: ( '\\n' | '\\r' )?
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:102:31: ( '\\n' | '\\r' )?
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0=='\n'||LA4_0=='\r') ) {
@@ -363,12 +512,12 @@ public class DataCentricDSLLexer extends Lexer {
 		try {
 			int _type = MULTILINE_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:77:18: ( '/*' ( . )* '*/' )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:77:20: '/*' ( . )* '*/'
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:103:18: ( '/*' ( . )* '*/' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:103:20: '/*' ( . )* '*/'
 			{
 			match("/*"); 
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:77:25: ( . )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:103:25: ( . )*
 			loop5:
 			while (true) {
 				int alt5=2;
@@ -389,7 +538,7 @@ public class DataCentricDSLLexer extends Lexer {
 
 				switch (alt5) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:77:25: .
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:103:25: .
 					{
 					matchAny(); 
 					}
@@ -417,7 +566,7 @@ public class DataCentricDSLLexer extends Lexer {
 	// $ANTLR start "DIGIT"
 	public final void mDIGIT() throws RecognitionException {
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:78:16: ( '0' .. '9' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:104:16: ( '0' .. '9' )
 			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
@@ -440,7 +589,7 @@ public class DataCentricDSLLexer extends Lexer {
 	// $ANTLR start "LETTER"
 	public final void mLETTER() throws RecognitionException {
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:79:17: ( ( 'a' .. 'z' | 'A' .. 'Z' ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:105:17: ( ( 'a' .. 'z' | 'A' .. 'Z' ) )
 			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
@@ -465,11 +614,11 @@ public class DataCentricDSLLexer extends Lexer {
 		try {
 			int _type = INTEGER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:80:9: ( '1' .. '9' ( DIGIT )* )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:80:11: '1' .. '9' ( DIGIT )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:106:9: ( ( DIGIT )+ )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:106:11: ( DIGIT )+
 			{
-			matchRange('1','9'); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:80:20: ( DIGIT )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:106:11: ( DIGIT )+
+			int cnt6=0;
 			loop6:
 			while (true) {
 				int alt6=2;
@@ -494,8 +643,11 @@ public class DataCentricDSLLexer extends Lexer {
 					break;
 
 				default :
-					break loop6;
+					if ( cnt6 >= 1 ) break loop6;
+					EarlyExitException eee = new EarlyExitException(6, input);
+					throw eee;
 				}
+				cnt6++;
 			}
 
 			}
@@ -514,11 +666,11 @@ public class DataCentricDSLLexer extends Lexer {
 		try {
 			int _type = FLOAT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:81:7: ( '0' .. '9' ( DIGIT )* '.' ( DIGIT )* )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:81:9: '0' .. '9' ( DIGIT )* '.' ( DIGIT )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:107:7: ( '0' .. '9' ( DIGIT )* '.' ( DIGIT )* )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:107:9: '0' .. '9' ( DIGIT )* '.' ( DIGIT )*
 			{
 			matchRange('0','9'); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:81:18: ( DIGIT )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:107:18: ( DIGIT )*
 			loop7:
 			while (true) {
 				int alt7=2;
@@ -548,7 +700,7 @@ public class DataCentricDSLLexer extends Lexer {
 			}
 
 			match('.'); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:81:29: ( DIGIT )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:107:29: ( DIGIT )*
 			loop8:
 			while (true) {
 				int alt8=2;
@@ -593,7 +745,7 @@ public class DataCentricDSLLexer extends Lexer {
 		try {
 			int _type = BOOLEAN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:82:8: ( 'true' | 'false' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:108:8: ( 'true' | 'false' )
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0=='t') ) {
@@ -611,14 +763,14 @@ public class DataCentricDSLLexer extends Lexer {
 
 			switch (alt9) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:82:10: 'true'
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:108:10: 'true'
 					{
 					match("true"); 
 
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:82:19: 'false'
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:108:19: 'false'
 					{
 					match("false"); 
 
@@ -640,12 +792,12 @@ public class DataCentricDSLLexer extends Lexer {
 		try {
 			int _type = IDENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:83:7: ( LETTER ( LETTER | DIGIT )* )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:83:9: LETTER ( LETTER | DIGIT )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:109:7: ( LETTER ( LETTER | DIGIT )* )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:109:9: LETTER ( LETTER | DIGIT )*
 			{
 			mLETTER(); 
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:83:16: ( LETTER | DIGIT )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:109:16: ( LETTER | DIGIT )*
 			loop10:
 			while (true) {
 				int alt10=2;
@@ -687,89 +839,138 @@ public class DataCentricDSLLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:8: ( T__15 | T__16 | T__17 | T__18 | STRING_LITERAL | WS | COMMENT | MULTILINE_COMMENT | INTEGER | FLOAT | BOOLEAN | IDENT )
-		int alt11=12;
+		// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | STRING_LITERAL | WS | COMMENT | MULTILINE_COMMENT | INTEGER | FLOAT | BOOLEAN | IDENT )
+		int alt11=19;
 		alt11 = dfa11.predict(input);
 		switch (alt11) {
 			case 1 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:10: T__15
-				{
-				mT__15(); 
-
-				}
-				break;
-			case 2 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:16: T__16
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:10: T__16
 				{
 				mT__16(); 
 
 				}
 				break;
-			case 3 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:22: T__17
+			case 2 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:16: T__17
 				{
 				mT__17(); 
 
 				}
 				break;
-			case 4 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:28: T__18
+			case 3 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:22: T__18
 				{
 				mT__18(); 
 
 				}
 				break;
+			case 4 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:28: T__19
+				{
+				mT__19(); 
+
+				}
+				break;
 			case 5 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:34: STRING_LITERAL
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:34: T__20
+				{
+				mT__20(); 
+
+				}
+				break;
+			case 6 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:40: T__21
+				{
+				mT__21(); 
+
+				}
+				break;
+			case 7 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:46: T__22
+				{
+				mT__22(); 
+
+				}
+				break;
+			case 8 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:52: T__23
+				{
+				mT__23(); 
+
+				}
+				break;
+			case 9 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:58: T__24
+				{
+				mT__24(); 
+
+				}
+				break;
+			case 10 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:64: T__25
+				{
+				mT__25(); 
+
+				}
+				break;
+			case 11 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:70: T__26
+				{
+				mT__26(); 
+
+				}
+				break;
+			case 12 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:76: STRING_LITERAL
 				{
 				mSTRING_LITERAL(); 
 
 				}
 				break;
-			case 6 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:49: WS
+			case 13 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:91: WS
 				{
 				mWS(); 
 
 				}
 				break;
-			case 7 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:52: COMMENT
+			case 14 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:94: COMMENT
 				{
 				mCOMMENT(); 
 
 				}
 				break;
-			case 8 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:60: MULTILINE_COMMENT
+			case 15 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:102: MULTILINE_COMMENT
 				{
 				mMULTILINE_COMMENT(); 
 
 				}
 				break;
-			case 9 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:78: INTEGER
+			case 16 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:120: INTEGER
 				{
 				mINTEGER(); 
 
 				}
 				break;
-			case 10 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:86: FLOAT
+			case 17 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:128: FLOAT
 				{
 				mFLOAT(); 
 
 				}
 				break;
-			case 11 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:92: BOOLEAN
+			case 18 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:134: BOOLEAN
 				{
 				mBOOLEAN(); 
 
 				}
 				break;
-			case 12 :
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:100: IDENT
+			case 19 :
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:1:142: IDENT
 				{
 				mIDENT(); 
 
@@ -782,59 +983,73 @@ public class DataCentricDSLLexer extends Lexer {
 
 	protected DFA11 dfa11 = new DFA11(this);
 	static final String DFA11_eotS =
-		"\3\uffff\2\14\3\uffff\1\22\1\uffff\2\14\1\uffff\2\14\2\uffff\1\22\1\uffff"+
-		"\10\14\1\37\1\14\1\41\1\42\1\uffff\1\37\2\uffff";
+		"\6\uffff\1\24\2\uffff\3\21\2\uffff\1\30\2\21\4\uffff\3\21\1\uffff\1\30"+
+		"\1\uffff\2\21\1\42\4\21\1\uffff\2\21\1\51\1\21\1\53\1\54\1\uffff\1\51"+
+		"\2\uffff";
 	static final String DFA11_eofS =
-		"\43\uffff";
+		"\55\uffff";
 	static final String DFA11_minS =
-		"\1\11\2\uffff\1\162\1\165\2\uffff\1\52\1\56\1\uffff\1\162\1\141\1\uffff"+
-		"\1\151\1\145\2\uffff\1\56\1\uffff\1\165\1\154\1\156\1\162\1\145\1\163"+
-		"\1\164\1\171\1\60\1\145\2\60\1\uffff\1\60\2\uffff";
+		"\1\11\5\uffff\1\52\2\uffff\1\157\1\162\1\165\2\uffff\1\56\1\162\1\141"+
+		"\4\uffff\1\144\1\151\1\145\1\uffff\1\56\1\uffff\1\165\1\154\1\60\1\156"+
+		"\1\162\1\145\1\163\1\uffff\1\164\1\171\1\60\1\145\2\60\1\uffff\1\60\2"+
+		"\uffff";
 	static final String DFA11_maxS =
-		"\1\172\2\uffff\1\162\1\165\2\uffff\1\57\1\71\1\uffff\1\162\1\141\1\uffff"+
-		"\1\151\1\145\2\uffff\1\71\1\uffff\1\165\1\154\1\156\1\162\1\145\1\163"+
-		"\1\164\1\171\1\172\1\145\2\172\1\uffff\1\172\2\uffff";
+		"\1\172\5\uffff\1\57\2\uffff\1\157\1\162\1\165\2\uffff\1\71\1\162\1\141"+
+		"\4\uffff\1\144\1\151\1\145\1\uffff\1\71\1\uffff\1\165\1\154\1\172\1\156"+
+		"\1\162\1\145\1\163\1\uffff\1\164\1\171\1\172\1\145\2\172\1\uffff\1\172"+
+		"\2\uffff";
 	static final String DFA11_acceptS =
-		"\1\uffff\1\1\1\2\2\uffff\1\5\1\6\2\uffff\1\12\2\uffff\1\14\2\uffff\1\7"+
-		"\1\10\1\uffff\1\11\14\uffff\1\13\1\uffff\1\3\1\4";
+		"\1\uffff\1\1\1\2\1\3\1\4\1\5\1\uffff\1\7\1\10\3\uffff\1\14\1\15\3\uffff"+
+		"\1\23\1\16\1\17\1\6\3\uffff\1\20\1\uffff\1\21\7\uffff\1\11\6\uffff\1\22"+
+		"\1\uffff\1\12\1\13";
 	static final String DFA11_specialS =
-		"\43\uffff}>";
+		"\55\uffff}>";
 	static final String[] DFA11_transitionS = {
-			"\2\6\1\uffff\2\6\22\uffff\1\6\1\uffff\1\5\14\uffff\1\7\1\11\11\10\1\uffff"+
-			"\1\1\1\uffff\1\2\3\uffff\32\14\6\uffff\5\14\1\13\11\14\1\3\1\4\2\14\1"+
-			"\12\6\14",
+			"\2\15\1\uffff\2\15\22\uffff\1\15\1\uffff\1\14\5\uffff\1\1\1\2\1\3\1\4"+
+			"\1\uffff\1\5\1\uffff\1\6\12\16\1\uffff\1\7\1\uffff\1\10\3\uffff\32\21"+
+			"\6\uffff\5\21\1\20\6\21\1\11\2\21\1\12\1\13\2\21\1\17\6\21",
 			"",
 			"",
-			"\1\15",
-			"\1\16",
 			"",
 			"",
-			"\1\20\4\uffff\1\17",
-			"\1\11\1\uffff\12\21",
 			"",
-			"\1\23",
-			"\1\24",
+			"\1\23\4\uffff\1\22",
+			"",
 			"",
 			"\1\25",
 			"\1\26",
-			"",
-			"",
-			"\1\11\1\uffff\12\21",
-			"",
 			"\1\27",
-			"\1\30",
-			"\1\31",
-			"\1\32",
+			"",
+			"",
+			"\1\32\1\uffff\12\31",
 			"\1\33",
 			"\1\34",
+			"",
+			"",
+			"",
+			"",
 			"\1\35",
 			"\1\36",
-			"\12\14\7\uffff\32\14\6\uffff\32\14",
-			"\1\40",
-			"\12\14\7\uffff\32\14\6\uffff\32\14",
-			"\12\14\7\uffff\32\14\6\uffff\32\14",
+			"\1\37",
 			"",
-			"\12\14\7\uffff\32\14\6\uffff\32\14",
+			"\1\32\1\uffff\12\31",
+			"",
+			"\1\40",
+			"\1\41",
+			"\12\21\7\uffff\32\21\6\uffff\32\21",
+			"\1\43",
+			"\1\44",
+			"\1\45",
+			"\1\46",
+			"",
+			"\1\47",
+			"\1\50",
+			"\12\21\7\uffff\32\21\6\uffff\32\21",
+			"\1\52",
+			"\12\21\7\uffff\32\21\6\uffff\32\21",
+			"\12\21\7\uffff\32\21\6\uffff\32\21",
+			"",
+			"\12\21\7\uffff\32\21\6\uffff\32\21",
 			"",
 			""
 	};
@@ -870,7 +1085,7 @@ public class DataCentricDSLLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( T__15 | T__16 | T__17 | T__18 | STRING_LITERAL | WS | COMMENT | MULTILINE_COMMENT | INTEGER | FLOAT | BOOLEAN | IDENT );";
+			return "1:1: Tokens : ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | STRING_LITERAL | WS | COMMENT | MULTILINE_COMMENT | INTEGER | FLOAT | BOOLEAN | IDENT );";
 		}
 	}
 

@@ -1,3 +1,15 @@
+a = 2;
+result = (((a + 3)*(6 - a))/2)*(-1);
+print result;
+
+/*
+a = 2;
+b = 3;
+result = (a + b)*a - (6 / a)*b;
+print result;
+*/
+
+/*
 a = 1;
 b = 1.2;
 c = "c";
@@ -8,7 +20,7 @@ print b;
 print c;
 print d;
 print e;
-
+*/
 
 /*
 str = "SELECT * FROM people";
@@ -23,5 +35,4 @@ str = "SELECT * FROM people";
 result = query(str);
 print(result);
 print(testVariable);
-
 */

@@ -25,7 +25,6 @@ public class Test {
 		URL url = Test.class.getResource("inputFile.txt");
 		File inputFile = new File(url.toURI());
 		Scanner input = new Scanner(inputFile);
-//		Scanner input = new Scanner(System.in);
 		StringBuilder builder = new StringBuilder();
 		while(input.hasNextLine()) {
 			builder.append(input.nextLine());
@@ -37,8 +36,6 @@ public class Test {
 		TokenStream tokenStream = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokenStream);
 		program_return program = parser.program();
-//		System.out.println(program.tree.toStringTree());
-//		System.out.println();
 		
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.tree);
 		Map<String, Object> myMap = new HashMap<String, Object>();
@@ -50,15 +47,6 @@ public class Test {
 		}
 		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
 		walker.program();
-//		System.out.println(myMap.get("str"));
-		
 	}
 }
 
-
-/*
-str = "SELECT * FROM people";
-result = query(str);
-print(result);
-end
-*/

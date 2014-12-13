@@ -107,28 +107,35 @@ print:
 variableDecl:
   IDENT 
   ( query {context.put($IDENT.text, $query.result);}
-  | variableCall { context.put($IDENT.text, context.get($variableCall.value)); }
   | STRING_LITERAL 
   { if($STRING_LITERAL.text.length() == 1) context.put($IDENT.text, $STRING_LITERAL.text.charAt(0)); // It's a char
     else context.put($IDENT.text, $STRING_LITERAL.text);} // It's a string
-  | INTEGER { context.put($IDENT.text, Integer.parseInt($INTEGER.text));}
   | FLOAT { context.put($IDENT.text, Float.parseFloat($FLOAT.text)); }
   | BOOLEAN { context.put($IDENT.text, Boolean.parseBoolean($BOOLEAN.text)); }
-//  | expression { context.put($expression.text, $expression.result);}
+  | expression {
+    if($expression.result instanceof Integer){
+      context.put($IDENT.text, (Integer)$expression.result);
+    }
+    else if($expression.result instanceof String){
+      context.put($IDENT.text, (String)$expression.result);
+    }
+//  context.put($IDENT.text, $expression.result);} 
+  }
   )
-;
+; 
 
 variableCall returns [String value]:
   IDENT {value=$IDENT.text;} 
 ;
 
-//expression returns [int result]
-//  : ^('+' op1=expression op2=expression) { result = op1 + op2; }
-//  | ^('-' op1=expression op2=expression) { result = op1 - op2; }
-//  | ^('*' op1=expression op2=expression) { result = op1 * op2; }
-//  | ^('/' op1=expression op2=expression) { result = op1 / op2; }
-//  | ^('%' op1=expression op2=expression) { result = op1 \% op2; }
-//  | ^(NEGATION e=expression)  { result = -e; }
-//  | IDENT { result = (Integer) context.get($IDENT.text); }
-//  | INTEGER { result = Integer.parseInt($INTEGER.text); }
-//  ;
+
+expression returns [Object result]:
+  (^('+' op1=expression op2=expression) { result = (Integer)op1 + (Integer)op2; }
+  | ^('-' op1=expression op2=expression) { result = (Integer)op1 - (Integer)op2; }
+  | ^('*' op1=expression op2=expression) { result = (Integer)op1 * (Integer)op2; }
+  | ^('/' op1=expression op2=expression) { result = (Integer)op1 / (Integer)op2; }
+  | ^('%' op1=expression op2=expression) { result = (Integer)op1 \% (Integer)op2; }
+  | ^(NEGATION e=expression)  { result = -(Integer)e; }
+  | variableCall { result = context.get($variableCall.value);}
+  | INTEGER { result = Integer.parseInt($INTEGER.text); })
+  ;
