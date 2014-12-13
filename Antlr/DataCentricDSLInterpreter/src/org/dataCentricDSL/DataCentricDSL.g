@@ -51,7 +51,7 @@ print:
 ;
 
 variableDecl:
-  IDENT '='! ( query | STRING_LITERAL | variableCall | INTEGER | FLOAT | BOOLEAN) 
+  IDENT '='! ( query | STRING_LITERAL | variableCall | INTEGER | FLOAT | BOOLEAN)
 ;
 
 variableCall:
@@ -68,13 +68,6 @@ STRING_LITERAL
     {setText(builder.toString());}
   ;
 
-
-INTEGER 
-  :
-  '1'..'9' DIGIT*
-;
-
-
 fragment ESCAPE[StringBuilder builder]
   : '\\' . {processEscapeSequence(getText(), $builder);}
   ;
@@ -84,6 +77,7 @@ COMMENT: '//' ~('\n' | '\r')* ('\n' | '\r')? {$channel = HIDDEN;};
 MULTILINE_COMMENT: '/*' .* '*/' {$channel = HIDDEN;};
 fragment DIGIT : '0'..'9';
 fragment LETTER : ('a'..'z' | 'A'..'Z');
+INTEGER : '1'..'9' DIGIT*;
 FLOAT : '0'..'9' DIGIT* '.' DIGIT*;
 BOOLEAN: 'true' | 'false';
 IDENT : LETTER (LETTER | DIGIT)*; 

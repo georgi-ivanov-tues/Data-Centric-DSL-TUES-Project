@@ -18,7 +18,7 @@ options {
   import java.sql.SQLException;
   import java.sql.ResultSetMetaData;
 }
-
+ 
 @members {  
   public ProgramWalker(TreeNodeStream input, Map<String, Object> context) {
     super(input, new RecognizerSharedState());
@@ -40,13 +40,13 @@ options {
   }
   
   public void print(Object obj) throws SQLException {
-    if(obj instanceof String) System.out.println("STRING = " + obj);
-    else if(obj instanceof Integer) System.out.println("INTEGER = " + obj);
-    else if(obj instanceof Float) System.out.println("FLOAT = " + obj);
-    else if(obj instanceof Character) System.out.println("CHAR = " + obj);
-    else if(obj instanceof Boolean) System.out.println("BOOLEAN = " + obj);
-    else if (obj instanceof ResultSet) printResultSet((ResultSet) obj);
-    else System.out.println("sorry...");
+    if((obj instanceof String)
+    ||(obj instanceof Integer)
+    ||(obj instanceof Float) 
+    ||(obj instanceof Character) 
+    ||(obj instanceof Boolean)) System.out.println(obj);
+    else if(obj instanceof ResultSet) printResultSet((ResultSet) obj);
+    else System.out.println("Error on printing...");
   }
   
   public void printResultSet(ResultSet resultSet) throws SQLException {
@@ -93,7 +93,6 @@ print:
         }} 
     | variableCall 
       { Object text = context.get($variableCall.value); 
-//        System.out.println(text.getClass());
         if(text != null){
           try {
             print(text);
@@ -115,9 +114,21 @@ variableDecl:
   | INTEGER { context.put($IDENT.text, Integer.parseInt($INTEGER.text));}
   | FLOAT { context.put($IDENT.text, Float.parseFloat($FLOAT.text)); }
   | BOOLEAN { context.put($IDENT.text, Boolean.parseBoolean($BOOLEAN.text)); }
+//  | expression { context.put($expression.text, $expression.result);}
   )
 ;
 
 variableCall returns [String value]:
-  IDENT {value=$IDENT.text;}
+  IDENT {value=$IDENT.text;} 
 ;
+
+//expression returns [int result]
+//  : ^('+' op1=expression op2=expression) { result = op1 + op2; }
+//  | ^('-' op1=expression op2=expression) { result = op1 - op2; }
+//  | ^('*' op1=expression op2=expression) { result = op1 * op2; }
+//  | ^('/' op1=expression op2=expression) { result = op1 / op2; }
+//  | ^('%' op1=expression op2=expression) { result = op1 \% op2; }
+//  | ^(NEGATION e=expression)  { result = -e; }
+//  | IDENT { result = (Integer) context.get($IDENT.text); }
+//  | INTEGER { result = Integer.parseInt($INTEGER.text); }
+//  ;
