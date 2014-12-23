@@ -24,58 +24,31 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		}
 	}
 
-	//for now it only works for query
 	@Check
 	def void checkIfAssignedVariableExists(VariableCall vc) {
-		val Array = (vc.eContainer as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
-		var found = 0;
-		for(i : 0..< Array.length) {
-			if(found == 0) {
-				if(Array.get(i).name.toString.equals(vc.variableCall.toString)) {
-					found = 1;
-				}
-			} else {
-				return;
-			}
+		var Array = vc.eContainer;
+		while(!(Array instanceof DataCentricDSL)) {
+			Array = Array.eContainer;
 		}
+		val Elements = (Array as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
+		var found = 0;
+		if(Elements.length > 1) {
+			for(i : 0..< Elements.length) {
+				if(found == 0) {
+					if(Elements.get(i).name.toString.equals(vc.variableCall.toString)) {
+						found = 1;
+					}
+				} else {
+					return;
+				}
+			}
+		} else {
+			error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
+			return;
+		}	
 		if(found == 0) {
 			error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
 		}
 	}
-	
-	@Check
-	def void checkIfVariableNameIsUnique(VariableDecl vd) {
-		val Array = (vd.eContainer() as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
-		for(i : 0..<Array.length - 1) {
-			if(Array.get(i).name.toString.equals(Array.get(i + 1).name.toString)) {
-				error("Variable with the same identifier already exists.", DataCentricDSLPackage.Literals::VARIABLE_DECL__NAME);
-			}
-		}
-	}
-//	
-//	@Check
-//	def checkIfFunctionParametersAreUnique(Function fun){
-//		val Array = fun.params.toArray
-//		for(i : 0..< Array.length) {
-//			for(i1 : 1..< Array.length) {
-//				if(i != i1){ // does not work with &&...
-//					if(Array.get(i).toString.equals(Array.get(i1).toString)){
-//						error("There cannot be two parameters with the same name.", DataCentricDSLPackage$Literals::FUNCTION__PARAMS)
-//					}
-//				}
-//			}
-//		}
-//	}
-	
-// Unable by default. Still leaving it here for later.
-//		
-//	@Check 
-//	def checkForFunctionInFunction(Function fun){
-//		val Array = fun.functionElements.toArray
-//		for(i : 0..Array.length){
-//			if(Array.get(i).equals(Function)){
-//				error("You cannot write a function within a function", DataCentricDSLPackage$Literals::FUNCTION__FUNCTION_ELEMENTS)
-//			}
-//		}
-//	}
+
 }
