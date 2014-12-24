@@ -1,6 +1,16 @@
+a = 41;
+b = 43;
+if b > a then 
+	b==b
+else
+	a==a
+
+
+/*
 a = 2;
 result = (((a + 3)*(6 - a))/2)*(-1);
 print result;
+*/
 
 /*
 a = 2;

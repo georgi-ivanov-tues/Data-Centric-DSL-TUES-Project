@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import javax.xml.soap.Node;
+
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -45,8 +47,14 @@ public class Test {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		 System.out.println(program.tree.toStringTree());
+		 System.out.println();
 		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
+//		org.dataCentricDSL.ProgramWalker.Node root = walker.program();
 		walker.program();
+//		System.out.println(root.eval());
 	}
+	
 }
 

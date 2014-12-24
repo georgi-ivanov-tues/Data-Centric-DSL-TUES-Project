@@ -13,7 +13,7 @@ tokens {
 @header {
 	package org.dataCentricDSL;
 } 
-
+ 
 @lexer::header { 
 	package org.dataCentricDSL;
 }
@@ -42,9 +42,14 @@ tokens {
   }
 }
 
-program: 
-	((query | print | variableDecl) ';'!)* EOF!
-	;
+program:
+	block* EOF!
+	; 
+
+block: // thing of a better name later
+//  ((query | print | variableDecl | ifStatement) ';'!)
+  (((print | variableDecl) ';'!) | ifStatement)
+;
 
 query: 
 	'query'^ (STRING_LITERAL | variableCall)
@@ -61,6 +66,42 @@ variableDecl:
 variableCall:
   IDENT
 ;
+
+// copy
+ifStatement
+//  :  'if' '(' a=if_expression ')' 'then' '{' b=if_expression '}' ('else' '{' c=if_expression '}')? -> ^('if' $a $b $c?)
+:  'if' a=if_expression 'then' b=if_expression ('else' c=if_expression )? -> ^('if' $a $b $c?)
+  ;
+
+if_expression
+  :  orExpression
+  ;
+
+orExpression
+  :  andExpression ('or'^ andExpression)*
+  ;
+
+andExpression
+  :  equalityExpression ('and'^ equalityExpression)*
+  ;
+
+equalityExpression
+  :  relationalExpression (('==' | '!=')^ relationalExpression)*
+  ;
+
+relationalExpression
+  :  atom (('<=' | '<' | '>=' | '>')^ atom)*
+  ;
+
+atom
+  :  BOOLEAN
+  |  INTEGER
+  |  variableCall
+  |  '(' if_expression ')' -> if_expression
+  |  print
+  ;
+
+// paste
 
 term
   : variableCall

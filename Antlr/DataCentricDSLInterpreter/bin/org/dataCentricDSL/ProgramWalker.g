@@ -61,11 +61,210 @@ options {
       System.out.println("");
     }
   }
+  
+  // copy
+  
+  interface Node {
+      Object eval();
+    }
+
+    abstract class BinaryNode implements Node {
+
+      protected Node left;
+      protected Node right;
+
+      public BinaryNode(Node l, Node r) {
+        left = l;
+        right = r;
+      }
+    }
+
+    class AtomNode implements Node {
+
+      private Object value;
+
+      public AtomNode(Object v) {
+        value = v;
+      }
+
+      @Override
+      public Object eval() {
+        return value;
+      }
+    }
+
+    class OrNode extends BinaryNode {
+
+      public OrNode(Node left, Node right) { super(left, right); }
+
+      @Override
+      public Object eval() {
+        return (Boolean)super.left.eval() || (Boolean)super.right.eval();
+      }
+    }
+
+    class AndNode extends BinaryNode {
+
+      public AndNode(Node left, Node right) { super(left, right); }
+
+      @Override
+      public Object eval() {
+        return (Boolean)super.left.eval() && (Boolean)super.right.eval();
+      }
+    }
+
+    class LTNode extends BinaryNode {
+
+      public LTNode(Node left, Node right) { super(left, right); }
+
+      @Override
+      public Object eval() {
+        return (Integer)super.left.eval() < (Integer)super.right.eval();
+      }
+    }
+
+    class LTEqNode extends BinaryNode {
+
+      public LTEqNode(Node left, Node right) { super(left, right); }
+
+      @Override
+      public Object eval() {
+        return (Integer)super.left.eval() <= (Integer)super.right.eval();
+      }
+    }
+
+    class GTNode extends BinaryNode {
+
+      public GTNode(Node left, Node right) { super(left, right); }
+
+      @Override
+      public Object eval() {
+        return (Integer)super.left.eval() > (Integer)super.right.eval();
+      }
+    }
+
+    class GTEqNode extends BinaryNode {
+
+      public GTEqNode(Node left, Node right) { super(left, right); }
+
+      @Override
+      public Object eval() {
+        return (Integer)super.left.eval() >= (Integer)super.right.eval();
+      }
+    }
+
+    class EqNode extends BinaryNode {
+
+      public EqNode(Node left, Node right) { super(left, right); }
+
+      @Override
+      public Object eval() {
+        return super.left.eval().equals(super.right.eval());
+      }
+    }
+
+    class NEqNode extends BinaryNode {
+
+      public NEqNode(Node left, Node right) { super(left, right); }
+
+      @Override
+      public Object eval() {
+        return !super.left.eval().equals(super.right.eval());
+      }
+    }
+
+    class VarNode implements Node {
+
+      private java.util.Map<String, Object> memory;
+      private String var;
+
+      VarNode(java.util.Map<String, Object> m, String v) {
+        memory = m;
+        var = v;
+      }
+
+      @Override
+      public Object eval() {
+        Object value = memory.get(var);
+        if(value == null) {
+          throw new RuntimeException("Unknown variable: " + var);
+        }
+        return value;
+      }
+    }
+
+    class IfNode implements Node {
+
+      private Node test;
+      private Node ifTrue;
+      private Node ifFalse;
+
+      public IfNode(Node a, Node b, Node c) {
+        test = a;
+        ifTrue = b;
+        ifFalse = c;
+      }
+
+      @Override
+      public Object eval() {
+        if((Boolean)test.eval()){
+          return ifTrue.eval();
+        }else{
+          return ifFalse.eval();
+        }
+//        return (Boolean)test.eval();
+//        return (Boolean)test.eval() ? ifTrue.eval() : ifFalse.eval();
+//          return (Boolean)test.eval() ? "true" : "false";
+      }
+    }
 }
 
-program:
-  (query | print | variableDecl)*
+program :
+  (block)*
   ;
+  
+block:
+ ( ifStatement
+ | query
+ | print
+ | variableDecl
+ )
+;  
+  
+//copy
+ifStatement:
+  ^('if' a=if_expression b=if_expression c=if_expression?) {
+//  System.out.println("a = " + $a.n.eval()); 
+//  System.out.println("b = " + $b.n.eval());
+//  System.out.println("c = " + $c.n.eval());
+  Node n = new IfNode($a.n, $b.n, $c.n);
+    System.out.println("IF RESULT = " + n.eval());
+//    System.out.println("a = " + $a.n.eval());
+//    System.out.println("b = " + $b.n.eval()); 
+//    System.out.println("c = " + $c.n.eval());
+  
+  }  
+;
+
+if_expression returns [Node n]
+  :  ^('or' a=if_expression b=if_expression)   {$n = new OrNode($a.n, $b.n);}
+  |  ^('and' a=if_expression b=if_expression)  {$n = new AndNode($a.n, $b.n);}
+  |  ^('==' a=if_expression b=if_expression) {$n = new EqNode($a.n, $b.n);}
+  |  ^('!=' a=if_expression b=if_expression) {$n = new NEqNode($a.n, $b.n);}
+  |  ^('<=' a=if_expression b=if_expression) {$n = new LTEqNode($a.n, $b.n);}
+  |  ^('<' a=if_expression b=if_expression)  {$n = new LTNode($a.n, $b.n);}
+  |  ^('>=' a=if_expression b=if_expression) {$n = new GTEqNode($a.n, $b.n);}
+  |  ^('>' a=if_expression b=if_expression)  {$n = new GTNode($a.n, $b.n);}
+//  |  BOOLEAN                           {$n = new AtomNode(Boolean.valueOf($BOOLEAN.text));}
+//  |  INTEGER                            {$n = new AtomNode(Integer.valueOf($INTEGER.text));}
+  |  IDENT                                {$n = new VarNode(context, $IDENT.text);}
+//  |  block
+  |  print {$n = null;}
+//   | variableDecl {$n = null;}
+//| block
+  ;
+//paste  
+  
   
 query returns [ResultSet result]: 
   {String sqlStatement = "";}
