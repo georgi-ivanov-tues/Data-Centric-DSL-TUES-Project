@@ -3,9 +3,9 @@ package org.dataCentricDSL.tests;
 import com.google.inject.Inject;
 import org.DataCentricDSLInjectorProvider;
 import org.dataCentricDSL.DataCentricDSL;
+import org.dataCentricDSL.Statement;
 import org.dataCentricDSL.VariableDecl;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.junit4.util.ParseHelper;
@@ -27,8 +27,8 @@ public class VariableNameValueTest {
     try {
       final DataCentricDSL model = this.parser.parse(
         "queryString = \"test\";");
-      EList<EObject> _elements = model.getElements();
-      EObject _head = IterableExtensions.<EObject>head(_elements);
+      EList<Statement> _elements = model.getElements();
+      Statement _head = IterableExtensions.<Statement>head(_elements);
       final VariableDecl variableDecl = ((VariableDecl) _head);
       String _name = variableDecl.getName();
       Assert.assertEquals("queryString", _name);
