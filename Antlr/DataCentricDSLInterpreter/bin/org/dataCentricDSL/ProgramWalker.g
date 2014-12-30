@@ -1,26 +1,45 @@
 tree grammar ProgramWalker;
 
 options {
-  language = Java;
-  tokenVocab = DataCentricDSL;
-  ASTLabelType = CommonTree;
+  tokenVocab=DataCentricDSL;
+  ASTLabelType=CommonTree;
 }
-
-@header { 
+ 
+@header {
   package org.dataCentricDSL;
+  import org.dataCentricDSL.*;
+  import org.dataCentricDSL.tree.*;
+  import org.dataCentricDSL.tree.funcions.PrintlnNode;
+  import java.util.Map; 
+  import java.util.HashMap;
+  
   import java.util.List;
   import java.util.ArrayList;
-  import java.util.Map;
-  import java.util.HashMap;
   import java.sql.Connection;
   import java.sql.ResultSet;
   import java.sql.Statement;
   import java.sql.SQLException;
   import java.sql.ResultSetMetaData;
+  import org.dataCentricDSL.tree.*;
 }
- 
-@members {  
-  public ProgramWalker(TreeNodeStream input, Map<String, Object> context) {
+
+@members {
+  public Map<String, Function> functions = null;
+  Scope currentScope = null;
+  
+  public ProgramWalker(CommonTreeNodeStream nodes, Map<String, Function> fns) {
+    this(nodes, null, fns);
+  }
+  
+  public ProgramWalker(CommonTreeNodeStream nds, Scope sc, Map<String, Function> fns) {
+    super(nds);
+    currentScope = sc;
+    functions = fns;
+  }
+  
+  // 
+  
+   public ProgramWalker(TreeNodeStream input, Map<String, Object> context) {
     super(input, new RecognizerSharedState());
     this.context = context;
   }
@@ -61,215 +80,42 @@ options {
       System.out.println("");
     }
   }
-  
-  // copy
-  
-  interface Node {
-      Object eval();
-    }
-
-    abstract class BinaryNode implements Node {
-
-      protected Node left;
-      protected Node right;
-
-      public BinaryNode(Node l, Node r) {
-        left = l;
-        right = r;
-      }
-    }
-
-    class AtomNode implements Node {
-
-      private Object value;
-
-      public AtomNode(Object v) {
-        value = v;
-      }
-
-      @Override
-      public Object eval() {
-        return value;
-      }
-    }
-
-    class OrNode extends BinaryNode {
-
-      public OrNode(Node left, Node right) { super(left, right); }
-
-      @Override
-      public Object eval() {
-        return (Boolean)super.left.eval() || (Boolean)super.right.eval();
-      }
-    }
-
-    class AndNode extends BinaryNode {
-
-      public AndNode(Node left, Node right) { super(left, right); }
-
-      @Override
-      public Object eval() {
-        return (Boolean)super.left.eval() && (Boolean)super.right.eval();
-      }
-    }
-
-    class LTNode extends BinaryNode {
-
-      public LTNode(Node left, Node right) { super(left, right); }
-
-      @Override
-      public Object eval() {
-        return (Integer)super.left.eval() < (Integer)super.right.eval();
-      }
-    }
-
-    class LTEqNode extends BinaryNode {
-
-      public LTEqNode(Node left, Node right) { super(left, right); }
-
-      @Override
-      public Object eval() {
-        return (Integer)super.left.eval() <= (Integer)super.right.eval();
-      }
-    }
-
-    class GTNode extends BinaryNode {
-
-      public GTNode(Node left, Node right) { super(left, right); }
-
-      @Override
-      public Object eval() {
-        return (Integer)super.left.eval() > (Integer)super.right.eval();
-      }
-    }
-
-    class GTEqNode extends BinaryNode {
-
-      public GTEqNode(Node left, Node right) { super(left, right); }
-
-      @Override
-      public Object eval() {
-        return (Integer)super.left.eval() >= (Integer)super.right.eval();
-      }
-    }
-
-    class EqNode extends BinaryNode {
-
-      public EqNode(Node left, Node right) { super(left, right); }
-
-      @Override
-      public Object eval() {
-        return super.left.eval().equals(super.right.eval());
-      }
-    }
-
-    class NEqNode extends BinaryNode {
-
-      public NEqNode(Node left, Node right) { super(left, right); }
-
-      @Override
-      public Object eval() {
-        return !super.left.eval().equals(super.right.eval());
-      }
-    }
-
-    class VarNode implements Node {
-
-      private java.util.Map<String, Object> memory;
-      private String var;
-
-      VarNode(java.util.Map<String, Object> m, String v) {
-        memory = m;
-        var = v;
-      }
-
-      @Override
-      public Object eval() {
-        Object value = memory.get(var);
-        if(value == null) {
-          throw new RuntimeException("Unknown variable: " + var);
-        }
-        return value;
-      }
-    }
-
-    class IfNode implements Node {
-
-      private Node test;
-      private Node ifTrue;
-      private Node ifFalse;
-
-      public IfNode(Node a, Node b, Node c) {
-        test = a;
-        ifTrue = b;
-        ifFalse = c;
-      }
-
-      @Override
-      public Object eval() {
-        if((Boolean)test.eval()){
-          return ifTrue.eval();
-        }else{
-          return ifFalse.eval();
-        }
-//        return (Boolean)test.eval();
-//        return (Boolean)test.eval() ? ifTrue.eval() : ifFalse.eval();
-//          return (Boolean)test.eval() ? "true" : "false";
-      }
-    }
 }
 
-program :
-  (block)*
+program returns [TLNode node]
+  :  block {node = $block.node;} 
   ;
-  
-block:
- ( ifStatement
- | query
- | print
- | variableDecl
- )
-;  
-  
-//copy
-ifStatement:
-  ^('if' a=if_expression b=if_expression c=if_expression?) {
-//  System.out.println("a = " + $a.n.eval()); 
-//  System.out.println("b = " + $b.n.eval());
-//  System.out.println("c = " + $c.n.eval());
-  Node n = new IfNode($a.n, $b.n, $c.n);
-    System.out.println("IF RESULT = " + n.eval());
-//    System.out.println("a = " + $a.n.eval());
-//    System.out.println("b = " + $b.n.eval()); 
-//    System.out.println("c = " + $c.n.eval());
-  
-  }  
-;
 
-if_expression returns [Node n]
-  :  ^('or' a=if_expression b=if_expression)   {$n = new OrNode($a.n, $b.n);}
-  |  ^('and' a=if_expression b=if_expression)  {$n = new AndNode($a.n, $b.n);}
-  |  ^('==' a=if_expression b=if_expression) {$n = new EqNode($a.n, $b.n);}
-  |  ^('!=' a=if_expression b=if_expression) {$n = new NEqNode($a.n, $b.n);}
-  |  ^('<=' a=if_expression b=if_expression) {$n = new LTEqNode($a.n, $b.n);}
-  |  ^('<' a=if_expression b=if_expression)  {$n = new LTNode($a.n, $b.n);}
-  |  ^('>=' a=if_expression b=if_expression) {$n = new GTEqNode($a.n, $b.n);}
-  |  ^('>' a=if_expression b=if_expression)  {$n = new GTNode($a.n, $b.n);}
-//  |  BOOLEAN                           {$n = new AtomNode(Boolean.valueOf($BOOLEAN.text));}
-//  |  INTEGER                            {$n = new AtomNode(Integer.valueOf($INTEGER.text));}
-  |  IDENT                                {$n = new VarNode(context, $IDENT.text);}
-//  |  block
-  |  print {$n = null;}
-//   | variableDecl {$n = null;}
-//| block
+block returns [TLNode node]
+@init {
+  BlockNode bn = new BlockNode();
+  node = bn;
+  Scope scope = new Scope(currentScope);
+  currentScope = scope;
+}
+@after { 
+  currentScope = currentScope.parent();
+}
+  :  ^(BLOCK 
+        ^( STATEMENTS (statement  {bn.addStatement($statement.node);})* ) 
+        ^( RETURN     (expression {bn.addReturn($expression.node);  })? )
+      )
   ;
-//paste  
-  
-  
+
+statement returns [TLNode node]
+  :  assignment     {node = $assignment.node;}
+  |  functionCall   {node = $functionCall.node;}
+  |  ifStatement    {node = $ifStatement.node;}
+  |  forStatement   {node = $forStatement.node;}
+  |  whileStatement {node = $whileStatement.node;}
+  |  query {node = null;}
+  |  print {node = null;}
+  ;
+
 query returns [ResultSet result]: 
   {String sqlStatement = "";}
   ^('query'
-   (  STRING_LITERAL  {sqlStatement = $STRING_LITERAL.text;} 
+   (  String {sqlStatement = $String.text;} 
    |  variableCall {sqlStatement = (String) context.get($variableCall.value);}
    )
    {try {
@@ -283,7 +129,7 @@ query returns [ResultSet result]:
 
 print:
    ^('print' 
-    ( STRING_LITERAL {System.out.println($STRING_LITERAL.text);}
+    ( String {System.out.println($String.text);}
     | query 
       { try {
           printResultSet($query.result);
@@ -303,38 +149,115 @@ print:
     )
 ;
 
-variableDecl:
-  IDENT 
-  ( query {context.put($IDENT.text, $query.result);}
-  | STRING_LITERAL 
-  { if($STRING_LITERAL.text.length() == 1) context.put($IDENT.text, $STRING_LITERAL.text.charAt(0)); // It's a char
-    else context.put($IDENT.text, $STRING_LITERAL.text);} // It's a string
-  | FLOAT { context.put($IDENT.text, Float.parseFloat($FLOAT.text)); }
-  | BOOLEAN { context.put($IDENT.text, Boolean.parseBoolean($BOOLEAN.text)); }
-  | expression {
-    if($expression.result instanceof Integer){
-      context.put($IDENT.text, (Integer)$expression.result);
-    }
-    else if($expression.result instanceof String){
-      context.put($IDENT.text, (String)$expression.result);
-    }
-//  context.put($IDENT.text, $expression.result);} 
-  }
-  )
-; 
-
 variableCall returns [String value]:
-  IDENT {value=$IDENT.text;} 
+  Identifier {value=$Identifier.text;} 
 ;
 
 
-expression returns [Object result]:
-  (^('+' op1=expression op2=expression) { result = (Integer)op1 + (Integer)op2; }
-  | ^('-' op1=expression op2=expression) { result = (Integer)op1 - (Integer)op2; }
-  | ^('*' op1=expression op2=expression) { result = (Integer)op1 * (Integer)op2; }
-  | ^('/' op1=expression op2=expression) { result = (Integer)op1 / (Integer)op2; }
-  | ^('%' op1=expression op2=expression) { result = (Integer)op1 \% (Integer)op2; }
-  | ^(NEGATION e=expression)  { result = -(Integer)e; }
-  | variableCall { result = context.get($variableCall.value);}
-  | INTEGER { result = Integer.parseInt($INTEGER.text); })
+variableDecl:
+  Identifier 
+  ( query {context.put($Identifier.text, $query.result);}
+  | String 
+  { if($String.text.length() == 1) context.put($Identifier.text, $String.text.charAt(0)); // It's a char
+    else context.put($Identifier.text, $String.text);} // It's a string
+  | FLOAT { context.put($Identifier.text, Float.parseFloat($FLOAT.text)); }
+  | Bool { context.put($Identifier.text, Boolean.parseBoolean($Bool.text)); }
+//  | expression {
+//    if($expression.node instanceof Integer){
+//      context.put($Identifier.text, (Integer)$expression.node);
+//    }
+//    else if($expression.node instanceof String){
+//      context.put($Identifier.text, (String)$expression.node);
+//    }
+////  context.put($IDENT.text, $expression.result);} 
+//  }
+  )
+; 
+
+assignment returns [TLNode node]
+  :  ^(ASSIGNMENT i=Identifier x=indexes? e=expression) 
+     {node = new AssignmentNode($i.text, $x.e, $e.node, currentScope);}
   ;
+
+functionCall returns [TLNode node]
+  :  ^(FUNC_CALL Identifier exprList?)
+  |  ^(FUNC_CALL Println expression?) {node = new PrintlnNode($expression.node);}
+  |  ^(FUNC_CALL Print expression)
+  |  ^(FUNC_CALL Assert expression)
+  |  ^(FUNC_CALL Size expression)
+  ;
+
+ifStatement returns [TLNode node]
+@init  {
+  IfNode ifNode = new IfNode();
+  node = ifNode;
+}
+  :  ^(IF 
+       (^(EXP expression b1=block) {ifNode.addChoice($expression.node, $b1.node);  })+ 
+       (^(EXP b2=block)            {ifNode.addChoice(new AtomNode(true), $b2.node);})?
+     )
+  ;
+   
+forStatement returns [TLNode node]
+  :  ^(For Identifier expression expression block)
+  ;
+
+whileStatement returns [TLNode node]
+  :  ^(While expression block)
+  ;
+
+idList returns [java.util.List<String> i]
+  :  ^(ID_LIST Identifier+)
+  ;
+
+exprList returns [java.util.List<TLNode> e]
+  :  ^(EXP_LIST expression+)
+  ;
+
+expression returns [TLNode node]
+  :  ^(TERNARY expression expression expression)
+  |  ^(In expression expression)
+  |  ^('||' expression expression)
+  |  ^('&&' expression expression)
+  |  ^('==' expression expression)
+  |  ^('!=' expression expression)
+  |  ^('>=' expression expression)
+  |  ^('<=' expression expression)
+  |  ^('>' expression expression)
+  |  ^('<' a=expression b=expression) {node = new LTNode($a.node, $b.node);}
+  |  ^('+' a=expression b=expression) {node = new AddNode($a.node, $b.node);}
+  |  ^('-' expression expression)
+  |  ^('*' expression expression)
+  |  ^('/' expression expression)
+  |  ^('%' expression expression)
+  |  ^('^' expression expression)
+  |  ^(UNARY_MIN expression)
+  |  ^(NEGATE expression)
+  |  Number {node = new AtomNode(Double.parseDouble($Number.text));}
+  |  Bool
+  |  Null
+  |  lookup {node = $lookup.node;}           
+  ;
+
+lookup returns [TLNode node]
+  :  ^(LOOKUP functionCall indexes?)
+  |  ^(LOOKUP list indexes?)
+  |  ^(LOOKUP expression indexes?) 
+  |  ^(LOOKUP i=Identifier x=indexes?) 
+      {
+        node = ($x.e != null) ? 
+          new LookupNode(new IdentifierNode($i.text, currentScope), $x.e) : 
+          new IdentifierNode($i.text, currentScope);
+      }
+  |  ^(LOOKUP String indexes?)
+  ;
+  
+list returns [TLNode node]
+  :  ^(LIST exprList?)
+  ;
+
+indexes returns [java.util.List<TLNode> e]
+@init {e = new java.util.ArrayList<TLNode>();}
+  :  ^(INDEXES (expression {e.add($expression.node);})+)
+  ;
+  

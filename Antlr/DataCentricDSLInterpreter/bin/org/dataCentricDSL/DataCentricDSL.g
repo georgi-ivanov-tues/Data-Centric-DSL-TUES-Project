@@ -1,21 +1,54 @@
 grammar DataCentricDSL;
 
 options {
-  language = Java;
   output=AST;
-  ASTLabelType=CommonTree;
 }
 
 tokens {
-  NEGATION;
+  BLOCK;
+  RETURN;
+  STATEMENTS;
+  ASSIGNMENT;
+  FUNC_CALL;
+  EXP;
+  EXP_LIST;
+  ID_LIST;
+  IF;
+  TERNARY;
+  UNARY_MIN;
+  NEGATE;
+  FUNCTION;
+  INDEXES;
+  LIST;
+  LOOKUP;
 }
 
-@header {
-	package org.dataCentricDSL;
-} 
+@parser::header {
+  package org.dataCentricDSL;
+  import org.dataCentricDSL.*; 
+  import java.util.Map;
+  import java.util.HashMap;
+}
+
+@lexer::header {
+  package org.dataCentricDSL;
+}
  
-@lexer::header { 
-	package org.dataCentricDSL;
+@parser::members {
+  public Map<String, Function> functions = new HashMap<String, Function>();
+  
+  private void defineFunction(String id, Object idList, Object block) {
+
+    // `idList` is possibly null! Create an empty tree in that case. 
+    CommonTree idListTree = idList == null ? new CommonTree() : (CommonTree)idList;
+
+    // `block` is never null.
+    CommonTree blockTree = (CommonTree)block;
+
+    // The function name with the number of parameters after it the unique key
+    String key = id + idListTree.getChildCount();
+    functions.put(key, new Function(id, idListTree, blockTree));
+  }
 }
 
 @lexer::members {
@@ -41,110 +74,238 @@ tokens {
     }
   }
 }
+ 
 
-program:
-	block* EOF!
-	; 
+program
+  :  block EOF -> block
+  ;
 
-block: // thing of a better name later
-//  ((query | print | variableDecl | ifStatement) ';'!)
-  (((print | variableDecl) ';'!) | ifStatement)
-;
+block
+  :  (statement | functionDecl)* (Return expression ';')? 
+     -> ^(BLOCK ^(STATEMENTS statement*) ^(RETURN expression?))
+  ;
+
+statement
+  :  assignment ';'   -> assignment
+  |  functionCall ';' -> functionCall
+  |  ifStatement
+  |  forStatement
+  |  whileStatement
+  |  query ';' -> query
+  |  print ';' -> print
+  ;
 
 query: 
-	'query'^ (STRING_LITERAL | variableCall)
+  'query'^ (String | variableCall)
 ;
 
 print:
-  'print'^ (STRING_LITERAL | query | variableCall)
-;
-
-variableDecl:
-  IDENT '='! ( query | STRING_LITERAL | FLOAT | BOOLEAN | expression)
+  'print'^ (String | query | variableCall)
 ;
 
 variableCall:
-  IDENT
+  Identifier
 ;
 
-// copy
+assignment
+  :  Identifier indexes? '=' expression 
+     -> ^(ASSIGNMENT Identifier indexes? expression)
+  ;
+
+functionCall
+  :  Identifier '(' exprList? ')' -> ^(FUNC_CALL Identifier exprList?)
+  |  Println '(' expression? ')'  -> ^(FUNC_CALL Println expression?)
+  |  Print '(' expression ')'     -> ^(FUNC_CALL Print expression)
+  |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
+  |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)
+  ;
+
 ifStatement
-//  :  'if' '(' a=if_expression ')' 'then' '{' b=if_expression '}' ('else' '{' c=if_expression '}')? -> ^('if' $a $b $c?)
-:  'if' a=if_expression 'then' b=if_expression ('else' c=if_expression )? -> ^('if' $a $b $c?)
+  :  ifStat elseIfStat* elseStat? End -> ^(IF ifStat elseIfStat* elseStat?)
   ;
 
-if_expression
-  :  orExpression
+ifStat
+  :  If expression Do block -> ^(EXP expression block)
   ;
 
-orExpression
-  :  andExpression ('or'^ andExpression)*
+elseIfStat
+  :  Else If expression Do block -> ^(EXP expression block)
   ;
 
-andExpression
-  :  equalityExpression ('and'^ equalityExpression)*
+elseStat
+  :  Else Do block -> ^(EXP block)
   ;
 
-equalityExpression
-  :  relationalExpression (('==' | '!=')^ relationalExpression)*
+functionDecl
+  :  Def Identifier '(' idList? ')' block End 
+     {defineFunction($Identifier.text, $idList.tree, $block.tree);}
   ;
 
-relationalExpression
-  :  atom (('<=' | '<' | '>=' | '>')^ atom)*
+forStatement
+  :  For Identifier '=' expression To expression Do block End 
+     -> ^(For Identifier expression expression block)
+  ;
+
+whileStatement
+  :  While expression Do block End -> ^(While expression block)
+  ;
+
+idList
+  :  Identifier (',' Identifier)* -> ^(ID_LIST Identifier+)
+  ;
+
+exprList
+  :  expression (',' expression)* -> ^(EXP_LIST expression+)
+  ;
+
+expression
+  :  condExpr
+  ;
+
+condExpr
+  :  (orExpr -> orExpr) 
+     ( '?' a=expression ':' b=expression -> ^(TERNARY orExpr $a $b)
+     | In expression                     -> ^(In orExpr expression)
+     )?
+  ;
+
+orExpr
+  :  andExpr ('||'^ andExpr)*
+  ;
+
+andExpr
+  :  equExpr ('&&'^ equExpr)*
+  ;
+
+equExpr
+  :  relExpr (('==' | '!=')^ relExpr)*
+  ;
+
+relExpr
+  :  addExpr (('>=' | '<=' | '>' | '<')^ addExpr)*
+  ;
+
+addExpr
+  :  mulExpr (('+' | '-')^ mulExpr)*
+  ;
+
+mulExpr
+  :  powExpr (('*' | '/' | '%')^ powExpr)*
+  ;
+
+powExpr
+  :  unaryExpr ('^'^ unaryExpr)*
+  ;
+  
+unaryExpr
+  :  '-' atom -> ^(UNARY_MIN atom)
+  |  '!' atom -> ^(NEGATE atom)
+  |  atom
   ;
 
 atom
-  :  BOOLEAN
-  |  INTEGER
-  |  variableCall
-  |  '(' if_expression ')' -> if_expression
-  |  print
+  :  Number
+  |  Bool
+  |  Null
+  |  lookup
   ;
 
-// paste
+list
+  :  '[' exprList? ']' -> ^(LIST exprList?)
+  ;
 
-term
-  : variableCall
-  | '('! expression ')'!
-  | INTEGER
+lookup
+  :  functionCall indexes?       -> ^(LOOKUP functionCall indexes?)
+  |  list indexes?               -> ^(LOOKUP list indexes?)
+  |  Identifier indexes?         -> ^(LOOKUP Identifier indexes?)
+  |  String indexes?             -> ^(LOOKUP String indexes?)
+  |  '(' expression ')' indexes? -> ^(LOOKUP expression indexes?)
+  ;
+
+indexes
+  :  ('[' expression ']')+ -> ^(INDEXES expression+)
+  ;
+
+Println  : 'println';
+Print    : 'print';
+Assert   : 'assert';
+Size     : 'size';
+Def      : 'def';
+If       : 'if';
+Else     : 'else';
+Return   : 'return';
+For      : 'for';
+While    : 'while';
+To       : 'to';
+Do       : 'do';
+End      : 'end';
+In       : 'in';
+Null     : 'null';
+
+Or       : '||';
+And      : '&&';
+Equals   : '==';
+NEquals  : '!=';
+GTEquals : '>=';
+LTEquals : '<=';
+Pow      : '^';
+Excl     : '!';
+GT       : '>';
+LT       : '<';
+Add      : '+';
+Subtract : '-';
+Multiply : '*';
+Divide   : '/';
+Modulus  : '%';
+OBrace   : '{';
+CBrace   : '}';
+OBracket : '[';
+CBracket : ']';
+OParen   : '(';
+CParen   : ')';
+SColon   : ';';
+Assign   : '=';
+Comma    : ',';
+QMark    : '?';
+Colon    : ':';
+
+Bool
+  :  'true' 
+  |  'false'
+  ;
+
+Number
+  :  Int ('.' Digit*)?
+  ;
+
+Identifier
+  :  ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | Digit)*
+  ;
+
+String
+@after {
+  setText(getText().substring(1, getText().length()-1).replaceAll("\\\\(.)", "$1"));
+}
+  :  '"'  (~('"' | '\\')  | '\\' ('\\' | '"'))* '"' 
+  |  '\'' (~('\'' | '\\') | '\\' ('\\' | '\''))* '\''
+  ;
+
+Comment
+  :  '//' ~('\r' | '\n')* {skip();}
+  |  '/*' .* '*/'         {skip();}
+  ;
+
+Space
+  :  (' ' | '\t' | '\r' | '\n' | '\u000C') {skip();}
+  ;
+
+fragment Int
+  :  '1'..'9' Digit*
+  |  '0'
   ;
   
-unary
-  : ('+'! | negation^)* term
-  ;
-
-negation
-  : '-' -> NEGATION
-  ;
-
-mult
-  : unary (('*'^ | '/'^ | 'mod'^) unary)*
+fragment Digit 
+  :  '0'..'9'
   ;
   
-expression
-  : mult (('+'^ | '-'^) mult)*
-  ;
 
-STRING_LITERAL
-  @init{final StringBuilder builder = new StringBuilder();}
-  : '"'
-    (ESCAPE[builder] 
-    | c=~('\\' | '"' | '\r' | '\n') {builder.appendCodePoint(c);}
-    )*
-    '"'
-    {setText(builder.toString());}
-  ;
-
-fragment ESCAPE[StringBuilder builder]
-  : '\\' . {processEscapeSequence(getText(), $builder);}
-  ;
-
-WS: (' ' | '\t' | '\n' | '\r' | '\f')+ {$channel = HIDDEN;};
-COMMENT: '//' ~('\n' | '\r')* ('\n' | '\r')? {$channel = HIDDEN;};
-MULTILINE_COMMENT: '/*' .* '*/' {$channel = HIDDEN;};
-fragment DIGIT : '0'..'9';
-fragment LETTER : ('a'..'z' | 'A'..'Z');
-INTEGER : DIGIT+;
-FLOAT : '0'..'9' DIGIT* '.' DIGIT*;
-BOOLEAN: 'true' | 'false';
-IDENT : LETTER (LETTER | DIGIT)*; 
