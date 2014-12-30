@@ -3,6 +3,7 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
+import org.dataCentricDSL.SimpleStatement;
 import org.dataCentricDSL.VariableDecl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -12,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class VariableDeclImpl extends MinimalEObjectImpl.Container implements VariableDecl
+public class VariableDeclImpl extends SimpleStatementImpl implements VariableDecl
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -58,7 +58,7 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
    * @generated
    * @ordered
    */
-  protected VariableDecl variableValue;
+  protected SimpleStatement variableValue;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,7 +109,7 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDecl getVariableValue()
+  public SimpleStatement getVariableValue()
   {
     return variableValue;
   }
@@ -119,9 +119,9 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVariableValue(VariableDecl newVariableValue, NotificationChain msgs)
+  public NotificationChain basicSetVariableValue(SimpleStatement newVariableValue, NotificationChain msgs)
   {
-    VariableDecl oldVariableValue = variableValue;
+    SimpleStatement oldVariableValue = variableValue;
     variableValue = newVariableValue;
     if (eNotificationRequired())
     {
@@ -136,7 +136,7 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableValue(VariableDecl newVariableValue)
+  public void setVariableValue(SimpleStatement newVariableValue)
   {
     if (newVariableValue != variableValue)
     {
@@ -200,7 +200,7 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
         setName((String)newValue);
         return;
       case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
-        setVariableValue((VariableDecl)newValue);
+        setVariableValue((SimpleStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -220,7 +220,7 @@ public class VariableDeclImpl extends MinimalEObjectImpl.Container implements Va
         setName(NAME_EDEFAULT);
         return;
       case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
-        setVariableValue((VariableDecl)null);
+        setVariableValue((SimpleStatement)null);
         return;
     }
     super.eUnset(featureID);

@@ -3,11 +3,23 @@ grammar org.DataCentricDSL with org.eclipse.xtext.xbase.Xbase
 generate dataCentricDSL "http://www.DataCentricDSL.org"
 
 DataCentricDSL:
-	(elements += (VariableDecl | Query | Print) ';')*
+	(elements += Statement)*
+;
+
+Statement:
+	SimpleStatement | CompoundStatement
+;
+
+SimpleStatement:
+	(VariableDecl | Query | Print) ';'
 ;
 
 VariableDecl:
-	name=ValidID '=' variableValue=VariableParam
+	name=ValidID OpAssignment variableValue=(VariableParam | Expression)
+;
+
+OpAssignment:
+	'='
 ;
 
 VariableParam returns VariableDecl:
@@ -27,9 +39,85 @@ Print:
 ;
 
 PrintParam returns Print:
-	(printValue=STRING | VariableCall | Query)
+	(printValue=STRING | VariableCall | Query | Expression)
 ;
 
 VariableCall:
 	{VariableCall} variableCall=ValidID
+;
+
+Expression:
+	Addition
+;
+
+Addition returns Expression:
+	Substraction ({Addition.left=current} '+' right=Substraction)*
+;
+
+Substraction returns Expression:
+	Multiplication ({Substraction.left=current} '-' right=Multiplication)*
+;
+
+Multiplication returns Expression:
+	Division ({Multiplication.left=current} '*' right=Division)*
+;
+ 
+Division returns Expression:
+	Mod ({Division.left=current} '/' right=Mod)*
+;
+
+Mod returns Expression:
+	Primary ({Mod.left=current} '%' right=Primary)*
+;
+
+Primary returns Expression:
+	NumberLiteral | '(' Addition ')'
+;
+
+NumberLiteral:
+	value=INT
+;
+
+CompoundStatement:
+	IfStatement |
+	SwitchStatement
+;
+
+IfStatement:
+	{IfStatement}
+	'if' condition += Condition '{'
+		(ifElements += Statement)*
+	'}'
+	( 'else if' condition+=Condition '{'
+		(ifElements += Statement)*
+	'}' )*
+	// doesn't work if there is no space after else (xtext bug probably)
+	( 'else ' '{' 
+		(ifElements += Statement)*
+	'}')?
+;
+
+SwitchStatement:
+	{SwitchStatement}
+	'switch' '(' name=VariableCall ')' '{'
+		('case' cases+=STRING ':'
+			(switchElements += Statement)*
+		)*
+		('default' ':'
+			(switchElements += Statement)*
+		)?
+	'}'
+;
+
+Condition:
+	'(' expressions+=Expression (op+=OpCompare expressions+=Expression)* ')'
+;
+
+OpCompare:
+	('>' |
+	'<' |
+	'==' |
+	'<=' |
+	'>=' |
+	'!=')
 ;

@@ -32,20 +32,15 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		}
 		val Elements = (Array as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
 		var found = 0;
-		if(Elements.length > 1) {
-			for(i : 0..< Elements.length) {
-				if(found == 0) {
-					if(Elements.get(i).name.toString.equals(vc.variableCall.toString)) {
-						found = 1;
-					}
-				} else {
-					return;
+		for(i : 0..< Elements.length) {
+			if(found == 0) {
+				if(Elements.get(i).name.toString.equals(vc.variableCall.toString)) {
+					found = 1;
 				}
+			} else {
+				return;
 			}
-		} else {
-			error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
-			return;
-		}	
+		}
 		if(found == 0) {
 			error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
 		}

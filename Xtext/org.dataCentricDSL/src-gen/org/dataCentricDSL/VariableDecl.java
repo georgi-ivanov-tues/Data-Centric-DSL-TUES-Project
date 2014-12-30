@@ -2,7 +2,6 @@
  */
 package org.dataCentricDSL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface VariableDecl extends EObject
+public interface VariableDecl extends SimpleStatement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -58,12 +57,12 @@ public interface VariableDecl extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Variable Value</em>' containment reference.
-   * @see #setVariableValue(VariableDecl)
+   * @see #setVariableValue(SimpleStatement)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableDecl_VariableValue()
    * @model containment="true"
    * @generated
    */
-  VariableDecl getVariableValue();
+  SimpleStatement getVariableValue();
 
   /**
    * Sets the value of the '{@link org.dataCentricDSL.VariableDecl#getVariableValue <em>Variable Value</em>}' containment reference.
@@ -73,6 +72,6 @@ public interface VariableDecl extends EObject
    * @see #getVariableValue()
    * @generated
    */
-  void setVariableValue(VariableDecl value);
+  void setVariableValue(SimpleStatement value);
 
 } // VariableDecl

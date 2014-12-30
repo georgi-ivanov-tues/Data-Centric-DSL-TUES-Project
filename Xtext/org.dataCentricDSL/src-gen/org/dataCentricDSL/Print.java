@@ -2,7 +2,6 @@
  */
 package org.dataCentricDSL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Print extends EObject
+public interface Print extends SimpleStatement
 {
   /**
    * Returns the value of the '<em><b>Print Value</b></em>' attribute.
