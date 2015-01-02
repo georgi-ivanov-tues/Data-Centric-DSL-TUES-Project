@@ -92,15 +92,10 @@ statement
   |  forStatement
   |  whileStatement
   |  query ';' -> query
-  |  print ';' -> print
   ;
 
 query: 
   'query'^ (String | variableCall)
-;
-
-print:
-  'print'^ (String | query | variableCall)
 ;
 
 variableCall:
@@ -108,13 +103,14 @@ variableCall:
 ;
 
 assignment
-  :  Identifier indexes? '=' expression 
-     -> ^(ASSIGNMENT Identifier indexes? expression)
+  :  Identifier indexes? '=' expression -> ^(ASSIGNMENT Identifier indexes? expression)
+  |  Identifier '=' query -> ^(ASSIGNMENT Identifier query)
   ;
 
 functionCall
   :  Identifier '(' exprList? ')' -> ^(FUNC_CALL Identifier exprList?)
   |  Println '(' expression? ')'  -> ^(FUNC_CALL Println expression?)
+  |  Println '(' query ')'  -> ^(FUNC_CALL Println query)
   |  Print '(' expression ')'     -> ^(FUNC_CALL Print expression)
   |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
   |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)

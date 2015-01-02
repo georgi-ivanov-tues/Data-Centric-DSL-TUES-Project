@@ -6,42 +6,41 @@ import java.util.List;
 
 public class LookupNode implements TLNode {
 
-  private TLNode expression;
-  private List<TLNode> indexes;
+	public TLNode expression;
+	public List<TLNode> indexes;
 
-  public LookupNode(TLNode e, List<TLNode> i) {
-    expression = e;
-    indexes = i;
-  }
+	public LookupNode(TLNode e, List<TLNode> i) {
+		expression = e;
+		indexes = i;
+	}
 
-  @Override
-  public TLValue evaluate() {
+	@Override
+	public TLValue evaluate() {
+		TLValue value = expression.evaluate();
 
-    TLValue value = expression.evaluate();
+		List<TLValue> indexValues = new ArrayList<TLValue>();
 
-    List<TLValue> indexValues = new ArrayList<TLValue>();
+		for (TLNode indexNode : indexes) {
+			indexValues.add(indexNode.evaluate());
+		}
 
-    for (TLNode indexNode : indexes) {
-      indexValues.add(indexNode.evaluate());
-    }
+		for(TLValue index : indexValues) {
 
-    for(TLValue index : indexValues) {
+			if(!index.isNumber() || !(value.isList() || value.isString())) {
+				throw new RuntimeException("illegal expression: " + expression + "[" + index + "]");
+			}
 
-      if(!index.isNumber() || !(value.isList() || value.isString())) {
-        throw new RuntimeException("illegal expression: " + expression + "[" + index + "]");
-      }
+			int idx = index.asLong().intValue();
 
-      int idx = index.asLong().intValue();
+			if(value.isList()) {
+				value = value.asList().get(idx);
+			}
+			else if(value.isString()) {
+				value = new TLValue(String.valueOf(value.asString().charAt(idx)));
+			}
+		}
 
-      if(value.isList()) {
-        value = value.asList().get(idx);
-      }
-      else if(value.isString()) {
-        value = new TLValue(String.valueOf(value.asString().charAt(idx)));
-      }
-    }
-
-    return value;
-  }
+		return value;
+	}
 }
 

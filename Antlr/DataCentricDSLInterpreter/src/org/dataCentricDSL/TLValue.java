@@ -1,5 +1,6 @@
 package org.dataCentricDSL;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 public class TLValue implements Comparable<TLValue> {
@@ -20,11 +21,15 @@ public class TLValue implements Comparable<TLValue> {
     }
     value = v;
     // only accept boolean, list, number or string types
-    if(!(isBoolean() || isList() || isNumber() || isString())) {
+    if(!(isBoolean() || isList() || isNumber() || isString() || isResultSet())) {
       throw new RuntimeException("invalid data type: " + v + " (" + v.getClass() + ")");
     }
   }
 
+  public ResultSet asResultSet(){
+	return (ResultSet)value;
+  }
+  
   public Boolean asBoolean() {
     return (Boolean)value;
   }
@@ -112,6 +117,10 @@ public class TLValue implements Comparable<TLValue> {
 
   public boolean isString() {
     return value instanceof String;
+  }
+  
+  public boolean isResultSet(){
+	  return value instanceof ResultSet;
   }
 
   @Override

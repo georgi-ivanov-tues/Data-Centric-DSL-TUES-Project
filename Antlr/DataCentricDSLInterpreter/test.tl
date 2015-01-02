@@ -1,18 +1,24 @@
-//a = 2;
-
-//println("asd");
-//print query "SELECT * FROM people";
-
-a = 5;
-
-if a < 10 do
-  a = 1;
+if 2 == 2 do
+	println("YES");
 else do
-  a = 42;
+	println("NO");
 end
 
-print a;
+a = 10/2;
+println(a);
 
+/*
+a = 2;
+if a < 10 do
+	println("YES");
+else do
+	println("NO");
+end
+println(a);
+
+b = query "SELECT * FROM people";
+println(b);
+*/
 
 /*
 a = 5;

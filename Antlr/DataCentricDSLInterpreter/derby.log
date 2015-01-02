@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Mon Dec 29 19:44:01 EET 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-014a-9725-be63-0000033b6af8 
+Fri Jan 02 22:44:54 EET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-014a-ac64-c9b5-000003391f30 
 on database directory D:\Documents\Programing\GitHub\Data-Centric-DSL-TUES-Project\Antlr\DataCentricDSLInterpreter\test_database with class loader sun.misc.Launcher$AppClassLoader@31f39c59 
 Loaded from file:/D:/Documents/Programing/GitHub/Data-Centric-DSL-TUES-Project/Antlr/DataCentricDSLInterpreter/lib/derby.jar
 java.vendor=Oracle Corporation
