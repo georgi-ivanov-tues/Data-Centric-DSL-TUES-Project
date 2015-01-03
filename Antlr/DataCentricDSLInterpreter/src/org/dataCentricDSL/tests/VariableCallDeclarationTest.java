@@ -2,6 +2,9 @@ package org.dataCentricDSL.tests;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -11,13 +14,27 @@ import org.dataCentricDSL.DataCentricDSLLexer;
 import org.dataCentricDSL.DataCentricDSLParser;
 import org.dataCentricDSL.ProgramWalker;
 import org.dataCentricDSL.DataCentricDSLParser.program_return;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class VariableCallDeclarationTest {
 	
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+	@Before
+	public void setUpStreams() {
+	    System.setOut(new PrintStream(outContent));
+	}
+
+	@After
+	public void cleanUpStreams() {
+	    System.setOut(null);
+	}
+	
 	@Test
 	public void VariableCallDeclarationTest() throws RecognitionException{
-		CharStream cs = new ANTLRStringStream("str = \"Hello World\"; str2 = str;");
+		CharStream cs = new ANTLRStringStream("str = \"Hello World\"; str2 = str; println(str2);");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
@@ -25,10 +42,7 @@ public class VariableCallDeclarationTest {
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.getTree());
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		
-		walker.variableDecl(); 
-		String str = (String) walker.context.get("str");
-		walker.variableDecl();
-		String str2 = (String) walker.context.get("str2");
-		assertEquals(str, str2);
+		walker.program(); 
+		assertEquals("Hello World", outContent.toString().trim());
 	}
 }

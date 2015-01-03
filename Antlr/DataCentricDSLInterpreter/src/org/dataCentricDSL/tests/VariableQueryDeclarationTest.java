@@ -38,7 +38,7 @@ public class VariableQueryDeclarationTest {
 		}
 		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
 		
-		walker.variableDecl();
+		walker.program();
 		ResultSet result = (ResultSet) walker.context.get("result");
 		try {
 			result.next();

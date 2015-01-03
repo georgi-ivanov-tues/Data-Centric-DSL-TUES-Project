@@ -29,6 +29,10 @@ options {
   public Map<String, Function> functions = null;
   Scope currentScope = null;
   
+  public Scope getCurrentScope(){
+    return currentScope;
+  }
+  
   public ProgramWalker(CommonTreeNodeStream nodes, Map<String, Function> fns) {
     this(nodes, null, fns);
   }
@@ -55,11 +59,11 @@ options {
 
 program returns [TLNode node]
   :  block{
-      node = $block.node; 
+      node = $block.node;  
       node.evaluate();
     } 
   ;
-
+ 
 block returns [TLNode node]
 @init {
   BlockNode bn = new BlockNode();
@@ -69,7 +73,7 @@ block returns [TLNode node]
 }
 @after { 
   currentScope = currentScope.parent();
-}
+} 
   :  ^(BLOCK 
         ^( STATEMENTS (statement  {bn.addStatement($statement.node);})* ) 
         ^( RETURN     (expression {bn.addReturn($expression.node);  })? )
@@ -88,8 +92,9 @@ statement returns [TLNode node]
 query returns [TLNode node]: 
   {String sqlStatement = "";}
   ^('query'
-   (  String {node = new QueryNode($String.text, (Connection) context.get("dataSource"));} 
-   |  variableCall {sqlStatement = (String) context.get($variableCall.value);} )
+   (  String {node = new QueryNode(new AtomNode($String.text), (Connection) context.get("dataSource"));} 
+   |  variableCall {node = new QueryNode(new IdentifierNode($variableCall.value, currentScope), (Connection) context.get("dataSource"));}
+   )
    )
 ;
 
@@ -97,15 +102,15 @@ variableCall returns [String value]:
   Identifier {value=$Identifier.text;}
 ;
 
-assignment returns [TLNode node]
+assignment returns [TLNode node] 
   :  ^(ASSIGNMENT i=Identifier x=indexes? e=expression {node = new AssignmentNode($i.text, $x.e, $e.node, currentScope);})
-  |  ^(ASSIGNMENT i=Identifier e=query {node = new AssignmentNode($i.text, $e.node, currentScope);})
+//  |  ^(ASSIGNMENT i=Identifier e=query {node = new AssignmentNode($i.text, $e.node, currentScope);})
   ;
 
 functionCall returns [TLNode node]
   :  ^(FUNC_CALL Identifier exprList?)
   |  ^(FUNC_CALL Println expression?) {node = new PrintlnNode($expression.node);}
-  |  ^(FUNC_CALL Println query) {node = new PrintlnNode($query.node);}
+//  |  ^(FUNC_CALL Println query) {node = new PrintlnNode($query.node);}
   |  ^(FUNC_CALL Print expression)
   |  ^(FUNC_CALL Assert expression) 
   |  ^(FUNC_CALL Size expression)
@@ -123,11 +128,13 @@ ifStatement returns [TLNode node]
   ;
    
 forStatement returns [TLNode node]
-  :  ^(For Identifier expression expression block)
+//  :  ^(For s=Identifier a=expression b=expression c=assignment d=block) {node = new ForNode($s.text, $a.node, $b.node, $c.node, $d.node, currentScope);}
+:  ^(For a=Identifier b=expression c=expression d=block) 
+//{node = new ForNode($a.text, $b.node, $c.node, $d.node, currentScope);}
   ;
 
 whileStatement returns [TLNode node]
-  :  ^(While expression block)
+  :  ^(While expression block) {node = new WhileNode($expression.node, $block.node);}
   ;
 
 idList returns [java.util.List<String> i]
@@ -162,6 +169,7 @@ expression returns [TLNode node]
   |  Bool
   |  Null
   |  lookup {node = $lookup.node;}  
+  |  query {node = $query.node;}
   ;
 
 lookup returns [TLNode node]

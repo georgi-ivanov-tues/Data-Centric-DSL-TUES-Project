@@ -24,7 +24,7 @@ public class VariableDeclarationIntegerTest {
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.getTree());
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		
-		walker.variableDecl();
+		walker.program();
 		Object result = walker.context.get("a");
 		assertEquals(result instanceof Integer, true);
 	}

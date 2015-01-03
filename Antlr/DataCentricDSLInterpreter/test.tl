@@ -1,12 +1,35 @@
-if 2 == 2 do
+
+/*
+a = "SELECT first_name FROM people";
+b = query a;
+println(b);
+*/
+/*
+a = 1;
+while(a < 10){
+	println(a);
+	a = a + 1;
+}
+*/
+
+/*
+a = "a";
+b = "b";
+
+c = query "SELECT * FROM people";
+println(c);
+
+a = 0;
+if(a == 2){
 	println("YES");
-else do
+}else if(a > 5){
+	println("a > 5");
+}else{
 	println("NO");
-end
+}
 
-a = 10/2;
-println(a);
-
+println query "SELECT * FROM people";
+*/
 /*
 a = 2;
 if a < 10 do

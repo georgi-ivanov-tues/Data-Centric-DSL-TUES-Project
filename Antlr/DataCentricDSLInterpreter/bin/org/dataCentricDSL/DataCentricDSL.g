@@ -104,32 +104,33 @@ variableCall:
 
 assignment
   :  Identifier indexes? '=' expression -> ^(ASSIGNMENT Identifier indexes? expression)
-  |  Identifier '=' query -> ^(ASSIGNMENT Identifier query)
+//  |  Identifier '=' query -> ^(ASSIGNMENT Identifier query)
   ;
 
 functionCall
   :  Identifier '(' exprList? ')' -> ^(FUNC_CALL Identifier exprList?)
-  |  Println '(' expression? ')'  -> ^(FUNC_CALL Println expression?)
-  |  Println '(' query ')'  -> ^(FUNC_CALL Println query)
+  |  Println '(' expression? ')'   -> ^(FUNC_CALL Println expression?)
+//  |  Println '(' a=(expression? | query) ')'   -> ^(FUNC_CALL Println $a)
+//  |  Println '(' query ')'        -> ^(FUNC_CALL Println query)
   |  Print '(' expression ')'     -> ^(FUNC_CALL Print expression)
   |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
   |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)
   ;
 
 ifStatement
-  :  ifStat elseIfStat* elseStat? End -> ^(IF ifStat elseIfStat* elseStat?)
+  :  ifStat elseIfStat* elseStat? -> ^(IF ifStat elseIfStat* elseStat?)
   ;
 
 ifStat
-  :  If expression Do block -> ^(EXP expression block)
+  :  If '(' expression ')' '{' block '}' -> ^(EXP expression block)
   ;
 
 elseIfStat
-  :  Else If expression Do block -> ^(EXP expression block)
+  :  Else If '(' expression ')' '{' block '}' -> ^(EXP expression block)
   ;
 
 elseStat
-  :  Else Do block -> ^(EXP block)
+  :  Else '{' block '}' -> ^(EXP block)
   ;
 
 functionDecl
@@ -138,12 +139,14 @@ functionDecl
   ;
 
 forStatement
-  :  For Identifier '=' expression To expression Do block End 
+//  :  For '(' assignment ';' expression ';' assignment ')' '{' block '}' 
+//     -> ^(For Identifier '=' expression expression assignment block)
+ :  For '(' Identifier '=' expression ';' expression ')' '{' block '}' 
      -> ^(For Identifier expression expression block)
   ;
 
 whileStatement
-  :  While expression Do block End -> ^(While expression block)
+  :  While '(' expression ')' '{' block '}' -> ^(While expression block)
   ;
 
 idList
@@ -155,7 +158,7 @@ exprList
   ;
 
 expression
-  :  condExpr
+  :  condExpr | query
   ;
 
 condExpr
