@@ -1,4 +1,15 @@
 
+for(a = 0; a < 5){
+	//println(a);
+}
+
+println(a);
+
+/*
+for(b = 0; b < 5){
+	println(b);
+}
+*/
 /*
 a = "SELECT first_name FROM people";
 b = query a;

@@ -129,8 +129,9 @@ ifStatement returns [TLNode node]
    
 forStatement returns [TLNode node]
 //  :  ^(For s=Identifier a=expression b=expression c=assignment d=block) {node = new ForNode($s.text, $a.node, $b.node, $c.node, $d.node, currentScope);}
-:  ^(For a=Identifier b=expression c=expression d=block) 
-//{node = new ForNode($a.text, $b.node, $c.node, $d.node, currentScope);}
+//:  ^(For a=Identifier b=expression c=expression d=block) {node = new ForNode(new AssignmentNode($a.text, $b.node, currentScope), $c.node, $d.node);}
+:  ^(For a=Identifier b=expression c=expression d=block) {node = new ForNode($a.text, $b.node, $c.node, $d.node, currentScope);}
+//:  ^(For a=Identifier b=expression c=expression d=Identifier e=expression f=block) {node = new ForNode($a.text, $b.node, $c.node, $d.text, $e.node, $f.node, currentScope);}
   ;
 
 whileStatement returns [TLNode node]

@@ -31,7 +31,6 @@ public class AssignmentNode implements TLNode {
 	public TLValue evaluate() {
 
 		TLValue value = rhs.evaluate();
-
 		if (value == TLValue.VOID) {
 			throw new RuntimeException("can't assign VOID to " + identifier);
 		}

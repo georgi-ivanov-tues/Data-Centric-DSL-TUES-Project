@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g 2015-01-03 20:17:58
+// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g 2015-01-04 14:40:57
 
   package org.dataCentricDSL;
   import org.dataCentricDSL.*; 
@@ -311,7 +311,7 @@ public class DataCentricDSLParser extends Parser {
 			}
 
 			// AST REWRITE
-			// elements: statement, expression
+			// elements: expression, statement
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -844,7 +844,7 @@ public class DataCentricDSLParser extends Parser {
 
 			stream_expression.add(expression24.getTree());
 			// AST REWRITE
-			// elements: Identifier, indexes, expression
+			// elements: expression, Identifier, indexes
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1026,7 +1026,7 @@ public class DataCentricDSLParser extends Parser {
 					stream_CParen.add(char_literal28);
 
 					// AST REWRITE
-					// elements: Identifier, exprList
+					// elements: exprList, Identifier
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1092,7 +1092,7 @@ public class DataCentricDSLParser extends Parser {
 					stream_CParen.add(char_literal32);
 
 					// AST REWRITE
-					// elements: Println, expression
+					// elements: expression, Println
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1143,7 +1143,7 @@ public class DataCentricDSLParser extends Parser {
 					stream_CParen.add(char_literal36);
 
 					// AST REWRITE
-					// elements: Print, expression
+					// elements: expression, Print
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1189,7 +1189,7 @@ public class DataCentricDSLParser extends Parser {
 					stream_CParen.add(char_literal40);
 
 					// AST REWRITE
-					// elements: Assert, expression
+					// elements: expression, Assert
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1235,7 +1235,7 @@ public class DataCentricDSLParser extends Parser {
 					stream_CParen.add(char_literal44);
 
 					// AST REWRITE
-					// elements: expression, Size
+					// elements: Size, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1367,7 +1367,7 @@ public class DataCentricDSLParser extends Parser {
 			}
 
 			// AST REWRITE
-			// elements: elseIfStat, elseStat, ifStat
+			// elements: elseStat, ifStat, elseIfStat
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1491,7 +1491,7 @@ public class DataCentricDSLParser extends Parser {
 			stream_CBrace.add(char_literal54);
 
 			// AST REWRITE
-			// elements: expression, block
+			// elements: block, expression
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1610,7 +1610,7 @@ public class DataCentricDSLParser extends Parser {
 			stream_CBrace.add(char_literal62);
 
 			// AST REWRITE
-			// elements: block, expression
+			// elements: expression, block
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1945,7 +1945,7 @@ public class DataCentricDSLParser extends Parser {
 			stream_CBrace.add(char_literal84);
 
 			// AST REWRITE
-			// elements: expression, Identifier, For, block, expression
+			// elements: expression, block, For, expression, Identifier
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -2002,7 +2002,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "whileStatement"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:148:1: whileStatement : While '(' expression ')' '{' block '}' -> ^( While expression block ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:151:1: whileStatement : While '(' expression ')' '{' block '}' -> ^( While expression block ) ;
 	public final DataCentricDSLParser.whileStatement_return whileStatement() throws RecognitionException {
 		DataCentricDSLParser.whileStatement_return retval = new DataCentricDSLParser.whileStatement_return();
 		retval.start = input.LT(1);
@@ -2031,36 +2031,36 @@ public class DataCentricDSLParser extends Parser {
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:149:3: ( While '(' expression ')' '{' block '}' -> ^( While expression block ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:149:6: While '(' expression ')' '{' block '}'
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:152:3: ( While '(' expression ')' '{' block '}' -> ^( While expression block ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:152:6: While '(' expression ')' '{' block '}'
 			{
-			While85=(Token)match(input,While,FOLLOW_While_in_whileStatement727);  
+			While85=(Token)match(input,While,FOLLOW_While_in_whileStatement732);  
 			stream_While.add(While85);
 
-			char_literal86=(Token)match(input,OParen,FOLLOW_OParen_in_whileStatement729);  
+			char_literal86=(Token)match(input,OParen,FOLLOW_OParen_in_whileStatement734);  
 			stream_OParen.add(char_literal86);
 
-			pushFollow(FOLLOW_expression_in_whileStatement731);
+			pushFollow(FOLLOW_expression_in_whileStatement736);
 			expression87=expression();
 			state._fsp--;
 
 			stream_expression.add(expression87.getTree());
-			char_literal88=(Token)match(input,CParen,FOLLOW_CParen_in_whileStatement733);  
+			char_literal88=(Token)match(input,CParen,FOLLOW_CParen_in_whileStatement738);  
 			stream_CParen.add(char_literal88);
 
-			char_literal89=(Token)match(input,OBrace,FOLLOW_OBrace_in_whileStatement735);  
+			char_literal89=(Token)match(input,OBrace,FOLLOW_OBrace_in_whileStatement740);  
 			stream_OBrace.add(char_literal89);
 
-			pushFollow(FOLLOW_block_in_whileStatement737);
+			pushFollow(FOLLOW_block_in_whileStatement742);
 			block90=block();
 			state._fsp--;
 
 			stream_block.add(block90.getTree());
-			char_literal91=(Token)match(input,CBrace,FOLLOW_CBrace_in_whileStatement739);  
+			char_literal91=(Token)match(input,CBrace,FOLLOW_CBrace_in_whileStatement744);  
 			stream_CBrace.add(char_literal91);
 
 			// AST REWRITE
-			// elements: While, block, expression
+			// elements: expression, While, block
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -2070,9 +2070,9 @@ public class DataCentricDSLParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 149:45: -> ^( While expression block )
+			// 152:45: -> ^( While expression block )
 			{
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:149:48: ^( While expression block )
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:152:48: ^( While expression block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot(stream_While.nextNode(), root_1);
@@ -2115,7 +2115,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "idList"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:152:1: idList : Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:155:1: idList : Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) ;
 	public final DataCentricDSLParser.idList_return idList() throws RecognitionException {
 		DataCentricDSLParser.idList_return retval = new DataCentricDSLParser.idList_return();
 		retval.start = input.LT(1);
@@ -2133,13 +2133,13 @@ public class DataCentricDSLParser extends Parser {
 		RewriteRuleTokenStream stream_Identifier=new RewriteRuleTokenStream(adaptor,"token Identifier");
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:153:3: ( Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:153:6: Identifier ( ',' Identifier )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:156:3: ( Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:156:6: Identifier ( ',' Identifier )*
 			{
-			Identifier92=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList763);  
+			Identifier92=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList768);  
 			stream_Identifier.add(Identifier92);
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:153:17: ( ',' Identifier )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:156:17: ( ',' Identifier )*
 			loop12:
 			while (true) {
 				int alt12=2;
@@ -2150,12 +2150,12 @@ public class DataCentricDSLParser extends Parser {
 
 				switch (alt12) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:153:18: ',' Identifier
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:156:18: ',' Identifier
 					{
-					char_literal93=(Token)match(input,Comma,FOLLOW_Comma_in_idList766);  
+					char_literal93=(Token)match(input,Comma,FOLLOW_Comma_in_idList771);  
 					stream_Comma.add(char_literal93);
 
-					Identifier94=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList768);  
+					Identifier94=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList773);  
 					stream_Identifier.add(Identifier94);
 
 					}
@@ -2177,9 +2177,9 @@ public class DataCentricDSLParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 153:35: -> ^( ID_LIST ( Identifier )+ )
+			// 156:35: -> ^( ID_LIST ( Identifier )+ )
 			{
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:153:38: ^( ID_LIST ( Identifier )+ )
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:156:38: ^( ID_LIST ( Identifier )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(ID_LIST, "ID_LIST"), root_1);
@@ -2228,7 +2228,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "exprList"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:156:1: exprList : expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:159:1: exprList : expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) ;
 	public final DataCentricDSLParser.exprList_return exprList() throws RecognitionException {
 		DataCentricDSLParser.exprList_return retval = new DataCentricDSLParser.exprList_return();
 		retval.start = input.LT(1);
@@ -2244,15 +2244,15 @@ public class DataCentricDSLParser extends Parser {
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:157:3: ( expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:157:6: expression ( ',' expression )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:160:3: ( expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:160:6: expression ( ',' expression )*
 			{
-			pushFollow(FOLLOW_expression_in_exprList793);
+			pushFollow(FOLLOW_expression_in_exprList798);
 			expression95=expression();
 			state._fsp--;
 
 			stream_expression.add(expression95.getTree());
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:157:17: ( ',' expression )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:160:17: ( ',' expression )*
 			loop13:
 			while (true) {
 				int alt13=2;
@@ -2263,12 +2263,12 @@ public class DataCentricDSLParser extends Parser {
 
 				switch (alt13) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:157:18: ',' expression
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:160:18: ',' expression
 					{
-					char_literal96=(Token)match(input,Comma,FOLLOW_Comma_in_exprList796);  
+					char_literal96=(Token)match(input,Comma,FOLLOW_Comma_in_exprList801);  
 					stream_Comma.add(char_literal96);
 
-					pushFollow(FOLLOW_expression_in_exprList798);
+					pushFollow(FOLLOW_expression_in_exprList803);
 					expression97=expression();
 					state._fsp--;
 
@@ -2292,9 +2292,9 @@ public class DataCentricDSLParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 157:35: -> ^( EXP_LIST ( expression )+ )
+			// 160:35: -> ^( EXP_LIST ( expression )+ )
 			{
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:157:38: ^( EXP_LIST ( expression )+ )
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:160:38: ^( EXP_LIST ( expression )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXP_LIST, "EXP_LIST"), root_1);
@@ -2343,7 +2343,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "expression"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:160:1: expression : ( condExpr | query );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:163:1: expression : ( condExpr | query );
 	public final DataCentricDSLParser.expression_return expression() throws RecognitionException {
 		DataCentricDSLParser.expression_return retval = new DataCentricDSLParser.expression_return();
 		retval.start = input.LT(1);
@@ -2355,7 +2355,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:161:3: ( condExpr | query )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:164:3: ( condExpr | query )
 			int alt14=2;
 			int LA14_0 = input.LA(1);
 			if ( (LA14_0==Assert||LA14_0==Bool||LA14_0==Excl||LA14_0==Identifier||(LA14_0 >= Null && LA14_0 <= Number)||(LA14_0 >= OBracket && LA14_0 <= OParen)||(LA14_0 >= Print && LA14_0 <= Println)||LA14_0==Size||(LA14_0 >= String && LA14_0 <= Subtract)) ) {
@@ -2373,12 +2373,12 @@ public class DataCentricDSLParser extends Parser {
 
 			switch (alt14) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:161:6: condExpr
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:164:6: condExpr
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_condExpr_in_expression823);
+					pushFollow(FOLLOW_condExpr_in_expression828);
 					condExpr98=condExpr();
 					state._fsp--;
 
@@ -2387,12 +2387,12 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:161:17: query
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:164:17: query
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_query_in_expression827);
+					pushFollow(FOLLOW_query_in_expression832);
 					query99=query();
 					state._fsp--;
 
@@ -2429,7 +2429,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "condExpr"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:164:1: condExpr : ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:167:1: condExpr : ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? ;
 	public final DataCentricDSLParser.condExpr_return condExpr() throws RecognitionException {
 		DataCentricDSLParser.condExpr_return retval = new DataCentricDSLParser.condExpr_return();
 		retval.start = input.LT(1);
@@ -2454,13 +2454,13 @@ public class DataCentricDSLParser extends Parser {
 		RewriteRuleSubtreeStream stream_orExpr=new RewriteRuleSubtreeStream(adaptor,"rule orExpr");
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:165:3: ( ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:165:6: ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:168:3: ( ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:168:6: ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
 			{
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:165:6: ( orExpr -> orExpr )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:165:7: orExpr
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:168:6: ( orExpr -> orExpr )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:168:7: orExpr
 			{
-			pushFollow(FOLLOW_orExpr_in_condExpr842);
+			pushFollow(FOLLOW_orExpr_in_condExpr847);
 			orExpr100=orExpr();
 			state._fsp--;
 
@@ -2476,7 +2476,7 @@ public class DataCentricDSLParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 165:14: -> orExpr
+			// 168:14: -> orExpr
 			{
 				adaptor.addChild(root_0, stream_orExpr.nextTree());
 			}
@@ -2486,7 +2486,7 @@ public class DataCentricDSLParser extends Parser {
 
 			}
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:166:6: ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:169:6: ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
 			int alt15=3;
 			int LA15_0 = input.LA(1);
 			if ( (LA15_0==QMark) ) {
@@ -2497,26 +2497,26 @@ public class DataCentricDSLParser extends Parser {
 			}
 			switch (alt15) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:166:8: '?' a= expression ':' b= expression
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:169:8: '?' a= expression ':' b= expression
 					{
-					char_literal101=(Token)match(input,QMark,FOLLOW_QMark_in_condExpr857);  
+					char_literal101=(Token)match(input,QMark,FOLLOW_QMark_in_condExpr862);  
 					stream_QMark.add(char_literal101);
 
-					pushFollow(FOLLOW_expression_in_condExpr861);
+					pushFollow(FOLLOW_expression_in_condExpr866);
 					a=expression();
 					state._fsp--;
 
 					stream_expression.add(a.getTree());
-					char_literal102=(Token)match(input,Colon,FOLLOW_Colon_in_condExpr863);  
+					char_literal102=(Token)match(input,Colon,FOLLOW_Colon_in_condExpr868);  
 					stream_Colon.add(char_literal102);
 
-					pushFollow(FOLLOW_expression_in_condExpr867);
+					pushFollow(FOLLOW_expression_in_condExpr872);
 					b=expression();
 					state._fsp--;
 
 					stream_expression.add(b.getTree());
 					// AST REWRITE
-					// elements: a, b, orExpr
+					// elements: orExpr, a, b
 					// token labels: 
 					// rule labels: retval, b, a
 					// token list labels: 
@@ -2528,9 +2528,9 @@ public class DataCentricDSLParser extends Parser {
 					RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"rule a",a!=null?a.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 166:42: -> ^( TERNARY orExpr $a $b)
+					// 169:42: -> ^( TERNARY orExpr $a $b)
 					{
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:166:45: ^( TERNARY orExpr $a $b)
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:169:45: ^( TERNARY orExpr $a $b)
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(TERNARY, "TERNARY"), root_1);
@@ -2548,18 +2548,18 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:167:8: In expression
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:170:8: In expression
 					{
-					In103=(Token)match(input,In,FOLLOW_In_in_condExpr890);  
+					In103=(Token)match(input,In,FOLLOW_In_in_condExpr895);  
 					stream_In.add(In103);
 
-					pushFollow(FOLLOW_expression_in_condExpr892);
+					pushFollow(FOLLOW_expression_in_condExpr897);
 					expression104=expression();
 					state._fsp--;
 
 					stream_expression.add(expression104.getTree());
 					// AST REWRITE
-					// elements: In, orExpr, expression
+					// elements: In, expression, orExpr
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2569,9 +2569,9 @@ public class DataCentricDSLParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 167:42: -> ^( In orExpr expression )
+					// 170:42: -> ^( In orExpr expression )
 					{
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:167:45: ^( In orExpr expression )
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:170:45: ^( In orExpr expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot(stream_In.nextNode(), root_1);
@@ -2619,7 +2619,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "orExpr"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:171:1: orExpr : andExpr ( '||' ^ andExpr )* ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:174:1: orExpr : andExpr ( '||' ^ andExpr )* ;
 	public final DataCentricDSLParser.orExpr_return orExpr() throws RecognitionException {
 		DataCentricDSLParser.orExpr_return retval = new DataCentricDSLParser.orExpr_return();
 		retval.start = input.LT(1);
@@ -2633,19 +2633,19 @@ public class DataCentricDSLParser extends Parser {
 		Object string_literal106_tree=null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:172:3: ( andExpr ( '||' ^ andExpr )* )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:172:6: andExpr ( '||' ^ andExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:175:3: ( andExpr ( '||' ^ andExpr )* )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:175:6: andExpr ( '||' ^ andExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_andExpr_in_orExpr944);
+			pushFollow(FOLLOW_andExpr_in_orExpr949);
 			andExpr105=andExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, andExpr105.getTree());
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:172:14: ( '||' ^ andExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:175:14: ( '||' ^ andExpr )*
 			loop16:
 			while (true) {
 				int alt16=2;
@@ -2656,13 +2656,13 @@ public class DataCentricDSLParser extends Parser {
 
 				switch (alt16) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:172:15: '||' ^ andExpr
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:175:15: '||' ^ andExpr
 					{
-					string_literal106=(Token)match(input,Or,FOLLOW_Or_in_orExpr947); 
+					string_literal106=(Token)match(input,Or,FOLLOW_Or_in_orExpr952); 
 					string_literal106_tree = (Object)adaptor.create(string_literal106);
 					root_0 = (Object)adaptor.becomeRoot(string_literal106_tree, root_0);
 
-					pushFollow(FOLLOW_andExpr_in_orExpr950);
+					pushFollow(FOLLOW_andExpr_in_orExpr955);
 					andExpr107=andExpr();
 					state._fsp--;
 
@@ -2705,7 +2705,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "andExpr"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:175:1: andExpr : equExpr ( '&&' ^ equExpr )* ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:178:1: andExpr : equExpr ( '&&' ^ equExpr )* ;
 	public final DataCentricDSLParser.andExpr_return andExpr() throws RecognitionException {
 		DataCentricDSLParser.andExpr_return retval = new DataCentricDSLParser.andExpr_return();
 		retval.start = input.LT(1);
@@ -2719,19 +2719,19 @@ public class DataCentricDSLParser extends Parser {
 		Object string_literal109_tree=null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:176:3: ( equExpr ( '&&' ^ equExpr )* )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:176:6: equExpr ( '&&' ^ equExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:179:3: ( equExpr ( '&&' ^ equExpr )* )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:179:6: equExpr ( '&&' ^ equExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_equExpr_in_andExpr966);
+			pushFollow(FOLLOW_equExpr_in_andExpr971);
 			equExpr108=equExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, equExpr108.getTree());
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:176:14: ( '&&' ^ equExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:179:14: ( '&&' ^ equExpr )*
 			loop17:
 			while (true) {
 				int alt17=2;
@@ -2742,13 +2742,13 @@ public class DataCentricDSLParser extends Parser {
 
 				switch (alt17) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:176:15: '&&' ^ equExpr
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:179:15: '&&' ^ equExpr
 					{
-					string_literal109=(Token)match(input,And,FOLLOW_And_in_andExpr969); 
+					string_literal109=(Token)match(input,And,FOLLOW_And_in_andExpr974); 
 					string_literal109_tree = (Object)adaptor.create(string_literal109);
 					root_0 = (Object)adaptor.becomeRoot(string_literal109_tree, root_0);
 
-					pushFollow(FOLLOW_equExpr_in_andExpr972);
+					pushFollow(FOLLOW_equExpr_in_andExpr977);
 					equExpr110=equExpr();
 					state._fsp--;
 
@@ -2791,7 +2791,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "equExpr"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:179:1: equExpr : relExpr ( ( '==' | '!=' ) ^ relExpr )* ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:182:1: equExpr : relExpr ( ( '==' | '!=' ) ^ relExpr )* ;
 	public final DataCentricDSLParser.equExpr_return equExpr() throws RecognitionException {
 		DataCentricDSLParser.equExpr_return retval = new DataCentricDSLParser.equExpr_return();
 		retval.start = input.LT(1);
@@ -2805,19 +2805,19 @@ public class DataCentricDSLParser extends Parser {
 		Object set112_tree=null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:180:3: ( relExpr ( ( '==' | '!=' ) ^ relExpr )* )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:180:6: relExpr ( ( '==' | '!=' ) ^ relExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:183:3: ( relExpr ( ( '==' | '!=' ) ^ relExpr )* )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:183:6: relExpr ( ( '==' | '!=' ) ^ relExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_relExpr_in_equExpr988);
+			pushFollow(FOLLOW_relExpr_in_equExpr993);
 			relExpr111=relExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, relExpr111.getTree());
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:180:14: ( ( '==' | '!=' ) ^ relExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:183:14: ( ( '==' | '!=' ) ^ relExpr )*
 			loop18:
 			while (true) {
 				int alt18=2;
@@ -2828,7 +2828,7 @@ public class DataCentricDSLParser extends Parser {
 
 				switch (alt18) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:180:15: ( '==' | '!=' ) ^ relExpr
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:183:15: ( '==' | '!=' ) ^ relExpr
 					{
 					set112=input.LT(1);
 					set112=input.LT(1);
@@ -2841,7 +2841,7 @@ public class DataCentricDSLParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_relExpr_in_equExpr1000);
+					pushFollow(FOLLOW_relExpr_in_equExpr1005);
 					relExpr113=relExpr();
 					state._fsp--;
 
@@ -2884,7 +2884,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "relExpr"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:183:1: relExpr : addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:186:1: relExpr : addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* ;
 	public final DataCentricDSLParser.relExpr_return relExpr() throws RecognitionException {
 		DataCentricDSLParser.relExpr_return retval = new DataCentricDSLParser.relExpr_return();
 		retval.start = input.LT(1);
@@ -2898,19 +2898,19 @@ public class DataCentricDSLParser extends Parser {
 		Object set115_tree=null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:184:3: ( addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:184:6: addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:187:3: ( addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:187:6: addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_addExpr_in_relExpr1016);
+			pushFollow(FOLLOW_addExpr_in_relExpr1021);
 			addExpr114=addExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, addExpr114.getTree());
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:184:14: ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:187:14: ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
 			loop19:
 			while (true) {
 				int alt19=2;
@@ -2921,7 +2921,7 @@ public class DataCentricDSLParser extends Parser {
 
 				switch (alt19) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:184:15: ( '>=' | '<=' | '>' | '<' ) ^ addExpr
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:187:15: ( '>=' | '<=' | '>' | '<' ) ^ addExpr
 					{
 					set115=input.LT(1);
 					set115=input.LT(1);
@@ -2934,7 +2934,7 @@ public class DataCentricDSLParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_addExpr_in_relExpr1036);
+					pushFollow(FOLLOW_addExpr_in_relExpr1041);
 					addExpr116=addExpr();
 					state._fsp--;
 
@@ -2977,7 +2977,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "addExpr"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:187:1: addExpr : mulExpr ( ( '+' | '-' ) ^ mulExpr )* ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:190:1: addExpr : mulExpr ( ( '+' | '-' ) ^ mulExpr )* ;
 	public final DataCentricDSLParser.addExpr_return addExpr() throws RecognitionException {
 		DataCentricDSLParser.addExpr_return retval = new DataCentricDSLParser.addExpr_return();
 		retval.start = input.LT(1);
@@ -2991,19 +2991,19 @@ public class DataCentricDSLParser extends Parser {
 		Object set118_tree=null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:188:3: ( mulExpr ( ( '+' | '-' ) ^ mulExpr )* )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:188:6: mulExpr ( ( '+' | '-' ) ^ mulExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:191:3: ( mulExpr ( ( '+' | '-' ) ^ mulExpr )* )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:191:6: mulExpr ( ( '+' | '-' ) ^ mulExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_mulExpr_in_addExpr1052);
+			pushFollow(FOLLOW_mulExpr_in_addExpr1057);
 			mulExpr117=mulExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, mulExpr117.getTree());
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:188:14: ( ( '+' | '-' ) ^ mulExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:191:14: ( ( '+' | '-' ) ^ mulExpr )*
 			loop20:
 			while (true) {
 				int alt20=2;
@@ -3014,7 +3014,7 @@ public class DataCentricDSLParser extends Parser {
 
 				switch (alt20) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:188:15: ( '+' | '-' ) ^ mulExpr
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:191:15: ( '+' | '-' ) ^ mulExpr
 					{
 					set118=input.LT(1);
 					set118=input.LT(1);
@@ -3027,7 +3027,7 @@ public class DataCentricDSLParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_mulExpr_in_addExpr1064);
+					pushFollow(FOLLOW_mulExpr_in_addExpr1069);
 					mulExpr119=mulExpr();
 					state._fsp--;
 
@@ -3070,7 +3070,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "mulExpr"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:191:1: mulExpr : powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:194:1: mulExpr : powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* ;
 	public final DataCentricDSLParser.mulExpr_return mulExpr() throws RecognitionException {
 		DataCentricDSLParser.mulExpr_return retval = new DataCentricDSLParser.mulExpr_return();
 		retval.start = input.LT(1);
@@ -3084,19 +3084,19 @@ public class DataCentricDSLParser extends Parser {
 		Object set121_tree=null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:192:3: ( powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:192:6: powExpr ( ( '*' | '/' | '%' ) ^ powExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:195:3: ( powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:195:6: powExpr ( ( '*' | '/' | '%' ) ^ powExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_powExpr_in_mulExpr1080);
+			pushFollow(FOLLOW_powExpr_in_mulExpr1085);
 			powExpr120=powExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, powExpr120.getTree());
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:192:14: ( ( '*' | '/' | '%' ) ^ powExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:195:14: ( ( '*' | '/' | '%' ) ^ powExpr )*
 			loop21:
 			while (true) {
 				int alt21=2;
@@ -3107,7 +3107,7 @@ public class DataCentricDSLParser extends Parser {
 
 				switch (alt21) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:192:15: ( '*' | '/' | '%' ) ^ powExpr
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:195:15: ( '*' | '/' | '%' ) ^ powExpr
 					{
 					set121=input.LT(1);
 					set121=input.LT(1);
@@ -3120,7 +3120,7 @@ public class DataCentricDSLParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_powExpr_in_mulExpr1096);
+					pushFollow(FOLLOW_powExpr_in_mulExpr1101);
 					powExpr122=powExpr();
 					state._fsp--;
 
@@ -3163,7 +3163,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "powExpr"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:195:1: powExpr : unaryExpr ( '^' ^ unaryExpr )* ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:198:1: powExpr : unaryExpr ( '^' ^ unaryExpr )* ;
 	public final DataCentricDSLParser.powExpr_return powExpr() throws RecognitionException {
 		DataCentricDSLParser.powExpr_return retval = new DataCentricDSLParser.powExpr_return();
 		retval.start = input.LT(1);
@@ -3177,19 +3177,19 @@ public class DataCentricDSLParser extends Parser {
 		Object char_literal124_tree=null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:196:3: ( unaryExpr ( '^' ^ unaryExpr )* )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:196:6: unaryExpr ( '^' ^ unaryExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:199:3: ( unaryExpr ( '^' ^ unaryExpr )* )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:199:6: unaryExpr ( '^' ^ unaryExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_unaryExpr_in_powExpr1112);
+			pushFollow(FOLLOW_unaryExpr_in_powExpr1117);
 			unaryExpr123=unaryExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, unaryExpr123.getTree());
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:196:16: ( '^' ^ unaryExpr )*
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:199:16: ( '^' ^ unaryExpr )*
 			loop22:
 			while (true) {
 				int alt22=2;
@@ -3200,13 +3200,13 @@ public class DataCentricDSLParser extends Parser {
 
 				switch (alt22) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:196:17: '^' ^ unaryExpr
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:199:17: '^' ^ unaryExpr
 					{
-					char_literal124=(Token)match(input,Pow,FOLLOW_Pow_in_powExpr1115); 
+					char_literal124=(Token)match(input,Pow,FOLLOW_Pow_in_powExpr1120); 
 					char_literal124_tree = (Object)adaptor.create(char_literal124);
 					root_0 = (Object)adaptor.becomeRoot(char_literal124_tree, root_0);
 
-					pushFollow(FOLLOW_unaryExpr_in_powExpr1118);
+					pushFollow(FOLLOW_unaryExpr_in_powExpr1123);
 					unaryExpr125=unaryExpr();
 					state._fsp--;
 
@@ -3249,7 +3249,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "unaryExpr"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:199:1: unaryExpr : ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:202:1: unaryExpr : ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom );
 	public final DataCentricDSLParser.unaryExpr_return unaryExpr() throws RecognitionException {
 		DataCentricDSLParser.unaryExpr_return retval = new DataCentricDSLParser.unaryExpr_return();
 		retval.start = input.LT(1);
@@ -3269,7 +3269,7 @@ public class DataCentricDSLParser extends Parser {
 		RewriteRuleSubtreeStream stream_atom=new RewriteRuleSubtreeStream(adaptor,"rule atom");
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:200:3: ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:203:3: ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom )
 			int alt23=3;
 			switch ( input.LA(1) ) {
 			case Subtract:
@@ -3304,12 +3304,12 @@ public class DataCentricDSLParser extends Parser {
 			}
 			switch (alt23) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:200:6: '-' atom
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:203:6: '-' atom
 					{
-					char_literal126=(Token)match(input,Subtract,FOLLOW_Subtract_in_unaryExpr1136);  
+					char_literal126=(Token)match(input,Subtract,FOLLOW_Subtract_in_unaryExpr1141);  
 					stream_Subtract.add(char_literal126);
 
-					pushFollow(FOLLOW_atom_in_unaryExpr1138);
+					pushFollow(FOLLOW_atom_in_unaryExpr1143);
 					atom127=atom();
 					state._fsp--;
 
@@ -3325,9 +3325,9 @@ public class DataCentricDSLParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 200:15: -> ^( UNARY_MIN atom )
+					// 203:15: -> ^( UNARY_MIN atom )
 					{
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:200:18: ^( UNARY_MIN atom )
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:203:18: ^( UNARY_MIN atom )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(UNARY_MIN, "UNARY_MIN"), root_1);
@@ -3343,12 +3343,12 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:201:6: '!' atom
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:204:6: '!' atom
 					{
-					char_literal128=(Token)match(input,Excl,FOLLOW_Excl_in_unaryExpr1153);  
+					char_literal128=(Token)match(input,Excl,FOLLOW_Excl_in_unaryExpr1158);  
 					stream_Excl.add(char_literal128);
 
-					pushFollow(FOLLOW_atom_in_unaryExpr1155);
+					pushFollow(FOLLOW_atom_in_unaryExpr1160);
 					atom129=atom();
 					state._fsp--;
 
@@ -3364,9 +3364,9 @@ public class DataCentricDSLParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 201:15: -> ^( NEGATE atom )
+					// 204:15: -> ^( NEGATE atom )
 					{
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:201:18: ^( NEGATE atom )
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:204:18: ^( NEGATE atom )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(NEGATE, "NEGATE"), root_1);
@@ -3382,12 +3382,12 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 3 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:202:6: atom
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:205:6: atom
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_atom_in_unaryExpr1170);
+					pushFollow(FOLLOW_atom_in_unaryExpr1175);
 					atom130=atom();
 					state._fsp--;
 
@@ -3424,7 +3424,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "atom"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:205:1: atom : ( Number | Bool | Null | lookup );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:208:1: atom : ( Number | Bool | Null | lookup );
 	public final DataCentricDSLParser.atom_return atom() throws RecognitionException {
 		DataCentricDSLParser.atom_return retval = new DataCentricDSLParser.atom_return();
 		retval.start = input.LT(1);
@@ -3441,7 +3441,7 @@ public class DataCentricDSLParser extends Parser {
 		Object Null133_tree=null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:206:3: ( Number | Bool | Null | lookup )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:209:3: ( Number | Bool | Null | lookup )
 			int alt24=4;
 			switch ( input.LA(1) ) {
 			case Number:
@@ -3478,48 +3478,48 @@ public class DataCentricDSLParser extends Parser {
 			}
 			switch (alt24) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:206:6: Number
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:209:6: Number
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					Number131=(Token)match(input,Number,FOLLOW_Number_in_atom1184); 
+					Number131=(Token)match(input,Number,FOLLOW_Number_in_atom1189); 
 					Number131_tree = (Object)adaptor.create(Number131);
 					adaptor.addChild(root_0, Number131_tree);
 
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:207:6: Bool
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:210:6: Bool
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					Bool132=(Token)match(input,Bool,FOLLOW_Bool_in_atom1191); 
+					Bool132=(Token)match(input,Bool,FOLLOW_Bool_in_atom1196); 
 					Bool132_tree = (Object)adaptor.create(Bool132);
 					adaptor.addChild(root_0, Bool132_tree);
 
 					}
 					break;
 				case 3 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:208:6: Null
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:211:6: Null
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					Null133=(Token)match(input,Null,FOLLOW_Null_in_atom1198); 
+					Null133=(Token)match(input,Null,FOLLOW_Null_in_atom1203); 
 					Null133_tree = (Object)adaptor.create(Null133);
 					adaptor.addChild(root_0, Null133_tree);
 
 					}
 					break;
 				case 4 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:209:6: lookup
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:212:6: lookup
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_lookup_in_atom1205);
+					pushFollow(FOLLOW_lookup_in_atom1210);
 					lookup134=lookup();
 					state._fsp--;
 
@@ -3556,7 +3556,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "list"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:212:1: list : '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:215:1: list : '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) ;
 	public final DataCentricDSLParser.list_return list() throws RecognitionException {
 		DataCentricDSLParser.list_return retval = new DataCentricDSLParser.list_return();
 		retval.start = input.LT(1);
@@ -3574,13 +3574,13 @@ public class DataCentricDSLParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:213:3: ( '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:213:6: '[' ( exprList )? ']'
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:216:3: ( '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:216:6: '[' ( exprList )? ']'
 			{
-			char_literal135=(Token)match(input,OBracket,FOLLOW_OBracket_in_list1219);  
+			char_literal135=(Token)match(input,OBracket,FOLLOW_OBracket_in_list1224);  
 			stream_OBracket.add(char_literal135);
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:213:10: ( exprList )?
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:216:10: ( exprList )?
 			int alt25=2;
 			int LA25_0 = input.LA(1);
 			if ( (LA25_0==Assert||LA25_0==Bool||LA25_0==Excl||LA25_0==Identifier||(LA25_0 >= Null && LA25_0 <= Number)||(LA25_0 >= OBracket && LA25_0 <= OParen)||(LA25_0 >= Print && LA25_0 <= Println)||LA25_0==Size||(LA25_0 >= String && LA25_0 <= Subtract)||LA25_0==69) ) {
@@ -3588,9 +3588,9 @@ public class DataCentricDSLParser extends Parser {
 			}
 			switch (alt25) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:213:10: exprList
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:216:10: exprList
 					{
-					pushFollow(FOLLOW_exprList_in_list1221);
+					pushFollow(FOLLOW_exprList_in_list1226);
 					exprList136=exprList();
 					state._fsp--;
 
@@ -3600,7 +3600,7 @@ public class DataCentricDSLParser extends Parser {
 
 			}
 
-			char_literal137=(Token)match(input,CBracket,FOLLOW_CBracket_in_list1224);  
+			char_literal137=(Token)match(input,CBracket,FOLLOW_CBracket_in_list1229);  
 			stream_CBracket.add(char_literal137);
 
 			// AST REWRITE
@@ -3614,13 +3614,13 @@ public class DataCentricDSLParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 213:24: -> ^( LIST ( exprList )? )
+			// 216:24: -> ^( LIST ( exprList )? )
 			{
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:213:27: ^( LIST ( exprList )? )
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:216:27: ^( LIST ( exprList )? )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LIST, "LIST"), root_1);
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:213:34: ( exprList )?
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:216:34: ( exprList )?
 				if ( stream_exprList.hasNext() ) {
 					adaptor.addChild(root_1, stream_exprList.nextTree());
 				}
@@ -3663,7 +3663,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "lookup"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:216:1: lookup : ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:219:1: lookup : ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) );
 	public final DataCentricDSLParser.lookup_return lookup() throws RecognitionException {
 		DataCentricDSLParser.lookup_return retval = new DataCentricDSLParser.lookup_return();
 		retval.start = input.LT(1);
@@ -3697,7 +3697,7 @@ public class DataCentricDSLParser extends Parser {
 		RewriteRuleSubtreeStream stream_list=new RewriteRuleSubtreeStream(adaptor,"rule list");
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:217:3: ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:3: ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) )
 			int alt31=5;
 			switch ( input.LA(1) ) {
 			case Identifier:
@@ -3754,14 +3754,14 @@ public class DataCentricDSLParser extends Parser {
 			}
 			switch (alt31) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:217:6: functionCall ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:6: functionCall ( indexes )?
 					{
-					pushFollow(FOLLOW_functionCall_in_lookup1247);
+					pushFollow(FOLLOW_functionCall_in_lookup1252);
 					functionCall138=functionCall();
 					state._fsp--;
 
 					stream_functionCall.add(functionCall138.getTree());
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:217:19: ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:19: ( indexes )?
 					int alt26=2;
 					int LA26_0 = input.LA(1);
 					if ( (LA26_0==OBracket) ) {
@@ -3769,9 +3769,9 @@ public class DataCentricDSLParser extends Parser {
 					}
 					switch (alt26) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:217:19: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:19: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1249);
+							pushFollow(FOLLOW_indexes_in_lookup1254);
 							indexes139=indexes();
 							state._fsp--;
 
@@ -3782,7 +3782,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: functionCall, indexes
+					// elements: indexes, functionCall
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3792,14 +3792,14 @@ public class DataCentricDSLParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 217:34: -> ^( LOOKUP functionCall ( indexes )? )
+					// 220:34: -> ^( LOOKUP functionCall ( indexes )? )
 					{
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:217:37: ^( LOOKUP functionCall ( indexes )? )
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:37: ^( LOOKUP functionCall ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_functionCall.nextTree());
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:217:59: ( indexes )?
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:59: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -3816,14 +3816,14 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:218:6: list ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:221:6: list ( indexes )?
 					{
-					pushFollow(FOLLOW_list_in_lookup1274);
+					pushFollow(FOLLOW_list_in_lookup1279);
 					list140=list();
 					state._fsp--;
 
 					stream_list.add(list140.getTree());
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:218:11: ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:221:11: ( indexes )?
 					int alt27=2;
 					int LA27_0 = input.LA(1);
 					if ( (LA27_0==OBracket) ) {
@@ -3831,9 +3831,9 @@ public class DataCentricDSLParser extends Parser {
 					}
 					switch (alt27) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:218:11: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:221:11: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1276);
+							pushFollow(FOLLOW_indexes_in_lookup1281);
 							indexes141=indexes();
 							state._fsp--;
 
@@ -3844,7 +3844,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: indexes, list
+					// elements: list, indexes
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3854,14 +3854,14 @@ public class DataCentricDSLParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 218:34: -> ^( LOOKUP list ( indexes )? )
+					// 221:34: -> ^( LOOKUP list ( indexes )? )
 					{
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:218:37: ^( LOOKUP list ( indexes )? )
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:221:37: ^( LOOKUP list ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_list.nextTree());
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:218:51: ( indexes )?
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:221:51: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -3878,12 +3878,12 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 3 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:219:6: Identifier ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:222:6: Identifier ( indexes )?
 					{
-					Identifier142=(Token)match(input,Identifier,FOLLOW_Identifier_in_lookup1309);  
+					Identifier142=(Token)match(input,Identifier,FOLLOW_Identifier_in_lookup1314);  
 					stream_Identifier.add(Identifier142);
 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:219:17: ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:222:17: ( indexes )?
 					int alt28=2;
 					int LA28_0 = input.LA(1);
 					if ( (LA28_0==OBracket) ) {
@@ -3891,9 +3891,9 @@ public class DataCentricDSLParser extends Parser {
 					}
 					switch (alt28) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:219:17: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:222:17: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1311);
+							pushFollow(FOLLOW_indexes_in_lookup1316);
 							indexes143=indexes();
 							state._fsp--;
 
@@ -3904,7 +3904,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: Identifier, indexes
+					// elements: indexes, Identifier
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3914,14 +3914,14 @@ public class DataCentricDSLParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 219:34: -> ^( LOOKUP Identifier ( indexes )? )
+					// 222:34: -> ^( LOOKUP Identifier ( indexes )? )
 					{
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:219:37: ^( LOOKUP Identifier ( indexes )? )
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:222:37: ^( LOOKUP Identifier ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_Identifier.nextNode());
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:219:57: ( indexes )?
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:222:57: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -3938,12 +3938,12 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 4 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:6: String ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:223:6: String ( indexes )?
 					{
-					String144=(Token)match(input,String,FOLLOW_String_in_lookup1338);  
+					String144=(Token)match(input,String,FOLLOW_String_in_lookup1343);  
 					stream_String.add(String144);
 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:13: ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:223:13: ( indexes )?
 					int alt29=2;
 					int LA29_0 = input.LA(1);
 					if ( (LA29_0==OBracket) ) {
@@ -3951,9 +3951,9 @@ public class DataCentricDSLParser extends Parser {
 					}
 					switch (alt29) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:13: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:223:13: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1340);
+							pushFollow(FOLLOW_indexes_in_lookup1345);
 							indexes145=indexes();
 							state._fsp--;
 
@@ -3964,7 +3964,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: indexes, String
+					// elements: String, indexes
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3974,14 +3974,14 @@ public class DataCentricDSLParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 220:34: -> ^( LOOKUP String ( indexes )? )
+					// 223:34: -> ^( LOOKUP String ( indexes )? )
 					{
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:37: ^( LOOKUP String ( indexes )? )
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:223:37: ^( LOOKUP String ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_String.nextNode());
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:220:53: ( indexes )?
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:223:53: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -3998,20 +3998,20 @@ public class DataCentricDSLParser extends Parser {
 					}
 					break;
 				case 5 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:221:6: '(' expression ')' ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:224:6: '(' expression ')' ( indexes )?
 					{
-					char_literal146=(Token)match(input,OParen,FOLLOW_OParen_in_lookup1371);  
+					char_literal146=(Token)match(input,OParen,FOLLOW_OParen_in_lookup1376);  
 					stream_OParen.add(char_literal146);
 
-					pushFollow(FOLLOW_expression_in_lookup1373);
+					pushFollow(FOLLOW_expression_in_lookup1378);
 					expression147=expression();
 					state._fsp--;
 
 					stream_expression.add(expression147.getTree());
-					char_literal148=(Token)match(input,CParen,FOLLOW_CParen_in_lookup1375);  
+					char_literal148=(Token)match(input,CParen,FOLLOW_CParen_in_lookup1380);  
 					stream_CParen.add(char_literal148);
 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:221:25: ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:224:25: ( indexes )?
 					int alt30=2;
 					int LA30_0 = input.LA(1);
 					if ( (LA30_0==OBracket) ) {
@@ -4019,9 +4019,9 @@ public class DataCentricDSLParser extends Parser {
 					}
 					switch (alt30) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:221:25: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:224:25: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1377);
+							pushFollow(FOLLOW_indexes_in_lookup1382);
 							indexes149=indexes();
 							state._fsp--;
 
@@ -4042,14 +4042,14 @@ public class DataCentricDSLParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 221:34: -> ^( LOOKUP expression ( indexes )? )
+					// 224:34: -> ^( LOOKUP expression ( indexes )? )
 					{
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:221:37: ^( LOOKUP expression ( indexes )? )
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:224:37: ^( LOOKUP expression ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_expression.nextTree());
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:221:57: ( indexes )?
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:224:57: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -4094,7 +4094,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "indexes"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:224:1: indexes : ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:227:1: indexes : ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) ;
 	public final DataCentricDSLParser.indexes_return indexes() throws RecognitionException {
 		DataCentricDSLParser.indexes_return retval = new DataCentricDSLParser.indexes_return();
 		retval.start = input.LT(1);
@@ -4112,10 +4112,10 @@ public class DataCentricDSLParser extends Parser {
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:225:3: ( ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:225:6: ( '[' expression ']' )+
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:228:3: ( ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:228:6: ( '[' expression ']' )+
 			{
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:225:6: ( '[' expression ']' )+
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:228:6: ( '[' expression ']' )+
 			int cnt32=0;
 			loop32:
 			while (true) {
@@ -4127,17 +4127,17 @@ public class DataCentricDSLParser extends Parser {
 
 				switch (alt32) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:225:7: '[' expression ']'
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:228:7: '[' expression ']'
 					{
-					char_literal150=(Token)match(input,OBracket,FOLLOW_OBracket_in_indexes1404);  
+					char_literal150=(Token)match(input,OBracket,FOLLOW_OBracket_in_indexes1409);  
 					stream_OBracket.add(char_literal150);
 
-					pushFollow(FOLLOW_expression_in_indexes1406);
+					pushFollow(FOLLOW_expression_in_indexes1411);
 					expression151=expression();
 					state._fsp--;
 
 					stream_expression.add(expression151.getTree());
-					char_literal152=(Token)match(input,CBracket,FOLLOW_CBracket_in_indexes1408);  
+					char_literal152=(Token)match(input,CBracket,FOLLOW_CBracket_in_indexes1413);  
 					stream_CBracket.add(char_literal152);
 
 					}
@@ -4162,9 +4162,9 @@ public class DataCentricDSLParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 225:28: -> ^( INDEXES ( expression )+ )
+			// 228:28: -> ^( INDEXES ( expression )+ )
 			{
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:225:31: ^( INDEXES ( expression )+ )
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\org\\dataCentricDSL\\DataCentricDSL.g:228:31: ^( INDEXES ( expression )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(INDEXES, "INDEXES"), root_1);
@@ -4292,74 +4292,74 @@ public class DataCentricDSLParser extends Parser {
 	public static final BitSet FOLLOW_OBrace_in_forStatement689 = new BitSet(new long[]{0x24C0001820020880L,0x0000000000000030L});
 	public static final BitSet FOLLOW_block_in_forStatement691 = new BitSet(new long[]{0x0000000000000800L});
 	public static final BitSet FOLLOW_CBrace_in_forStatement693 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_While_in_whileStatement727 = new BitSet(new long[]{0x0008000000000000L});
-	public static final BitSet FOLLOW_OParen_in_whileStatement729 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
-	public static final BitSet FOLLOW_expression_in_whileStatement731 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_whileStatement733 = new BitSet(new long[]{0x0002000000000000L});
-	public static final BitSet FOLLOW_OBrace_in_whileStatement735 = new BitSet(new long[]{0x24C0001820020880L,0x0000000000000030L});
-	public static final BitSet FOLLOW_block_in_whileStatement737 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_CBrace_in_whileStatement739 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_idList763 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_Comma_in_idList766 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_While_in_whileStatement732 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_OParen_in_whileStatement734 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
+	public static final BitSet FOLLOW_expression_in_whileStatement736 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_whileStatement738 = new BitSet(new long[]{0x0002000000000000L});
+	public static final BitSet FOLLOW_OBrace_in_whileStatement740 = new BitSet(new long[]{0x24C0001820020880L,0x0000000000000030L});
+	public static final BitSet FOLLOW_block_in_whileStatement742 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CBrace_in_whileStatement744 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_Identifier_in_idList768 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_expression_in_exprList793 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_Comma_in_exprList796 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
+	public static final BitSet FOLLOW_Comma_in_idList771 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Identifier_in_idList773 = new BitSet(new long[]{0x0000000000008002L});
 	public static final BitSet FOLLOW_expression_in_exprList798 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_condExpr_in_expression823 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_query_in_expression827 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_orExpr_in_condExpr842 = new BitSet(new long[]{0x0100002000000002L});
-	public static final BitSet FOLLOW_QMark_in_condExpr857 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
-	public static final BitSet FOLLOW_expression_in_condExpr861 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_Colon_in_condExpr863 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
-	public static final BitSet FOLLOW_expression_in_condExpr867 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_In_in_condExpr890 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
-	public static final BitSet FOLLOW_expression_in_condExpr892 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_andExpr_in_orExpr944 = new BitSet(new long[]{0x0010000000000002L});
-	public static final BitSet FOLLOW_Or_in_orExpr947 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
-	public static final BitSet FOLLOW_andExpr_in_orExpr950 = new BitSet(new long[]{0x0010000000000002L});
-	public static final BitSet FOLLOW_equExpr_in_andExpr966 = new BitSet(new long[]{0x0000000000000042L});
-	public static final BitSet FOLLOW_And_in_andExpr969 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
-	public static final BitSet FOLLOW_equExpr_in_andExpr972 = new BitSet(new long[]{0x0000000000000042L});
-	public static final BitSet FOLLOW_relExpr_in_equExpr988 = new BitSet(new long[]{0x0000400002000002L});
-	public static final BitSet FOLLOW_set_in_equExpr991 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
-	public static final BitSet FOLLOW_relExpr_in_equExpr1000 = new BitSet(new long[]{0x0000400002000002L});
-	public static final BitSet FOLLOW_addExpr_in_relExpr1016 = new BitSet(new long[]{0x00000600C0000002L});
-	public static final BitSet FOLLOW_set_in_relExpr1019 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
-	public static final BitSet FOLLOW_addExpr_in_relExpr1036 = new BitSet(new long[]{0x00000600C0000002L});
-	public static final BitSet FOLLOW_mulExpr_in_addExpr1052 = new BitSet(new long[]{0x0000000000000022L,0x0000000000000001L});
-	public static final BitSet FOLLOW_set_in_addExpr1055 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
-	public static final BitSet FOLLOW_mulExpr_in_addExpr1064 = new BitSet(new long[]{0x0000000000000022L,0x0000000000000001L});
-	public static final BitSet FOLLOW_powExpr_in_mulExpr1080 = new BitSet(new long[]{0x0000180000080002L});
-	public static final BitSet FOLLOW_set_in_mulExpr1083 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
-	public static final BitSet FOLLOW_powExpr_in_mulExpr1096 = new BitSet(new long[]{0x0000180000080002L});
-	public static final BitSet FOLLOW_unaryExpr_in_powExpr1112 = new BitSet(new long[]{0x0020000000000002L});
-	public static final BitSet FOLLOW_Pow_in_powExpr1115 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
-	public static final BitSet FOLLOW_unaryExpr_in_powExpr1118 = new BitSet(new long[]{0x0020000000000002L});
-	public static final BitSet FOLLOW_Subtract_in_unaryExpr1136 = new BitSet(new long[]{0xA0CD800800000480L});
-	public static final BitSet FOLLOW_atom_in_unaryExpr1138 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Excl_in_unaryExpr1153 = new BitSet(new long[]{0xA0CD800800000480L});
-	public static final BitSet FOLLOW_atom_in_unaryExpr1155 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_atom_in_unaryExpr1170 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Number_in_atom1184 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Bool_in_atom1191 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Null_in_atom1198 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_lookup_in_atom1205 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OBracket_in_list1219 = new BitSet(new long[]{0xA0CD800804001480L,0x0000000000000021L});
-	public static final BitSet FOLLOW_exprList_in_list1221 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CBracket_in_list1224 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_functionCall_in_lookup1247 = new BitSet(new long[]{0x0004000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1249 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_list_in_lookup1274 = new BitSet(new long[]{0x0004000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1276 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_lookup1309 = new BitSet(new long[]{0x0004000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1311 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_String_in_lookup1338 = new BitSet(new long[]{0x0004000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1340 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OParen_in_lookup1371 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
-	public static final BitSet FOLLOW_expression_in_lookup1373 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_lookup1375 = new BitSet(new long[]{0x0004000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1377 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OBracket_in_indexes1404 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
-	public static final BitSet FOLLOW_expression_in_indexes1406 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CBracket_in_indexes1408 = new BitSet(new long[]{0x0004000000000002L});
+	public static final BitSet FOLLOW_Comma_in_exprList801 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
+	public static final BitSet FOLLOW_expression_in_exprList803 = new BitSet(new long[]{0x0000000000008002L});
+	public static final BitSet FOLLOW_condExpr_in_expression828 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_query_in_expression832 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_orExpr_in_condExpr847 = new BitSet(new long[]{0x0100002000000002L});
+	public static final BitSet FOLLOW_QMark_in_condExpr862 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
+	public static final BitSet FOLLOW_expression_in_condExpr866 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_Colon_in_condExpr868 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
+	public static final BitSet FOLLOW_expression_in_condExpr872 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_In_in_condExpr895 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
+	public static final BitSet FOLLOW_expression_in_condExpr897 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_andExpr_in_orExpr949 = new BitSet(new long[]{0x0010000000000002L});
+	public static final BitSet FOLLOW_Or_in_orExpr952 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
+	public static final BitSet FOLLOW_andExpr_in_orExpr955 = new BitSet(new long[]{0x0010000000000002L});
+	public static final BitSet FOLLOW_equExpr_in_andExpr971 = new BitSet(new long[]{0x0000000000000042L});
+	public static final BitSet FOLLOW_And_in_andExpr974 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
+	public static final BitSet FOLLOW_equExpr_in_andExpr977 = new BitSet(new long[]{0x0000000000000042L});
+	public static final BitSet FOLLOW_relExpr_in_equExpr993 = new BitSet(new long[]{0x0000400002000002L});
+	public static final BitSet FOLLOW_set_in_equExpr996 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
+	public static final BitSet FOLLOW_relExpr_in_equExpr1005 = new BitSet(new long[]{0x0000400002000002L});
+	public static final BitSet FOLLOW_addExpr_in_relExpr1021 = new BitSet(new long[]{0x00000600C0000002L});
+	public static final BitSet FOLLOW_set_in_relExpr1024 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
+	public static final BitSet FOLLOW_addExpr_in_relExpr1041 = new BitSet(new long[]{0x00000600C0000002L});
+	public static final BitSet FOLLOW_mulExpr_in_addExpr1057 = new BitSet(new long[]{0x0000000000000022L,0x0000000000000001L});
+	public static final BitSet FOLLOW_set_in_addExpr1060 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
+	public static final BitSet FOLLOW_mulExpr_in_addExpr1069 = new BitSet(new long[]{0x0000000000000022L,0x0000000000000001L});
+	public static final BitSet FOLLOW_powExpr_in_mulExpr1085 = new BitSet(new long[]{0x0000180000080002L});
+	public static final BitSet FOLLOW_set_in_mulExpr1088 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
+	public static final BitSet FOLLOW_powExpr_in_mulExpr1101 = new BitSet(new long[]{0x0000180000080002L});
+	public static final BitSet FOLLOW_unaryExpr_in_powExpr1117 = new BitSet(new long[]{0x0020000000000002L});
+	public static final BitSet FOLLOW_Pow_in_powExpr1120 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000001L});
+	public static final BitSet FOLLOW_unaryExpr_in_powExpr1123 = new BitSet(new long[]{0x0020000000000002L});
+	public static final BitSet FOLLOW_Subtract_in_unaryExpr1141 = new BitSet(new long[]{0xA0CD800800000480L});
+	public static final BitSet FOLLOW_atom_in_unaryExpr1143 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Excl_in_unaryExpr1158 = new BitSet(new long[]{0xA0CD800800000480L});
+	public static final BitSet FOLLOW_atom_in_unaryExpr1160 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_atom_in_unaryExpr1175 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Number_in_atom1189 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Bool_in_atom1196 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Null_in_atom1203 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_lookup_in_atom1210 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OBracket_in_list1224 = new BitSet(new long[]{0xA0CD800804001480L,0x0000000000000021L});
+	public static final BitSet FOLLOW_exprList_in_list1226 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_CBracket_in_list1229 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionCall_in_lookup1252 = new BitSet(new long[]{0x0004000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1254 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_list_in_lookup1279 = new BitSet(new long[]{0x0004000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1281 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_lookup1314 = new BitSet(new long[]{0x0004000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1316 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_String_in_lookup1343 = new BitSet(new long[]{0x0004000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1345 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OParen_in_lookup1376 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
+	public static final BitSet FOLLOW_expression_in_lookup1378 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_lookup1380 = new BitSet(new long[]{0x0004000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1382 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OBracket_in_indexes1409 = new BitSet(new long[]{0xA0CD800804000480L,0x0000000000000021L});
+	public static final BitSet FOLLOW_expression_in_indexes1411 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_CBracket_in_indexes1413 = new BitSet(new long[]{0x0004000000000002L});
 }

@@ -143,6 +143,9 @@ forStatement
 //     -> ^(For Identifier '=' expression expression assignment block)
  :  For '(' Identifier '=' expression ';' expression ')' '{' block '}' 
      -> ^(For Identifier expression expression block)
+//   :  For '(' Identifier '=' expression ';' expression ';' Identifier '=' expression ')' '{' block '}' 
+//     -> ^(For Identifier expression expression Identifier expression block)
+  
   ;
 
 whileStatement
