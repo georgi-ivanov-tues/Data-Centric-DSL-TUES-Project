@@ -131,6 +131,33 @@ public interface DataCentricDSLFactory extends EFactory
   SwitchStatement createSwitchStatement();
 
   /**
+   * Returns a new object of class '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>While Statement</em>'.
+   * @generated
+   */
+  WhileStatement createWhileStatement();
+
+  /**
+   * Returns a new object of class '<em>For Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Statement</em>'.
+   * @generated
+   */
+  ForStatement createForStatement();
+
+  /**
+   * Returns a new object of class '<em>Statement Condition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Statement Condition</em>'.
+   * @generated
+   */
+  StatementCondition createStatementCondition();
+
+  /**
    * Returns a new object of class '<em>Condition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -138,6 +165,51 @@ public interface DataCentricDSLFactory extends EFactory
    * @generated
    */
   Condition createCondition();
+
+  /**
+   * Returns a new object of class '<em>Condition Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Condition Element</em>'.
+   * @generated
+   */
+  ConditionElement createConditionElement();
+
+  /**
+   * Returns a new object of class '<em>For Multi Assign</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Multi Assign</em>'.
+   * @generated
+   */
+  ForMultiAssign createForMultiAssign();
+
+  /**
+   * Returns a new object of class '<em>Multi Assign</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi Assign</em>'.
+   * @generated
+   */
+  MultiAssign createMultiAssign();
+
+  /**
+   * Returns a new object of class '<em>Multi Assign Right Operand</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi Assign Right Operand</em>'.
+   * @generated
+   */
+  MultiAssignRightOperand createMultiAssignRightOperand();
+
+  /**
+   * Returns a new object of class '<em>Postfix Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Postfix Operation</em>'.
+   * @generated
+   */
+  PostfixOperation createPostfixOperation();
 
   /**
    * Returns a new object of class '<em>Variable Param</em>'.

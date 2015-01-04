@@ -3,6 +3,7 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
+import org.dataCentricDSL.MultiAssignRightOperand;
 import org.dataCentricDSL.Print;
 import org.dataCentricDSL.Query;
 
@@ -227,6 +228,13 @@ public class QueryImpl extends SimpleStatementImpl implements Query
         default: return -1;
       }
     }
+    if (baseClass == MultiAssignRightOperand.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
   }
 
@@ -243,6 +251,13 @@ public class QueryImpl extends SimpleStatementImpl implements Query
       switch (baseFeatureID)
       {
         case DataCentricDSLPackage.PRINT__PRINT_VALUE: return DataCentricDSLPackage.QUERY__PRINT_VALUE;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiAssignRightOperand.class)
+    {
+      switch (baseFeatureID)
+      {
         default: return -1;
       }
     }

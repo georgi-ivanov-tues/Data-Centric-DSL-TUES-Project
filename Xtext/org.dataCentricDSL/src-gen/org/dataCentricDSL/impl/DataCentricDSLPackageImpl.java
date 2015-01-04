@@ -5,24 +5,32 @@ package org.dataCentricDSL.impl;
 import org.dataCentricDSL.Addition;
 import org.dataCentricDSL.CompoundStatement;
 import org.dataCentricDSL.Condition;
+import org.dataCentricDSL.ConditionElement;
 import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.DataCentricDSLFactory;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Division;
 import org.dataCentricDSL.Expression;
+import org.dataCentricDSL.ForMultiAssign;
+import org.dataCentricDSL.ForStatement;
 import org.dataCentricDSL.IfStatement;
 import org.dataCentricDSL.Mod;
+import org.dataCentricDSL.MultiAssign;
+import org.dataCentricDSL.MultiAssignRightOperand;
 import org.dataCentricDSL.Multiplication;
 import org.dataCentricDSL.NumberLiteral;
+import org.dataCentricDSL.PostfixOperation;
 import org.dataCentricDSL.Print;
 import org.dataCentricDSL.Query;
 import org.dataCentricDSL.SimpleStatement;
 import org.dataCentricDSL.Statement;
+import org.dataCentricDSL.StatementCondition;
 import org.dataCentricDSL.Substraction;
 import org.dataCentricDSL.SwitchStatement;
 import org.dataCentricDSL.VariableCall;
 import org.dataCentricDSL.VariableDecl;
 import org.dataCentricDSL.VariableParam;
+import org.dataCentricDSL.WhileStatement;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -128,7 +136,63 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass whileStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass forStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass statementConditionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass conditionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass conditionElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass forMultiAssignEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiAssignEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiAssignRightOperandEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass postfixOperationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -310,6 +374,36 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getVariableDecl_ForCondition()
+  {
+    return (EReference)variableDeclEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariableDecl_Operation()
+  {
+    return (EReference)variableDeclEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariableDecl_Statements()
+  {
+    return (EReference)variableDeclEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getQuery()
   {
     return queryEClass;
@@ -363,6 +457,16 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
   public EAttribute getVariableCall_VariableCall()
   {
     return (EAttribute)variableCallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVariableCall_Op()
+  {
+    return (EAttribute)variableCallEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -430,7 +534,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getIfStatement_IfElements()
+  public EReference getIfStatement_Statements()
   {
     return (EReference)ifStatementEClass.getEStructuralFeatures().get(1);
   }
@@ -470,9 +574,59 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSwitchStatement_SwitchElements()
+  public EReference getSwitchStatement_Statements()
   {
     return (EReference)switchStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWhileStatement()
+  {
+    return whileStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getForStatement()
+  {
+    return forStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStatementCondition()
+  {
+    return statementConditionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStatementCondition_Statements()
+  {
+    return (EReference)statementConditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStatementCondition_StatementCondition()
+  {
+    return (EReference)statementConditionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -503,6 +657,116 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
   public EAttribute getCondition_Op()
   {
     return (EAttribute)conditionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConditionElement()
+  {
+    return conditionElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getForMultiAssign()
+  {
+    return forMultiAssignEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForMultiAssign_Left()
+  {
+    return (EReference)forMultiAssignEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getForMultiAssign_Op()
+  {
+    return (EAttribute)forMultiAssignEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getForMultiAssign_Right()
+  {
+    return (EAttribute)forMultiAssignEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMultiAssign()
+  {
+    return multiAssignEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiAssign_Left()
+  {
+    return (EReference)multiAssignEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMultiAssign_Op()
+  {
+    return (EAttribute)multiAssignEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiAssign_Right()
+  {
+    return (EReference)multiAssignEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMultiAssignRightOperand()
+  {
+    return multiAssignRightOperandEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPostfixOperation()
+  {
+    return postfixOperationEClass;
   }
 
   /**
@@ -735,6 +999,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     variableDeclEClass = createEClass(VARIABLE_DECL);
     createEAttribute(variableDeclEClass, VARIABLE_DECL__NAME);
     createEReference(variableDeclEClass, VARIABLE_DECL__VARIABLE_VALUE);
+    createEReference(variableDeclEClass, VARIABLE_DECL__FOR_CONDITION);
+    createEReference(variableDeclEClass, VARIABLE_DECL__OPERATION);
+    createEReference(variableDeclEClass, VARIABLE_DECL__STATEMENTS);
 
     queryEClass = createEClass(QUERY);
     createEAttribute(queryEClass, QUERY__QUERY_VALUE);
@@ -744,6 +1011,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
 
     variableCallEClass = createEClass(VARIABLE_CALL);
     createEAttribute(variableCallEClass, VARIABLE_CALL__VARIABLE_CALL);
+    createEAttribute(variableCallEClass, VARIABLE_CALL__OP);
 
     expressionEClass = createEClass(EXPRESSION);
 
@@ -754,16 +1022,40 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
 
     ifStatementEClass = createEClass(IF_STATEMENT);
     createEReference(ifStatementEClass, IF_STATEMENT__CONDITION);
-    createEReference(ifStatementEClass, IF_STATEMENT__IF_ELEMENTS);
+    createEReference(ifStatementEClass, IF_STATEMENT__STATEMENTS);
 
     switchStatementEClass = createEClass(SWITCH_STATEMENT);
     createEReference(switchStatementEClass, SWITCH_STATEMENT__NAME);
     createEAttribute(switchStatementEClass, SWITCH_STATEMENT__CASES);
-    createEReference(switchStatementEClass, SWITCH_STATEMENT__SWITCH_ELEMENTS);
+    createEReference(switchStatementEClass, SWITCH_STATEMENT__STATEMENTS);
+
+    whileStatementEClass = createEClass(WHILE_STATEMENT);
+
+    forStatementEClass = createEClass(FOR_STATEMENT);
+
+    statementConditionEClass = createEClass(STATEMENT_CONDITION);
+    createEReference(statementConditionEClass, STATEMENT_CONDITION__STATEMENTS);
+    createEReference(statementConditionEClass, STATEMENT_CONDITION__STATEMENT_CONDITION);
 
     conditionEClass = createEClass(CONDITION);
     createEReference(conditionEClass, CONDITION__EXPRESSIONS);
     createEAttribute(conditionEClass, CONDITION__OP);
+
+    conditionElementEClass = createEClass(CONDITION_ELEMENT);
+
+    forMultiAssignEClass = createEClass(FOR_MULTI_ASSIGN);
+    createEReference(forMultiAssignEClass, FOR_MULTI_ASSIGN__LEFT);
+    createEAttribute(forMultiAssignEClass, FOR_MULTI_ASSIGN__OP);
+    createEAttribute(forMultiAssignEClass, FOR_MULTI_ASSIGN__RIGHT);
+
+    multiAssignEClass = createEClass(MULTI_ASSIGN);
+    createEReference(multiAssignEClass, MULTI_ASSIGN__LEFT);
+    createEAttribute(multiAssignEClass, MULTI_ASSIGN__OP);
+    createEReference(multiAssignEClass, MULTI_ASSIGN__RIGHT);
+
+    multiAssignRightOperandEClass = createEClass(MULTI_ASSIGN_RIGHT_OPERAND);
+
+    postfixOperationEClass = createEClass(POSTFIX_OPERATION);
 
     variableParamEClass = createEClass(VARIABLE_PARAM);
     createEAttribute(variableParamEClass, VARIABLE_PARAM__VARIABLE_STRING_PARAM);
@@ -822,16 +1114,27 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     // Add supertypes to classes
     simpleStatementEClass.getESuperTypes().add(this.getStatement());
     variableDeclEClass.getESuperTypes().add(this.getSimpleStatement());
+    variableDeclEClass.getESuperTypes().add(this.getForStatement());
     queryEClass.getESuperTypes().add(this.getSimpleStatement());
     queryEClass.getESuperTypes().add(this.getPrint());
+    queryEClass.getESuperTypes().add(this.getMultiAssignRightOperand());
     printEClass.getESuperTypes().add(this.getSimpleStatement());
     variableCallEClass.getESuperTypes().add(this.getQuery());
     variableCallEClass.getESuperTypes().add(this.getPrint());
+    variableCallEClass.getESuperTypes().add(this.getConditionElement());
+    variableCallEClass.getESuperTypes().add(this.getMultiAssignRightOperand());
+    variableCallEClass.getESuperTypes().add(this.getPostfixOperation());
     expressionEClass.getESuperTypes().add(this.getPrint());
+    expressionEClass.getESuperTypes().add(this.getConditionElement());
     numberLiteralEClass.getESuperTypes().add(this.getExpression());
     compoundStatementEClass.getESuperTypes().add(this.getStatement());
     ifStatementEClass.getESuperTypes().add(this.getCompoundStatement());
     switchStatementEClass.getESuperTypes().add(this.getCompoundStatement());
+    whileStatementEClass.getESuperTypes().add(this.getCompoundStatement());
+    forStatementEClass.getESuperTypes().add(this.getCompoundStatement());
+    statementConditionEClass.getESuperTypes().add(this.getWhileStatement());
+    multiAssignEClass.getESuperTypes().add(this.getSimpleStatement());
+    postfixOperationEClass.getESuperTypes().add(this.getSimpleStatement());
     variableParamEClass.getESuperTypes().add(this.getVariableDecl());
     additionEClass.getESuperTypes().add(this.getExpression());
     substractionEClass.getESuperTypes().add(this.getExpression());
@@ -850,6 +1153,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(variableDeclEClass, VariableDecl.class, "VariableDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDecl_VariableValue(), this.getSimpleStatement(), null, "variableValue", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableDecl_ForCondition(), this.getStatementCondition(), null, "forCondition", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableDecl_Operation(), ecorePackage.getEObject(), null, "operation", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableDecl_Statements(), this.getStatement(), null, "statements", null, 0, -1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getQuery_QueryValue(), ecorePackage.getEString(), "queryValue", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -859,6 +1165,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
 
     initEClass(variableCallEClass, VariableCall.class, "VariableCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableCall_VariableCall(), ecorePackage.getEString(), "variableCall", null, 0, 1, VariableCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariableCall_Op(), ecorePackage.getEString(), "op", null, 0, 1, VariableCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -868,17 +1175,41 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(compoundStatementEClass, CompoundStatement.class, "CompoundStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIfStatement_Condition(), this.getCondition(), null, "condition", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIfStatement_IfElements(), this.getStatement(), null, "ifElements", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfStatement_Condition(), this.getStatementCondition(), null, "condition", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfStatement_Statements(), this.getStatement(), null, "statements", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(switchStatementEClass, SwitchStatement.class, "SwitchStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSwitchStatement_Name(), this.getVariableCall(), null, "name", null, 0, 1, SwitchStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSwitchStatement_Cases(), ecorePackage.getEString(), "cases", null, 0, -1, SwitchStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSwitchStatement_SwitchElements(), this.getStatement(), null, "switchElements", null, 0, -1, SwitchStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSwitchStatement_Statements(), this.getStatement(), null, "statements", null, 0, -1, SwitchStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(forStatementEClass, ForStatement.class, "ForStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(statementConditionEClass, StatementCondition.class, "StatementCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStatementCondition_Statements(), this.getStatement(), null, "statements", null, 0, -1, StatementCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatementCondition_StatementCondition(), this.getCondition(), null, "statementCondition", null, 0, -1, StatementCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCondition_Expressions(), this.getExpression(), null, "expressions", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCondition_Expressions(), this.getConditionElement(), null, "expressions", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCondition_Op(), ecorePackage.getEString(), "op", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(conditionElementEClass, ConditionElement.class, "ConditionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(forMultiAssignEClass, ForMultiAssign.class, "ForMultiAssign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getForMultiAssign_Left(), this.getVariableCall(), null, "left", null, 0, 1, ForMultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getForMultiAssign_Op(), ecorePackage.getEString(), "op", null, 0, 1, ForMultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getForMultiAssign_Right(), ecorePackage.getEInt(), "right", null, 0, 1, ForMultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiAssignEClass, MultiAssign.class, "MultiAssign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMultiAssign_Left(), this.getVariableCall(), null, "left", null, 0, 1, MultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMultiAssign_Op(), ecorePackage.getEString(), "op", null, 0, 1, MultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiAssign_Right(), this.getMultiAssignRightOperand(), null, "right", null, 0, 1, MultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiAssignRightOperandEClass, MultiAssignRightOperand.class, "MultiAssignRightOperand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(postfixOperationEClass, PostfixOperation.class, "PostfixOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(variableParamEClass, VariableParam.class, "VariableParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableParam_VariableStringParam(), ecorePackage.getEString(), "variableStringParam", null, 0, 1, VariableParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

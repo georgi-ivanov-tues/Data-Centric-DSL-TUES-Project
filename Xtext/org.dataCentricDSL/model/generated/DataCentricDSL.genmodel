@@ -15,6 +15,9 @@
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableDecl/variableValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableDecl/forCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableDecl/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableDecl/statements"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Query">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Query/queryValue"/>
@@ -24,6 +27,7 @@
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableCall">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableCall/variableCall"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableCall/op"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Expression"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//NumberLiteral">
@@ -32,17 +36,36 @@
     <genClasses ecoreClass="DataCentricDSL.ecore#//CompoundStatement"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//IfStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//IfStatement/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//IfStatement/ifElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//IfStatement/statements"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//SwitchStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//SwitchStatement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//SwitchStatement/cases"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//SwitchStatement/switchElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//SwitchStatement/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//WhileStatement"/>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//ForStatement"/>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//StatementCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//StatementCondition/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//StatementCondition/statementCondition"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Condition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Condition/expressions"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Condition/op"/>
     </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//ConditionElement"/>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//ForMultiAssign">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//ForMultiAssign/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//ForMultiAssign/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//ForMultiAssign/right"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//MultiAssign">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//MultiAssign/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//MultiAssign/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//MultiAssign/right"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//MultiAssignRightOperand"/>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//PostfixOperation"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableParam">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableParam/variableStringParam"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableParam/variableVarParam"/>

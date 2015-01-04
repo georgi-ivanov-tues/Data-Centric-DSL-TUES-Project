@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.dataCentricDSL.impl.VariableCallImpl#getVariableCall <em>Variable Call</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.VariableCallImpl#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +46,26 @@ public class VariableCallImpl extends QueryImpl implements VariableCall
    * @ordered
    */
   protected String variableCall = VARIABLE_CALL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected static final String OP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected String op = OP_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -95,6 +116,29 @@ public class VariableCallImpl extends QueryImpl implements VariableCall
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getOp()
+  {
+    return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(String newOp)
+  {
+    String oldOp = op;
+    op = newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_CALL__OP, oldOp, op));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -102,6 +146,8 @@ public class VariableCallImpl extends QueryImpl implements VariableCall
     {
       case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
         return getVariableCall();
+      case DataCentricDSLPackage.VARIABLE_CALL__OP:
+        return getOp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,6 +164,9 @@ public class VariableCallImpl extends QueryImpl implements VariableCall
     {
       case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
         setVariableCall((String)newValue);
+        return;
+      case DataCentricDSLPackage.VARIABLE_CALL__OP:
+        setOp((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,6 +185,9 @@ public class VariableCallImpl extends QueryImpl implements VariableCall
       case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
         setVariableCall(VARIABLE_CALL_EDEFAULT);
         return;
+      case DataCentricDSLPackage.VARIABLE_CALL__OP:
+        setOp(OP_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -152,6 +204,8 @@ public class VariableCallImpl extends QueryImpl implements VariableCall
     {
       case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
         return VARIABLE_CALL_EDEFAULT == null ? variableCall != null : !VARIABLE_CALL_EDEFAULT.equals(variableCall);
+      case DataCentricDSLPackage.VARIABLE_CALL__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
     }
     return super.eIsSet(featureID);
   }
@@ -169,6 +223,8 @@ public class VariableCallImpl extends QueryImpl implements VariableCall
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (variableCall: ");
     result.append(variableCall);
+    result.append(", op: ");
+    result.append(op);
     result.append(')');
     return result.toString();
   }

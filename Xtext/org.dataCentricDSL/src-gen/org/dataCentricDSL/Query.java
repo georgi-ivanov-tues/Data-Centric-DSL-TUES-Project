@@ -19,7 +19,7 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface Query extends SimpleStatement, Print
+public interface Query extends SimpleStatement, Print, MultiAssignRightOperand
 {
   /**
    * Returns the value of the '<em><b>Query Value</b></em>' attribute.

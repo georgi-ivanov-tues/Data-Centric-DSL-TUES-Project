@@ -19,12 +19,14 @@ import org.services.DataCentricDSLGrammarAccess;
 public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DataCentricDSLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_IfStatement___ElseKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q;
+	protected AbstractElementAlias match_ForStatement___ForKeyword_0_LeftParenthesisKeyword_1__q;
+	protected AbstractElementAlias match_IfStatement___ElseKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q;
+	protected AbstractElementAlias match_MultiAssignRightOperand_INTTerminalRuleCall_3_or_STRINGTerminalRuleCall_1;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_p;
 	protected AbstractElementAlias match_Print_PrintKeyword_0_q;
-	protected AbstractElementAlias match_Print_Query_QueryKeyword_0_q_or___PrintKeyword_0_QueryKeyword_0_q__;
 	protected AbstractElementAlias match_Query_QueryKeyword_0_q;
+	protected AbstractElementAlias match_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1;
 	protected AbstractElementAlias match_SwitchStatement___DefaultKeyword_7_0_ColonKeyword_7_1__q;
 	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
 	protected AbstractElementAlias match_XExpressionInClosure_SemicolonKeyword_1_1_q;
@@ -36,12 +38,14 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DataCentricDSLGrammarAccess) access;
-		match_IfStatement___ElseKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getElseKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getLeftCurlyBracketKeyword_7_1()), new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getRightCurlyBracketKeyword_7_3()));
+		match_ForStatement___ForKeyword_0_LeftParenthesisKeyword_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getForStatementAccess().getForKeyword_0()), new TokenAlias(false, false, grammarAccess.getForStatementAccess().getLeftParenthesisKeyword_1()));
+		match_IfStatement___ElseKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getElseKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getLeftCurlyBracketKeyword_9_1()), new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getRightCurlyBracketKeyword_9_3()));
+		match_MultiAssignRightOperand_INTTerminalRuleCall_3_or_STRINGTerminalRuleCall_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getMultiAssignRightOperandAccess().getINTTerminalRuleCall_3()), new TokenAlias(false, false, grammarAccess.getMultiAssignRightOperandAccess().getSTRINGTerminalRuleCall_1()));
 		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
 		match_Primary_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
 		match_Print_PrintKeyword_0_q = new TokenAlias(false, true, grammarAccess.getPrintAccess().getPrintKeyword_0());
-		match_Print_Query_QueryKeyword_0_q_or___PrintKeyword_0_QueryKeyword_0_q__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPrintAccess().getPrintKeyword_0()), new TokenAlias(false, true, grammarAccess.getQueryAccess().getQueryKeyword_0())), new TokenAlias(false, true, grammarAccess.getQueryAccess().getQueryKeyword_0()));
 		match_Query_QueryKeyword_0_q = new TokenAlias(false, true, grammarAccess.getQueryAccess().getQueryKeyword_0());
+		match_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementConditionAccess().getOpAndParserRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getStatementConditionAccess().getOpOrParserRuleCall_1_0_1()));
 		match_SwitchStatement___DefaultKeyword_7_0_ColonKeyword_7_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSwitchStatementAccess().getDefaultKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getSwitchStatementAccess().getColonKeyword_7_1()));
 		match_XBlockExpression_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
 		match_XExpressionInClosure_SemicolonKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getXExpressionInClosureAccess().getSemicolonKeyword_1_1());
@@ -55,10 +59,18 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if(ruleCall.getRule() == grammarAccess.getArrayBracketsRule())
 			return getArrayBracketsToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getINTRule())
+			return getINTToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getOpAndRule())
+			return getOpAndToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOpAssignmentRule())
 			return getOpAssignmentToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getOpOrRule())
+			return getOpOrToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOpSingleAssignRule())
 			return getOpSingleAssignToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getSTRINGRule())
+			return getSTRINGToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -74,6 +86,25 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	}
 	
 	/**
+	 * terminal INT returns ecore::EInt:
+	 * 	'0'..'9' ('0'..'9'|'_')*;
+	 */
+	protected String getINTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * OpAnd: '&&';
+	 */
+	protected String getOpAndToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "&&";
+	}
+	
+	/**
 	 * OpAssignment:
 	 * 	'='
 	 * ;
@@ -82,6 +113,15 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 		if (node != null)
 			return getTokenText(node);
 		return "=";
+	}
+	
+	/**
+	 * OpOr: '||';
+	 */
+	protected String getOpOrToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "||";
 	}
 	
 	/**
@@ -95,24 +135,39 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 		return "=";
 	}
 	
+	/**
+	 * terminal STRING: 
+	 * 			'"' ( '\\' .  | !('\\'|'"') )* '"'? |
+	 * 			"'" ( '\\' .  | !('\\'|"'") )* "'"?;
+	 */
+	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"";
+	}
+	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_IfStatement___ElseKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q.equals(syntax))
-				emit_IfStatement___ElseKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_ForStatement___ForKeyword_0_LeftParenthesisKeyword_1__q.equals(syntax))
+				emit_ForStatement___ForKeyword_0_LeftParenthesisKeyword_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_IfStatement___ElseKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q.equals(syntax))
+				emit_IfStatement___ElseKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_MultiAssignRightOperand_INTTerminalRuleCall_3_or_STRINGTerminalRuleCall_1.equals(syntax))
+				emit_MultiAssignRightOperand_INTTerminalRuleCall_3_or_STRINGTerminalRuleCall_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Primary_LeftParenthesisKeyword_1_0_a.equals(syntax))
 				emit_Primary_LeftParenthesisKeyword_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Primary_LeftParenthesisKeyword_1_0_p.equals(syntax))
 				emit_Primary_LeftParenthesisKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Print_PrintKeyword_0_q.equals(syntax))
 				emit_Print_PrintKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Print_Query_QueryKeyword_0_q_or___PrintKeyword_0_QueryKeyword_0_q__.equals(syntax))
-				emit_Print_Query_QueryKeyword_0_q_or___PrintKeyword_0_QueryKeyword_0_q__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Query_QueryKeyword_0_q.equals(syntax))
 				emit_Query_QueryKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1.equals(syntax))
+				emit_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_SwitchStatement___DefaultKeyword_7_0_ColonKeyword_7_1__q.equals(syntax))
 				emit_SwitchStatement___DefaultKeyword_7_0_ColonKeyword_7_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XBlockExpression_SemicolonKeyword_2_1_q.equals(syntax))
@@ -133,9 +188,25 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 
 	/**
 	 * Syntax:
+	 *     ('for' '(')?
+	 */
+	protected void emit_ForStatement___ForKeyword_0_LeftParenthesisKeyword_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
 	 *     ('else ' '{' '}')?
 	 */
-	protected void emit_IfStatement___ElseKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_IfStatement___ElseKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     STRING | INT
+	 */
+	protected void emit_MultiAssignRightOperand_INTTerminalRuleCall_3_or_STRINGTerminalRuleCall_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -165,17 +236,17 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	
 	/**
 	 * Syntax:
-	 *     ('print' 'query'?) | 'query'?
+	 *     'query'?
 	 */
-	protected void emit_Print_Query_QueryKeyword_0_q_or___PrintKeyword_0_QueryKeyword_0_q__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Query_QueryKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Syntax:
-	 *     'query'?
+	 *     OpAnd | OpOr
 	 */
-	protected void emit_Query_QueryKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

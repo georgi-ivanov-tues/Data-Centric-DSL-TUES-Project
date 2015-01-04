@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.dataCentricDSL.SwitchStatement#getName <em>Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.SwitchStatement#getCases <em>Cases</em>}</li>
- *   <li>{@link org.dataCentricDSL.SwitchStatement#getSwitchElements <em>Switch Elements</em>}</li>
+ *   <li>{@link org.dataCentricDSL.SwitchStatement#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,19 +67,19 @@ public interface SwitchStatement extends CompoundStatement
   EList<String> getCases();
 
   /**
-   * Returns the value of the '<em><b>Switch Elements</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
    * The list contents are of type {@link org.dataCentricDSL.Statement}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Switch Elements</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Switch Elements</em>' containment reference list.
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getSwitchStatement_SwitchElements()
+   * @return the value of the '<em>Statements</em>' containment reference list.
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getSwitchStatement_Statements()
    * @model containment="true"
    * @generated
    */
-  EList<Statement> getSwitchElements();
+  EList<Statement> getStatements();
 
 } // SwitchStatement

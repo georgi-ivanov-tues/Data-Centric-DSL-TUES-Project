@@ -11,7 +11,7 @@ Statement:
 ;
 
 SimpleStatement:
-	(VariableDecl | Query | Print) ';'
+	(VariableDecl | Query | Print | MultiAssign | PostfixOperation) ';'
 ;
 
 VariableDecl:
@@ -80,39 +80,88 @@ NumberLiteral:
 
 CompoundStatement:
 	IfStatement |
-	SwitchStatement
+	SwitchStatement |
+	WhileStatement |
+	ForStatement
 ;
 
 IfStatement:
 	{IfStatement}
-	'if' condition += Condition '{'
-		(ifElements += Statement)*
+	'if' '(' condition += StatementCondition ')' '{'
+		(statements+=Statement)*
 	'}'
-	( 'else if' condition+=Condition '{'
-		(ifElements += Statement)*
-	'}' )*
+	( 'else if' '(' condition+=StatementCondition ')' '{'
+		(statements+=Statement)*
+	'}'
+	)*
 	// doesn't work if there is no space after else (xtext bug probably)
 	( 'else ' '{' 
-		(ifElements += Statement)*
-	'}')?
+		(statements+=Statement)*
+	'}'
+	)?
 ;
 
 SwitchStatement:
 	{SwitchStatement}
 	'switch' '(' name=VariableCall ')' '{'
 		('case' cases+=STRING ':'
-			(switchElements += Statement)*
+			(statements+=Statement)*
 		)*
 		('default' ':'
-			(switchElements += Statement)*
+			(statements+=Statement)*
 		)?
 	'}'
 ;
 
-Condition:
-	'(' expressions+=Expression (op+=OpCompare expressions+=Expression)* ')'
+WhileStatement:
+	'while' '(' StatementCondition ')' '{' (statements+=Statement)* '}'
 ;
 
+ForStatement:
+	'for' '(' VariableDecl ';' forCondition=StatementCondition ';' operation=(PostfixOperation | ForMultiAssign) ')' '{' (statements+=Statement)* '}'
+;
+
+StatementCondition:
+	statementCondition+=Condition ((OpAnd | OpOr) statementCondition+=Condition)* 
+;
+
+Condition:
+	 expressions+=ConditionElement (op+=OpCompare expressions+=ConditionElement)*
+;
+
+ConditionElement:
+	(Expression | VariableCall | STRING)
+;
+
+ForMultiAssign:
+	left=VariableCall op=MultiAssignOperator right=INT
+;
+
+MultiAssign:
+	left=VariableCall op=MultiAssignOperator right=MultiAssignRightOperand 
+;
+
+MultiAssignRightOperand:
+	(VariableCall | STRING | Query | INT)
+;
+
+PostfixOperation:
+	VariableCall op=PostfixOperationOperator
+;
+
+MultiAssignOperator:
+	('+=' | 
+	'-=' | 
+	'*=' | 
+	'/=' | 
+	'%=')
+;
+PostfixOperationOperator:
+	('--' |
+	'++')
+;
+OpAnd: '&&';
+OpOr: '||';
 OpCompare:
 	('>' |
 	'<' |

@@ -76,7 +76,15 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.COMPOUND_STATEMENT: return createCompoundStatement();
       case DataCentricDSLPackage.IF_STATEMENT: return createIfStatement();
       case DataCentricDSLPackage.SWITCH_STATEMENT: return createSwitchStatement();
+      case DataCentricDSLPackage.WHILE_STATEMENT: return createWhileStatement();
+      case DataCentricDSLPackage.FOR_STATEMENT: return createForStatement();
+      case DataCentricDSLPackage.STATEMENT_CONDITION: return createStatementCondition();
       case DataCentricDSLPackage.CONDITION: return createCondition();
+      case DataCentricDSLPackage.CONDITION_ELEMENT: return createConditionElement();
+      case DataCentricDSLPackage.FOR_MULTI_ASSIGN: return createForMultiAssign();
+      case DataCentricDSLPackage.MULTI_ASSIGN: return createMultiAssign();
+      case DataCentricDSLPackage.MULTI_ASSIGN_RIGHT_OPERAND: return createMultiAssignRightOperand();
+      case DataCentricDSLPackage.POSTFIX_OPERATION: return createPostfixOperation();
       case DataCentricDSLPackage.VARIABLE_PARAM: return createVariableParam();
       case DataCentricDSLPackage.ADDITION: return createAddition();
       case DataCentricDSLPackage.SUBSTRACTION: return createSubstraction();
@@ -225,10 +233,98 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  public WhileStatement createWhileStatement()
+  {
+    WhileStatementImpl whileStatement = new WhileStatementImpl();
+    return whileStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ForStatement createForStatement()
+  {
+    ForStatementImpl forStatement = new ForStatementImpl();
+    return forStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StatementCondition createStatementCondition()
+  {
+    StatementConditionImpl statementCondition = new StatementConditionImpl();
+    return statementCondition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Condition createCondition()
   {
     ConditionImpl condition = new ConditionImpl();
     return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConditionElement createConditionElement()
+  {
+    ConditionElementImpl conditionElement = new ConditionElementImpl();
+    return conditionElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ForMultiAssign createForMultiAssign()
+  {
+    ForMultiAssignImpl forMultiAssign = new ForMultiAssignImpl();
+    return forMultiAssign;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiAssign createMultiAssign()
+  {
+    MultiAssignImpl multiAssign = new MultiAssignImpl();
+    return multiAssign;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiAssignRightOperand createMultiAssignRightOperand()
+  {
+    MultiAssignRightOperandImpl multiAssignRightOperand = new MultiAssignRightOperandImpl();
+    return multiAssignRightOperand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PostfixOperation createPostfixOperation()
+  {
+    PostfixOperationImpl postfixOperation = new PostfixOperationImpl();
+    return postfixOperation;
   }
 
   /**

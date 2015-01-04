@@ -27,7 +27,7 @@ public interface Condition extends EObject
 {
   /**
    * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
-   * The list contents are of type {@link org.dataCentricDSL.Expression}.
+   * The list contents are of type {@link org.dataCentricDSL.ConditionElement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear,
@@ -39,7 +39,7 @@ public interface Condition extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Expression> getExpressions();
+  EList<ConditionElement> getExpressions();
 
   /**
    * Returns the value of the '<em><b>Op</b></em>' attribute list.

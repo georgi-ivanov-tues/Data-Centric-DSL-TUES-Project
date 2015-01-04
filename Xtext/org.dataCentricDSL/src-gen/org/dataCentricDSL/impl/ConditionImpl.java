@@ -5,8 +5,8 @@ package org.dataCentricDSL.impl;
 import java.util.Collection;
 
 import org.dataCentricDSL.Condition;
+import org.dataCentricDSL.ConditionElement;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Expression;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -45,7 +45,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    * @ordered
    */
-  protected EList<Expression> expressions;
+  protected EList<ConditionElement> expressions;
 
   /**
    * The cached value of the '{@link #getOp() <em>Op</em>}' attribute list.
@@ -83,11 +83,11 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Expression> getExpressions()
+  public EList<ConditionElement> getExpressions()
   {
     if (expressions == null)
     {
-      expressions = new EObjectContainmentEList<Expression>(Expression.class, this, DataCentricDSLPackage.CONDITION__EXPRESSIONS);
+      expressions = new EObjectContainmentEList<ConditionElement>(ConditionElement.class, this, DataCentricDSLPackage.CONDITION__EXPRESSIONS);
     }
     return expressions;
   }
@@ -153,7 +153,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
     {
       case DataCentricDSLPackage.CONDITION__EXPRESSIONS:
         getExpressions().clear();
-        getExpressions().addAll((Collection<? extends Expression>)newValue);
+        getExpressions().addAll((Collection<? extends ConditionElement>)newValue);
         return;
       case DataCentricDSLPackage.CONDITION__OP:
         getOp().clear();
