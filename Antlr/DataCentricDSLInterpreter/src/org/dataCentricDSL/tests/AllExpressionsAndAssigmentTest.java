@@ -11,6 +11,8 @@ import org.dataCentricDSL.DataCentricDSLLexer;
 import org.dataCentricDSL.DataCentricDSLParser;
 import org.dataCentricDSL.ProgramWalker;
 import org.dataCentricDSL.DataCentricDSLParser.program_return;
+import org.dataCentricDSL.tree.IdentifierNode;
+import org.dataCentricDSL.tree.TLNode;
 import org.junit.Test;
 
 public class AllExpressionsAndAssigmentTest {
@@ -26,7 +28,9 @@ public class AllExpressionsAndAssigmentTest {
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		
 		walker.program(); 
-		int result =  (Integer) walker.context.get("result");
-		assertEquals(result, -10);
+		TLNode result = new IdentifierNode("result", null);
+//		int result =  (Integer) walker.context.get("result");
+		System.out.println(result.evaluate().asDouble());
+		assertEquals(result.evaluate().asBoolean(), -10);
 	}
 }

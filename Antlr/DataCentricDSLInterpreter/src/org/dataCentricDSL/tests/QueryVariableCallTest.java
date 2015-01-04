@@ -2,6 +2,8 @@ package org.dataCentricDSL.tests;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,14 +18,29 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.dataCentricDSL.DataCentricDSLLexer;
 import org.dataCentricDSL.DataCentricDSLParser;
 import org.dataCentricDSL.DataCentricDSLParser.program_return;
+import org.dataCentricDSL.TLValue;
 import org.dataCentricDSL.derbyDB.CreateDB;
 import org.dataCentricDSL.ProgramWalker;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class QueryVariableCallTest {
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+	@Before
+	public void setUpStreams() {
+	    System.setOut(new PrintStream(outContent));
+	}
+
+	@After
+	public void cleanUpStreams() {
+	    System.setOut(null);
+	}
+	
 	@Test
 	public void QueryExecutionTest() throws RecognitionException {
-		CharStream cs = new ANTLRStringStream("str = \"SELECT first_name FROM people\"; query str;");
+		CharStream cs = new ANTLRStringStream("str = \"SELECT first_name FROM people WHERE first_name = 'Georgi'\"; result = query str; println(result);");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
@@ -37,19 +54,9 @@ public class QueryVariableCallTest {
 		}
 		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
 		
-		walker.variableDecl();
-		ResultSet result = walker.query();
-		try {
-			result.next();
-			assertEquals(result.getString(1), "Georgi");
-			result.next();
-			assertEquals(result.getString(1), "Kiril");
-			result.next();
-			assertEquals(result.getString(1), "Nedelcho");
-			result.next();
-			assertEquals(result.getString(1), "Bojidar");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		walker.program();
+		String str = outContent.toString();
+		System.out.println("asd = " + str.trim());
+		assertEquals("Georgi", str.trim());
 	}
 }

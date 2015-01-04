@@ -1,13 +1,14 @@
-package org.dataCentricDSL.tree;
+package org.dataCentricDSL.tree.expressions.operations;
 
 import org.dataCentricDSL.TLValue;
+import org.dataCentricDSL.tree.TLNode;
 
-public class LTNode implements TLNode {
+public class LessThanNode implements TLNode {
 
   private TLNode lhs;
   private TLNode rhs;
 
-  public LTNode(TLNode lhs, TLNode rhs) {
+  public LessThanNode(TLNode lhs, TLNode rhs) {
     this.lhs = lhs;
     this.rhs = rhs;
   }

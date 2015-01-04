@@ -1,6 +1,8 @@
-package org.dataCentricDSL.tree;
+package org.dataCentricDSL.tree.expressions.operations;
 
 import org.dataCentricDSL.TLValue;
+import org.dataCentricDSL.tree.TLNode;
+
 import java.util.List;
 
 public class AddNode implements TLNode {

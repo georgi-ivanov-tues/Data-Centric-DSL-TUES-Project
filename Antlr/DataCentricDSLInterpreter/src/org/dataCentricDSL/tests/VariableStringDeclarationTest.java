@@ -24,7 +24,7 @@ public class VariableStringDeclarationTest {
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.getTree());
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		
-		walker.variableDecl();
+		walker.program();
 		String result = (String) walker.context.get("str");
 		assertEquals(result, "Hello World");
 	}

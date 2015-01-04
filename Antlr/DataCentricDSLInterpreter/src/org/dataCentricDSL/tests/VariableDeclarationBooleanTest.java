@@ -24,7 +24,7 @@ public class VariableDeclarationBooleanTest {
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.getTree());
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		
-		walker.variableDecl();
+		walker.program();
 		Object result = walker.context.get("a");
 		assertEquals(result instanceof Boolean, true);
 	}

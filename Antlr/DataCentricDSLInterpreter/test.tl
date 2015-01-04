@@ -1,18 +1,47 @@
-//a = 2;
 
-//println("asd");
-//print query "SELECT * FROM people";
+/*
+a = "SELECT first_name FROM people";
+b = query a;
+println(b);
+*/
+/*
+a = 1;
+while(a < 10){
+	println(a);
+	a = a + 1;
+}
+*/
 
-a = 5;
+/*
+a = "a";
+b = "b";
 
+c = query "SELECT * FROM people";
+println(c);
+
+a = 0;
+if(a == 2){
+	println("YES");
+}else if(a > 5){
+	println("a > 5");
+}else{
+	println("NO");
+}
+
+println query "SELECT * FROM people";
+*/
+/*
+a = 2;
 if a < 10 do
-  a = 1;
+	println("YES");
 else do
-  a = 42;
+	println("NO");
 end
+println(a);
 
-print a;
-
+b = query "SELECT * FROM people";
+println(b);
+*/
 
 /*
 a = 5;

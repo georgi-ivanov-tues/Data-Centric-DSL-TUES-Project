@@ -1,14 +1,9 @@
 package org.dataCentricDSL.tests;
 
 import static org.junit.Assert.assertEquals;
-
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -18,13 +13,11 @@ import org.dataCentricDSL.DataCentricDSLLexer;
 import org.dataCentricDSL.DataCentricDSLParser;
 import org.dataCentricDSL.ProgramWalker;
 import org.dataCentricDSL.DataCentricDSLParser.program_return;
-import org.dataCentricDSL.derbyDB.CreateDB;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PrintQueryTest {
-	
+public class WhileStatementTest {
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 	@Before
@@ -38,23 +31,16 @@ public class PrintQueryTest {
 	}
 	
 	@Test
-	public void QueryExecutionTest() throws RecognitionException {
-		CharStream cs = new ANTLRStringStream("println(query \"SELECT first_name FROM people WHERE first_name = 'Georgi'\");");
+	public void PrintExecutionTest() throws RecognitionException, IOException {
+		CharStream cs = new ANTLRStringStream("a = 0; while(a < 2){a = a + 1;}println(a);");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
 		program_return program = parser.program();
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.getTree());
-		Map<String, Object> myMap = new HashMap<String, Object>();
-		try {
-			myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
+		ProgramWalker walker = new ProgramWalker(nodeStream);
 		walker.program();
 		
-		String str = outContent.toString();
-		assertEquals("Georgi", str.trim());
+		assertEquals("2.0", outContent.toString().trim());
 	}
 }
