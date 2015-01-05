@@ -5,7 +5,6 @@ package org.dataCentricDSL.impl;
 import java.util.Collection;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Statement;
 import org.dataCentricDSL.SwitchStatement;
 import org.dataCentricDSL.VariableCall;
 
@@ -20,8 +19,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +29,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link org.dataCentricDSL.impl.SwitchStatementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.SwitchStatementImpl#getCases <em>Cases</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.SwitchStatementImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,16 +55,6 @@ public class SwitchStatementImpl extends CompoundStatementImpl implements Switch
    * @ordered
    */
   protected EList<String> cases;
-
-  /**
-   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStatements()
-   * @generated
-   * @ordered
-   */
-  protected EList<Statement> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,20 +144,6 @@ public class SwitchStatementImpl extends CompoundStatementImpl implements Switch
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Statement> getStatements()
-  {
-    if (statements == null)
-    {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS);
-    }
-    return statements;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -179,8 +151,6 @@ public class SwitchStatementImpl extends CompoundStatementImpl implements Switch
     {
       case DataCentricDSLPackage.SWITCH_STATEMENT__NAME:
         return basicSetName(null, msgs);
-      case DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS:
-        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -199,8 +169,6 @@ public class SwitchStatementImpl extends CompoundStatementImpl implements Switch
         return getName();
       case DataCentricDSLPackage.SWITCH_STATEMENT__CASES:
         return getCases();
-      case DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS:
-        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -223,10 +191,6 @@ public class SwitchStatementImpl extends CompoundStatementImpl implements Switch
         getCases().clear();
         getCases().addAll((Collection<? extends String>)newValue);
         return;
-      case DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS:
-        getStatements().clear();
-        getStatements().addAll((Collection<? extends Statement>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -247,9 +211,6 @@ public class SwitchStatementImpl extends CompoundStatementImpl implements Switch
       case DataCentricDSLPackage.SWITCH_STATEMENT__CASES:
         getCases().clear();
         return;
-      case DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS:
-        getStatements().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -268,8 +229,6 @@ public class SwitchStatementImpl extends CompoundStatementImpl implements Switch
         return name != null;
       case DataCentricDSLPackage.SWITCH_STATEMENT__CASES:
         return cases != null && !cases.isEmpty();
-      case DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS:
-        return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

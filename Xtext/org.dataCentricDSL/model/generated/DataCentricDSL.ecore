@@ -7,16 +7,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleStatement" eSuperTypes="#//Statement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableDecl" eSuperTypes="#//SimpleStatement #//ForStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDecl" eSuperTypes="#//SimpleStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variableValue" eType="#//SimpleStatement"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="forCondition" eType="#//StatementCondition"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
-        eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="#//SimpleStatement #//Print #//MultiAssignRightOperand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="queryValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -29,29 +23,36 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//Print #//ConditionElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//Expression #//MultiAssignRightOperand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompoundStatement" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompoundStatement" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfStatement" eSuperTypes="#//CompoundStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" upperBound="-1"
         eType="#//StatementCondition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
-        eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SwitchStatement" eSuperTypes="#//CompoundStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//VariableCall"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cases" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
-        eType="#//Statement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WhileStatement" eSuperTypes="#//CompoundStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ForStatement" eSuperTypes="#//CompoundStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StatementCondition" eSuperTypes="#//WhileStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
-        eType="#//Statement" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WhileStatement" eSuperTypes="#//CompoundStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="whileCondition" eType="#//StatementCondition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForStatement" eSuperTypes="#//CompoundStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forVar" eType="#//VariableDecl"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forCondition" eType="#//StatementCondition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementCondition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statementCondition" upperBound="-1"
         eType="#//Condition" containment="true"/>
   </eClassifiers>
@@ -77,12 +78,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiAssignRightOperand"/>
   <eClassifiers xsi:type="ecore:EClass" name="PostfixOperation" eSuperTypes="#//SimpleStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="#//ConditionElement #//MultiAssignRightOperand">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableParam" eSuperTypes="#//VariableDecl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableStringParam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variableVarParam" eType="#//VariableCall"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variableQueryParam" eType="#//Query"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableBolleanValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Addition" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"

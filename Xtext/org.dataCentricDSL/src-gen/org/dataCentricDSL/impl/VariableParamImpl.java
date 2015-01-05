@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.dataCentricDSL.impl.VariableParamImpl#getVariableStringParam <em>Variable String Param</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.VariableParamImpl#getVariableVarParam <em>Variable Var Param</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.VariableParamImpl#getVariableQueryParam <em>Variable Query Param</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.VariableParamImpl#getVariableBolleanValue <em>Variable Bollean Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,6 +72,26 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
    * @ordered
    */
   protected Query variableQueryParam;
+
+  /**
+   * The default value of the '{@link #getVariableBolleanValue() <em>Variable Bollean Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariableBolleanValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String VARIABLE_BOLLEAN_VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getVariableBolleanValue() <em>Variable Bollean Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariableBolleanValue()
+   * @generated
+   * @ordered
+   */
+  protected String variableBolleanValue = VARIABLE_BOLLEAN_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -217,6 +238,29 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getVariableBolleanValue()
+  {
+    return variableBolleanValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVariableBolleanValue(String newVariableBolleanValue)
+  {
+    String oldVariableBolleanValue = variableBolleanValue;
+    variableBolleanValue = newVariableBolleanValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_BOLLEAN_VALUE, oldVariableBolleanValue, variableBolleanValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -246,6 +290,8 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
         return getVariableVarParam();
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_QUERY_PARAM:
         return getVariableQueryParam();
+      case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_BOLLEAN_VALUE:
+        return getVariableBolleanValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -268,6 +314,9 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
         return;
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_QUERY_PARAM:
         setVariableQueryParam((Query)newValue);
+        return;
+      case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_BOLLEAN_VALUE:
+        setVariableBolleanValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -292,6 +341,9 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_QUERY_PARAM:
         setVariableQueryParam((Query)null);
         return;
+      case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_BOLLEAN_VALUE:
+        setVariableBolleanValue(VARIABLE_BOLLEAN_VALUE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -312,6 +364,8 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
         return variableVarParam != null;
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_QUERY_PARAM:
         return variableQueryParam != null;
+      case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_BOLLEAN_VALUE:
+        return VARIABLE_BOLLEAN_VALUE_EDEFAULT == null ? variableBolleanValue != null : !VARIABLE_BOLLEAN_VALUE_EDEFAULT.equals(variableBolleanValue);
     }
     return super.eIsSet(featureID);
   }
@@ -329,6 +383,8 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (variableStringParam: ");
     result.append(variableStringParam);
+    result.append(", variableBolleanValue: ");
+    result.append(variableBolleanValue);
     result.append(')');
     return result.toString();
   }

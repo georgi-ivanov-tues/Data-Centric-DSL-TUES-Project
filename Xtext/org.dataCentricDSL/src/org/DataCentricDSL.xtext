@@ -23,7 +23,12 @@ OpAssignment:
 ;
 
 VariableParam returns VariableDecl:
-	{VariableParam} (variableStringParam=STRING | variableVarParam=VariableCall | variableQueryParam=Query)
+	{VariableParam} 
+	(variableStringParam=STRING | 
+	variableVarParam=VariableCall | 
+	variableQueryParam=Query |
+	variableBolleanValue=BolleanValue
+	)
 ;
 
 Query:
@@ -114,11 +119,13 @@ SwitchStatement:
 ;
 
 WhileStatement:
-	'while' '(' StatementCondition ')' '{' (statements+=Statement)* '}'
+	{WhileStatement}
+	'while' '(' whileCondition=StatementCondition ')' '{' (statements+=Statement)* '}'
 ;
 
 ForStatement:
-	'for' '(' VariableDecl ';' forCondition=StatementCondition ';' operation=(PostfixOperation | ForMultiAssign) ')' '{' (statements+=Statement)* '}'
+	{ForStatement}
+	'for' '(' forVar=VariableDecl ';' forCondition=StatementCondition ';' operation=(PostfixOperation | ForMultiAssign) ')' '{' (statements+=Statement)* '}'
 ;
 
 StatementCondition:
@@ -126,11 +133,11 @@ StatementCondition:
 ;
 
 Condition:
-	 expressions+=ConditionElement (op+=OpCompare expressions+=ConditionElement)*
+	 expressions+=ConditionElement (op+=OpCompare expressions+=ConditionElement)?
 ;
 
 ConditionElement:
-	(Expression | VariableCall | STRING)
+	(Expression | VariableCall | StringLiteral)
 ;
 
 ForMultiAssign:
@@ -142,13 +149,21 @@ MultiAssign:
 ;
 
 MultiAssignRightOperand:
-	(VariableCall | STRING | Query | INT)
+	(VariableCall | StringLiteral | Query | NumberLiteral)
 ;
 
 PostfixOperation:
 	VariableCall op=PostfixOperationOperator
 ;
 
+StringLiteral:
+	value=STRING
+;
+
+BolleanValue:
+	('true' | 
+	'false')
+;
 MultiAssignOperator:
 	('+=' | 
 	'-=' | 

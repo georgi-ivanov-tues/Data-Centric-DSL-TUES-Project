@@ -3,11 +3,9 @@
  */
 package org.validation
 
-import org.dataCentricDSL.DataCentricDSL
+import org.dataCentricDSL.Condition
 import org.dataCentricDSL.DataCentricDSLPackage
 import org.dataCentricDSL.Query
-import org.dataCentricDSL.VariableCall
-import org.dataCentricDSL.VariableDecl
 import org.eclipse.xtext.validation.Check
 
 /**
@@ -22,6 +20,11 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		if(que.queryValue.toString.equals("")){
 			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__QUERY_VALUE);
 		}
+	}
+	
+	@Check
+	def void checkConditionOperands(Condition c) {
+		
 	}
 	
 // doesn't work for now (again......)

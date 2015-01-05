@@ -8,6 +8,7 @@ import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Division;
 import org.dataCentricDSL.ForMultiAssign;
+import org.dataCentricDSL.ForStatement;
 import org.dataCentricDSL.IfStatement;
 import org.dataCentricDSL.Mod;
 import org.dataCentricDSL.MultiAssign;
@@ -16,11 +17,13 @@ import org.dataCentricDSL.NumberLiteral;
 import org.dataCentricDSL.Print;
 import org.dataCentricDSL.Query;
 import org.dataCentricDSL.StatementCondition;
+import org.dataCentricDSL.StringLiteral;
 import org.dataCentricDSL.Substraction;
 import org.dataCentricDSL.SwitchStatement;
 import org.dataCentricDSL.VariableCall;
 import org.dataCentricDSL.VariableDecl;
 import org.dataCentricDSL.VariableParam;
+import org.dataCentricDSL.WhileStatement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
@@ -149,6 +152,14 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
+			case DataCentricDSLPackage.FOR_STATEMENT:
+				if(context == grammarAccess.getCompoundStatementRule() ||
+				   context == grammarAccess.getForStatementRule() ||
+				   context == grammarAccess.getStatementRule()) {
+					sequence_ForStatement(context, (ForStatement) semanticObject); 
+					return; 
+				}
+				else break;
 			case DataCentricDSLPackage.IF_STATEMENT:
 				if(context == grammarAccess.getCompoundStatementRule() ||
 				   context == grammarAccess.getIfStatementRule() ||
@@ -218,6 +229,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getModRule() ||
 				   context == grammarAccess.getModAccess().getModLeftAction_1_0() ||
+				   context == grammarAccess.getMultiAssignRightOperandRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0() ||
 				   context == grammarAccess.getNumberLiteralRule() ||
@@ -258,10 +270,12 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 					sequence_StatementCondition(context, (StatementCondition) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getCompoundStatementRule() ||
-				   context == grammarAccess.getStatementRule() ||
-				   context == grammarAccess.getWhileStatementRule()) {
-					sequence_StatementCondition_WhileStatement(context, (StatementCondition) semanticObject); 
+				else break;
+			case DataCentricDSLPackage.STRING_LITERAL:
+				if(context == grammarAccess.getConditionElementRule() ||
+				   context == grammarAccess.getMultiAssignRightOperandRule() ||
+				   context == grammarAccess.getStringLiteralRule()) {
+					sequence_StringLiteral(context, (StringLiteral) semanticObject); 
 					return; 
 				}
 				else break;
@@ -314,12 +328,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case DataCentricDSLPackage.VARIABLE_DECL:
-				if(context == grammarAccess.getCompoundStatementRule() ||
-				   context == grammarAccess.getForStatementRule()) {
-					sequence_ForStatement_VariableDecl(context, (VariableDecl) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getSimpleStatementRule() ||
+				if(context == grammarAccess.getSimpleStatementRule() ||
 				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getVariableDeclRule()) {
 					sequence_VariableDecl(context, (VariableDecl) semanticObject); 
@@ -329,6 +338,14 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 			case DataCentricDSLPackage.VARIABLE_PARAM:
 				if(context == grammarAccess.getVariableParamRule()) {
 					sequence_VariableParam(context, (VariableParam) semanticObject); 
+					return; 
+				}
+				else break;
+			case DataCentricDSLPackage.WHILE_STATEMENT:
+				if(context == grammarAccess.getCompoundStatementRule() ||
+				   context == grammarAccess.getStatementRule() ||
+				   context == grammarAccess.getWhileStatementRule()) {
+					sequence_WhileStatement(context, (WhileStatement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1454,7 +1471,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (expressions+=ConditionElement (op+=OpCompare expressions+=ConditionElement)*)
+	 *     (expressions+=ConditionElement (op+=OpCompare expressions+=ConditionElement)?)
 	 */
 	protected void sequence_Condition(EObject context, Condition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1503,15 +1520,9 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=ValidID 
-	 *         (variableValue=VariableParam | variableValue=Expression) 
-	 *         forCondition=StatementCondition 
-	 *         (operation=PostfixOperation | operation=ForMultiAssign) 
-	 *         statements+=Statement*
-	 *     )
+	 *     (forVar=VariableDecl forCondition=StatementCondition (operation=PostfixOperation | operation=ForMultiAssign) statements+=Statement*)
 	 */
-	protected void sequence_ForStatement_VariableDecl(EObject context, VariableDecl semanticObject) {
+	protected void sequence_ForStatement(EObject context, ForStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1619,10 +1630,17 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (statementCondition+=Condition statementCondition+=Condition* statements+=Statement*)
+	 *     value=STRING
 	 */
-	protected void sequence_StatementCondition_WhileStatement(EObject context, StatementCondition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_StringLiteral(EObject context, StringLiteral semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.STRING_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.STRING_LITERAL__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getStringLiteralAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -1664,9 +1682,18 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (variableStringParam=STRING | variableVarParam=VariableCall | variableQueryParam=Query)
+	 *     (variableStringParam=STRING | variableVarParam=VariableCall | variableQueryParam=Query | variableBolleanValue=BolleanValue)
 	 */
 	protected void sequence_VariableParam(EObject context, VariableParam semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (whileCondition=StatementCondition statements+=Statement*)
+	 */
+	protected void sequence_WhileStatement(EObject context, WhileStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

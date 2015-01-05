@@ -4,6 +4,8 @@ package org.dataCentricDSL;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Statement Condition</b></em>'.
@@ -12,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.StatementCondition#getStatements <em>Statements</em>}</li>
  *   <li>{@link org.dataCentricDSL.StatementCondition#getStatementCondition <em>Statement Condition</em>}</li>
  * </ul>
  * </p>
@@ -21,24 +22,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface StatementCondition extends WhileStatement
+public interface StatementCondition extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
-   * The list contents are of type {@link org.dataCentricDSL.Statement}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Statements</em>' containment reference list.
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getStatementCondition_Statements()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Statement> getStatements();
-
   /**
    * Returns the value of the '<em><b>Statement Condition</b></em>' containment reference list.
    * The list contents are of type {@link org.dataCentricDSL.Condition}.

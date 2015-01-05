@@ -5,21 +5,21 @@ package org.dataCentricDSL;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Number Literal</b></em>'.
+ * A representation of the model object '<em><b>String Literal</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.NumberLiteral#getValue <em>Value</em>}</li>
+ *   <li>{@link org.dataCentricDSL.StringLiteral#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.dataCentricDSL.DataCentricDSLPackage#getNumberLiteral()
+ * @see org.dataCentricDSL.DataCentricDSLPackage#getStringLiteral()
  * @model
  * @generated
  */
-public interface NumberLiteral extends Expression, MultiAssignRightOperand
+public interface StringLiteral extends ConditionElement, MultiAssignRightOperand
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -30,21 +30,21 @@ public interface NumberLiteral extends Expression, MultiAssignRightOperand
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(int)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getNumberLiteral_Value()
+   * @see #setValue(String)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getStringLiteral_Value()
    * @model
    * @generated
    */
-  int getValue();
+  String getValue();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.NumberLiteral#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.StringLiteral#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
    * @see #getValue()
    * @generated
    */
-  void setValue(int value);
+  void setValue(String value);
 
-} // NumberLiteral
+} // StringLiteral

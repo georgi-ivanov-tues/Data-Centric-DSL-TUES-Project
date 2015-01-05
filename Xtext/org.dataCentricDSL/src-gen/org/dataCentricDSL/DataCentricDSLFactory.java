@@ -212,6 +212,15 @@ public interface DataCentricDSLFactory extends EFactory
   PostfixOperation createPostfixOperation();
 
   /**
+   * Returns a new object of class '<em>String Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Literal</em>'.
+   * @generated
+   */
+  StringLiteral createStringLiteral();
+
+  /**
    * Returns a new object of class '<em>Variable Param</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

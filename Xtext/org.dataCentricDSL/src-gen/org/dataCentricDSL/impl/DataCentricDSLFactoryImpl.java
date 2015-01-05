@@ -85,6 +85,7 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.MULTI_ASSIGN: return createMultiAssign();
       case DataCentricDSLPackage.MULTI_ASSIGN_RIGHT_OPERAND: return createMultiAssignRightOperand();
       case DataCentricDSLPackage.POSTFIX_OPERATION: return createPostfixOperation();
+      case DataCentricDSLPackage.STRING_LITERAL: return createStringLiteral();
       case DataCentricDSLPackage.VARIABLE_PARAM: return createVariableParam();
       case DataCentricDSLPackage.ADDITION: return createAddition();
       case DataCentricDSLPackage.SUBSTRACTION: return createSubstraction();
@@ -325,6 +326,17 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     PostfixOperationImpl postfixOperation = new PostfixOperationImpl();
     return postfixOperation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringLiteral createStringLiteral()
+  {
+    StringLiteralImpl stringLiteral = new StringLiteralImpl();
+    return stringLiteral;
   }
 
   /**

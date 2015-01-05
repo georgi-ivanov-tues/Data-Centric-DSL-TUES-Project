@@ -6,7 +6,6 @@ import java.util.Collection;
 
 import org.dataCentricDSL.Condition;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Statement;
 import org.dataCentricDSL.StatementCondition;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -15,6 +14,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -26,25 +27,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.StatementConditionImpl#getStatements <em>Statements</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.StatementConditionImpl#getStatementCondition <em>Statement Condition</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StatementConditionImpl extends WhileStatementImpl implements StatementCondition
+public class StatementConditionImpl extends MinimalEObjectImpl.Container implements StatementCondition
 {
-  /**
-   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStatements()
-   * @generated
-   * @ordered
-   */
-  protected EList<Statement> statements;
-
   /**
    * The cached value of the '{@link #getStatementCondition() <em>Statement Condition</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -81,20 +71,6 @@ public class StatementConditionImpl extends WhileStatementImpl implements Statem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Statement> getStatements()
-  {
-    if (statements == null)
-    {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENTS);
-    }
-    return statements;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Condition> getStatementCondition()
   {
     if (statementCondition == null)
@@ -114,8 +90,6 @@ public class StatementConditionImpl extends WhileStatementImpl implements Statem
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENTS:
-        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
       case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION:
         return ((InternalEList<?>)getStatementCondition()).basicRemove(otherEnd, msgs);
     }
@@ -132,8 +106,6 @@ public class StatementConditionImpl extends WhileStatementImpl implements Statem
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENTS:
-        return getStatements();
       case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION:
         return getStatementCondition();
     }
@@ -151,10 +123,6 @@ public class StatementConditionImpl extends WhileStatementImpl implements Statem
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENTS:
-        getStatements().clear();
-        getStatements().addAll((Collection<? extends Statement>)newValue);
-        return;
       case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION:
         getStatementCondition().clear();
         getStatementCondition().addAll((Collection<? extends Condition>)newValue);
@@ -173,9 +141,6 @@ public class StatementConditionImpl extends WhileStatementImpl implements Statem
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENTS:
-        getStatements().clear();
-        return;
       case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION:
         getStatementCondition().clear();
         return;
@@ -193,8 +158,6 @@ public class StatementConditionImpl extends WhileStatementImpl implements Statem
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENTS:
-        return statements != null && !statements.isEmpty();
       case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION:
         return statementCondition != null && !statementCondition.isEmpty();
     }

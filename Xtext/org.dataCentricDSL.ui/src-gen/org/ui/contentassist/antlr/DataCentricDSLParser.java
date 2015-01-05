@@ -45,10 +45,11 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrintParamAccess().getAlternatives(), "rule__PrintParam__Alternatives");
 					put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
 					put(grammarAccess.getCompoundStatementAccess().getAlternatives(), "rule__CompoundStatement__Alternatives");
-					put(grammarAccess.getForStatementAccess().getOperationAlternatives_6_0(), "rule__ForStatement__OperationAlternatives_6_0");
+					put(grammarAccess.getForStatementAccess().getOperationAlternatives_7_0(), "rule__ForStatement__OperationAlternatives_7_0");
 					put(grammarAccess.getStatementConditionAccess().getAlternatives_1_0(), "rule__StatementCondition__Alternatives_1_0");
 					put(grammarAccess.getConditionElementAccess().getAlternatives(), "rule__ConditionElement__Alternatives");
 					put(grammarAccess.getMultiAssignRightOperandAccess().getAlternatives(), "rule__MultiAssignRightOperand__Alternatives");
+					put(grammarAccess.getBolleanValueAccess().getAlternatives(), "rule__BolleanValue__Alternatives");
 					put(grammarAccess.getMultiAssignOperatorAccess().getAlternatives(), "rule__MultiAssignOperator__Alternatives");
 					put(grammarAccess.getPostfixOperationOperatorAccess().getAlternatives(), "rule__PostfixOperationOperator__Alternatives");
 					put(grammarAccess.getOpCompareAccess().getAlternatives(), "rule__OpCompare__Alternatives");
@@ -306,6 +307,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableParamAccess().getVariableStringParamAssignment_1_0(), "rule__VariableParam__VariableStringParamAssignment_1_0");
 					put(grammarAccess.getVariableParamAccess().getVariableVarParamAssignment_1_1(), "rule__VariableParam__VariableVarParamAssignment_1_1");
 					put(grammarAccess.getVariableParamAccess().getVariableQueryParamAssignment_1_2(), "rule__VariableParam__VariableQueryParamAssignment_1_2");
+					put(grammarAccess.getVariableParamAccess().getVariableBolleanValueAssignment_1_3(), "rule__VariableParam__VariableBolleanValueAssignment_1_3");
 					put(grammarAccess.getQueryParamAccess().getQueryValueAssignment_0(), "rule__QueryParam__QueryValueAssignment_0");
 					put(grammarAccess.getPrintParamAccess().getPrintValueAssignment_0(), "rule__PrintParam__PrintValueAssignment_0");
 					put(grammarAccess.getVariableCallAccess().getVariableCallAssignment_1(), "rule__VariableCall__VariableCallAssignment_1");
@@ -324,10 +326,12 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSwitchStatementAccess().getCasesAssignment_6_1(), "rule__SwitchStatement__CasesAssignment_6_1");
 					put(grammarAccess.getSwitchStatementAccess().getStatementsAssignment_6_3(), "rule__SwitchStatement__StatementsAssignment_6_3");
 					put(grammarAccess.getSwitchStatementAccess().getStatementsAssignment_7_2(), "rule__SwitchStatement__StatementsAssignment_7_2");
-					put(grammarAccess.getWhileStatementAccess().getStatementsAssignment_5(), "rule__WhileStatement__StatementsAssignment_5");
-					put(grammarAccess.getForStatementAccess().getForConditionAssignment_4(), "rule__ForStatement__ForConditionAssignment_4");
-					put(grammarAccess.getForStatementAccess().getOperationAssignment_6(), "rule__ForStatement__OperationAssignment_6");
-					put(grammarAccess.getForStatementAccess().getStatementsAssignment_9(), "rule__ForStatement__StatementsAssignment_9");
+					put(grammarAccess.getWhileStatementAccess().getWhileConditionAssignment_3(), "rule__WhileStatement__WhileConditionAssignment_3");
+					put(grammarAccess.getWhileStatementAccess().getStatementsAssignment_6(), "rule__WhileStatement__StatementsAssignment_6");
+					put(grammarAccess.getForStatementAccess().getForVarAssignment_3(), "rule__ForStatement__ForVarAssignment_3");
+					put(grammarAccess.getForStatementAccess().getForConditionAssignment_5(), "rule__ForStatement__ForConditionAssignment_5");
+					put(grammarAccess.getForStatementAccess().getOperationAssignment_7(), "rule__ForStatement__OperationAssignment_7");
+					put(grammarAccess.getForStatementAccess().getStatementsAssignment_10(), "rule__ForStatement__StatementsAssignment_10");
 					put(grammarAccess.getStatementConditionAccess().getStatementConditionAssignment_0(), "rule__StatementCondition__StatementConditionAssignment_0");
 					put(grammarAccess.getStatementConditionAccess().getStatementConditionAssignment_1_1(), "rule__StatementCondition__StatementConditionAssignment_1_1");
 					put(grammarAccess.getConditionAccess().getExpressionsAssignment_0(), "rule__Condition__ExpressionsAssignment_0");
@@ -340,6 +344,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiAssignAccess().getOpAssignment_1(), "rule__MultiAssign__OpAssignment_1");
 					put(grammarAccess.getMultiAssignAccess().getRightAssignment_2(), "rule__MultiAssign__RightAssignment_2");
 					put(grammarAccess.getPostfixOperationAccess().getOpAssignment_1(), "rule__PostfixOperation__OpAssignment_1");
+					put(grammarAccess.getStringLiteralAccess().getValueAssignment(), "rule__StringLiteral__ValueAssignment");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_1_1_0_0_1(), "rule__XAssignment__FeatureAssignment_1_1_0_0_1");

@@ -14,6 +14,7 @@ package org.dataCentricDSL;
  *   <li>{@link org.dataCentricDSL.VariableParam#getVariableStringParam <em>Variable String Param</em>}</li>
  *   <li>{@link org.dataCentricDSL.VariableParam#getVariableVarParam <em>Variable Var Param</em>}</li>
  *   <li>{@link org.dataCentricDSL.VariableParam#getVariableQueryParam <em>Variable Query Param</em>}</li>
+ *   <li>{@link org.dataCentricDSL.VariableParam#getVariableBolleanValue <em>Variable Bollean Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,5 +101,31 @@ public interface VariableParam extends VariableDecl
    * @generated
    */
   void setVariableQueryParam(Query value);
+
+  /**
+   * Returns the value of the '<em><b>Variable Bollean Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Variable Bollean Value</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Variable Bollean Value</em>' attribute.
+   * @see #setVariableBolleanValue(String)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableParam_VariableBolleanValue()
+   * @model
+   * @generated
+   */
+  String getVariableBolleanValue();
+
+  /**
+   * Sets the value of the '{@link org.dataCentricDSL.VariableParam#getVariableBolleanValue <em>Variable Bollean Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Variable Bollean Value</em>' attribute.
+   * @see #getVariableBolleanValue()
+   * @generated
+   */
+  void setVariableBolleanValue(String value);
 
 } // VariableParam

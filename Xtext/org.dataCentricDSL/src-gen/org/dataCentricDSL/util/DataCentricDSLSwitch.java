@@ -99,8 +99,6 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         VariableDecl variableDecl = (VariableDecl)theEObject;
         T result = caseVariableDecl(variableDecl);
         if (result == null) result = caseSimpleStatement(variableDecl);
-        if (result == null) result = caseForStatement(variableDecl);
-        if (result == null) result = caseCompoundStatement(variableDecl);
         if (result == null) result = caseStatement(variableDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -155,6 +153,7 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         NumberLiteral numberLiteral = (NumberLiteral)theEObject;
         T result = caseNumberLiteral(numberLiteral);
         if (result == null) result = caseExpression(numberLiteral);
+        if (result == null) result = caseMultiAssignRightOperand(numberLiteral);
         if (result == null) result = casePrint(numberLiteral);
         if (result == null) result = caseConditionElement(numberLiteral);
         if (result == null) result = caseSimpleStatement(numberLiteral);
@@ -210,9 +209,6 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         StatementCondition statementCondition = (StatementCondition)theEObject;
         T result = caseStatementCondition(statementCondition);
-        if (result == null) result = caseWhileStatement(statementCondition);
-        if (result == null) result = caseCompoundStatement(statementCondition);
-        if (result == null) result = caseStatement(statementCondition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -262,14 +258,21 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DataCentricDSLPackage.STRING_LITERAL:
+      {
+        StringLiteral stringLiteral = (StringLiteral)theEObject;
+        T result = caseStringLiteral(stringLiteral);
+        if (result == null) result = caseConditionElement(stringLiteral);
+        if (result == null) result = caseMultiAssignRightOperand(stringLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DataCentricDSLPackage.VARIABLE_PARAM:
       {
         VariableParam variableParam = (VariableParam)theEObject;
         T result = caseVariableParam(variableParam);
         if (result == null) result = caseVariableDecl(variableParam);
         if (result == null) result = caseSimpleStatement(variableParam);
-        if (result == null) result = caseForStatement(variableParam);
-        if (result == null) result = caseCompoundStatement(variableParam);
         if (result == null) result = caseStatement(variableParam);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -670,6 +673,22 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePostfixOperation(PostfixOperation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringLiteral(StringLiteral object)
   {
     return null;
   }
