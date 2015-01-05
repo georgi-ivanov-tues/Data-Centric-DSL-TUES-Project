@@ -5,7 +5,9 @@ package org.validation
 
 import org.dataCentricDSL.Condition
 import org.dataCentricDSL.DataCentricDSLPackage
+import org.dataCentricDSL.NumberLiteral
 import org.dataCentricDSL.Query
+import org.dataCentricDSL.StringLiteral
 import org.eclipse.xtext.validation.Check
 
 /**
@@ -24,7 +26,18 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
 	def void checkConditionOperands(Condition c) {
-		
+		var leftOperand = c.expressions.get(0);
+		var rightOperand = c.expressions.get(1);
+		if(leftOperand instanceof NumberLiteral) {
+			if(!(rightOperand instanceof NumberLiteral)) {
+				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
+			}
+		}
+		if(leftOperand instanceof StringLiteral) {
+			if(!(rightOperand instanceof StringLiteral)) {
+				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
+			}
+		}
 	}
 	
 // doesn't work for now (again......)
