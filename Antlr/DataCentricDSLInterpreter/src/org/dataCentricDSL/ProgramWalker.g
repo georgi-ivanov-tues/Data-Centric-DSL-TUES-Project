@@ -23,19 +23,22 @@ options {
   import java.sql.SQLException;
   import java.sql.ResultSetMetaData;
   import org.dataCentricDSL.tree.*;
+  import java.util.Arrays;
 }
 
 @members {
   public Map<String, Function> functions = null;
   Scope currentScope = null;
-  
-  public Scope getCurrentScope(){
-    return currentScope;
+    
+  public ProgramWalker(TreeNodeStream input, Map<String, Object> context, Map<String, Function> fns) {
+    super(input, new RecognizerSharedState());
+    this.context = context;
+    functions = fns;
   }
   
-  public ProgramWalker(CommonTreeNodeStream nodes, Map<String, Function> fns) {
-    this(nodes, null, fns);
-  }
+//  public ProgramWalker(CommonTreeNodeStream nodes, Map<String, Function> fns) {
+//    this(nodes, null, fns);
+//  }
   
   public ProgramWalker(CommonTreeNodeStream nds, Scope sc, Map<String, Function> fns) {
     super(nds);
@@ -86,6 +89,7 @@ statement returns [TLNode node]
   |  ifStatement    {node = $ifStatement.node;}
   |  forStatement   {node = $forStatement.node;} 
   |  whileStatement {node = $whileStatement.node;}
+//  |  incrementation {node = $incrementation.node;}
   |  query {node = $query.node;}
   ;
 
@@ -108,7 +112,23 @@ assignment returns [TLNode node]
   ;
 
 functionCall returns [TLNode node]
-  :  ^(FUNC_CALL Identifier exprList?)
+  :  ^(FUNC_CALL Identifier exprList?) {
+        
+        int paramSize = 0;
+        if($exprList.e == null){
+            paramSize = 0;
+        }else{
+            paramSize = $exprList.e.size();
+        }
+      Function function = functions.get($Identifier.text + paramSize);
+    
+	    if(paramSize == 0){
+	        node = function.invoke(new ArrayList<TLNode>(),functions);
+	    }else{
+	        node = function.invoke($exprList.e,functions);
+	    }
+
+  }
   |  ^(FUNC_CALL Println expression?) {node = new PrintlnNode($expression.node);}
 //  |  ^(FUNC_CALL Println query) {node = new PrintlnNode($query.node);}
   |  ^(FUNC_CALL Print expression)
@@ -128,10 +148,8 @@ ifStatement returns [TLNode node]
   ;
    
 forStatement returns [TLNode node]
-//  :  ^(For s=Identifier a=expression b=expression c=assignment d=block) {node = new ForNode($s.text, $a.node, $b.node, $c.node, $d.node, currentScope);}
-//:  ^(For a=Identifier b=expression c=expression d=block) {node = new ForNode(new AssignmentNode($a.text, $b.node, currentScope), $c.node, $d.node);}
-:  ^(For a=Identifier b=expression c=expression d=block) {node = new ForNode($a.text, $b.node, $c.node, $d.node, currentScope);}
-//:  ^(For a=Identifier b=expression c=expression d=Identifier e=expression f=block) {node = new ForNode($a.text, $b.node, $c.node, $d.text, $e.node, $f.node, currentScope);}
+//:  ^(For a=Identifier b=expression c=expression d=block) {node = new ForNode($a.text, $b.node, $c.node, $d.node, currentScope);}
+:  ^(For a=Identifier b=expression c=expression d=Identifier e=expression f=block) {node = new ForNode($a.text, $b.node, $c.node, $d.text, $e.node, $f.node, currentScope);}
   ;
 
 whileStatement returns [TLNode node]
@@ -143,7 +161,10 @@ idList returns [java.util.List<String> i]
   ;
 
 exprList returns [java.util.List<TLNode> e]
-  :  ^(EXP_LIST expression+)
+@init {
+  e = new ArrayList<TLNode>();
+}
+  :  ^(EXP_LIST expression+ {e.add($expression.node);})
   ; 
 
 // fix all other expressions!
@@ -172,6 +193,20 @@ expression returns [TLNode node]
   |  lookup {node = $lookup.node;}  
   |  query {node = $query.node;}
   ;
+
+//incrementation returns [TLNode node]
+//  :  ^(Identifier '++'){
+//  System.out.println($Identifier.text);
+//  System.out.println(new AtomNode(new IdentifierNode($Identifier.text, currentScope).evaluate().asDouble() + new AtomNode(1).evaluate().asDouble()));
+//  node = new AssignmentNode(
+//  $Identifier.text,
+//  new AtomNode(new IdentifierNode($Identifier.text, currentScope).evaluate().asDouble() + new AtomNode(1).evaluate().asDouble()), 
+//  currentScope);
+//  }
+//  |  ^('--' Identifier){node = new AddNode($a.node, new AtomNode(-1));}
+  //new AssignmentNode(initVarName, new AtomNode(initExpression.evaluate().asDouble() + new AtomNode(counter).evaluate().asDouble()), currentScope);
+//;
+
 
 lookup returns [TLNode node]
   :  ^(LOOKUP functionCall indexes?)

@@ -87,6 +87,7 @@ block
 
 statement
   :  assignment ';'   -> assignment
+//  |  incrementation ';' -> incrementation
   |  functionCall ';' -> functionCall
   |  ifStatement
   |  forStatement
@@ -139,12 +140,10 @@ functionDecl
   ;
 
 forStatement
-//  :  For '(' assignment ';' expression ';' assignment ')' '{' block '}' 
-//     -> ^(For Identifier '=' expression expression assignment block)
- :  For '(' Identifier '=' expression ';' expression ')' '{' block '}' 
-     -> ^(For Identifier expression expression block)
-//   :  For '(' Identifier '=' expression ';' expression ';' Identifier '=' expression ')' '{' block '}' 
-//     -> ^(For Identifier expression expression Identifier expression block)
+// :  For '(' Identifier '=' expression ';' expression ')' '{' block '}' 
+//     -> ^(For Identifier expression expression block)
+   :  For '(' Identifier '=' expression ';' expression ';' Identifier '=' expression ')' '{' block '}' 
+     -> ^(For Identifier expression expression Identifier expression block)
   
   ;
 
@@ -163,6 +162,10 @@ exprList
 expression
   :  condExpr | query
   ;
+
+//incrementation
+//  : Identifier '++' -> ^(Identifier)
+//;
 
 condExpr
   :  (orExpr -> orExpr) 
@@ -255,6 +258,7 @@ Excl     : '!';
 GT       : '>';
 LT       : '<';
 Add      : '+';
+Increment: '++';
 Subtract : '-';
 Multiply : '*';
 Divide   : '/';

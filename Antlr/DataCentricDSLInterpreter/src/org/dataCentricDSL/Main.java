@@ -33,7 +33,8 @@ public class Main {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		ProgramWalker walker = new ProgramWalker(nodes, myMap);
+
+		ProgramWalker walker = new ProgramWalker(nodes, myMap, parser.functions);
 		walker.program();
 	}
 }

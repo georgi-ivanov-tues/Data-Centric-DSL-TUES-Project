@@ -20,7 +20,10 @@ public class AddNode implements TLNode {
 
     TLValue a = lhs.evaluate();
     TLValue b = rhs.evaluate();
-
+    
+    System.out.println("a = " + a);
+    System.out.println("b = " + b);
+    
     // number + number
     if(a.isNumber() && b.isNumber()) {
       return new TLValue(a.asDouble() + b.asDouble());

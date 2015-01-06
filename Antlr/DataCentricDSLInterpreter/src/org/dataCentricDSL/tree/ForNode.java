@@ -18,25 +18,6 @@ public class ForNode implements TLNode{
 	TLNode block;
 	Scope currentScope;
 	
-//	public ForNode(String ident, TLNode ini, TLNode con, TLNode aft, TLNode bl, Scope curr) {
-//		var = ident;		
-//		initialization = ini;
-//		condition = con;
-//		afterthought = aft;
-//		block = bl;
-//		currentScope = curr;
-//	}
-	
-	public ForNode(String ident, TLNode exp, TLNode con, TLNode bl, Scope curr) {
-		initVarName = ident;
-		initExpression = exp;
-		condition = con;
-		block = bl;
-		currentScope = curr;
-		
-		initVar = new AssignmentNode(ident, initExpression, currentScope);
-	}
-	
 	public ForNode(String ident, TLNode exp, TLNode con, String aftIdent, TLNode aftExpress, TLNode bl, Scope curr) {
 		currentScope = curr;
 		
@@ -61,33 +42,11 @@ public class ForNode implements TLNode{
 		
 		if(!value.isBoolean()) {
 			throw new RuntimeException("illegal boolean expression " + 
-					"inside while-statement: " + value);
+					"inside for-statement: " + value);
 		}
 		
-//		System.out.println(initExpression.evaluate());
-//		System.out.println(afterthoughtVar.evaluate());
-		
-//		afterthoughtVar = new AssignmentNode(afterthoughtVarName, new AtomNode(aftExpression.evaluate().asDouble() + new AtomNode(afterthoughtVar.evaluate()).evaluate().asDouble()), currentScope);
-		
-//		System.out.println("aftName = " + afterthoughtVarName);
-//		System.out.println("aftExpr = " + aftExpression.evaluate());
-//		System.out.println("aftVar = " + afterthoughtVar.evaluate());
-		
-//		while(value.asBoolean()){
-//			block.evaluate();
-//			afterthoughtVar = new AssignmentNode(afterthoughtVarName, new AtomNode(aftExpression.evaluate().asDouble() + new AtomNode(afterthoughtVar).evaluate().asDouble()), currentScope);
-//			afterthoughtVar.evaluate();
-//			initVar.evaluate();
-//			value = condition.evaluate();
-//		}
-		
-		double counter = 1.0;
-		while(value.asBoolean()){
+		for (initVar.evaluate(); condition.evaluate().asBoolean(); afterthoughtVar.evaluate()) {
 			block.evaluate();
-			initVar = new AssignmentNode(initVarName, new AtomNode(initExpression.evaluate().asDouble() + new AtomNode(counter).evaluate().asDouble()), currentScope);
-			initVar.evaluate();
-			value = condition.evaluate();
-			counter++;
 		}
 		
 		return TLValue.VOID;

@@ -1,10 +1,28 @@
+def hello()
+	println("Hello World");
+end
 
+hello();
+
+/*
+a = 0;
+a++;
+println(a);
+*/
+/*
+for(a = 0; a < 5; a = a + 1){
+	if(a == 1){
+		println(a);
+	}
+}
+*/
+/*
 for(a = 0; a < 5){
 	//println(a);
 }
 
 println(a);
-
+*/
 /*
 for(b = 0; b < 5){
 	println(b);

@@ -21,7 +21,7 @@ public class TLValue implements Comparable<TLValue> {
     }
     value = v;
     // only accept boolean, list, number or string types
-    if(!(isBoolean() || isList() || isNumber() || isString() || isResultSet())) {
+    if(!(isBoolean() || isList() || isNumber() || isString() || isResultSet() || isFunction())) {
       throw new RuntimeException("invalid data type: " + v + " (" + v.getClass() + ")");
     }
   }
@@ -95,6 +95,10 @@ public class TLValue implements Comparable<TLValue> {
     return value.hashCode();
   }
 
+  public boolean isFunction(){
+	  return value instanceof Function;	  
+  }
+  
   public boolean isBoolean() {
     return value instanceof Boolean;
   }
