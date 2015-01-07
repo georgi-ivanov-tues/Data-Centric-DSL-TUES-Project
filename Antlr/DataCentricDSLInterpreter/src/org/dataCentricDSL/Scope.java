@@ -6,7 +6,7 @@ import java.util.Map;
 public class Scope {
 
   private Scope parent;
-  private Map<String, TLValue> variables;
+  private Map<String, Value> variables;
 
   public Scope() {
     // only for the global scope, the parent is null
@@ -15,10 +15,10 @@ public class Scope {
 
   public Scope(Scope p) {
     parent = p;
-    variables = new HashMap<String, TLValue>();
+    variables = new HashMap<String, Value>();
   }
 
-  public void assign(String var, TLValue value) {
+  public void assign(String var, Value value) {
     if(resolve(var) != null) {
       // There is already such a variable, re-assign it
       this.reAssign(var, value);
@@ -35,7 +35,7 @@ public class Scope {
     // changing the variables would result in changes to the Maps from
     // other "recursive scopes".
     Scope s = new Scope();
-    s.variables = new HashMap<String, TLValue>(this.variables);
+    s.variables = new HashMap<String, Value>(this.variables);
     return s;
   }
 
@@ -47,7 +47,7 @@ public class Scope {
     return parent;
   }
 
-  private void reAssign(String identifier, TLValue value) {
+  private void reAssign(String identifier, Value value) {
     if(variables.containsKey(identifier)) {
       // The variable is declared in this scope
       variables.put(identifier, value);
@@ -59,8 +59,8 @@ public class Scope {
     }
   }
 
-  public TLValue resolve(String var) {
-    TLValue value = variables.get(var);
+  public Value resolve(String var) {
+    Value value = variables.get(var);
     if(value != null) {
       // The variable resides in this scope
       return value;

@@ -1,30 +1,30 @@
 package org.dataCentricDSL.tree;
 
-import org.dataCentricDSL.TLValue;
+import org.dataCentricDSL.Value;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LookupNode implements TLNode {
+public class LookupNode implements Node {
 
-	public TLNode expression;
-	public List<TLNode> indexes;
+	public Node expression;
+	public List<Node> indexes;
 
-	public LookupNode(TLNode e, List<TLNode> i) {
+	public LookupNode(Node e, List<Node> i) {
 		expression = e;
 		indexes = i;
 	}
 
 	@Override
-	public TLValue evaluate() {
-		TLValue value = expression.evaluate();
+	public Value evaluate() {
+		Value value = expression.evaluate();
 
-		List<TLValue> indexValues = new ArrayList<TLValue>();
+		List<Value> indexValues = new ArrayList<Value>();
 
-		for (TLNode indexNode : indexes) {
+		for (Node indexNode : indexes) {
 			indexValues.add(indexNode.evaluate());
 		}
 
-		for(TLValue index : indexValues) {
+		for(Value index : indexValues) {
 
 			if(!index.isNumber() || !(value.isList() || value.isString())) {
 				throw new RuntimeException("illegal expression: " + expression + "[" + index + "]");
@@ -36,7 +36,7 @@ public class LookupNode implements TLNode {
 				value = value.asList().get(idx);
 			}
 			else if(value.isString()) {
-				value = new TLValue(String.valueOf(value.asString().charAt(idx)));
+				value = new Value(String.valueOf(value.asString().charAt(idx)));
 			}
 		}
 

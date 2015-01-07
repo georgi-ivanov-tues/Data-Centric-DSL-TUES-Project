@@ -1,12 +1,12 @@
 package org.dataCentricDSL.tree.expressions.operations;
 
-import org.dataCentricDSL.TLValue;
-import org.dataCentricDSL.tree.TLNode;
+import org.dataCentricDSL.Value;
+import org.dataCentricDSL.tree.Node;
 
-public class AndNode implements TLNode{
+public class AndNode implements Node{
 
 	@Override
-	public TLValue evaluate() {
+	public Value evaluate() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -1,10 +1,10 @@
 package org.dataCentricDSL.tree;
 
-import org.dataCentricDSL.TLValue;
+import org.dataCentricDSL.Value;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IfNode implements TLNode {
+public class IfNode implements Node {
 
   private List<Choice> choices;
 
@@ -12,15 +12,15 @@ public class IfNode implements TLNode {
     choices = new ArrayList<Choice>();
   }
 
-  public void addChoice(TLNode e, TLNode b) {
+  public void addChoice(Node e, Node b) {
     choices.add(new Choice(e, b));
   }
 
   @Override
-  public TLValue evaluate() {
+  public Value evaluate() {
 
     for(Choice ch : choices) {
-      TLValue value = ch.expression.evaluate();
+      Value value = ch.expression.evaluate();
 
       if(!value.isBoolean()) {
         throw new RuntimeException("illegal boolean expression " + 
@@ -32,15 +32,15 @@ public class IfNode implements TLNode {
       }
     }
 
-    return TLValue.VOID;
+    return Value.VOID;
   }
 
   private class Choice {
 
-    TLNode expression;
-    TLNode block;
+    Node expression;
+    Node block;
 
-    Choice(TLNode e, TLNode b) {
+    Choice(Node e, Node b) {
       expression = e;
       block = b;
     }

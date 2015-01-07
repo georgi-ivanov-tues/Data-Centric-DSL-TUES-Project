@@ -1,49 +1,46 @@
 package org.dataCentricDSL.tree.expressions.operations;
 
-import org.dataCentricDSL.TLValue;
-import org.dataCentricDSL.tree.TLNode;
+import org.dataCentricDSL.Value;
+import org.dataCentricDSL.tree.Node;
 
 import java.util.List;
 
-public class AddNode implements TLNode {
+public class AddNode implements Node {
 
-  private TLNode lhs;
-  private TLNode rhs;
+  private Node lhs;
+  private Node rhs;
 
-  public AddNode(TLNode lhs, TLNode rhs) {
+  public AddNode(Node lhs, Node rhs) {
     this.lhs = lhs;
     this.rhs = rhs;
   }
 
   @Override
-  public TLValue evaluate() {
+  public Value evaluate() {
 
-    TLValue a = lhs.evaluate();
-    TLValue b = rhs.evaluate();
-    
-    System.out.println("a = " + a);
-    System.out.println("b = " + b);
+    Value a = lhs.evaluate();
+    Value b = rhs.evaluate();
     
     // number + number
     if(a.isNumber() && b.isNumber()) {
-      return new TLValue(a.asDouble() + b.asDouble());
+      return new Value(a.asDouble() + b.asDouble());
     }
 
     // list + any
     if(a.isList()) {
-      List<TLValue> list = a.asList();
+      List<Value> list = a.asList();
       list.add(b);
-      return new TLValue(list);
+      return new Value(list);
     }
 
     // string + any
     if(a.isString()) {
-      return new TLValue(a.asString() + "" + b.toString());
+      return new Value(a.asString() + "" + b.toString());
     }
 
     // any + string
     if(b.isString()) {
-      return new TLValue(a.toString() + "" + b.asString());
+      return new Value(a.toString() + "" + b.asString());
     }
 
     throw new RuntimeException("illegal expression: " + this);

@@ -1,17 +1,17 @@
 package org.dataCentricDSL.tree;
 
-import org.dataCentricDSL.TLValue;
+import org.dataCentricDSL.Value;
 
-public class AtomNode implements TLNode {
+public class AtomNode implements Node {
 
-  private TLValue value;
+  private Value value;
 
   public AtomNode(Object v) {
-    value = (v == null) ? TLValue.NULL : new TLValue(v);
+    value = (v == null) ? Value.NULL : new Value(v);
   }
 
   @Override
-  public TLValue evaluate() {
+  public Value evaluate() {
     return value;
   }
 

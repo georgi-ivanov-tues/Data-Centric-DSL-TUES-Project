@@ -62,7 +62,7 @@ options {
 
 program returns [TLNode node]
   :  block{
-      node = $block.node;  
+      node = $block.node; 
       node.evaluate();
     } 
   ;
@@ -108,7 +108,6 @@ variableCall returns [String value]:
 
 assignment returns [TLNode node] 
   :  ^(ASSIGNMENT i=Identifier x=indexes? e=expression {node = new AssignmentNode($i.text, $x.e, $e.node, currentScope);})
-//  |  ^(ASSIGNMENT i=Identifier e=query {node = new AssignmentNode($i.text, $e.node, currentScope);})
   ;
 
 functionCall returns [TLNode node]
@@ -121,16 +120,11 @@ functionCall returns [TLNode node]
             paramSize = $exprList.e.size();
         }
       Function function = functions.get($Identifier.text + paramSize);
-    
-	    if(paramSize == 0){
-	        node = function.invoke(new ArrayList<TLNode>(),functions);
-	    }else{
-	        node = function.invoke($exprList.e,functions);
-	    }
-
+      function.setParameters(paramSize == 0 ? new ArrayList<TLNode>() : $exprList.e);
+      node = function;
+      
   }
   |  ^(FUNC_CALL Println expression?) {node = new PrintlnNode($expression.node);}
-//  |  ^(FUNC_CALL Println query) {node = new PrintlnNode($query.node);}
   |  ^(FUNC_CALL Print expression)
   |  ^(FUNC_CALL Assert expression) 
   |  ^(FUNC_CALL Size expression)
@@ -164,7 +158,7 @@ exprList returns [java.util.List<TLNode> e]
 @init {
   e = new ArrayList<TLNode>();
 }
-  :  ^(EXP_LIST expression+ {e.add($expression.node);})
+  :  ^(EXP_LIST (a=expression {e.add($a.node);})+)
   ; 
 
 // fix all other expressions!

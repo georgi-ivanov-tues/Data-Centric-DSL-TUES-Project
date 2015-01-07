@@ -1,9 +1,9 @@
 package org.dataCentricDSL.tree;
 
 import org.dataCentricDSL.Scope;
-import org.dataCentricDSL.TLValue;
+import org.dataCentricDSL.Value;
 
-public class IdentifierNode implements TLNode {
+public class IdentifierNode implements Node {
 
 	private String identifier;
 	private Scope scope;
@@ -14,8 +14,8 @@ public class IdentifierNode implements TLNode {
 	}
 
 	@Override
-	public TLValue evaluate() {
-		TLValue value = scope.resolve(identifier);
+	public Value evaluate() {
+		Value value = scope.resolve(identifier);
 		if(value == null) {
 			throw new RuntimeException("no such variable: " + this);
 		}

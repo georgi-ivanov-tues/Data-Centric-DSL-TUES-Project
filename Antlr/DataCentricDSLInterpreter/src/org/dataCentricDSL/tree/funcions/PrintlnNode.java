@@ -1,30 +1,30 @@
 package org.dataCentricDSL.tree.funcions;
 
-import org.dataCentricDSL.TLValue;
-import org.dataCentricDSL.tree.TLNode;
+import org.dataCentricDSL.Value;
+import org.dataCentricDSL.tree.Node;
 
 import java.io.PrintStream;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-public class PrintlnNode implements TLNode {
+public class PrintlnNode implements Node {
 
-	private TLNode expression;
+	private Node expression;
 	private PrintStream out;
 
-	public PrintlnNode(TLNode e) {
+	public PrintlnNode(Node e) {
 		this(e, System.out);
 	}
 
-	public PrintlnNode(TLNode e, PrintStream o) {
+	public PrintlnNode(Node e, PrintStream o) {
 		expression = e;
 		out = o;
 	}
 
 	@Override
-	public TLValue evaluate() {
-		TLValue value = expression.evaluate();
+	public Value evaluate() {
+		Value value = expression.evaluate();
 		if(value.isResultSet()){
 			try {
 				printResultSet(value.asResultSet());
@@ -34,7 +34,7 @@ public class PrintlnNode implements TLNode {
 		}else{
 			out.println(value);
 		}
-		return TLValue.VOID;
+		return Value.VOID;
 	}
 	
 	public void printResultSet(ResultSet resultSet) throws SQLException {

@@ -2,27 +2,27 @@ package org.dataCentricDSL.tree.expressions.operations;
 
 import java.util.List;
 
-import org.dataCentricDSL.TLValue;
-import org.dataCentricDSL.tree.TLNode;
+import org.dataCentricDSL.Value;
+import org.dataCentricDSL.tree.Node;
 
-public class SubNode implements TLNode {
-	private TLNode lhs;
-	private TLNode rhs;
+public class SubNode implements Node {
+	private Node lhs;
+	private Node rhs;
 
-	public SubNode(TLNode lhs, TLNode rhs) {
+	public SubNode(Node lhs, Node rhs) {
 		this.lhs = lhs;
 		this.rhs = rhs;
 	}
 
 	@Override
-	public TLValue evaluate() {
+	public Value evaluate() {
 
-		TLValue a = lhs.evaluate();
-		TLValue b = rhs.evaluate();
+		Value a = lhs.evaluate();
+		Value b = rhs.evaluate();
 
 		// number - number
 		if(a.isNumber() && b.isNumber()) {
-			return new TLValue(a.asDouble() - b.asDouble());
+			return new Value(a.asDouble() - b.asDouble());
 		}
 
 		//	    // list - any

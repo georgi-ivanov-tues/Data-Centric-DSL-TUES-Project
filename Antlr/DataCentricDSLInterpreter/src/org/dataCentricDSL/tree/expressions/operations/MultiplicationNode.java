@@ -1,26 +1,26 @@
 package org.dataCentricDSL.tree.expressions.operations;
 
-import org.dataCentricDSL.TLValue;
-import org.dataCentricDSL.tree.TLNode;
+import org.dataCentricDSL.Value;
+import org.dataCentricDSL.tree.Node;
 
-public class MultiplicationNode implements TLNode {
-	private TLNode lhs;
-	private TLNode rhs;
+public class MultiplicationNode implements Node {
+	private Node lhs;
+	private Node rhs;
 
-	public MultiplicationNode(TLNode lhs, TLNode rhs) {
+	public MultiplicationNode(Node lhs, Node rhs) {
 		this.lhs = lhs;
 		this.rhs = rhs;
 	}
 
 	@Override
-	public TLValue evaluate() {
+	public Value evaluate() {
 
-		TLValue a = lhs.evaluate();
-		TLValue b = rhs.evaluate();
+		Value a = lhs.evaluate();
+		Value b = rhs.evaluate();
 
 		// number * number
 		if(a.isNumber() && b.isNumber()) {
-			return new TLValue(a.asDouble() * b.asDouble());
+			return new Value(a.asDouble() * b.asDouble());
 		}
 
 		throw new RuntimeException("illegal expression: " + this);

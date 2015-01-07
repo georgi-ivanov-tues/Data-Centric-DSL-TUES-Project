@@ -3,19 +3,19 @@ package org.dataCentricDSL;
 import java.sql.ResultSet;
 import java.util.List;
 
-public class TLValue implements Comparable<TLValue> {
+public class Value implements Comparable<Value> {
 
-  public static final TLValue NULL = new TLValue();
-  public static final TLValue VOID = new TLValue();
+  public static final Value NULL = new Value();
+  public static final Value VOID = new Value();
 
   private Object value;
 
-  private TLValue() {
+  private Value() {
     // private constructor: only used for NULL and VOID
     value = new Object();
   }
 
-  public TLValue(Object v) {
+  public Value(Object v) {
     if(v == null) {
       throw new RuntimeException("v == null");
     }
@@ -43,8 +43,8 @@ public class TLValue implements Comparable<TLValue> {
   }
 
   @SuppressWarnings("unchecked")
-  public List<TLValue> asList() {
-    return (List<TLValue>)value;
+  public List<Value> asList() {
+    return (List<Value>)value;
   }
 
   public String asString() {
@@ -52,7 +52,7 @@ public class TLValue implements Comparable<TLValue> {
   }
 
   @Override
-  public int compareTo(TLValue that) {
+  public int compareTo(Value that) {
     if(this.isNumber() && that.isNumber()) {
       if(this.equals(that)) {
         return 0;
@@ -80,7 +80,7 @@ public class TLValue implements Comparable<TLValue> {
     if(o == null || this.getClass() != o.getClass()) {
       return false;
     }
-    TLValue that = (TLValue)o;
+    Value that = (Value)o;
     if(this.isNumber() && that.isNumber()) {
       double diff = Math.abs(this.asDouble() - that.asDouble());
       return diff < 0.00000000001;

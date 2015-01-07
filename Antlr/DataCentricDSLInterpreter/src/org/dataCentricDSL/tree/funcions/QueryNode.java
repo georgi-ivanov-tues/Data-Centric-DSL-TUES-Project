@@ -5,14 +5,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.dataCentricDSL.TLValue;
+import org.dataCentricDSL.Value;
 import org.dataCentricDSL.tree.AtomNode;
 import org.dataCentricDSL.tree.IdentifierNode;
-import org.dataCentricDSL.tree.TLNode;
+import org.dataCentricDSL.tree.Node;
 
-public class QueryNode  implements TLNode {
+public class QueryNode  implements Node {
 	
-	private static TLNode sqlStatement;
+	private static Node sqlStatement;
 	private Connection connection;
 	
 	public QueryNode(AtomNode queryStatement, Connection conn) {
@@ -26,14 +26,14 @@ public class QueryNode  implements TLNode {
 	}
 
 	@Override
-	public TLValue evaluate() {
+	public Value evaluate() {
 		ResultSet result = null;
 		try {
 			result = executeQuery(sqlStatement.evaluate().toString());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return new TLValue(result);
+		return new Value(result);
 	}
 	
 	public ResultSet executeQuery(String queryStatement) throws SQLException {

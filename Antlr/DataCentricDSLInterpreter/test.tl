@@ -1,8 +1,13 @@
-def hello()
-	println("Hello World");
-end
 
-hello();
+func hello(a,b){
+	if(a == b){
+		println(a + " = " + b);
+	}else{
+		println("damn...");
+	}
+}
+
+hello(1,1);
 
 /*
 a = 0;

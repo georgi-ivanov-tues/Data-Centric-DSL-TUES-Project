@@ -1,24 +1,24 @@
 package org.dataCentricDSL.tree;
 
 import org.dataCentricDSL.Scope;
-import org.dataCentricDSL.TLValue;
+import org.dataCentricDSL.Value;
 
-public class ForNode implements TLNode{
+public class ForNode implements Node{
 	
 	String initVarName;
-	TLNode initExpression;
+	Node initExpression;
 	AssignmentNode initVar;
 	
-	TLNode condition;
+	Node condition;
 	
 	String afterthoughtVarName;
-	TLNode aftExpression;
+	Node aftExpression;
 	AssignmentNode afterthoughtVar;
 	
-	TLNode block;
+	Node block;
 	Scope currentScope;
 	
-	public ForNode(String ident, TLNode exp, TLNode con, String aftIdent, TLNode aftExpress, TLNode bl, Scope curr) {
+	public ForNode(String ident, Node exp, Node con, String aftIdent, Node aftExpress, Node bl, Scope curr) {
 		currentScope = curr;
 		
 		initVarName = ident;
@@ -36,9 +36,9 @@ public class ForNode implements TLNode{
 	}
 	
 	@Override
-	public TLValue evaluate() {
+	public Value evaluate() {
 		initVar.evaluate();
-		TLValue value = condition.evaluate();
+		Value value = condition.evaluate();
 		
 		if(!value.isBoolean()) {
 			throw new RuntimeException("illegal boolean expression " + 
@@ -49,6 +49,6 @@ public class ForNode implements TLNode{
 			block.evaluate();
 		}
 		
-		return TLValue.VOID;
+		return Value.VOID;
 	}
 }

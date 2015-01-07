@@ -135,7 +135,7 @@ elseStat
   ;
 
 functionDecl
-  :  Def Identifier '(' idList? ')' block End 
+  :  'func' Identifier '(' idList? ')' '{' block '}' 
      {defineFunction($Identifier.text, $idList.tree, $block.tree);}
   ;
 

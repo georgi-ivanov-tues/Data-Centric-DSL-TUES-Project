@@ -3,10 +3,8 @@ package org.dataCentricDSL.tests;
 import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,15 +15,13 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.dataCentricDSL.DataCentricDSLLexer;
 import org.dataCentricDSL.DataCentricDSLParser;
-import org.dataCentricDSL.DataCentricDSLParser.program_return;
-import org.dataCentricDSL.Value;
-import org.dataCentricDSL.derbyDB.CreateDB;
 import org.dataCentricDSL.ProgramWalker;
+import org.dataCentricDSL.DataCentricDSLParser.program_return;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class QueryVariableCallTest {
+public class FunctionCallTest {
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 	@Before
@@ -39,24 +35,17 @@ public class QueryVariableCallTest {
 	}
 	
 	@Test
-	public void QueryExecutionTest() throws RecognitionException {
-		CharStream cs = new ANTLRStringStream("str = \"SELECT first_name FROM people WHERE first_name = 'Georgi'\"; result = query str; println(result);");
+	public void PrintExecutionTest() throws RecognitionException, IOException {
+		CharStream cs = new ANTLRStringStream("func hello(){println(\"Hello World\");}hello();");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
 		program_return program = parser.program();
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.getTree());
 		Map<String, Object> myMap = new HashMap<String, Object>();
-		try {
-			myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
-		
+		ProgramWalker walker = new ProgramWalker(nodeStream, myMap, parser.functions);
 		walker.program();
-		String str = outContent.toString();
-		System.out.println("asd = " + str.trim());
-		assertEquals("Georgi", str.trim());
+		
+		assertEquals("Hello World", outContent.toString().trim());
 	}
 }

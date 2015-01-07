@@ -1,46 +1,46 @@
 package org.dataCentricDSL.tree;
 
-import org.dataCentricDSL.TLValue;
+import org.dataCentricDSL.Value;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlockNode implements TLNode {
+public class BlockNode implements Node {
 
-  private List<TLNode> statements;
-  private TLNode returnStatement;
+  private List<Node> statements;
+  private Node returnStatement;
 
   public BlockNode() {
-    statements = new ArrayList<TLNode>();
+    statements = new ArrayList<Node>();
     returnStatement = null;
   }
 
-  public void addReturn(TLNode stat) {
+  public void addReturn(Node stat) {
     returnStatement = stat;
   }
 
-  public void addStatement(TLNode stat) {
+  public void addStatement(Node stat) {
     statements.add(stat);
   }
 
   @Override
-  public TLValue evaluate() {
-    for(TLNode stat : statements) {
-      TLValue value = stat.evaluate();
-      if(value != TLValue.VOID) {
+  public Value evaluate() {
+    for(Node stat : statements) {
+      Value value = stat.evaluate();
+      if(value != Value.VOID) {
         // return early from this block if value is a return statement
         return value;
       }
     }
 
     // return VOID or returnStatement.evaluate() if it's not null
-    return returnStatement == null ? TLValue.VOID : returnStatement.evaluate();
+    return returnStatement == null ? Value.VOID : returnStatement.evaluate();
   }
 
   @Override
   public String toString() {
     StringBuilder b = new StringBuilder();
-    for(TLNode stat : statements) {
+    for(Node stat : statements) {
       b.append(stat).append("\n");
     }
     if(returnStatement != null) {

@@ -1,20 +1,20 @@
 package org.dataCentricDSL.tree;
 
-import org.dataCentricDSL.TLValue;
+import org.dataCentricDSL.Value;
 
-public class WhileNode implements TLNode {
+public class WhileNode implements Node {
 
-	TLNode condition;
-	TLNode block;
+	Node condition;
+	Node block;
 
-	public WhileNode(TLNode con, TLNode bl) {
+	public WhileNode(Node con, Node bl) {
 		condition = con;
 		block = bl;
 	}
 
 	@Override
-	public TLValue evaluate() {
-		TLValue value = condition.evaluate();
+	public Value evaluate() {
+		Value value = condition.evaluate();
 
 		if(!value.isBoolean()) {
 			throw new RuntimeException("illegal boolean expression " + 
@@ -26,7 +26,7 @@ public class WhileNode implements TLNode {
 			value = condition.evaluate();
 		}
 
-		return TLValue.VOID;
+		return Value.VOID;
 	}
 
 }
