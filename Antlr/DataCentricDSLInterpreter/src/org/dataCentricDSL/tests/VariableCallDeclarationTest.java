@@ -34,7 +34,7 @@ public class VariableCallDeclarationTest {
 	
 	@Test
 	public void VariableCallDeclarationTest() throws RecognitionException{
-		CharStream cs = new ANTLRStringStream("str = \"Hello World\"; str2 = str; println(str2);");
+		CharStream cs = new ANTLRStringStream("str = \"Hello World\"; str2 = str; println str2;");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

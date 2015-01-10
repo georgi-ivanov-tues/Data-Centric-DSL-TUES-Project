@@ -33,7 +33,7 @@ public class PrintTest {
 	
 	@Test
 	public void PrintExecutionTest() throws RecognitionException, IOException {
-		CharStream cs = new ANTLRStringStream("println(\"Hello World\");");
+		CharStream cs = new ANTLRStringStream("println \"Hello World\";");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

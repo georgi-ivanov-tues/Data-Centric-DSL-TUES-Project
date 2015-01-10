@@ -16,7 +16,7 @@ import org.junit.Test;
 public class FunctionDeclarationTest {
 	@Test
 	public void PrintExecutionTest() throws RecognitionException, IOException {
-		CharStream cs = new ANTLRStringStream("func hello(){println(\"Hello World\");}");
+		CharStream cs = new ANTLRStringStream("func hello(){println \"Hello World\";}");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

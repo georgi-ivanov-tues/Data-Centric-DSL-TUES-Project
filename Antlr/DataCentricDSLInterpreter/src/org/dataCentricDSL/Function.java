@@ -4,8 +4,11 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.dataCentricDSL.ProgramWalker;
+import org.dataCentricDSL.derbyDB.CreateDB;
 import org.dataCentricDSL.tree.Node;
 
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -89,10 +92,13 @@ public class Function implements Node{
 			// Create a tree walker to evaluate this function's code block
 			CommonTreeNodeStream nodes = new CommonTreeNodeStream(code);
 			ProgramWalker walker = new ProgramWalker(nodes, scope, functions);
+			walker.context.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
 			walker.program();
 		} catch (RecognitionException e) {
 			// do not recover from this
 			throw new RuntimeException("something went wrong, terminating...", e);
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 	
 	}

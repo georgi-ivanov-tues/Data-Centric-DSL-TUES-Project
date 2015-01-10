@@ -32,7 +32,7 @@ public class IfStatementTest {
 	
 	@Test
 	public void PrintExecutionTest() throws RecognitionException, IOException {
-		CharStream cs = new ANTLRStringStream("a = 2; if(a == 2){println(\"YES\");}else{println(\"NO\");}");
+		CharStream cs = new ANTLRStringStream("a = 2; if(a == 2){println \"YES\";}else{println \"NO\";}");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

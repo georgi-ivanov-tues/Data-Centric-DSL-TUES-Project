@@ -40,7 +40,7 @@ public class QueryVariableCallTest {
 	
 	@Test
 	public void QueryExecutionTest() throws RecognitionException {
-		CharStream cs = new ANTLRStringStream("str = \"SELECT first_name FROM people WHERE first_name = 'Georgi'\"; result = query str; println(result);");
+		CharStream cs = new ANTLRStringStream("str = \"SELECT first_name FROM people WHERE first_name = 'Georgi'\"; result = query str; println result;");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

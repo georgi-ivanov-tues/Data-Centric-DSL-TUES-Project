@@ -60,14 +60,14 @@ options {
   
 }
 
-program returns [TLNode node]
+program returns [Node node]
   :  block{
       node = $block.node; 
       node.evaluate();
     } 
   ;
  
-block returns [TLNode node]
+block returns [Node node]
 @init {
   BlockNode bn = new BlockNode();
   node = bn;
@@ -83,21 +83,22 @@ block returns [TLNode node]
       )
   ;
 
-statement returns [TLNode node]
+statement returns [Node node]
   :  assignment     {node = $assignment.node;}
   |  functionCall   {node = $functionCall.node;}
   |  ifStatement    {node = $ifStatement.node;}
   |  forStatement   {node = $forStatement.node;} 
   |  whileStatement {node = $whileStatement.node;}
-//  |  incrementation {node = $incrementation.node;}
+  |  incrementation {node = $incrementation.node;}
   |  query {node = $query.node;}
   ;
 
-query returns [TLNode node]: 
+query returns [Node node]: 
   {String sqlStatement = "";}
   ^('query'
    (  String {node = new QueryNode(new AtomNode($String.text), (Connection) context.get("dataSource"));} 
    |  variableCall {node = new QueryNode(new IdentifierNode($variableCall.value, currentScope), (Connection) context.get("dataSource"));}
+//   |  expression {node = new QueryNode($expression.node, (Connection) context.get("dataSource"));}
    )
    )
 ;
@@ -106,11 +107,19 @@ variableCall returns [String value]:
   Identifier {value=$Identifier.text;}
 ;
 
-assignment returns [TLNode node] 
+assignment returns [Node node] 
   :  ^(ASSIGNMENT i=Identifier x=indexes? e=expression {node = new AssignmentNode($i.text, $x.e, $e.node, currentScope);})
+  |  ^('global' ASSIGNMENT i=Identifier x=indexes? e=expression {
+        Scope globalScope = currentScope;
+        
+        while(globalScope.parent() != null){
+          globalScope = globalScope.parent();
+        }
+        node = new AssignmentNode($i.text, $x.e, $e.node, globalScope);
+        })
   ;
 
-functionCall returns [TLNode node]
+functionCall returns [Node node]
   :  ^(FUNC_CALL Identifier exprList?) {
         
         int paramSize = 0;
@@ -120,7 +129,7 @@ functionCall returns [TLNode node]
             paramSize = $exprList.e.size();
         }
       Function function = functions.get($Identifier.text + paramSize);
-      function.setParameters(paramSize == 0 ? new ArrayList<TLNode>() : $exprList.e);
+      function.setParameters(paramSize == 0 ? new ArrayList<Node>() : $exprList.e);
       node = function;
       
   }
@@ -130,7 +139,7 @@ functionCall returns [TLNode node]
   |  ^(FUNC_CALL Size expression)
   ;
 
-ifStatement returns [TLNode node]
+ifStatement returns [Node node]
 @init  {
   IfNode ifNode = new IfNode();
   node = ifNode;
@@ -141,12 +150,16 @@ ifStatement returns [TLNode node]
      )
   ;
    
-forStatement returns [TLNode node]
-//:  ^(For a=Identifier b=expression c=expression d=block) {node = new ForNode($a.text, $b.node, $c.node, $d.node, currentScope);}
-:  ^(For a=Identifier b=expression c=expression d=Identifier e=expression f=block) {node = new ForNode($a.text, $b.node, $c.node, $d.text, $e.node, $f.node, currentScope);}
+forStatement returns [Node node]
+  :  ^(For a=assignment b=expression c=afterthought d=block) {node = new ForNode($a.node, $b.node, $c.node, $d.node, currentScope);}
   ;
 
-whileStatement returns [TLNode node]
+afterthought returns [Node node]:
+  ((Identifier '=' expression {node = new AssignmentNode($Identifier.text, $expression.node, currentScope);}) 
+  | incrementation {node = $incrementation.node;})
+;
+
+whileStatement returns [Node node]
   :  ^(While expression block) {node = new WhileNode($expression.node, $block.node);}
   ;
 
@@ -154,15 +167,15 @@ idList returns [java.util.List<String> i]
   :  ^(ID_LIST Identifier+)
   ;
 
-exprList returns [java.util.List<TLNode> e]
+exprList returns [java.util.List<Node> e]
 @init {
-  e = new ArrayList<TLNode>();
+  e = new ArrayList<Node>();
 }
   :  ^(EXP_LIST (a=expression {e.add($a.node);})+)
   ; 
 
 // fix all other expressions!
-expression returns [TLNode node]
+expression returns [Node node]
   :  ^(TERNARY expression expression expression)
   |  ^(In expression expression)
   |  ^('||' a=expression b=expression) 
@@ -186,23 +199,17 @@ expression returns [TLNode node]
   |  Null
   |  lookup {node = $lookup.node;}  
   |  query {node = $query.node;}
+//  |  incrementation{node = $incrementation.node;}
   ;
 
-//incrementation returns [TLNode node]
-//  :  ^(Identifier '++'){
-//  System.out.println($Identifier.text);
-//  System.out.println(new AtomNode(new IdentifierNode($Identifier.text, currentScope).evaluate().asDouble() + new AtomNode(1).evaluate().asDouble()));
-//  node = new AssignmentNode(
-//  $Identifier.text,
-//  new AtomNode(new IdentifierNode($Identifier.text, currentScope).evaluate().asDouble() + new AtomNode(1).evaluate().asDouble()), 
-//  currentScope);
-//  }
-//  |  ^('--' Identifier){node = new AddNode($a.node, new AtomNode(-1));}
-  //new AssignmentNode(initVarName, new AtomNode(initExpression.evaluate().asDouble() + new AtomNode(counter).evaluate().asDouble()), currentScope);
-//;
+incrementation returns [Node node]
+  :(variableCall ('++'{node = new IncrementationNode($variableCall.value,1,currentScope);}
+  | '--' {node = new IncrementationNode($variableCall.value,-1,currentScope);})
+  )
+;
 
 
-lookup returns [TLNode node]
+lookup returns [Node node]
   :  ^(LOOKUP functionCall indexes?)
   |  ^(LOOKUP list indexes?)
   |  ^(LOOKUP expression indexes?) 
@@ -217,12 +224,12 @@ lookup returns [TLNode node]
       }
   ;
   
-list returns [TLNode node]
+list returns [Node node]
   :  ^(LIST exprList?)
   ;
 
-indexes returns [java.util.List<TLNode> e]
-@init {e = new java.util.ArrayList<TLNode>();}
+indexes returns [java.util.List<Node> e]
+@init {e = new java.util.ArrayList<Node>();}
   :  ^(INDEXES (expression {e.add($expression.node);})+)
   ;
   

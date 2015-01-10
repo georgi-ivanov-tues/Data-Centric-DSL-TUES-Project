@@ -36,7 +36,7 @@ public class FunctionCallWithParametersTest {
 	
 	@Test
 	public void PrintExecutionTest() throws RecognitionException, IOException {
-		CharStream cs = new ANTLRStringStream("func hello(a){println(a);}hello(1);");
+		CharStream cs = new ANTLRStringStream("func hello(a){println a;}hello(1);");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

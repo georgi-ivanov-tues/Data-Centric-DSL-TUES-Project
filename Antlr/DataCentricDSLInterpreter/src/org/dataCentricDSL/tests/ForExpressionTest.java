@@ -32,7 +32,7 @@ public class ForExpressionTest {
 	
 	@Test
 	public void PrintExecutionTest() throws RecognitionException, IOException {
-		CharStream cs = new ANTLRStringStream("b = 0;for(a = 0; a < 5; a = a + 1){b = b + 1;}println(b);");
+		CharStream cs = new ANTLRStringStream("b = 0;for(a = 0; a < 5; a = a + 1){b = b + 1;}println b;");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

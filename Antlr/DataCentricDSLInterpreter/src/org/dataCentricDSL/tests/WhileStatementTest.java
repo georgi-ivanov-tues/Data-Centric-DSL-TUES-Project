@@ -32,7 +32,7 @@ public class WhileStatementTest {
 	
 	@Test
 	public void PrintExecutionTest() throws RecognitionException, IOException {
-		CharStream cs = new ANTLRStringStream("a = 0; while(a < 2){a = a + 1;}println(a);");
+		CharStream cs = new ANTLRStringStream("a = 0; while(a < 2){a = a + 1;}println a;");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);

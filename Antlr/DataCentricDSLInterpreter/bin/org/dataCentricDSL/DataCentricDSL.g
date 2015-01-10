@@ -87,7 +87,7 @@ block
 
 statement
   :  assignment ';'   -> assignment
-//  |  incrementation ';' -> incrementation
+  |  incrementation ';' -> incrementation
   |  functionCall ';' -> functionCall
   |  ifStatement
   |  forStatement
@@ -105,15 +105,13 @@ variableCall:
 
 assignment
   :  Identifier indexes? '=' expression -> ^(ASSIGNMENT Identifier indexes? expression)
-//  |  Identifier '=' query -> ^(ASSIGNMENT Identifier query)
+  | 'global' Identifier indexes? '=' expression -> ^('global' ASSIGNMENT Identifier indexes? expression)
   ;
 
 functionCall
   :  Identifier '(' exprList? ')' -> ^(FUNC_CALL Identifier exprList?)
-  |  Println '(' expression? ')'   -> ^(FUNC_CALL Println expression?)
-//  |  Println '(' a=(expression? | query) ')'   -> ^(FUNC_CALL Println $a)
-//  |  Println '(' query ')'        -> ^(FUNC_CALL Println query)
-  |  Print '(' expression ')'     -> ^(FUNC_CALL Print expression)
+  |  Println  expression    -> ^(FUNC_CALL Println expression)
+  |  Print expression     -> ^(FUNC_CALL Print expression)
   |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
   |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)
   ;
@@ -140,12 +138,13 @@ functionDecl
   ;
 
 forStatement
-// :  For '(' Identifier '=' expression ';' expression ')' '{' block '}' 
-//     -> ^(For Identifier expression expression block)
-   :  For '(' Identifier '=' expression ';' expression ';' Identifier '=' expression ')' '{' block '}' 
-     -> ^(For Identifier expression expression Identifier expression block)
-  
-  ;
+  :  (For '(' assignment ';' expression ';' afterthought ')' '{' block '}' 
+     -> ^(For assignment expression afterthought block))
+;
+
+afterthought:
+  (Identifier '=' expression) | incrementation
+;
 
 whileStatement
   :  While '(' expression ')' '{' block '}' -> ^(While expression block)
@@ -163,9 +162,9 @@ expression
   :  condExpr | query
   ;
 
-//incrementation
-//  : Identifier '++' -> ^(Identifier)
-//;
+incrementation
+  : variableCall ('++'|'--')
+;
 
 condExpr
   :  (orExpr -> orExpr) 
@@ -220,8 +219,8 @@ list
   ;
 
 lookup
-  :  functionCall indexes?       -> ^(LOOKUP functionCall indexes?)
-  |  list indexes?               -> ^(LOOKUP list indexes?)
+//  :  functionCall indexes?       -> ^(LOOKUP functionCall indexes?)
+  :  list indexes?               -> ^(LOOKUP list indexes?)
   |  Identifier indexes?         -> ^(LOOKUP Identifier indexes?)
   |  String indexes?             -> ^(LOOKUP String indexes?)
   |  '(' expression ')' indexes? -> ^(LOOKUP expression indexes?)
