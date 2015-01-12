@@ -4,7 +4,10 @@
 package org.validation
 
 import org.dataCentricDSL.Condition
+import org.dataCentricDSL.DataCentricDSL
 import org.dataCentricDSL.DataCentricDSLPackage
+import org.dataCentricDSL.FunctionCall
+import org.dataCentricDSL.FunctionDecl
 import org.dataCentricDSL.NumberLiteral
 import org.dataCentricDSL.Query
 import org.dataCentricDSL.StringLiteral
@@ -37,6 +40,34 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 			if(!(rightOperand instanceof StringLiteral)) {
 				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
 			}
+		}
+	}
+	
+	@Check
+	def void checkIfCalledFunctionExists(FunctionCall fc) {
+		var Array = fc.eContainer;
+		while(!(Array instanceof DataCentricDSL)) {
+			Array = Array.eContainer;
+		}
+		
+		val Elements = (Array as DataCentricDSL)
+							.elements
+							.toArray
+							.filter(typeof(FunctionDecl));
+							
+		var found = 0;
+		for(i : 0..< Elements.length) {
+			if(found == 0) {
+				if(Elements.get(i).name.toString.equals(fc.name.toString)) {
+					found = 1;
+				}
+			} else {
+				return;
+			}
+		}
+		
+		if(found == 0) {
+			error("Undefined function.", DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME);
 		}
 	}
 	

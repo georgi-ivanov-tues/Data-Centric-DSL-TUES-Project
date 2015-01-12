@@ -9,6 +9,8 @@ import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Division;
 import org.dataCentricDSL.ForMultiAssign;
 import org.dataCentricDSL.ForStatement;
+import org.dataCentricDSL.FunctionCall;
+import org.dataCentricDSL.FunctionDecl;
 import org.dataCentricDSL.IfStatement;
 import org.dataCentricDSL.Mod;
 import org.dataCentricDSL.MultiAssign;
@@ -160,6 +162,20 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
+			case DataCentricDSLPackage.FUNCTION_CALL:
+				if(context == grammarAccess.getFunctionCallRule() ||
+				   context == grammarAccess.getSimpleStatementRule() ||
+				   context == grammarAccess.getStatementRule()) {
+					sequence_FunctionCall(context, (FunctionCall) semanticObject); 
+					return; 
+				}
+				else break;
+			case DataCentricDSLPackage.FUNCTION_DECL:
+				if(context == grammarAccess.getFunctionDeclRule()) {
+					sequence_FunctionDecl(context, (FunctionDecl) semanticObject); 
+					return; 
+				}
+				else break;
 			case DataCentricDSLPackage.IF_STATEMENT:
 				if(context == grammarAccess.getCompoundStatementRule() ||
 				   context == grammarAccess.getIfStatementRule() ||
@@ -302,9 +318,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case DataCentricDSLPackage.SWITCH_STATEMENT:
-				if(context == grammarAccess.getCompoundStatementRule() ||
-				   context == grammarAccess.getStatementRule() ||
-				   context == grammarAccess.getSwitchStatementRule()) {
+				if(context == grammarAccess.getSwitchStatementRule()) {
 					sequence_SwitchStatement(context, (SwitchStatement) semanticObject); 
 					return; 
 				}
@@ -1480,7 +1494,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     elements+=Statement*
+	 *     (elements+=Statement | elements+=FunctionDecl)*
 	 */
 	protected void sequence_DataCentricDSL(EObject context, DataCentricDSL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1523,6 +1537,24 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (forVar=VariableDecl forCondition=StatementCondition (operation=PostfixOperation | operation=ForMultiAssign) statements+=Statement*)
 	 */
 	protected void sequence_ForStatement(EObject context, ForStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ValidID ((arguments+=VariableCall | arguments+=StringLiteral) (arguments+=VariableCall | arguments+=StringLiteral)*)?)
+	 */
+	protected void sequence_FunctionCall(EObject context, FunctionCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ValidID (arguments+=ValidID arguments+=ValidID*)? statements+=Statement*)
+	 */
+	protected void sequence_FunctionDecl(EObject context, FunctionDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1673,7 +1705,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID (variableValue=VariableParam | variableValue=Expression))
+	 *     (gloval?='global'? name=ValidID (variableValue=VariableParam | variableValue=Expression))
 	 */
 	protected void sequence_VariableDecl(EObject context, VariableDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

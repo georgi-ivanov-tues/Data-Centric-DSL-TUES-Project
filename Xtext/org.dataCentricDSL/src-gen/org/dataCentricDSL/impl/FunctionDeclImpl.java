@@ -5,9 +5,8 @@ package org.dataCentricDSL.impl;
 import java.util.Collection;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
+import org.dataCentricDSL.FunctionDecl;
 import org.dataCentricDSL.Statement;
-import org.dataCentricDSL.SwitchStatement;
-import org.dataCentricDSL.VariableCall;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -26,40 +25,50 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Switch Statement</b></em>'.
+ * An implementation of the model object '<em><b>Function Decl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.SwitchStatementImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.SwitchStatementImpl#getCases <em>Cases</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.SwitchStatementImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.FunctionDeclImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.FunctionDeclImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.FunctionDeclImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements SwitchStatement
+public class FunctionDeclImpl extends MinimalEObjectImpl.Container implements FunctionDecl
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected VariableCall name;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getCases() <em>Cases</em>}' attribute list.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCases()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<String> cases;
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArguments()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> arguments;
 
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -76,7 +85,7 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SwitchStatementImpl()
+  protected FunctionDeclImpl()
   {
     super();
   }
@@ -89,7 +98,7 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.SWITCH_STATEMENT;
+    return DataCentricDSLPackage.Literals.FUNCTION_DECL;
   }
 
   /**
@@ -97,7 +106,7 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableCall getName()
+  public String getName()
   {
     return name;
   }
@@ -107,16 +116,12 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(VariableCall newName, NotificationChain msgs)
+  public void setName(String newName)
   {
-    VariableCall oldName = name;
+    String oldName = name;
     name = newName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.SWITCH_STATEMENT__NAME, oldName, newName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.FUNCTION_DECL__NAME, oldName, name));
   }
 
   /**
@@ -124,34 +129,13 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(VariableCall newName)
+  public EList<String> getArguments()
   {
-    if (newName != name)
+    if (arguments == null)
     {
-      NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.SWITCH_STATEMENT__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.SWITCH_STATEMENT__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
-      if (msgs != null) msgs.dispatch();
+      arguments = new EDataTypeEList<String>(String.class, this, DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.SWITCH_STATEMENT__NAME, newName, newName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getCases()
-  {
-    if (cases == null)
-    {
-      cases = new EDataTypeEList<String>(String.class, this, DataCentricDSLPackage.SWITCH_STATEMENT__CASES);
-    }
-    return cases;
+    return arguments;
   }
 
   /**
@@ -163,7 +147,7 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
   {
     if (statements == null)
     {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS);
+      statements = new EObjectContainmentEList<Statement>(Statement.class, this, DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS);
     }
     return statements;
   }
@@ -178,9 +162,7 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.SWITCH_STATEMENT__NAME:
-        return basicSetName(null, msgs);
-      case DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS:
+      case DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS:
         return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -196,11 +178,11 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.SWITCH_STATEMENT__NAME:
+      case DataCentricDSLPackage.FUNCTION_DECL__NAME:
         return getName();
-      case DataCentricDSLPackage.SWITCH_STATEMENT__CASES:
-        return getCases();
-      case DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS:
+      case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
+        return getArguments();
+      case DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS:
         return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -217,14 +199,14 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.SWITCH_STATEMENT__NAME:
-        setName((VariableCall)newValue);
+      case DataCentricDSLPackage.FUNCTION_DECL__NAME:
+        setName((String)newValue);
         return;
-      case DataCentricDSLPackage.SWITCH_STATEMENT__CASES:
-        getCases().clear();
-        getCases().addAll((Collection<? extends String>)newValue);
+      case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
+        getArguments().clear();
+        getArguments().addAll((Collection<? extends String>)newValue);
         return;
-      case DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS:
+      case DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS:
         getStatements().clear();
         getStatements().addAll((Collection<? extends Statement>)newValue);
         return;
@@ -242,13 +224,13 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.SWITCH_STATEMENT__NAME:
-        setName((VariableCall)null);
+      case DataCentricDSLPackage.FUNCTION_DECL__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case DataCentricDSLPackage.SWITCH_STATEMENT__CASES:
-        getCases().clear();
+      case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
+        getArguments().clear();
         return;
-      case DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS:
+      case DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS:
         getStatements().clear();
         return;
     }
@@ -265,11 +247,11 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.SWITCH_STATEMENT__NAME:
-        return name != null;
-      case DataCentricDSLPackage.SWITCH_STATEMENT__CASES:
-        return cases != null && !cases.isEmpty();
-      case DataCentricDSLPackage.SWITCH_STATEMENT__STATEMENTS:
+      case DataCentricDSLPackage.FUNCTION_DECL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
+        return arguments != null && !arguments.isEmpty();
+      case DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS:
         return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -286,10 +268,12 @@ public class SwitchStatementImpl extends MinimalEObjectImpl.Container implements
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (cases: ");
-    result.append(cases);
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", arguments: ");
+    result.append(arguments);
     result.append(')');
     return result.toString();
   }
 
-} //SwitchStatementImpl
+} //FunctionDeclImpl

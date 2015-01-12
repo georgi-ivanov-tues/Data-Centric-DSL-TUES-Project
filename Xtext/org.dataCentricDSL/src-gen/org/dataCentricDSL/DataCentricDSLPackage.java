@@ -133,13 +133,22 @@ public interface DataCentricDSLPackage extends EPackage
   int VARIABLE_DECL = 3;
 
   /**
+   * The feature id for the '<em><b>Gloval</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECL__GLOVAL = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL__NAME = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+  int VARIABLE_DECL__NAME = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Variable Value</b></em>' containment reference.
@@ -148,7 +157,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL__VARIABLE_VALUE = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
+  int VARIABLE_DECL__VARIABLE_VALUE = SIMPLE_STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Variable Decl</em>' class.
@@ -157,7 +166,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 2;
+  int VARIABLE_DECL_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.QueryImpl <em>Query</em>}' class.
@@ -225,6 +234,43 @@ public interface DataCentricDSLPackage extends EPackage
   int PRINT_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.FunctionCallImpl <em>Function Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.FunctionCallImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunctionCall()
+   * @generated
+   */
+  int FUNCTION_CALL = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__NAME = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__ARGUMENTS = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Function Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.VariableCallImpl <em>Variable Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -232,7 +278,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableCall()
    * @generated
    */
-  int VARIABLE_CALL = 6;
+  int VARIABLE_CALL = 7;
 
   /**
    * The feature id for the '<em><b>Print Value</b></em>' attribute.
@@ -287,7 +333,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 7;
+  int EXPRESSION = 8;
 
   /**
    * The feature id for the '<em><b>Print Value</b></em>' attribute.
@@ -315,7 +361,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 8;
+  int NUMBER_LITERAL = 9;
 
   /**
    * The feature id for the '<em><b>Print Value</b></em>' attribute.
@@ -352,7 +398,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getCompoundStatement()
    * @generated
    */
-  int COMPOUND_STATEMENT = 9;
+  int COMPOUND_STATEMENT = 10;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -373,6 +419,52 @@ public interface DataCentricDSLPackage extends EPackage
   int COMPOUND_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.FunctionDeclImpl <em>Function Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.FunctionDeclImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunctionDecl()
+   * @generated
+   */
+  int FUNCTION_DECL = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DECL__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DECL__ARGUMENTS = 1;
+
+  /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DECL__STATEMENTS = 2;
+
+  /**
+   * The number of structural features of the '<em>Function Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DECL_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.IfStatementImpl <em>If Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -380,7 +472,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getIfStatement()
    * @generated
    */
-  int IF_STATEMENT = 10;
+  int IF_STATEMENT = 12;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -417,16 +509,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getSwitchStatement()
    * @generated
    */
-  int SWITCH_STATEMENT = 11;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SWITCH_STATEMENT__STATEMENTS = COMPOUND_STATEMENT__STATEMENTS;
+  int SWITCH_STATEMENT = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -435,7 +518,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SWITCH_STATEMENT__NAME = COMPOUND_STATEMENT_FEATURE_COUNT + 0;
+  int SWITCH_STATEMENT__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Cases</b></em>' attribute list.
@@ -444,7 +527,16 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SWITCH_STATEMENT__CASES = COMPOUND_STATEMENT_FEATURE_COUNT + 1;
+  int SWITCH_STATEMENT__CASES = 1;
+
+  /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_STATEMENT__STATEMENTS = 2;
 
   /**
    * The number of structural features of the '<em>Switch Statement</em>' class.
@@ -453,7 +545,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SWITCH_STATEMENT_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 2;
+  int SWITCH_STATEMENT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.WhileStatementImpl <em>While Statement</em>}' class.
@@ -463,7 +555,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getWhileStatement()
    * @generated
    */
-  int WHILE_STATEMENT = 12;
+  int WHILE_STATEMENT = 14;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -500,7 +592,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getForStatement()
    * @generated
    */
-  int FOR_STATEMENT = 13;
+  int FOR_STATEMENT = 15;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -555,7 +647,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getStatementCondition()
    * @generated
    */
-  int STATEMENT_CONDITION = 14;
+  int STATEMENT_CONDITION = 16;
 
   /**
    * The feature id for the '<em><b>Statement Condition</b></em>' containment reference list.
@@ -583,7 +675,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 15;
+  int CONDITION = 17;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -620,7 +712,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getConditionElement()
    * @generated
    */
-  int CONDITION_ELEMENT = 16;
+  int CONDITION_ELEMENT = 18;
 
   /**
    * The number of structural features of the '<em>Condition Element</em>' class.
@@ -639,7 +731,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getForMultiAssign()
    * @generated
    */
-  int FOR_MULTI_ASSIGN = 17;
+  int FOR_MULTI_ASSIGN = 19;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -685,7 +777,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiAssign()
    * @generated
    */
-  int MULTI_ASSIGN = 18;
+  int MULTI_ASSIGN = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -731,7 +823,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiAssignRightOperand()
    * @generated
    */
-  int MULTI_ASSIGN_RIGHT_OPERAND = 19;
+  int MULTI_ASSIGN_RIGHT_OPERAND = 21;
 
   /**
    * The number of structural features of the '<em>Multi Assign Right Operand</em>' class.
@@ -750,7 +842,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPostfixOperation()
    * @generated
    */
-  int POSTFIX_OPERATION = 20;
+  int POSTFIX_OPERATION = 22;
 
   /**
    * The number of structural features of the '<em>Postfix Operation</em>' class.
@@ -769,7 +861,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 21;
+  int STRING_LITERAL = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -797,7 +889,16 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableParam()
    * @generated
    */
-  int VARIABLE_PARAM = 22;
+  int VARIABLE_PARAM = 24;
+
+  /**
+   * The feature id for the '<em><b>Gloval</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_PARAM__GLOVAL = VARIABLE_DECL__GLOVAL;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -870,7 +971,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 23;
+  int ADDITION = 25;
 
   /**
    * The feature id for the '<em><b>Print Value</b></em>' attribute.
@@ -916,7 +1017,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getSubstraction()
    * @generated
    */
-  int SUBSTRACTION = 24;
+  int SUBSTRACTION = 26;
 
   /**
    * The feature id for the '<em><b>Print Value</b></em>' attribute.
@@ -962,7 +1063,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 25;
+  int MULTIPLICATION = 27;
 
   /**
    * The feature id for the '<em><b>Print Value</b></em>' attribute.
@@ -1008,7 +1109,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getDivision()
    * @generated
    */
-  int DIVISION = 26;
+  int DIVISION = 28;
 
   /**
    * The feature id for the '<em><b>Print Value</b></em>' attribute.
@@ -1054,7 +1155,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMod()
    * @generated
    */
-  int MOD = 27;
+  int MOD = 29;
 
   /**
    * The feature id for the '<em><b>Print Value</b></em>' attribute.
@@ -1145,6 +1246,17 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getVariableDecl();
 
   /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableDecl#isGloval <em>Gloval</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Gloval</em>'.
+   * @see org.dataCentricDSL.VariableDecl#isGloval()
+   * @see #getVariableDecl()
+   * @generated
+   */
+  EAttribute getVariableDecl_Gloval();
+
+  /**
    * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableDecl#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1207,6 +1319,38 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EAttribute getPrint_PrintValue();
+
+  /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.FunctionCall <em>Function Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Call</em>'.
+   * @see org.dataCentricDSL.FunctionCall
+   * @generated
+   */
+  EClass getFunctionCall();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.FunctionCall#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.dataCentricDSL.FunctionCall#getName()
+   * @see #getFunctionCall()
+   * @generated
+   */
+  EAttribute getFunctionCall_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.FunctionCall#getArguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arguments</em>'.
+   * @see org.dataCentricDSL.FunctionCall#getArguments()
+   * @see #getFunctionCall()
+   * @generated
+   */
+  EReference getFunctionCall_Arguments();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.VariableCall <em>Variable Call</em>}'.
@@ -1293,6 +1437,49 @@ public interface DataCentricDSLPackage extends EPackage
   EReference getCompoundStatement_Statements();
 
   /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.FunctionDecl <em>Function Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Decl</em>'.
+   * @see org.dataCentricDSL.FunctionDecl
+   * @generated
+   */
+  EClass getFunctionDecl();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.FunctionDecl#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.dataCentricDSL.FunctionDecl#getName()
+   * @see #getFunctionDecl()
+   * @generated
+   */
+  EAttribute getFunctionDecl_Name();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.dataCentricDSL.FunctionDecl#getArguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Arguments</em>'.
+   * @see org.dataCentricDSL.FunctionDecl#getArguments()
+   * @see #getFunctionDecl()
+   * @generated
+   */
+  EAttribute getFunctionDecl_Arguments();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.FunctionDecl#getStatements <em>Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see org.dataCentricDSL.FunctionDecl#getStatements()
+   * @see #getFunctionDecl()
+   * @generated
+   */
+  EReference getFunctionDecl_Statements();
+
+  /**
    * Returns the meta object for class '{@link org.dataCentricDSL.IfStatement <em>If Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1344,6 +1531,17 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EAttribute getSwitchStatement_Cases();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.SwitchStatement#getStatements <em>Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see org.dataCentricDSL.SwitchStatement#getStatements()
+   * @see #getSwitchStatement()
+   * @generated
+   */
+  EReference getSwitchStatement_Statements();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.WhileStatement <em>While Statement</em>}'.
@@ -1885,6 +2083,14 @@ public interface DataCentricDSLPackage extends EPackage
     EClass VARIABLE_DECL = eINSTANCE.getVariableDecl();
 
     /**
+     * The meta object literal for the '<em><b>Gloval</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_DECL__GLOVAL = eINSTANCE.getVariableDecl_Gloval();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1935,6 +2141,32 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EAttribute PRINT__PRINT_VALUE = eINSTANCE.getPrint_PrintValue();
+
+    /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.FunctionCallImpl <em>Function Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.FunctionCallImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunctionCall()
+     * @generated
+     */
+    EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_CALL__NAME = eINSTANCE.getFunctionCall_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_CALL__ARGUMENTS = eINSTANCE.getFunctionCall_Arguments();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.VariableCallImpl <em>Variable Call</em>}' class.
@@ -2009,6 +2241,40 @@ public interface DataCentricDSLPackage extends EPackage
     EReference COMPOUND_STATEMENT__STATEMENTS = eINSTANCE.getCompoundStatement_Statements();
 
     /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.FunctionDeclImpl <em>Function Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.FunctionDeclImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunctionDecl()
+     * @generated
+     */
+    EClass FUNCTION_DECL = eINSTANCE.getFunctionDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_DECL__NAME = eINSTANCE.getFunctionDecl_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_DECL__ARGUMENTS = eINSTANCE.getFunctionDecl_Arguments();
+
+    /**
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_DECL__STATEMENTS = eINSTANCE.getFunctionDecl_Statements();
+
+    /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.IfStatementImpl <em>If Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2051,6 +2317,14 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EAttribute SWITCH_STATEMENT__CASES = eINSTANCE.getSwitchStatement_Cases();
+
+    /**
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SWITCH_STATEMENT__STATEMENTS = eINSTANCE.getSwitchStatement_Statements();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.WhileStatementImpl <em>While Statement</em>}' class.

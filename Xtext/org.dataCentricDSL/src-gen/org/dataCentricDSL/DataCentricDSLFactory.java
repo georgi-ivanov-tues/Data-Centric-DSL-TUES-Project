@@ -77,6 +77,15 @@ public interface DataCentricDSLFactory extends EFactory
   Print createPrint();
 
   /**
+   * Returns a new object of class '<em>Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Call</em>'.
+   * @generated
+   */
+  FunctionCall createFunctionCall();
+
+  /**
    * Returns a new object of class '<em>Variable Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,6 +120,15 @@ public interface DataCentricDSLFactory extends EFactory
    * @generated
    */
   CompoundStatement createCompoundStatement();
+
+  /**
+   * Returns a new object of class '<em>Function Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Decl</em>'.
+   * @generated
+   */
+  FunctionDecl createFunctionDecl();
 
   /**
    * Returns a new object of class '<em>If Statement</em>'.
