@@ -110,8 +110,8 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class VariableDeclElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableDecl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cGlovalAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cGlovalGlobalKeyword_0_0 = (Keyword)cGlovalAssignment_0.eContents().get(0);
+		private final Assignment cGlobalAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cGlobalGlobalKeyword_0_0 = (Keyword)cGlobalAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameValidIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final RuleCall cOpAssignmentParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
@@ -121,17 +121,17 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVariableValueExpressionParserRuleCall_3_0_1 = (RuleCall)cVariableValueAlternatives_3_0.eContents().get(1);
 		
 		//VariableDecl:
-		//	gloval?="global"? name=ValidID OpAssignment variableValue=(VariableParam | Expression);
+		//	global?="global"? name=ValidID OpAssignment variableValue=(VariableParam | Expression);
 		public ParserRule getRule() { return rule; }
 
-		//gloval?="global"? name=ValidID OpAssignment variableValue=(VariableParam | Expression)
+		//global?="global"? name=ValidID OpAssignment variableValue=(VariableParam | Expression)
 		public Group getGroup() { return cGroup; }
 
-		//gloval?="global"?
-		public Assignment getGlovalAssignment_0() { return cGlovalAssignment_0; }
+		//global?="global"?
+		public Assignment getGlobalAssignment_0() { return cGlobalAssignment_0; }
 
 		//"global"
-		public Keyword getGlovalGlobalKeyword_0_0() { return cGlovalGlobalKeyword_0_0; }
+		public Keyword getGlobalGlobalKeyword_0_0() { return cGlobalGlobalKeyword_0_0; }
 
 		//name=ValidID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -1640,7 +1640,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VariableDecl:
-	//	gloval?="global"? name=ValidID OpAssignment variableValue=(VariableParam | Expression);
+	//	global?="global"? name=ValidID OpAssignment variableValue=(VariableParam | Expression);
 	public VariableDeclElements getVariableDeclAccess() {
 		return pVariableDecl;
 	}

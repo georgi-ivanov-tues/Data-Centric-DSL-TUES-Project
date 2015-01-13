@@ -260,16 +260,16 @@ ruleVariableDecl returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_gloval_0_0=	'global' 
+		lv_global_0_0=	'global' 
     {
-        newLeafNode(lv_gloval_0_0, grammarAccess.getVariableDeclAccess().getGlovalGlobalKeyword_0_0());
+        newLeafNode(lv_global_0_0, grammarAccess.getVariableDeclAccess().getGlobalGlobalKeyword_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getVariableDeclRule());
 	        }
-       		setWithLastConsumed($current, "gloval", true, "global");
+       		setWithLastConsumed($current, "global", true, "global");
 	    }
 
 )

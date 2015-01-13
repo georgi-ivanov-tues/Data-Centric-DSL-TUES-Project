@@ -21,7 +21,7 @@ SimpleStatement:
 ;
 
 VariableDecl:
-	(gloval?='global')? name=ValidID OpAssignment variableValue=(VariableParam | Expression)
+	(global?='global')? name=ValidID OpAssignment variableValue=(VariableParam | Expression)
 ;
 
 OpAssignment:

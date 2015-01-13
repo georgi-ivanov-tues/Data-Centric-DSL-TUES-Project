@@ -1705,7 +1705,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (gloval?='global'? name=ValidID (variableValue=VariableParam | variableValue=Expression))
+	 *     (global?='global'? name=ValidID (variableValue=VariableParam | variableValue=Expression))
 	 */
 	protected void sequence_VariableDecl(EObject context, VariableDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

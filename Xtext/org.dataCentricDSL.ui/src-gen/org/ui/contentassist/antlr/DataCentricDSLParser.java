@@ -311,7 +311,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXImportDeclarationAccess().getGroup_1_0(), "rule__XImportDeclaration__Group_1_0__0");
 					put(grammarAccess.getQualifiedNameInStaticImportAccess().getGroup(), "rule__QualifiedNameInStaticImport__Group__0");
 					put(grammarAccess.getDataCentricDSLAccess().getElementsAssignment(), "rule__DataCentricDSL__ElementsAssignment");
-					put(grammarAccess.getVariableDeclAccess().getGlovalAssignment_0(), "rule__VariableDecl__GlovalAssignment_0");
+					put(grammarAccess.getVariableDeclAccess().getGlobalAssignment_0(), "rule__VariableDecl__GlobalAssignment_0");
 					put(grammarAccess.getVariableDeclAccess().getNameAssignment_1(), "rule__VariableDecl__NameAssignment_1");
 					put(grammarAccess.getVariableDeclAccess().getVariableValueAssignment_3(), "rule__VariableDecl__VariableValueAssignment_3");
 					put(grammarAccess.getVariableParamAccess().getVariableStringParamAssignment_1_0(), "rule__VariableParam__VariableStringParamAssignment_1_0");

@@ -378,7 +378,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableDecl_Gloval()
+  public EAttribute getVariableDecl_Global()
   {
     return (EAttribute)variableDeclEClass.getEStructuralFeatures().get(0);
   }
@@ -1131,7 +1131,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     simpleStatementEClass = createEClass(SIMPLE_STATEMENT);
 
     variableDeclEClass = createEClass(VARIABLE_DECL);
-    createEAttribute(variableDeclEClass, VARIABLE_DECL__GLOVAL);
+    createEAttribute(variableDeclEClass, VARIABLE_DECL__GLOBAL);
     createEAttribute(variableDeclEClass, VARIABLE_DECL__NAME);
     createEReference(variableDeclEClass, VARIABLE_DECL__VARIABLE_VALUE);
 
@@ -1300,7 +1300,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(simpleStatementEClass, SimpleStatement.class, "SimpleStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(variableDeclEClass, VariableDecl.class, "VariableDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariableDecl_Gloval(), ecorePackage.getEBoolean(), "gloval", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariableDecl_Global(), ecorePackage.getEBoolean(), "global", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariableDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDecl_VariableValue(), this.getSimpleStatement(), null, "variableValue", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

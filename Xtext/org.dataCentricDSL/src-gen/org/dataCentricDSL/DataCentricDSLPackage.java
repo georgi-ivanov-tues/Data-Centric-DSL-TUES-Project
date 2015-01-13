@@ -133,13 +133,13 @@ public interface DataCentricDSLPackage extends EPackage
   int VARIABLE_DECL = 3;
 
   /**
-   * The feature id for the '<em><b>Gloval</b></em>' attribute.
+   * The feature id for the '<em><b>Global</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL__GLOVAL = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+  int VARIABLE_DECL__GLOBAL = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -892,13 +892,13 @@ public interface DataCentricDSLPackage extends EPackage
   int VARIABLE_PARAM = 24;
 
   /**
-   * The feature id for the '<em><b>Gloval</b></em>' attribute.
+   * The feature id for the '<em><b>Global</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_PARAM__GLOVAL = VARIABLE_DECL__GLOVAL;
+  int VARIABLE_PARAM__GLOBAL = VARIABLE_DECL__GLOBAL;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1246,15 +1246,15 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getVariableDecl();
 
   /**
-   * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableDecl#isGloval <em>Gloval</em>}'.
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableDecl#isGlobal <em>Global</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Gloval</em>'.
-   * @see org.dataCentricDSL.VariableDecl#isGloval()
+   * @return the meta object for the attribute '<em>Global</em>'.
+   * @see org.dataCentricDSL.VariableDecl#isGlobal()
    * @see #getVariableDecl()
    * @generated
    */
-  EAttribute getVariableDecl_Gloval();
+  EAttribute getVariableDecl_Global();
 
   /**
    * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableDecl#getName <em>Name</em>}'.
@@ -2083,12 +2083,12 @@ public interface DataCentricDSLPackage extends EPackage
     EClass VARIABLE_DECL = eINSTANCE.getVariableDecl();
 
     /**
-     * The meta object literal for the '<em><b>Gloval</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Global</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE_DECL__GLOVAL = eINSTANCE.getVariableDecl_Gloval();
+    EAttribute VARIABLE_DECL__GLOBAL = eINSTANCE.getVariableDecl_Global();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

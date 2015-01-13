@@ -13,7 +13,7 @@
     <genClasses ecoreClass="DataCentricDSL.ecore#//Statement"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//SimpleStatement"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/gloval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/global"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableDecl/variableValue"/>
     </genClasses>

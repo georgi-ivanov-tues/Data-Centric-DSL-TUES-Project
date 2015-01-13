@@ -815,11 +815,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariableDecl"
-    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:257:1: ruleVariableDecl returns [EObject current=null] : ( ( (lv_gloval_0_0= 'global' ) )? ( (lv_name_1_0= ruleValidID ) ) ruleOpAssignment ( ( (lv_variableValue_3_1= ruleVariableParam | lv_variableValue_3_2= ruleExpression ) ) ) ) ;
+    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:257:1: ruleVariableDecl returns [EObject current=null] : ( ( (lv_global_0_0= 'global' ) )? ( (lv_name_1_0= ruleValidID ) ) ruleOpAssignment ( ( (lv_variableValue_3_1= ruleVariableParam | lv_variableValue_3_2= ruleExpression ) ) ) ) ;
     public final EObject ruleVariableDecl() throws RecognitionException {
         EObject current = null;
 
-        Token lv_gloval_0_0=null;
+        Token lv_global_0_0=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
 
         EObject lv_variableValue_3_1 = null;
@@ -830,13 +830,13 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:260:28: ( ( ( (lv_gloval_0_0= 'global' ) )? ( (lv_name_1_0= ruleValidID ) ) ruleOpAssignment ( ( (lv_variableValue_3_1= ruleVariableParam | lv_variableValue_3_2= ruleExpression ) ) ) ) )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:261:1: ( ( (lv_gloval_0_0= 'global' ) )? ( (lv_name_1_0= ruleValidID ) ) ruleOpAssignment ( ( (lv_variableValue_3_1= ruleVariableParam | lv_variableValue_3_2= ruleExpression ) ) ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:260:28: ( ( ( (lv_global_0_0= 'global' ) )? ( (lv_name_1_0= ruleValidID ) ) ruleOpAssignment ( ( (lv_variableValue_3_1= ruleVariableParam | lv_variableValue_3_2= ruleExpression ) ) ) ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:261:1: ( ( (lv_global_0_0= 'global' ) )? ( (lv_name_1_0= ruleValidID ) ) ruleOpAssignment ( ( (lv_variableValue_3_1= ruleVariableParam | lv_variableValue_3_2= ruleExpression ) ) ) )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:261:1: ( ( (lv_gloval_0_0= 'global' ) )? ( (lv_name_1_0= ruleValidID ) ) ruleOpAssignment ( ( (lv_variableValue_3_1= ruleVariableParam | lv_variableValue_3_2= ruleExpression ) ) ) )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:261:2: ( (lv_gloval_0_0= 'global' ) )? ( (lv_name_1_0= ruleValidID ) ) ruleOpAssignment ( ( (lv_variableValue_3_1= ruleVariableParam | lv_variableValue_3_2= ruleExpression ) ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:261:1: ( ( (lv_global_0_0= 'global' ) )? ( (lv_name_1_0= ruleValidID ) ) ruleOpAssignment ( ( (lv_variableValue_3_1= ruleVariableParam | lv_variableValue_3_2= ruleExpression ) ) ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:261:2: ( (lv_global_0_0= 'global' ) )? ( (lv_name_1_0= ruleValidID ) ) ruleOpAssignment ( ( (lv_variableValue_3_1= ruleVariableParam | lv_variableValue_3_2= ruleExpression ) ) )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:261:2: ( (lv_gloval_0_0= 'global' ) )?
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:261:2: ( (lv_global_0_0= 'global' ) )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -845,15 +845,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:262:1: (lv_gloval_0_0= 'global' )
+                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:262:1: (lv_global_0_0= 'global' )
                     {
-                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:262:1: (lv_gloval_0_0= 'global' )
-                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:263:3: lv_gloval_0_0= 'global'
+                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:262:1: (lv_global_0_0= 'global' )
+                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:263:3: lv_global_0_0= 'global'
                     {
-                    lv_gloval_0_0=(Token)match(input,14,FOLLOW_14_in_ruleVariableDecl603); if (state.failed) return current;
+                    lv_global_0_0=(Token)match(input,14,FOLLOW_14_in_ruleVariableDecl603); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              newLeafNode(lv_gloval_0_0, grammarAccess.getVariableDeclAccess().getGlovalGlobalKeyword_0_0());
+                              newLeafNode(lv_global_0_0, grammarAccess.getVariableDeclAccess().getGlobalGlobalKeyword_0_0());
                           
                     }
                     if ( state.backtracking==0 ) {
@@ -861,7 +861,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                       	        if (current==null) {
                       	            current = createModelElement(grammarAccess.getVariableDeclRule());
                       	        }
-                             		setWithLastConsumed(current, "gloval", true, "global");
+                             		setWithLastConsumed(current, "global", true, "global");
                       	    
                     }
 

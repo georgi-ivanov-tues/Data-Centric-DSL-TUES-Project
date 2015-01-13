@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.VariableDeclImpl#isGloval <em>Gloval</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.VariableDeclImpl#isGlobal <em>Global</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.VariableDeclImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.VariableDeclImpl#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
@@ -32,24 +32,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class VariableDeclImpl extends SimpleStatementImpl implements VariableDecl
 {
   /**
-   * The default value of the '{@link #isGloval() <em>Gloval</em>}' attribute.
+   * The default value of the '{@link #isGlobal() <em>Global</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isGloval()
+   * @see #isGlobal()
    * @generated
    * @ordered
    */
-  protected static final boolean GLOVAL_EDEFAULT = false;
+  protected static final boolean GLOBAL_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isGloval() <em>Gloval</em>}' attribute.
+   * The cached value of the '{@link #isGlobal() <em>Global</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isGloval()
+   * @see #isGlobal()
    * @generated
    * @ordered
    */
-  protected boolean gloval = GLOVAL_EDEFAULT;
+  protected boolean global = GLOBAL_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -107,9 +107,9 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isGloval()
+  public boolean isGlobal()
   {
-    return gloval;
+    return global;
   }
 
   /**
@@ -117,12 +117,12 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setGloval(boolean newGloval)
+  public void setGlobal(boolean newGlobal)
   {
-    boolean oldGloval = gloval;
-    gloval = newGloval;
+    boolean oldGlobal = global;
+    global = newGlobal;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_DECL__GLOVAL, oldGloval, gloval));
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_DECL__GLOBAL, oldGlobal, global));
   }
 
   /**
@@ -222,8 +222,8 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_DECL__GLOVAL:
-        return isGloval();
+      case DataCentricDSLPackage.VARIABLE_DECL__GLOBAL:
+        return isGlobal();
       case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         return getName();
       case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
@@ -242,8 +242,8 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_DECL__GLOVAL:
-        setGloval((Boolean)newValue);
+      case DataCentricDSLPackage.VARIABLE_DECL__GLOBAL:
+        setGlobal((Boolean)newValue);
         return;
       case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         setName((String)newValue);
@@ -265,8 +265,8 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_DECL__GLOVAL:
-        setGloval(GLOVAL_EDEFAULT);
+      case DataCentricDSLPackage.VARIABLE_DECL__GLOBAL:
+        setGlobal(GLOBAL_EDEFAULT);
         return;
       case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         setName(NAME_EDEFAULT);
@@ -288,8 +288,8 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_DECL__GLOVAL:
-        return gloval != GLOVAL_EDEFAULT;
+      case DataCentricDSLPackage.VARIABLE_DECL__GLOBAL:
+        return global != GLOBAL_EDEFAULT;
       case DataCentricDSLPackage.VARIABLE_DECL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
@@ -309,8 +309,8 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (gloval: ");
-    result.append(gloval);
+    result.append(" (global: ");
+    result.append(global);
     result.append(", name: ");
     result.append(name);
     result.append(')');

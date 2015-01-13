@@ -16632,22 +16632,22 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__VariableDecl__Group__0__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:4997:1: rule__VariableDecl__Group__0__Impl : ( ( rule__VariableDecl__GlovalAssignment_0 )? ) ;
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:4997:1: rule__VariableDecl__Group__0__Impl : ( ( rule__VariableDecl__GlobalAssignment_0 )? ) ;
     public final void rule__VariableDecl__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5001:1: ( ( ( rule__VariableDecl__GlovalAssignment_0 )? ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5002:1: ( ( rule__VariableDecl__GlovalAssignment_0 )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5001:1: ( ( ( rule__VariableDecl__GlobalAssignment_0 )? ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5002:1: ( ( rule__VariableDecl__GlobalAssignment_0 )? )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5002:1: ( ( rule__VariableDecl__GlovalAssignment_0 )? )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5003:1: ( rule__VariableDecl__GlovalAssignment_0 )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5002:1: ( ( rule__VariableDecl__GlobalAssignment_0 )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5003:1: ( rule__VariableDecl__GlobalAssignment_0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getGlovalAssignment_0()); 
+               before(grammarAccess.getVariableDeclAccess().getGlobalAssignment_0()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5004:1: ( rule__VariableDecl__GlovalAssignment_0 )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5004:1: ( rule__VariableDecl__GlobalAssignment_0 )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
@@ -16656,10 +16656,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
             switch (alt60) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5004:2: rule__VariableDecl__GlovalAssignment_0
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5004:2: rule__VariableDecl__GlobalAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__VariableDecl__GlovalAssignment_0_in_rule__VariableDecl__Group__0__Impl10954);
-                    rule__VariableDecl__GlovalAssignment_0();
+                    pushFollow(FOLLOW_rule__VariableDecl__GlobalAssignment_0_in_rule__VariableDecl__Group__0__Impl10954);
+                    rule__VariableDecl__GlobalAssignment_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -16670,7 +16670,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getGlovalAssignment_0()); 
+               after(grammarAccess.getVariableDeclAccess().getGlobalAssignment_0()); 
             }
 
             }
@@ -63460,9 +63460,9 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__DataCentricDSL__ElementsAssignment"
 
 
-    // $ANTLR start "rule__VariableDecl__GlovalAssignment_0"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22172:1: rule__VariableDecl__GlovalAssignment_0 : ( ( 'global' ) ) ;
-    public final void rule__VariableDecl__GlovalAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__VariableDecl__GlobalAssignment_0"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22172:1: rule__VariableDecl__GlobalAssignment_0 : ( ( 'global' ) ) ;
+    public final void rule__VariableDecl__GlobalAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -63474,23 +63474,23 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22178:1: ( 'global' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getGlovalGlobalKeyword_0_0()); 
+               before(grammarAccess.getVariableDeclAccess().getGlobalGlobalKeyword_0_0()); 
             }
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22179:1: ( 'global' )
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22180:1: 'global'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getGlovalGlobalKeyword_0_0()); 
+               before(grammarAccess.getVariableDeclAccess().getGlobalGlobalKeyword_0_0()); 
             }
-            match(input,89,FOLLOW_89_in_rule__VariableDecl__GlovalAssignment_044689); if (state.failed) return ;
+            match(input,89,FOLLOW_89_in_rule__VariableDecl__GlobalAssignment_044689); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getGlovalGlobalKeyword_0_0()); 
+               after(grammarAccess.getVariableDeclAccess().getGlobalGlobalKeyword_0_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getGlovalGlobalKeyword_0_0()); 
+               after(grammarAccess.getVariableDeclAccess().getGlobalGlobalKeyword_0_0()); 
             }
 
             }
@@ -63510,7 +63510,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__GlovalAssignment_0"
+    // $ANTLR end "rule__VariableDecl__GlobalAssignment_0"
 
 
     // $ANTLR start "rule__VariableDecl__NameAssignment_1"
@@ -77584,7 +77584,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_53_in_rule__SimpleStatement__Group__1__Impl10889 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableDecl__Group__0__Impl_in_rule__VariableDecl__Group__010924 = new BitSet(new long[]{0x0000000000000010L,0x0000000002000000L});
     public static final BitSet FOLLOW_rule__VariableDecl__Group__1_in_rule__VariableDecl__Group__010927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableDecl__GlovalAssignment_0_in_rule__VariableDecl__Group__0__Impl10954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableDecl__GlobalAssignment_0_in_rule__VariableDecl__Group__0__Impl10954 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableDecl__Group__1__Impl_in_rule__VariableDecl__Group__110985 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_rule__VariableDecl__Group__2_in_rule__VariableDecl__Group__110988 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableDecl__NameAssignment_1_in_rule__VariableDecl__Group__1__Impl11015 = new BitSet(new long[]{0x0000000000000002L});
@@ -78960,7 +78960,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_rule__QualifiedNameInStaticImport__Group__1__Impl_in_rule__QualifiedNameInStaticImport__Group__144583 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_46_in_rule__QualifiedNameInStaticImport__Group__1__Impl44611 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DataCentricDSL__ElementsAlternatives_0_in_rule__DataCentricDSL__ElementsAssignment44651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_rule__VariableDecl__GlovalAssignment_044689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_rule__VariableDecl__GlobalAssignment_044689 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_rule__VariableDecl__NameAssignment_144728 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableDecl__VariableValueAlternatives_3_0_in_rule__VariableDecl__VariableValueAssignment_344759 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__VariableParam__VariableStringParamAssignment_1_044792 = new BitSet(new long[]{0x0000000000000002L});
