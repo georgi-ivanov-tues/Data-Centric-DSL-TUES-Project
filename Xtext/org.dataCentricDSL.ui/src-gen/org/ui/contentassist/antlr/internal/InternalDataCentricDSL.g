@@ -8641,9 +8641,11 @@ rule__PostfixOperation__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getPostfixOperationAccess().getVariableCallParserRuleCall_0()); }
-	ruleVariableCall
-{ after(grammarAccess.getPostfixOperationAccess().getVariableCallParserRuleCall_0()); }
+{ before(grammarAccess.getPostfixOperationAccess().getPostfixOperationAction_0()); }
+(
+
+)
+{ after(grammarAccess.getPostfixOperationAccess().getPostfixOperationAction_0()); }
 )
 
 ;
@@ -8658,6 +8660,7 @@ rule__PostfixOperation__Group__1
     }
 :
 	rule__PostfixOperation__Group__1__Impl
+	rule__PostfixOperation__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -8669,15 +8672,45 @@ rule__PostfixOperation__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getPostfixOperationAccess().getOpAssignment_1()); }
-(rule__PostfixOperation__OpAssignment_1)
-{ after(grammarAccess.getPostfixOperationAccess().getOpAssignment_1()); }
+{ before(grammarAccess.getPostfixOperationAccess().getCallAssignment_1()); }
+(rule__PostfixOperation__CallAssignment_1)
+{ after(grammarAccess.getPostfixOperationAccess().getCallAssignment_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__PostfixOperation__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__PostfixOperation__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PostfixOperation__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPostfixOperationAccess().getOpAssignment_2()); }
+(rule__PostfixOperation__OpAssignment_2)
+{ after(grammarAccess.getPostfixOperationAccess().getOpAssignment_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -22860,14 +22893,29 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__PostfixOperation__OpAssignment_1
+rule__PostfixOperation__CallAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getPostfixOperationAccess().getOpPostfixOperationOperatorParserRuleCall_1_0()); }
-	rulePostfixOperationOperator{ after(grammarAccess.getPostfixOperationAccess().getOpPostfixOperationOperatorParserRuleCall_1_0()); }
+{ before(grammarAccess.getPostfixOperationAccess().getCallVariableCallParserRuleCall_1_0()); }
+	ruleVariableCall{ after(grammarAccess.getPostfixOperationAccess().getCallVariableCallParserRuleCall_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PostfixOperation__OpAssignment_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPostfixOperationAccess().getOpPostfixOperationOperatorParserRuleCall_2_0()); }
+	rulePostfixOperationOperator{ after(grammarAccess.getPostfixOperationAccess().getOpPostfixOperationOperatorParserRuleCall_2_0()); }
 )
 
 ;

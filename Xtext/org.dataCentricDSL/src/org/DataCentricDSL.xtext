@@ -186,7 +186,7 @@ MultiAssignRightOperand:
 ;
 
 PostfixOperation:
-	VariableCall op=PostfixOperationOperator
+		{PostfixOperation}	call=VariableCall op=PostfixOperationOperator
 ;
 
 StringLiteral:

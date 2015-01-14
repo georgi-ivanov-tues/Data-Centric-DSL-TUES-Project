@@ -16,6 +16,7 @@ import org.dataCentricDSL.Mod;
 import org.dataCentricDSL.MultiAssign;
 import org.dataCentricDSL.Multiplication;
 import org.dataCentricDSL.NumberLiteral;
+import org.dataCentricDSL.PostfixOperation;
 import org.dataCentricDSL.Print;
 import org.dataCentricDSL.Query;
 import org.dataCentricDSL.StatementCondition;
@@ -260,6 +261,14 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
+			case DataCentricDSLPackage.POSTFIX_OPERATION:
+				if(context == grammarAccess.getPostfixOperationRule() ||
+				   context == grammarAccess.getSimpleStatementRule() ||
+				   context == grammarAccess.getStatementRule()) {
+					sequence_PostfixOperation(context, (PostfixOperation) semanticObject); 
+					return; 
+				}
+				else break;
 			case DataCentricDSLPackage.PRINT:
 				if(context == grammarAccess.getPrintRule() ||
 				   context == grammarAccess.getPrintParamRule() ||
@@ -324,11 +333,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case DataCentricDSLPackage.VARIABLE_CALL:
-				if(context == grammarAccess.getPostfixOperationRule()) {
-					sequence_PostfixOperation_VariableCall(context, (VariableCall) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getConditionElementRule() ||
+				if(context == grammarAccess.getConditionElementRule() ||
 				   context == grammarAccess.getMultiAssignRightOperandRule() ||
 				   context == grammarAccess.getPrintRule() ||
 				   context == grammarAccess.getPrintParamRule() ||
@@ -1619,10 +1624,20 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (variableCall=ValidID op=PostfixOperationOperator)
+	 *     (call=VariableCall op=PostfixOperationOperator)
 	 */
-	protected void sequence_PostfixOperation_VariableCall(EObject context, VariableCall semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_PostfixOperation(EObject context, PostfixOperation semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.POSTFIX_OPERATION__CALL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.POSTFIX_OPERATION__CALL));
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.POSTFIX_OPERATION__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.POSTFIX_OPERATION__OP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPostfixOperationAccess().getCallVariableCallParserRuleCall_1_0(), semanticObject.getCall());
+		feeder.accept(grammarAccess.getPostfixOperationAccess().getOpPostfixOperationOperatorParserRuleCall_2_0(), semanticObject.getOp());
+		feeder.finish();
 	}
 	
 	

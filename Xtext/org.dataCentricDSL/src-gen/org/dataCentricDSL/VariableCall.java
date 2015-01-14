@@ -12,7 +12,6 @@ package org.dataCentricDSL;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.dataCentricDSL.VariableCall#getVariableCall <em>Variable Call</em>}</li>
- *   <li>{@link org.dataCentricDSL.VariableCall#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -20,7 +19,7 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface VariableCall extends Query, Print, ConditionElement, MultiAssignRightOperand, PostfixOperation
+public interface VariableCall extends Query, Print, ConditionElement, MultiAssignRightOperand
 {
   /**
    * Returns the value of the '<em><b>Variable Call</b></em>' attribute.
@@ -47,31 +46,5 @@ public interface VariableCall extends Query, Print, ConditionElement, MultiAssig
    * @generated
    */
   void setVariableCall(String value);
-
-  /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Op</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute.
-   * @see #setOp(String)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableCall_Op()
-   * @model
-   * @generated
-   */
-  String getOp();
-
-  /**
-   * Sets the value of the '{@link org.dataCentricDSL.VariableCall#getOp <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' attribute.
-   * @see #getOp()
-   * @generated
-   */
-  void setOp(String value);
 
 } // VariableCall

@@ -138,7 +138,6 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         T result = caseVariableCall(variableCall);
         if (result == null) result = caseQuery(variableCall);
         if (result == null) result = caseConditionElement(variableCall);
-        if (result == null) result = casePostfixOperation(variableCall);
         if (result == null) result = casePrint(variableCall);
         if (result == null) result = caseMultiAssignRightOperand(variableCall);
         if (result == null) result = caseSimpleStatement(variableCall);

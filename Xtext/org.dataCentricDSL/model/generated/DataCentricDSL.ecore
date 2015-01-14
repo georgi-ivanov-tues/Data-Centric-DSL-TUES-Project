@@ -24,9 +24,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableCall" eSuperTypes="#//Query #//Print #//ConditionElement #//MultiAssignRightOperand #//PostfixOperation">
+  <eClassifiers xsi:type="ecore:EClass" name="VariableCall" eSuperTypes="#//Query #//Print #//ConditionElement #//MultiAssignRightOperand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableCall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//Print #//ConditionElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//Expression #//MultiAssignRightOperand">
@@ -92,7 +91,11 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiAssignRightOperand"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PostfixOperation" eSuperTypes="#//SimpleStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PostfixOperation" eSuperTypes="#//SimpleStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="call" eType="#//VariableCall"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="#//ConditionElement #//MultiAssignRightOperand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

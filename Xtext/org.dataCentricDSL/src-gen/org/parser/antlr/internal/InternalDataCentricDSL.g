@@ -2221,28 +2221,43 @@ rulePostfixOperation returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getPostfixOperationAccess().getVariableCallParserRuleCall_0()); 
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getPostfixOperationAccess().getPostfixOperationAction_0(),
+            $current);
     }
-    this_VariableCall_0=ruleVariableCall
-    { 
-        $current = $this_VariableCall_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-(
+)(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPostfixOperationAccess().getOpPostfixOperationOperatorParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getPostfixOperationAccess().getCallVariableCallParserRuleCall_1_0()); 
 	    }
-		lv_op_1_0=rulePostfixOperationOperator		{
+		lv_call_1_0=ruleVariableCall		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPostfixOperationRule());
+	        }
+       		set(
+       			$current, 
+       			"call",
+        		lv_call_1_0, 
+        		"VariableCall");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPostfixOperationAccess().getOpPostfixOperationOperatorParserRuleCall_2_0()); 
+	    }
+		lv_op_2_0=rulePostfixOperationOperator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPostfixOperationRule());
 	        }
        		set(
        			$current, 
        			"op",
-        		lv_op_1_0, 
+        		lv_op_2_0, 
         		"PostfixOperationOperator");
 	        afterParserOrEnumRuleCall();
 	    }

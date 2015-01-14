@@ -29,7 +29,6 @@
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableCall">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableCall/variableCall"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableCall/op"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Expression"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//NumberLiteral">
@@ -78,7 +77,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//MultiAssign/right"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//MultiAssignRightOperand"/>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//PostfixOperation"/>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//PostfixOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//PostfixOperation/call"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//PostfixOperation/op"/>
+    </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//StringLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//StringLiteral/value"/>
     </genClasses>

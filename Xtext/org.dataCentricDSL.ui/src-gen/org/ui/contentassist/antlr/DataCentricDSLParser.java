@@ -360,7 +360,8 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiAssignAccess().getLeftAssignment_0(), "rule__MultiAssign__LeftAssignment_0");
 					put(grammarAccess.getMultiAssignAccess().getOpAssignment_1(), "rule__MultiAssign__OpAssignment_1");
 					put(grammarAccess.getMultiAssignAccess().getRightAssignment_2(), "rule__MultiAssign__RightAssignment_2");
-					put(grammarAccess.getPostfixOperationAccess().getOpAssignment_1(), "rule__PostfixOperation__OpAssignment_1");
+					put(grammarAccess.getPostfixOperationAccess().getCallAssignment_1(), "rule__PostfixOperation__CallAssignment_1");
+					put(grammarAccess.getPostfixOperationAccess().getOpAssignment_2(), "rule__PostfixOperation__OpAssignment_2");
 					put(grammarAccess.getStringLiteralAccess().getValueAssignment(), "rule__StringLiteral__ValueAssignment");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");

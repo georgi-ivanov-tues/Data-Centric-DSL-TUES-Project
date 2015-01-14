@@ -23,6 +23,7 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_p;
 	protected AbstractElementAlias match_Print_PrintKeyword_0_q;
+	protected AbstractElementAlias match_Print_Query_QueryKeyword_0_q_or___PrintKeyword_0_QueryKeyword_0_q__;
 	protected AbstractElementAlias match_Query_QueryKeyword_0_q;
 	protected AbstractElementAlias match_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1;
 	protected AbstractElementAlias match_SwitchStatement___DefaultKeyword_7_0_ColonKeyword_7_1__q;
@@ -40,6 +41,7 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
 		match_Primary_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
 		match_Print_PrintKeyword_0_q = new TokenAlias(false, true, grammarAccess.getPrintAccess().getPrintKeyword_0());
+		match_Print_Query_QueryKeyword_0_q_or___PrintKeyword_0_QueryKeyword_0_q__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPrintAccess().getPrintKeyword_0()), new TokenAlias(false, true, grammarAccess.getQueryAccess().getQueryKeyword_0())), new TokenAlias(false, true, grammarAccess.getQueryAccess().getQueryKeyword_0()));
 		match_Query_QueryKeyword_0_q = new TokenAlias(false, true, grammarAccess.getQueryAccess().getQueryKeyword_0());
 		match_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementConditionAccess().getOpAndParserRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getStatementConditionAccess().getOpOrParserRuleCall_1_0_1()));
 		match_SwitchStatement___DefaultKeyword_7_0_ColonKeyword_7_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSwitchStatementAccess().getDefaultKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getSwitchStatementAccess().getColonKeyword_7_1()));
@@ -131,6 +133,8 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 				emit_Primary_LeftParenthesisKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Print_PrintKeyword_0_q.equals(syntax))
 				emit_Print_PrintKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Print_Query_QueryKeyword_0_q_or___PrintKeyword_0_QueryKeyword_0_q__.equals(syntax))
+				emit_Print_Query_QueryKeyword_0_q_or___PrintKeyword_0_QueryKeyword_0_q__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Query_QueryKeyword_0_q.equals(syntax))
 				emit_Query_QueryKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1.equals(syntax))
@@ -182,6 +186,14 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	 *     'print'?
 	 */
 	protected void emit_Print_PrintKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ('print' 'query'?) | 'query'?
+	 */
+	protected void emit_Print_Query_QueryKeyword_0_q_or___PrintKeyword_0_QueryKeyword_0_q__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

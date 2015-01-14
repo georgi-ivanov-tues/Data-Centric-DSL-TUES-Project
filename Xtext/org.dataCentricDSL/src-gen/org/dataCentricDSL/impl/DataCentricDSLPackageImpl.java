@@ -498,16 +498,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableCall_Op()
-  {
-    return (EAttribute)variableCallEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getExpression()
   {
     return expressionEClass;
@@ -878,6 +868,26 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getPostfixOperation_Call()
+  {
+    return (EReference)postfixOperationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPostfixOperation_Op()
+  {
+    return (EAttribute)postfixOperationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getStringLiteral()
   {
     return stringLiteralEClass;
@@ -1147,7 +1157,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
 
     variableCallEClass = createEClass(VARIABLE_CALL);
     createEAttribute(variableCallEClass, VARIABLE_CALL__VARIABLE_CALL);
-    createEAttribute(variableCallEClass, VARIABLE_CALL__OP);
 
     expressionEClass = createEClass(EXPRESSION);
 
@@ -1200,6 +1209,8 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     multiAssignRightOperandEClass = createEClass(MULTI_ASSIGN_RIGHT_OPERAND);
 
     postfixOperationEClass = createEClass(POSTFIX_OPERATION);
+    createEReference(postfixOperationEClass, POSTFIX_OPERATION__CALL);
+    createEAttribute(postfixOperationEClass, POSTFIX_OPERATION__OP);
 
     stringLiteralEClass = createEClass(STRING_LITERAL);
     createEAttribute(stringLiteralEClass, STRING_LITERAL__VALUE);
@@ -1271,7 +1282,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     variableCallEClass.getESuperTypes().add(this.getPrint());
     variableCallEClass.getESuperTypes().add(this.getConditionElement());
     variableCallEClass.getESuperTypes().add(this.getMultiAssignRightOperand());
-    variableCallEClass.getESuperTypes().add(this.getPostfixOperation());
     expressionEClass.getESuperTypes().add(this.getPrint());
     expressionEClass.getESuperTypes().add(this.getConditionElement());
     numberLiteralEClass.getESuperTypes().add(this.getExpression());
@@ -1316,7 +1326,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
 
     initEClass(variableCallEClass, VariableCall.class, "VariableCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableCall_VariableCall(), ecorePackage.getEString(), "variableCall", null, 0, 1, VariableCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariableCall_Op(), ecorePackage.getEString(), "op", null, 0, 1, VariableCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1369,6 +1378,8 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(multiAssignRightOperandEClass, MultiAssignRightOperand.class, "MultiAssignRightOperand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(postfixOperationEClass, PostfixOperation.class, "PostfixOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPostfixOperation_Call(), this.getVariableCall(), null, "call", null, 0, 1, PostfixOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPostfixOperation_Op(), ecorePackage.getEString(), "op", null, 0, 1, PostfixOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stringLiteralEClass, StringLiteral.class, "StringLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStringLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -308,22 +308,13 @@ public interface DataCentricDSLPackage extends EPackage
   int VARIABLE_CALL__VARIABLE_CALL = QUERY_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_CALL__OP = QUERY_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Variable Call</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_CALL_FEATURE_COUNT = QUERY_FEATURE_COUNT + 2;
+  int VARIABLE_CALL_FEATURE_COUNT = QUERY_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -845,13 +836,31 @@ public interface DataCentricDSLPackage extends EPackage
   int POSTFIX_OPERATION = 22;
 
   /**
+   * The feature id for the '<em><b>Call</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSTFIX_OPERATION__CALL = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSTFIX_OPERATION__OP = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Postfix Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POSTFIX_OPERATION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+  int POSTFIX_OPERATION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.StringLiteralImpl <em>String Literal</em>}' class.
@@ -1374,17 +1383,6 @@ public interface DataCentricDSLPackage extends EPackage
   EAttribute getVariableCall_VariableCall();
 
   /**
-   * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableCall#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see org.dataCentricDSL.VariableCall#getOp()
-   * @see #getVariableCall()
-   * @generated
-   */
-  EAttribute getVariableCall_Op();
-
-  /**
    * Returns the meta object for class '{@link org.dataCentricDSL.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1775,6 +1773,28 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EClass getPostfixOperation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.PostfixOperation#getCall <em>Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Call</em>'.
+   * @see org.dataCentricDSL.PostfixOperation#getCall()
+   * @see #getPostfixOperation()
+   * @generated
+   */
+  EReference getPostfixOperation_Call();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.PostfixOperation#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.dataCentricDSL.PostfixOperation#getOp()
+   * @see #getPostfixOperation()
+   * @generated
+   */
+  EAttribute getPostfixOperation_Op();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.StringLiteral <em>String Literal</em>}'.
@@ -2187,14 +2207,6 @@ public interface DataCentricDSLPackage extends EPackage
     EAttribute VARIABLE_CALL__VARIABLE_CALL = eINSTANCE.getVariableCall_VariableCall();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE_CALL__OP = eINSTANCE.getVariableCall_Op();
-
-    /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.ExpressionImpl <em>Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2519,6 +2531,22 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EClass POSTFIX_OPERATION = eINSTANCE.getPostfixOperation();
+
+    /**
+     * The meta object literal for the '<em><b>Call</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POSTFIX_OPERATION__CALL = eINSTANCE.getPostfixOperation_Call();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POSTFIX_OPERATION__OP = eINSTANCE.getPostfixOperation_Op();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.StringLiteralImpl <em>String Literal</em>}' class.

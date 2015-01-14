@@ -76,7 +76,6 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		}
 	}
 	
-// doesn't work for now (again......)
 	@Check
 	def void checkIfAssignedVariableExists(VariableCall vc) {
 		var Array = vc.eContainer;
@@ -84,8 +83,16 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		while(!(Array instanceof DataCentricDSL)) {
 			Array = Array.eContainer;
 			
-			if(Array instanceof IfStatement) {
-				var Elements = (Array as IfStatement).statements.toArray.filter(typeof(VariableDecl));
+			if(Array instanceof ForStatement) {
+				var Elements = (Array as ForStatement).statements.toArray.filter(typeof(VariableDecl));
+				var DeclaratedVar = (Array as ForStatement).forVar;
+				if(found == 0) {
+					if(DeclaratedVar.name.toString.equals(vc.variableCall.toString)) {
+						found = 1;
+					}
+				} else {
+					return;
+				}
 				for(i : 0..< Elements.length) {
 					if(found == 0) {
 						if(Elements.get(i).name.toString.equals(vc.variableCall.toString)) {
@@ -95,8 +102,8 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 						return;
 					}
 				}
-			} else if(Array instanceof ForStatement) {
-				var Elements = (Array as ForStatement).statements.toArray.filter(typeof(VariableDecl));
+			} else if(Array instanceof IfStatement) {
+				var Elements = (Array as IfStatement).statements.toArray.filter(typeof(VariableDecl));
 				for(i : 0..< Elements.length) {
 					if(found == 0) {
 						if(Elements.get(i).name.toString.equals(vc.variableCall.toString)) {

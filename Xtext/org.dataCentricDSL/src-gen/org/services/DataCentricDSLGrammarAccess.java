@@ -1320,25 +1320,33 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class PostfixOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PostfixOperation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cVariableCallParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Assignment cOpAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cOpPostfixOperationOperatorParserRuleCall_1_0 = (RuleCall)cOpAssignment_1.eContents().get(0);
+		private final Action cPostfixOperationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cCallAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCallVariableCallParserRuleCall_1_0 = (RuleCall)cCallAssignment_1.eContents().get(0);
+		private final Assignment cOpAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cOpPostfixOperationOperatorParserRuleCall_2_0 = (RuleCall)cOpAssignment_2.eContents().get(0);
 		
 		//PostfixOperation:
-		//	VariableCall op=PostfixOperationOperator;
+		//	{PostfixOperation} call=VariableCall op=PostfixOperationOperator;
 		public ParserRule getRule() { return rule; }
 
-		//VariableCall op=PostfixOperationOperator
+		//{PostfixOperation} call=VariableCall op=PostfixOperationOperator
 		public Group getGroup() { return cGroup; }
 
+		//{PostfixOperation}
+		public Action getPostfixOperationAction_0() { return cPostfixOperationAction_0; }
+
+		//call=VariableCall
+		public Assignment getCallAssignment_1() { return cCallAssignment_1; }
+
 		//VariableCall
-		public RuleCall getVariableCallParserRuleCall_0() { return cVariableCallParserRuleCall_0; }
+		public RuleCall getCallVariableCallParserRuleCall_1_0() { return cCallVariableCallParserRuleCall_1_0; }
 
 		//op=PostfixOperationOperator
-		public Assignment getOpAssignment_1() { return cOpAssignment_1; }
+		public Assignment getOpAssignment_2() { return cOpAssignment_2; }
 
 		//PostfixOperationOperator
-		public RuleCall getOpPostfixOperationOperatorParserRuleCall_1_0() { return cOpPostfixOperationOperatorParserRuleCall_1_0; }
+		public RuleCall getOpPostfixOperationOperatorParserRuleCall_2_0() { return cOpPostfixOperationOperatorParserRuleCall_2_0; }
 	}
 
 	public class StringLiteralElements extends AbstractParserRuleElementFinder {
@@ -1936,7 +1944,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PostfixOperation:
-	//	VariableCall op=PostfixOperationOperator;
+	//	{PostfixOperation} call=VariableCall op=PostfixOperationOperator;
 	public PostfixOperationElements getPostfixOperationAccess() {
 		return pPostfixOperation;
 	}
