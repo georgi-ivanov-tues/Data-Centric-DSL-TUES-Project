@@ -269,18 +269,26 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class PrintElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Print");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPrintKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cPrintKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cPrintlnKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final RuleCall cPrintParamParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//Print:
-		//	"print" PrintParam;
+		//	("print" | "println") PrintParam;
 		public ParserRule getRule() { return rule; }
 
-		//"print" PrintParam
+		//("print" | "println") PrintParam
 		public Group getGroup() { return cGroup; }
 
+		//"print" | "println"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
 		//"print"
-		public Keyword getPrintKeyword_0() { return cPrintKeyword_0; }
+		public Keyword getPrintKeyword_0_0() { return cPrintKeyword_0_0; }
+
+		//"println"
+		public Keyword getPrintlnKeyword_0_1() { return cPrintlnKeyword_0_1; }
 
 		//PrintParam
 		public RuleCall getPrintParamParserRuleCall_1() { return cPrintParamParserRuleCall_1; }
@@ -1699,7 +1707,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Print:
-	//	"print" PrintParam;
+	//	("print" | "println") PrintParam;
 	public PrintElements getPrintAccess() {
 		return pPrint;
 	}

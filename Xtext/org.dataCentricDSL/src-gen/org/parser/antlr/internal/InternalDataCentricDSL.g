@@ -568,17 +568,22 @@ rulePrint returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='print' 
+((	otherlv_0='print' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getPrintAccess().getPrintKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getPrintAccess().getPrintKeyword_0_0());
     }
 
+    |	otherlv_1='println' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getPrintAccess().getPrintlnKeyword_0_1());
+    }
+)
     { 
         newCompositeNode(grammarAccess.getPrintAccess().getPrintParamParserRuleCall_1()); 
     }
-    this_PrintParam_1=rulePrintParam
+    this_PrintParam_2=rulePrintParam
     { 
-        $current = $this_PrintParam_1.current; 
+        $current = $this_PrintParam_2.current; 
         afterParserOrEnumRuleCall();
     }
 )

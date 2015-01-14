@@ -43,6 +43,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableDeclAccess().getVariableValueAlternatives_3_0(), "rule__VariableDecl__VariableValueAlternatives_3_0");
 					put(grammarAccess.getVariableParamAccess().getAlternatives_1(), "rule__VariableParam__Alternatives_1");
 					put(grammarAccess.getQueryParamAccess().getAlternatives(), "rule__QueryParam__Alternatives");
+					put(grammarAccess.getPrintAccess().getAlternatives_0(), "rule__Print__Alternatives_0");
 					put(grammarAccess.getPrintParamAccess().getAlternatives(), "rule__PrintParam__Alternatives");
 					put(grammarAccess.getFunctionCallAccess().getArgumentsAlternatives_2_0_0(), "rule__FunctionCall__ArgumentsAlternatives_2_0_0");
 					put(grammarAccess.getFunctionCallAccess().getArgumentsAlternatives_2_1_1_0(), "rule__FunctionCall__ArgumentsAlternatives_2_1_1_0");

@@ -27,6 +27,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
     public static final int EOF=-1;
     public static final int T__93=93;
     public static final int T__19=19;
+    public static final int T__94=94;
     public static final int T__91=91;
     public static final int RULE_HEX=5;
     public static final int T__92=92;
@@ -184,10 +185,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:14:7: ( 'true' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:14:9: 'true'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:14:7: ( 'print' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:14:9: 'print'
             {
-            match("true"); 
+            match("print"); 
 
 
             }
@@ -205,10 +206,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:15:7: ( 'false' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:15:9: 'false'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:15:7: ( 'println' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:15:9: 'println'
             {
-            match("false"); 
+            match("println"); 
 
 
             }
@@ -226,10 +227,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:16:7: ( '+=' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:16:9: '+='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:16:7: ( 'true' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:16:9: 'true'
             {
-            match("+="); 
+            match("true"); 
 
 
             }
@@ -247,10 +248,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:17:7: ( '-=' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:17:9: '-='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:17:7: ( 'false' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:17:9: 'false'
             {
-            match("-="); 
+            match("false"); 
 
 
             }
@@ -268,10 +269,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:18:7: ( '*=' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:18:9: '*='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:18:7: ( '+=' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:18:9: '+='
             {
-            match("*="); 
+            match("+="); 
 
 
             }
@@ -289,10 +290,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:19:7: ( '/=' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:19:9: '/='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:19:7: ( '-=' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:19:9: '-='
             {
-            match("/="); 
+            match("-="); 
 
 
             }
@@ -310,10 +311,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:20:7: ( '%=' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:20:9: '%='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:20:7: ( '*=' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:20:9: '*='
             {
-            match("%="); 
+            match("*="); 
 
 
             }
@@ -331,10 +332,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:21:7: ( '--' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:21:9: '--'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:21:7: ( '/=' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:21:9: '/='
             {
-            match("--"); 
+            match("/="); 
 
 
             }
@@ -352,10 +353,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22:7: ( '++' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22:9: '++'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22:7: ( '%=' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22:9: '%='
             {
-            match("++"); 
+            match("%="); 
 
 
             }
@@ -373,10 +374,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:23:7: ( '>' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:23:9: '>'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:23:7: ( '--' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:23:9: '--'
             {
-            match('>'); 
+            match("--"); 
+
 
             }
 
@@ -393,10 +395,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:24:7: ( '<' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:24:9: '<'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:24:7: ( '++' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:24:9: '++'
             {
-            match('<'); 
+            match("++"); 
+
 
             }
 
@@ -413,11 +416,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25:7: ( '==' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25:9: '=='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25:7: ( '>' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25:9: '>'
             {
-            match("=="); 
-
+            match('>'); 
 
             }
 
@@ -434,11 +436,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:26:7: ( '<=' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:26:9: '<='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:26:7: ( '<' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:26:9: '<'
             {
-            match("<="); 
-
+            match('<'); 
 
             }
 
@@ -455,10 +456,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:27:7: ( '>=' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:27:9: '>='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:27:7: ( '==' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:27:9: '=='
             {
-            match(">="); 
+            match("=="); 
 
 
             }
@@ -476,10 +477,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:28:7: ( '!=' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:28:9: '!='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:28:7: ( '<=' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:28:9: '<='
             {
-            match("!="); 
+            match("<="); 
 
 
             }
@@ -497,10 +498,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:29:7: ( '===' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:29:9: '==='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:29:7: ( '>=' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:29:9: '>='
             {
-            match("==="); 
+            match(">="); 
 
 
             }
@@ -518,10 +519,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:30:7: ( '!==' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:30:9: '!=='
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:30:7: ( '!=' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:30:9: '!='
             {
-            match("!=="); 
+            match("!="); 
 
 
             }
@@ -539,10 +540,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:31:7: ( '->' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:31:9: '->'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:31:7: ( '===' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:31:9: '==='
             {
-            match("->"); 
+            match("==="); 
 
 
             }
@@ -560,10 +561,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:32:7: ( '..<' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:32:9: '..<'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:32:7: ( '!==' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:32:9: '!=='
             {
-            match("..<"); 
+            match("!=="); 
 
 
             }
@@ -581,10 +582,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:33:7: ( '..' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:33:9: '..'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:33:7: ( '->' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:33:9: '->'
             {
-            match(".."); 
+            match("->"); 
 
 
             }
@@ -602,10 +603,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:34:7: ( '=>' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:34:9: '=>'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:34:7: ( '..<' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:34:9: '..<'
             {
-            match("=>"); 
+            match("..<"); 
 
 
             }
@@ -623,10 +624,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:35:7: ( '<>' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:35:9: '<>'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:35:7: ( '..' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:35:9: '..'
             {
-            match("<>"); 
+            match(".."); 
 
 
             }
@@ -644,10 +645,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:36:7: ( '?:' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:36:9: '?:'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:36:7: ( '=>' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:36:9: '=>'
             {
-            match("?:"); 
+            match("=>"); 
 
 
             }
@@ -665,10 +666,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:37:7: ( '+' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:37:9: '+'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:37:7: ( '<>' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:37:9: '<>'
             {
-            match('+'); 
+            match("<>"); 
+
 
             }
 
@@ -685,10 +687,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:38:7: ( '-' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:38:9: '-'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:38:7: ( '?:' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:38:9: '?:'
             {
-            match('-'); 
+            match("?:"); 
+
 
             }
 
@@ -705,10 +708,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:39:7: ( '*' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:39:9: '*'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:39:7: ( '+' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:39:9: '+'
             {
-            match('*'); 
+            match('+'); 
 
             }
 
@@ -725,11 +728,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:40:7: ( '**' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:40:9: '**'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:40:7: ( '-' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:40:9: '-'
             {
-            match("**"); 
-
+            match('-'); 
 
             }
 
@@ -746,10 +748,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:41:7: ( '/' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:41:9: '/'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:41:7: ( '*' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:41:9: '*'
             {
-            match('/'); 
+            match('*'); 
 
             }
 
@@ -766,10 +768,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:42:7: ( '%' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:42:9: '%'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:42:7: ( '**' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:42:9: '**'
             {
-            match('%'); 
+            match("**"); 
+
 
             }
 
@@ -786,10 +789,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:43:7: ( '!' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:43:9: '!'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:43:7: ( '/' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:43:9: '/'
             {
-            match('!'); 
+            match('/'); 
 
             }
 
@@ -806,10 +809,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:44:7: ( '.' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:44:9: '.'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:44:7: ( '%' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:44:9: '%'
             {
-            match('.'); 
+            match('%'); 
 
             }
 
@@ -826,11 +829,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:45:7: ( 'val' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:45:9: 'val'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:45:7: ( '!' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:45:9: '!'
             {
-            match("val"); 
-
+            match('!'); 
 
             }
 
@@ -847,11 +849,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:46:7: ( 'extends' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:46:9: 'extends'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:46:7: ( '.' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:46:9: '.'
             {
-            match("extends"); 
-
+            match('.'); 
 
             }
 
@@ -868,10 +869,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:47:7: ( 'static' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:47:9: 'static'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:47:7: ( 'val' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:47:9: 'val'
             {
-            match("static"); 
+            match("val"); 
 
 
             }
@@ -889,10 +890,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:48:7: ( 'import' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:48:9: 'import'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:48:7: ( 'extends' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:48:9: 'extends'
             {
-            match("import"); 
+            match("extends"); 
 
 
             }
@@ -910,10 +911,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:49:7: ( 'extension' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:49:9: 'extension'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:49:7: ( 'static' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:49:9: 'static'
             {
-            match("extension"); 
+            match("static"); 
 
 
             }
@@ -931,10 +932,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:50:7: ( 'super' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:50:9: 'super'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:50:7: ( 'import' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:50:9: 'import'
             {
-            match("super"); 
+            match("import"); 
 
 
             }
@@ -952,10 +953,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:51:7: ( ';' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:51:9: ';'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:51:7: ( 'extension' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:51:9: 'extension'
             {
-            match(';'); 
+            match("extension"); 
+
 
             }
 
@@ -972,10 +974,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:52:7: ( 'query' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:52:9: 'query'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:52:7: ( 'super' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:52:9: 'super'
             {
-            match("query"); 
+            match("super"); 
 
 
             }
@@ -993,11 +995,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:53:7: ( 'print' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:53:9: 'print'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:53:7: ( ';' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:53:9: ';'
             {
-            match("print"); 
-
+            match(';'); 
 
             }
 
@@ -1014,10 +1015,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:54:7: ( '(' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:54:9: '('
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:54:7: ( 'query' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:54:9: 'query'
             {
-            match('('); 
+            match("query"); 
+
 
             }
 
@@ -1034,10 +1036,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:55:7: ( ')' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:55:9: ')'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:55:7: ( '(' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:55:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -1054,10 +1056,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:56:7: ( ',' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:56:9: ','
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:56:7: ( ')' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:56:9: ')'
             {
-            match(','); 
+            match(')'); 
 
             }
 
@@ -1074,11 +1076,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:57:7: ( 'func' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:57:9: 'func'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:57:7: ( ',' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:57:9: ','
             {
-            match("func"); 
-
+            match(','); 
 
             }
 
@@ -1095,10 +1096,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:58:7: ( '{' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:58:9: '{'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:58:7: ( 'func' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:58:9: 'func'
             {
-            match('{'); 
+            match("func"); 
+
 
             }
 
@@ -1115,10 +1117,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:59:7: ( '}' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:59:9: '}'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:59:7: ( '{' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:59:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -1135,11 +1137,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:60:7: ( 'if' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:60:9: 'if'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:60:7: ( '}' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:60:9: '}'
             {
-            match("if"); 
-
+            match('}'); 
 
             }
 
@@ -1156,10 +1157,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:61:7: ( 'else if' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:61:9: 'else if'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:61:7: ( 'if' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:61:9: 'if'
             {
-            match("else if"); 
+            match("if"); 
 
 
             }
@@ -1177,10 +1178,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:62:7: ( 'else ' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:62:9: 'else '
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:62:7: ( 'else if' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:62:9: 'else if'
             {
-            match("else "); 
+            match("else if"); 
 
 
             }
@@ -1198,10 +1199,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:63:7: ( 'while' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:63:9: 'while'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:63:7: ( 'else ' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:63:9: 'else '
             {
-            match("while"); 
+            match("else "); 
 
 
             }
@@ -1219,10 +1220,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:64:7: ( 'for' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:64:9: 'for'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:64:7: ( 'while' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:64:9: 'while'
             {
-            match("for"); 
+            match("while"); 
 
 
             }
@@ -1240,10 +1241,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:65:7: ( 'instanceof' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:65:9: 'instanceof'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:65:7: ( 'for' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:65:9: 'for'
             {
-            match("instanceof"); 
+            match("for"); 
 
 
             }
@@ -1261,10 +1262,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:66:7: ( 'as' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:66:9: 'as'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:66:7: ( 'instanceof' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:66:9: 'instanceof'
             {
-            match("as"); 
+            match("instanceof"); 
 
 
             }
@@ -1282,10 +1283,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:67:7: ( '#' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:67:9: '#'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:67:7: ( 'as' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:67:9: 'as'
             {
-            match('#'); 
+            match("as"); 
+
 
             }
 
@@ -1302,10 +1304,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:68:7: ( '[' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:68:9: '['
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:68:7: ( '#' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:68:9: '#'
             {
-            match('['); 
+            match('#'); 
 
             }
 
@@ -1322,10 +1324,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:69:7: ( ']' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:69:9: ']'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:69:7: ( '[' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:69:9: '['
             {
-            match(']'); 
+            match('['); 
 
             }
 
@@ -1342,11 +1344,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:70:7: ( 'else' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:70:9: 'else'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:70:7: ( ']' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:70:9: ']'
             {
-            match("else"); 
-
+            match(']'); 
 
             }
 
@@ -1363,10 +1364,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:71:7: ( 'switch' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:71:9: 'switch'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:71:7: ( 'else' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:71:9: 'else'
             {
-            match("switch"); 
+            match("else"); 
 
 
             }
@@ -1384,10 +1385,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:72:7: ( ':' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:72:9: ':'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:72:7: ( 'switch' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:72:9: 'switch'
             {
-            match(':'); 
+            match("switch"); 
+
 
             }
 
@@ -1404,11 +1406,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:73:7: ( 'default' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:73:9: 'default'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:73:7: ( ':' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:73:9: ':'
             {
-            match("default"); 
-
+            match(':'); 
 
             }
 
@@ -1425,10 +1426,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:74:7: ( 'case' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:74:9: 'case'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:74:7: ( 'default' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:74:9: 'default'
             {
-            match("case"); 
+            match("default"); 
 
 
             }
@@ -1446,10 +1447,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:75:7: ( 'do' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:75:9: 'do'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:75:7: ( 'case' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:75:9: 'case'
             {
-            match("do"); 
+            match("case"); 
 
 
             }
@@ -1467,10 +1468,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:76:7: ( 'new' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:76:9: 'new'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:76:7: ( 'do' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:76:9: 'do'
             {
-            match("new"); 
+            match("do"); 
 
 
             }
@@ -1488,10 +1489,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:77:7: ( 'null' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:77:9: 'null'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:77:7: ( 'new' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:77:9: 'new'
             {
-            match("null"); 
+            match("new"); 
 
 
             }
@@ -1509,10 +1510,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:78:7: ( 'typeof' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:78:9: 'typeof'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:78:7: ( 'null' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:78:9: 'null'
             {
-            match("typeof"); 
+            match("null"); 
 
 
             }
@@ -1530,10 +1531,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:79:7: ( 'throw' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:79:9: 'throw'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:79:7: ( 'typeof' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:79:9: 'typeof'
             {
-            match("throw"); 
+            match("typeof"); 
 
 
             }
@@ -1551,10 +1552,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:80:7: ( 'return' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:80:9: 'return'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:80:7: ( 'throw' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:80:9: 'throw'
             {
-            match("return"); 
+            match("throw"); 
 
 
             }
@@ -1572,10 +1573,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:81:7: ( 'try' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:81:9: 'try'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:81:7: ( 'return' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:81:9: 'return'
             {
-            match("try"); 
+            match("return"); 
 
 
             }
@@ -1593,10 +1594,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:82:7: ( 'finally' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:82:9: 'finally'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:82:7: ( 'try' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:82:9: 'try'
             {
-            match("finally"); 
+            match("try"); 
 
 
             }
@@ -1614,10 +1615,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:83:7: ( 'synchronized' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:83:9: 'synchronized'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:83:7: ( 'finally' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:83:9: 'finally'
             {
-            match("synchronized"); 
+            match("finally"); 
 
 
             }
@@ -1635,10 +1636,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:84:7: ( 'catch' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:84:9: 'catch'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:84:7: ( 'synchronized' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:84:9: 'synchronized'
             {
-            match("catch"); 
+            match("synchronized"); 
 
 
             }
@@ -1656,10 +1657,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:85:7: ( '?' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:85:9: '?'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:85:7: ( 'catch' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:85:9: 'catch'
             {
-            match('?'); 
+            match("catch"); 
+
 
             }
 
@@ -1676,10 +1678,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:86:7: ( '&' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:86:9: '&'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:86:7: ( '?' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:86:9: '?'
             {
-            match('&'); 
+            match('?'); 
 
             }
 
@@ -1696,11 +1698,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:87:7: ( 'global' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:87:9: 'global'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:87:7: ( '&' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:87:9: '&'
             {
-            match("global"); 
-
+            match('&'); 
 
             }
 
@@ -1717,10 +1718,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:88:7: ( '::' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:88:9: '::'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:88:7: ( 'global' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:88:9: 'global'
             {
-            match("::"); 
+            match("global"); 
 
 
             }
@@ -1738,10 +1739,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:89:7: ( '?.' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:89:9: '?.'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:89:7: ( '::' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:89:9: '::'
             {
-            match("?."); 
+            match("::"); 
 
 
             }
@@ -1759,10 +1760,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:90:7: ( '|' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:90:9: '|'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:90:7: ( '?.' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:90:9: '?.'
             {
-            match('|'); 
+            match("?."); 
+
 
             }
 
@@ -1779,8 +1781,28 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:91:7: ( 'var' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:91:9: 'var'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:91:7: ( '|' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:91:9: '|'
+            {
+            match('|'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__93"
+
+    // $ANTLR start "T__94"
+    public final void mT__94() throws RecognitionException {
+        try {
+            int _type = T__94;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:92:7: ( 'var' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:92:9: 'var'
             {
             match("var"); 
 
@@ -1793,17 +1815,17 @@ public class InternalDataCentricDSLLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__93"
+    // $ANTLR end "T__94"
 
     // $ANTLR start "RULE_HEX"
     public final void mRULE_HEX() throws RecognitionException {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:12: ( '0x' | '0X' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1831,7 +1853,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:13: '0x'
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:13: '0x'
                     {
                     match("0x"); 
 
@@ -1839,7 +1861,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:18: '0X'
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:18: '0X'
                     {
                     match("0X"); 
 
@@ -1849,7 +1871,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
 
             }
 
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1887,7 +1909,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1896,10 +1918,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1917,7 +1939,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1941,7 +1963,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25238:84: ( 'l' | 'L' )
+                            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25262:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1980,11 +2002,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25240:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25240:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25264:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25264:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25240:21: ( '0' .. '9' | '_' )*
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25264:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -2033,11 +2055,11 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25242:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25242:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25266:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25266:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25242:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25266:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2046,7 +2068,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25242:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25266:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2057,7 +2079,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25242:36: ( '+' | '-' )?
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25266:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2090,7 +2112,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
 
             }
 
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25242:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25266:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -2102,7 +2124,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25242:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25266:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2126,7 +2148,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25242:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25266:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2159,10 +2181,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25244:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25244:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25268:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25268:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25244:11: ( '^' )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25268:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2171,7 +2193,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25244:11: '^'
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25268:11: '^'
                     {
                     match('^'); 
 
@@ -2189,7 +2211,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25244:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25268:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2238,10 +2260,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2259,10 +2281,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2278,7 +2300,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:21: '\\\\' .
+                    	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2286,7 +2308,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2306,7 +2328,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:44: ( '\"' )?
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:44: ( '\"' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -2315,7 +2337,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:44: '\"'
+                            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:44: '\"'
                             {
                             match('\"'); 
 
@@ -2328,10 +2350,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop13:
                     do {
                         int alt13=3;
@@ -2347,7 +2369,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:55: '\\\\' .
+                    	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2355,7 +2377,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2375,7 +2397,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:79: ( '\\'' )?
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:79: ( '\\'' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2384,7 +2406,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25246:79: '\\''
+                            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25270:79: '\\''
                             {
                             match('\''); 
 
@@ -2415,12 +2437,12 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25248:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25248:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25272:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25272:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25248:24: ( options {greedy=false; } : . )*
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25272:24: ( options {greedy=false; } : . )*
             loop16:
             do {
                 int alt16=2;
@@ -2445,7 +2467,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
 
                 switch (alt16) {
             	case 1 :
-            	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25248:52: .
+            	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25272:52: .
             	    {
             	    matchAny(); 
 
@@ -2475,12 +2497,12 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25250:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25250:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25274:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25274:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25250:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25274:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop17:
             do {
                 int alt17=2;
@@ -2493,7 +2515,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25250:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25274:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2513,7 +2535,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25250:40: ( ( '\\r' )? '\\n' )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25274:40: ( ( '\\r' )? '\\n' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2522,9 +2544,9 @@ public class InternalDataCentricDSLLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25250:41: ( '\\r' )? '\\n'
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25274:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25250:41: ( '\\r' )?
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25274:41: ( '\\r' )?
                     int alt18=2;
                     int LA18_0 = input.LA(1);
 
@@ -2533,7 +2555,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
                     }
                     switch (alt18) {
                         case 1 :
-                            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25250:41: '\\r'
+                            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25274:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2565,10 +2587,10 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25252:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25252:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25276:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25276:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25252:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25276:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt20=0;
             loop20:
             do {
@@ -2622,8 +2644,8 @@ public class InternalDataCentricDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25254:16: ( . )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25254:18: .
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25278:16: ( . )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:25278:18: .
             {
             matchAny(); 
 
@@ -2638,8 +2660,8 @@ public class InternalDataCentricDSLLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt21=90;
+        // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt21=91;
         alt21 = dfa21.predict(input);
         switch (alt21) {
             case 1 :
@@ -3210,63 +3232,70 @@ public class InternalDataCentricDSLLexer extends Lexer {
                 }
                 break;
             case 82 :
-                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:496: RULE_HEX
+                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:496: T__94
+                {
+                mT__94(); 
+
+                }
+                break;
+            case 83 :
+                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:502: RULE_HEX
                 {
                 mRULE_HEX(); 
 
                 }
                 break;
-            case 83 :
-                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:505: RULE_INT
+            case 84 :
+                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:511: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 84 :
-                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:514: RULE_DECIMAL
+            case 85 :
+                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:520: RULE_DECIMAL
                 {
                 mRULE_DECIMAL(); 
 
                 }
                 break;
-            case 85 :
-                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:527: RULE_ID
+            case 86 :
+                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:533: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 86 :
-                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:535: RULE_STRING
+            case 87 :
+                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:541: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 87 :
-                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:547: RULE_ML_COMMENT
+            case 88 :
+                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:553: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 88 :
-                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:563: RULE_SL_COMMENT
+            case 89 :
+                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:569: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 89 :
-                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:579: RULE_WS
+            case 90 :
+                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:585: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 90 :
-                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:587: RULE_ANY_OTHER
+            case 91 :
+                // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:1:593: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3280,108 +3309,109 @@ public class InternalDataCentricDSLLexer extends Lexer {
 
     protected DFA21 dfa21 = new DFA21(this);
     static final String DFA21_eotS =
-        "\1\uffff\1\61\1\63\1\65\2\71\1\100\1\104\1\107\1\113\1\115\1\117"+
-        "\1\122\1\124\1\126\1\131\4\71\1\uffff\2\71\5\uffff\2\71\3\uffff"+
-        "\1\162\5\71\2\173\1\56\5\uffff\1\u0081\6\uffff\3\71\1\uffff\4\71"+
-        "\25\uffff\1\u008b\1\uffff\1\u008d\4\uffff\10\71\1\u0097\1\71\1\uffff"+
-        "\2\71\5\uffff\1\71\1\u009c\5\uffff\1\71\1\u009e\5\71\2\uffff\1\173"+
-        "\5\uffff\1\71\1\u00a6\4\71\1\u00ab\1\71\4\uffff\1\u00ad\1\u00ae"+
-        "\7\71\1\uffff\4\71\1\uffff\1\71\1\uffff\2\71\1\u00bd\3\71\1\u00c1"+
-        "\1\uffff\3\71\1\u00c5\1\uffff\1\71\2\uffff\1\71\1\u00c9\12\71\1"+
-        "\u00d4\1\71\1\uffff\1\u00d6\2\71\1\uffff\1\71\1\u00da\1\u00db\1"+
-        "\uffff\2\71\1\u00e0\1\uffff\1\71\1\u00e2\4\71\1\u00e7\1\u00e8\1"+
-        "\u00e9\1\71\1\uffff\1\u00eb\1\uffff\2\71\1\u00ee\2\uffff\3\71\2"+
-        "\uffff\1\u00f2\1\uffff\1\u00f3\1\71\1\u00f5\1\71\3\uffff\1\71\1"+
-        "\uffff\1\u00f8\1\u00f9\1\uffff\1\u00fa\1\u00fb\1\71\2\uffff\1\71"+
-        "\1\uffff\1\71\1\u00ff\4\uffff\3\71\1\uffff\1\u0103\2\71\1\uffff"+
-        "\1\71\1\u0107\1\71\1\uffff\1\u0109\1\uffff";
+        "\1\uffff\1\61\1\63\1\65\3\67\1\101\1\105\1\110\1\114\1\116\1\120"+
+        "\1\123\1\125\1\127\1\132\4\67\1\uffff\1\67\5\uffff\2\67\3\uffff"+
+        "\1\162\5\67\2\174\1\56\5\uffff\1\u0081\6\uffff\1\67\1\uffff\7\67"+
+        "\25\uffff\1\u008c\1\uffff\1\u008e\4\uffff\10\67\1\u0098\1\67\1\uffff"+
+        "\1\67\5\uffff\1\67\1\u009c\5\uffff\1\67\1\u009e\5\67\1\uffff\1\174"+
+        "\6\uffff\2\67\1\u00a7\4\67\1\u00ac\1\67\4\uffff\1\u00ae\1\u00af"+
+        "\7\67\1\uffff\3\67\1\uffff\1\67\1\uffff\2\67\1\u00bd\4\67\1\u00c2"+
+        "\1\uffff\3\67\1\u00c6\1\uffff\1\67\2\uffff\1\67\1\u00ca\11\67\1"+
+        "\u00d4\1\67\1\uffff\1\u00d6\2\67\1\u00da\1\uffff\1\67\1\u00dc\1"+
+        "\u00dd\1\uffff\2\67\1\u00e2\1\uffff\1\67\1\u00e4\4\67\1\u00e9\1"+
+        "\u00ea\1\67\1\uffff\1\u00ec\1\uffff\3\67\1\uffff\1\u00f0\2\uffff"+
+        "\3\67\2\uffff\1\u00f4\1\uffff\1\u00f5\1\67\1\u00f7\1\67\2\uffff"+
+        "\1\67\1\uffff\1\u00fa\1\u00fb\1\u00fc\1\uffff\1\u00fd\1\u00fe\1"+
+        "\67\2\uffff\1\67\1\uffff\1\67\1\u0102\5\uffff\3\67\1\uffff\1\u0106"+
+        "\2\67\1\uffff\1\67\1\u010a\1\67\1\uffff\1\u010c\1\uffff";
     static final String DFA21_eofS =
-        "\u010a\uffff";
+        "\u010d\uffff";
     static final String DFA21_minS =
-        "\1\0\1\75\1\46\1\174\1\150\1\141\1\53\1\55\2\52\4\75\2\56\1\141"+
-        "\1\154\1\164\1\146\1\uffff\1\165\1\162\5\uffff\1\150\1\163\3\uffff"+
-        "\1\72\1\145\1\141\2\145\1\154\2\60\1\44\5\uffff\1\75\6\uffff\1\165"+
-        "\1\160\1\162\1\uffff\1\154\1\156\1\162\1\156\25\uffff\1\75\1\uffff"+
-        "\1\74\4\uffff\1\154\1\164\1\163\1\141\1\160\1\151\1\156\1\160\1"+
-        "\44\1\163\1\uffff\1\145\1\151\5\uffff\1\151\1\44\5\uffff\1\146\1"+
-        "\44\1\163\1\167\1\154\1\164\1\157\2\uffff\1\60\5\uffff\1\145\1\44"+
-        "\1\145\1\157\1\163\1\143\1\44\1\141\4\uffff\2\44\2\145\1\164\1\145"+
-        "\1\164\1\143\1\157\1\uffff\1\164\1\162\1\156\1\154\1\uffff\1\141"+
-        "\1\uffff\1\145\1\143\1\44\1\154\1\165\1\142\1\44\1\uffff\1\157\1"+
-        "\167\1\145\1\44\1\uffff\1\154\2\uffff\1\156\1\40\1\151\1\162\1\143"+
-        "\1\150\1\162\1\141\1\171\1\164\1\145\1\165\1\44\1\150\1\uffff\1"+
-        "\44\1\162\1\141\1\uffff\1\146\2\44\1\uffff\1\154\1\144\1\151\1\uffff"+
-        "\1\143\1\44\1\150\1\162\1\164\1\156\3\44\1\154\1\uffff\1\44\1\uffff"+
-        "\1\156\1\154\1\44\2\uffff\1\171\1\163\1\151\2\uffff\1\44\1\uffff"+
-        "\1\44\1\157\1\44\1\143\3\uffff\1\164\1\uffff\2\44\1\uffff\2\44\1"+
-        "\157\2\uffff\1\156\1\uffff\1\145\1\44\4\uffff\1\156\1\151\1\157"+
-        "\1\uffff\1\44\1\172\1\146\1\uffff\1\145\1\44\1\144\1\uffff\1\44"+
-        "\1\uffff";
+        "\1\0\1\75\1\46\1\174\1\162\1\150\1\141\1\53\1\55\2\52\4\75\2\56"+
+        "\1\141\1\154\1\164\1\146\1\uffff\1\165\5\uffff\1\150\1\163\3\uffff"+
+        "\1\72\1\145\1\141\2\145\1\154\2\60\1\44\5\uffff\1\75\6\uffff\1\151"+
+        "\1\uffff\1\165\1\160\1\162\1\154\1\156\1\162\1\156\25\uffff\1\75"+
+        "\1\uffff\1\74\4\uffff\1\154\1\164\1\163\1\141\1\160\1\151\1\156"+
+        "\1\160\1\44\1\163\1\uffff\1\145\5\uffff\1\151\1\44\5\uffff\1\146"+
+        "\1\44\1\163\1\167\1\154\1\164\1\157\1\uffff\1\60\6\uffff\1\156\1"+
+        "\145\1\44\1\145\1\157\1\163\1\143\1\44\1\141\4\uffff\2\44\2\145"+
+        "\1\164\1\145\1\164\1\143\1\157\1\uffff\1\164\1\162\1\154\1\uffff"+
+        "\1\141\1\uffff\1\145\1\143\1\44\1\154\1\165\1\142\1\164\1\44\1\uffff"+
+        "\1\157\1\167\1\145\1\44\1\uffff\1\154\2\uffff\1\156\1\40\1\151\1"+
+        "\162\1\143\1\150\1\162\1\141\1\171\1\145\1\165\1\44\1\150\1\uffff"+
+        "\1\44\1\162\1\141\1\44\1\uffff\1\146\2\44\1\uffff\1\154\1\144\1"+
+        "\151\1\uffff\1\143\1\44\1\150\1\162\1\164\1\156\2\44\1\154\1\uffff"+
+        "\1\44\1\uffff\1\156\1\154\1\156\1\uffff\1\44\2\uffff\1\171\1\163"+
+        "\1\151\2\uffff\1\44\1\uffff\1\44\1\157\1\44\1\143\2\uffff\1\164"+
+        "\1\uffff\3\44\1\uffff\2\44\1\157\2\uffff\1\156\1\uffff\1\145\1\44"+
+        "\5\uffff\1\156\1\151\1\157\1\uffff\1\44\1\172\1\146\1\uffff\1\145"+
+        "\1\44\1\144\1\uffff\1\44\1\uffff";
     static final String DFA21_maxS =
-        "\1\uffff\1\76\1\46\1\174\1\171\1\165\1\75\1\76\4\75\1\76\1\75\1"+
-        "\56\1\72\1\141\1\170\1\171\1\156\1\uffff\1\165\1\162\5\uffff\1\150"+
-        "\1\163\3\uffff\1\72\1\157\1\141\1\165\1\145\1\154\1\170\1\154\1"+
-        "\172\5\uffff\1\75\6\uffff\1\171\1\160\1\162\1\uffff\1\154\1\156"+
-        "\1\162\1\156\25\uffff\1\75\1\uffff\1\74\4\uffff\1\162\1\164\1\163"+
-        "\1\141\1\160\1\151\1\156\1\160\1\172\1\163\1\uffff\1\145\1\151\5"+
+        "\1\uffff\1\76\1\46\1\174\1\162\1\171\1\165\1\75\1\76\4\75\1\76"+
+        "\1\75\1\56\1\72\1\141\1\170\1\171\1\156\1\uffff\1\165\5\uffff\1"+
+        "\150\1\163\3\uffff\1\72\1\157\1\141\1\165\1\145\1\154\1\170\1\154"+
+        "\1\172\5\uffff\1\75\6\uffff\1\151\1\uffff\1\171\1\160\1\162\1\154"+
+        "\1\156\1\162\1\156\25\uffff\1\75\1\uffff\1\74\4\uffff\1\162\1\164"+
+        "\1\163\1\141\1\160\1\151\1\156\1\160\1\172\1\163\1\uffff\1\145\5"+
         "\uffff\1\151\1\172\5\uffff\1\146\1\172\1\164\1\167\1\154\1\164\1"+
-        "\157\2\uffff\1\154\5\uffff\1\145\1\172\1\145\1\157\1\163\1\143\1"+
-        "\172\1\141\4\uffff\2\172\2\145\1\164\1\145\1\164\1\143\1\157\1\uffff"+
-        "\1\164\1\162\1\156\1\154\1\uffff\1\141\1\uffff\1\145\1\143\1\172"+
-        "\1\154\1\165\1\142\1\172\1\uffff\1\157\1\167\1\145\1\172\1\uffff"+
-        "\1\154\2\uffff\1\156\1\172\1\151\1\162\1\143\1\150\1\162\1\141\1"+
-        "\171\1\164\1\145\1\165\1\172\1\150\1\uffff\1\172\1\162\1\141\1\uffff"+
-        "\1\146\2\172\1\uffff\1\154\1\163\1\151\1\uffff\1\143\1\172\1\150"+
-        "\1\162\1\164\1\156\3\172\1\154\1\uffff\1\172\1\uffff\1\156\1\154"+
-        "\1\172\2\uffff\1\171\1\163\1\151\2\uffff\1\172\1\uffff\1\172\1\157"+
-        "\1\172\1\143\3\uffff\1\164\1\uffff\2\172\1\uffff\2\172\1\157\2\uffff"+
-        "\1\156\1\uffff\1\145\1\172\4\uffff\1\156\1\151\1\157\1\uffff\2\172"+
-        "\1\146\1\uffff\1\145\1\172\1\144\1\uffff\1\172\1\uffff";
+        "\157\1\uffff\1\154\6\uffff\1\156\1\145\1\172\1\145\1\157\1\163\1"+
+        "\143\1\172\1\141\4\uffff\2\172\2\145\1\164\1\145\1\164\1\143\1\157"+
+        "\1\uffff\1\164\1\162\1\154\1\uffff\1\141\1\uffff\1\145\1\143\1\172"+
+        "\1\154\1\165\1\142\1\164\1\172\1\uffff\1\157\1\167\1\145\1\172\1"+
+        "\uffff\1\154\2\uffff\1\156\1\172\1\151\1\162\1\143\1\150\1\162\1"+
+        "\141\1\171\1\145\1\165\1\172\1\150\1\uffff\1\172\1\162\1\141\1\172"+
+        "\1\uffff\1\146\2\172\1\uffff\1\154\1\163\1\151\1\uffff\1\143\1\172"+
+        "\1\150\1\162\1\164\1\156\2\172\1\154\1\uffff\1\172\1\uffff\1\156"+
+        "\1\154\1\156\1\uffff\1\172\2\uffff\1\171\1\163\1\151\2\uffff\1\172"+
+        "\1\uffff\1\172\1\157\1\172\1\143\2\uffff\1\164\1\uffff\3\172\1\uffff"+
+        "\2\172\1\157\2\uffff\1\156\1\uffff\1\145\1\172\5\uffff\1\156\1\151"+
+        "\1\157\1\uffff\2\172\1\146\1\uffff\1\145\1\172\1\144\1\uffff\1\172"+
+        "\1\uffff";
     static final String DFA21_acceptS =
-        "\24\uffff\1\51\2\uffff\1\54\1\55\1\56\1\60\1\61\2\uffff\1\71\1"+
-        "\72\1\73\11\uffff\1\125\2\126\1\131\1\132\1\uffff\1\30\1\1\1\2\1"+
-        "\114\1\3\1\120\3\uffff\1\125\4\uffff\1\6\1\14\1\33\1\7\1\13\1\25"+
-        "\1\34\1\10\1\36\1\35\1\11\1\127\1\130\1\37\1\12\1\40\1\21\1\15\1"+
-        "\20\1\31\1\16\1\uffff\1\41\1\uffff\1\42\1\32\1\117\1\113\12\uffff"+
-        "\1\51\2\uffff\1\54\1\55\1\56\1\60\1\61\2\uffff\1\71\1\72\1\73\1"+
-        "\116\1\76\7\uffff\1\122\1\123\1\uffff\1\124\1\126\1\131\1\23\1\17"+
-        "\10\uffff\1\24\1\22\1\26\1\27\11\uffff\1\62\4\uffff\1\70\1\uffff"+
-        "\1\101\7\uffff\1\107\4\uffff\1\66\1\uffff\1\43\1\121\16\uffff\1"+
-        "\102\3\uffff\1\4\3\uffff\1\57\3\uffff\1\74\12\uffff\1\100\1\uffff"+
-        "\1\103\3\uffff\1\105\1\5\3\uffff\1\63\1\64\1\uffff\1\50\4\uffff"+
-        "\1\52\1\53\1\65\1\uffff\1\112\2\uffff\1\104\3\uffff\1\45\1\75\1"+
-        "\uffff\1\46\2\uffff\1\106\1\115\1\110\1\44\3\uffff\1\77\3\uffff"+
-        "\1\47\3\uffff\1\67\1\uffff\1\111";
+        "\25\uffff\1\53\1\uffff\1\55\1\56\1\57\1\61\1\62\2\uffff\1\72\1"+
+        "\73\1\74\11\uffff\1\126\2\127\1\132\1\133\1\uffff\1\32\1\1\1\2\1"+
+        "\115\1\3\1\121\1\uffff\1\126\7\uffff\1\10\1\16\1\35\1\11\1\15\1"+
+        "\27\1\36\1\12\1\40\1\37\1\13\1\130\1\131\1\41\1\14\1\42\1\23\1\17"+
+        "\1\22\1\33\1\20\1\uffff\1\43\1\uffff\1\44\1\34\1\120\1\114\12\uffff"+
+        "\1\53\1\uffff\1\55\1\56\1\57\1\61\1\62\2\uffff\1\72\1\73\1\74\1"+
+        "\117\1\77\7\uffff\1\123\1\uffff\1\124\1\125\1\127\1\132\1\25\1\21"+
+        "\11\uffff\1\26\1\24\1\30\1\31\11\uffff\1\63\3\uffff\1\71\1\uffff"+
+        "\1\102\10\uffff\1\110\4\uffff\1\67\1\uffff\1\45\1\122\15\uffff\1"+
+        "\103\4\uffff\1\6\3\uffff\1\60\3\uffff\1\75\11\uffff\1\101\1\uffff"+
+        "\1\104\3\uffff\1\4\1\uffff\1\106\1\7\3\uffff\1\64\1\65\1\uffff\1"+
+        "\52\4\uffff\1\54\1\66\1\uffff\1\113\3\uffff\1\105\3\uffff\1\47\1"+
+        "\76\1\uffff\1\50\2\uffff\1\107\1\116\1\5\1\111\1\46\3\uffff\1\100"+
+        "\3\uffff\1\51\3\uffff\1\70\1\uffff\1\112";
     static final String DFA21_specialS =
-        "\1\0\u0109\uffff}>";
+        "\1\0\u010c\uffff}>";
     static final String[] DFA21_transitionS = {
-            "\11\56\2\55\2\56\1\55\22\56\1\55\1\15\1\53\1\36\1\52\1\12\1"+
-            "\2\1\54\1\27\1\30\1\10\1\6\1\31\1\7\1\16\1\11\1\47\11\50\1\41"+
-            "\1\24\1\14\1\1\1\13\1\17\1\56\32\52\1\37\1\56\1\40\1\51\1\52"+
-            "\1\56\1\35\1\52\1\43\1\42\1\21\1\5\1\46\1\52\1\23\4\52\1\44"+
-            "\1\52\1\26\1\25\1\45\1\22\1\4\1\52\1\20\1\34\3\52\1\32\1\3\1"+
-            "\33\uff82\56",
+            "\11\56\2\55\2\56\1\55\22\56\1\55\1\16\1\53\1\36\1\52\1\13\1"+
+            "\2\1\54\1\27\1\30\1\11\1\7\1\31\1\10\1\17\1\12\1\47\11\50\1"+
+            "\41\1\25\1\15\1\1\1\14\1\20\1\56\32\52\1\37\1\56\1\40\1\51\1"+
+            "\52\1\56\1\35\1\52\1\43\1\42\1\22\1\6\1\46\1\52\1\24\4\52\1"+
+            "\44\1\52\1\4\1\26\1\45\1\23\1\5\1\52\1\21\1\34\3\52\1\32\1\3"+
+            "\1\33\uff82\56",
             "\1\57\1\60",
             "\1\62",
             "\1\64",
-            "\1\70\11\uffff\1\66\6\uffff\1\67",
-            "\1\72\7\uffff\1\75\5\uffff\1\74\5\uffff\1\73",
-            "\1\77\21\uffff\1\76",
-            "\1\102\17\uffff\1\101\1\103",
-            "\1\106\22\uffff\1\105",
-            "\1\111\4\uffff\1\112\15\uffff\1\110",
-            "\1\114",
-            "\1\116",
-            "\1\120\1\121",
-            "\1\123",
-            "\1\125",
-            "\1\130\13\uffff\1\127",
-            "\1\132",
-            "\1\134\13\uffff\1\133",
-            "\1\135\1\136\1\uffff\1\137\1\uffff\1\140",
-            "\1\142\6\uffff\1\141\1\143",
+            "\1\66",
+            "\1\72\11\uffff\1\70\6\uffff\1\71",
+            "\1\73\7\uffff\1\76\5\uffff\1\75\5\uffff\1\74",
+            "\1\100\21\uffff\1\77",
+            "\1\103\17\uffff\1\102\1\104",
+            "\1\107\22\uffff\1\106",
+            "\1\112\4\uffff\1\113\15\uffff\1\111",
+            "\1\115",
+            "\1\117",
+            "\1\121\1\122",
+            "\1\124",
+            "\1\126",
+            "\1\131\13\uffff\1\130",
+            "\1\133",
+            "\1\135\13\uffff\1\134",
+            "\1\136\1\137\1\uffff\1\140\1\uffff\1\141",
+            "\1\143\6\uffff\1\142\1\144",
             "",
-            "\1\145",
             "\1\146",
             "",
             "",
@@ -3399,12 +3429,12 @@ public class InternalDataCentricDSLLexer extends Lexer {
             "\1\166\17\uffff\1\167",
             "\1\170",
             "\1\171",
-            "\12\174\10\uffff\1\175\1\uffff\3\175\5\uffff\1\175\13\uffff"+
-            "\1\172\6\uffff\1\174\2\uffff\1\175\1\uffff\3\175\5\uffff\1\175"+
+            "\12\173\10\uffff\1\175\1\uffff\3\175\5\uffff\1\175\13\uffff"+
+            "\1\172\6\uffff\1\173\2\uffff\1\175\1\uffff\3\175\5\uffff\1\175"+
             "\13\uffff\1\172",
-            "\12\174\10\uffff\1\175\1\uffff\3\175\5\uffff\1\175\22\uffff"+
-            "\1\174\2\uffff\1\175\1\uffff\3\175\5\uffff\1\175",
-            "\1\71\34\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+            "\12\173\10\uffff\1\175\1\uffff\3\175\5\uffff\1\175\22\uffff"+
+            "\1\173\2\uffff\1\175\1\uffff\3\175\5\uffff\1\175",
+            "\1\67\34\uffff\32\67\4\uffff\1\67\1\uffff\32\67",
             "",
             "",
             "",
@@ -3417,55 +3447,55 @@ public class InternalDataCentricDSLLexer extends Lexer {
             "",
             "",
             "",
-            "\1\u0082\3\uffff\1\u0083",
-            "\1\u0084",
-            "\1\u0085",
+            "\1\u0082",
             "",
+            "\1\u0083\3\uffff\1\u0084",
+            "\1\u0085",
             "\1\u0086",
             "\1\u0087",
             "\1\u0088",
             "\1\u0089",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u008a",
             "",
-            "\1\u008c",
             "",
             "",
             "",
             "",
-            "\1\u008e\5\uffff\1\u008f",
-            "\1\u0090",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u008b",
+            "",
+            "\1\u008d",
+            "",
+            "",
+            "",
+            "",
+            "\1\u008f\5\uffff\1\u0090",
             "\1\u0091",
             "\1\u0092",
             "\1\u0093",
             "\1\u0094",
             "\1\u0095",
             "\1\u0096",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\u0098",
-            "",
+            "\1\u0097",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u0099",
+            "",
             "\1\u009a",
             "",
             "",
@@ -3473,57 +3503,57 @@ public class InternalDataCentricDSLLexer extends Lexer {
             "",
             "",
             "\1\u009b",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "",
             "",
             "",
             "",
             "",
             "\1\u009d",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u009f\1\u00a0",
             "\1\u00a1",
             "\1\u00a2",
             "\1\u00a3",
             "\1\u00a4",
             "",
+            "\12\173\10\uffff\1\175\1\uffff\3\175\5\uffff\1\175\22\uffff"+
+            "\1\173\2\uffff\1\175\1\uffff\3\175\5\uffff\1\175",
             "",
-            "\12\174\10\uffff\1\175\1\uffff\3\175\5\uffff\1\175\22\uffff"+
-            "\1\174\2\uffff\1\175\1\uffff\3\175\5\uffff\1\175",
             "",
             "",
             "",
             "",
             "",
             "\1\u00a5",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\u00a7",
+            "\1\u00a6",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00a8",
             "\1\u00a9",
             "\1\u00aa",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\u00ac",
+            "\1\u00ab",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u00ad",
             "",
             "",
             "",
             "",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\u00af",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00b0",
             "\1\u00b1",
             "\1\u00b2",
             "\1\u00b3",
             "\1\u00b4",
             "\1\u00b5",
-            "",
             "\1\u00b6",
+            "",
             "\1\u00b7",
             "\1\u00b8",
             "\1\u00b9",
@@ -3532,27 +3562,27 @@ public class InternalDataCentricDSLLexer extends Lexer {
             "",
             "\1\u00bb",
             "\1\u00bc",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00be",
             "\1\u00bf",
             "\1\u00c0",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\u00c1",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "",
-            "\1\u00c2",
             "\1\u00c3",
             "\1\u00c4",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "",
-            "\1\u00c6",
-            "",
+            "\1\u00c5",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "",
             "\1\u00c7",
-            "\1\u00c8\3\uffff\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff"+
-            "\1\71\1\uffff\32\71",
-            "\1\u00ca",
+            "",
+            "",
+            "\1\u00c8",
+            "\1\u00c9\3\uffff\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff"+
+            "\1\67\1\uffff\32\67",
             "\1\u00cb",
             "\1\u00cc",
             "\1\u00cd",
@@ -3562,105 +3592,109 @@ public class InternalDataCentricDSLLexer extends Lexer {
             "\1\u00d1",
             "\1\u00d2",
             "\1\u00d3",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00d5",
             "",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00d7",
             "\1\u00d8",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\13"+
+            "\67\1\u00d9\16\67",
             "",
-            "\1\u00d9",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\u00db",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "",
-            "\1\u00dc",
-            "\1\u00dd\16\uffff\1\u00de",
-            "\1\u00df",
-            "",
+            "\1\u00de",
+            "\1\u00df\16\uffff\1\u00e0",
             "\1\u00e1",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "",
             "\1\u00e3",
-            "\1\u00e4",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00e5",
             "\1\u00e6",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\u00ea",
+            "\1\u00e7",
+            "\1\u00e8",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u00eb",
             "",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "",
-            "\1\u00ec",
             "\1\u00ed",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "",
-            "",
+            "\1\u00ee",
             "\1\u00ef",
-            "\1\u00f0",
+            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "",
+            "",
             "\1\u00f1",
+            "\1\u00f2",
+            "\1\u00f3",
             "",
             "",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\u00f4",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00f6",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u00f8",
             "",
             "",
+            "\1\u00f9",
             "",
-            "\1\u00f7",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "\1\u00fc",
-            "",
-            "",
-            "\1\u00fd",
-            "",
-            "\1\u00fe",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
-            "",
-            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u00ff",
             "",
             "",
             "\1\u0100",
-            "\1\u0101",
-            "\1\u0102",
             "",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\u0101",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0103",
             "\1\u0104",
             "\1\u0105",
             "",
-            "\1\u0106",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u0107",
             "\1\u0108",
             "",
-            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
-            "\71",
+            "\1\u0109",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u010b",
+            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             ""
     };
 
@@ -3694,7 +3728,7 @@ public class InternalDataCentricDSLLexer extends Lexer {
             this.transition = DFA21_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -3710,43 +3744,43 @@ public class InternalDataCentricDSLLexer extends Lexer {
 
                         else if ( (LA21_0=='|') ) {s = 3;}
 
-                        else if ( (LA21_0=='t') ) {s = 4;}
+                        else if ( (LA21_0=='p') ) {s = 4;}
 
-                        else if ( (LA21_0=='f') ) {s = 5;}
+                        else if ( (LA21_0=='t') ) {s = 5;}
 
-                        else if ( (LA21_0=='+') ) {s = 6;}
+                        else if ( (LA21_0=='f') ) {s = 6;}
 
-                        else if ( (LA21_0=='-') ) {s = 7;}
+                        else if ( (LA21_0=='+') ) {s = 7;}
 
-                        else if ( (LA21_0=='*') ) {s = 8;}
+                        else if ( (LA21_0=='-') ) {s = 8;}
 
-                        else if ( (LA21_0=='/') ) {s = 9;}
+                        else if ( (LA21_0=='*') ) {s = 9;}
 
-                        else if ( (LA21_0=='%') ) {s = 10;}
+                        else if ( (LA21_0=='/') ) {s = 10;}
 
-                        else if ( (LA21_0=='>') ) {s = 11;}
+                        else if ( (LA21_0=='%') ) {s = 11;}
 
-                        else if ( (LA21_0=='<') ) {s = 12;}
+                        else if ( (LA21_0=='>') ) {s = 12;}
 
-                        else if ( (LA21_0=='!') ) {s = 13;}
+                        else if ( (LA21_0=='<') ) {s = 13;}
 
-                        else if ( (LA21_0=='.') ) {s = 14;}
+                        else if ( (LA21_0=='!') ) {s = 14;}
 
-                        else if ( (LA21_0=='?') ) {s = 15;}
+                        else if ( (LA21_0=='.') ) {s = 15;}
 
-                        else if ( (LA21_0=='v') ) {s = 16;}
+                        else if ( (LA21_0=='?') ) {s = 16;}
 
-                        else if ( (LA21_0=='e') ) {s = 17;}
+                        else if ( (LA21_0=='v') ) {s = 17;}
 
-                        else if ( (LA21_0=='s') ) {s = 18;}
+                        else if ( (LA21_0=='e') ) {s = 18;}
 
-                        else if ( (LA21_0=='i') ) {s = 19;}
+                        else if ( (LA21_0=='s') ) {s = 19;}
 
-                        else if ( (LA21_0==';') ) {s = 20;}
+                        else if ( (LA21_0=='i') ) {s = 20;}
 
-                        else if ( (LA21_0=='q') ) {s = 21;}
+                        else if ( (LA21_0==';') ) {s = 21;}
 
-                        else if ( (LA21_0=='p') ) {s = 22;}
+                        else if ( (LA21_0=='q') ) {s = 22;}
 
                         else if ( (LA21_0=='(') ) {s = 23;}
 

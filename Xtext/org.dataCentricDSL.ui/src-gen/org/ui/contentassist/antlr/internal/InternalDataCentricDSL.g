@@ -3365,6 +3365,32 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Print__Alternatives_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPrintAccess().getPrintKeyword_0_0()); }
+
+	'print' 
+
+{ after(grammarAccess.getPrintAccess().getPrintKeyword_0_0()); }
+)
+
+    |(
+{ before(grammarAccess.getPrintAccess().getPrintlnKeyword_0_1()); }
+
+	'println' 
+
+{ after(grammarAccess.getPrintAccess().getPrintlnKeyword_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__PrintParam__Alternatives
     @init {
 		int stackSize = keepStackSize();
@@ -5249,11 +5275,9 @@ rule__Print__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getPrintAccess().getPrintKeyword_0()); }
-
-	'print' 
-
-{ after(grammarAccess.getPrintAccess().getPrintKeyword_0()); }
+{ before(grammarAccess.getPrintAccess().getAlternatives_0()); }
+(rule__Print__Alternatives_0)
+{ after(grammarAccess.getPrintAccess().getAlternatives_0()); }
 )
 
 ;

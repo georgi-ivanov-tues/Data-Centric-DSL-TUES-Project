@@ -46,7 +46,7 @@ QueryParam returns Query:
 ;
 
 Print:
-	'print' PrintParam
+	('print' | 'println') PrintParam
 ;
 
 PrintParam returns Print:
