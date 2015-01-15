@@ -50,12 +50,12 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
 	def void checkIfCalledFunctionExists(FunctionCall fc) {
-		var Array = fc.eContainer;
-		while(!(Array instanceof DataCentricDSL)) {
-			Array = Array.eContainer;
+		var container = fc.eContainer;
+		while(!(container instanceof DataCentricDSL)) {
+			container = container.eContainer;
 		}
 		
-		val Elements = (Array as DataCentricDSL).elements.toArray.filter(typeof(FunctionDecl));
+		val Elements = (container as DataCentricDSL).elements.toArray.filter(typeof(FunctionDecl));
 		if(functionIsDeclared(Elements, fc.name)) {
 			return;
 		}
@@ -65,38 +65,40 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
 	def void checkIfAssignedVariableExists(VariableCall vc) {
-		var Array = vc.eContainer;
-		var VariableDecl[] variablesInScope;
-		while(!(Array instanceof DataCentricDSL)) {
-			Array = Array.eContainer;
-			if(Array instanceof ForStatement) {
-				variablesInScope = (Array as ForStatement).statements.toArray.filter(typeof(VariableDecl));
-				var DeclaratedVar = (Array as ForStatement).forVar;
+		var container = vc.eContainer;
+		var VariableDecl[] variables = null;
+		while(!(container instanceof DataCentricDSL)) {
+			container = container.eContainer;
+			
+			if(container instanceof IfStatement) {
+				variables = (container as IfStatement).statements.toArray.filter(typeof(VariableDecl));
+			} else if(container instanceof ForStatement) {
+				variables = (container as ForStatement).statements.toArray.filter(typeof(VariableDecl));
+				var DeclaratedVar = (container as ForStatement).forVar;
 				if(DeclaratedVar.name.toString.equals(vc.variableCall.toString)) {
 					return;
 				}
-			} else if(Array instanceof IfStatement) {
-				variablesInScope = (Array as IfStatement).statements.toArray.filter(typeof(VariableDecl));
-			} else if(Array instanceof WhileStatement) {
-				variablesInScope = (Array as WhileStatement).statements.toArray.filter(typeof(VariableDecl));
+			} else if(container instanceof WhileStatement) {
+				variables = (container as WhileStatement).statements.toArray.filter(typeof(VariableDecl));
 			}
-		
-			if(variableIsDeclared(variablesInScope, vc.variableCall)) {
+			if(variableIsDeclared(variables, vc.variableCall)) {
 				return;
 			}
+			variables = null;
 		}
-		
-		variablesInScope = (Array as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
-		if(variableIsDeclared(variablesInScope, vc.variableCall)) {
+		variables = (container as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
+		if(variableIsDeclared(variables, vc.variableCall)) {
 			return;
 		}
 		error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
 	}
 
 	def boolean variableIsDeclared(VariableDecl[] variables, String name) {
-		for(i : 0..< variables.length) {
-			if(variables.get(i).name.toString.equals(name)) {
-				return true;
+		if(variables != null) {
+			for(i : 0..< variables.length) {
+				if(variables.get(i).name.toString.equals(name)) {
+					return true;
+				}
 			}
 		}
 		return false;
