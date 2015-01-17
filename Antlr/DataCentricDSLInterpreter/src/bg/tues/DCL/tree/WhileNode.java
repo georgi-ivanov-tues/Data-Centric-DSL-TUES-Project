@@ -15,7 +15,6 @@ public class WhileNode implements Node {
 	@Override
 	public Value evaluate() {
 		Value value = condition.evaluate();
-
 		if(!value.isBoolean()) {
 			throw new RuntimeException("illegal boolean expression " + 
 					"inside while-statement: " + value);
@@ -28,5 +27,4 @@ public class WhileNode implements Node {
 
 		return Value.VOID;
 	}
-
 }

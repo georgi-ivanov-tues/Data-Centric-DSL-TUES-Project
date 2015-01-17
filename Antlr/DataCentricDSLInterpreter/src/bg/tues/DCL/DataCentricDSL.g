@@ -97,7 +97,7 @@ statement
   ;
 
 query: 
-  'query'^ (String | variableCall)
+  'query'^ (expression)
 ;
 
 variableCall:
@@ -134,8 +134,10 @@ elseStat
   ;
 
 functionDecl
-  :  'func' Identifier '(' idList? ')' '{' block '}' 
-     {defineFunction($Identifier.text, $idList.tree, $block.tree);}
+  :  'func' Identifier '(' idList? ')' '{' block '}'
+   {defineFunction($Identifier.text, $idList.tree, $block.tree);}
+//  :  'func' Identifier '(' idList? ')' '{' statement '}'
+//     {defineFunction($Identifier.text, $idList.tree, $statement.tree);}
   ;
 
 forStatement
@@ -313,5 +315,3 @@ fragment Int
 fragment Digit 
   :  '0'..'9'
   ;
-  
-

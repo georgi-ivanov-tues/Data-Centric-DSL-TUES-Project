@@ -24,7 +24,7 @@ import org.junit.Test;
 
 import bg.tues.DCL.derbyDB.CreateDB;
 
-public class PrintVariableQueryTest {
+public class PrintlnVariableQueryTest {
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 	@Before

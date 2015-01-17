@@ -17,7 +17,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PrintVariableTest {
+public class PrintlnVariableTest {
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 	@Before

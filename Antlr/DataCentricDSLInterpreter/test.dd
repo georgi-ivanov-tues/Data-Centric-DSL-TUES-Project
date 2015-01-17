@@ -1,10 +1,27 @@
 
+i = 0;
+while(true){
+	println i;
+	i++;
+}
+
+/*
+a = "people";
+
+println query "SELECT * FROM " + a;
+*/
+/*
+print "Hello ";
+println "World";
+println "World";
+*/
+/*
 if(1 == 1){
 	global a = 0;
 }
 
 println a;
-
+*/
 /*
 for(i = 0; i < 5; i = i + 1){
 	println i;

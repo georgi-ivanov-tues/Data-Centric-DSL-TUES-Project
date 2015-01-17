@@ -1,14 +1,9 @@
 package bg.tues.DCL.tests;
 
-import static org.junit.Assert.assertEquals;
-
+import static org.junit.Assert.*;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -22,9 +17,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import bg.tues.DCL.derbyDB.CreateDB;
-
-public class PrintQueryTest {
+public class PrintlnTest {
 	
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -39,23 +32,16 @@ public class PrintQueryTest {
 	}
 	
 	@Test
-	public void QueryExecutionTest() throws RecognitionException {
-		CharStream cs = new ANTLRStringStream("println query \"SELECT first_name FROM people WHERE first_name = 'Georgi'\";");
+	public void PrintExecutionTest() throws RecognitionException, IOException {
+		CharStream cs = new ANTLRStringStream("println \"Hello World\";");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
 		program_return program = parser.program();
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.getTree());
-		Map<String, Object> myMap = new HashMap<String, Object>();
-		try {
-			myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
+		ProgramWalker walker = new ProgramWalker(nodeStream);
 		walker.program();
 		
-		String str = outContent.toString();
-		assertEquals("Georgi", str.trim());
+		assertEquals("Hello World", outContent.toString().trim());
 	}
 }

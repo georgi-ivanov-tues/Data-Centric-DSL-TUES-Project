@@ -10,6 +10,7 @@ options {
   import bg.tues.DCL.*;
   import bg.tues.DCL.tree.*;
   import bg.tues.DCL.tree.funcions.PrintlnNode;
+  import bg.tues.DCL.tree.funcions.PrintNode;
   import bg.tues.DCL.tree.funcions.QueryNode;
   import bg.tues.DCL.tree.expressions.operations.*;
   import java.util.Map; 
@@ -93,13 +94,7 @@ statement returns [Node node]
   ;
 
 query returns [Node node]: 
-  {String sqlStatement = "";}
-  ^('query'
-   (  String {node = new QueryNode(new AtomNode($String.text), (Connection) context.get("dataSource"));} 
-   |  variableCall {node = new QueryNode(new IdentifierNode($variableCall.value, currentScope), (Connection) context.get("dataSource"));}
-//   |  expression {node = new QueryNode($expression.node, (Connection) context.get("dataSource"));}
-   )
-   )
+  ^('query' expression {node = new QueryNode($expression.node, (Connection) context.get("dataSource"));})
 ;
 
 variableCall returns [String value]:
@@ -133,7 +128,7 @@ functionCall returns [Node node]
       
   }
   |  ^(FUNC_CALL Println expression?) {node = new PrintlnNode($expression.node);}
-  |  ^(FUNC_CALL Print expression)
+  |  ^(FUNC_CALL Print expression) {node = new PrintNode($expression.node);}
   |  ^(FUNC_CALL Assert expression) 
   |  ^(FUNC_CALL Size expression)
   ;
@@ -194,11 +189,10 @@ expression returns [Node node]
   |  ^(UNARY_MIN expression)
   |  ^(NEGATE expression)
   |  Number {node = new AtomNode(Double.parseDouble($Number.text));}
-  |  Bool
+  |  Bool {node = new AtomNode(new Boolean($Bool.text));} 
   |  Null
   |  lookup {node = $lookup.node;}  
   |  query {node = $query.node;}
-//  |  incrementation{node = $incrementation.node;}
   ;
 
 incrementation returns [Node node]
@@ -206,7 +200,6 @@ incrementation returns [Node node]
   | '--' {node = new IncrementationNode($variableCall.value,-1,currentScope);})
   )
 ;
-
 
 lookup returns [Node node]
   :  ^(LOOKUP functionCall indexes?)

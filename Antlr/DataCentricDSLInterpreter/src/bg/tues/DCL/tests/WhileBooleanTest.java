@@ -20,9 +20,9 @@ import bg.tues.DCL.DataCentricDSLParser;
 import bg.tues.DCL.ProgramWalker;
 import bg.tues.DCL.DataCentricDSLParser.program_return;
 
-public class PrintTest {
+public class WhileBooleanTest {
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
+	
 	@Before
 	public void setUpStreams() {
 	    System.setOut(new PrintStream(outContent));
@@ -35,7 +35,7 @@ public class PrintTest {
 	
 	@Test
 	public void PrintExecutionTest() throws RecognitionException, IOException {
-		CharStream cs = new ANTLRStringStream("print \"Hello \"; print \"World\";");
+		CharStream cs = new ANTLRStringStream("a = 0; while(false){a++;}println a;");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
@@ -44,6 +44,6 @@ public class PrintTest {
 		ProgramWalker walker = new ProgramWalker(nodeStream);
 		walker.program();
 		
-		assertEquals("Hello World", outContent.toString().trim());
+		assertEquals("0.0", outContent.toString().trim());
 	}
 }	
