@@ -11,6 +11,7 @@ package org.dataCentricDSL;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.dataCentricDSL.VariableDecl#isGlobal <em>Global</em>}</li>
  *   <li>{@link org.dataCentricDSL.VariableDecl#getName <em>Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.VariableDecl#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
@@ -22,6 +23,32 @@ package org.dataCentricDSL;
  */
 public interface VariableDecl extends SimpleStatement
 {
+  /**
+   * Returns the value of the '<em><b>Global</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Global</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Global</em>' attribute.
+   * @see #setGlobal(boolean)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableDecl_Global()
+   * @model
+   * @generated
+   */
+  boolean isGlobal();
+
+  /**
+   * Sets the value of the '{@link org.dataCentricDSL.VariableDecl#isGlobal <em>Global</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Global</em>' attribute.
+   * @see #isGlobal()
+   * @generated
+   */
+  void setGlobal(boolean value);
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->

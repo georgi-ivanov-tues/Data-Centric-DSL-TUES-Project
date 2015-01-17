@@ -3,19 +3,25 @@ grammar org.DataCentricDSL with org.eclipse.xtext.xbase.Xbase
 generate dataCentricDSL "http://www.DataCentricDSL.org"
 
 DataCentricDSL:
-	(elements += Statement)*
+	(elements += (Statement | FunctionDecl))*
 ;
 
 Statement:
-	SimpleStatement | CompoundStatement
+	(SimpleStatement | 
+	 CompoundStatement)
 ;
 
 SimpleStatement:
-	(VariableDecl | Query | Print | MultiAssign | PostfixOperation) ';'
+	(VariableDecl | 
+	 Query | 
+	 Print | 
+	 MultiAssign | 
+	 PostfixOperation | 
+	 FunctionCall) ';'
 ;
 
 VariableDecl:
-	name=ValidID OpAssignment variableValue=(VariableParam | Expression)
+	(global?='global')? name=ValidID OpAssignment variableValue=(VariableParam | Expression)
 ;
 
 OpAssignment:
@@ -25,10 +31,9 @@ OpAssignment:
 VariableParam returns VariableDecl:
 	{VariableParam} 
 	(variableStringParam=STRING | 
-	variableVarParam=VariableCall | 
-	variableQueryParam=Query |
-	variableBolleanValue=BolleanValue
-	)
+	 variableVarParam=VariableCall | 
+	 variableQueryParam=Query |
+	 variableBolleanValue=BolleanValue)
 ;
 
 Query:
@@ -36,15 +41,26 @@ Query:
 ;
 
 QueryParam returns Query:
-	(queryValue=STRING | VariableCall)
+	(queryValue=STRING | 
+	 VariableCall)
 ;
 
 Print:
-	'print' PrintParam
+	('print' | 'println') PrintParam
 ;
 
 PrintParam returns Print:
-	(printValue=STRING | VariableCall | Query | Expression)
+	(printValue=STRING | 
+	 VariableCall | 
+	 Query | 
+	 Expression)
+;
+
+FunctionCall:
+	name=ValidID '('  
+		(arguments+=(VariableCall | StringLiteral) 
+		(',' arguments+=(VariableCall | StringLiteral))*)?
+	 ')'
 ;
 
 VariableCall:
@@ -85,9 +101,15 @@ NumberLiteral:
 
 CompoundStatement:
 	IfStatement |
-	SwitchStatement |
+//	SwitchStatement |
 	WhileStatement |
 	ForStatement
+;
+
+FunctionDecl:
+	'func' name=ValidID '(' (arguments+=ValidID (',' arguments+=ValidID)*)? ')' '{'
+		(statements+=Statement)*
+	'}'
 ;
 
 IfStatement:
@@ -120,12 +142,18 @@ SwitchStatement:
 
 WhileStatement:
 	{WhileStatement}
-	'while' '(' whileCondition=StatementCondition ')' '{' (statements+=Statement)* '}'
+	'while' '(' whileCondition=StatementCondition ')' '{' 
+		(statements+=Statement)* 
+	'}'
 ;
 
 ForStatement:
 	{ForStatement}
-	'for' '(' forVar=VariableDecl ';' forCondition=StatementCondition ';' operation=(PostfixOperation | ForMultiAssign) ')' '{' (statements+=Statement)* '}'
+	'for' '(' forVar=VariableDecl ';' 
+		forCondition=StatementCondition ';' 
+			operation=(PostfixOperation | ForMultiAssign) ')' '{' 
+			  	(statements+=Statement)* 
+	'}'
 ;
 
 StatementCondition:
@@ -137,7 +165,9 @@ Condition:
 ;
 
 ConditionElement:
-	(Expression | VariableCall | StringLiteral)
+	(Expression | 
+	 VariableCall | 
+	 StringLiteral)
 ;
 
 ForMultiAssign:
@@ -149,11 +179,14 @@ MultiAssign:
 ;
 
 MultiAssignRightOperand:
-	(VariableCall | StringLiteral | Query | NumberLiteral)
+	(VariableCall | 
+	 StringLiteral | 
+	 Query | 
+	 NumberLiteral)
 ;
 
 PostfixOperation:
-	VariableCall op=PostfixOperationOperator
+		{PostfixOperation}	call=VariableCall op=PostfixOperationOperator
 ;
 
 StringLiteral:

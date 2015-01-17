@@ -123,13 +123,21 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DataCentricDSLPackage.FUNCTION_CALL:
+      {
+        FunctionCall functionCall = (FunctionCall)theEObject;
+        T result = caseFunctionCall(functionCall);
+        if (result == null) result = caseSimpleStatement(functionCall);
+        if (result == null) result = caseStatement(functionCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DataCentricDSLPackage.VARIABLE_CALL:
       {
         VariableCall variableCall = (VariableCall)theEObject;
         T result = caseVariableCall(variableCall);
         if (result == null) result = caseQuery(variableCall);
         if (result == null) result = caseConditionElement(variableCall);
-        if (result == null) result = casePostfixOperation(variableCall);
         if (result == null) result = casePrint(variableCall);
         if (result == null) result = caseMultiAssignRightOperand(variableCall);
         if (result == null) result = caseSimpleStatement(variableCall);
@@ -169,6 +177,13 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DataCentricDSLPackage.FUNCTION_DECL:
+      {
+        FunctionDecl functionDecl = (FunctionDecl)theEObject;
+        T result = caseFunctionDecl(functionDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DataCentricDSLPackage.IF_STATEMENT:
       {
         IfStatement ifStatement = (IfStatement)theEObject;
@@ -182,8 +197,6 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         SwitchStatement switchStatement = (SwitchStatement)theEObject;
         T result = caseSwitchStatement(switchStatement);
-        if (result == null) result = caseCompoundStatement(switchStatement);
-        if (result == null) result = caseStatement(switchStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -438,6 +451,22 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionCall(FunctionCall object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Variable Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -497,6 +526,22 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCompoundStatement(CompoundStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionDecl(FunctionDecl object)
   {
     return null;
   }

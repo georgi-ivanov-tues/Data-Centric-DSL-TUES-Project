@@ -70,10 +70,12 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.VARIABLE_DECL: return createVariableDecl();
       case DataCentricDSLPackage.QUERY: return createQuery();
       case DataCentricDSLPackage.PRINT: return createPrint();
+      case DataCentricDSLPackage.FUNCTION_CALL: return createFunctionCall();
       case DataCentricDSLPackage.VARIABLE_CALL: return createVariableCall();
       case DataCentricDSLPackage.EXPRESSION: return createExpression();
       case DataCentricDSLPackage.NUMBER_LITERAL: return createNumberLiteral();
       case DataCentricDSLPackage.COMPOUND_STATEMENT: return createCompoundStatement();
+      case DataCentricDSLPackage.FUNCTION_DECL: return createFunctionDecl();
       case DataCentricDSLPackage.IF_STATEMENT: return createIfStatement();
       case DataCentricDSLPackage.SWITCH_STATEMENT: return createSwitchStatement();
       case DataCentricDSLPackage.WHILE_STATEMENT: return createWhileStatement();
@@ -168,6 +170,17 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  public FunctionCall createFunctionCall()
+  {
+    FunctionCallImpl functionCall = new FunctionCallImpl();
+    return functionCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public VariableCall createVariableCall()
   {
     VariableCallImpl variableCall = new VariableCallImpl();
@@ -205,6 +218,17 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     CompoundStatementImpl compoundStatement = new CompoundStatementImpl();
     return compoundStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionDecl createFunctionDecl()
+  {
+    FunctionDeclImpl functionDecl = new FunctionDeclImpl();
+    return functionDecl;
   }
 
   /**

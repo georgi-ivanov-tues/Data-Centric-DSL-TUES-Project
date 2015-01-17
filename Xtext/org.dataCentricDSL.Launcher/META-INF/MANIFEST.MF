@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Launcher
+Bundle-SymbolicName: org.dataCentricDSL.Launcher;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.datacentricdsl.launcher.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.debug.core,
+ org.eclipse.jdt.launching,
+ org.eclipse.jdt.core,
+ org.eclipse.debug.ui,
+ DataCentricDSLInterpreter;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

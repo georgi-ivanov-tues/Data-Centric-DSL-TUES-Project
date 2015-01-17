@@ -3,11 +3,12 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dataCentricDSL" nsURI="http://www.DataCentricDSL.org" nsPrefix="dataCentricDSL">
   <eClassifiers xsi:type="ecore:EClass" name="DataCentricDSL">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//Statement" containment="true"/>
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleStatement" eSuperTypes="#//Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDecl" eSuperTypes="#//SimpleStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="global" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variableValue" eType="#//SimpleStatement"
         containment="true"/>
@@ -18,9 +19,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Print" eSuperTypes="#//SimpleStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="printValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableCall" eSuperTypes="#//Query #//Print #//ConditionElement #//MultiAssignRightOperand #//PostfixOperation">
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//SimpleStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableCall" eSuperTypes="#//Query #//Print #//ConditionElement #//MultiAssignRightOperand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableCall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//Print #//ConditionElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//Expression #//MultiAssignRightOperand">
@@ -30,15 +35,24 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//Statement" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arguments" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfStatement" eSuperTypes="#//CompoundStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" upperBound="-1"
         eType="#//StatementCondition" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SwitchStatement" eSuperTypes="#//CompoundStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="SwitchStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//VariableCall"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cases" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WhileStatement" eSuperTypes="#//CompoundStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="whileCondition" eType="#//StatementCondition"
@@ -77,7 +91,11 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiAssignRightOperand"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PostfixOperation" eSuperTypes="#//SimpleStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PostfixOperation" eSuperTypes="#//SimpleStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="call" eType="#//VariableCall"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="#//ConditionElement #//MultiAssignRightOperand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

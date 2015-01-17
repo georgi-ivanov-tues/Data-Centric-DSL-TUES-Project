@@ -1,0 +1,27 @@
+<plugin>
+	<extension point="org.eclipse.debug.ui.launchShortcuts">
+		<shortcut
+        	class="org.datacentricdsl.launcher.DSLLaunchShortcut"
+        	icon="images/dsl.gif"
+        	id="org.datacentricdsl.launcher.DSLLaunchShortcut"
+        	label="Run DSL"
+        	modes="run, debug">
+    	 <contextualLaunch>
+         	<contextLabel mode="run" label="Run DCL" />
+         	<contextLabel mode="debug" label="Debug DCL" />
+         	<enablement >
+           	 <with variable="selection">
+           		<count value="1"/>
+          	 <iterate>
+            <adapt type="org.eclipse.core.resources.IResource">
+                <and>
+                	<test property="org.eclipse.core.resources.name" value="*.dd"/>
+            	</and>
+       		 </adapt>
+             </iterate>
+          	 </with>
+       		</enablement>
+     	 </contextualLaunch>
+  		</shortcut>
+	</extension>
+</plugin>

@@ -4,6 +4,8 @@ package org.dataCentricDSL;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Switch Statement</b></em>'.
@@ -14,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.dataCentricDSL.SwitchStatement#getName <em>Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.SwitchStatement#getCases <em>Cases</em>}</li>
+ *   <li>{@link org.dataCentricDSL.SwitchStatement#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SwitchStatement extends CompoundStatement
+public interface SwitchStatement extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' containment reference.
@@ -64,5 +67,21 @@ public interface SwitchStatement extends CompoundStatement
    * @generated
    */
   EList<String> getCases();
+
+  /**
+   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * The list contents are of type {@link org.dataCentricDSL.Statement}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Statements</em>' containment reference list.
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getSwitchStatement_Statements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Statement> getStatements();
 
 } // SwitchStatement

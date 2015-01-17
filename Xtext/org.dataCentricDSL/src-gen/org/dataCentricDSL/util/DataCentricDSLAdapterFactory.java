@@ -105,6 +105,11 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createPrintAdapter();
       }
       @Override
+      public Adapter caseFunctionCall(FunctionCall object)
+      {
+        return createFunctionCallAdapter();
+      }
+      @Override
       public Adapter caseVariableCall(VariableCall object)
       {
         return createVariableCallAdapter();
@@ -123,6 +128,11 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseCompoundStatement(CompoundStatement object)
       {
         return createCompoundStatementAdapter();
+      }
+      @Override
+      public Adapter caseFunctionDecl(FunctionDecl object)
+      {
+        return createFunctionDeclAdapter();
       }
       @Override
       public Adapter caseIfStatement(IfStatement object)
@@ -327,6 +337,21 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.FunctionCall <em>Function Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.dataCentricDSL.FunctionCall
+   * @generated
+   */
+  public Adapter createFunctionCallAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableCall <em>Variable Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -382,6 +407,21 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCompoundStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.FunctionDecl <em>Function Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.dataCentricDSL.FunctionDecl
+   * @generated
+   */
+  public Adapter createFunctionDeclAdapter()
   {
     return null;
   }
