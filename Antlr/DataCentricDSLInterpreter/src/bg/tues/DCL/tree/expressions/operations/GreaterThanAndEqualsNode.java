@@ -26,7 +26,7 @@ public class GreaterThanAndEqualsNode implements Node {
 	      return new Value(a.asString().compareTo(b.asString()) >= -1);
 	    }
 
-	    throw new RuntimeException("illegal expression: " + this);
+	    throw new RuntimeException("Illegal expression: " + this);
 	  }
 
 	  @Override

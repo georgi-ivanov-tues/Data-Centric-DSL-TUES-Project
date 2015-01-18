@@ -23,7 +23,7 @@ public class MultiplicationNode implements Node {
 			return new Value(a.asDouble() * b.asDouble());
 		}
 
-		throw new RuntimeException("illegal expression: " + this);
+		throw new RuntimeException("Illegal expression: " + this);
 	}
 
 	@Override

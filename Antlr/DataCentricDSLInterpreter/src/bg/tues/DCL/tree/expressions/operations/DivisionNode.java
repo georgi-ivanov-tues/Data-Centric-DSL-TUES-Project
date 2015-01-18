@@ -21,12 +21,12 @@ public class DivisionNode implements Node {
 		// number / number
 		if(a.isNumber() && b.isNumber()) {
 			if(b.asDouble() == 0){
-				throw new RuntimeException("devision by zero: " + this);
+				throw new RuntimeException("Division by zero: " + this);
 			}
 			return new Value(a.asDouble() / b.asDouble());
 		}
 
-		throw new RuntimeException("illegal expression: " + this);
+		throw new RuntimeException("Illegal expression: " + this);
 	}
 
 	@Override

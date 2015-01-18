@@ -17,7 +17,7 @@ public class IdentifierNode implements Node {
 	public Value evaluate() {
 		Value value = scope.resolve(identifier);
 		if(value == null) {
-			throw new RuntimeException("no such variable: " + this);
+			throw new RuntimeException("No such variable: " + this);
 		}
 		return value;
 	}

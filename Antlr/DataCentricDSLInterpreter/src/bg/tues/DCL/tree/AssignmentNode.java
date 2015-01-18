@@ -32,7 +32,7 @@ public class AssignmentNode implements Node {
 
 		Value value = rhs.evaluate();
 		if (value == Value.VOID) {
-			throw new RuntimeException("can't assign VOID to " + identifier);
+			throw new RuntimeException("Can't assign VOID to " + identifier);
 		}
 
 		if (indexNodes.isEmpty()) { // a simple assignment
@@ -47,7 +47,7 @@ public class AssignmentNode implements Node {
 				Value index = indexNodes.get(i).evaluate();
 
 				if (!index.isNumber() || !list.isList()) { // sanity checks
-					throw new RuntimeException("illegal statement: " + this);
+					throw new RuntimeException("Illegal statement: " + this);
 				}
 
 				int idx = index.asLong().intValue();
@@ -59,7 +59,7 @@ public class AssignmentNode implements Node {
 			Value lastIndex = indexNodes.get(indexNodes.size() - 1).evaluate();
 
 			if (!lastIndex.isNumber() || !list.isList()) { // sanity checks
-				throw new RuntimeException("illegal statement: " + this);
+				throw new RuntimeException("Illegal statement: " + this);
 			}
 
 			// re-assign `foo[x][y][z]`

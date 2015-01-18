@@ -24,7 +24,7 @@ public class IfNode implements Node {
       Value value = ch.expression.evaluate();
 
       if(!value.isBoolean()) {
-        throw new RuntimeException("illegal boolean expression " + 
+        throw new RuntimeException("Illegal boolean expression " + 
             "inside if-statement: " + ch.expression);
       }
 

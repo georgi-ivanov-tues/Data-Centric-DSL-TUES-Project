@@ -79,8 +79,8 @@ public class Function implements Node{
 	
 	public void invoke(List<Node> params, Map<String, Function> functions) {
 		if(params.size() != identifiers.size()) {
-			throw new RuntimeException("illegal function call: " + identifiers.size() +
-					" parameters expected for function `" + id + "`");
+			throw new RuntimeException("Illegal function call: " + identifiers.size() +
+					" parameters expected for function \'" + id + "\'");
 		}
 
 		// Assign all expression parameters to this function's identifiers
@@ -91,12 +91,13 @@ public class Function implements Node{
 		try {
 			// Create a tree walker to evaluate this function's code block
 			CommonTreeNodeStream nodes = new CommonTreeNodeStream(code);
+			// TODO Decide about context and scope and fix
 			ProgramWalker walker = new ProgramWalker(nodes, scope, functions);
 			walker.context.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
 			walker.program();
 		} catch (RecognitionException e) {
 			// do not recover from this
-			throw new RuntimeException("something went wrong, terminating...", e);
+			throw new RuntimeException("Something went wrong, terminating...", e);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
