@@ -22,7 +22,7 @@ public class Value implements Comparable<Value> {
     value = v;
     // only accept boolean, list, number or string types
     if(!(isBoolean() || isList() || isNumber() || isString() || isResultSet() || isFunction())) {
-      throw new RuntimeException("invalid data type: " + v + " (" + v.getClass() + ")");
+      throw new RuntimeException("Invalid data type: " + v + " (" + v.getClass() + ")");
     }
   }
 
@@ -65,14 +65,14 @@ public class Value implements Comparable<Value> {
       return this.asString().compareTo(that.asString());
     }
     else {
-      throw new RuntimeException("illegal expression: can't compare `" + this + "` to `" + that + "`");
+      throw new RuntimeException("Illegal expression: can't compare \'" + this + "\' to \'" + that + "\'");
     }
   }
 
   @Override
   public boolean equals(Object o) {
     if(this == VOID || o == VOID) {
-      throw new RuntimeException("can't use VOID: " + this + " ==/!= " + o);
+      throw new RuntimeException("Can't use VOID: " + this + " ==/!= " + o);
     }
     if(this == o) {
       return true;

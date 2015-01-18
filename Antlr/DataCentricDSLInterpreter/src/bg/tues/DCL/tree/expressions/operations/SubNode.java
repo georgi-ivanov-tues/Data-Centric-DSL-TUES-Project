@@ -1,7 +1,5 @@
 package bg.tues.DCL.tree.expressions.operations;
 
-import java.util.List;
-
 import bg.tues.DCL.Value;
 import bg.tues.DCL.tree.Node;
 
@@ -32,7 +30,7 @@ public class SubNode implements Node {
 		//	      return new TLValue(list);
 		//	    }
 
-		throw new RuntimeException("illegal expression: " + this);
+		throw new RuntimeException("Illegal expression: " + this);
 	}
 
 	@Override

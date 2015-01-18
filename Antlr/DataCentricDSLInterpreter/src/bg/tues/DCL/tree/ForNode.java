@@ -27,7 +27,7 @@ public class ForNode implements Node{
 		Value value = condition.evaluate();
 		
 		if(!value.isBoolean()) {
-			throw new RuntimeException("illegal boolean expression " + 
+			throw new RuntimeException("Illegal boolean expression " + 
 					"inside for-statement: " + value);
 		}
 

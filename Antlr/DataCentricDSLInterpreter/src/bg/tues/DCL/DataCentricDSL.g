@@ -97,7 +97,7 @@ statement
   ;
 
 query: 
-  'query'^ (expression)
+  'query'^ expression
 ;
 
 variableCall:

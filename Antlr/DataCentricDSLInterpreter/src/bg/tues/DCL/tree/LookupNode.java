@@ -28,7 +28,7 @@ public class LookupNode implements Node {
 		for(Value index : indexValues) {
 
 			if(!index.isNumber() || !(value.isList() || value.isString())) {
-				throw new RuntimeException("illegal expression: " + expression + "[" + index + "]");
+				throw new RuntimeException("Illegal expression: " + expression + "[" + index + "]");
 			}
 
 			int idx = index.asLong().intValue();

@@ -5,9 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
-import org.antlr.runtime.*;
-import org.antlr.runtime.tree.*;
-import bg.tues.DCL.DataCentricDSLParser.program_return;
+
+import org.antlr.runtime.ANTLRFileStream;
+import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.tree.CommonTree;
+import org.antlr.runtime.tree.CommonTreeNodeStream;
+
 import bg.tues.DCL.derbyDB.CreateDB;
 
 public class DCLInterpreter {
@@ -22,8 +26,6 @@ public class DCLInterpreter {
 		CommonTree tree = (CommonTree)parser.program().getTree();
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
 
-		program_return program = parser.program();
-		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.tree);
 		Map<String, Object> myMap = new HashMap<String, Object>();
 		myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
 

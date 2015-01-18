@@ -16,7 +16,7 @@ public class WhileNode implements Node {
 	public Value evaluate() {
 		Value value = condition.evaluate();
 		if(!value.isBoolean()) {
-			throw new RuntimeException("illegal boolean expression " + 
+			throw new RuntimeException("Illegal boolean expression " + 
 					"inside while-statement: " + value);
 		}
 
