@@ -16,7 +16,7 @@ import bg.tues.DCL.derbyDB.CreateDB;
 
 public class DCLInterpreter {
 
-	public void execute(String absolutePath) throws IOException, RecognitionException, SQLException{
+	public void execute(String absolutePath) throws IOException, Exception, SQLException{
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(new ANTLRFileStream(absolutePath));
 
 		CommonTokenStream tokens = new CommonTokenStream(lexer);

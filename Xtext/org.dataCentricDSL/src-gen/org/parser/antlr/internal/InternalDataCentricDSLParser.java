@@ -24,65 +24,9 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_HEX", "RULE_DECIMAL", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "';'", "'global'", "'='", "'query'", "'print'", "'println'", "'('", "','", "')'", "'+'", "'-'", "'*'", "'/'", "'%'", "'func'", "'{'", "'}'", "'if'", "'else if'", "'else '", "'while'", "'for'", "'true'", "'false'", "'+='", "'-='", "'*='", "'/='", "'%='", "'--'", "'++'", "'&&'", "'||'", "'>'", "'<'", "'=='", "'<='", "'>='", "'!='", "'==='", "'!=='", "'instanceof'", "'->'", "'..<'", "'..'", "'=>'", "'<>'", "'?:'", "'**'", "'!'", "'as'", "'.'", "'::'", "'?.'", "'#'", "'['", "']'", "'|'", "'else'", "'switch'", "':'", "'default'", "'case'", "'do'", "'var'", "'val'", "'extends'", "'static'", "'import'", "'extension'", "'super'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'synchronized'", "'catch'", "'?'", "'&'"
     };
-    public static final int RULE_ID=8;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int T__93=93;
-    public static final int T__19=19;
-    public static final int T__94=94;
-    public static final int T__91=91;
-    public static final int T__92=92;
     public static final int RULE_HEX=6;
-    public static final int T__16=16;
-    public static final int T__15=15;
-    public static final int T__90=90;
-    public static final int T__18=18;
-    public static final int T__17=17;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int RULE_DECIMAL=7;
-    public static final int T__80=80;
-    public static final int T__81=81;
-    public static final int T__82=82;
-    public static final int T__83=83;
-    public static final int T__85=85;
-    public static final int T__84=84;
-    public static final int T__87=87;
-    public static final int T__86=86;
-    public static final int T__89=89;
-    public static final int T__88=88;
-    public static final int RULE_ML_COMMENT=9;
-    public static final int RULE_STRING=4;
-    public static final int T__71=71;
-    public static final int T__72=72;
-    public static final int T__70=70;
-    public static final int T__76=76;
-    public static final int T__75=75;
-    public static final int T__74=74;
-    public static final int T__73=73;
-    public static final int T__79=79;
-    public static final int T__78=78;
-    public static final int T__77=77;
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__62=62;
-    public static final int T__63=63;
-    public static final int T__61=61;
-    public static final int T__60=60;
+    public static final int T__50=50;
+    public static final int T__59=59;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
@@ -91,31 +35,87 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int T__59=59;
+    public static final int T__60=60;
+    public static final int T__61=61;
+    public static final int RULE_ID=8;
     public static final int RULE_INT=5;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_SL_COMMENT=10;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__66=66;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int T__67=67;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__91=91;
+    public static final int T__92=92;
+    public static final int T__93=93;
+    public static final int T__94=94;
+    public static final int T__90=90;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int RULE_DECIMAL=7;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int T__70=70;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int RULE_STRING=4;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__77=77;
+    public static final int T__78=78;
+    public static final int T__79=79;
+    public static final int T__73=73;
+    public static final int EOF=-1;
+    public static final int T__74=74;
+    public static final int T__75=75;
+    public static final int T__76=76;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
     public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__88=88;
+    public static final int T__89=89;
+    public static final int T__84=84;
+    public static final int T__85=85;
+    public static final int T__86=86;
+    public static final int T__87=87;
 
     // delegates
     // delegators
@@ -558,13 +558,9 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             case RULE_ID:
                 {
                 switch ( input.LA(2) ) {
-                case 37:
-                case 38:
-                case 39:
-                case 40:
-                case 41:
+                case 15:
                     {
-                    alt4=4;
+                    alt4=1;
                     }
                     break;
                 case 42:
@@ -573,9 +569,13 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                     alt4=5;
                     }
                     break;
-                case 15:
+                case 37:
+                case 38:
+                case 39:
+                case 40:
+                case 41:
                     {
-                    alt4=1;
+                    alt4=4;
                     }
                     break;
                 case 19:
@@ -9937,11 +9937,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                     if ( (LA52_0==46) ) {
                         int LA52_1 = input.LA(2);
 
-                        if ( (LA52_1==46) && (synpred8_InternalDataCentricDSL())) {
-                            alt52=1;
-                        }
-                        else if ( (LA52_1==EOF||(LA52_1>=RULE_STRING && LA52_1<=RULE_ID)||LA52_1==19||(LA52_1>=22 && LA52_1<=23)||LA52_1==28||LA52_1==30||(LA52_1>=33 && LA52_1<=36)||LA52_1==47||LA52_1==62||(LA52_1>=67 && LA52_1<=68)||LA52_1==72||LA52_1==76||(LA52_1>=79 && LA52_1<=89)||LA52_1==91) ) {
+                        if ( (LA52_1==EOF||(LA52_1>=RULE_STRING && LA52_1<=RULE_ID)||LA52_1==19||(LA52_1>=22 && LA52_1<=23)||LA52_1==28||LA52_1==30||(LA52_1>=33 && LA52_1<=36)||LA52_1==47||LA52_1==62||(LA52_1>=67 && LA52_1<=68)||LA52_1==72||LA52_1==76||(LA52_1>=79 && LA52_1<=89)||LA52_1==91) ) {
                             alt52=2;
+                        }
+                        else if ( (LA52_1==46) && (synpred8_InternalDataCentricDSL())) {
+                            alt52=1;
                         }
                         else {
                             if (state.backtracking>0) {state.failed=true; return current;}
@@ -25877,333 +25877,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
     // Delegated rules
 
-    public final boolean synpred44_InternalDataCentricDSL() {
+    public final boolean synpred32_InternalDataCentricDSL() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred44_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred38_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred38_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred11_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred11_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred13_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred13_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred36_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred36_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred17_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred17_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred45_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred45_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred42_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred42_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred43_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred43_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred19_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred19_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred1_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred1_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred16_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred16_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred39_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred39_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred34_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred34_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred30_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred30_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred31_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred31_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred8_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred8_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred3_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred3_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred21_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred21_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred37_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred37_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred27_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred27_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred33_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred33_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred35_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred35_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred29_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred29_InternalDataCentricDSL_fragment(); // can never throw exception
+            synpred32_InternalDataCentricDSL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26227,53 +25905,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred4_InternalDataCentricDSL() {
+    public final boolean synpred11_InternalDataCentricDSL() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred4_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred23_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred23_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred46_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred46_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred18_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred18_InternalDataCentricDSL_fragment(); // can never throw exception
+            synpred11_InternalDataCentricDSL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26297,20 +25933,6 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred10_InternalDataCentricDSL() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred10_InternalDataCentricDSL_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred15_InternalDataCentricDSL() {
         state.backtracking++;
         int start = input.mark();
@@ -26325,11 +25947,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred32_InternalDataCentricDSL() {
+    public final boolean synpred4_InternalDataCentricDSL() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred32_InternalDataCentricDSL_fragment(); // can never throw exception
+            synpred4_InternalDataCentricDSL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26339,11 +25961,67 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred7_InternalDataCentricDSL() {
+    public final boolean synpred13_InternalDataCentricDSL() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred7_InternalDataCentricDSL_fragment(); // can never throw exception
+            synpred13_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred30_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred30_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred8_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred8_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred17_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred17_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred36_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred36_InternalDataCentricDSL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26367,11 +26045,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred26_InternalDataCentricDSL() {
+    public final boolean synpred18_InternalDataCentricDSL() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred26_InternalDataCentricDSL_fragment(); // can never throw exception
+            synpred18_InternalDataCentricDSL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26381,11 +26059,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred14_InternalDataCentricDSL() {
+    public final boolean synpred34_InternalDataCentricDSL() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred14_InternalDataCentricDSL_fragment(); // can never throw exception
+            synpred34_InternalDataCentricDSL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26395,11 +26073,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred20_InternalDataCentricDSL() {
+    public final boolean synpred21_InternalDataCentricDSL() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred20_InternalDataCentricDSL_fragment(); // can never throw exception
+            synpred21_InternalDataCentricDSL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26409,11 +26087,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred5_InternalDataCentricDSL() {
+    public final boolean synpred39_InternalDataCentricDSL() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred5_InternalDataCentricDSL_fragment(); // can never throw exception
+            synpred39_InternalDataCentricDSL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26437,11 +26115,333 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
+    public final boolean synpred46_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred46_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred44_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred44_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred23_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred23_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred29_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred29_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred27_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred27_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred42_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred42_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred3_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred3_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
     public final boolean synpred12_InternalDataCentricDSL() {
         state.backtracking++;
         int start = input.mark();
         try {
             synpred12_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred1_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred1_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred10_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred10_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred5_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred5_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred14_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred14_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred7_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred7_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred16_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred16_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred31_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred31_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred37_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred37_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred33_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred33_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred19_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred19_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred35_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred35_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred38_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred38_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred45_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred45_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred20_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred20_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred43_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred43_InternalDataCentricDSL_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred26_InternalDataCentricDSL() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred26_InternalDataCentricDSL_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26486,7 +26486,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     static final String DFA42_acceptS =
         "\10\uffff\1\2\1\1";
     static final String DFA42_specialS =
-        "\1\uffff\1\6\1\5\1\4\1\2\1\3\1\1\1\0\2\uffff}>";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\0\1\6\2\uffff}>";
     static final String[] DFA42_transitionS = {
             "\5\10\4\uffff\1\10\5\uffff\10\10\1\uffff\3\10\2\uffff\4\10"+
             "\1\1\1\2\1\3\1\4\1\5\4\10\1\7\1\6\26\10\1\uffff\26\10",
@@ -26538,21 +26538,6 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA42_7 = input.LA(1);
-
-                         
-                        int index42_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index42_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA42_6 = input.LA(1);
 
                          
@@ -26567,52 +26552,22 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         input.seek(index42_6);
                         if ( s>=0 ) return s;
                         break;
+                    case 1 : 
+                        int LA42_1 = input.LA(1);
+
+                         
+                        int index42_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index42_1);
+                        if ( s>=0 ) return s;
+                        break;
                     case 2 : 
-                        int LA42_4 = input.LA(1);
-
-                         
-                        int index42_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index42_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA42_5 = input.LA(1);
-
-                         
-                        int index42_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index42_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA42_3 = input.LA(1);
-
-                         
-                        int index42_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index42_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
                         int LA42_2 = input.LA(1);
 
                          
@@ -26627,11 +26582,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         input.seek(index42_2);
                         if ( s>=0 ) return s;
                         break;
-                    case 6 : 
-                        int LA42_1 = input.LA(1);
+                    case 3 : 
+                        int LA42_3 = input.LA(1);
 
                          
-                        int index42_1 = input.index();
+                        int index42_3 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
@@ -26639,7 +26594,52 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index42_1);
+                        input.seek(index42_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA42_4 = input.LA(1);
+
+                         
+                        int index42_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index42_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA42_5 = input.LA(1);
+
+                         
+                        int index42_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index42_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA42_7 = input.LA(1);
+
+                         
+                        int index42_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index42_7);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -26661,7 +26661,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     static final String DFA50_acceptS =
         "\3\uffff\1\3\5\uffff\1\2\1\1";
     static final String DFA50_specialS =
-        "\1\uffff\1\0\1\2\1\uffff\1\5\1\4\1\6\1\1\1\3\2\uffff}>";
+        "\1\uffff\1\0\1\3\1\uffff\1\1\1\4\1\2\1\5\1\6\2\uffff}>";
     static final String[] DFA50_transitionS = {
             "\5\3\4\uffff\1\3\5\uffff\10\3\1\uffff\3\3\2\uffff\15\3\1\5"+
             "\1\4\1\1\1\7\1\10\1\2\2\3\1\6\17\3\1\uffff\26\3",
@@ -26729,10 +26729,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA50_7 = input.LA(1);
+                        int LA50_4 = input.LA(1);
 
                          
-                        int index50_7 = input.index();
+                        int index50_4 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred6_InternalDataCentricDSL()) ) {s = 9;}
@@ -26740,10 +26740,25 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 3;}
 
                          
-                        input.seek(index50_7);
+                        input.seek(index50_4);
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
+                        int LA50_6 = input.LA(1);
+
+                         
+                        int index50_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred5_InternalDataCentricDSL()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 3;}
+
+                         
+                        input.seek(index50_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
                         int LA50_2 = input.LA(1);
 
                          
@@ -26756,21 +26771,6 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
                          
                         input.seek(index50_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA50_8 = input.LA(1);
-
-                         
-                        int index50_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred6_InternalDataCentricDSL()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 3;}
-
-                         
-                        input.seek(index50_8);
                         if ( s>=0 ) return s;
                         break;
                     case 4 : 
@@ -26789,10 +26789,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         if ( s>=0 ) return s;
                         break;
                     case 5 : 
-                        int LA50_4 = input.LA(1);
+                        int LA50_7 = input.LA(1);
 
                          
-                        int index50_4 = input.index();
+                        int index50_7 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred6_InternalDataCentricDSL()) ) {s = 9;}
@@ -26800,22 +26800,22 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 3;}
 
                          
-                        input.seek(index50_4);
+                        input.seek(index50_7);
                         if ( s>=0 ) return s;
                         break;
                     case 6 : 
-                        int LA50_6 = input.LA(1);
+                        int LA50_8 = input.LA(1);
 
                          
-                        int index50_6 = input.index();
+                        int index50_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalDataCentricDSL()) ) {s = 10;}
+                        if ( (synpred6_InternalDataCentricDSL()) ) {s = 9;}
 
                         else if ( (true) ) {s = 3;}
 
                          
-                        input.seek(index50_6);
+                        input.seek(index50_8);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -26837,7 +26837,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     static final String DFA51_acceptS =
         "\1\uffff\1\2\10\uffff\1\1";
     static final String DFA51_specialS =
-        "\2\uffff\1\2\1\5\1\6\1\4\1\1\1\7\1\0\1\3\1\uffff}>";
+        "\2\uffff\1\4\1\3\1\5\1\6\1\7\1\2\1\0\1\1\1\uffff}>";
     static final String[] DFA51_transitionS = {
             "\5\1\4\uffff\1\1\5\uffff\10\1\1\uffff\3\1\2\uffff\15\1\1\2"+
             "\1\3\7\1\1\4\1\5\1\6\1\7\1\10\1\11\11\1\1\uffff\26\1",
@@ -26905,36 +26905,6 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA51_6 = input.LA(1);
-
-                         
-                        int index51_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index51_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA51_2 = input.LA(1);
-
-                         
-                        int index51_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index51_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
                         int LA51_9 = input.LA(1);
 
                          
@@ -26949,11 +26919,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         input.seek(index51_9);
                         if ( s>=0 ) return s;
                         break;
-                    case 4 : 
-                        int LA51_5 = input.LA(1);
+                    case 2 : 
+                        int LA51_7 = input.LA(1);
 
                          
-                        int index51_5 = input.index();
+                        int index51_7 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
@@ -26961,10 +26931,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index51_5);
+                        input.seek(index51_7);
                         if ( s>=0 ) return s;
                         break;
-                    case 5 : 
+                    case 3 : 
                         int LA51_3 = input.LA(1);
 
                          
@@ -26979,7 +26949,22 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         input.seek(index51_3);
                         if ( s>=0 ) return s;
                         break;
-                    case 6 : 
+                    case 4 : 
+                        int LA51_2 = input.LA(1);
+
+                         
+                        int index51_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index51_2);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
                         int LA51_4 = input.LA(1);
 
                          
@@ -26994,11 +26979,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         input.seek(index51_4);
                         if ( s>=0 ) return s;
                         break;
-                    case 7 : 
-                        int LA51_7 = input.LA(1);
+                    case 6 : 
+                        int LA51_5 = input.LA(1);
 
                          
-                        int index51_7 = input.index();
+                        int index51_5 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
@@ -27006,7 +26991,22 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index51_7);
+                        input.seek(index51_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA51_6 = input.LA(1);
+
+                         
+                        int index51_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index51_6);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -27026,14 +27026,14 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     static final String DFA54_maxS =
         "\1\74\2\uffff\1\71\7\uffff";
     static final String DFA54_acceptS =
-        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\7\1\10\1\11\1\6\1\3";
+        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\7\1\10\1\11\1\3\1\6";
     static final String DFA54_specialS =
         "\13\uffff}>";
     static final String[] DFA54_transitionS = {
             "\1\3\1\6\7\uffff\1\1\1\2\1\4\1\5\1\7\1\10",
             "",
             "",
-            "\1\11\12\uffff\1\12",
+            "\1\12\12\uffff\1\11",
             "",
             "",
             "",
@@ -30097,23 +30097,23 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     static final String DFA148_eotS =
         "\7\uffff";
     static final String DFA148_eofS =
-        "\2\uffff\1\4\2\uffff\1\4\1\uffff";
+        "\2\uffff\1\4\3\uffff\1\4";
     static final String DFA148_minS =
-        "\1\10\1\uffff\1\15\1\10\1\uffff\1\15\1\uffff";
+        "\1\10\1\uffff\1\15\1\10\2\uffff\1\15";
     static final String DFA148_maxS =
-        "\1\120\1\uffff\1\100\1\30\1\uffff\1\100\1\uffff";
+        "\1\120\1\uffff\1\100\1\30\2\uffff\1\100";
     static final String DFA148_acceptS =
-        "\1\uffff\1\1\2\uffff\1\2\1\uffff\1\3";
+        "\1\uffff\1\1\2\uffff\1\2\1\3\1\uffff";
     static final String DFA148_specialS =
         "\7\uffff}>";
     static final String[] DFA148_transitionS = {
             "\1\2\107\uffff\1\1",
             "",
             "\1\4\62\uffff\1\3",
-            "\1\5\17\uffff\1\6",
+            "\1\6\17\uffff\1\5",
             "",
-            "\1\4\62\uffff\1\3",
-            ""
+            "",
+            "\1\4\62\uffff\1\3"
     };
 
     static final short[] DFA148_eot = DFA.unpackEncodedString(DFA148_eotS);

@@ -1,6 +1,8 @@
 package org.datacentricdsl.launcher;
 
 import java.awt.Component;
+import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
@@ -23,12 +25,22 @@ public class DSLLaunchShortcut implements ILaunchShortcut2 {
 				IResource resource = (IResource) newSelection.getFirstElement();
 				IPath absolutePath = resource.getLocation();
 				System.out.println(absolutePath);
-			
-				Component frame = null;
-				JOptionPane.showMessageDialog(frame, "Something useful will show when Joni and Kiro make the API." + "File Path  = " + absolutePath);
+				
+				//Component frame = null;
+				//JOptionPane.showMessageDialog(frame, "Something useful will show when Joni and Kiro make the API." + "File Path  = " + absolutePath);
 					
-				//DCLInterpreter interpreter = new DCLInterpreter();
-				//interpreter.execute(absolutePath.toString());
+				DCLInterpreter interpreter = new DCLInterpreter();
+				try {
+					interpreter.execute(absolutePath.toString());
+					/*Component frame = null;
+					JOptionPane.showMessageDialog(frame, "File = " + absolutePath + " was successfully read");*/
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 
 		}
