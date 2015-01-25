@@ -83,6 +83,11 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 				}
 			} else if(container instanceof WhileStatement) {
 				variables = (container as WhileStatement).statements.toArray.filter(typeof(VariableDecl));
+			} else if(container instanceof FunctionDecl) {
+				variables = (container as FunctionDecl).statements.toArray.filter(typeof(VariableDecl));
+				if(namePersistsInArray((container as FunctionDecl).arguments, vc.variableCall)) {
+					return;
+				}
 			}
 			if(variableIsDeclared(variables, vc.variableCall)) {
 				return;
@@ -141,6 +146,15 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	def boolean functionIsDeclared(FunctionDecl[] functions, String name) {
 		for(i : 0..< functions.length) {
 			if(functions.get(i).name.toString.equals(name)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	def boolean namePersistsInArray(String[] array, String name) {
+		for(i : 0..< array.length) {
+			if(array.get(i).equals(name)) {
 				return true;
 			}
 		}
