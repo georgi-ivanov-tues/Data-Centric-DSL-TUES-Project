@@ -1,16 +1,20 @@
-i = 4;
+println 'new\nline\ttab';
 
-if(i == 1) {
-	println "yay 1";
-} else if(i == 2) {
-	println "yay 2";
-} else if(i == 3) {
-	println "yay 3";
-} else if(i == 4) {
-	println "yay 4";
-} else {
-	println "wut";
+/*func xaxa(i) {
+	if(i == 1) {
+		println "yay 1";
+	} else if(i == 2) {
+		println "yay 2";
+	} else if(i == 3) {
+		println "yay 3";
+	} else if(i == 4) {
+		println "yay 4";
+	} else {
+		println "wut";
+	}	
 }
+
+xaxa(4);*/
 
 /*i = 0;
 while(true){

@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g 2015-01-18 16:24:52
+// $ANTLR 3.5.2 D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g 2015-01-25 16:09:19
 
   package bg.tues.DCL;
   import bg.tues.DCL.*; 
@@ -21,19 +21,19 @@ public class DataCentricDSLParser extends Parser {
 		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ASSIGNMENT", "Add", "And", "Assert", 
 		"Assign", "BLOCK", "Bool", "CBrace", "CBracket", "CParen", "Colon", "Comma", 
 		"Comment", "Def", "Digit", "Divide", "Do", "EXP", "EXP_LIST", "Else", 
-		"End", "Equals", "Excl", "FUNCTION", "FUNC_CALL", "For", "GT", "GTEquals", 
-		"ID_LIST", "IF", "INDEXES", "Identifier", "If", "In", "Increment", "Int", 
-		"LIST", "LOOKUP", "LT", "LTEquals", "Modulus", "Multiply", "NEGATE", "NEquals", 
-		"Null", "Number", "OBrace", "OBracket", "OParen", "Or", "Pow", "Print", 
-		"Println", "QMark", "RETURN", "Return", "SColon", "STATEMENTS", "Size", 
-		"Space", "String", "Subtract", "TERNARY", "To", "UNARY_MIN", "While", 
+		"End", "Equals", "Escape", "Excl", "FUNCTION", "FUNC_CALL", "For", "GT", 
+		"GTEquals", "ID_LIST", "IF", "INDEXES", "Identifier", "If", "In", "Increment", 
+		"Int", "LIST", "LOOKUP", "LT", "LTEquals", "Modulus", "Multiply", "NEGATE", 
+		"NEquals", "Null", "Number", "OBrace", "OBracket", "OParen", "Or", "Pow", 
+		"Print", "Println", "QMark", "RETURN", "Return", "SColon", "STATEMENTS", 
+		"Size", "Space", "String", "Subtract", "TERNARY", "To", "UNARY_MIN", "While", 
 		"'--'", "'func'", "'global'", "'query'"
 	};
 	public static final int EOF=-1;
-	public static final int T__70=70;
 	public static final int T__71=71;
 	public static final int T__72=72;
 	public static final int T__73=73;
+	public static final int T__74=74;
 	public static final int ASSIGNMENT=4;
 	public static final int Add=5;
 	public static final int And=6;
@@ -56,50 +56,51 @@ public class DataCentricDSLParser extends Parser {
 	public static final int Else=23;
 	public static final int End=24;
 	public static final int Equals=25;
-	public static final int Excl=26;
-	public static final int FUNCTION=27;
-	public static final int FUNC_CALL=28;
-	public static final int For=29;
-	public static final int GT=30;
-	public static final int GTEquals=31;
-	public static final int ID_LIST=32;
-	public static final int IF=33;
-	public static final int INDEXES=34;
-	public static final int Identifier=35;
-	public static final int If=36;
-	public static final int In=37;
-	public static final int Increment=38;
-	public static final int Int=39;
-	public static final int LIST=40;
-	public static final int LOOKUP=41;
-	public static final int LT=42;
-	public static final int LTEquals=43;
-	public static final int Modulus=44;
-	public static final int Multiply=45;
-	public static final int NEGATE=46;
-	public static final int NEquals=47;
-	public static final int Null=48;
-	public static final int Number=49;
-	public static final int OBrace=50;
-	public static final int OBracket=51;
-	public static final int OParen=52;
-	public static final int Or=53;
-	public static final int Pow=54;
-	public static final int Print=55;
-	public static final int Println=56;
-	public static final int QMark=57;
-	public static final int RETURN=58;
-	public static final int Return=59;
-	public static final int SColon=60;
-	public static final int STATEMENTS=61;
-	public static final int Size=62;
-	public static final int Space=63;
-	public static final int String=64;
-	public static final int Subtract=65;
-	public static final int TERNARY=66;
-	public static final int To=67;
-	public static final int UNARY_MIN=68;
-	public static final int While=69;
+	public static final int Escape=26;
+	public static final int Excl=27;
+	public static final int FUNCTION=28;
+	public static final int FUNC_CALL=29;
+	public static final int For=30;
+	public static final int GT=31;
+	public static final int GTEquals=32;
+	public static final int ID_LIST=33;
+	public static final int IF=34;
+	public static final int INDEXES=35;
+	public static final int Identifier=36;
+	public static final int If=37;
+	public static final int In=38;
+	public static final int Increment=39;
+	public static final int Int=40;
+	public static final int LIST=41;
+	public static final int LOOKUP=42;
+	public static final int LT=43;
+	public static final int LTEquals=44;
+	public static final int Modulus=45;
+	public static final int Multiply=46;
+	public static final int NEGATE=47;
+	public static final int NEquals=48;
+	public static final int Null=49;
+	public static final int Number=50;
+	public static final int OBrace=51;
+	public static final int OBracket=52;
+	public static final int OParen=53;
+	public static final int Or=54;
+	public static final int Pow=55;
+	public static final int Print=56;
+	public static final int Println=57;
+	public static final int QMark=58;
+	public static final int RETURN=59;
+	public static final int Return=60;
+	public static final int SColon=61;
+	public static final int STATEMENTS=62;
+	public static final int Size=63;
+	public static final int Space=64;
+	public static final int String=65;
+	public static final int Subtract=66;
+	public static final int TERNARY=67;
+	public static final int To=68;
+	public static final int UNARY_MIN=69;
+	public static final int While=70;
 
 	// delegates
 	public Parser[] getDelegates() {
@@ -152,31 +153,59 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "program"
-	// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:80:1: program : block EOF -> block ;
+	// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:80:1: program : ( functionDecl )* block EOF -> block ;
 	public final DataCentricDSLParser.program_return program() throws RecognitionException {
 		DataCentricDSLParser.program_return retval = new DataCentricDSLParser.program_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token EOF2=null;
-		ParserRuleReturnScope block1 =null;
+		Token EOF3=null;
+		ParserRuleReturnScope functionDecl1 =null;
+		ParserRuleReturnScope block2 =null;
 
-		Object EOF2_tree=null;
+		Object EOF3_tree=null;
 		RewriteRuleTokenStream stream_EOF=new RewriteRuleTokenStream(adaptor,"token EOF");
+		RewriteRuleSubtreeStream stream_functionDecl=new RewriteRuleSubtreeStream(adaptor,"rule functionDecl");
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:81:3: ( block EOF -> block )
-			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:81:6: block EOF
+			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:81:3: ( ( functionDecl )* block EOF -> block )
+			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:81:6: ( functionDecl )* block EOF
 			{
-			pushFollow(FOLLOW_block_in_program149);
-			block1=block();
+			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:81:6: ( functionDecl )*
+			loop1:
+			while (true) {
+				int alt1=2;
+				int LA1_0 = input.LA(1);
+				if ( (LA1_0==72) ) {
+					alt1=1;
+				}
+
+				switch (alt1) {
+				case 1 :
+					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:81:7: functionDecl
+					{
+					pushFollow(FOLLOW_functionDecl_in_program150);
+					functionDecl1=functionDecl();
+					state._fsp--;
+
+					stream_functionDecl.add(functionDecl1.getTree());
+					}
+					break;
+
+				default :
+					break loop1;
+				}
+			}
+
+			pushFollow(FOLLOW_block_in_program154);
+			block2=block();
 			state._fsp--;
 
-			stream_block.add(block1.getTree());
-			EOF2=(Token)match(input,EOF,FOLLOW_EOF_in_program151);  
-			stream_EOF.add(EOF2);
+			stream_block.add(block2.getTree());
+			EOF3=(Token)match(input,EOF,FOLLOW_EOF_in_program156);  
+			stream_EOF.add(EOF3);
 
 			// AST REWRITE
 			// elements: block
@@ -189,7 +218,7 @@ public class DataCentricDSLParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 81:16: -> block
+			// 81:32: -> block
 			{
 				adaptor.addChild(root_0, stream_block.nextTree());
 			}
@@ -226,7 +255,7 @@ public class DataCentricDSLParser extends Parser {
 
 
 	// $ANTLR start "block"
-	// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:84:1: block : ( statement | functionDecl )* ( Return expression ';' )? -> ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) ) ;
+	// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:84:1: block : ( statement )* ( Return expression ';' )? -> ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) ) ;
 	public final DataCentricDSLParser.block_return block() throws RecognitionException {
 		DataCentricDSLParser.block_return retval = new DataCentricDSLParser.block_return();
 		retval.start = input.LT(1);
@@ -235,80 +264,65 @@ public class DataCentricDSLParser extends Parser {
 
 		Token Return5=null;
 		Token char_literal7=null;
-		ParserRuleReturnScope statement3 =null;
-		ParserRuleReturnScope functionDecl4 =null;
+		ParserRuleReturnScope statement4 =null;
 		ParserRuleReturnScope expression6 =null;
 
 		Object Return5_tree=null;
 		Object char_literal7_tree=null;
 		RewriteRuleTokenStream stream_Return=new RewriteRuleTokenStream(adaptor,"token Return");
 		RewriteRuleTokenStream stream_SColon=new RewriteRuleTokenStream(adaptor,"token SColon");
-		RewriteRuleSubtreeStream stream_functionDecl=new RewriteRuleSubtreeStream(adaptor,"rule functionDecl");
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 		RewriteRuleSubtreeStream stream_statement=new RewriteRuleSubtreeStream(adaptor,"rule statement");
 
 		try {
-			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:3: ( ( statement | functionDecl )* ( Return expression ';' )? -> ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) ) )
-			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:6: ( statement | functionDecl )* ( Return expression ';' )?
+			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:3: ( ( statement )* ( Return expression ';' )? -> ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) ) )
+			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:6: ( statement )* ( Return expression ';' )?
 			{
-			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:6: ( statement | functionDecl )*
-			loop1:
+			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:6: ( statement )*
+			loop2:
 			while (true) {
-				int alt1=3;
-				int LA1_0 = input.LA(1);
-				if ( (LA1_0==Assert||LA1_0==For||(LA1_0 >= Identifier && LA1_0 <= If)||(LA1_0 >= Print && LA1_0 <= Println)||LA1_0==Size||LA1_0==While||(LA1_0 >= 72 && LA1_0 <= 73)) ) {
-					alt1=1;
-				}
-				else if ( (LA1_0==71) ) {
-					alt1=2;
+				int alt2=2;
+				int LA2_0 = input.LA(1);
+				if ( (LA2_0==Assert||LA2_0==For||(LA2_0 >= Identifier && LA2_0 <= If)||(LA2_0 >= Print && LA2_0 <= Println)||LA2_0==Size||LA2_0==While||(LA2_0 >= 73 && LA2_0 <= 74)) ) {
+					alt2=1;
 				}
 
-				switch (alt1) {
+				switch (alt2) {
 				case 1 :
-					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:7: statement
+					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:6: statement
 					{
-					pushFollow(FOLLOW_statement_in_block170);
-					statement3=statement();
+					pushFollow(FOLLOW_statement_in_block174);
+					statement4=statement();
 					state._fsp--;
 
-					stream_statement.add(statement3.getTree());
-					}
-					break;
-				case 2 :
-					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:19: functionDecl
-					{
-					pushFollow(FOLLOW_functionDecl_in_block174);
-					functionDecl4=functionDecl();
-					state._fsp--;
-
-					stream_functionDecl.add(functionDecl4.getTree());
+					stream_statement.add(statement4.getTree());
 					}
 					break;
 
 				default :
-					break loop1;
+					break loop2;
 				}
 			}
 
-			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:34: ( Return expression ';' )?
-			int alt2=2;
-			int LA2_0 = input.LA(1);
-			if ( (LA2_0==Return) ) {
-				alt2=1;
+			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:17: ( Return expression ';' )?
+			int alt3=2;
+			int LA3_0 = input.LA(1);
+			if ( (LA3_0==Return) ) {
+				alt3=1;
 			}
-			switch (alt2) {
+			switch (alt3) {
 				case 1 :
-					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:35: Return expression ';'
+					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:85:18: Return expression ';'
 					{
-					Return5=(Token)match(input,Return,FOLLOW_Return_in_block179);  
+					Return5=(Token)match(input,Return,FOLLOW_Return_in_block178);  
 					stream_Return.add(Return5);
 
-					pushFollow(FOLLOW_expression_in_block181);
+					pushFollow(FOLLOW_expression_in_block180);
 					expression6=expression();
 					state._fsp--;
 
 					stream_expression.add(expression6.getTree());
-					char_literal7=(Token)match(input,SColon,FOLLOW_SColon_in_block183);  
+					char_literal7=(Token)match(input,SColon,FOLLOW_SColon_in_block182);  
 					stream_SColon.add(char_literal7);
 
 					}
@@ -427,26 +441,26 @@ public class DataCentricDSLParser extends Parser {
 
 		try {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:90:3: ( assignment ';' -> assignment | incrementation ';' -> incrementation | functionCall ';' -> functionCall | ifStatement | forStatement | whileStatement | query ';' -> query )
-			int alt3=7;
+			int alt4=7;
 			switch ( input.LA(1) ) {
 			case Identifier:
 				{
 				switch ( input.LA(2) ) {
 				case OParen:
 					{
-					alt3=3;
+					alt4=3;
 					}
 					break;
 				case Assign:
 				case OBracket:
 					{
-					alt3=1;
+					alt4=1;
 					}
 					break;
 				case Increment:
-				case 70:
+				case 71:
 					{
-					alt3=2;
+					alt4=2;
 					}
 					break;
 				default:
@@ -454,7 +468,7 @@ public class DataCentricDSLParser extends Parser {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 3, 1, input);
+							new NoViableAltException("", 4, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -462,9 +476,9 @@ public class DataCentricDSLParser extends Parser {
 				}
 				}
 				break;
-			case 72:
+			case 73:
 				{
-				alt3=1;
+				alt4=1;
 				}
 				break;
 			case Assert:
@@ -472,44 +486,44 @@ public class DataCentricDSLParser extends Parser {
 			case Println:
 			case Size:
 				{
-				alt3=3;
+				alt4=3;
 				}
 				break;
 			case If:
 				{
-				alt3=4;
+				alt4=4;
 				}
 				break;
 			case For:
 				{
-				alt3=5;
+				alt4=5;
 				}
 				break;
 			case While:
 				{
-				alt3=6;
+				alt4=6;
 				}
 				break;
-			case 73:
+			case 74:
 				{
-				alt3=7;
+				alt4=7;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 3, 0, input);
+					new NoViableAltException("", 4, 0, input);
 				throw nvae;
 			}
-			switch (alt3) {
+			switch (alt4) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:90:6: assignment ';'
 					{
-					pushFollow(FOLLOW_assignment_in_statement225);
+					pushFollow(FOLLOW_assignment_in_statement224);
 					assignment8=assignment();
 					state._fsp--;
 
 					stream_assignment.add(assignment8.getTree());
-					char_literal9=(Token)match(input,SColon,FOLLOW_SColon_in_statement227);  
+					char_literal9=(Token)match(input,SColon,FOLLOW_SColon_in_statement226);  
 					stream_SColon.add(char_literal9);
 
 					// AST REWRITE
@@ -536,12 +550,12 @@ public class DataCentricDSLParser extends Parser {
 				case 2 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:91:6: incrementation ';'
 					{
-					pushFollow(FOLLOW_incrementation_in_statement240);
+					pushFollow(FOLLOW_incrementation_in_statement239);
 					incrementation10=incrementation();
 					state._fsp--;
 
 					stream_incrementation.add(incrementation10.getTree());
-					char_literal11=(Token)match(input,SColon,FOLLOW_SColon_in_statement242);  
+					char_literal11=(Token)match(input,SColon,FOLLOW_SColon_in_statement241);  
 					stream_SColon.add(char_literal11);
 
 					// AST REWRITE
@@ -568,12 +582,12 @@ public class DataCentricDSLParser extends Parser {
 				case 3 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:92:6: functionCall ';'
 					{
-					pushFollow(FOLLOW_functionCall_in_statement253);
+					pushFollow(FOLLOW_functionCall_in_statement252);
 					functionCall12=functionCall();
 					state._fsp--;
 
 					stream_functionCall.add(functionCall12.getTree());
-					char_literal13=(Token)match(input,SColon,FOLLOW_SColon_in_statement255);  
+					char_literal13=(Token)match(input,SColon,FOLLOW_SColon_in_statement254);  
 					stream_SColon.add(char_literal13);
 
 					// AST REWRITE
@@ -603,7 +617,7 @@ public class DataCentricDSLParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_ifStatement_in_statement266);
+					pushFollow(FOLLOW_ifStatement_in_statement265);
 					ifStatement14=ifStatement();
 					state._fsp--;
 
@@ -617,7 +631,7 @@ public class DataCentricDSLParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_forStatement_in_statement273);
+					pushFollow(FOLLOW_forStatement_in_statement272);
 					forStatement15=forStatement();
 					state._fsp--;
 
@@ -631,7 +645,7 @@ public class DataCentricDSLParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_whileStatement_in_statement280);
+					pushFollow(FOLLOW_whileStatement_in_statement279);
 					whileStatement16=whileStatement();
 					state._fsp--;
 
@@ -642,12 +656,12 @@ public class DataCentricDSLParser extends Parser {
 				case 7 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:96:6: query ';'
 					{
-					pushFollow(FOLLOW_query_in_statement287);
+					pushFollow(FOLLOW_query_in_statement286);
 					query17=query();
 					state._fsp--;
 
 					stream_query.add(query17.getTree());
-					char_literal18=(Token)match(input,SColon,FOLLOW_SColon_in_statement289);  
+					char_literal18=(Token)match(input,SColon,FOLLOW_SColon_in_statement288);  
 					stream_SColon.add(char_literal18);
 
 					// AST REWRITE
@@ -719,11 +733,11 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			string_literal19=(Token)match(input,73,FOLLOW_73_in_query306); 
+			string_literal19=(Token)match(input,74,FOLLOW_74_in_query305); 
 			string_literal19_tree = (Object)adaptor.create(string_literal19);
 			root_0 = (Object)adaptor.becomeRoot(string_literal19_tree, root_0);
 
-			pushFollow(FOLLOW_expression_in_query309);
+			pushFollow(FOLLOW_expression_in_query308);
 			expression20=expression();
 			state._fsp--;
 
@@ -776,7 +790,7 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			Identifier21=(Token)match(input,Identifier,FOLLOW_Identifier_in_variableCall319); 
+			Identifier21=(Token)match(input,Identifier,FOLLOW_Identifier_in_variableCall318); 
 			Identifier21_tree = (Object)adaptor.create(Identifier21);
 			adaptor.addChild(root_0, Identifier21_tree);
 
@@ -833,45 +847,45 @@ public class DataCentricDSLParser extends Parser {
 		Object char_literal29_tree=null;
 		RewriteRuleTokenStream stream_Identifier=new RewriteRuleTokenStream(adaptor,"token Identifier");
 		RewriteRuleTokenStream stream_Assign=new RewriteRuleTokenStream(adaptor,"token Assign");
-		RewriteRuleTokenStream stream_72=new RewriteRuleTokenStream(adaptor,"token 72");
+		RewriteRuleTokenStream stream_73=new RewriteRuleTokenStream(adaptor,"token 73");
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 		RewriteRuleSubtreeStream stream_indexes=new RewriteRuleSubtreeStream(adaptor,"rule indexes");
 
 		try {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:108:3: ( Identifier ( indexes )? '=' expression -> ^( ASSIGNMENT Identifier ( indexes )? expression ) | 'global' Identifier ( indexes )? '=' expression -> ^( 'global' ASSIGNMENT Identifier ( indexes )? expression ) )
-			int alt6=2;
-			int LA6_0 = input.LA(1);
-			if ( (LA6_0==Identifier) ) {
-				alt6=1;
+			int alt7=2;
+			int LA7_0 = input.LA(1);
+			if ( (LA7_0==Identifier) ) {
+				alt7=1;
 			}
-			else if ( (LA6_0==72) ) {
-				alt6=2;
+			else if ( (LA7_0==73) ) {
+				alt7=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 6, 0, input);
+					new NoViableAltException("", 7, 0, input);
 				throw nvae;
 			}
 
-			switch (alt6) {
+			switch (alt7) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:108:6: Identifier ( indexes )? '=' expression
 					{
-					Identifier22=(Token)match(input,Identifier,FOLLOW_Identifier_in_assignment331);  
+					Identifier22=(Token)match(input,Identifier,FOLLOW_Identifier_in_assignment330);  
 					stream_Identifier.add(Identifier22);
 
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:108:17: ( indexes )?
-					int alt4=2;
-					int LA4_0 = input.LA(1);
-					if ( (LA4_0==OBracket) ) {
-						alt4=1;
+					int alt5=2;
+					int LA5_0 = input.LA(1);
+					if ( (LA5_0==OBracket) ) {
+						alt5=1;
 					}
-					switch (alt4) {
+					switch (alt5) {
 						case 1 :
 							// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:108:17: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_assignment333);
+							pushFollow(FOLLOW_indexes_in_assignment332);
 							indexes23=indexes();
 							state._fsp--;
 
@@ -881,16 +895,16 @@ public class DataCentricDSLParser extends Parser {
 
 					}
 
-					char_literal24=(Token)match(input,Assign,FOLLOW_Assign_in_assignment336);  
+					char_literal24=(Token)match(input,Assign,FOLLOW_Assign_in_assignment335);  
 					stream_Assign.add(char_literal24);
 
-					pushFollow(FOLLOW_expression_in_assignment338);
+					pushFollow(FOLLOW_expression_in_assignment337);
 					expression25=expression();
 					state._fsp--;
 
 					stream_expression.add(expression25.getTree());
 					// AST REWRITE
-					// elements: indexes, Identifier, expression
+					// elements: expression, indexes, Identifier
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -927,23 +941,23 @@ public class DataCentricDSLParser extends Parser {
 				case 2 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:109:5: 'global' Identifier ( indexes )? '=' expression
 					{
-					string_literal26=(Token)match(input,72,FOLLOW_72_in_assignment357);  
-					stream_72.add(string_literal26);
+					string_literal26=(Token)match(input,73,FOLLOW_73_in_assignment356);  
+					stream_73.add(string_literal26);
 
-					Identifier27=(Token)match(input,Identifier,FOLLOW_Identifier_in_assignment359);  
+					Identifier27=(Token)match(input,Identifier,FOLLOW_Identifier_in_assignment358);  
 					stream_Identifier.add(Identifier27);
 
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:109:25: ( indexes )?
-					int alt5=2;
-					int LA5_0 = input.LA(1);
-					if ( (LA5_0==OBracket) ) {
-						alt5=1;
+					int alt6=2;
+					int LA6_0 = input.LA(1);
+					if ( (LA6_0==OBracket) ) {
+						alt6=1;
 					}
-					switch (alt5) {
+					switch (alt6) {
 						case 1 :
 							// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:109:25: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_assignment361);
+							pushFollow(FOLLOW_indexes_in_assignment360);
 							indexes28=indexes();
 							state._fsp--;
 
@@ -953,16 +967,16 @@ public class DataCentricDSLParser extends Parser {
 
 					}
 
-					char_literal29=(Token)match(input,Assign,FOLLOW_Assign_in_assignment364);  
+					char_literal29=(Token)match(input,Assign,FOLLOW_Assign_in_assignment363);  
 					stream_Assign.add(char_literal29);
 
-					pushFollow(FOLLOW_expression_in_assignment366);
+					pushFollow(FOLLOW_expression_in_assignment365);
 					expression30=expression();
 					state._fsp--;
 
 					stream_expression.add(expression30.getTree());
 					// AST REWRITE
-					// elements: expression, 72, indexes, Identifier
+					// elements: Identifier, indexes, 73, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -977,7 +991,7 @@ public class DataCentricDSLParser extends Parser {
 						// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:109:52: ^( 'global' ASSIGNMENT Identifier ( indexes )? expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
-						root_1 = (Object)adaptor.becomeRoot(stream_72.nextNode(), root_1);
+						root_1 = (Object)adaptor.becomeRoot(stream_73.nextNode(), root_1);
 						adaptor.addChild(root_1, (Object)adaptor.create(ASSIGNMENT, "ASSIGNMENT"));
 						adaptor.addChild(root_1, stream_Identifier.nextNode());
 						// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:109:85: ( indexes )?
@@ -1073,59 +1087,59 @@ public class DataCentricDSLParser extends Parser {
 
 		try {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:113:3: ( Identifier '(' ( exprList )? ')' -> ^( FUNC_CALL Identifier ( exprList )? ) | Println expression -> ^( FUNC_CALL Println expression ) | Print expression -> ^( FUNC_CALL Print expression ) | Assert '(' expression ')' -> ^( FUNC_CALL Assert expression ) | Size '(' expression ')' -> ^( FUNC_CALL Size expression ) )
-			int alt8=5;
+			int alt9=5;
 			switch ( input.LA(1) ) {
 			case Identifier:
 				{
-				alt8=1;
+				alt9=1;
 				}
 				break;
 			case Println:
 				{
-				alt8=2;
+				alt9=2;
 				}
 				break;
 			case Print:
 				{
-				alt8=3;
+				alt9=3;
 				}
 				break;
 			case Assert:
 				{
-				alt8=4;
+				alt9=4;
 				}
 				break;
 			case Size:
 				{
-				alt8=5;
+				alt9=5;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 8, 0, input);
+					new NoViableAltException("", 9, 0, input);
 				throw nvae;
 			}
-			switch (alt8) {
+			switch (alt9) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:113:6: Identifier '(' ( exprList )? ')'
 					{
-					Identifier31=(Token)match(input,Identifier,FOLLOW_Identifier_in_functionCall395);  
+					Identifier31=(Token)match(input,Identifier,FOLLOW_Identifier_in_functionCall394);  
 					stream_Identifier.add(Identifier31);
 
-					char_literal32=(Token)match(input,OParen,FOLLOW_OParen_in_functionCall397);  
+					char_literal32=(Token)match(input,OParen,FOLLOW_OParen_in_functionCall396);  
 					stream_OParen.add(char_literal32);
 
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:113:21: ( exprList )?
-					int alt7=2;
-					int LA7_0 = input.LA(1);
-					if ( (LA7_0==Bool||LA7_0==Excl||LA7_0==Identifier||(LA7_0 >= Null && LA7_0 <= Number)||(LA7_0 >= OBracket && LA7_0 <= OParen)||(LA7_0 >= String && LA7_0 <= Subtract)||LA7_0==73) ) {
-						alt7=1;
+					int alt8=2;
+					int LA8_0 = input.LA(1);
+					if ( (LA8_0==Bool||LA8_0==Excl||LA8_0==Identifier||(LA8_0 >= Null && LA8_0 <= Number)||(LA8_0 >= OBracket && LA8_0 <= OParen)||(LA8_0 >= String && LA8_0 <= Subtract)||LA8_0==74) ) {
+						alt8=1;
 					}
-					switch (alt7) {
+					switch (alt8) {
 						case 1 :
 							// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:113:21: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_functionCall399);
+							pushFollow(FOLLOW_exprList_in_functionCall398);
 							exprList33=exprList();
 							state._fsp--;
 
@@ -1135,11 +1149,11 @@ public class DataCentricDSLParser extends Parser {
 
 					}
 
-					char_literal34=(Token)match(input,CParen,FOLLOW_CParen_in_functionCall402);  
+					char_literal34=(Token)match(input,CParen,FOLLOW_CParen_in_functionCall401);  
 					stream_CParen.add(char_literal34);
 
 					// AST REWRITE
-					// elements: exprList, Identifier
+					// elements: Identifier, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1175,10 +1189,10 @@ public class DataCentricDSLParser extends Parser {
 				case 2 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:114:6: Println expression
 					{
-					Println35=(Token)match(input,Println,FOLLOW_Println_in_functionCall420);  
+					Println35=(Token)match(input,Println,FOLLOW_Println_in_functionCall419);  
 					stream_Println.add(Println35);
 
-					pushFollow(FOLLOW_expression_in_functionCall423);
+					pushFollow(FOLLOW_expression_in_functionCall422);
 					expression36=expression();
 					state._fsp--;
 
@@ -1215,10 +1229,10 @@ public class DataCentricDSLParser extends Parser {
 				case 3 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:115:6: Print expression
 					{
-					Print37=(Token)match(input,Print,FOLLOW_Print_in_functionCall443);  
+					Print37=(Token)match(input,Print,FOLLOW_Print_in_functionCall442);  
 					stream_Print.add(Print37);
 
-					pushFollow(FOLLOW_expression_in_functionCall445);
+					pushFollow(FOLLOW_expression_in_functionCall444);
 					expression38=expression();
 					state._fsp--;
 
@@ -1255,22 +1269,22 @@ public class DataCentricDSLParser extends Parser {
 				case 4 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:116:6: Assert '(' expression ')'
 					{
-					Assert39=(Token)match(input,Assert,FOLLOW_Assert_in_functionCall466);  
+					Assert39=(Token)match(input,Assert,FOLLOW_Assert_in_functionCall465);  
 					stream_Assert.add(Assert39);
 
-					char_literal40=(Token)match(input,OParen,FOLLOW_OParen_in_functionCall468);  
+					char_literal40=(Token)match(input,OParen,FOLLOW_OParen_in_functionCall467);  
 					stream_OParen.add(char_literal40);
 
-					pushFollow(FOLLOW_expression_in_functionCall470);
+					pushFollow(FOLLOW_expression_in_functionCall469);
 					expression41=expression();
 					state._fsp--;
 
 					stream_expression.add(expression41.getTree());
-					char_literal42=(Token)match(input,CParen,FOLLOW_CParen_in_functionCall472);  
+					char_literal42=(Token)match(input,CParen,FOLLOW_CParen_in_functionCall471);  
 					stream_CParen.add(char_literal42);
 
 					// AST REWRITE
-					// elements: expression, Assert
+					// elements: Assert, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1301,22 +1315,22 @@ public class DataCentricDSLParser extends Parser {
 				case 5 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:117:6: Size '(' expression ')'
 					{
-					Size43=(Token)match(input,Size,FOLLOW_Size_in_functionCall492);  
+					Size43=(Token)match(input,Size,FOLLOW_Size_in_functionCall491);  
 					stream_Size.add(Size43);
 
-					char_literal44=(Token)match(input,OParen,FOLLOW_OParen_in_functionCall494);  
+					char_literal44=(Token)match(input,OParen,FOLLOW_OParen_in_functionCall493);  
 					stream_OParen.add(char_literal44);
 
-					pushFollow(FOLLOW_expression_in_functionCall496);
+					pushFollow(FOLLOW_expression_in_functionCall495);
 					expression45=expression();
 					state._fsp--;
 
 					stream_expression.add(expression45.getTree());
-					char_literal46=(Token)match(input,CParen,FOLLOW_CParen_in_functionCall498);  
+					char_literal46=(Token)match(input,CParen,FOLLOW_CParen_in_functionCall497);  
 					stream_CParen.add(char_literal46);
 
 					// AST REWRITE
-					// elements: Size, expression
+					// elements: expression, Size
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1392,29 +1406,29 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:121:3: ( ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:121:6: ifStat ( elseIfStat )* ( elseStat )?
 			{
-			pushFollow(FOLLOW_ifStat_in_ifStatement527);
+			pushFollow(FOLLOW_ifStat_in_ifStatement526);
 			ifStat47=ifStat();
 			state._fsp--;
 
 			stream_ifStat.add(ifStat47.getTree());
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:121:13: ( elseIfStat )*
-			loop9:
+			loop10:
 			while (true) {
-				int alt9=2;
-				int LA9_0 = input.LA(1);
-				if ( (LA9_0==Else) ) {
-					int LA9_1 = input.LA(2);
-					if ( (LA9_1==If) ) {
-						alt9=1;
+				int alt10=2;
+				int LA10_0 = input.LA(1);
+				if ( (LA10_0==Else) ) {
+					int LA10_1 = input.LA(2);
+					if ( (LA10_1==If) ) {
+						alt10=1;
 					}
 
 				}
 
-				switch (alt9) {
+				switch (alt10) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:121:13: elseIfStat
 					{
-					pushFollow(FOLLOW_elseIfStat_in_ifStatement529);
+					pushFollow(FOLLOW_elseIfStat_in_ifStatement528);
 					elseIfStat48=elseIfStat();
 					state._fsp--;
 
@@ -1423,21 +1437,21 @@ public class DataCentricDSLParser extends Parser {
 					break;
 
 				default :
-					break loop9;
+					break loop10;
 				}
 			}
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:121:25: ( elseStat )?
-			int alt10=2;
-			int LA10_0 = input.LA(1);
-			if ( (LA10_0==Else) ) {
-				alt10=1;
+			int alt11=2;
+			int LA11_0 = input.LA(1);
+			if ( (LA11_0==Else) ) {
+				alt11=1;
 			}
-			switch (alt10) {
+			switch (alt11) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:121:25: elseStat
 					{
-					pushFollow(FOLLOW_elseStat_in_ifStatement532);
+					pushFollow(FOLLOW_elseStat_in_ifStatement531);
 					elseStat49=elseStat();
 					state._fsp--;
 
@@ -1448,7 +1462,7 @@ public class DataCentricDSLParser extends Parser {
 			}
 
 			// AST REWRITE
-			// elements: ifStat, elseStat, elseIfStat
+			// elements: elseIfStat, elseStat, ifStat
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1546,29 +1560,29 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:125:3: ( If '(' expression ')' '{' block '}' -> ^( EXP expression block ) )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:125:6: If '(' expression ')' '{' block '}'
 			{
-			If50=(Token)match(input,If,FOLLOW_If_in_ifStat561);  
+			If50=(Token)match(input,If,FOLLOW_If_in_ifStat560);  
 			stream_If.add(If50);
 
-			char_literal51=(Token)match(input,OParen,FOLLOW_OParen_in_ifStat563);  
+			char_literal51=(Token)match(input,OParen,FOLLOW_OParen_in_ifStat562);  
 			stream_OParen.add(char_literal51);
 
-			pushFollow(FOLLOW_expression_in_ifStat565);
+			pushFollow(FOLLOW_expression_in_ifStat564);
 			expression52=expression();
 			state._fsp--;
 
 			stream_expression.add(expression52.getTree());
-			char_literal53=(Token)match(input,CParen,FOLLOW_CParen_in_ifStat567);  
+			char_literal53=(Token)match(input,CParen,FOLLOW_CParen_in_ifStat566);  
 			stream_CParen.add(char_literal53);
 
-			char_literal54=(Token)match(input,OBrace,FOLLOW_OBrace_in_ifStat569);  
+			char_literal54=(Token)match(input,OBrace,FOLLOW_OBrace_in_ifStat568);  
 			stream_OBrace.add(char_literal54);
 
-			pushFollow(FOLLOW_block_in_ifStat571);
+			pushFollow(FOLLOW_block_in_ifStat570);
 			block55=block();
 			state._fsp--;
 
 			stream_block.add(block55.getTree());
-			char_literal56=(Token)match(input,CBrace,FOLLOW_CBrace_in_ifStat573);  
+			char_literal56=(Token)match(input,CBrace,FOLLOW_CBrace_in_ifStat572);  
 			stream_CBrace.add(char_literal56);
 
 			// AST REWRITE
@@ -1662,32 +1676,32 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:129:3: ( Else If '(' expression ')' '{' block '}' -> ^( EXP expression block ) )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:129:6: Else If '(' expression ')' '{' block '}'
 			{
-			Else57=(Token)match(input,Else,FOLLOW_Else_in_elseIfStat597);  
+			Else57=(Token)match(input,Else,FOLLOW_Else_in_elseIfStat596);  
 			stream_Else.add(Else57);
 
-			If58=(Token)match(input,If,FOLLOW_If_in_elseIfStat599);  
+			If58=(Token)match(input,If,FOLLOW_If_in_elseIfStat598);  
 			stream_If.add(If58);
 
-			char_literal59=(Token)match(input,OParen,FOLLOW_OParen_in_elseIfStat601);  
+			char_literal59=(Token)match(input,OParen,FOLLOW_OParen_in_elseIfStat600);  
 			stream_OParen.add(char_literal59);
 
-			pushFollow(FOLLOW_expression_in_elseIfStat603);
+			pushFollow(FOLLOW_expression_in_elseIfStat602);
 			expression60=expression();
 			state._fsp--;
 
 			stream_expression.add(expression60.getTree());
-			char_literal61=(Token)match(input,CParen,FOLLOW_CParen_in_elseIfStat605);  
+			char_literal61=(Token)match(input,CParen,FOLLOW_CParen_in_elseIfStat604);  
 			stream_CParen.add(char_literal61);
 
-			char_literal62=(Token)match(input,OBrace,FOLLOW_OBrace_in_elseIfStat607);  
+			char_literal62=(Token)match(input,OBrace,FOLLOW_OBrace_in_elseIfStat606);  
 			stream_OBrace.add(char_literal62);
 
-			pushFollow(FOLLOW_block_in_elseIfStat609);
+			pushFollow(FOLLOW_block_in_elseIfStat608);
 			block63=block();
 			state._fsp--;
 
 			stream_block.add(block63.getTree());
-			char_literal64=(Token)match(input,CBrace,FOLLOW_CBrace_in_elseIfStat611);  
+			char_literal64=(Token)match(input,CBrace,FOLLOW_CBrace_in_elseIfStat610);  
 			stream_CBrace.add(char_literal64);
 
 			// AST REWRITE
@@ -1770,18 +1784,18 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:133:3: ( Else '{' block '}' -> ^( EXP block ) )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:133:6: Else '{' block '}'
 			{
-			Else65=(Token)match(input,Else,FOLLOW_Else_in_elseStat635);  
+			Else65=(Token)match(input,Else,FOLLOW_Else_in_elseStat634);  
 			stream_Else.add(Else65);
 
-			char_literal66=(Token)match(input,OBrace,FOLLOW_OBrace_in_elseStat637);  
+			char_literal66=(Token)match(input,OBrace,FOLLOW_OBrace_in_elseStat636);  
 			stream_OBrace.add(char_literal66);
 
-			pushFollow(FOLLOW_block_in_elseStat639);
+			pushFollow(FOLLOW_block_in_elseStat638);
 			block67=block();
 			state._fsp--;
 
 			stream_block.add(block67.getTree());
-			char_literal68=(Token)match(input,CBrace,FOLLOW_CBrace_in_elseStat641);  
+			char_literal68=(Token)match(input,CBrace,FOLLOW_CBrace_in_elseStat640);  
 			stream_CBrace.add(char_literal68);
 
 			// AST REWRITE
@@ -1869,29 +1883,29 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			string_literal69=(Token)match(input,71,FOLLOW_71_in_functionDecl663); 
+			string_literal69=(Token)match(input,72,FOLLOW_72_in_functionDecl662); 
 			string_literal69_tree = (Object)adaptor.create(string_literal69);
 			adaptor.addChild(root_0, string_literal69_tree);
 
-			Identifier70=(Token)match(input,Identifier,FOLLOW_Identifier_in_functionDecl665); 
+			Identifier70=(Token)match(input,Identifier,FOLLOW_Identifier_in_functionDecl664); 
 			Identifier70_tree = (Object)adaptor.create(Identifier70);
 			adaptor.addChild(root_0, Identifier70_tree);
 
-			char_literal71=(Token)match(input,OParen,FOLLOW_OParen_in_functionDecl667); 
+			char_literal71=(Token)match(input,OParen,FOLLOW_OParen_in_functionDecl666); 
 			char_literal71_tree = (Object)adaptor.create(char_literal71);
 			adaptor.addChild(root_0, char_literal71_tree);
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:137:28: ( idList )?
-			int alt11=2;
-			int LA11_0 = input.LA(1);
-			if ( (LA11_0==Identifier) ) {
-				alt11=1;
+			int alt12=2;
+			int LA12_0 = input.LA(1);
+			if ( (LA12_0==Identifier) ) {
+				alt12=1;
 			}
-			switch (alt11) {
+			switch (alt12) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:137:28: idList
 					{
-					pushFollow(FOLLOW_idList_in_functionDecl669);
+					pushFollow(FOLLOW_idList_in_functionDecl668);
 					idList72=idList();
 					state._fsp--;
 
@@ -1902,21 +1916,21 @@ public class DataCentricDSLParser extends Parser {
 
 			}
 
-			char_literal73=(Token)match(input,CParen,FOLLOW_CParen_in_functionDecl672); 
+			char_literal73=(Token)match(input,CParen,FOLLOW_CParen_in_functionDecl671); 
 			char_literal73_tree = (Object)adaptor.create(char_literal73);
 			adaptor.addChild(root_0, char_literal73_tree);
 
-			char_literal74=(Token)match(input,OBrace,FOLLOW_OBrace_in_functionDecl674); 
+			char_literal74=(Token)match(input,OBrace,FOLLOW_OBrace_in_functionDecl673); 
 			char_literal74_tree = (Object)adaptor.create(char_literal74);
 			adaptor.addChild(root_0, char_literal74_tree);
 
-			pushFollow(FOLLOW_block_in_functionDecl676);
+			pushFollow(FOLLOW_block_in_functionDecl675);
 			block75=block();
 			state._fsp--;
 
 			adaptor.addChild(root_0, block75.getTree());
 
-			char_literal76=(Token)match(input,CBrace,FOLLOW_CBrace_in_functionDecl678); 
+			char_literal76=(Token)match(input,CBrace,FOLLOW_CBrace_in_functionDecl677); 
 			char_literal76_tree = (Object)adaptor.create(char_literal76);
 			adaptor.addChild(root_0, char_literal76_tree);
 
@@ -1994,49 +2008,49 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:144:6: ( For '(' assignment ';' expression ';' afterthought ')' '{' block '}' -> ^( For assignment expression afterthought block ) )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:144:7: For '(' assignment ';' expression ';' afterthought ')' '{' block '}'
 			{
-			For77=(Token)match(input,For,FOLLOW_For_in_forStatement700);  
+			For77=(Token)match(input,For,FOLLOW_For_in_forStatement699);  
 			stream_For.add(For77);
 
-			char_literal78=(Token)match(input,OParen,FOLLOW_OParen_in_forStatement702);  
+			char_literal78=(Token)match(input,OParen,FOLLOW_OParen_in_forStatement701);  
 			stream_OParen.add(char_literal78);
 
-			pushFollow(FOLLOW_assignment_in_forStatement704);
+			pushFollow(FOLLOW_assignment_in_forStatement703);
 			assignment79=assignment();
 			state._fsp--;
 
 			stream_assignment.add(assignment79.getTree());
-			char_literal80=(Token)match(input,SColon,FOLLOW_SColon_in_forStatement706);  
+			char_literal80=(Token)match(input,SColon,FOLLOW_SColon_in_forStatement705);  
 			stream_SColon.add(char_literal80);
 
-			pushFollow(FOLLOW_expression_in_forStatement708);
+			pushFollow(FOLLOW_expression_in_forStatement707);
 			expression81=expression();
 			state._fsp--;
 
 			stream_expression.add(expression81.getTree());
-			char_literal82=(Token)match(input,SColon,FOLLOW_SColon_in_forStatement710);  
+			char_literal82=(Token)match(input,SColon,FOLLOW_SColon_in_forStatement709);  
 			stream_SColon.add(char_literal82);
 
-			pushFollow(FOLLOW_afterthought_in_forStatement712);
+			pushFollow(FOLLOW_afterthought_in_forStatement711);
 			afterthought83=afterthought();
 			state._fsp--;
 
 			stream_afterthought.add(afterthought83.getTree());
-			char_literal84=(Token)match(input,CParen,FOLLOW_CParen_in_forStatement714);  
+			char_literal84=(Token)match(input,CParen,FOLLOW_CParen_in_forStatement713);  
 			stream_CParen.add(char_literal84);
 
-			char_literal85=(Token)match(input,OBrace,FOLLOW_OBrace_in_forStatement716);  
+			char_literal85=(Token)match(input,OBrace,FOLLOW_OBrace_in_forStatement715);  
 			stream_OBrace.add(char_literal85);
 
-			pushFollow(FOLLOW_block_in_forStatement718);
+			pushFollow(FOLLOW_block_in_forStatement717);
 			block86=block();
 			state._fsp--;
 
 			stream_block.add(block86.getTree());
-			char_literal87=(Token)match(input,CBrace,FOLLOW_CBrace_in_forStatement720);  
+			char_literal87=(Token)match(input,CBrace,FOLLOW_CBrace_in_forStatement719);  
 			stream_CBrace.add(char_literal87);
 
 			// AST REWRITE
-			// elements: block, assignment, expression, For, afterthought
+			// elements: expression, block, For, assignment, afterthought
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -2112,15 +2126,15 @@ public class DataCentricDSLParser extends Parser {
 
 		try {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:148:13: ( ( Identifier '=' expression ) | incrementation )
-			int alt12=2;
-			int LA12_0 = input.LA(1);
-			if ( (LA12_0==Identifier) ) {
-				int LA12_1 = input.LA(2);
-				if ( (LA12_1==Assign) ) {
-					alt12=1;
+			int alt13=2;
+			int LA13_0 = input.LA(1);
+			if ( (LA13_0==Identifier) ) {
+				int LA13_1 = input.LA(2);
+				if ( (LA13_1==Assign) ) {
+					alt13=1;
 				}
-				else if ( (LA12_1==Increment||LA12_1==70) ) {
-					alt12=2;
+				else if ( (LA13_1==Increment||LA13_1==71) ) {
+					alt13=2;
 				}
 
 				else {
@@ -2128,7 +2142,7 @@ public class DataCentricDSLParser extends Parser {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 12, 1, input);
+							new NoViableAltException("", 13, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -2139,11 +2153,11 @@ public class DataCentricDSLParser extends Parser {
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 12, 0, input);
+					new NoViableAltException("", 13, 0, input);
 				throw nvae;
 			}
 
-			switch (alt12) {
+			switch (alt13) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:149:3: ( Identifier '=' expression )
 					{
@@ -2153,15 +2167,15 @@ public class DataCentricDSLParser extends Parser {
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:149:3: ( Identifier '=' expression )
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:149:4: Identifier '=' expression
 					{
-					Identifier88=(Token)match(input,Identifier,FOLLOW_Identifier_in_afterthought752); 
+					Identifier88=(Token)match(input,Identifier,FOLLOW_Identifier_in_afterthought751); 
 					Identifier88_tree = (Object)adaptor.create(Identifier88);
 					adaptor.addChild(root_0, Identifier88_tree);
 
-					char_literal89=(Token)match(input,Assign,FOLLOW_Assign_in_afterthought754); 
+					char_literal89=(Token)match(input,Assign,FOLLOW_Assign_in_afterthought753); 
 					char_literal89_tree = (Object)adaptor.create(char_literal89);
 					adaptor.addChild(root_0, char_literal89_tree);
 
-					pushFollow(FOLLOW_expression_in_afterthought756);
+					pushFollow(FOLLOW_expression_in_afterthought755);
 					expression90=expression();
 					state._fsp--;
 
@@ -2177,7 +2191,7 @@ public class DataCentricDSLParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_incrementation_in_afterthought761);
+					pushFollow(FOLLOW_incrementation_in_afterthought760);
 					incrementation91=incrementation();
 					state._fsp--;
 
@@ -2246,33 +2260,33 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:153:3: ( While '(' expression ')' '{' block '}' -> ^( While expression block ) )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:153:6: While '(' expression ')' '{' block '}'
 			{
-			While92=(Token)match(input,While,FOLLOW_While_in_whileStatement773);  
+			While92=(Token)match(input,While,FOLLOW_While_in_whileStatement772);  
 			stream_While.add(While92);
 
-			char_literal93=(Token)match(input,OParen,FOLLOW_OParen_in_whileStatement775);  
+			char_literal93=(Token)match(input,OParen,FOLLOW_OParen_in_whileStatement774);  
 			stream_OParen.add(char_literal93);
 
-			pushFollow(FOLLOW_expression_in_whileStatement777);
+			pushFollow(FOLLOW_expression_in_whileStatement776);
 			expression94=expression();
 			state._fsp--;
 
 			stream_expression.add(expression94.getTree());
-			char_literal95=(Token)match(input,CParen,FOLLOW_CParen_in_whileStatement779);  
+			char_literal95=(Token)match(input,CParen,FOLLOW_CParen_in_whileStatement778);  
 			stream_CParen.add(char_literal95);
 
-			char_literal96=(Token)match(input,OBrace,FOLLOW_OBrace_in_whileStatement781);  
+			char_literal96=(Token)match(input,OBrace,FOLLOW_OBrace_in_whileStatement780);  
 			stream_OBrace.add(char_literal96);
 
-			pushFollow(FOLLOW_block_in_whileStatement783);
+			pushFollow(FOLLOW_block_in_whileStatement782);
 			block97=block();
 			state._fsp--;
 
 			stream_block.add(block97.getTree());
-			char_literal98=(Token)match(input,CBrace,FOLLOW_CBrace_in_whileStatement785);  
+			char_literal98=(Token)match(input,CBrace,FOLLOW_CBrace_in_whileStatement784);  
 			stream_CBrace.add(char_literal98);
 
 			// AST REWRITE
-			// elements: block, While, expression
+			// elements: While, block, expression
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -2348,33 +2362,33 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:157:3: ( Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:157:6: Identifier ( ',' Identifier )*
 			{
-			Identifier99=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList809);  
+			Identifier99=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList808);  
 			stream_Identifier.add(Identifier99);
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:157:17: ( ',' Identifier )*
-			loop13:
+			loop14:
 			while (true) {
-				int alt13=2;
-				int LA13_0 = input.LA(1);
-				if ( (LA13_0==Comma) ) {
-					alt13=1;
+				int alt14=2;
+				int LA14_0 = input.LA(1);
+				if ( (LA14_0==Comma) ) {
+					alt14=1;
 				}
 
-				switch (alt13) {
+				switch (alt14) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:157:18: ',' Identifier
 					{
-					char_literal100=(Token)match(input,Comma,FOLLOW_Comma_in_idList812);  
+					char_literal100=(Token)match(input,Comma,FOLLOW_Comma_in_idList811);  
 					stream_Comma.add(char_literal100);
 
-					Identifier101=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList814);  
+					Identifier101=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList813);  
 					stream_Identifier.add(Identifier101);
 
 					}
 					break;
 
 				default :
-					break loop13;
+					break loop14;
 				}
 			}
 
@@ -2459,28 +2473,28 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:161:3: ( expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:161:6: expression ( ',' expression )*
 			{
-			pushFollow(FOLLOW_expression_in_exprList839);
+			pushFollow(FOLLOW_expression_in_exprList838);
 			expression102=expression();
 			state._fsp--;
 
 			stream_expression.add(expression102.getTree());
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:161:17: ( ',' expression )*
-			loop14:
+			loop15:
 			while (true) {
-				int alt14=2;
-				int LA14_0 = input.LA(1);
-				if ( (LA14_0==Comma) ) {
-					alt14=1;
+				int alt15=2;
+				int LA15_0 = input.LA(1);
+				if ( (LA15_0==Comma) ) {
+					alt15=1;
 				}
 
-				switch (alt14) {
+				switch (alt15) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:161:18: ',' expression
 					{
-					char_literal103=(Token)match(input,Comma,FOLLOW_Comma_in_exprList842);  
+					char_literal103=(Token)match(input,Comma,FOLLOW_Comma_in_exprList841);  
 					stream_Comma.add(char_literal103);
 
-					pushFollow(FOLLOW_expression_in_exprList844);
+					pushFollow(FOLLOW_expression_in_exprList843);
 					expression104=expression();
 					state._fsp--;
 
@@ -2489,7 +2503,7 @@ public class DataCentricDSLParser extends Parser {
 					break;
 
 				default :
-					break loop14;
+					break loop15;
 				}
 			}
 
@@ -2568,29 +2582,29 @@ public class DataCentricDSLParser extends Parser {
 
 		try {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:165:3: ( condExpr | query )
-			int alt15=2;
-			int LA15_0 = input.LA(1);
-			if ( (LA15_0==Bool||LA15_0==Excl||LA15_0==Identifier||(LA15_0 >= Null && LA15_0 <= Number)||(LA15_0 >= OBracket && LA15_0 <= OParen)||(LA15_0 >= String && LA15_0 <= Subtract)) ) {
-				alt15=1;
+			int alt16=2;
+			int LA16_0 = input.LA(1);
+			if ( (LA16_0==Bool||LA16_0==Excl||LA16_0==Identifier||(LA16_0 >= Null && LA16_0 <= Number)||(LA16_0 >= OBracket && LA16_0 <= OParen)||(LA16_0 >= String && LA16_0 <= Subtract)) ) {
+				alt16=1;
 			}
-			else if ( (LA15_0==73) ) {
-				alt15=2;
+			else if ( (LA16_0==74) ) {
+				alt16=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 15, 0, input);
+					new NoViableAltException("", 16, 0, input);
 				throw nvae;
 			}
 
-			switch (alt15) {
+			switch (alt16) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:165:6: condExpr
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_condExpr_in_expression869);
+					pushFollow(FOLLOW_condExpr_in_expression868);
 					condExpr105=condExpr();
 					state._fsp--;
 
@@ -2604,7 +2618,7 @@ public class DataCentricDSLParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_query_in_expression873);
+					pushFollow(FOLLOW_query_in_expression872);
 					query106=query();
 					state._fsp--;
 
@@ -2660,14 +2674,14 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_variableCall_in_incrementation886);
+			pushFollow(FOLLOW_variableCall_in_incrementation885);
 			variableCall107=variableCall();
 			state._fsp--;
 
 			adaptor.addChild(root_0, variableCall107.getTree());
 
 			set108=input.LT(1);
-			if ( input.LA(1)==Increment||input.LA(1)==70 ) {
+			if ( input.LA(1)==Increment||input.LA(1)==71 ) {
 				input.consume();
 				adaptor.addChild(root_0, (Object)adaptor.create(set108));
 				state.errorRecovery=false;
@@ -2736,7 +2750,7 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:173:6: ( orExpr -> orExpr )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:173:7: orExpr
 			{
-			pushFollow(FOLLOW_orExpr_in_condExpr905);
+			pushFollow(FOLLOW_orExpr_in_condExpr904);
 			orExpr109=orExpr();
 			state._fsp--;
 
@@ -2763,36 +2777,36 @@ public class DataCentricDSLParser extends Parser {
 			}
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:174:6: ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
-			int alt16=3;
-			int LA16_0 = input.LA(1);
-			if ( (LA16_0==QMark) ) {
-				alt16=1;
+			int alt17=3;
+			int LA17_0 = input.LA(1);
+			if ( (LA17_0==QMark) ) {
+				alt17=1;
 			}
-			else if ( (LA16_0==In) ) {
-				alt16=2;
+			else if ( (LA17_0==In) ) {
+				alt17=2;
 			}
-			switch (alt16) {
+			switch (alt17) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:174:8: '?' a= expression ':' b= expression
 					{
-					char_literal110=(Token)match(input,QMark,FOLLOW_QMark_in_condExpr920);  
+					char_literal110=(Token)match(input,QMark,FOLLOW_QMark_in_condExpr919);  
 					stream_QMark.add(char_literal110);
 
-					pushFollow(FOLLOW_expression_in_condExpr924);
+					pushFollow(FOLLOW_expression_in_condExpr923);
 					a=expression();
 					state._fsp--;
 
 					stream_expression.add(a.getTree());
-					char_literal111=(Token)match(input,Colon,FOLLOW_Colon_in_condExpr926);  
+					char_literal111=(Token)match(input,Colon,FOLLOW_Colon_in_condExpr925);  
 					stream_Colon.add(char_literal111);
 
-					pushFollow(FOLLOW_expression_in_condExpr930);
+					pushFollow(FOLLOW_expression_in_condExpr929);
 					b=expression();
 					state._fsp--;
 
 					stream_expression.add(b.getTree());
 					// AST REWRITE
-					// elements: orExpr, a, b
+					// elements: a, b, orExpr
 					// token labels: 
 					// rule labels: a, b, retval
 					// token list labels: 
@@ -2826,16 +2840,16 @@ public class DataCentricDSLParser extends Parser {
 				case 2 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:175:8: In expression
 					{
-					In112=(Token)match(input,In,FOLLOW_In_in_condExpr953);  
+					In112=(Token)match(input,In,FOLLOW_In_in_condExpr952);  
 					stream_In.add(In112);
 
-					pushFollow(FOLLOW_expression_in_condExpr955);
+					pushFollow(FOLLOW_expression_in_condExpr954);
 					expression113=expression();
 					state._fsp--;
 
 					stream_expression.add(expression113.getTree());
 					// AST REWRITE
-					// elements: In, orExpr, expression
+					// elements: expression, orExpr, In
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2915,30 +2929,30 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_andExpr_in_orExpr1007);
+			pushFollow(FOLLOW_andExpr_in_orExpr1006);
 			andExpr114=andExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, andExpr114.getTree());
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:180:14: ( '||' ^ andExpr )*
-			loop17:
+			loop18:
 			while (true) {
-				int alt17=2;
-				int LA17_0 = input.LA(1);
-				if ( (LA17_0==Or) ) {
-					alt17=1;
+				int alt18=2;
+				int LA18_0 = input.LA(1);
+				if ( (LA18_0==Or) ) {
+					alt18=1;
 				}
 
-				switch (alt17) {
+				switch (alt18) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:180:15: '||' ^ andExpr
 					{
-					string_literal115=(Token)match(input,Or,FOLLOW_Or_in_orExpr1010); 
+					string_literal115=(Token)match(input,Or,FOLLOW_Or_in_orExpr1009); 
 					string_literal115_tree = (Object)adaptor.create(string_literal115);
 					root_0 = (Object)adaptor.becomeRoot(string_literal115_tree, root_0);
 
-					pushFollow(FOLLOW_andExpr_in_orExpr1013);
+					pushFollow(FOLLOW_andExpr_in_orExpr1012);
 					andExpr116=andExpr();
 					state._fsp--;
 
@@ -2948,7 +2962,7 @@ public class DataCentricDSLParser extends Parser {
 					break;
 
 				default :
-					break loop17;
+					break loop18;
 				}
 			}
 
@@ -3001,30 +3015,30 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_equExpr_in_andExpr1029);
+			pushFollow(FOLLOW_equExpr_in_andExpr1028);
 			equExpr117=equExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, equExpr117.getTree());
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:184:14: ( '&&' ^ equExpr )*
-			loop18:
+			loop19:
 			while (true) {
-				int alt18=2;
-				int LA18_0 = input.LA(1);
-				if ( (LA18_0==And) ) {
-					alt18=1;
+				int alt19=2;
+				int LA19_0 = input.LA(1);
+				if ( (LA19_0==And) ) {
+					alt19=1;
 				}
 
-				switch (alt18) {
+				switch (alt19) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:184:15: '&&' ^ equExpr
 					{
-					string_literal118=(Token)match(input,And,FOLLOW_And_in_andExpr1032); 
+					string_literal118=(Token)match(input,And,FOLLOW_And_in_andExpr1031); 
 					string_literal118_tree = (Object)adaptor.create(string_literal118);
 					root_0 = (Object)adaptor.becomeRoot(string_literal118_tree, root_0);
 
-					pushFollow(FOLLOW_equExpr_in_andExpr1035);
+					pushFollow(FOLLOW_equExpr_in_andExpr1034);
 					equExpr119=equExpr();
 					state._fsp--;
 
@@ -3034,7 +3048,7 @@ public class DataCentricDSLParser extends Parser {
 					break;
 
 				default :
-					break loop18;
+					break loop19;
 				}
 			}
 
@@ -3087,22 +3101,22 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_relExpr_in_equExpr1051);
+			pushFollow(FOLLOW_relExpr_in_equExpr1050);
 			relExpr120=relExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, relExpr120.getTree());
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:188:14: ( ( '==' | '!=' ) ^ relExpr )*
-			loop19:
+			loop20:
 			while (true) {
-				int alt19=2;
-				int LA19_0 = input.LA(1);
-				if ( (LA19_0==Equals||LA19_0==NEquals) ) {
-					alt19=1;
+				int alt20=2;
+				int LA20_0 = input.LA(1);
+				if ( (LA20_0==Equals||LA20_0==NEquals) ) {
+					alt20=1;
 				}
 
-				switch (alt19) {
+				switch (alt20) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:188:15: ( '==' | '!=' ) ^ relExpr
 					{
@@ -3117,7 +3131,7 @@ public class DataCentricDSLParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_relExpr_in_equExpr1063);
+					pushFollow(FOLLOW_relExpr_in_equExpr1062);
 					relExpr122=relExpr();
 					state._fsp--;
 
@@ -3127,7 +3141,7 @@ public class DataCentricDSLParser extends Parser {
 					break;
 
 				default :
-					break loop19;
+					break loop20;
 				}
 			}
 
@@ -3180,22 +3194,22 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_addExpr_in_relExpr1079);
+			pushFollow(FOLLOW_addExpr_in_relExpr1078);
 			addExpr123=addExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, addExpr123.getTree());
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:192:14: ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
-			loop20:
+			loop21:
 			while (true) {
-				int alt20=2;
-				int LA20_0 = input.LA(1);
-				if ( ((LA20_0 >= GT && LA20_0 <= GTEquals)||(LA20_0 >= LT && LA20_0 <= LTEquals)) ) {
-					alt20=1;
+				int alt21=2;
+				int LA21_0 = input.LA(1);
+				if ( ((LA21_0 >= GT && LA21_0 <= GTEquals)||(LA21_0 >= LT && LA21_0 <= LTEquals)) ) {
+					alt21=1;
 				}
 
-				switch (alt20) {
+				switch (alt21) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:192:15: ( '>=' | '<=' | '>' | '<' ) ^ addExpr
 					{
@@ -3210,7 +3224,7 @@ public class DataCentricDSLParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_addExpr_in_relExpr1099);
+					pushFollow(FOLLOW_addExpr_in_relExpr1098);
 					addExpr125=addExpr();
 					state._fsp--;
 
@@ -3220,7 +3234,7 @@ public class DataCentricDSLParser extends Parser {
 					break;
 
 				default :
-					break loop20;
+					break loop21;
 				}
 			}
 
@@ -3273,22 +3287,22 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_mulExpr_in_addExpr1115);
+			pushFollow(FOLLOW_mulExpr_in_addExpr1114);
 			mulExpr126=mulExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, mulExpr126.getTree());
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:196:14: ( ( '+' | '-' ) ^ mulExpr )*
-			loop21:
+			loop22:
 			while (true) {
-				int alt21=2;
-				int LA21_0 = input.LA(1);
-				if ( (LA21_0==Add||LA21_0==Subtract) ) {
-					alt21=1;
+				int alt22=2;
+				int LA22_0 = input.LA(1);
+				if ( (LA22_0==Add||LA22_0==Subtract) ) {
+					alt22=1;
 				}
 
-				switch (alt21) {
+				switch (alt22) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:196:15: ( '+' | '-' ) ^ mulExpr
 					{
@@ -3303,7 +3317,7 @@ public class DataCentricDSLParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_mulExpr_in_addExpr1127);
+					pushFollow(FOLLOW_mulExpr_in_addExpr1126);
 					mulExpr128=mulExpr();
 					state._fsp--;
 
@@ -3313,7 +3327,7 @@ public class DataCentricDSLParser extends Parser {
 					break;
 
 				default :
-					break loop21;
+					break loop22;
 				}
 			}
 
@@ -3366,22 +3380,22 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_powExpr_in_mulExpr1143);
+			pushFollow(FOLLOW_powExpr_in_mulExpr1142);
 			powExpr129=powExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, powExpr129.getTree());
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:200:14: ( ( '*' | '/' | '%' ) ^ powExpr )*
-			loop22:
+			loop23:
 			while (true) {
-				int alt22=2;
-				int LA22_0 = input.LA(1);
-				if ( (LA22_0==Divide||(LA22_0 >= Modulus && LA22_0 <= Multiply)) ) {
-					alt22=1;
+				int alt23=2;
+				int LA23_0 = input.LA(1);
+				if ( (LA23_0==Divide||(LA23_0 >= Modulus && LA23_0 <= Multiply)) ) {
+					alt23=1;
 				}
 
-				switch (alt22) {
+				switch (alt23) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:200:15: ( '*' | '/' | '%' ) ^ powExpr
 					{
@@ -3396,7 +3410,7 @@ public class DataCentricDSLParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_powExpr_in_mulExpr1159);
+					pushFollow(FOLLOW_powExpr_in_mulExpr1158);
 					powExpr131=powExpr();
 					state._fsp--;
 
@@ -3406,7 +3420,7 @@ public class DataCentricDSLParser extends Parser {
 					break;
 
 				default :
-					break loop22;
+					break loop23;
 				}
 			}
 
@@ -3459,30 +3473,30 @@ public class DataCentricDSLParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_unaryExpr_in_powExpr1175);
+			pushFollow(FOLLOW_unaryExpr_in_powExpr1174);
 			unaryExpr132=unaryExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, unaryExpr132.getTree());
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:204:16: ( '^' ^ unaryExpr )*
-			loop23:
+			loop24:
 			while (true) {
-				int alt23=2;
-				int LA23_0 = input.LA(1);
-				if ( (LA23_0==Pow) ) {
-					alt23=1;
+				int alt24=2;
+				int LA24_0 = input.LA(1);
+				if ( (LA24_0==Pow) ) {
+					alt24=1;
 				}
 
-				switch (alt23) {
+				switch (alt24) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:204:17: '^' ^ unaryExpr
 					{
-					char_literal133=(Token)match(input,Pow,FOLLOW_Pow_in_powExpr1178); 
+					char_literal133=(Token)match(input,Pow,FOLLOW_Pow_in_powExpr1177); 
 					char_literal133_tree = (Object)adaptor.create(char_literal133);
 					root_0 = (Object)adaptor.becomeRoot(char_literal133_tree, root_0);
 
-					pushFollow(FOLLOW_unaryExpr_in_powExpr1181);
+					pushFollow(FOLLOW_unaryExpr_in_powExpr1180);
 					unaryExpr134=unaryExpr();
 					state._fsp--;
 
@@ -3492,7 +3506,7 @@ public class DataCentricDSLParser extends Parser {
 					break;
 
 				default :
-					break loop23;
+					break loop24;
 				}
 			}
 
@@ -3546,16 +3560,16 @@ public class DataCentricDSLParser extends Parser {
 
 		try {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:208:3: ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom )
-			int alt24=3;
+			int alt25=3;
 			switch ( input.LA(1) ) {
 			case Subtract:
 				{
-				alt24=1;
+				alt25=1;
 				}
 				break;
 			case Excl:
 				{
-				alt24=2;
+				alt25=2;
 				}
 				break;
 			case Bool:
@@ -3566,22 +3580,22 @@ public class DataCentricDSLParser extends Parser {
 			case OParen:
 			case String:
 				{
-				alt24=3;
+				alt25=3;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 24, 0, input);
+					new NoViableAltException("", 25, 0, input);
 				throw nvae;
 			}
-			switch (alt24) {
+			switch (alt25) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:208:6: '-' atom
 					{
-					char_literal135=(Token)match(input,Subtract,FOLLOW_Subtract_in_unaryExpr1199);  
+					char_literal135=(Token)match(input,Subtract,FOLLOW_Subtract_in_unaryExpr1198);  
 					stream_Subtract.add(char_literal135);
 
-					pushFollow(FOLLOW_atom_in_unaryExpr1201);
+					pushFollow(FOLLOW_atom_in_unaryExpr1200);
 					atom136=atom();
 					state._fsp--;
 
@@ -3617,10 +3631,10 @@ public class DataCentricDSLParser extends Parser {
 				case 2 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:209:6: '!' atom
 					{
-					char_literal137=(Token)match(input,Excl,FOLLOW_Excl_in_unaryExpr1216);  
+					char_literal137=(Token)match(input,Excl,FOLLOW_Excl_in_unaryExpr1215);  
 					stream_Excl.add(char_literal137);
 
-					pushFollow(FOLLOW_atom_in_unaryExpr1218);
+					pushFollow(FOLLOW_atom_in_unaryExpr1217);
 					atom138=atom();
 					state._fsp--;
 
@@ -3659,7 +3673,7 @@ public class DataCentricDSLParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_atom_in_unaryExpr1233);
+					pushFollow(FOLLOW_atom_in_unaryExpr1232);
 					atom139=atom();
 					state._fsp--;
 
@@ -3714,21 +3728,21 @@ public class DataCentricDSLParser extends Parser {
 
 		try {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:214:3: ( Number | Bool | Null | lookup )
-			int alt25=4;
+			int alt26=4;
 			switch ( input.LA(1) ) {
 			case Number:
 				{
-				alt25=1;
+				alt26=1;
 				}
 				break;
 			case Bool:
 				{
-				alt25=2;
+				alt26=2;
 				}
 				break;
 			case Null:
 				{
-				alt25=3;
+				alt26=3;
 				}
 				break;
 			case Identifier:
@@ -3736,22 +3750,22 @@ public class DataCentricDSLParser extends Parser {
 			case OParen:
 			case String:
 				{
-				alt25=4;
+				alt26=4;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 25, 0, input);
+					new NoViableAltException("", 26, 0, input);
 				throw nvae;
 			}
-			switch (alt25) {
+			switch (alt26) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:214:6: Number
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					Number140=(Token)match(input,Number,FOLLOW_Number_in_atom1247); 
+					Number140=(Token)match(input,Number,FOLLOW_Number_in_atom1246); 
 					Number140_tree = (Object)adaptor.create(Number140);
 					adaptor.addChild(root_0, Number140_tree);
 
@@ -3763,7 +3777,7 @@ public class DataCentricDSLParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					Bool141=(Token)match(input,Bool,FOLLOW_Bool_in_atom1254); 
+					Bool141=(Token)match(input,Bool,FOLLOW_Bool_in_atom1253); 
 					Bool141_tree = (Object)adaptor.create(Bool141);
 					adaptor.addChild(root_0, Bool141_tree);
 
@@ -3775,7 +3789,7 @@ public class DataCentricDSLParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					Null142=(Token)match(input,Null,FOLLOW_Null_in_atom1261); 
+					Null142=(Token)match(input,Null,FOLLOW_Null_in_atom1260); 
 					Null142_tree = (Object)adaptor.create(Null142);
 					adaptor.addChild(root_0, Null142_tree);
 
@@ -3787,7 +3801,7 @@ public class DataCentricDSLParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_lookup_in_atom1268);
+					pushFollow(FOLLOW_lookup_in_atom1267);
 					lookup143=lookup();
 					state._fsp--;
 
@@ -3845,20 +3859,20 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:221:3: ( '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:221:6: '[' ( exprList )? ']'
 			{
-			char_literal144=(Token)match(input,OBracket,FOLLOW_OBracket_in_list1282);  
+			char_literal144=(Token)match(input,OBracket,FOLLOW_OBracket_in_list1281);  
 			stream_OBracket.add(char_literal144);
 
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:221:10: ( exprList )?
-			int alt26=2;
-			int LA26_0 = input.LA(1);
-			if ( (LA26_0==Bool||LA26_0==Excl||LA26_0==Identifier||(LA26_0 >= Null && LA26_0 <= Number)||(LA26_0 >= OBracket && LA26_0 <= OParen)||(LA26_0 >= String && LA26_0 <= Subtract)||LA26_0==73) ) {
-				alt26=1;
+			int alt27=2;
+			int LA27_0 = input.LA(1);
+			if ( (LA27_0==Bool||LA27_0==Excl||LA27_0==Identifier||(LA27_0 >= Null && LA27_0 <= Number)||(LA27_0 >= OBracket && LA27_0 <= OParen)||(LA27_0 >= String && LA27_0 <= Subtract)||LA27_0==74) ) {
+				alt27=1;
 			}
-			switch (alt26) {
+			switch (alt27) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:221:10: exprList
 					{
-					pushFollow(FOLLOW_exprList_in_list1284);
+					pushFollow(FOLLOW_exprList_in_list1283);
 					exprList145=exprList();
 					state._fsp--;
 
@@ -3868,7 +3882,7 @@ public class DataCentricDSLParser extends Parser {
 
 			}
 
-			char_literal146=(Token)match(input,CBracket,FOLLOW_CBracket_in_list1287);  
+			char_literal146=(Token)match(input,CBracket,FOLLOW_CBracket_in_list1286);  
 			stream_CBracket.add(char_literal146);
 
 			// AST REWRITE
@@ -3963,53 +3977,53 @@ public class DataCentricDSLParser extends Parser {
 
 		try {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:226:3: ( list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) )
-			int alt31=4;
+			int alt32=4;
 			switch ( input.LA(1) ) {
 			case OBracket:
 				{
-				alt31=1;
+				alt32=1;
 				}
 				break;
 			case Identifier:
 				{
-				alt31=2;
+				alt32=2;
 				}
 				break;
 			case String:
 				{
-				alt31=3;
+				alt32=3;
 				}
 				break;
 			case OParen:
 				{
-				alt31=4;
+				alt32=4;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 31, 0, input);
+					new NoViableAltException("", 32, 0, input);
 				throw nvae;
 			}
-			switch (alt31) {
+			switch (alt32) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:226:6: list ( indexes )?
 					{
-					pushFollow(FOLLOW_list_in_lookup1311);
+					pushFollow(FOLLOW_list_in_lookup1310);
 					list147=list();
 					state._fsp--;
 
 					stream_list.add(list147.getTree());
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:226:11: ( indexes )?
-					int alt27=2;
-					int LA27_0 = input.LA(1);
-					if ( (LA27_0==OBracket) ) {
-						alt27=1;
+					int alt28=2;
+					int LA28_0 = input.LA(1);
+					if ( (LA28_0==OBracket) ) {
+						alt28=1;
 					}
-					switch (alt27) {
+					switch (alt28) {
 						case 1 :
 							// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:226:11: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1313);
+							pushFollow(FOLLOW_indexes_in_lookup1312);
 							indexes148=indexes();
 							state._fsp--;
 
@@ -4056,20 +4070,20 @@ public class DataCentricDSLParser extends Parser {
 				case 2 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:227:6: Identifier ( indexes )?
 					{
-					Identifier149=(Token)match(input,Identifier,FOLLOW_Identifier_in_lookup1346);  
+					Identifier149=(Token)match(input,Identifier,FOLLOW_Identifier_in_lookup1345);  
 					stream_Identifier.add(Identifier149);
 
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:227:17: ( indexes )?
-					int alt28=2;
-					int LA28_0 = input.LA(1);
-					if ( (LA28_0==OBracket) ) {
-						alt28=1;
+					int alt29=2;
+					int LA29_0 = input.LA(1);
+					if ( (LA29_0==OBracket) ) {
+						alt29=1;
 					}
-					switch (alt28) {
+					switch (alt29) {
 						case 1 :
 							// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:227:17: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1348);
+							pushFollow(FOLLOW_indexes_in_lookup1347);
 							indexes150=indexes();
 							state._fsp--;
 
@@ -4080,7 +4094,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: Identifier, indexes
+					// elements: indexes, Identifier
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -4116,20 +4130,20 @@ public class DataCentricDSLParser extends Parser {
 				case 3 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:228:6: String ( indexes )?
 					{
-					String151=(Token)match(input,String,FOLLOW_String_in_lookup1375);  
+					String151=(Token)match(input,String,FOLLOW_String_in_lookup1374);  
 					stream_String.add(String151);
 
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:228:13: ( indexes )?
-					int alt29=2;
-					int LA29_0 = input.LA(1);
-					if ( (LA29_0==OBracket) ) {
-						alt29=1;
+					int alt30=2;
+					int LA30_0 = input.LA(1);
+					if ( (LA30_0==OBracket) ) {
+						alt30=1;
 					}
-					switch (alt29) {
+					switch (alt30) {
 						case 1 :
 							// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:228:13: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1377);
+							pushFollow(FOLLOW_indexes_in_lookup1376);
 							indexes152=indexes();
 							state._fsp--;
 
@@ -4140,7 +4154,7 @@ public class DataCentricDSLParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: indexes, String
+					// elements: String, indexes
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -4176,28 +4190,28 @@ public class DataCentricDSLParser extends Parser {
 				case 4 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:229:6: '(' expression ')' ( indexes )?
 					{
-					char_literal153=(Token)match(input,OParen,FOLLOW_OParen_in_lookup1408);  
+					char_literal153=(Token)match(input,OParen,FOLLOW_OParen_in_lookup1407);  
 					stream_OParen.add(char_literal153);
 
-					pushFollow(FOLLOW_expression_in_lookup1410);
+					pushFollow(FOLLOW_expression_in_lookup1409);
 					expression154=expression();
 					state._fsp--;
 
 					stream_expression.add(expression154.getTree());
-					char_literal155=(Token)match(input,CParen,FOLLOW_CParen_in_lookup1412);  
+					char_literal155=(Token)match(input,CParen,FOLLOW_CParen_in_lookup1411);  
 					stream_CParen.add(char_literal155);
 
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:229:25: ( indexes )?
-					int alt30=2;
-					int LA30_0 = input.LA(1);
-					if ( (LA30_0==OBracket) ) {
-						alt30=1;
+					int alt31=2;
+					int LA31_0 = input.LA(1);
+					if ( (LA31_0==OBracket) ) {
+						alt31=1;
 					}
-					switch (alt30) {
+					switch (alt31) {
 						case 1 :
 							// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:229:25: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1414);
+							pushFollow(FOLLOW_indexes_in_lookup1413);
 							indexes156=indexes();
 							state._fsp--;
 
@@ -4292,39 +4306,39 @@ public class DataCentricDSLParser extends Parser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:233:6: ( '[' expression ']' )+
 			{
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:233:6: ( '[' expression ']' )+
-			int cnt32=0;
-			loop32:
+			int cnt33=0;
+			loop33:
 			while (true) {
-				int alt32=2;
-				int LA32_0 = input.LA(1);
-				if ( (LA32_0==OBracket) ) {
-					alt32=1;
+				int alt33=2;
+				int LA33_0 = input.LA(1);
+				if ( (LA33_0==OBracket) ) {
+					alt33=1;
 				}
 
-				switch (alt32) {
+				switch (alt33) {
 				case 1 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\DataCentricDSL.g:233:7: '[' expression ']'
 					{
-					char_literal157=(Token)match(input,OBracket,FOLLOW_OBracket_in_indexes1441);  
+					char_literal157=(Token)match(input,OBracket,FOLLOW_OBracket_in_indexes1440);  
 					stream_OBracket.add(char_literal157);
 
-					pushFollow(FOLLOW_expression_in_indexes1443);
+					pushFollow(FOLLOW_expression_in_indexes1442);
 					expression158=expression();
 					state._fsp--;
 
 					stream_expression.add(expression158.getTree());
-					char_literal159=(Token)match(input,CBracket,FOLLOW_CBracket_in_indexes1445);  
+					char_literal159=(Token)match(input,CBracket,FOLLOW_CBracket_in_indexes1444);  
 					stream_CBracket.add(char_literal159);
 
 					}
 					break;
 
 				default :
-					if ( cnt32 >= 1 ) break loop32;
-					EarlyExitException eee = new EarlyExitException(32, input);
+					if ( cnt33 >= 1 ) break loop33;
+					EarlyExitException eee = new EarlyExitException(33, input);
 					throw eee;
 				}
-				cnt32++;
+				cnt33++;
 			}
 
 			// AST REWRITE
@@ -4384,165 +4398,165 @@ public class DataCentricDSLParser extends Parser {
 
 
 
-	public static final BitSet FOLLOW_block_in_program149 = new BitSet(new long[]{0x0000000000000000L});
-	public static final BitSet FOLLOW_EOF_in_program151 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_statement_in_block170 = new BitSet(new long[]{0x4980001820000082L,0x00000000000003A0L});
-	public static final BitSet FOLLOW_functionDecl_in_block174 = new BitSet(new long[]{0x4980001820000082L,0x00000000000003A0L});
-	public static final BitSet FOLLOW_Return_in_block179 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_block181 = new BitSet(new long[]{0x1000000000000000L});
-	public static final BitSet FOLLOW_SColon_in_block183 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_assignment_in_statement225 = new BitSet(new long[]{0x1000000000000000L});
-	public static final BitSet FOLLOW_SColon_in_statement227 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_incrementation_in_statement240 = new BitSet(new long[]{0x1000000000000000L});
-	public static final BitSet FOLLOW_SColon_in_statement242 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_functionCall_in_statement253 = new BitSet(new long[]{0x1000000000000000L});
-	public static final BitSet FOLLOW_SColon_in_statement255 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ifStatement_in_statement266 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forStatement_in_statement273 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_whileStatement_in_statement280 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_query_in_statement287 = new BitSet(new long[]{0x1000000000000000L});
-	public static final BitSet FOLLOW_SColon_in_statement289 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_73_in_query306 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_query309 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_variableCall319 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_assignment331 = new BitSet(new long[]{0x0008000000000100L});
-	public static final BitSet FOLLOW_indexes_in_assignment333 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_Assign_in_assignment336 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_assignment338 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_72_in_assignment357 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Identifier_in_assignment359 = new BitSet(new long[]{0x0008000000000100L});
-	public static final BitSet FOLLOW_indexes_in_assignment361 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_Assign_in_assignment364 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_assignment366 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_functionCall395 = new BitSet(new long[]{0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall397 = new BitSet(new long[]{0x001B000804002400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_exprList_in_functionCall399 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_functionCall402 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Println_in_functionCall420 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_functionCall423 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Print_in_functionCall443 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_functionCall445 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Assert_in_functionCall466 = new BitSet(new long[]{0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall468 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_functionCall470 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_functionCall472 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Size_in_functionCall492 = new BitSet(new long[]{0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall494 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_functionCall496 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_functionCall498 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ifStat_in_ifStatement527 = new BitSet(new long[]{0x0000000000800002L});
-	public static final BitSet FOLLOW_elseIfStat_in_ifStatement529 = new BitSet(new long[]{0x0000000000800002L});
-	public static final BitSet FOLLOW_elseStat_in_ifStatement532 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_If_in_ifStat561 = new BitSet(new long[]{0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_ifStat563 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_ifStat565 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_ifStat567 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_OBrace_in_ifStat569 = new BitSet(new long[]{0x4980001820000880L,0x00000000000003A0L});
-	public static final BitSet FOLLOW_block_in_ifStat571 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_CBrace_in_ifStat573 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Else_in_elseIfStat597 = new BitSet(new long[]{0x0000001000000000L});
-	public static final BitSet FOLLOW_If_in_elseIfStat599 = new BitSet(new long[]{0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_elseIfStat601 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_elseIfStat603 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_elseIfStat605 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_OBrace_in_elseIfStat607 = new BitSet(new long[]{0x4980001820000880L,0x00000000000003A0L});
-	public static final BitSet FOLLOW_block_in_elseIfStat609 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_CBrace_in_elseIfStat611 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Else_in_elseStat635 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_OBrace_in_elseStat637 = new BitSet(new long[]{0x4980001820000880L,0x00000000000003A0L});
-	public static final BitSet FOLLOW_block_in_elseStat639 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_CBrace_in_elseStat641 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_71_in_functionDecl663 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Identifier_in_functionDecl665 = new BitSet(new long[]{0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionDecl667 = new BitSet(new long[]{0x0000000800002000L});
-	public static final BitSet FOLLOW_idList_in_functionDecl669 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_functionDecl672 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_OBrace_in_functionDecl674 = new BitSet(new long[]{0x4980001820000880L,0x00000000000003A0L});
-	public static final BitSet FOLLOW_block_in_functionDecl676 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_CBrace_in_functionDecl678 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_For_in_forStatement700 = new BitSet(new long[]{0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_forStatement702 = new BitSet(new long[]{0x0000000800000000L,0x0000000000000100L});
-	public static final BitSet FOLLOW_assignment_in_forStatement704 = new BitSet(new long[]{0x1000000000000000L});
-	public static final BitSet FOLLOW_SColon_in_forStatement706 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_forStatement708 = new BitSet(new long[]{0x1000000000000000L});
-	public static final BitSet FOLLOW_SColon_in_forStatement710 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_afterthought_in_forStatement712 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_forStatement714 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_OBrace_in_forStatement716 = new BitSet(new long[]{0x4980001820000880L,0x00000000000003A0L});
-	public static final BitSet FOLLOW_block_in_forStatement718 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_CBrace_in_forStatement720 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_afterthought752 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_Assign_in_afterthought754 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_afterthought756 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_incrementation_in_afterthought761 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_While_in_whileStatement773 = new BitSet(new long[]{0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_whileStatement775 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_whileStatement777 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_whileStatement779 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_OBrace_in_whileStatement781 = new BitSet(new long[]{0x4980001820000880L,0x00000000000003A0L});
-	public static final BitSet FOLLOW_block_in_whileStatement783 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_CBrace_in_whileStatement785 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_idList809 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_Comma_in_idList812 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Identifier_in_idList814 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_expression_in_exprList839 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_Comma_in_exprList842 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_exprList844 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_condExpr_in_expression869 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_query_in_expression873 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_variableCall_in_incrementation886 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
-	public static final BitSet FOLLOW_set_in_incrementation888 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_orExpr_in_condExpr905 = new BitSet(new long[]{0x0200002000000002L});
-	public static final BitSet FOLLOW_QMark_in_condExpr920 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_condExpr924 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_Colon_in_condExpr926 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_condExpr930 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_In_in_condExpr953 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_condExpr955 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_andExpr_in_orExpr1007 = new BitSet(new long[]{0x0020000000000002L});
-	public static final BitSet FOLLOW_Or_in_orExpr1010 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000003L});
-	public static final BitSet FOLLOW_andExpr_in_orExpr1013 = new BitSet(new long[]{0x0020000000000002L});
-	public static final BitSet FOLLOW_equExpr_in_andExpr1029 = new BitSet(new long[]{0x0000000000000042L});
-	public static final BitSet FOLLOW_And_in_andExpr1032 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000003L});
-	public static final BitSet FOLLOW_equExpr_in_andExpr1035 = new BitSet(new long[]{0x0000000000000042L});
-	public static final BitSet FOLLOW_relExpr_in_equExpr1051 = new BitSet(new long[]{0x0000800002000002L});
-	public static final BitSet FOLLOW_set_in_equExpr1054 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000003L});
-	public static final BitSet FOLLOW_relExpr_in_equExpr1063 = new BitSet(new long[]{0x0000800002000002L});
-	public static final BitSet FOLLOW_addExpr_in_relExpr1079 = new BitSet(new long[]{0x00000C00C0000002L});
-	public static final BitSet FOLLOW_set_in_relExpr1082 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000003L});
-	public static final BitSet FOLLOW_addExpr_in_relExpr1099 = new BitSet(new long[]{0x00000C00C0000002L});
-	public static final BitSet FOLLOW_mulExpr_in_addExpr1115 = new BitSet(new long[]{0x0000000000000022L,0x0000000000000002L});
-	public static final BitSet FOLLOW_set_in_addExpr1118 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000003L});
-	public static final BitSet FOLLOW_mulExpr_in_addExpr1127 = new BitSet(new long[]{0x0000000000000022L,0x0000000000000002L});
-	public static final BitSet FOLLOW_powExpr_in_mulExpr1143 = new BitSet(new long[]{0x0000300000080002L});
-	public static final BitSet FOLLOW_set_in_mulExpr1146 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000003L});
-	public static final BitSet FOLLOW_powExpr_in_mulExpr1159 = new BitSet(new long[]{0x0000300000080002L});
-	public static final BitSet FOLLOW_unaryExpr_in_powExpr1175 = new BitSet(new long[]{0x0040000000000002L});
-	public static final BitSet FOLLOW_Pow_in_powExpr1178 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000003L});
-	public static final BitSet FOLLOW_unaryExpr_in_powExpr1181 = new BitSet(new long[]{0x0040000000000002L});
-	public static final BitSet FOLLOW_Subtract_in_unaryExpr1199 = new BitSet(new long[]{0x001B000800000400L,0x0000000000000001L});
-	public static final BitSet FOLLOW_atom_in_unaryExpr1201 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Excl_in_unaryExpr1216 = new BitSet(new long[]{0x001B000800000400L,0x0000000000000001L});
-	public static final BitSet FOLLOW_atom_in_unaryExpr1218 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_atom_in_unaryExpr1233 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Number_in_atom1247 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Bool_in_atom1254 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Null_in_atom1261 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_lookup_in_atom1268 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OBracket_in_list1282 = new BitSet(new long[]{0x001B000804001400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_exprList_in_list1284 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CBracket_in_list1287 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_list_in_lookup1311 = new BitSet(new long[]{0x0008000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1313 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_lookup1346 = new BitSet(new long[]{0x0008000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1348 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_String_in_lookup1375 = new BitSet(new long[]{0x0008000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1377 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OParen_in_lookup1408 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_lookup1410 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_CParen_in_lookup1412 = new BitSet(new long[]{0x0008000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1414 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OBracket_in_indexes1441 = new BitSet(new long[]{0x001B000804000400L,0x0000000000000203L});
-	public static final BitSet FOLLOW_expression_in_indexes1443 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CBracket_in_indexes1445 = new BitSet(new long[]{0x0008000000000002L});
+	public static final BitSet FOLLOW_functionDecl_in_program150 = new BitSet(new long[]{0x9300003040000080L,0x0000000000000740L});
+	public static final BitSet FOLLOW_block_in_program154 = new BitSet(new long[]{0x0000000000000000L});
+	public static final BitSet FOLLOW_EOF_in_program156 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_statement_in_block174 = new BitSet(new long[]{0x9300003040000082L,0x0000000000000640L});
+	public static final BitSet FOLLOW_Return_in_block178 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_block180 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_SColon_in_block182 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_assignment_in_statement224 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_SColon_in_statement226 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_incrementation_in_statement239 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_SColon_in_statement241 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionCall_in_statement252 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_SColon_in_statement254 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ifStatement_in_statement265 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forStatement_in_statement272 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_whileStatement_in_statement279 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_query_in_statement286 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_SColon_in_statement288 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_74_in_query305 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_query308 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_variableCall318 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_assignment330 = new BitSet(new long[]{0x0010000000000100L});
+	public static final BitSet FOLLOW_indexes_in_assignment332 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_Assign_in_assignment335 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_assignment337 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_73_in_assignment356 = new BitSet(new long[]{0x0000001000000000L});
+	public static final BitSet FOLLOW_Identifier_in_assignment358 = new BitSet(new long[]{0x0010000000000100L});
+	public static final BitSet FOLLOW_indexes_in_assignment360 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_Assign_in_assignment363 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_assignment365 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_functionCall394 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall396 = new BitSet(new long[]{0x0036001008002400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_exprList_in_functionCall398 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_functionCall401 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Println_in_functionCall419 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_functionCall422 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Print_in_functionCall442 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_functionCall444 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Assert_in_functionCall465 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall467 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_functionCall469 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_functionCall471 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Size_in_functionCall491 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall493 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_functionCall495 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_functionCall497 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ifStat_in_ifStatement526 = new BitSet(new long[]{0x0000000000800002L});
+	public static final BitSet FOLLOW_elseIfStat_in_ifStatement528 = new BitSet(new long[]{0x0000000000800002L});
+	public static final BitSet FOLLOW_elseStat_in_ifStatement531 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_If_in_ifStat560 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_OParen_in_ifStat562 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_ifStat564 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_ifStat566 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_OBrace_in_ifStat568 = new BitSet(new long[]{0x9300003040000880L,0x0000000000000640L});
+	public static final BitSet FOLLOW_block_in_ifStat570 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CBrace_in_ifStat572 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Else_in_elseIfStat596 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_If_in_elseIfStat598 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_OParen_in_elseIfStat600 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_elseIfStat602 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_elseIfStat604 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_OBrace_in_elseIfStat606 = new BitSet(new long[]{0x9300003040000880L,0x0000000000000640L});
+	public static final BitSet FOLLOW_block_in_elseIfStat608 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CBrace_in_elseIfStat610 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Else_in_elseStat634 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_OBrace_in_elseStat636 = new BitSet(new long[]{0x9300003040000880L,0x0000000000000640L});
+	public static final BitSet FOLLOW_block_in_elseStat638 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CBrace_in_elseStat640 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_72_in_functionDecl662 = new BitSet(new long[]{0x0000001000000000L});
+	public static final BitSet FOLLOW_Identifier_in_functionDecl664 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionDecl666 = new BitSet(new long[]{0x0000001000002000L});
+	public static final BitSet FOLLOW_idList_in_functionDecl668 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_functionDecl671 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_OBrace_in_functionDecl673 = new BitSet(new long[]{0x9300003040000880L,0x0000000000000640L});
+	public static final BitSet FOLLOW_block_in_functionDecl675 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CBrace_in_functionDecl677 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_For_in_forStatement699 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_OParen_in_forStatement701 = new BitSet(new long[]{0x0000001000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_assignment_in_forStatement703 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_SColon_in_forStatement705 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_forStatement707 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_SColon_in_forStatement709 = new BitSet(new long[]{0x0000001000000000L});
+	public static final BitSet FOLLOW_afterthought_in_forStatement711 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_forStatement713 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_OBrace_in_forStatement715 = new BitSet(new long[]{0x9300003040000880L,0x0000000000000640L});
+	public static final BitSet FOLLOW_block_in_forStatement717 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CBrace_in_forStatement719 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_afterthought751 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_Assign_in_afterthought753 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_afterthought755 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_incrementation_in_afterthought760 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_While_in_whileStatement772 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_OParen_in_whileStatement774 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_whileStatement776 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_whileStatement778 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_OBrace_in_whileStatement780 = new BitSet(new long[]{0x9300003040000880L,0x0000000000000640L});
+	public static final BitSet FOLLOW_block_in_whileStatement782 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CBrace_in_whileStatement784 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_idList808 = new BitSet(new long[]{0x0000000000008002L});
+	public static final BitSet FOLLOW_Comma_in_idList811 = new BitSet(new long[]{0x0000001000000000L});
+	public static final BitSet FOLLOW_Identifier_in_idList813 = new BitSet(new long[]{0x0000000000008002L});
+	public static final BitSet FOLLOW_expression_in_exprList838 = new BitSet(new long[]{0x0000000000008002L});
+	public static final BitSet FOLLOW_Comma_in_exprList841 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_exprList843 = new BitSet(new long[]{0x0000000000008002L});
+	public static final BitSet FOLLOW_condExpr_in_expression868 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_query_in_expression872 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_variableCall_in_incrementation885 = new BitSet(new long[]{0x0000008000000000L,0x0000000000000080L});
+	public static final BitSet FOLLOW_set_in_incrementation887 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_orExpr_in_condExpr904 = new BitSet(new long[]{0x0400004000000002L});
+	public static final BitSet FOLLOW_QMark_in_condExpr919 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_condExpr923 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_Colon_in_condExpr925 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_condExpr929 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_In_in_condExpr952 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_condExpr954 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_andExpr_in_orExpr1006 = new BitSet(new long[]{0x0040000000000002L});
+	public static final BitSet FOLLOW_Or_in_orExpr1009 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000006L});
+	public static final BitSet FOLLOW_andExpr_in_orExpr1012 = new BitSet(new long[]{0x0040000000000002L});
+	public static final BitSet FOLLOW_equExpr_in_andExpr1028 = new BitSet(new long[]{0x0000000000000042L});
+	public static final BitSet FOLLOW_And_in_andExpr1031 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000006L});
+	public static final BitSet FOLLOW_equExpr_in_andExpr1034 = new BitSet(new long[]{0x0000000000000042L});
+	public static final BitSet FOLLOW_relExpr_in_equExpr1050 = new BitSet(new long[]{0x0001000002000002L});
+	public static final BitSet FOLLOW_set_in_equExpr1053 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000006L});
+	public static final BitSet FOLLOW_relExpr_in_equExpr1062 = new BitSet(new long[]{0x0001000002000002L});
+	public static final BitSet FOLLOW_addExpr_in_relExpr1078 = new BitSet(new long[]{0x0000180180000002L});
+	public static final BitSet FOLLOW_set_in_relExpr1081 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000006L});
+	public static final BitSet FOLLOW_addExpr_in_relExpr1098 = new BitSet(new long[]{0x0000180180000002L});
+	public static final BitSet FOLLOW_mulExpr_in_addExpr1114 = new BitSet(new long[]{0x0000000000000022L,0x0000000000000004L});
+	public static final BitSet FOLLOW_set_in_addExpr1117 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000006L});
+	public static final BitSet FOLLOW_mulExpr_in_addExpr1126 = new BitSet(new long[]{0x0000000000000022L,0x0000000000000004L});
+	public static final BitSet FOLLOW_powExpr_in_mulExpr1142 = new BitSet(new long[]{0x0000600000080002L});
+	public static final BitSet FOLLOW_set_in_mulExpr1145 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000006L});
+	public static final BitSet FOLLOW_powExpr_in_mulExpr1158 = new BitSet(new long[]{0x0000600000080002L});
+	public static final BitSet FOLLOW_unaryExpr_in_powExpr1174 = new BitSet(new long[]{0x0080000000000002L});
+	public static final BitSet FOLLOW_Pow_in_powExpr1177 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000006L});
+	public static final BitSet FOLLOW_unaryExpr_in_powExpr1180 = new BitSet(new long[]{0x0080000000000002L});
+	public static final BitSet FOLLOW_Subtract_in_unaryExpr1198 = new BitSet(new long[]{0x0036001000000400L,0x0000000000000002L});
+	public static final BitSet FOLLOW_atom_in_unaryExpr1200 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Excl_in_unaryExpr1215 = new BitSet(new long[]{0x0036001000000400L,0x0000000000000002L});
+	public static final BitSet FOLLOW_atom_in_unaryExpr1217 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_atom_in_unaryExpr1232 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Number_in_atom1246 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Bool_in_atom1253 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Null_in_atom1260 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_lookup_in_atom1267 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OBracket_in_list1281 = new BitSet(new long[]{0x0036001008001400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_exprList_in_list1283 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_CBracket_in_list1286 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_list_in_lookup1310 = new BitSet(new long[]{0x0010000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1312 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_lookup1345 = new BitSet(new long[]{0x0010000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1347 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_String_in_lookup1374 = new BitSet(new long[]{0x0010000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1376 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OParen_in_lookup1407 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_lookup1409 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CParen_in_lookup1411 = new BitSet(new long[]{0x0010000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1413 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OBracket_in_indexes1440 = new BitSet(new long[]{0x0036001008000400L,0x0000000000000406L});
+	public static final BitSet FOLLOW_expression_in_indexes1442 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_CBracket_in_indexes1444 = new BitSet(new long[]{0x0010000000000002L});
 }

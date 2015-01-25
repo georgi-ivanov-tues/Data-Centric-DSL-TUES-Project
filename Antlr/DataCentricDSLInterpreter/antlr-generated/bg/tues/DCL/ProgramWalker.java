@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\ProgramWalker.g 2015-01-18 14:11:55
+// $ANTLR 3.5.2 D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\ProgramWalker.g 2015-01-25 16:09:21
 
   package bg.tues.DCL;
   import bg.tues.DCL.*;
@@ -32,19 +32,19 @@ public class ProgramWalker extends TreeParser {
 		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ASSIGNMENT", "Add", "And", "Assert", 
 		"Assign", "BLOCK", "Bool", "CBrace", "CBracket", "CParen", "Colon", "Comma", 
 		"Comment", "Def", "Digit", "Divide", "Do", "EXP", "EXP_LIST", "Else", 
-		"End", "Equals", "Excl", "FUNCTION", "FUNC_CALL", "For", "GT", "GTEquals", 
-		"ID_LIST", "IF", "INDEXES", "Identifier", "If", "In", "Increment", "Int", 
-		"LIST", "LOOKUP", "LT", "LTEquals", "Modulus", "Multiply", "NEGATE", "NEquals", 
-		"Null", "Number", "OBrace", "OBracket", "OParen", "Or", "Pow", "Print", 
-		"Println", "QMark", "RETURN", "Return", "SColon", "STATEMENTS", "Size", 
-		"Space", "String", "Subtract", "TERNARY", "To", "UNARY_MIN", "While", 
+		"End", "Equals", "Escape", "Excl", "FUNCTION", "FUNC_CALL", "For", "GT", 
+		"GTEquals", "ID_LIST", "IF", "INDEXES", "Identifier", "If", "In", "Increment", 
+		"Int", "LIST", "LOOKUP", "LT", "LTEquals", "Modulus", "Multiply", "NEGATE", 
+		"NEquals", "Null", "Number", "OBrace", "OBracket", "OParen", "Or", "Pow", 
+		"Print", "Println", "QMark", "RETURN", "Return", "SColon", "STATEMENTS", 
+		"Size", "Space", "String", "Subtract", "TERNARY", "To", "UNARY_MIN", "While", 
 		"'--'", "'func'", "'global'", "'query'"
 	};
 	public static final int EOF=-1;
-	public static final int T__70=70;
 	public static final int T__71=71;
 	public static final int T__72=72;
 	public static final int T__73=73;
+	public static final int T__74=74;
 	public static final int ASSIGNMENT=4;
 	public static final int Add=5;
 	public static final int And=6;
@@ -67,50 +67,51 @@ public class ProgramWalker extends TreeParser {
 	public static final int Else=23;
 	public static final int End=24;
 	public static final int Equals=25;
-	public static final int Excl=26;
-	public static final int FUNCTION=27;
-	public static final int FUNC_CALL=28;
-	public static final int For=29;
-	public static final int GT=30;
-	public static final int GTEquals=31;
-	public static final int ID_LIST=32;
-	public static final int IF=33;
-	public static final int INDEXES=34;
-	public static final int Identifier=35;
-	public static final int If=36;
-	public static final int In=37;
-	public static final int Increment=38;
-	public static final int Int=39;
-	public static final int LIST=40;
-	public static final int LOOKUP=41;
-	public static final int LT=42;
-	public static final int LTEquals=43;
-	public static final int Modulus=44;
-	public static final int Multiply=45;
-	public static final int NEGATE=46;
-	public static final int NEquals=47;
-	public static final int Null=48;
-	public static final int Number=49;
-	public static final int OBrace=50;
-	public static final int OBracket=51;
-	public static final int OParen=52;
-	public static final int Or=53;
-	public static final int Pow=54;
-	public static final int Print=55;
-	public static final int Println=56;
-	public static final int QMark=57;
-	public static final int RETURN=58;
-	public static final int Return=59;
-	public static final int SColon=60;
-	public static final int STATEMENTS=61;
-	public static final int Size=62;
-	public static final int Space=63;
-	public static final int String=64;
-	public static final int Subtract=65;
-	public static final int TERNARY=66;
-	public static final int To=67;
-	public static final int UNARY_MIN=68;
-	public static final int While=69;
+	public static final int Escape=26;
+	public static final int Excl=27;
+	public static final int FUNCTION=28;
+	public static final int FUNC_CALL=29;
+	public static final int For=30;
+	public static final int GT=31;
+	public static final int GTEquals=32;
+	public static final int ID_LIST=33;
+	public static final int IF=34;
+	public static final int INDEXES=35;
+	public static final int Identifier=36;
+	public static final int If=37;
+	public static final int In=38;
+	public static final int Increment=39;
+	public static final int Int=40;
+	public static final int LIST=41;
+	public static final int LOOKUP=42;
+	public static final int LT=43;
+	public static final int LTEquals=44;
+	public static final int Modulus=45;
+	public static final int Multiply=46;
+	public static final int NEGATE=47;
+	public static final int NEquals=48;
+	public static final int Null=49;
+	public static final int Number=50;
+	public static final int OBrace=51;
+	public static final int OBracket=52;
+	public static final int OParen=53;
+	public static final int Or=54;
+	public static final int Pow=55;
+	public static final int Print=56;
+	public static final int Println=57;
+	public static final int QMark=58;
+	public static final int RETURN=59;
+	public static final int Return=60;
+	public static final int SColon=61;
+	public static final int STATEMENTS=62;
+	public static final int Size=63;
+	public static final int Space=64;
+	public static final int String=65;
+	public static final int Subtract=66;
+	public static final int TERNARY=67;
+	public static final int To=68;
+	public static final int UNARY_MIN=69;
+	public static final int While=70;
 
 	// delegates
 	public TreeParser[] getDelegates() {
@@ -230,7 +231,7 @@ public class ProgramWalker extends TreeParser {
 				while (true) {
 					int alt1=2;
 					int LA1_0 = input.LA(1);
-					if ( (LA1_0==ASSIGNMENT||(LA1_0 >= FUNC_CALL && LA1_0 <= For)||LA1_0==IF||LA1_0==Identifier||LA1_0==While||(LA1_0 >= 72 && LA1_0 <= 73)) ) {
+					if ( (LA1_0==ASSIGNMENT||(LA1_0 >= FUNC_CALL && LA1_0 <= For)||LA1_0==IF||LA1_0==Identifier||LA1_0==While||(LA1_0 >= 73 && LA1_0 <= 74)) ) {
 						alt1=1;
 					}
 
@@ -260,7 +261,7 @@ public class ProgramWalker extends TreeParser {
 				// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\ProgramWalker.g:82:23: ( expression )?
 				int alt2=2;
 				int LA2_0 = input.LA(1);
-				if ( ((LA2_0 >= Add && LA2_0 <= And)||LA2_0==Bool||LA2_0==Divide||LA2_0==Equals||(LA2_0 >= GT && LA2_0 <= GTEquals)||LA2_0==In||(LA2_0 >= LOOKUP && LA2_0 <= Number)||(LA2_0 >= Or && LA2_0 <= Pow)||(LA2_0 >= Subtract && LA2_0 <= TERNARY)||LA2_0==UNARY_MIN||LA2_0==73) ) {
+				if ( ((LA2_0 >= Add && LA2_0 <= And)||LA2_0==Bool||LA2_0==Divide||LA2_0==Equals||(LA2_0 >= GT && LA2_0 <= GTEquals)||LA2_0==In||(LA2_0 >= LOOKUP && LA2_0 <= Number)||(LA2_0 >= Or && LA2_0 <= Pow)||(LA2_0 >= Subtract && LA2_0 <= TERNARY)||LA2_0==UNARY_MIN||LA2_0==74) ) {
 					alt2=1;
 				}
 				switch (alt2) {
@@ -320,7 +321,7 @@ public class ProgramWalker extends TreeParser {
 			int alt3=7;
 			switch ( input.LA(1) ) {
 			case ASSIGNMENT:
-			case 72:
+			case 73:
 				{
 				alt3=1;
 				}
@@ -350,7 +351,7 @@ public class ProgramWalker extends TreeParser {
 				alt3=6;
 				}
 				break;
-			case 73:
+			case 74:
 				{
 				alt3=7;
 				}
@@ -459,7 +460,7 @@ public class ProgramWalker extends TreeParser {
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\ProgramWalker.g:96:26: ( ^( 'query' expression ) )
 			// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\ProgramWalker.g:97:3: ^( 'query' expression )
 			{
-			match(input,73,FOLLOW_73_in_query245); 
+			match(input,74,FOLLOW_74_in_query245); 
 			match(input, Token.DOWN, null); 
 			pushFollow(FOLLOW_expression_in_query247);
 			expression11=expression();
@@ -531,7 +532,7 @@ public class ProgramWalker extends TreeParser {
 			if ( (LA6_0==ASSIGNMENT) ) {
 				alt6=1;
 			}
-			else if ( (LA6_0==72) ) {
+			else if ( (LA6_0==73) ) {
 				alt6=2;
 			}
 
@@ -579,7 +580,7 @@ public class ProgramWalker extends TreeParser {
 				case 2 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\ProgramWalker.g:106:6: ^( 'global' ASSIGNMENT i= Identifier (x= indexes )? e= expression )
 					{
-					match(input,72,FOLLOW_72_in_assignment308); 
+					match(input,73,FOLLOW_73_in_assignment308); 
 					match(input, Token.DOWN, null); 
 					match(input,ASSIGNMENT,FOLLOW_ASSIGNMENT_in_assignment310); 
 					i=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_assignment314); 
@@ -765,7 +766,7 @@ public class ProgramWalker extends TreeParser {
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\ProgramWalker.g:130:26: ( expression )?
 					int alt8=2;
 					int LA8_0 = input.LA(1);
-					if ( ((LA8_0 >= Add && LA8_0 <= And)||LA8_0==Bool||LA8_0==Divide||LA8_0==Equals||(LA8_0 >= GT && LA8_0 <= GTEquals)||LA8_0==In||(LA8_0 >= LOOKUP && LA8_0 <= Number)||(LA8_0 >= Or && LA8_0 <= Pow)||(LA8_0 >= Subtract && LA8_0 <= TERNARY)||LA8_0==UNARY_MIN||LA8_0==73) ) {
+					if ( ((LA8_0 >= Add && LA8_0 <= And)||LA8_0==Bool||LA8_0==Divide||LA8_0==Equals||(LA8_0 >= GT && LA8_0 <= GTEquals)||LA8_0==In||(LA8_0 >= LOOKUP && LA8_0 <= Number)||(LA8_0 >= Or && LA8_0 <= Pow)||(LA8_0 >= Subtract && LA8_0 <= TERNARY)||LA8_0==UNARY_MIN||LA8_0==74) ) {
 						alt8=1;
 					}
 					switch (alt8) {
@@ -875,7 +876,7 @@ public class ProgramWalker extends TreeParser {
 					int LA10_1 = input.LA(2);
 					if ( (LA10_1==DOWN) ) {
 						int LA10_3 = input.LA(3);
-						if ( ((LA10_3 >= Add && LA10_3 <= And)||LA10_3==Bool||LA10_3==Divide||LA10_3==Equals||(LA10_3 >= GT && LA10_3 <= GTEquals)||LA10_3==In||(LA10_3 >= LOOKUP && LA10_3 <= Number)||(LA10_3 >= Or && LA10_3 <= Pow)||(LA10_3 >= Subtract && LA10_3 <= TERNARY)||LA10_3==UNARY_MIN||LA10_3==73) ) {
+						if ( ((LA10_3 >= Add && LA10_3 <= And)||LA10_3==Bool||LA10_3==Divide||LA10_3==Equals||(LA10_3 >= GT && LA10_3 <= GTEquals)||LA10_3==In||(LA10_3 >= LOOKUP && LA10_3 <= Number)||(LA10_3 >= Or && LA10_3 <= Pow)||(LA10_3 >= Subtract && LA10_3 <= TERNARY)||LA10_3==UNARY_MIN||LA10_3==74) ) {
 							alt10=1;
 						}
 
@@ -1027,7 +1028,7 @@ public class ProgramWalker extends TreeParser {
 				if ( (LA12_1==Assign) ) {
 					alt12=1;
 				}
-				else if ( (LA12_1==Increment||LA12_1==70) ) {
+				else if ( (LA12_1==Increment||LA12_1==71) ) {
 					alt12=2;
 				}
 
@@ -1219,7 +1220,7 @@ public class ProgramWalker extends TreeParser {
 			while (true) {
 				int alt14=2;
 				int LA14_0 = input.LA(1);
-				if ( ((LA14_0 >= Add && LA14_0 <= And)||LA14_0==Bool||LA14_0==Divide||LA14_0==Equals||(LA14_0 >= GT && LA14_0 <= GTEquals)||LA14_0==In||(LA14_0 >= LOOKUP && LA14_0 <= Number)||(LA14_0 >= Or && LA14_0 <= Pow)||(LA14_0 >= Subtract && LA14_0 <= TERNARY)||LA14_0==UNARY_MIN||LA14_0==73) ) {
+				if ( ((LA14_0 >= Add && LA14_0 <= And)||LA14_0==Bool||LA14_0==Divide||LA14_0==Equals||(LA14_0 >= GT && LA14_0 <= GTEquals)||LA14_0==In||(LA14_0 >= LOOKUP && LA14_0 <= Number)||(LA14_0 >= Or && LA14_0 <= Pow)||(LA14_0 >= Subtract && LA14_0 <= TERNARY)||LA14_0==UNARY_MIN||LA14_0==74) ) {
 					alt14=1;
 				}
 
@@ -1388,7 +1389,7 @@ public class ProgramWalker extends TreeParser {
 				alt15=22;
 				}
 				break;
-			case 73:
+			case 74:
 				{
 				alt15=23;
 				}
@@ -1792,7 +1793,7 @@ public class ProgramWalker extends TreeParser {
 			if ( (LA16_0==Increment) ) {
 				alt16=1;
 			}
-			else if ( (LA16_0==70) ) {
+			else if ( (LA16_0==71) ) {
 				alt16=2;
 			}
 
@@ -1813,7 +1814,7 @@ public class ProgramWalker extends TreeParser {
 				case 2 :
 					// D:\\Language-GIT\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\DCL\\ProgramWalker.g:200:5: '--'
 					{
-					match(input,70,FOLLOW_70_in_incrementation1043); 
+					match(input,71,FOLLOW_71_in_incrementation1043); 
 					node = new IncrementationNode(variableCall27,-1,currentScope);
 					}
 					break;
@@ -1898,7 +1899,7 @@ public class ProgramWalker extends TreeParser {
 					case Subtract:
 					case TERNARY:
 					case UNARY_MIN:
-					case 73:
+					case 74:
 						{
 						alt22=3;
 						}
@@ -2189,7 +2190,7 @@ public class ProgramWalker extends TreeParser {
 			while (true) {
 				int alt24=2;
 				int LA24_0 = input.LA(1);
-				if ( ((LA24_0 >= Add && LA24_0 <= And)||LA24_0==Bool||LA24_0==Divide||LA24_0==Equals||(LA24_0 >= GT && LA24_0 <= GTEquals)||LA24_0==In||(LA24_0 >= LOOKUP && LA24_0 <= Number)||(LA24_0 >= Or && LA24_0 <= Pow)||(LA24_0 >= Subtract && LA24_0 <= TERNARY)||LA24_0==UNARY_MIN||LA24_0==73) ) {
+				if ( ((LA24_0 >= Add && LA24_0 <= And)||LA24_0==Bool||LA24_0==Divide||LA24_0==Equals||(LA24_0 >= GT && LA24_0 <= GTEquals)||LA24_0==In||(LA24_0 >= LOOKUP && LA24_0 <= Number)||(LA24_0 >= Or && LA24_0 <= Pow)||(LA24_0 >= Subtract && LA24_0 <= TERNARY)||LA24_0==UNARY_MIN||LA24_0==74) ) {
 					alt24=1;
 				}
 
@@ -2236,7 +2237,7 @@ public class ProgramWalker extends TreeParser {
 	public static final BitSet FOLLOW_block_in_program51 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_BLOCK_in_block84 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_STATEMENTS_in_block97 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_statement_in_block100 = new BitSet(new long[]{0x0000000A30000018L,0x0000000000000320L});
+	public static final BitSet FOLLOW_statement_in_block100 = new BitSet(new long[]{0x0000001460000018L,0x0000000000000640L});
 	public static final BitSet FOLLOW_RETURN_in_block120 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_expression_in_block127 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_assignment_in_statement159 = new BitSet(new long[]{0x0000000000000002L});
@@ -2246,32 +2247,32 @@ public class ProgramWalker extends TreeParser {
 	public static final BitSet FOLLOW_whileStatement_in_statement207 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_incrementation_in_statement216 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_query_in_statement225 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_73_in_query245 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_74_in_query245 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_expression_in_query247 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_Identifier_in_variableCall264 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_ASSIGNMENT_in_assignment284 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_assignment288 = new BitSet(new long[]{0x0063FE24C2080460L,0x0000000000000216L});
-	public static final BitSet FOLLOW_indexes_in_assignment292 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_Identifier_in_assignment288 = new BitSet(new long[]{0x00C7FC4982080460L,0x000000000000042CL});
+	public static final BitSet FOLLOW_indexes_in_assignment292 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_assignment297 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_72_in_assignment308 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ASSIGNMENT_in_assignment310 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Identifier_in_assignment314 = new BitSet(new long[]{0x0063FE24C2080460L,0x0000000000000216L});
-	public static final BitSet FOLLOW_indexes_in_assignment318 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_73_in_assignment308 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ASSIGNMENT_in_assignment310 = new BitSet(new long[]{0x0000001000000000L});
+	public static final BitSet FOLLOW_Identifier_in_assignment314 = new BitSet(new long[]{0x00C7FC4982080460L,0x000000000000042CL});
+	public static final BitSet FOLLOW_indexes_in_assignment318 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_assignment323 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall345 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_Identifier_in_functionCall347 = new BitSet(new long[]{0x0000000000400008L});
 	public static final BitSet FOLLOW_exprList_in_functionCall349 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall361 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Println_in_functionCall363 = new BitSet(new long[]{0x0063FE20C2080468L,0x0000000000000216L});
+	public static final BitSet FOLLOW_Println_in_functionCall363 = new BitSet(new long[]{0x00C7FC4182080468L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_functionCall365 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall377 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Print_in_functionCall379 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_Print_in_functionCall379 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_functionCall381 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall392 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Assert_in_functionCall394 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_Assert_in_functionCall394 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_functionCall396 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall406 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Size_in_functionCall408 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_Size_in_functionCall408 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_functionCall410 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_IF_in_ifStatement436 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_EXP_in_ifStatement448 = new BitSet(new long[]{0x0000000000000004L});
@@ -2280,69 +2281,69 @@ public class ProgramWalker extends TreeParser {
 	public static final BitSet FOLLOW_EXP_in_ifStatement471 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_block_in_ifStatement475 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_For_in_forStatement520 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_assignment_in_forStatement524 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
-	public static final BitSet FOLLOW_expression_in_forStatement528 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_assignment_in_forStatement524 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
+	public static final BitSet FOLLOW_expression_in_forStatement528 = new BitSet(new long[]{0x0000001000000000L});
 	public static final BitSet FOLLOW_afterthought_in_forStatement532 = new BitSet(new long[]{0x0000000000000200L});
 	public static final BitSet FOLLOW_block_in_forStatement536 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_Identifier_in_afterthought557 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_Assign_in_afterthought559 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_Assign_in_afterthought559 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_afterthought561 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_incrementation_in_afterthought571 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_While_in_whileStatement591 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_expression_in_whileStatement593 = new BitSet(new long[]{0x0000000000000200L});
 	public static final BitSet FOLLOW_block_in_whileStatement595 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_ID_LIST_in_idList617 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_idList619 = new BitSet(new long[]{0x0000000800000008L});
+	public static final BitSet FOLLOW_Identifier_in_idList619 = new BitSet(new long[]{0x0000001000000008L});
 	public static final BitSet FOLLOW_EXP_LIST_in_exprList645 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_exprList650 = new BitSet(new long[]{0x0063FE20C2080468L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_exprList650 = new BitSet(new long[]{0x00C7FC4182080468L,0x000000000000042CL});
 	public static final BitSet FOLLOW_TERNARY_in_expression676 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression678 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
-	public static final BitSet FOLLOW_expression_in_expression680 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression678 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
+	public static final BitSet FOLLOW_expression_in_expression680 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression682 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_In_in_expression691 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression693 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression693 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression695 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_Or_in_expression704 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression708 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression708 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression712 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_And_in_expression722 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression726 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression726 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression730 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_Equals_in_expression740 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression744 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression744 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression748 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_NEquals_in_expression759 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression763 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression763 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression767 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_GTEquals_in_expression778 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression782 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression782 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression786 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_LTEquals_in_expression797 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression801 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression801 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression805 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_GT_in_expression816 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression820 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression820 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression824 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_LT_in_expression835 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression839 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression839 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression843 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_Add_in_expression854 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression858 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression858 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression862 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_Subtract_in_expression873 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression877 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression877 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression881 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_Multiply_in_expression892 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression896 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression896 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression900 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_Divide_in_expression911 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression915 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression915 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression919 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_Modulus_in_expression930 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression932 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression932 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression934 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_Pow_in_expression943 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression945 = new BitSet(new long[]{0x0063FE20C2080460L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_expression945 = new BitSet(new long[]{0x00C7FC4182080460L,0x000000000000042CL});
 	public static final BitSet FOLLOW_expression_in_expression947 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_UNARY_MIN_in_expression956 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_expression_in_expression958 = new BitSet(new long[]{0x0000000000000008L});
@@ -2353,26 +2354,26 @@ public class ProgramWalker extends TreeParser {
 	public static final BitSet FOLLOW_Null_in_expression996 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_lookup_in_expression1003 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_query_in_expression1014 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_variableCall_in_incrementation1033 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
+	public static final BitSet FOLLOW_variableCall_in_incrementation1033 = new BitSet(new long[]{0x0000008000000000L,0x0000000000000080L});
 	public static final BitSet FOLLOW_Increment_in_incrementation1036 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_70_in_incrementation1043 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_71_in_incrementation1043 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_LOOKUP_in_lookup1067 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_functionCall_in_lookup1069 = new BitSet(new long[]{0x0000000400000008L});
+	public static final BitSet FOLLOW_functionCall_in_lookup1069 = new BitSet(new long[]{0x0000000800000008L});
 	public static final BitSet FOLLOW_indexes_in_lookup1071 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_LOOKUP_in_lookup1081 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_list_in_lookup1083 = new BitSet(new long[]{0x0000000400000008L});
+	public static final BitSet FOLLOW_list_in_lookup1083 = new BitSet(new long[]{0x0000000800000008L});
 	public static final BitSet FOLLOW_indexes_in_lookup1085 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_LOOKUP_in_lookup1095 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_lookup1097 = new BitSet(new long[]{0x0000000400000008L});
+	public static final BitSet FOLLOW_expression_in_lookup1097 = new BitSet(new long[]{0x0000000800000008L});
 	public static final BitSet FOLLOW_indexes_in_lookup1099 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_LOOKUP_in_lookup1110 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_lookup1114 = new BitSet(new long[]{0x0000000400000008L});
+	public static final BitSet FOLLOW_Identifier_in_lookup1114 = new BitSet(new long[]{0x0000000800000008L});
 	public static final BitSet FOLLOW_indexes_in_lookup1118 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_LOOKUP_in_lookup1137 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_String_in_lookup1139 = new BitSet(new long[]{0x0000000400000008L});
+	public static final BitSet FOLLOW_String_in_lookup1139 = new BitSet(new long[]{0x0000000800000008L});
 	public static final BitSet FOLLOW_indexes_in_lookup1141 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_LIST_in_list1166 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_exprList_in_list1168 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_INDEXES_in_indexes1194 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_indexes1197 = new BitSet(new long[]{0x0063FE20C2080468L,0x0000000000000216L});
+	public static final BitSet FOLLOW_expression_in_indexes1197 = new BitSet(new long[]{0x00C7FC4182080468L,0x000000000000042CL});
 }

@@ -78,11 +78,11 @@ tokens {
  
 
 program
-  :  block EOF -> block
+  :  (functionDecl)* block EOF -> block
   ;
 
 block
-  :  (statement | functionDecl)* (Return expression ';')? 
+  :  statement* (Return expression ';')? 
      -> ^(BLOCK ^(STATEMENTS statement*) ^(RETURN expression?))
   ;
 
@@ -291,11 +291,18 @@ Identifier
   ;
 
 String
-@after {
-  setText(getText().substring(1, getText().length()-1).replaceAll("\\\\(.)", "$1"));
+@init {
+  final StringBuilder builder = new StringBuilder();
 }
-  :  '"'  (~('"' | '\\')  | '\\' ('\\' | '"'))* '"' 
-  |  '\'' (~('\'' | '\\') | '\\' ('\\' | '\''))* '\''
+@after {
+  setText(builder.toString());
+}
+  :  '"'  (Escape[builder] | c=~('\\' | '"' | '\r' | '\n') {builder.appendCodePoint(c);})* '"' 
+  |  '\'' (Escape[builder] | c=~('\\' | '\'' | '\r' | '\n') {builder.appendCodePoint(c);})* '\''
+  ;
+
+fragment Escape[StringBuilder builder]
+  : '\\' . {processEscapeSequence(getText(), $builder);}
   ;
 
 Comment

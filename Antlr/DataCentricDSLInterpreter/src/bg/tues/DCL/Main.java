@@ -1,13 +1,9 @@
 package bg.tues.DCL;
 
-import java.io.IOException;
-import java.sql.SQLException;
-
-import org.antlr.runtime.RecognitionException;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException, RecognitionException, SQLException {
+	public static void main(String[] args) throws Exception {
 		DCLInterpreter interpreter = new DCLInterpreter();
 		interpreter.execute("test.dd");
 	}
