@@ -16,6 +16,7 @@ import org.dataCentricDSL.StringLiteral
 import org.dataCentricDSL.VariableCall
 import org.dataCentricDSL.VariableDecl
 import org.dataCentricDSL.WhileStatement
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.validation.Check
 
 /**
@@ -24,6 +25,8 @@ import org.eclipse.xtext.validation.Check
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
+	
+	var boolean globalVariableFound = false;
 	
 	@Check
 	def void checkIfQueryStringIsEmpty(Query que){
@@ -80,6 +83,11 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 				}
 			} else if(container instanceof WhileStatement) {
 				variables = (container as WhileStatement).statements.toArray.filter(typeof(VariableDecl));
+			} else if(container instanceof FunctionDecl) {
+				variables = (container as FunctionDecl).statements.toArray.filter(typeof(VariableDecl));
+				if(namePersistsInArray((container as FunctionDecl).arguments, vc.variableCall)) {
+					return;
+				}
 			}
 			if(variableIsDeclared(variables, vc.variableCall)) {
 				return;
@@ -90,7 +98,38 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		if(variableIsDeclared(variables, vc.variableCall)) {
 			return;
 		}
-		error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
+		checkIfCalledVariableIsGlobal(container, vc.variableCall);
+		if(!globalVariableFound) {
+			error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
+		}
+		globalVariableFound = false;
+	}
+
+	def void checkIfCalledVariableIsGlobal(EObject object, String name) {
+		if(globalVariableFound) {
+			return;
+		}
+		
+		if(object instanceof DataCentricDSL || object instanceof IfStatement
+			|| object instanceof ForStatement || object instanceof WhileStatement
+			|| object instanceof FunctionDecl
+		) {	
+			if(variableIsDeclared(object.eContents.toArray
+				.filter(typeof(VariableDecl)).filter[global], name
+			)) {
+				globalVariableFound = true;
+				return;
+			} else {
+				for(i : 0..< object.eContents.length) {
+					checkIfCalledVariableIsGlobal(object.eContents.get(i), name);
+				}
+			}
+		} else if(object instanceof VariableDecl) {
+			if((object as VariableDecl).global && (object as VariableDecl).name.equals(name)) {
+				globalVariableFound = true;
+				return;
+			}
+		}
 	}
 
 	def boolean variableIsDeclared(VariableDecl[] variables, String name) {
@@ -107,6 +146,15 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	def boolean functionIsDeclared(FunctionDecl[] functions, String name) {
 		for(i : 0..< functions.length) {
 			if(functions.get(i).name.toString.equals(name)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	def boolean namePersistsInArray(String[] array, String name) {
+		for(i : 0..< array.length) {
+			if(array.get(i).equals(name)) {
 				return true;
 			}
 		}
