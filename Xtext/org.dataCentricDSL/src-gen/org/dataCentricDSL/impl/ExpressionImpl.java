@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ExpressionImpl extends PrintImpl implements Expression
+public class ExpressionImpl extends QueryImpl implements Expression
 {
   /**
    * <!-- begin-user-doc -->

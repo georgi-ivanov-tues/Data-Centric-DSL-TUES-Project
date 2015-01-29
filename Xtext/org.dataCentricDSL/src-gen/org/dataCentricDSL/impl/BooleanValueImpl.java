@@ -2,8 +2,8 @@
  */
 package org.dataCentricDSL.impl;
 
+import org.dataCentricDSL.BooleanValue;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.VariableCall;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,45 +13,45 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Variable Call</b></em>'.
+ * An implementation of the model object '<em><b>Boolean Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.VariableCallImpl#getVariableCall <em>Variable Call</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.BooleanValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VariableCallImpl extends ExpressionImpl implements VariableCall
+public class BooleanValueImpl extends ConditionElementImpl implements BooleanValue
 {
   /**
-   * The default value of the '{@link #getVariableCall() <em>Variable Call</em>}' attribute.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariableCall()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final String VARIABLE_CALL_EDEFAULT = null;
+  protected static final String VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVariableCall() <em>Variable Call</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariableCall()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected String variableCall = VARIABLE_CALL_EDEFAULT;
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VariableCallImpl()
+  protected BooleanValueImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.VARIABLE_CALL;
+    return DataCentricDSLPackage.Literals.BOOLEAN_VALUE;
   }
 
   /**
@@ -72,9 +72,9 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVariableCall()
+  public String getValue()
   {
-    return variableCall;
+    return value;
   }
 
   /**
@@ -82,12 +82,12 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableCall(String newVariableCall)
+  public void setValue(String newValue)
   {
-    String oldVariableCall = variableCall;
-    variableCall = newVariableCall;
+    String oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL, oldVariableCall, variableCall));
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.BOOLEAN_VALUE__VALUE, oldValue, value));
   }
 
   /**
@@ -100,8 +100,8 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
-        return getVariableCall();
+      case DataCentricDSLPackage.BOOLEAN_VALUE__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -116,8 +116,8 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
-        setVariableCall((String)newValue);
+      case DataCentricDSLPackage.BOOLEAN_VALUE__VALUE:
+        setValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -133,8 +133,8 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
-        setVariableCall(VARIABLE_CALL_EDEFAULT);
+      case DataCentricDSLPackage.BOOLEAN_VALUE__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -150,8 +150,8 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
-        return VARIABLE_CALL_EDEFAULT == null ? variableCall != null : !VARIABLE_CALL_EDEFAULT.equals(variableCall);
+      case DataCentricDSLPackage.BOOLEAN_VALUE__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
   }
@@ -167,10 +167,10 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (variableCall: ");
-    result.append(variableCall);
+    result.append(" (value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }
 
-} //VariableCallImpl
+} //BooleanValueImpl

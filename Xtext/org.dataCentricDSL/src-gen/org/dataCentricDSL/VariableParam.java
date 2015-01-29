@@ -12,7 +12,7 @@ package org.dataCentricDSL;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.dataCentricDSL.VariableParam#getVariableStringParam <em>Variable String Param</em>}</li>
- *   <li>{@link org.dataCentricDSL.VariableParam#getVariableVarParam <em>Variable Var Param</em>}</li>
+ *   <li>{@link org.dataCentricDSL.VariableParam#getVariableExpressionParam <em>Variable Expression Param</em>}</li>
  *   <li>{@link org.dataCentricDSL.VariableParam#getVariableQueryParam <em>Variable Query Param</em>}</li>
  *   <li>{@link org.dataCentricDSL.VariableParam#getVariableBolleanValue <em>Variable Bollean Value</em>}</li>
  * </ul>
@@ -51,30 +51,30 @@ public interface VariableParam extends VariableDecl
   void setVariableStringParam(String value);
 
   /**
-   * Returns the value of the '<em><b>Variable Var Param</b></em>' containment reference.
+   * Returns the value of the '<em><b>Variable Expression Param</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Variable Var Param</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Variable Expression Param</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variable Var Param</em>' containment reference.
-   * @see #setVariableVarParam(VariableCall)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableParam_VariableVarParam()
+   * @return the value of the '<em>Variable Expression Param</em>' containment reference.
+   * @see #setVariableExpressionParam(Expression)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableParam_VariableExpressionParam()
    * @model containment="true"
    * @generated
    */
-  VariableCall getVariableVarParam();
+  Expression getVariableExpressionParam();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.VariableParam#getVariableVarParam <em>Variable Var Param</em>}' containment reference.
+   * Sets the value of the '{@link org.dataCentricDSL.VariableParam#getVariableExpressionParam <em>Variable Expression Param</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Variable Var Param</em>' containment reference.
-   * @see #getVariableVarParam()
+   * @param value the new value of the '<em>Variable Expression Param</em>' containment reference.
+   * @see #getVariableExpressionParam()
    * @generated
    */
-  void setVariableVarParam(VariableCall value);
+  void setVariableExpressionParam(Expression value);
 
   /**
    * Returns the value of the '<em><b>Variable Query Param</b></em>' containment reference.
@@ -103,29 +103,29 @@ public interface VariableParam extends VariableDecl
   void setVariableQueryParam(Query value);
 
   /**
-   * Returns the value of the '<em><b>Variable Bollean Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Variable Bollean Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Variable Bollean Value</em>' attribute isn't clear,
+   * If the meaning of the '<em>Variable Bollean Value</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variable Bollean Value</em>' attribute.
-   * @see #setVariableBolleanValue(String)
+   * @return the value of the '<em>Variable Bollean Value</em>' containment reference.
+   * @see #setVariableBolleanValue(BooleanValue)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableParam_VariableBolleanValue()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getVariableBolleanValue();
+  BooleanValue getVariableBolleanValue();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.VariableParam#getVariableBolleanValue <em>Variable Bollean Value</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.VariableParam#getVariableBolleanValue <em>Variable Bollean Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Variable Bollean Value</em>' attribute.
+   * @param value the new value of the '<em>Variable Bollean Value</em>' containment reference.
    * @see #getVariableBolleanValue()
    * @generated
    */
-  void setVariableBolleanValue(String value);
+  void setVariableBolleanValue(BooleanValue value);
 
 } // VariableParam

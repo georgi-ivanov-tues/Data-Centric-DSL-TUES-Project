@@ -3,7 +3,6 @@ package org.dataCentricDSL.tests;
 import com.google.inject.Inject;
 import org.DataCentricDSLInjectorProvider;
 import org.dataCentricDSL.DataCentricDSL;
-import org.dataCentricDSL.SimpleStatement;
 import org.dataCentricDSL.VariableCall;
 import org.dataCentricDSL.VariableDecl;
 import org.eclipse.emf.common.util.EList;
@@ -35,7 +34,7 @@ public class TestSomething {
       for (final Integer i : _doubleDotLessThan) {
         EList<EObject> _elements_1 = model.getElements();
         EObject _get = _elements_1.get((i).intValue());
-        SimpleStatement _variableValue = ((VariableDecl) _get).getVariableValue();
+        VariableDecl _variableValue = ((VariableDecl) _get).getVariableValue();
         String _variableCall = ((VariableCall) _variableValue).getVariableCall();
         InputOutput.<String>print(_variableCall);
       }

@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface FunctionCall extends SimpleStatement
+public interface FunctionCall extends SimpleStatement, Expression
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

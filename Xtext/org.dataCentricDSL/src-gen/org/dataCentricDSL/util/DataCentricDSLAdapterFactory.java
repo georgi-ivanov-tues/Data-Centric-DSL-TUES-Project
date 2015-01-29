@@ -120,11 +120,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createExpressionAdapter();
       }
       @Override
-      public Adapter caseNumberLiteral(NumberLiteral object)
-      {
-        return createNumberLiteralAdapter();
-      }
-      @Override
       public Adapter caseCompoundStatement(CompoundStatement object)
       {
         return createCompoundStatementAdapter();
@@ -193,6 +188,16 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStringLiteral(StringLiteral object)
       {
         return createStringLiteralAdapter();
+      }
+      @Override
+      public Adapter caseNumberLiteral(NumberLiteral object)
+      {
+        return createNumberLiteralAdapter();
+      }
+      @Override
+      public Adapter caseBooleanValue(BooleanValue object)
+      {
+        return createBooleanValueAdapter();
       }
       @Override
       public Adapter caseVariableParam(VariableParam object)
@@ -377,21 +382,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.NumberLiteral <em>Number Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.NumberLiteral
-   * @generated
-   */
-  public Adapter createNumberLiteralAdapter()
   {
     return null;
   }
@@ -602,6 +592,36 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStringLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.NumberLiteral <em>Number Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.dataCentricDSL.NumberLiteral
+   * @generated
+   */
+  public Adapter createNumberLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.BooleanValue <em>Boolean Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.dataCentricDSL.BooleanValue
+   * @generated
+   */
+  public Adapter createBooleanValueAdapter()
   {
     return null;
   }

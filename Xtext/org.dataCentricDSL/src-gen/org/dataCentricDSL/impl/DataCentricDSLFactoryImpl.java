@@ -73,7 +73,6 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.FUNCTION_CALL: return createFunctionCall();
       case DataCentricDSLPackage.VARIABLE_CALL: return createVariableCall();
       case DataCentricDSLPackage.EXPRESSION: return createExpression();
-      case DataCentricDSLPackage.NUMBER_LITERAL: return createNumberLiteral();
       case DataCentricDSLPackage.COMPOUND_STATEMENT: return createCompoundStatement();
       case DataCentricDSLPackage.FUNCTION_DECL: return createFunctionDecl();
       case DataCentricDSLPackage.IF_STATEMENT: return createIfStatement();
@@ -88,6 +87,8 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.MULTI_ASSIGN_RIGHT_OPERAND: return createMultiAssignRightOperand();
       case DataCentricDSLPackage.POSTFIX_OPERATION: return createPostfixOperation();
       case DataCentricDSLPackage.STRING_LITERAL: return createStringLiteral();
+      case DataCentricDSLPackage.NUMBER_LITERAL: return createNumberLiteral();
+      case DataCentricDSLPackage.BOOLEAN_VALUE: return createBooleanValue();
       case DataCentricDSLPackage.VARIABLE_PARAM: return createVariableParam();
       case DataCentricDSLPackage.ADDITION: return createAddition();
       case DataCentricDSLPackage.SUBSTRACTION: return createSubstraction();
@@ -196,17 +197,6 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     ExpressionImpl expression = new ExpressionImpl();
     return expression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NumberLiteral createNumberLiteral()
-  {
-    NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
-    return numberLiteral;
   }
 
   /**
@@ -361,6 +351,28 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     StringLiteralImpl stringLiteral = new StringLiteralImpl();
     return stringLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumberLiteral createNumberLiteral()
+  {
+    NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
+    return numberLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanValue createBooleanValue()
+  {
+    BooleanValueImpl booleanValue = new BooleanValueImpl();
+    return booleanValue;
   }
 
   /**

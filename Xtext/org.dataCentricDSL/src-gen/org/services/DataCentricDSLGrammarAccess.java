@@ -116,15 +116,13 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameValidIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final RuleCall cOpAssignmentParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cVariableValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Alternatives cVariableValueAlternatives_3_0 = (Alternatives)cVariableValueAssignment_3.eContents().get(0);
-		private final RuleCall cVariableValueVariableParamParserRuleCall_3_0_0 = (RuleCall)cVariableValueAlternatives_3_0.eContents().get(0);
-		private final RuleCall cVariableValueExpressionParserRuleCall_3_0_1 = (RuleCall)cVariableValueAlternatives_3_0.eContents().get(1);
+		private final RuleCall cVariableValueVariableParamParserRuleCall_3_0 = (RuleCall)cVariableValueAssignment_3.eContents().get(0);
 		
 		//VariableDecl:
-		//	global?="global"? name=ValidID OpAssignment variableValue=(VariableParam | Expression);
+		//	global?="global"? name=ValidID OpAssignment variableValue=VariableParam;
 		public ParserRule getRule() { return rule; }
 
-		//global?="global"? name=ValidID OpAssignment variableValue=(VariableParam | Expression)
+		//global?="global"? name=ValidID OpAssignment variableValue=VariableParam
 		public Group getGroup() { return cGroup; }
 
 		//global?="global"?
@@ -142,17 +140,11 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//OpAssignment
 		public RuleCall getOpAssignmentParserRuleCall_2() { return cOpAssignmentParserRuleCall_2; }
 
-		//variableValue=(VariableParam | Expression)
+		//variableValue=VariableParam
 		public Assignment getVariableValueAssignment_3() { return cVariableValueAssignment_3; }
 
-		//VariableParam | Expression
-		public Alternatives getVariableValueAlternatives_3_0() { return cVariableValueAlternatives_3_0; }
-
 		//VariableParam
-		public RuleCall getVariableValueVariableParamParserRuleCall_3_0_0() { return cVariableValueVariableParamParserRuleCall_3_0_0; }
-
-		//Expression
-		public RuleCall getVariableValueExpressionParserRuleCall_3_0_1() { return cVariableValueExpressionParserRuleCall_3_0_1; }
+		public RuleCall getVariableValueVariableParamParserRuleCall_3_0() { return cVariableValueVariableParamParserRuleCall_3_0; }
 	}
 
 	public class OpAssignmentElements extends AbstractParserRuleElementFinder {
@@ -174,27 +166,27 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Assignment cVariableStringParamAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
 		private final RuleCall cVariableStringParamSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cVariableStringParamAssignment_1_0.eContents().get(0);
-		private final Assignment cVariableVarParamAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
-		private final RuleCall cVariableVarParamVariableCallParserRuleCall_1_1_0 = (RuleCall)cVariableVarParamAssignment_1_1.eContents().get(0);
+		private final Assignment cVariableExpressionParamAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cVariableExpressionParamExpressionParserRuleCall_1_1_0 = (RuleCall)cVariableExpressionParamAssignment_1_1.eContents().get(0);
 		private final Assignment cVariableQueryParamAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
 		private final RuleCall cVariableQueryParamQueryParserRuleCall_1_2_0 = (RuleCall)cVariableQueryParamAssignment_1_2.eContents().get(0);
 		private final Assignment cVariableBolleanValueAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
-		private final RuleCall cVariableBolleanValueBolleanValueParserRuleCall_1_3_0 = (RuleCall)cVariableBolleanValueAssignment_1_3.eContents().get(0);
+		private final RuleCall cVariableBolleanValueBooleanValueParserRuleCall_1_3_0 = (RuleCall)cVariableBolleanValueAssignment_1_3.eContents().get(0);
 		
 		//VariableParam returns VariableDecl:
-		//	{VariableParam} (variableStringParam=STRING | variableVarParam=VariableCall | variableQueryParam=Query |
-		//	variableBolleanValue=BolleanValue);
+		//	{VariableParam} (variableStringParam=STRING | variableExpressionParam=Expression | variableQueryParam=Query |
+		//	variableBolleanValue=BooleanValue);
 		public ParserRule getRule() { return rule; }
 
-		//{VariableParam} (variableStringParam=STRING | variableVarParam=VariableCall | variableQueryParam=Query |
-		//variableBolleanValue=BolleanValue)
+		//{VariableParam} (variableStringParam=STRING | variableExpressionParam=Expression | variableQueryParam=Query |
+		//variableBolleanValue=BooleanValue)
 		public Group getGroup() { return cGroup; }
 
 		//{VariableParam}
 		public Action getVariableParamAction_0() { return cVariableParamAction_0; }
 
-		//variableStringParam=STRING | variableVarParam=VariableCall | variableQueryParam=Query |
-		//variableBolleanValue=BolleanValue
+		//variableStringParam=STRING | variableExpressionParam=Expression | variableQueryParam=Query |
+		//variableBolleanValue=BooleanValue
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//variableStringParam=STRING
@@ -203,11 +195,11 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getVariableStringParamSTRINGTerminalRuleCall_1_0_0() { return cVariableStringParamSTRINGTerminalRuleCall_1_0_0; }
 
-		//variableVarParam=VariableCall
-		public Assignment getVariableVarParamAssignment_1_1() { return cVariableVarParamAssignment_1_1; }
+		//variableExpressionParam=Expression
+		public Assignment getVariableExpressionParamAssignment_1_1() { return cVariableExpressionParamAssignment_1_1; }
 
-		//VariableCall
-		public RuleCall getVariableVarParamVariableCallParserRuleCall_1_1_0() { return cVariableVarParamVariableCallParserRuleCall_1_1_0; }
+		//Expression
+		public RuleCall getVariableExpressionParamExpressionParserRuleCall_1_1_0() { return cVariableExpressionParamExpressionParserRuleCall_1_1_0; }
 
 		//variableQueryParam=Query
 		public Assignment getVariableQueryParamAssignment_1_2() { return cVariableQueryParamAssignment_1_2; }
@@ -215,11 +207,11 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//Query
 		public RuleCall getVariableQueryParamQueryParserRuleCall_1_2_0() { return cVariableQueryParamQueryParserRuleCall_1_2_0; }
 
-		//variableBolleanValue=BolleanValue
+		//variableBolleanValue=BooleanValue
 		public Assignment getVariableBolleanValueAssignment_1_3() { return cVariableBolleanValueAssignment_1_3; }
 
-		//BolleanValue
-		public RuleCall getVariableBolleanValueBolleanValueParserRuleCall_1_3_0() { return cVariableBolleanValueBolleanValueParserRuleCall_1_3_0; }
+		//BooleanValue
+		public RuleCall getVariableBolleanValueBooleanValueParserRuleCall_1_3_0() { return cVariableBolleanValueBooleanValueParserRuleCall_1_3_0; }
 	}
 
 	public class QueryElements extends AbstractParserRuleElementFinder {
@@ -247,13 +239,13 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cQueryValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cQueryValueSTRINGTerminalRuleCall_0_0 = (RuleCall)cQueryValueAssignment_0.eContents().get(0);
-		private final RuleCall cVariableCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//QueryParam returns Query:
-		//	queryValue=STRING | VariableCall;
+		//	queryValue=STRING | Expression;
 		public ParserRule getRule() { return rule; }
 
-		//queryValue=STRING | VariableCall
+		//queryValue=STRING | Expression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//queryValue=STRING
@@ -262,8 +254,8 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getQueryValueSTRINGTerminalRuleCall_0_0() { return cQueryValueSTRINGTerminalRuleCall_0_0; }
 
-		//VariableCall
-		public RuleCall getVariableCallParserRuleCall_1() { return cVariableCallParserRuleCall_1; }
+		//Expression
+		public RuleCall getExpressionParserRuleCall_1() { return cExpressionParserRuleCall_1; }
 	}
 
 	public class PrintElements extends AbstractParserRuleElementFinder {
@@ -299,15 +291,14 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cPrintValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cPrintValueSTRINGTerminalRuleCall_0_0 = (RuleCall)cPrintValueAssignment_0.eContents().get(0);
-		private final RuleCall cVariableCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cQueryParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cQueryParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//PrintParam returns Print:
-		//	printValue=STRING | VariableCall | Query | Expression;
+		//	printValue=STRING | Query | Expression;
 		public ParserRule getRule() { return rule; }
 
-		//printValue=STRING | VariableCall | Query | Expression
+		//printValue=STRING | Query | Expression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//printValue=STRING
@@ -316,14 +307,11 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getPrintValueSTRINGTerminalRuleCall_0_0() { return cPrintValueSTRINGTerminalRuleCall_0_0; }
 
-		//VariableCall
-		public RuleCall getVariableCallParserRuleCall_1() { return cVariableCallParserRuleCall_1; }
-
 		//Query
-		public RuleCall getQueryParserRuleCall_2() { return cQueryParserRuleCall_2; }
+		public RuleCall getQueryParserRuleCall_1() { return cQueryParserRuleCall_1; }
 
 		//Expression
-		public RuleCall getExpressionParserRuleCall_3() { return cExpressionParserRuleCall_3; }
+		public RuleCall getExpressionParserRuleCall_2() { return cExpressionParserRuleCall_2; }
 	}
 
 	public class FunctionCallElements extends AbstractParserRuleElementFinder {
@@ -335,21 +323,21 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cArgumentsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
 		private final Alternatives cArgumentsAlternatives_2_0_0 = (Alternatives)cArgumentsAssignment_2_0.eContents().get(0);
-		private final RuleCall cArgumentsVariableCallParserRuleCall_2_0_0_0 = (RuleCall)cArgumentsAlternatives_2_0_0.eContents().get(0);
+		private final RuleCall cArgumentsExpressionParserRuleCall_2_0_0_0 = (RuleCall)cArgumentsAlternatives_2_0_0.eContents().get(0);
 		private final RuleCall cArgumentsStringLiteralParserRuleCall_2_0_0_1 = (RuleCall)cArgumentsAlternatives_2_0_0.eContents().get(1);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cArgumentsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
 		private final Alternatives cArgumentsAlternatives_2_1_1_0 = (Alternatives)cArgumentsAssignment_2_1_1.eContents().get(0);
-		private final RuleCall cArgumentsVariableCallParserRuleCall_2_1_1_0_0 = (RuleCall)cArgumentsAlternatives_2_1_1_0.eContents().get(0);
+		private final RuleCall cArgumentsExpressionParserRuleCall_2_1_1_0_0 = (RuleCall)cArgumentsAlternatives_2_1_1_0.eContents().get(0);
 		private final RuleCall cArgumentsStringLiteralParserRuleCall_2_1_1_0_1 = (RuleCall)cArgumentsAlternatives_2_1_1_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//FunctionCall:
-		//	name=ValidID "(" (arguments+=(VariableCall | StringLiteral) ("," arguments+=(VariableCall | StringLiteral))*)? ")";
+		//	name=ValidID "(" (arguments+=(Expression | StringLiteral) ("," arguments+=(Expression | StringLiteral))*)? ")";
 		public ParserRule getRule() { return rule; }
 
-		//name=ValidID "(" (arguments+=(VariableCall | StringLiteral) ("," arguments+=(VariableCall | StringLiteral))*)? ")"
+		//name=ValidID "(" (arguments+=(Expression | StringLiteral) ("," arguments+=(Expression | StringLiteral))*)? ")"
 		public Group getGroup() { return cGroup; }
 
 		//name=ValidID
@@ -361,35 +349,35 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//(arguments+=(VariableCall | StringLiteral) ("," arguments+=(VariableCall | StringLiteral))*)?
+		//(arguments+=(Expression | StringLiteral) ("," arguments+=(Expression | StringLiteral))*)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//arguments+=(VariableCall | StringLiteral)
+		//arguments+=(Expression | StringLiteral)
 		public Assignment getArgumentsAssignment_2_0() { return cArgumentsAssignment_2_0; }
 
-		//VariableCall | StringLiteral
+		//Expression | StringLiteral
 		public Alternatives getArgumentsAlternatives_2_0_0() { return cArgumentsAlternatives_2_0_0; }
 
-		//VariableCall
-		public RuleCall getArgumentsVariableCallParserRuleCall_2_0_0_0() { return cArgumentsVariableCallParserRuleCall_2_0_0_0; }
+		//Expression
+		public RuleCall getArgumentsExpressionParserRuleCall_2_0_0_0() { return cArgumentsExpressionParserRuleCall_2_0_0_0; }
 
 		//StringLiteral
 		public RuleCall getArgumentsStringLiteralParserRuleCall_2_0_0_1() { return cArgumentsStringLiteralParserRuleCall_2_0_0_1; }
 
-		//("," arguments+=(VariableCall | StringLiteral))*
+		//("," arguments+=(Expression | StringLiteral))*
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//","
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 
-		//arguments+=(VariableCall | StringLiteral)
+		//arguments+=(Expression | StringLiteral)
 		public Assignment getArgumentsAssignment_2_1_1() { return cArgumentsAssignment_2_1_1; }
 
-		//VariableCall | StringLiteral
+		//Expression | StringLiteral
 		public Alternatives getArgumentsAlternatives_2_1_1_0() { return cArgumentsAlternatives_2_1_1_0; }
 
-		//VariableCall
-		public RuleCall getArgumentsVariableCallParserRuleCall_2_1_1_0_0() { return cArgumentsVariableCallParserRuleCall_2_1_1_0_0; }
+		//Expression
+		public RuleCall getArgumentsExpressionParserRuleCall_2_1_1_0_0() { return cArgumentsExpressionParserRuleCall_2_1_1_0_0; }
 
 		//StringLiteral
 		public RuleCall getArgumentsStringLiteralParserRuleCall_2_1_1_0_1() { return cArgumentsStringLiteralParserRuleCall_2_1_1_0_1; }
@@ -618,48 +606,40 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Primary");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cNumberLiteralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cAdditionParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final RuleCall cVariableCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cFunctionCallParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final RuleCall cAdditionParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
 		//Primary returns Expression:
-		//	NumberLiteral | "(" Addition ")";
+		//	NumberLiteral | VariableCall | FunctionCall | "(" Addition ")";
 		public ParserRule getRule() { return rule; }
 
-		//NumberLiteral | "(" Addition ")"
+		//NumberLiteral | VariableCall | FunctionCall | "(" Addition ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NumberLiteral
 		public RuleCall getNumberLiteralParserRuleCall_0() { return cNumberLiteralParserRuleCall_0; }
 
+		//VariableCall
+		public RuleCall getVariableCallParserRuleCall_1() { return cVariableCallParserRuleCall_1; }
+
+		//FunctionCall
+		public RuleCall getFunctionCallParserRuleCall_2() { return cFunctionCallParserRuleCall_2; }
+
 		//"(" Addition ")"
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_3() { return cGroup_3; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
+		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
 
 		//Addition
-		public RuleCall getAdditionParserRuleCall_1_1() { return cAdditionParserRuleCall_1_1; }
+		public RuleCall getAdditionParserRuleCall_3_1() { return cAdditionParserRuleCall_3_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
-	}
-
-	public class NumberLiteralElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NumberLiteral");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-		
-		//NumberLiteral:
-		//	value=INT;
-		public ParserRule getRule() { return rule; }
-
-		//value=INT
-		public Assignment getValueAssignment() { return cValueAssignment; }
-
-		//INT
-		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
+		public Keyword getRightParenthesisKeyword_3_2() { return cRightParenthesisKeyword_3_2; }
 	}
 
 	public class CompoundStatementElements extends AbstractParserRuleElementFinder {
@@ -1047,6 +1027,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cOperationAlternatives_7_0 = (Alternatives)cOperationAssignment_7.eContents().get(0);
 		private final RuleCall cOperationPostfixOperationParserRuleCall_7_0_0 = (RuleCall)cOperationAlternatives_7_0.eContents().get(0);
 		private final RuleCall cOperationForMultiAssignParserRuleCall_7_0_1 = (RuleCall)cOperationAlternatives_7_0.eContents().get(1);
+		private final RuleCall cOperationVariableDeclParserRuleCall_7_0_2 = (RuleCall)cOperationAlternatives_7_0.eContents().get(2);
 		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cStatementsAssignment_10 = (Assignment)cGroup.eContents().get(10);
@@ -1055,11 +1036,11 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ForStatement:
 		//	{ForStatement} "for" "(" forVar=VariableDecl ";" forCondition=StatementCondition ";" operation=(PostfixOperation |
-		//	ForMultiAssign) ")" "{" statements+=Statement* "}";
+		//	ForMultiAssign | VariableDecl) ")" "{" statements+=Statement* "}";
 		public ParserRule getRule() { return rule; }
 
 		//{ForStatement} "for" "(" forVar=VariableDecl ";" forCondition=StatementCondition ";" operation=(PostfixOperation |
-		//ForMultiAssign) ")" "{" statements+=Statement* "}"
+		//ForMultiAssign | VariableDecl) ")" "{" statements+=Statement* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{ForStatement}
@@ -1089,10 +1070,10 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 
-		//operation=(PostfixOperation | ForMultiAssign)
+		//operation=(PostfixOperation | ForMultiAssign | VariableDecl)
 		public Assignment getOperationAssignment_7() { return cOperationAssignment_7; }
 
-		//PostfixOperation | ForMultiAssign
+		//PostfixOperation | ForMultiAssign | VariableDecl
 		public Alternatives getOperationAlternatives_7_0() { return cOperationAlternatives_7_0; }
 
 		//PostfixOperation
@@ -1100,6 +1081,9 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ForMultiAssign
 		public RuleCall getOperationForMultiAssignParserRuleCall_7_0_1() { return cOperationForMultiAssignParserRuleCall_7_0_1; }
+
+		//VariableDecl
+		public RuleCall getOperationVariableDeclParserRuleCall_7_0_2() { return cOperationVariableDeclParserRuleCall_7_0_2; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_8() { return cRightParenthesisKeyword_8; }
@@ -1205,24 +1189,24 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConditionElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cVariableCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cStringLiteralParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cStringLiteralParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cBooleanValueParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//ConditionElement:
-		//	Expression | VariableCall | StringLiteral;
+		//	Expression | StringLiteral | BooleanValue;
 		public ParserRule getRule() { return rule; }
 
-		//Expression | VariableCall | StringLiteral
+		//Expression | StringLiteral | BooleanValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Expression
 		public RuleCall getExpressionParserRuleCall_0() { return cExpressionParserRuleCall_0; }
 
-		//VariableCall
-		public RuleCall getVariableCallParserRuleCall_1() { return cVariableCallParserRuleCall_1; }
-
 		//StringLiteral
-		public RuleCall getStringLiteralParserRuleCall_2() { return cStringLiteralParserRuleCall_2; }
+		public RuleCall getStringLiteralParserRuleCall_1() { return cStringLiteralParserRuleCall_1; }
+
+		//BooleanValue
+		public RuleCall getBooleanValueParserRuleCall_2() { return cBooleanValueParserRuleCall_2; }
 	}
 
 	public class ForMultiAssignElements extends AbstractParserRuleElementFinder {
@@ -1373,24 +1357,44 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
 	}
 
-	public class BolleanValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BolleanValue");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+	public class NumberLiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NumberLiteral");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueNUMBER_LITERALTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
-		//BolleanValue:
-		//	"true" | "false";
+		//NumberLiteral:
+		//	value=NUMBER_LITERAL;
 		public ParserRule getRule() { return rule; }
 
+		//value=NUMBER_LITERAL
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//NUMBER_LITERAL
+		public RuleCall getValueNUMBER_LITERALTerminalRuleCall_0() { return cValueNUMBER_LITERALTerminalRuleCall_0; }
+	}
+
+	public class BooleanValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BooleanValue");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cValueAlternatives_0 = (Alternatives)cValueAssignment.eContents().get(0);
+		private final Keyword cValueTrueKeyword_0_0 = (Keyword)cValueAlternatives_0.eContents().get(0);
+		private final Keyword cValueFalseKeyword_0_1 = (Keyword)cValueAlternatives_0.eContents().get(1);
+		
+		//BooleanValue:
+		//	value=("true" | "false");
+		public ParserRule getRule() { return rule; }
+
+		//value=("true" | "false")
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
 		//"true" | "false"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getValueAlternatives_0() { return cValueAlternatives_0; }
 
 		//"true"
-		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+		public Keyword getValueTrueKeyword_0_0() { return cValueTrueKeyword_0_0; }
 
 		//"false"
-		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
+		public Keyword getValueFalseKeyword_0_1() { return cValueFalseKeyword_0_1; }
 	}
 
 	public class MultiAssignOperatorElements extends AbstractParserRuleElementFinder {
@@ -1525,7 +1529,6 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final DivisionElements pDivision;
 	private final ModElements pMod;
 	private final PrimaryElements pPrimary;
-	private final NumberLiteralElements pNumberLiteral;
 	private final CompoundStatementElements pCompoundStatement;
 	private final FunctionDeclElements pFunctionDecl;
 	private final IfStatementElements pIfStatement;
@@ -1540,7 +1543,9 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final MultiAssignRightOperandElements pMultiAssignRightOperand;
 	private final PostfixOperationElements pPostfixOperation;
 	private final StringLiteralElements pStringLiteral;
-	private final BolleanValueElements pBolleanValue;
+	private final NumberLiteralElements pNumberLiteral;
+	private final TerminalRule tNUMBER_LITERAL;
+	private final BooleanValueElements pBooleanValue;
 	private final MultiAssignOperatorElements pMultiAssignOperator;
 	private final PostfixOperationOperatorElements pPostfixOperationOperator;
 	private final OpAndElements pOpAnd;
@@ -1575,7 +1580,6 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDivision = new DivisionElements();
 		this.pMod = new ModElements();
 		this.pPrimary = new PrimaryElements();
-		this.pNumberLiteral = new NumberLiteralElements();
 		this.pCompoundStatement = new CompoundStatementElements();
 		this.pFunctionDecl = new FunctionDeclElements();
 		this.pIfStatement = new IfStatementElements();
@@ -1590,7 +1594,9 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMultiAssignRightOperand = new MultiAssignRightOperandElements();
 		this.pPostfixOperation = new PostfixOperationElements();
 		this.pStringLiteral = new StringLiteralElements();
-		this.pBolleanValue = new BolleanValueElements();
+		this.pNumberLiteral = new NumberLiteralElements();
+		this.tNUMBER_LITERAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER_LITERAL");
+		this.pBooleanValue = new BooleanValueElements();
 		this.pMultiAssignOperator = new MultiAssignOperatorElements();
 		this.pPostfixOperationOperator = new PostfixOperationOperatorElements();
 		this.pOpAnd = new OpAndElements();
@@ -1656,7 +1662,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VariableDecl:
-	//	global?="global"? name=ValidID OpAssignment variableValue=(VariableParam | Expression);
+	//	global?="global"? name=ValidID OpAssignment variableValue=VariableParam;
 	public VariableDeclElements getVariableDeclAccess() {
 		return pVariableDecl;
 	}
@@ -1676,8 +1682,8 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VariableParam returns VariableDecl:
-	//	{VariableParam} (variableStringParam=STRING | variableVarParam=VariableCall | variableQueryParam=Query |
-	//	variableBolleanValue=BolleanValue);
+	//	{VariableParam} (variableStringParam=STRING | variableExpressionParam=Expression | variableQueryParam=Query |
+	//	variableBolleanValue=BooleanValue);
 	public VariableParamElements getVariableParamAccess() {
 		return pVariableParam;
 	}
@@ -1697,7 +1703,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QueryParam returns Query:
-	//	queryValue=STRING | VariableCall;
+	//	queryValue=STRING | Expression;
 	public QueryParamElements getQueryParamAccess() {
 		return pQueryParam;
 	}
@@ -1717,7 +1723,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PrintParam returns Print:
-	//	printValue=STRING | VariableCall | Query | Expression;
+	//	printValue=STRING | Query | Expression;
 	public PrintParamElements getPrintParamAccess() {
 		return pPrintParam;
 	}
@@ -1727,7 +1733,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FunctionCall:
-	//	name=ValidID "(" (arguments+=(VariableCall | StringLiteral) ("," arguments+=(VariableCall | StringLiteral))*)? ")";
+	//	name=ValidID "(" (arguments+=(Expression | StringLiteral) ("," arguments+=(Expression | StringLiteral))*)? ")";
 	public FunctionCallElements getFunctionCallAccess() {
 		return pFunctionCall;
 	}
@@ -1807,23 +1813,13 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Primary returns Expression:
-	//	NumberLiteral | "(" Addition ")";
+	//	NumberLiteral | VariableCall | FunctionCall | "(" Addition ")";
 	public PrimaryElements getPrimaryAccess() {
 		return pPrimary;
 	}
 	
 	public ParserRule getPrimaryRule() {
 		return getPrimaryAccess().getRule();
-	}
-
-	//NumberLiteral:
-	//	value=INT;
-	public NumberLiteralElements getNumberLiteralAccess() {
-		return pNumberLiteral;
-	}
-	
-	public ParserRule getNumberLiteralRule() {
-		return getNumberLiteralAccess().getRule();
 	}
 
 	//CompoundStatement:
@@ -1882,7 +1878,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ForStatement:
 	//	{ForStatement} "for" "(" forVar=VariableDecl ";" forCondition=StatementCondition ";" operation=(PostfixOperation |
-	//	ForMultiAssign) ")" "{" statements+=Statement* "}";
+	//	ForMultiAssign | VariableDecl) ")" "{" statements+=Statement* "}";
 	public ForStatementElements getForStatementAccess() {
 		return pForStatement;
 	}
@@ -1912,7 +1908,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConditionElement:
-	//	Expression | VariableCall | StringLiteral;
+	//	Expression | StringLiteral | BooleanValue;
 	public ConditionElementElements getConditionElementAccess() {
 		return pConditionElement;
 	}
@@ -1971,14 +1967,30 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getStringLiteralAccess().getRule();
 	}
 
-	//BolleanValue:
-	//	"true" | "false";
-	public BolleanValueElements getBolleanValueAccess() {
-		return pBolleanValue;
+	//NumberLiteral:
+	//	value=NUMBER_LITERAL;
+	public NumberLiteralElements getNumberLiteralAccess() {
+		return pNumberLiteral;
 	}
 	
-	public ParserRule getBolleanValueRule() {
-		return getBolleanValueAccess().getRule();
+	public ParserRule getNumberLiteralRule() {
+		return getNumberLiteralAccess().getRule();
+	}
+
+	//terminal NUMBER_LITERAL:
+	//	"0" | "1".."9" "0".."9"* ("." "0".."9"*)?;
+	public TerminalRule getNUMBER_LITERALRule() {
+		return tNUMBER_LITERAL;
+	} 
+
+	//BooleanValue:
+	//	value=("true" | "false");
+	public BooleanValueElements getBooleanValueAccess() {
+		return pBooleanValue;
+	}
+	
+	public ParserRule getBooleanValueRule() {
+		return getBooleanValueAccess().getRule();
 	}
 
 	//MultiAssignOperator:

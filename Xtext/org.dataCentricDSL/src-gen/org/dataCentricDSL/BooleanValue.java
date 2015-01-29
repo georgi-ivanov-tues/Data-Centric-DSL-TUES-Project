@@ -5,21 +5,21 @@ package org.dataCentricDSL;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Number Literal</b></em>'.
+ * A representation of the model object '<em><b>Boolean Value</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.NumberLiteral#getValue <em>Value</em>}</li>
+ *   <li>{@link org.dataCentricDSL.BooleanValue#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.dataCentricDSL.DataCentricDSLPackage#getNumberLiteral()
+ * @see org.dataCentricDSL.DataCentricDSLPackage#getBooleanValue()
  * @model
  * @generated
  */
-public interface NumberLiteral extends Expression
+public interface BooleanValue extends ConditionElement
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -31,14 +31,14 @@ public interface NumberLiteral extends Expression
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
    * @see #setValue(String)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getNumberLiteral_Value()
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getBooleanValue_Value()
    * @model
    * @generated
    */
   String getValue();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.NumberLiteral#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.BooleanValue#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
@@ -47,4 +47,4 @@ public interface NumberLiteral extends Expression
    */
   void setValue(String value);
 
-} // NumberLiteral
+} // BooleanValue

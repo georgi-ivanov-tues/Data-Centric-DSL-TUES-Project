@@ -84,12 +84,12 @@ public interface VariableDecl extends SimpleStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Variable Value</em>' containment reference.
-   * @see #setVariableValue(SimpleStatement)
+   * @see #setVariableValue(VariableDecl)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableDecl_VariableValue()
    * @model containment="true"
    * @generated
    */
-  SimpleStatement getVariableValue();
+  VariableDecl getVariableValue();
 
   /**
    * Sets the value of the '{@link org.dataCentricDSL.VariableDecl#getVariableValue <em>Variable Value</em>}' containment reference.
@@ -99,6 +99,6 @@ public interface VariableDecl extends SimpleStatement
    * @see #getVariableValue()
    * @generated
    */
-  void setVariableValue(SimpleStatement value);
+  void setVariableValue(VariableDecl value);
 
 } // VariableDecl

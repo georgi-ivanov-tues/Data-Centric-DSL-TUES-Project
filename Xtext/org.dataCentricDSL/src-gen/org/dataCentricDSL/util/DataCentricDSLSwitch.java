@@ -127,8 +127,13 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         FunctionCall functionCall = (FunctionCall)theEObject;
         T result = caseFunctionCall(functionCall);
-        if (result == null) result = caseSimpleStatement(functionCall);
+        if (result == null) result = caseExpression(functionCall);
         if (result == null) result = caseStatement(functionCall);
+        if (result == null) result = caseQuery(functionCall);
+        if (result == null) result = caseConditionElement(functionCall);
+        if (result == null) result = casePrint(functionCall);
+        if (result == null) result = caseMultiAssignRightOperand(functionCall);
+        if (result == null) result = caseSimpleStatement(functionCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -136,6 +141,7 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         VariableCall variableCall = (VariableCall)theEObject;
         T result = caseVariableCall(variableCall);
+        if (result == null) result = caseExpression(variableCall);
         if (result == null) result = caseQuery(variableCall);
         if (result == null) result = caseConditionElement(variableCall);
         if (result == null) result = casePrint(variableCall);
@@ -149,23 +155,12 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         Expression expression = (Expression)theEObject;
         T result = caseExpression(expression);
-        if (result == null) result = casePrint(expression);
+        if (result == null) result = caseQuery(expression);
         if (result == null) result = caseConditionElement(expression);
+        if (result == null) result = casePrint(expression);
+        if (result == null) result = caseMultiAssignRightOperand(expression);
         if (result == null) result = caseSimpleStatement(expression);
         if (result == null) result = caseStatement(expression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DataCentricDSLPackage.NUMBER_LITERAL:
-      {
-        NumberLiteral numberLiteral = (NumberLiteral)theEObject;
-        T result = caseNumberLiteral(numberLiteral);
-        if (result == null) result = caseExpression(numberLiteral);
-        if (result == null) result = caseMultiAssignRightOperand(numberLiteral);
-        if (result == null) result = casePrint(numberLiteral);
-        if (result == null) result = caseConditionElement(numberLiteral);
-        if (result == null) result = caseSimpleStatement(numberLiteral);
-        if (result == null) result = caseStatement(numberLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -280,6 +275,28 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DataCentricDSLPackage.NUMBER_LITERAL:
+      {
+        NumberLiteral numberLiteral = (NumberLiteral)theEObject;
+        T result = caseNumberLiteral(numberLiteral);
+        if (result == null) result = caseExpression(numberLiteral);
+        if (result == null) result = caseQuery(numberLiteral);
+        if (result == null) result = caseConditionElement(numberLiteral);
+        if (result == null) result = casePrint(numberLiteral);
+        if (result == null) result = caseMultiAssignRightOperand(numberLiteral);
+        if (result == null) result = caseSimpleStatement(numberLiteral);
+        if (result == null) result = caseStatement(numberLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DataCentricDSLPackage.BOOLEAN_VALUE:
+      {
+        BooleanValue booleanValue = (BooleanValue)theEObject;
+        T result = caseBooleanValue(booleanValue);
+        if (result == null) result = caseConditionElement(booleanValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DataCentricDSLPackage.VARIABLE_PARAM:
       {
         VariableParam variableParam = (VariableParam)theEObject;
@@ -295,8 +312,10 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         Addition addition = (Addition)theEObject;
         T result = caseAddition(addition);
         if (result == null) result = caseExpression(addition);
-        if (result == null) result = casePrint(addition);
+        if (result == null) result = caseQuery(addition);
         if (result == null) result = caseConditionElement(addition);
+        if (result == null) result = casePrint(addition);
+        if (result == null) result = caseMultiAssignRightOperand(addition);
         if (result == null) result = caseSimpleStatement(addition);
         if (result == null) result = caseStatement(addition);
         if (result == null) result = defaultCase(theEObject);
@@ -307,8 +326,10 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         Substraction substraction = (Substraction)theEObject;
         T result = caseSubstraction(substraction);
         if (result == null) result = caseExpression(substraction);
-        if (result == null) result = casePrint(substraction);
+        if (result == null) result = caseQuery(substraction);
         if (result == null) result = caseConditionElement(substraction);
+        if (result == null) result = casePrint(substraction);
+        if (result == null) result = caseMultiAssignRightOperand(substraction);
         if (result == null) result = caseSimpleStatement(substraction);
         if (result == null) result = caseStatement(substraction);
         if (result == null) result = defaultCase(theEObject);
@@ -319,8 +340,10 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         Multiplication multiplication = (Multiplication)theEObject;
         T result = caseMultiplication(multiplication);
         if (result == null) result = caseExpression(multiplication);
-        if (result == null) result = casePrint(multiplication);
+        if (result == null) result = caseQuery(multiplication);
         if (result == null) result = caseConditionElement(multiplication);
+        if (result == null) result = casePrint(multiplication);
+        if (result == null) result = caseMultiAssignRightOperand(multiplication);
         if (result == null) result = caseSimpleStatement(multiplication);
         if (result == null) result = caseStatement(multiplication);
         if (result == null) result = defaultCase(theEObject);
@@ -331,8 +354,10 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         Division division = (Division)theEObject;
         T result = caseDivision(division);
         if (result == null) result = caseExpression(division);
-        if (result == null) result = casePrint(division);
+        if (result == null) result = caseQuery(division);
         if (result == null) result = caseConditionElement(division);
+        if (result == null) result = casePrint(division);
+        if (result == null) result = caseMultiAssignRightOperand(division);
         if (result == null) result = caseSimpleStatement(division);
         if (result == null) result = caseStatement(division);
         if (result == null) result = defaultCase(theEObject);
@@ -343,8 +368,10 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         Mod mod = (Mod)theEObject;
         T result = caseMod(mod);
         if (result == null) result = caseExpression(mod);
-        if (result == null) result = casePrint(mod);
+        if (result == null) result = caseQuery(mod);
         if (result == null) result = caseConditionElement(mod);
+        if (result == null) result = casePrint(mod);
+        if (result == null) result = caseMultiAssignRightOperand(mod);
         if (result == null) result = caseSimpleStatement(mod);
         if (result == null) result = caseStatement(mod);
         if (result == null) result = defaultCase(theEObject);
@@ -494,22 +521,6 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpression(Expression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Literal</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Literal</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNumberLiteral(NumberLiteral object)
   {
     return null;
   }
@@ -734,6 +745,38 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStringLiteral(StringLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Number Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumberLiteral(NumberLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanValue(BooleanValue object)
   {
     return null;
   }

@@ -10,7 +10,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="VariableDecl" eSuperTypes="#//SimpleStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="global" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variableValue" eType="#//SimpleStatement"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableValue" eType="#//VariableDecl"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="#//SimpleStatement #//Print #//MultiAssignRightOperand">
@@ -19,18 +19,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Print" eSuperTypes="#//SimpleStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="printValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//SimpleStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//SimpleStatement #//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableCall" eSuperTypes="#//Query #//Print #//ConditionElement #//MultiAssignRightOperand">
+  <eClassifiers xsi:type="ecore:EClass" name="VariableCall" eSuperTypes="#//Expression #//MultiAssignRightOperand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableCall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//Print #//ConditionElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//Expression #//MultiAssignRightOperand">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//Query #//ConditionElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="CompoundStatement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//Statement" containment="true"/>
@@ -99,13 +96,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="#//ConditionElement #//MultiAssignRightOperand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanValue" eSuperTypes="#//ConditionElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableParam" eSuperTypes="#//VariableDecl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableStringParam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variableVarParam" eType="#//VariableCall"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableExpressionParam"
+        eType="#//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variableQueryParam" eType="#//Query"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableBolleanValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableBolleanValue" eType="#//BooleanValue"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Addition" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"

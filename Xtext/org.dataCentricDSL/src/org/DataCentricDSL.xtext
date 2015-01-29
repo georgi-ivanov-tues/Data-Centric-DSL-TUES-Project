@@ -21,7 +21,7 @@ SimpleStatement:
 ;
 
 VariableDecl:
-	(global?='global')? name=ValidID OpAssignment variableValue=(VariableParam | Expression)
+	(global?='global')? name=ValidID OpAssignment variableValue=VariableParam
 ;
 
 OpAssignment:
@@ -31,9 +31,9 @@ OpAssignment:
 VariableParam returns VariableDecl:
 	{VariableParam} 
 	(variableStringParam=STRING | 
-	 variableVarParam=VariableCall | 
+	 variableExpressionParam=Expression | 
 	 variableQueryParam=Query |
-	 variableBolleanValue=BolleanValue)
+	 variableBolleanValue=BooleanValue)
 ;
 
 Query:
@@ -42,7 +42,7 @@ Query:
 
 QueryParam returns Query:
 	(queryValue=STRING | 
-	 VariableCall)
+	 Expression)
 ;
 
 Print:
@@ -51,15 +51,14 @@ Print:
 
 PrintParam returns Print:
 	(printValue=STRING | 
-	 VariableCall | 
 	 Query | 
 	 Expression)
 ;
 
 FunctionCall:
 	name=ValidID '('  
-		(arguments+=(VariableCall | StringLiteral) 
-		(',' arguments+=(VariableCall | StringLiteral))*)?
+		(arguments+=(Expression | StringLiteral) 
+		(',' arguments+=(Expression | StringLiteral))*)?
 	 ')'
 ;
 
@@ -92,11 +91,7 @@ Mod returns Expression:
 ;
 
 Primary returns Expression:
-	NumberLiteral | '(' Addition ')'
-;
-
-NumberLiteral:
-	value=INT
+	(NumberLiteral | VariableCall | FunctionCall | ('(' Addition ')'))
 ;
 
 CompoundStatement:
@@ -151,7 +146,7 @@ ForStatement:
 	{ForStatement}
 	'for' '(' forVar=VariableDecl ';' 
 		forCondition=StatementCondition ';' 
-			operation=(PostfixOperation | ForMultiAssign) ')' '{' 
+			operation=(PostfixOperation | ForMultiAssign | VariableDecl) ')' '{' 
 			  	(statements+=Statement)* 
 	'}'
 ;
@@ -166,8 +161,8 @@ Condition:
 
 ConditionElement:
 	(Expression | 
-	 VariableCall | 
-	 StringLiteral)
+	 StringLiteral |
+	 BooleanValue)
 ;
 
 ForMultiAssign:
@@ -193,8 +188,16 @@ StringLiteral:
 	value=STRING
 ;
 
-BolleanValue:
-	('true' | 
+NumberLiteral:
+	value=NUMBER_LITERAL
+;
+
+terminal NUMBER_LITERAL:
+	'0' | ('1'..'9') ('0'..'9')* ('.' ('0'..'9')*)?
+;
+
+BooleanValue:
+	value=('true' | 
 	'false')
 ;
 MultiAssignOperator:

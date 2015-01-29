@@ -3,7 +3,6 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.SimpleStatement;
 import org.dataCentricDSL.VariableDecl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,7 +78,7 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
    * @generated
    * @ordered
    */
-  protected SimpleStatement variableValue;
+  protected VariableDecl variableValue;
 
   /**
    * <!-- begin-user-doc -->
@@ -153,7 +152,7 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public SimpleStatement getVariableValue()
+  public VariableDecl getVariableValue()
   {
     return variableValue;
   }
@@ -163,9 +162,9 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVariableValue(SimpleStatement newVariableValue, NotificationChain msgs)
+  public NotificationChain basicSetVariableValue(VariableDecl newVariableValue, NotificationChain msgs)
   {
-    SimpleStatement oldVariableValue = variableValue;
+    VariableDecl oldVariableValue = variableValue;
     variableValue = newVariableValue;
     if (eNotificationRequired())
     {
@@ -180,7 +179,7 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableValue(SimpleStatement newVariableValue)
+  public void setVariableValue(VariableDecl newVariableValue)
   {
     if (newVariableValue != variableValue)
     {
@@ -249,7 +248,7 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
         setName((String)newValue);
         return;
       case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
-        setVariableValue((SimpleStatement)newValue);
+        setVariableValue((VariableDecl)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -272,7 +271,7 @@ public class VariableDeclImpl extends SimpleStatementImpl implements VariableDec
         setName(NAME_EDEFAULT);
         return;
       case DataCentricDSLPackage.VARIABLE_DECL__VARIABLE_VALUE:
-        setVariableValue((SimpleStatement)null);
+        setVariableValue((VariableDecl)null);
         return;
     }
     super.eUnset(featureID);

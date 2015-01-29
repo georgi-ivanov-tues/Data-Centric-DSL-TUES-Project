@@ -104,15 +104,6 @@ public interface DataCentricDSLFactory extends EFactory
   Expression createExpression();
 
   /**
-   * Returns a new object of class '<em>Number Literal</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Literal</em>'.
-   * @generated
-   */
-  NumberLiteral createNumberLiteral();
-
-  /**
    * Returns a new object of class '<em>Compound Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -237,6 +228,24 @@ public interface DataCentricDSLFactory extends EFactory
    * @generated
    */
   StringLiteral createStringLiteral();
+
+  /**
+   * Returns a new object of class '<em>Number Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Literal</em>'.
+   * @generated
+   */
+  NumberLiteral createNumberLiteral();
+
+  /**
+   * Returns a new object of class '<em>Boolean Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Value</em>'.
+   * @generated
+   */
+  BooleanValue createBooleanValue();
 
   /**
    * Returns a new object of class '<em>Variable Param</em>'.

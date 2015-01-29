@@ -31,9 +31,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableCall/variableCall"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Expression"/>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//NumberLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//NumberLiteral/value"/>
-    </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//CompoundStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//CompoundStatement/statements"/>
     </genClasses>
@@ -84,11 +81,17 @@
     <genClasses ecoreClass="DataCentricDSL.ecore#//StringLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//StringLiteral/value"/>
     </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//NumberLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//NumberLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//BooleanValue/value"/>
+    </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableParam">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableParam/variableStringParam"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableParam/variableVarParam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableParam/variableExpressionParam"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableParam/variableQueryParam"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableParam/variableBolleanValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableParam/variableBolleanValue"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Addition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Addition/left"/>

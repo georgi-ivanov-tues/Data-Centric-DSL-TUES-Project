@@ -20,8 +20,10 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 
 	protected DataCentricDSLGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_IfStatement___ElseKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q;
-	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
-	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_p;
+	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_3_0_a;
+	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_3_0_p;
+	protected AbstractElementAlias match_Primary_Print_Query___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q_or_____PrintKeyword_0_0_or_PrintlnKeyword_0_1_____LeftParenthesisKeyword_3_0_a_or___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q____;
+	protected AbstractElementAlias match_Primary_Query___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q;
 	protected AbstractElementAlias match_Print_PrintKeyword_0_0_or_PrintlnKeyword_0_1;
 	protected AbstractElementAlias match_Print_Query_QueryKeyword_0_q_or_____PrintKeyword_0_0_or_PrintlnKeyword_0_1___QueryKeyword_0_q__;
 	protected AbstractElementAlias match_Print___PrintKeyword_0_0_or_PrintlnKeyword_0_1__q;
@@ -39,8 +41,10 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DataCentricDSLGrammarAccess) access;
 		match_IfStatement___ElseKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getElseKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getLeftCurlyBracketKeyword_9_1()), new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getRightCurlyBracketKeyword_9_3()));
-		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
-		match_Primary_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
+		match_Primary_LeftParenthesisKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_3_0());
+		match_Primary_LeftParenthesisKeyword_3_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_3_0());
+		match_Primary_Print_Query___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q_or_____PrintKeyword_0_0_or_PrintlnKeyword_0_1_____LeftParenthesisKeyword_3_0_a_or___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q____ = new AlternativeAlias(false, false, new GroupAlias(false, false, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPrintAccess().getPrintKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getPrintAccess().getPrintlnKeyword_0_1())), new AlternativeAlias(false, false, new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getQueryAccess().getQueryKeyword_0()), new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_3_0())), new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_3_0()))), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getQueryAccess().getQueryKeyword_0()), new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_3_0())));
+		match_Primary_Query___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getQueryAccess().getQueryKeyword_0()), new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_3_0()));
 		match_Print_PrintKeyword_0_0_or_PrintlnKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPrintAccess().getPrintKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getPrintAccess().getPrintlnKeyword_0_1()));
 		match_Print_Query_QueryKeyword_0_q_or_____PrintKeyword_0_0_or_PrintlnKeyword_0_1___QueryKeyword_0_q__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPrintAccess().getPrintKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getPrintAccess().getPrintlnKeyword_0_1())), new TokenAlias(false, true, grammarAccess.getQueryAccess().getQueryKeyword_0())), new TokenAlias(false, true, grammarAccess.getQueryAccess().getQueryKeyword_0()));
 		match_Print___PrintKeyword_0_0_or_PrintlnKeyword_0_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getPrintAccess().getPrintKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getPrintAccess().getPrintlnKeyword_0_1()));
@@ -129,10 +133,14 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_IfStatement___ElseKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q.equals(syntax))
 				emit_IfStatement___ElseKeyword_9_0_LeftCurlyBracketKeyword_9_1_RightCurlyBracketKeyword_9_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Primary_LeftParenthesisKeyword_1_0_a.equals(syntax))
-				emit_Primary_LeftParenthesisKeyword_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Primary_LeftParenthesisKeyword_1_0_p.equals(syntax))
-				emit_Primary_LeftParenthesisKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Primary_LeftParenthesisKeyword_3_0_a.equals(syntax))
+				emit_Primary_LeftParenthesisKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Primary_LeftParenthesisKeyword_3_0_p.equals(syntax))
+				emit_Primary_LeftParenthesisKeyword_3_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Primary_Print_Query___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q_or_____PrintKeyword_0_0_or_PrintlnKeyword_0_1_____LeftParenthesisKeyword_3_0_a_or___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q____.equals(syntax))
+				emit_Primary_Print_Query___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q_or_____PrintKeyword_0_0_or_PrintlnKeyword_0_1_____LeftParenthesisKeyword_3_0_a_or___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q____(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Primary_Query___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q.equals(syntax))
+				emit_Primary_Query___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Print_PrintKeyword_0_0_or_PrintlnKeyword_0_1.equals(syntax))
 				emit_Print_PrintKeyword_0_0_or_PrintlnKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Print_Query_QueryKeyword_0_q_or_____PrintKeyword_0_0_or_PrintlnKeyword_0_1___QueryKeyword_0_q__.equals(syntax))
@@ -173,7 +181,7 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	 * Syntax:
 	 *     '('*
 	 */
-	protected void emit_Primary_LeftParenthesisKeyword_1_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Primary_LeftParenthesisKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -181,7 +189,23 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	 * Syntax:
 	 *     '('+
 	 */
-	protected void emit_Primary_LeftParenthesisKeyword_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Primary_LeftParenthesisKeyword_3_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (('print' | 'println') ('('* | ('query' '('*)?)) | ('query' '('*)?
+	 */
+	protected void emit_Primary_Print_Query___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q_or_____PrintKeyword_0_0_or_PrintlnKeyword_0_1_____LeftParenthesisKeyword_3_0_a_or___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q____(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ('query' '('*)?
+	 */
+	protected void emit_Primary_Query___QueryKeyword_0_LeftParenthesisKeyword_3_0_a__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
