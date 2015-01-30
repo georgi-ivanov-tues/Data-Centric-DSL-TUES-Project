@@ -3,7 +3,8 @@ grammar org.DataCentricDSL with org.eclipse.xtext.xbase.Xbase
 generate dataCentricDSL "http://www.DataCentricDSL.org"
 
 DataCentricDSL:
-	(elements += (Statement | FunctionDecl))*
+	(elements += FunctionDecl)*
+	(elements += Statement)*
 ;
 
 Statement:

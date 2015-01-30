@@ -37,7 +37,6 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getDataCentricDSLAccess().getElementsAlternatives_0(), "rule__DataCentricDSL__ElementsAlternatives_0");
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 					put(grammarAccess.getSimpleStatementAccess().getAlternatives_0(), "rule__SimpleStatement__Alternatives_0");
 					put(grammarAccess.getVariableParamAccess().getAlternatives_1(), "rule__VariableParam__Alternatives_1");
@@ -93,6 +92,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
 					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1(), "rule__XImportDeclaration__Alternatives_1");
 					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1_0_3(), "rule__XImportDeclaration__Alternatives_1_0_3");
+					put(grammarAccess.getDataCentricDSLAccess().getGroup(), "rule__DataCentricDSL__Group__0");
 					put(grammarAccess.getSimpleStatementAccess().getGroup(), "rule__SimpleStatement__Group__0");
 					put(grammarAccess.getVariableDeclAccess().getGroup(), "rule__VariableDecl__Group__0");
 					put(grammarAccess.getVariableParamAccess().getGroup(), "rule__VariableParam__Group__0");
@@ -307,7 +307,8 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXImportDeclarationAccess().getGroup(), "rule__XImportDeclaration__Group__0");
 					put(grammarAccess.getXImportDeclarationAccess().getGroup_1_0(), "rule__XImportDeclaration__Group_1_0__0");
 					put(grammarAccess.getQualifiedNameInStaticImportAccess().getGroup(), "rule__QualifiedNameInStaticImport__Group__0");
-					put(grammarAccess.getDataCentricDSLAccess().getElementsAssignment(), "rule__DataCentricDSL__ElementsAssignment");
+					put(grammarAccess.getDataCentricDSLAccess().getElementsAssignment_0(), "rule__DataCentricDSL__ElementsAssignment_0");
+					put(grammarAccess.getDataCentricDSLAccess().getElementsAssignment_1(), "rule__DataCentricDSL__ElementsAssignment_1");
 					put(grammarAccess.getVariableDeclAccess().getIsGlobalAssignment_0(), "rule__VariableDecl__IsGlobalAssignment_0");
 					put(grammarAccess.getVariableDeclAccess().getNameAssignment_1(), "rule__VariableDecl__NameAssignment_1");
 					put(grammarAccess.getVariableDeclAccess().getVariableValueAssignment_3(), "rule__VariableDecl__VariableValueAssignment_3");

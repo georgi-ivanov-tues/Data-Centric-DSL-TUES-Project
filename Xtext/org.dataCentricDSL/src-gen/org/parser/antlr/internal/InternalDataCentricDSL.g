@@ -77,43 +77,43 @@ ruleDataCentricDSL returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-(
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsStatementParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsFunctionDeclParserRuleCall_0_0()); 
 	    }
-		lv_elements_0_1=ruleStatement		{
+		lv_elements_0_0=ruleFunctionDecl		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDataCentricDSLRule());
 	        }
        		add(
        			$current, 
        			"elements",
-        		lv_elements_0_1, 
-        		"Statement");
-	        afterParserOrEnumRuleCall();
-	    }
-
-    |		{ 
-	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsFunctionDeclParserRuleCall_0_1()); 
-	    }
-		lv_elements_0_2=ruleFunctionDecl		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getDataCentricDSLRule());
-	        }
-       		add(
-       			$current, 
-       			"elements",
-        		lv_elements_0_2, 
+        		lv_elements_0_0, 
         		"FunctionDecl");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsStatementParserRuleCall_1_0()); 
+	    }
+		lv_elements_1_0=ruleStatement		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDataCentricDSLRule());
+	        }
+       		add(
+       			$current, 
+       			"elements",
+        		lv_elements_1_0, 
+        		"Statement");
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
-)*
+)*)
 ;
 
 

@@ -11,7 +11,6 @@ import org.dataCentricDSL.FunctionCall
 import org.dataCentricDSL.FunctionDecl
 import org.dataCentricDSL.IfStatement
 import org.dataCentricDSL.NumberLiteral
-import org.dataCentricDSL.Query
 import org.dataCentricDSL.StringLiteral
 import org.dataCentricDSL.VariableCall
 import org.dataCentricDSL.VariableDecl
@@ -29,7 +28,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	var boolean globalVariableFound = false;
 	
 //	@Check
-//	def void checkIfQueryStringIsEmpty(Query que){
+//	def void checkIfQueryStringIsEmpty(QueryFunction que){
 //		if(que.queryParam.toString.equals("")){
 //			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__QUERY_PARAM);
 //		}
@@ -37,16 +36,18 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
 	def void checkConditionOperands(Condition c) {
-		var leftOperand = c.expressions.get(0);
-		var rightOperand = c.expressions.get(1);
-		if(leftOperand instanceof NumberLiteral) {
-			if(!(rightOperand instanceof NumberLiteral)) {
-				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
+		if(c.expressions.length > 1) {
+			var leftOperand = c.expressions.get(0);
+			var rightOperand = c.expressions.get(1);
+			if(leftOperand instanceof NumberLiteral) {
+				if(!(rightOperand instanceof NumberLiteral)) {
+					error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
+				}
 			}
-		}
-		if(leftOperand instanceof StringLiteral) {
-			if(!(rightOperand instanceof StringLiteral)) {
-				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
+			if(leftOperand instanceof StringLiteral) {
+				if(!(rightOperand instanceof StringLiteral)) {
+					error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
+				}
 			}
 		}
 	}
@@ -58,8 +59,8 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 			container = container.eContainer;
 		}
 		
-		val Elements = (container as DataCentricDSL).elements.toArray.filter(typeof(FunctionDecl));
-		if(functionIsDeclared(Elements, fc.name)) {
+		val elements = container.eContents.toArray.filter(typeof(FunctionDecl));
+		if(functionIsDeclared(elements, fc.name)) {
 			return;
 		}
 		
@@ -67,61 +68,92 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	}
 	
 	@Check
+	def void checkIfADeclaredFunctionWithTheSameNameExists(FunctionDecl fd) {
+		var functionDeclarations = fd.eContainer.eContents.toArray.filter(typeof(FunctionDecl));
+		var indexOfThisFunctionDecl = fd.eContainer.eContents.indexOf(fd);
+		for(i : 0..< functionDeclarations.length) {
+			if(i != indexOfThisFunctionDecl) {
+				if(fd.name.equals(functionDeclarations.get(i).name)) {
+					error("A declared function with the same name already exists.",
+						DataCentricDSLPackage.Literals::FUNCTION_DECL__NAME
+					);
+					return;
+				}
+			}
+		}
+	}
+	
+	@Check
 	def void checkIfAssignedVariableExists(VariableCall vc) {
 		var container = vc.eContainer;
 		var VariableDecl[] variables = null;
+		var EObject containerElement = vc.eContainer;
+		var int containerElementIndex;
 		while(!(container instanceof DataCentricDSL)) {
 			container = container.eContainer;
 			
-			if(container instanceof IfStatement) {
-				variables = (container as IfStatement).statements.toArray.filter(typeof(VariableDecl));
-			} else if(container instanceof ForStatement) {
-				variables = (container as ForStatement).statements.toArray.filter(typeof(VariableDecl));
-				var DeclaratedVar = (container as ForStatement).forVar;
-				if(DeclaratedVar.name.toString.equals(vc.variableCall.toString)) {
+			if(container instanceof IfStatement || container instanceof ForStatement
+				|| container instanceof WhileStatement || container instanceof FunctionDecl) {
+				
+				if(container instanceof ForStatement) {
+					var DeclaratedVar = (container as ForStatement).forVar;
+					if(DeclaratedVar.name.toString.equals(vc.variableCall.toString)) {
+						return;
+					}
+				}
+				if(container instanceof WhileStatement) {
+					if(namePersistsInArray((container as FunctionDecl).arguments, vc.variableCall)) {
+						return;
+					}
+				}
+				containerElementIndex = container.eContents.indexOf(containerElement);
+				variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDecl));
+				if(variableIsDeclared(variables, vc.variableCall)) {
 					return;
 				}
-			} else if(container instanceof WhileStatement) {
-				variables = (container as WhileStatement).statements.toArray.filter(typeof(VariableDecl));
-			} else if(container instanceof FunctionDecl) {
-				variables = (container as FunctionDecl).statements.toArray.filter(typeof(VariableDecl));
-				if(namePersistsInArray((container as FunctionDecl).arguments, vc.variableCall)) {
-					return;
-				}
+				variables = null;
 			}
-			if(variableIsDeclared(variables, vc.variableCall)) {
-				return;
+			if(!(containerElement.eContainer instanceof DataCentricDSL)) {
+				containerElement = containerElement.eContainer;
 			}
-			variables = null;
 		}
-		variables = (container as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
+		containerElementIndex = container.eContents.indexOf(containerElement);
+		variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDecl));
 		if(variableIsDeclared(variables, vc.variableCall)) {
 			return;
 		}
-		checkIfCalledVariableIsGlobal(container, vc.variableCall);
+		checkIfCalledVariableIsGlobal(container, vc.variableCall, containerElementIndex);
 		if(!globalVariableFound) {
 			error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
 		}
 		globalVariableFound = false;
 	}
 
-	def void checkIfCalledVariableIsGlobal(EObject object, String name) {
+	def void checkIfCalledVariableIsGlobal(EObject object, String name, int index) {
 		if(globalVariableFound) {
 			return;
 		}
-		
 		if(object instanceof DataCentricDSL || object instanceof IfStatement
 			|| object instanceof ForStatement || object instanceof WhileStatement
 			|| object instanceof FunctionDecl
 		) {	
-			if(variableIsDeclared(object.eContents.toArray
-				.filter(typeof(VariableDecl)).filter[isGlobal], name
-			)) {
+			var int lastIndex;
+			var variableFound = false;
+			if(object instanceof DataCentricDSL) {
+				lastIndex = index;
+				variableFound = variableIsDeclared(object.eContents.subList(0, lastIndex).toArray
+									.filter(typeof(VariableDecl)).filter[isGlobal], name)
+			} else {
+				lastIndex = object.eContents.length;
+				variableFound = variableIsDeclared(object.eContents.toArray
+									.filter(typeof(VariableDecl)).filter[isGlobal], name);
+			}
+			if(variableFound) {
 				globalVariableFound = true;
 				return;
 			} else {
-				for(i : 0..< object.eContents.length) {
-					checkIfCalledVariableIsGlobal(object.eContents.get(i), name);
+				for(i : 0..< lastIndex) {
+					checkIfCalledVariableIsGlobal(object.eContents.get(i), name, -1);
 				}
 			}
 		} else if(object instanceof VariableDecl) {

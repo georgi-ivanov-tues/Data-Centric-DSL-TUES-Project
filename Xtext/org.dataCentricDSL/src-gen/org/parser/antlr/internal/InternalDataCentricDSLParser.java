@@ -196,118 +196,118 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataCentricDSL"
-    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:76:1: ruleDataCentricDSL returns [EObject current=null] : ( ( (lv_elements_0_1= ruleStatement | lv_elements_0_2= ruleFunctionDecl ) ) )* ;
+    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:76:1: ruleDataCentricDSL returns [EObject current=null] : ( ( (lv_elements_0_0= ruleFunctionDecl ) )* ( (lv_elements_1_0= ruleStatement ) )* ) ;
     public final EObject ruleDataCentricDSL() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_elements_0_1 = null;
+        EObject lv_elements_0_0 = null;
 
-        EObject lv_elements_0_2 = null;
+        EObject lv_elements_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:79:28: ( ( ( (lv_elements_0_1= ruleStatement | lv_elements_0_2= ruleFunctionDecl ) ) )* )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:80:1: ( ( (lv_elements_0_1= ruleStatement | lv_elements_0_2= ruleFunctionDecl ) ) )*
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:79:28: ( ( ( (lv_elements_0_0= ruleFunctionDecl ) )* ( (lv_elements_1_0= ruleStatement ) )* ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:80:1: ( ( (lv_elements_0_0= ruleFunctionDecl ) )* ( (lv_elements_1_0= ruleStatement ) )* )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:80:1: ( ( (lv_elements_0_1= ruleStatement | lv_elements_0_2= ruleFunctionDecl ) ) )*
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:80:1: ( ( (lv_elements_0_0= ruleFunctionDecl ) )* ( (lv_elements_1_0= ruleStatement ) )* )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:80:2: ( (lv_elements_0_0= ruleFunctionDecl ) )* ( (lv_elements_1_0= ruleStatement ) )*
+            {
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:80:2: ( (lv_elements_0_0= ruleFunctionDecl ) )*
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
+
+                if ( (LA1_0==48) ) {
+                    alt1=1;
+                }
+
+
+                switch (alt1) {
+            	case 1 :
+            	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:81:1: (lv_elements_0_0= ruleFunctionDecl )
+            	    {
+            	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:81:1: (lv_elements_0_0= ruleFunctionDecl )
+            	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:82:3: lv_elements_0_0= ruleFunctionDecl
+            	    {
+            	    if ( state.backtracking==0 ) {
+            	       
+            	      	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsFunctionDeclParserRuleCall_0_0()); 
+            	      	    
+            	    }
+            	    pushFollow(FOLLOW_ruleFunctionDecl_in_ruleDataCentricDSL131);
+            	    lv_elements_0_0=ruleFunctionDecl();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      	        if (current==null) {
+            	      	            current = createModelElementForParent(grammarAccess.getDataCentricDSLRule());
+            	      	        }
+            	             		add(
+            	             			current, 
+            	             			"elements",
+            	              		lv_elements_0_0, 
+            	              		"FunctionDecl");
+            	      	        afterParserOrEnumRuleCall();
+            	      	    
+            	    }
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop1;
+                }
+            } while (true);
+
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:98:3: ( (lv_elements_1_0= ruleStatement ) )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==RULE_IDENTIFIER||(LA2_0>=44 && LA2_0<=49)||(LA2_0>=51 && LA2_0<=52)) ) {
+                if ( (LA2_0==RULE_IDENTIFIER||(LA2_0>=44 && LA2_0<=47)||LA2_0==49||(LA2_0>=51 && LA2_0<=52)) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:81:1: ( (lv_elements_0_1= ruleStatement | lv_elements_0_2= ruleFunctionDecl ) )
+            	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:99:1: (lv_elements_1_0= ruleStatement )
             	    {
-            	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:81:1: ( (lv_elements_0_1= ruleStatement | lv_elements_0_2= ruleFunctionDecl ) )
-            	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:82:1: (lv_elements_0_1= ruleStatement | lv_elements_0_2= ruleFunctionDecl )
+            	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:99:1: (lv_elements_1_0= ruleStatement )
+            	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:100:3: lv_elements_1_0= ruleStatement
             	    {
-            	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:82:1: (lv_elements_0_1= ruleStatement | lv_elements_0_2= ruleFunctionDecl )
-            	    int alt1=2;
-            	    int LA1_0 = input.LA(1);
-
-            	    if ( (LA1_0==RULE_IDENTIFIER||(LA1_0>=44 && LA1_0<=47)||LA1_0==49||(LA1_0>=51 && LA1_0<=52)) ) {
-            	        alt1=1;
+            	    if ( state.backtracking==0 ) {
+            	       
+            	      	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsStatementParserRuleCall_1_0()); 
+            	      	    
             	    }
-            	    else if ( (LA1_0==48) ) {
-            	        alt1=2;
+            	    pushFollow(FOLLOW_ruleStatement_in_ruleDataCentricDSL153);
+            	    lv_elements_1_0=ruleStatement();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      	        if (current==null) {
+            	      	            current = createModelElementForParent(grammarAccess.getDataCentricDSLRule());
+            	      	        }
+            	             		add(
+            	             			current, 
+            	             			"elements",
+            	              		lv_elements_1_0, 
+            	              		"Statement");
+            	      	        afterParserOrEnumRuleCall();
+            	      	    
             	    }
-            	    else {
-            	        if (state.backtracking>0) {state.failed=true; return current;}
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 1, 0, input);
-
-            	        throw nvae;
-            	    }
-            	    switch (alt1) {
-            	        case 1 :
-            	            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:83:3: lv_elements_0_1= ruleStatement
-            	            {
-            	            if ( state.backtracking==0 ) {
-            	               
-            	              	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsStatementParserRuleCall_0_0()); 
-            	              	    
-            	            }
-            	            pushFollow(FOLLOW_ruleStatement_in_ruleDataCentricDSL132);
-            	            lv_elements_0_1=ruleStatement();
-
-            	            state._fsp--;
-            	            if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	              	        if (current==null) {
-            	              	            current = createModelElementForParent(grammarAccess.getDataCentricDSLRule());
-            	              	        }
-            	                     		add(
-            	                     			current, 
-            	                     			"elements",
-            	                      		lv_elements_0_1, 
-            	                      		"Statement");
-            	              	        afterParserOrEnumRuleCall();
-            	              	    
-            	            }
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:98:8: lv_elements_0_2= ruleFunctionDecl
-            	            {
-            	            if ( state.backtracking==0 ) {
-            	               
-            	              	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsFunctionDeclParserRuleCall_0_1()); 
-            	              	    
-            	            }
-            	            pushFollow(FOLLOW_ruleFunctionDecl_in_ruleDataCentricDSL151);
-            	            lv_elements_0_2=ruleFunctionDecl();
-
-            	            state._fsp--;
-            	            if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	              	        if (current==null) {
-            	              	            current = createModelElementForParent(grammarAccess.getDataCentricDSLRule());
-            	              	        }
-            	                     		add(
-            	                     			current, 
-            	                     			"elements",
-            	                      		lv_elements_0_2, 
-            	                      		"FunctionDecl");
-            	              	        afterParserOrEnumRuleCall();
-            	              	    
-            	            }
-
-            	            }
-            	            break;
-
-            	    }
-
 
             	    }
 
@@ -319,6 +319,9 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             	    break loop2;
                 }
             } while (true);
+
+
+            }
 
 
             }
@@ -557,6 +560,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             case RULE_IDENTIFIER:
                 {
                 switch ( input.LA(2) ) {
+                case 17:
+                case 18:
+                case 19:
+                case 20:
+                case 21:
+                    {
+                    alt4=4;
+                    }
+                    break;
                 case 22:
                 case 23:
                     {
@@ -571,15 +583,6 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                 case 29:
                     {
                     alt4=1;
-                    }
-                    break;
-                case 17:
-                case 18:
-                case 19:
-                case 20:
-                case 21:
-                    {
-                    alt4=4;
                     }
                     break;
                 default:
@@ -3366,11 +3369,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                 {
                 int LA18_2 = input.LA(2);
 
-                if ( (LA18_2==39) ) {
-                    alt18=3;
-                }
-                else if ( (LA18_2==EOF||(LA18_2>=24 && LA18_2<=28)||(LA18_2>=30 && LA18_2<=38)||(LA18_2>=40 && LA18_2<=41)) ) {
+                if ( (LA18_2==EOF||(LA18_2>=24 && LA18_2<=28)||(LA18_2>=30 && LA18_2<=38)||(LA18_2>=40 && LA18_2<=41)) ) {
                     alt18=2;
+                }
+                else if ( (LA18_2==39) ) {
+                    alt18=3;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -5120,6 +5123,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
             if ( (LA29_0==RULE_IDENTIFIER) ) {
                 switch ( input.LA(2) ) {
+                case 17:
+                case 18:
+                case 19:
+                case 20:
+                case 21:
+                    {
+                    alt29=2;
+                    }
+                    break;
                 case 29:
                     {
                     alt29=3;
@@ -5129,15 +5141,6 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                 case 23:
                     {
                     alt29=1;
-                    }
-                    break;
-                case 17:
-                case 18:
-                case 19:
-                case 20:
-                case 21:
-                    {
-                    alt29=2;
                     }
                     break;
                 default:
@@ -9566,11 +9569,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                 {
                 int LA41_1 = input.LA(2);
 
-                if ( (LA41_1==29) ) {
-                    alt41=1;
-                }
-                else if ( (LA41_1==EOF||(LA41_1>=RULE_INT && LA41_1<=RULE_STRING)||(LA41_1>=RULE_HEX && LA41_1<=RULE_ID)||(LA41_1>=15 && LA41_1<=28)||(LA41_1>=30 && LA41_1<=43)||(LA41_1>=49 && LA41_1<=70)||(LA41_1>=72 && LA41_1<=92)) ) {
+                if ( (LA41_1==EOF||(LA41_1>=RULE_INT && LA41_1<=RULE_STRING)||(LA41_1>=RULE_HEX && LA41_1<=RULE_ID)||(LA41_1>=15 && LA41_1<=28)||(LA41_1>=30 && LA41_1<=43)||(LA41_1>=49 && LA41_1<=70)||(LA41_1>=72 && LA41_1<=92)) ) {
                     alt41=2;
+                }
+                else if ( (LA41_1==29) ) {
+                    alt41=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -15378,11 +15381,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             if ( (LA73_0==68) ) {
                 int LA73_1 = input.LA(2);
 
-                if ( (LA73_1==42) ) {
-                    alt73=1;
-                }
-                else if ( (LA73_1==69) ) {
+                if ( (LA73_1==69) ) {
                     alt73=2;
+                }
+                else if ( (LA73_1==42) ) {
+                    alt73=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -28378,7 +28381,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     static final String DFA40_acceptS =
         "\10\uffff\1\2\1\1";
     static final String DFA40_specialS =
-        "\1\uffff\1\6\1\4\1\3\1\2\1\1\1\5\1\0\2\uffff}>";
+        "\1\uffff\1\3\1\4\1\1\1\2\1\0\1\5\1\6\2\uffff}>";
     static final String[] DFA40_transitionS = {
             "\2\10\1\uffff\3\10\4\uffff\2\10\1\1\1\2\1\3\1\4\1\5\7\10\1"+
             "\uffff\2\10\1\7\1\6\12\10\5\uffff\26\10\1\uffff\25\10",
@@ -28430,21 +28433,6 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA40_7 = input.LA(1);
-
-                         
-                        int index40_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index40_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA40_5 = input.LA(1);
 
                          
@@ -28457,6 +28445,21 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
                          
                         input.seek(index40_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA40_3 = input.LA(1);
+
+                         
+                        int index40_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index40_3);
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
@@ -28475,10 +28478,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
-                        int LA40_3 = input.LA(1);
+                        int LA40_1 = input.LA(1);
 
                          
-                        int index40_3 = input.index();
+                        int index40_1 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
@@ -28486,7 +28489,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index40_3);
+                        input.seek(index40_1);
                         if ( s>=0 ) return s;
                         break;
                     case 4 : 
@@ -28520,10 +28523,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         if ( s>=0 ) return s;
                         break;
                     case 6 : 
-                        int LA40_1 = input.LA(1);
+                        int LA40_7 = input.LA(1);
 
                          
-                        int index40_1 = input.index();
+                        int index40_7 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred1_InternalDataCentricDSL()) ) {s = 9;}
@@ -28531,7 +28534,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index40_1);
+                        input.seek(index40_7);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -28553,7 +28556,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     static final String DFA48_acceptS =
         "\3\uffff\1\3\5\uffff\1\2\1\1";
     static final String DFA48_specialS =
-        "\1\uffff\1\5\1\3\1\uffff\1\2\1\4\1\6\1\0\1\1\2\uffff}>";
+        "\1\uffff\1\3\1\5\1\uffff\1\4\1\2\1\6\1\0\1\1\2\uffff}>";
     static final String[] DFA48_transitionS = {
             "\2\3\1\uffff\3\3\4\uffff\16\3\1\uffff\2\3\1\5\1\4\1\1\1\7\1"+
             "\10\1\2\6\3\5\uffff\6\3\1\6\17\3\1\uffff\25\3",
@@ -28636,36 +28639,6 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA48_4 = input.LA(1);
-
-                         
-                        int index48_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred6_InternalDataCentricDSL()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 3;}
-
-                         
-                        input.seek(index48_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA48_2 = input.LA(1);
-
-                         
-                        int index48_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred6_InternalDataCentricDSL()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 3;}
-
-                         
-                        input.seek(index48_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
                         int LA48_5 = input.LA(1);
 
                          
@@ -28680,7 +28653,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         input.seek(index48_5);
                         if ( s>=0 ) return s;
                         break;
-                    case 5 : 
+                    case 3 : 
                         int LA48_1 = input.LA(1);
 
                          
@@ -28693,6 +28666,36 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
                          
                         input.seek(index48_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA48_4 = input.LA(1);
+
+                         
+                        int index48_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred6_InternalDataCentricDSL()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 3;}
+
+                         
+                        input.seek(index48_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA48_2 = input.LA(1);
+
+                         
+                        int index48_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred6_InternalDataCentricDSL()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 3;}
+
+                         
+                        input.seek(index48_2);
                         if ( s>=0 ) return s;
                         break;
                     case 6 : 
@@ -28729,7 +28732,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     static final String DFA49_acceptS =
         "\1\uffff\1\2\10\uffff\1\1";
     static final String DFA49_specialS =
-        "\2\uffff\1\1\1\7\1\5\1\6\1\4\1\3\1\2\1\0\1\uffff}>";
+        "\2\uffff\1\7\1\2\1\0\1\1\1\3\1\4\1\5\1\6\1\uffff}>";
     static final String[] DFA49_transitionS = {
             "\2\1\1\uffff\3\1\4\uffff\16\1\1\uffff\2\1\1\2\1\3\12\1\5\uffff"+
             "\7\1\1\4\1\5\1\6\1\7\1\10\1\11\11\1\1\uffff\25\1",
@@ -28782,81 +28785,6 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA49_9 = input.LA(1);
-
-                         
-                        int index49_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index49_9);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA49_2 = input.LA(1);
-
-                         
-                        int index49_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index49_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA49_8 = input.LA(1);
-
-                         
-                        int index49_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index49_8);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA49_7 = input.LA(1);
-
-                         
-                        int index49_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index49_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA49_6 = input.LA(1);
-
-                         
-                        int index49_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index49_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
                         int LA49_4 = input.LA(1);
 
                          
@@ -28871,7 +28799,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         input.seek(index49_4);
                         if ( s>=0 ) return s;
                         break;
-                    case 6 : 
+                    case 1 : 
                         int LA49_5 = input.LA(1);
 
                          
@@ -28886,7 +28814,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                         input.seek(index49_5);
                         if ( s>=0 ) return s;
                         break;
-                    case 7 : 
+                    case 2 : 
                         int LA49_3 = input.LA(1);
 
                          
@@ -28899,6 +28827,81 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
                          
                         input.seek(index49_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA49_6 = input.LA(1);
+
+                         
+                        int index49_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index49_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA49_7 = input.LA(1);
+
+                         
+                        int index49_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index49_7);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA49_8 = input.LA(1);
+
+                         
+                        int index49_8 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index49_8);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA49_9 = input.LA(1);
+
+                         
+                        int index49_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index49_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA49_2 = input.LA(1);
+
+                         
+                        int index49_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalDataCentricDSL()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index49_2);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -32048,8 +32051,8 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleDataCentricDSL_in_entryRuleDataCentricDSL75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDataCentricDSL85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatement_in_ruleDataCentricDSL132 = new BitSet(new long[]{0x001BF00000000012L});
-    public static final BitSet FOLLOW_ruleFunctionDecl_in_ruleDataCentricDSL151 = new BitSet(new long[]{0x001BF00000000012L});
+    public static final BitSet FOLLOW_ruleFunctionDecl_in_ruleDataCentricDSL131 = new BitSet(new long[]{0x001BF00000000012L});
+    public static final BitSet FOLLOW_ruleStatement_in_ruleDataCentricDSL153 = new BitSet(new long[]{0x001AF00000000012L});
     public static final BitSet FOLLOW_ruleStatement_in_entryRuleStatement190 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStatement200 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSimpleStatement_in_ruleStatement247 = new BitSet(new long[]{0x0000000000000002L});

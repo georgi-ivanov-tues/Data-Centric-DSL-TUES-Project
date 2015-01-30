@@ -21,26 +21,30 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class DataCentricDSLElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataCentricDSL");
-		private final Assignment cElementsAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cElementsAlternatives_0 = (Alternatives)cElementsAssignment.eContents().get(0);
-		private final RuleCall cElementsStatementParserRuleCall_0_0 = (RuleCall)cElementsAlternatives_0.eContents().get(0);
-		private final RuleCall cElementsFunctionDeclParserRuleCall_0_1 = (RuleCall)cElementsAlternatives_0.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cElementsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cElementsFunctionDeclParserRuleCall_0_0 = (RuleCall)cElementsAssignment_0.eContents().get(0);
+		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cElementsStatementParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//DataCentricDSL:
-		//	elements+=(Statement | FunctionDecl)*;
+		//	elements+=FunctionDecl* elements+=Statement*;
 		public ParserRule getRule() { return rule; }
 
-		//elements+=(Statement | FunctionDecl)*
-		public Assignment getElementsAssignment() { return cElementsAssignment; }
+		//elements+=FunctionDecl* elements+=Statement*
+		public Group getGroup() { return cGroup; }
 
-		//Statement | FunctionDecl
-		public Alternatives getElementsAlternatives_0() { return cElementsAlternatives_0; }
-
-		//Statement
-		public RuleCall getElementsStatementParserRuleCall_0_0() { return cElementsStatementParserRuleCall_0_0; }
+		//elements+=FunctionDecl*
+		public Assignment getElementsAssignment_0() { return cElementsAssignment_0; }
 
 		//FunctionDecl
-		public RuleCall getElementsFunctionDeclParserRuleCall_0_1() { return cElementsFunctionDeclParserRuleCall_0_1; }
+		public RuleCall getElementsFunctionDeclParserRuleCall_0_0() { return cElementsFunctionDeclParserRuleCall_0_0; }
+
+		//elements+=Statement*
+		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+
+		//Statement
+		public RuleCall getElementsStatementParserRuleCall_1_0() { return cElementsStatementParserRuleCall_1_0; }
 	}
 
 	public class StatementElements extends AbstractParserRuleElementFinder {
@@ -1829,7 +1833,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//DataCentricDSL:
-	//	elements+=(Statement | FunctionDecl)*;
+	//	elements+=FunctionDecl* elements+=Statement*;
 	public DataCentricDSLElements getDataCentricDSLAccess() {
 		return pDataCentricDSL;
 	}

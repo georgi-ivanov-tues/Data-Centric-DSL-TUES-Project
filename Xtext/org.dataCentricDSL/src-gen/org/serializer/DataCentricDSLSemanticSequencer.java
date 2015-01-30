@@ -1520,7 +1520,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (elements+=Statement | elements+=FunctionDecl)*
+	 *     (elements+=FunctionDecl* elements+=Statement*)
 	 */
 	protected void sequence_DataCentricDSL(EObject context, DataCentricDSL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
