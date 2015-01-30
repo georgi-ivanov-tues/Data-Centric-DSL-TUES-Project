@@ -11,7 +11,7 @@ package org.dataCentricDSL;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.VariableDecl#isGlobal <em>Global</em>}</li>
+ *   <li>{@link org.dataCentricDSL.VariableDecl#isIsGlobal <em>Is Global</em>}</li>
  *   <li>{@link org.dataCentricDSL.VariableDecl#getName <em>Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.VariableDecl#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
@@ -24,30 +24,30 @@ package org.dataCentricDSL;
 public interface VariableDecl extends SimpleStatement
 {
   /**
-   * Returns the value of the '<em><b>Global</b></em>' attribute.
+   * Returns the value of the '<em><b>Is Global</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Global</em>' attribute isn't clear,
+   * If the meaning of the '<em>Is Global</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Global</em>' attribute.
-   * @see #setGlobal(boolean)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableDecl_Global()
+   * @return the value of the '<em>Is Global</em>' attribute.
+   * @see #setIsGlobal(boolean)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableDecl_IsGlobal()
    * @model
    * @generated
    */
-  boolean isGlobal();
+  boolean isIsGlobal();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.VariableDecl#isGlobal <em>Global</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.VariableDecl#isIsGlobal <em>Is Global</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Global</em>' attribute.
-   * @see #isGlobal()
+   * @param value the new value of the '<em>Is Global</em>' attribute.
+   * @see #isIsGlobal()
    * @generated
    */
-  void setGlobal(boolean value);
+  void setIsGlobal(boolean value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

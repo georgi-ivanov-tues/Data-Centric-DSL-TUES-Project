@@ -13,57 +13,50 @@ Statement:
 
 SimpleStatement:
 	(VariableDecl | 
-	 Query | 
-	 Print | 
+	 QueryFunction | 
+	 PrintFunction | 
 	 MultiAssign | 
 	 PostfixOperation | 
-	 FunctionCall) ';'
+	 FunctionCall) Semicolon
 ;
 
 VariableDecl:
-	(global?='global')? name=ValidID OpAssignment variableValue=VariableParam
-;
-
-OpAssignment:
-	'='
+	(isGlobal?=Global)? name=IDENTIFIER OpAssignment variableValue=VariableParam
 ;
 
 VariableParam returns VariableDecl:
 	{VariableParam} 
-	(variableStringParam=STRING | 
-	 variableExpressionParam=Expression | 
-	 variableQueryParam=Query |
+	(variableExpressionParam=Expression | 
+	 variableQueryParam=QueryFunction |
 	 variableBolleanValue=BooleanValue)
 ;
 
-Query:
-	'query' QueryParam
+QueryFunction:
+	Query QueryParam
 ;
 
-QueryParam returns Query:
-	(queryValue=STRING | 
-	 Expression)
+QueryParam returns Query: 
+	 queryParam=Expression
 ;
 
-Print:
-	('print' | 'println') PrintParam
+PrintFunction:
+	(Print | Println) PrintParam
 ;
 
 PrintParam returns Print:
-	(printValue=STRING | 
-	 Query | 
+	printParam=(QueryFunction | 
 	 Expression)
 ;
 
 FunctionCall:
-	name=ValidID '('  
-		(arguments+=(Expression | StringLiteral) 
-		(',' arguments+=(Expression | StringLiteral))*)?
-	 ')'
+	name=IDENTIFIER OpeningBracket  
+		(arguments+=(Expression) 
+		(Comma arguments+=(Expression))*)?
+	 ClosingBracket
 ;
 
 VariableCall:
-	{VariableCall} variableCall=ValidID
+	{VariableCall} variableCall=IDENTIFIER
 ;
 
 Expression:
@@ -71,84 +64,91 @@ Expression:
 ;
 
 Addition returns Expression:
-	Substraction ({Addition.left=current} '+' right=Substraction)*
+	(Substraction | StringLiteral) ({Addition.left=current} OpAddition right=(Substraction | StringLiteral))*
 ;
 
 Substraction returns Expression:
-	Multiplication ({Substraction.left=current} '-' right=Multiplication)*
+	Multiplication ({Substraction.left=current} OpSubstraction right=Multiplication)*
 ;
 
 Multiplication returns Expression:
-	Division ({Multiplication.left=current} '*' right=Division)*
+	Division ({Multiplication.left=current} OpMultiplication right=Division)*
 ;
  
 Division returns Expression:
-	Mod ({Division.left=current} '/' right=Mod)*
+	Mod ({Division.left=current} OpDivision right=Mod)*
 ;
 
 Mod returns Expression:
-	Primary ({Mod.left=current} '%' right=Primary)*
+	Primary ({Mod.left=current} OpMod right=Primary)*
 ;
 
 Primary returns Expression:
-	(NumberLiteral | VariableCall | FunctionCall | ('(' Addition ')'))
+	(NumberLiteral | 
+	 VariableCall | 
+	 FunctionCall |
+	 OpeningBracket Addition ClosingBracket)
 ;
 
 CompoundStatement:
 	IfStatement |
+//	not supported in Antlr grammar, for now
 //	SwitchStatement |
 	WhileStatement |
 	ForStatement
 ;
 
 FunctionDecl:
-	'func' name=ValidID '(' (arguments+=ValidID (',' arguments+=ValidID)*)? ')' '{'
+	Func name=IDENTIFIER OpeningBracket
+		(arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)?
+		ClosingBracket OpeningCurlyBracket
 		(statements+=Statement)*
-	'}'
+	ClosingCurlyBracket
 ;
 
 IfStatement:
 	{IfStatement}
-	'if' '(' condition += StatementCondition ')' '{'
+	If OpeningBracket condition += StatementCondition ClosingBracket OpeningCurlyBracket
 		(statements+=Statement)*
-	'}'
-	( 'else if' '(' condition+=StatementCondition ')' '{'
+	ClosingCurlyBracket
+	( ElseIf OpeningBracket condition+=StatementCondition ClosingBracket OpeningCurlyBracket
 		(statements+=Statement)*
-	'}'
+	ClosingCurlyBracket
 	)*
-	// doesn't work if there is no space after else (xtext bug probably)
-	( 'else ' '{' 
+	( Else OpeningCurlyBracket 
 		(statements+=Statement)*
-	'}'
+	ClosingCurlyBracket
 	)?
 ;
 
+/*
 SwitchStatement:
 	{SwitchStatement}
-	'switch' '(' name=VariableCall ')' '{'
+	'switch' OpeningBracket name=VariableCall ClosingBracket OpeningCurlyBracket
 		('case' cases+=STRING ':'
 			(statements+=Statement)*
 		)*
 		('default' ':'
 			(statements+=Statement)*
 		)?
-	'}'
-;
+	ClosingCurlyBracket
+;*/
 
 WhileStatement:
 	{WhileStatement}
-	'while' '(' whileCondition=StatementCondition ')' '{' 
+	While OpeningBracket whileCondition=StatementCondition ClosingBracket OpeningCurlyBracket 
 		(statements+=Statement)* 
-	'}'
+	ClosingCurlyBracket
 ;
 
 ForStatement:
 	{ForStatement}
-	'for' '(' forVar=VariableDecl ';' 
-		forCondition=StatementCondition ';' 
-			operation=(PostfixOperation | ForMultiAssign | VariableDecl) ')' '{' 
-			  	(statements+=Statement)* 
-	'}'
+	For OpeningBracket forVar=VariableDecl Semicolon 
+		forCondition=StatementCondition Semicolon
+		operation=(PostfixOperation | ForMultiAssign | VariableDecl) 
+		ClosingBracket OpeningCurlyBracket 
+			(statements+=Statement)* 
+	ClosingCurlyBracket
 ;
 
 StatementCondition:
@@ -160,8 +160,7 @@ Condition:
 ;
 
 ConditionElement:
-	(Expression | 
-	 StringLiteral |
+	(Expression |
 	 BooleanValue)
 ;
 
@@ -174,14 +173,12 @@ MultiAssign:
 ;
 
 MultiAssignRightOperand:
-	(VariableCall | 
-	 StringLiteral | 
-	 Query | 
-	 NumberLiteral)
+	(Expression | 
+	 QueryFunction)
 ;
 
 PostfixOperation:
-		{PostfixOperation}	call=VariableCall op=PostfixOperationOperator
+	{PostfixOperation} call=VariableCall op=PostfixOperationOperator
 ;
 
 StringLiteral:
@@ -192,14 +189,11 @@ NumberLiteral:
 	value=NUMBER_LITERAL
 ;
 
-terminal NUMBER_LITERAL:
-	'0' | ('1'..'9') ('0'..'9')* ('.' ('0'..'9')*)?
-;
-
 BooleanValue:
 	value=('true' | 
 	'false')
 ;
+
 MultiAssignOperator:
 	('+=' | 
 	'-=' | 
@@ -207,12 +201,44 @@ MultiAssignOperator:
 	'/=' | 
 	'%=')
 ;
+
 PostfixOperationOperator:
 	('--' |
 	'++')
 ;
-OpAnd: '&&';
-OpOr: '||';
+
+OpAddition:
+	'+'
+;
+
+OpSubstraction:
+	'-'
+;
+
+OpMultiplication:
+	'*'
+;
+
+OpDivision:
+	'/'
+;
+
+OpMod:
+	'%'
+;
+
+OpAssignment:
+	'='
+;
+
+OpAnd:
+	'&&'
+;
+
+OpOr:
+	'||'
+;
+
 OpCompare:
 	('>' |
 	'<' |
@@ -220,4 +246,76 @@ OpCompare:
 	'<=' |
 	'>=' |
 	'!=')
+;
+
+Semicolon:
+	';'
+;
+
+OpeningBracket:
+	'('
+;
+
+ClosingBracket:
+	')'
+;
+
+Comma:
+	','
+;
+
+OpeningCurlyBracket:
+	'{'
+;
+
+ClosingCurlyBracket:
+	'}'
+;
+
+Global:
+	'global'
+;
+
+Query:
+	'query'
+;
+
+Print:
+	'print'
+;
+
+Println:
+	'println'
+;
+
+Func:
+	'func'
+;
+
+If:
+	'if'
+;
+
+ElseIf:
+	Else If
+;
+
+Else:
+	'else'
+;
+
+While:
+	'while'
+;
+
+For:
+	'for'
+;
+
+terminal NUMBER_LITERAL:
+	'0' | (('1'..'9') ('0'..'9')*) ('.' ('0'..'9')*)?
+;
+
+terminal IDENTIFIER:
+	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*
 ;

@@ -19,7 +19,7 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface StringLiteral extends ConditionElement, MultiAssignRightOperand
+public interface StringLiteral extends Expression
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

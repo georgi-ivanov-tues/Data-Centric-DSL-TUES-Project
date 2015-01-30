@@ -11,7 +11,7 @@ package org.dataCentricDSL;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.Query#getQueryValue <em>Query Value</em>}</li>
+ *   <li>{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}</li>
  * </ul>
  * </p>
  *
@@ -19,32 +19,32 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface Query extends SimpleStatement, Print, MultiAssignRightOperand
+public interface Query extends QueryFunction
 {
   /**
-   * Returns the value of the '<em><b>Query Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Query Param</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Query Value</em>' attribute isn't clear,
+   * If the meaning of the '<em>Query Param</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Query Value</em>' attribute.
-   * @see #setQueryValue(String)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getQuery_QueryValue()
-   * @model
+   * @return the value of the '<em>Query Param</em>' containment reference.
+   * @see #setQueryParam(Expression)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getQuery_QueryParam()
+   * @model containment="true"
    * @generated
    */
-  String getQueryValue();
+  Expression getQueryParam();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.Query#getQueryValue <em>Query Value</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Query Value</em>' attribute.
-   * @see #getQueryValue()
+   * @param value the new value of the '<em>Query Param</em>' containment reference.
+   * @see #getQueryParam()
    * @generated
    */
-  void setQueryValue(String value);
+  void setQueryParam(Expression value);
 
 } // Query

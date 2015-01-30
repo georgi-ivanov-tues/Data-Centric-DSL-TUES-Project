@@ -95,9 +95,19 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createVariableDeclAdapter();
       }
       @Override
+      public Adapter caseQueryFunction(QueryFunction object)
+      {
+        return createQueryFunctionAdapter();
+      }
+      @Override
       public Adapter caseQuery(Query object)
       {
         return createQueryAdapter();
+      }
+      @Override
+      public Adapter casePrintFunction(PrintFunction object)
+      {
+        return createPrintFunctionAdapter();
       }
       @Override
       public Adapter casePrint(Print object)
@@ -133,11 +143,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseIfStatement(IfStatement object)
       {
         return createIfStatementAdapter();
-      }
-      @Override
-      public Adapter caseSwitchStatement(SwitchStatement object)
-      {
-        return createSwitchStatementAdapter();
       }
       @Override
       public Adapter caseWhileStatement(WhileStatement object)
@@ -312,6 +317,21 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.QueryFunction <em>Query Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.dataCentricDSL.QueryFunction
+   * @generated
+   */
+  public Adapter createQueryFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.dataCentricDSL.Query <em>Query</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -322,6 +342,21 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createQueryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.PrintFunction <em>Print Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.dataCentricDSL.PrintFunction
+   * @generated
+   */
+  public Adapter createPrintFunctionAdapter()
   {
     return null;
   }
@@ -427,21 +462,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIfStatementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.SwitchStatement <em>Switch Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.SwitchStatement
-   * @generated
-   */
-  public Adapter createSwitchStatementAdapter()
   {
     return null;
   }

@@ -28,12 +28,12 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	var boolean globalVariableFound = false;
 	
-	@Check
-	def void checkIfQueryStringIsEmpty(Query que){
-		if(que.queryValue.toString.equals("")){
-			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__QUERY_VALUE);
-		}
-	}
+//	@Check
+//	def void checkIfQueryStringIsEmpty(Query que){
+//		if(que.queryParam.toString.equals("")){
+//			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__QUERY_PARAM);
+//		}
+//	}
 	
 	@Check
 	def void checkConditionOperands(Condition c) {
@@ -115,7 +115,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 			|| object instanceof FunctionDecl
 		) {	
 			if(variableIsDeclared(object.eContents.toArray
-				.filter(typeof(VariableDecl)).filter[global], name
+				.filter(typeof(VariableDecl)).filter[isGlobal], name
 			)) {
 				globalVariableFound = true;
 				return;
@@ -125,7 +125,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 				}
 			}
 		} else if(object instanceof VariableDecl) {
-			if((object as VariableDecl).global && (object as VariableDecl).name.equals(name)) {
+			if((object as VariableDecl).isGlobal && (object as VariableDecl).name.equals(name)) {
 				globalVariableFound = true;
 				return;
 			}

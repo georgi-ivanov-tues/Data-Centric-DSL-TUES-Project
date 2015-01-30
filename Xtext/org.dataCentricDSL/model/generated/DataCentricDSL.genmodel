@@ -13,15 +13,17 @@
     <genClasses ecoreClass="DataCentricDSL.ecore#//Statement"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//SimpleStatement"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/global"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/isGlobal"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableDecl/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableDecl/variableValue"/>
     </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//QueryFunction"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Query">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Query/queryValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Query/queryParam"/>
     </genClasses>
+    <genClasses ecoreClass="DataCentricDSL.ecore#//PrintFunction"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Print">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Print/printValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Print/printParam"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//FunctionCall">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//FunctionCall/name"/>
@@ -41,11 +43,6 @@
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//IfStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//IfStatement/condition"/>
-    </genClasses>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//SwitchStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//SwitchStatement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//SwitchStatement/cases"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//SwitchStatement/statements"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//WhileStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//WhileStatement/whileCondition"/>
@@ -88,7 +85,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//BooleanValue/value"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableParam">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//VariableParam/variableStringParam"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableParam/variableExpressionParam"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableParam/variableQueryParam"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//VariableParam/variableBolleanValue"/>

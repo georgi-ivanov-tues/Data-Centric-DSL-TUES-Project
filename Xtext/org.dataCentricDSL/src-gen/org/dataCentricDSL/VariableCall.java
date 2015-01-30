@@ -19,7 +19,7 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface VariableCall extends Expression, MultiAssignRightOperand
+public interface VariableCall extends Expression
 {
   /**
    * Returns the value of the '<em><b>Variable Call</b></em>' attribute.

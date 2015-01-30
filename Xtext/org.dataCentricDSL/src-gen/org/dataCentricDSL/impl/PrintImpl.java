@@ -3,11 +3,14 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
+import org.dataCentricDSL.MultiAssignRightOperand;
 import org.dataCentricDSL.Print;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -18,33 +21,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.PrintImpl#getPrintValue <em>Print Value</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.PrintImpl#getPrintParam <em>Print Param</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PrintImpl extends SimpleStatementImpl implements Print
+public class PrintImpl extends PrintFunctionImpl implements Print
 {
   /**
-   * The default value of the '{@link #getPrintValue() <em>Print Value</em>}' attribute.
+   * The cached value of the '{@link #getPrintParam() <em>Print Param</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrintValue()
+   * @see #getPrintParam()
    * @generated
    * @ordered
    */
-  protected static final String PRINT_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPrintValue() <em>Print Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPrintValue()
-   * @generated
-   * @ordered
-   */
-  protected String printValue = PRINT_VALUE_EDEFAULT;
+  protected MultiAssignRightOperand printParam;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,9 +65,9 @@ public class PrintImpl extends SimpleStatementImpl implements Print
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPrintValue()
+  public MultiAssignRightOperand getPrintParam()
   {
-    return printValue;
+    return printParam;
   }
 
   /**
@@ -82,12 +75,53 @@ public class PrintImpl extends SimpleStatementImpl implements Print
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrintValue(String newPrintValue)
+  public NotificationChain basicSetPrintParam(MultiAssignRightOperand newPrintParam, NotificationChain msgs)
   {
-    String oldPrintValue = printValue;
-    printValue = newPrintValue;
+    MultiAssignRightOperand oldPrintParam = printParam;
+    printParam = newPrintParam;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.PRINT__PRINT_VALUE, oldPrintValue, printValue));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.PRINT__PRINT_PARAM, oldPrintParam, newPrintParam);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPrintParam(MultiAssignRightOperand newPrintParam)
+  {
+    if (newPrintParam != printParam)
+    {
+      NotificationChain msgs = null;
+      if (printParam != null)
+        msgs = ((InternalEObject)printParam).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.PRINT__PRINT_PARAM, null, msgs);
+      if (newPrintParam != null)
+        msgs = ((InternalEObject)newPrintParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.PRINT__PRINT_PARAM, null, msgs);
+      msgs = basicSetPrintParam(newPrintParam, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.PRINT__PRINT_PARAM, newPrintParam, newPrintParam));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DataCentricDSLPackage.PRINT__PRINT_PARAM:
+        return basicSetPrintParam(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -100,8 +134,8 @@ public class PrintImpl extends SimpleStatementImpl implements Print
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.PRINT__PRINT_VALUE:
-        return getPrintValue();
+      case DataCentricDSLPackage.PRINT__PRINT_PARAM:
+        return getPrintParam();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -116,8 +150,8 @@ public class PrintImpl extends SimpleStatementImpl implements Print
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.PRINT__PRINT_VALUE:
-        setPrintValue((String)newValue);
+      case DataCentricDSLPackage.PRINT__PRINT_PARAM:
+        setPrintParam((MultiAssignRightOperand)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -133,8 +167,8 @@ public class PrintImpl extends SimpleStatementImpl implements Print
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.PRINT__PRINT_VALUE:
-        setPrintValue(PRINT_VALUE_EDEFAULT);
+      case DataCentricDSLPackage.PRINT__PRINT_PARAM:
+        setPrintParam((MultiAssignRightOperand)null);
         return;
     }
     super.eUnset(featureID);
@@ -150,27 +184,10 @@ public class PrintImpl extends SimpleStatementImpl implements Print
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.PRINT__PRINT_VALUE:
-        return PRINT_VALUE_EDEFAULT == null ? printValue != null : !PRINT_VALUE_EDEFAULT.equals(printValue);
+      case DataCentricDSLPackage.PRINT__PRINT_PARAM:
+        return printParam != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (printValue: ");
-    result.append(printValue);
-    result.append(')');
-    return result.toString();
   }
 
 } //PrintImpl

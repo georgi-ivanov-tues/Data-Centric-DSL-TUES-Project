@@ -3,27 +3,27 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.Expression;
+import org.dataCentricDSL.PrintFunction;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expression</b></em>'.
+ * An implementation of the model object '<em><b>Print Function</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ExpressionImpl extends ConditionElementImpl implements Expression
+public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunction
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ExpressionImpl()
+  protected PrintFunctionImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class ExpressionImpl extends ConditionElementImpl implements Expression
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.EXPRESSION;
+    return DataCentricDSLPackage.Literals.PRINT_FUNCTION;
   }
 
-} //ExpressionImpl
+} //PrintFunctionImpl

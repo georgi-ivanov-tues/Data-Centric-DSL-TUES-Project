@@ -23,7 +23,6 @@ import org.dataCentricDSL.Query;
 import org.dataCentricDSL.StatementCondition;
 import org.dataCentricDSL.StringLiteral;
 import org.dataCentricDSL.Substraction;
-import org.dataCentricDSL.SwitchStatement;
 import org.dataCentricDSL.VariableCall;
 import org.dataCentricDSL.VariableDecl;
 import org.dataCentricDSL.VariableParam;
@@ -107,12 +106,6 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0() ||
 				   context == grammarAccess.getPrimaryRule() ||
-				   context == grammarAccess.getPrintRule() ||
-				   context == grammarAccess.getPrintParamRule() ||
-				   context == grammarAccess.getQueryRule() ||
-				   context == grammarAccess.getQueryParamRule() ||
-				   context == grammarAccess.getSimpleStatementRule() ||
-				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0()) {
 					sequence_Addition(context, (Addition) semanticObject); 
@@ -151,12 +144,6 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0() ||
 				   context == grammarAccess.getPrimaryRule() ||
-				   context == grammarAccess.getPrintRule() ||
-				   context == grammarAccess.getPrintParamRule() ||
-				   context == grammarAccess.getQueryRule() ||
-				   context == grammarAccess.getQueryParamRule() ||
-				   context == grammarAccess.getSimpleStatementRule() ||
-				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0()) {
 					sequence_Division(context, (Division) semanticObject); 
@@ -191,10 +178,6 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0() ||
 				   context == grammarAccess.getPrimaryRule() ||
-				   context == grammarAccess.getPrintRule() ||
-				   context == grammarAccess.getPrintParamRule() ||
-				   context == grammarAccess.getQueryRule() ||
-				   context == grammarAccess.getQueryParamRule() ||
 				   context == grammarAccess.getSimpleStatementRule() ||
 				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
@@ -230,12 +213,6 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0() ||
 				   context == grammarAccess.getPrimaryRule() ||
-				   context == grammarAccess.getPrintRule() ||
-				   context == grammarAccess.getPrintParamRule() ||
-				   context == grammarAccess.getQueryRule() ||
-				   context == grammarAccess.getQueryParamRule() ||
-				   context == grammarAccess.getSimpleStatementRule() ||
-				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0()) {
 					sequence_Mod(context, (Mod) semanticObject); 
@@ -263,12 +240,6 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0() ||
 				   context == grammarAccess.getPrimaryRule() ||
-				   context == grammarAccess.getPrintRule() ||
-				   context == grammarAccess.getPrintParamRule() ||
-				   context == grammarAccess.getQueryRule() ||
-				   context == grammarAccess.getQueryParamRule() ||
-				   context == grammarAccess.getSimpleStatementRule() ||
-				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0()) {
 					sequence_Multiplication(context, (Multiplication) semanticObject); 
@@ -289,12 +260,6 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0() ||
 				   context == grammarAccess.getNumberLiteralRule() ||
 				   context == grammarAccess.getPrimaryRule() ||
-				   context == grammarAccess.getPrintRule() ||
-				   context == grammarAccess.getPrintParamRule() ||
-				   context == grammarAccess.getQueryRule() ||
-				   context == grammarAccess.getQueryParamRule() ||
-				   context == grammarAccess.getSimpleStatementRule() ||
-				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0()) {
 					sequence_NumberLiteral(context, (NumberLiteral) semanticObject); 
@@ -310,7 +275,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case DataCentricDSLPackage.PRINT:
-				if(context == grammarAccess.getPrintRule() ||
+				if(context == grammarAccess.getPrintFunctionRule() ||
 				   context == grammarAccess.getPrintParamRule() ||
 				   context == grammarAccess.getSimpleStatementRule() ||
 				   context == grammarAccess.getStatementRule()) {
@@ -320,9 +285,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				else break;
 			case DataCentricDSLPackage.QUERY:
 				if(context == grammarAccess.getMultiAssignRightOperandRule() ||
-				   context == grammarAccess.getPrintRule() ||
-				   context == grammarAccess.getPrintParamRule() ||
-				   context == grammarAccess.getQueryRule() ||
+				   context == grammarAccess.getQueryFunctionRule() ||
 				   context == grammarAccess.getQueryParamRule() ||
 				   context == grammarAccess.getSimpleStatementRule() ||
 				   context == grammarAccess.getStatementRule()) {
@@ -337,9 +300,21 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case DataCentricDSLPackage.STRING_LITERAL:
-				if(context == grammarAccess.getConditionElementRule() ||
+				if(context == grammarAccess.getAdditionRule() ||
+				   context == grammarAccess.getAdditionAccess().getAdditionLeftAction_1_0() ||
+				   context == grammarAccess.getConditionElementRule() ||
+				   context == grammarAccess.getDivisionRule() ||
+				   context == grammarAccess.getDivisionAccess().getDivisionLeftAction_1_0() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getModRule() ||
+				   context == grammarAccess.getModAccess().getModLeftAction_1_0() ||
 				   context == grammarAccess.getMultiAssignRightOperandRule() ||
-				   context == grammarAccess.getStringLiteralRule()) {
+				   context == grammarAccess.getMultiplicationRule() ||
+				   context == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0() ||
+				   context == grammarAccess.getPrimaryRule() ||
+				   context == grammarAccess.getStringLiteralRule() ||
+				   context == grammarAccess.getSubstractionRule() ||
+				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0()) {
 					sequence_StringLiteral(context, (StringLiteral) semanticObject); 
 					return; 
 				}
@@ -357,21 +332,9 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0() ||
 				   context == grammarAccess.getPrimaryRule() ||
-				   context == grammarAccess.getPrintRule() ||
-				   context == grammarAccess.getPrintParamRule() ||
-				   context == grammarAccess.getQueryRule() ||
-				   context == grammarAccess.getQueryParamRule() ||
-				   context == grammarAccess.getSimpleStatementRule() ||
-				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0()) {
 					sequence_Substraction(context, (Substraction) semanticObject); 
-					return; 
-				}
-				else break;
-			case DataCentricDSLPackage.SWITCH_STATEMENT:
-				if(context == grammarAccess.getSwitchStatementRule()) {
-					sequence_SwitchStatement(context, (SwitchStatement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -388,12 +351,6 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0() ||
 				   context == grammarAccess.getPrimaryRule() ||
-				   context == grammarAccess.getPrintRule() ||
-				   context == grammarAccess.getPrintParamRule() ||
-				   context == grammarAccess.getQueryRule() ||
-				   context == grammarAccess.getQueryParamRule() ||
-				   context == grammarAccess.getSimpleStatementRule() ||
-				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0() ||
 				   context == grammarAccess.getVariableCallRule()) {
@@ -1536,7 +1493,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (left=Addition_Addition_1_0 right=Substraction)
+	 *     (left=Addition_Addition_1_0 (right=Substraction | right=StringLiteral))
 	 */
 	protected void sequence_Addition(EObject context, Addition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1575,7 +1532,17 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (left=Division_Division_1_0 right=Mod)
 	 */
 	protected void sequence_Division(EObject context, Division semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.DIVISION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.DIVISION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.DIVISION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.DIVISION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDivisionAccess().getDivisionLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getDivisionAccess().getRightModParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -1617,7 +1584,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID ((arguments+=Expression | arguments+=StringLiteral) (arguments+=Expression | arguments+=StringLiteral)*)?)
+	 *     (name=IDENTIFIER (arguments+=Expression arguments+=Expression*)?)
 	 */
 	protected void sequence_FunctionCall(EObject context, FunctionCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1626,7 +1593,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID (arguments+=ValidID arguments+=ValidID*)? statements+=Statement*)
+	 *     (name=IDENTIFIER (arguments+=IDENTIFIER arguments+=IDENTIFIER*)? statements+=Statement*)
 	 */
 	protected void sequence_FunctionDecl(EObject context, FunctionDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1647,7 +1614,17 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (left=Mod_Mod_1_0 right=Primary)
 	 */
 	protected void sequence_Mod(EObject context, Mod semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.MOD__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.MOD__LEFT));
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.MOD__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.MOD__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getModAccess().getModLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getModAccess().getRightPrimaryParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -1678,7 +1655,17 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (left=Multiplication_Multiplication_1_0 right=Division)
 	 */
 	protected void sequence_Multiplication(EObject context, Multiplication semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.MULTIPLICATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.MULTIPLICATION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.MULTIPLICATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.MULTIPLICATION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMultiplicationAccess().getRightDivisionParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -1687,7 +1674,14 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 *     value=NUMBER_LITERAL
 	 */
 	protected void sequence_NumberLiteral(EObject context, NumberLiteral semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.NUMBER_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.NUMBER_LITERAL__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNumberLiteralAccess().getValueNUMBER_LITERALTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -1712,26 +1706,26 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     printValue=STRING
+	 *     (printParam=QueryFunction | printParam=Expression)
 	 */
 	protected void sequence_PrintParam(EObject context, Print semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PRINT__PRINT_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PRINT__PRINT_VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPrintParamAccess().getPrintValueSTRINGTerminalRuleCall_0_0(), semanticObject.getPrintValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     queryValue=STRING
+	 *     queryParam=Expression
 	 */
 	protected void sequence_QueryParam(EObject context, Query semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.QUERY__QUERY_PARAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.QUERY__QUERY_PARAM));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getQueryParamAccess().getQueryParamExpressionParserRuleCall_0(), semanticObject.getQueryParam());
+		feeder.finish();
 	}
 	
 	
@@ -1765,31 +1759,39 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (left=Substraction_Substraction_1_0 right=Multiplication)
 	 */
 	protected void sequence_Substraction(EObject context, Substraction semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.SUBSTRACTION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.SUBSTRACTION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.SUBSTRACTION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.SUBSTRACTION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getSubstractionAccess().getRightMultiplicationParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=VariableCall (cases+=STRING statements+=Statement*)* statements+=Statement*)
-	 */
-	protected void sequence_SwitchStatement(EObject context, SwitchStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     variableCall=ValidID
+	 *     variableCall=IDENTIFIER
 	 */
 	protected void sequence_VariableCall(EObject context, VariableCall semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.VARIABLE_CALL__VARIABLE_CALL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.VARIABLE_CALL__VARIABLE_CALL));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getVariableCallAccess().getVariableCallIDENTIFIERTerminalRuleCall_1_0(), semanticObject.getVariableCall());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (global?='global'? name=ValidID variableValue=VariableParam)
+	 *     (isGlobal?=Global? name=IDENTIFIER variableValue=VariableParam)
 	 */
 	protected void sequence_VariableDecl(EObject context, VariableDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1798,7 +1800,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (variableStringParam=STRING | variableExpressionParam=Expression | variableQueryParam=Query | variableBolleanValue=BooleanValue)
+	 *     (variableExpressionParam=Expression | variableQueryParam=QueryFunction | variableBolleanValue=BooleanValue)
 	 */
 	protected void sequence_VariableParam(EObject context, VariableParam semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

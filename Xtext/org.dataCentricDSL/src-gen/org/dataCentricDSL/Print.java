@@ -11,7 +11,7 @@ package org.dataCentricDSL;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.Print#getPrintValue <em>Print Value</em>}</li>
+ *   <li>{@link org.dataCentricDSL.Print#getPrintParam <em>Print Param</em>}</li>
  * </ul>
  * </p>
  *
@@ -19,32 +19,32 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface Print extends SimpleStatement
+public interface Print extends PrintFunction
 {
   /**
-   * Returns the value of the '<em><b>Print Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Print Param</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Print Value</em>' attribute isn't clear,
+   * If the meaning of the '<em>Print Param</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Print Value</em>' attribute.
-   * @see #setPrintValue(String)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getPrint_PrintValue()
-   * @model
+   * @return the value of the '<em>Print Param</em>' containment reference.
+   * @see #setPrintParam(MultiAssignRightOperand)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getPrint_PrintParam()
+   * @model containment="true"
    * @generated
    */
-  String getPrintValue();
+  MultiAssignRightOperand getPrintParam();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.Print#getPrintValue <em>Print Value</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.Print#getPrintParam <em>Print Param</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Print Value</em>' attribute.
-   * @see #getPrintValue()
+   * @param value the new value of the '<em>Print Param</em>' containment reference.
+   * @see #getPrintParam()
    * @generated
    */
-  void setPrintValue(String value);
+  void setPrintParam(MultiAssignRightOperand value);
 
 } // Print

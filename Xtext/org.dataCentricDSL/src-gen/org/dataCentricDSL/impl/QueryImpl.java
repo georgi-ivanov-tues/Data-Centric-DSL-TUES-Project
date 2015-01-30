@@ -3,13 +3,14 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.MultiAssignRightOperand;
-import org.dataCentricDSL.Print;
+import org.dataCentricDSL.Expression;
 import org.dataCentricDSL.Query;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -20,54 +21,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.QueryImpl#getPrintValue <em>Print Value</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.QueryImpl#getQueryValue <em>Query Value</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.QueryImpl#getQueryParam <em>Query Param</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class QueryImpl extends SimpleStatementImpl implements Query
+public class QueryImpl extends QueryFunctionImpl implements Query
 {
   /**
-   * The default value of the '{@link #getPrintValue() <em>Print Value</em>}' attribute.
+   * The cached value of the '{@link #getQueryParam() <em>Query Param</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrintValue()
+   * @see #getQueryParam()
    * @generated
    * @ordered
    */
-  protected static final String PRINT_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPrintValue() <em>Print Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPrintValue()
-   * @generated
-   * @ordered
-   */
-  protected String printValue = PRINT_VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getQueryValue() <em>Query Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQueryValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String QUERY_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getQueryValue() <em>Query Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQueryValue()
-   * @generated
-   * @ordered
-   */
-  protected String queryValue = QUERY_VALUE_EDEFAULT;
+  protected Expression queryParam;
 
   /**
    * <!-- begin-user-doc -->
@@ -95,9 +65,9 @@ public class QueryImpl extends SimpleStatementImpl implements Query
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPrintValue()
+  public Expression getQueryParam()
   {
-    return printValue;
+    return queryParam;
   }
 
   /**
@@ -105,12 +75,16 @@ public class QueryImpl extends SimpleStatementImpl implements Query
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrintValue(String newPrintValue)
+  public NotificationChain basicSetQueryParam(Expression newQueryParam, NotificationChain msgs)
   {
-    String oldPrintValue = printValue;
-    printValue = newPrintValue;
+    Expression oldQueryParam = queryParam;
+    queryParam = newQueryParam;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.QUERY__PRINT_VALUE, oldPrintValue, printValue));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.QUERY__QUERY_PARAM, oldQueryParam, newQueryParam);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -118,9 +92,20 @@ public class QueryImpl extends SimpleStatementImpl implements Query
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getQueryValue()
+  public void setQueryParam(Expression newQueryParam)
   {
-    return queryValue;
+    if (newQueryParam != queryParam)
+    {
+      NotificationChain msgs = null;
+      if (queryParam != null)
+        msgs = ((InternalEObject)queryParam).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.QUERY__QUERY_PARAM, null, msgs);
+      if (newQueryParam != null)
+        msgs = ((InternalEObject)newQueryParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.QUERY__QUERY_PARAM, null, msgs);
+      msgs = basicSetQueryParam(newQueryParam, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.QUERY__QUERY_PARAM, newQueryParam, newQueryParam));
   }
 
   /**
@@ -128,12 +113,15 @@ public class QueryImpl extends SimpleStatementImpl implements Query
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setQueryValue(String newQueryValue)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldQueryValue = queryValue;
-    queryValue = newQueryValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.QUERY__QUERY_VALUE, oldQueryValue, queryValue));
+    switch (featureID)
+    {
+      case DataCentricDSLPackage.QUERY__QUERY_PARAM:
+        return basicSetQueryParam(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -146,10 +134,8 @@ public class QueryImpl extends SimpleStatementImpl implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__PRINT_VALUE:
-        return getPrintValue();
-      case DataCentricDSLPackage.QUERY__QUERY_VALUE:
-        return getQueryValue();
+      case DataCentricDSLPackage.QUERY__QUERY_PARAM:
+        return getQueryParam();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -164,11 +150,8 @@ public class QueryImpl extends SimpleStatementImpl implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__PRINT_VALUE:
-        setPrintValue((String)newValue);
-        return;
-      case DataCentricDSLPackage.QUERY__QUERY_VALUE:
-        setQueryValue((String)newValue);
+      case DataCentricDSLPackage.QUERY__QUERY_PARAM:
+        setQueryParam((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -184,11 +167,8 @@ public class QueryImpl extends SimpleStatementImpl implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__PRINT_VALUE:
-        setPrintValue(PRINT_VALUE_EDEFAULT);
-        return;
-      case DataCentricDSLPackage.QUERY__QUERY_VALUE:
-        setQueryValue(QUERY_VALUE_EDEFAULT);
+      case DataCentricDSLPackage.QUERY__QUERY_PARAM:
+        setQueryParam((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -204,83 +184,10 @@ public class QueryImpl extends SimpleStatementImpl implements Query
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.QUERY__PRINT_VALUE:
-        return PRINT_VALUE_EDEFAULT == null ? printValue != null : !PRINT_VALUE_EDEFAULT.equals(printValue);
-      case DataCentricDSLPackage.QUERY__QUERY_VALUE:
-        return QUERY_VALUE_EDEFAULT == null ? queryValue != null : !QUERY_VALUE_EDEFAULT.equals(queryValue);
+      case DataCentricDSLPackage.QUERY__QUERY_PARAM:
+        return queryParam != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == Print.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case DataCentricDSLPackage.QUERY__PRINT_VALUE: return DataCentricDSLPackage.PRINT__PRINT_VALUE;
-        default: return -1;
-      }
-    }
-    if (baseClass == MultiAssignRightOperand.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == Print.class)
-    {
-      switch (baseFeatureID)
-      {
-        case DataCentricDSLPackage.PRINT__PRINT_VALUE: return DataCentricDSLPackage.QUERY__PRINT_VALUE;
-        default: return -1;
-      }
-    }
-    if (baseClass == MultiAssignRightOperand.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (printValue: ");
-    result.append(printValue);
-    result.append(", queryValue: ");
-    result.append(queryValue);
-    result.append(')');
-    return result.toString();
   }
 
 } //QueryImpl

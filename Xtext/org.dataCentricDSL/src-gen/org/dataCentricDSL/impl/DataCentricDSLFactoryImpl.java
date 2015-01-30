@@ -68,7 +68,9 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.STATEMENT: return createStatement();
       case DataCentricDSLPackage.SIMPLE_STATEMENT: return createSimpleStatement();
       case DataCentricDSLPackage.VARIABLE_DECL: return createVariableDecl();
+      case DataCentricDSLPackage.QUERY_FUNCTION: return createQueryFunction();
       case DataCentricDSLPackage.QUERY: return createQuery();
+      case DataCentricDSLPackage.PRINT_FUNCTION: return createPrintFunction();
       case DataCentricDSLPackage.PRINT: return createPrint();
       case DataCentricDSLPackage.FUNCTION_CALL: return createFunctionCall();
       case DataCentricDSLPackage.VARIABLE_CALL: return createVariableCall();
@@ -76,7 +78,6 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.COMPOUND_STATEMENT: return createCompoundStatement();
       case DataCentricDSLPackage.FUNCTION_DECL: return createFunctionDecl();
       case DataCentricDSLPackage.IF_STATEMENT: return createIfStatement();
-      case DataCentricDSLPackage.SWITCH_STATEMENT: return createSwitchStatement();
       case DataCentricDSLPackage.WHILE_STATEMENT: return createWhileStatement();
       case DataCentricDSLPackage.FOR_STATEMENT: return createForStatement();
       case DataCentricDSLPackage.STATEMENT_CONDITION: return createStatementCondition();
@@ -149,10 +150,32 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
+  public QueryFunction createQueryFunction()
+  {
+    QueryFunctionImpl queryFunction = new QueryFunctionImpl();
+    return queryFunction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Query createQuery()
   {
     QueryImpl query = new QueryImpl();
     return query;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrintFunction createPrintFunction()
+  {
+    PrintFunctionImpl printFunction = new PrintFunctionImpl();
+    return printFunction;
   }
 
   /**
@@ -230,17 +253,6 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     IfStatementImpl ifStatement = new IfStatementImpl();
     return ifStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SwitchStatement createSwitchStatement()
-  {
-    SwitchStatementImpl switchStatement = new SwitchStatementImpl();
-    return switchStatement;
   }
 
   /**

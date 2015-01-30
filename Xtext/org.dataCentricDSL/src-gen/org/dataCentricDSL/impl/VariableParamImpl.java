@@ -5,7 +5,7 @@ package org.dataCentricDSL.impl;
 import org.dataCentricDSL.BooleanValue;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Expression;
-import org.dataCentricDSL.Query;
+import org.dataCentricDSL.QueryFunction;
 import org.dataCentricDSL.VariableParam;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.VariableParamImpl#getVariableStringParam <em>Variable String Param</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.VariableParamImpl#getVariableExpressionParam <em>Variable Expression Param</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.VariableParamImpl#getVariableQueryParam <em>Variable Query Param</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.VariableParamImpl#getVariableBolleanValue <em>Variable Bollean Value</em>}</li>
@@ -34,26 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class VariableParamImpl extends VariableDeclImpl implements VariableParam
 {
-  /**
-   * The default value of the '{@link #getVariableStringParam() <em>Variable String Param</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVariableStringParam()
-   * @generated
-   * @ordered
-   */
-  protected static final String VARIABLE_STRING_PARAM_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getVariableStringParam() <em>Variable String Param</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVariableStringParam()
-   * @generated
-   * @ordered
-   */
-  protected String variableStringParam = VARIABLE_STRING_PARAM_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getVariableExpressionParam() <em>Variable Expression Param</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -72,7 +51,7 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
    * @generated
    * @ordered
    */
-  protected Query variableQueryParam;
+  protected QueryFunction variableQueryParam;
 
   /**
    * The cached value of the '{@link #getVariableBolleanValue() <em>Variable Bollean Value</em>}' containment reference.
@@ -103,29 +82,6 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
   protected EClass eStaticClass()
   {
     return DataCentricDSLPackage.Literals.VARIABLE_PARAM;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getVariableStringParam()
-  {
-    return variableStringParam;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVariableStringParam(String newVariableStringParam)
-  {
-    String oldVariableStringParam = variableStringParam;
-    variableStringParam = newVariableStringParam;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_STRING_PARAM, oldVariableStringParam, variableStringParam));
   }
 
   /**
@@ -181,7 +137,7 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
    * <!-- end-user-doc -->
    * @generated
    */
-  public Query getVariableQueryParam()
+  public QueryFunction getVariableQueryParam()
   {
     return variableQueryParam;
   }
@@ -191,9 +147,9 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVariableQueryParam(Query newVariableQueryParam, NotificationChain msgs)
+  public NotificationChain basicSetVariableQueryParam(QueryFunction newVariableQueryParam, NotificationChain msgs)
   {
-    Query oldVariableQueryParam = variableQueryParam;
+    QueryFunction oldVariableQueryParam = variableQueryParam;
     variableQueryParam = newVariableQueryParam;
     if (eNotificationRequired())
     {
@@ -208,7 +164,7 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableQueryParam(Query newVariableQueryParam)
+  public void setVariableQueryParam(QueryFunction newVariableQueryParam)
   {
     if (newVariableQueryParam != variableQueryParam)
     {
@@ -302,8 +258,6 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_STRING_PARAM:
-        return getVariableStringParam();
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_EXPRESSION_PARAM:
         return getVariableExpressionParam();
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_QUERY_PARAM:
@@ -324,14 +278,11 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_STRING_PARAM:
-        setVariableStringParam((String)newValue);
-        return;
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_EXPRESSION_PARAM:
         setVariableExpressionParam((Expression)newValue);
         return;
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_QUERY_PARAM:
-        setVariableQueryParam((Query)newValue);
+        setVariableQueryParam((QueryFunction)newValue);
         return;
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_BOLLEAN_VALUE:
         setVariableBolleanValue((BooleanValue)newValue);
@@ -350,14 +301,11 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_STRING_PARAM:
-        setVariableStringParam(VARIABLE_STRING_PARAM_EDEFAULT);
-        return;
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_EXPRESSION_PARAM:
         setVariableExpressionParam((Expression)null);
         return;
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_QUERY_PARAM:
-        setVariableQueryParam((Query)null);
+        setVariableQueryParam((QueryFunction)null);
         return;
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_BOLLEAN_VALUE:
         setVariableBolleanValue((BooleanValue)null);
@@ -376,8 +324,6 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_STRING_PARAM:
-        return VARIABLE_STRING_PARAM_EDEFAULT == null ? variableStringParam != null : !VARIABLE_STRING_PARAM_EDEFAULT.equals(variableStringParam);
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_EXPRESSION_PARAM:
         return variableExpressionParam != null;
       case DataCentricDSLPackage.VARIABLE_PARAM__VARIABLE_QUERY_PARAM:
@@ -386,23 +332,6 @@ public class VariableParamImpl extends VariableDeclImpl implements VariableParam
         return variableBolleanValue != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (variableStringParam: ");
-    result.append(variableStringParam);
-    result.append(')');
-    return result.toString();
   }
 
 } //VariableParamImpl

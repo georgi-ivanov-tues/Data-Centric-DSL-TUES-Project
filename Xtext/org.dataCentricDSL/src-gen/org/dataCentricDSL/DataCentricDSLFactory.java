@@ -59,6 +59,15 @@ public interface DataCentricDSLFactory extends EFactory
   VariableDecl createVariableDecl();
 
   /**
+   * Returns a new object of class '<em>Query Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Query Function</em>'.
+   * @generated
+   */
+  QueryFunction createQueryFunction();
+
+  /**
    * Returns a new object of class '<em>Query</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -66,6 +75,15 @@ public interface DataCentricDSLFactory extends EFactory
    * @generated
    */
   Query createQuery();
+
+  /**
+   * Returns a new object of class '<em>Print Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Print Function</em>'.
+   * @generated
+   */
+  PrintFunction createPrintFunction();
 
   /**
    * Returns a new object of class '<em>Print</em>'.
@@ -129,15 +147,6 @@ public interface DataCentricDSLFactory extends EFactory
    * @generated
    */
   IfStatement createIfStatement();
-
-  /**
-   * Returns a new object of class '<em>Switch Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Switch Statement</em>'.
-   * @generated
-   */
-  SwitchStatement createSwitchStatement();
 
   /**
    * Returns a new object of class '<em>While Statement</em>'.
