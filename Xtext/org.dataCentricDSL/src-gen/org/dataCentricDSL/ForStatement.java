@@ -2,7 +2,6 @@
  */
 package org.dataCentricDSL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,12 +84,12 @@ public interface ForStatement extends CompoundStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Operation</em>' containment reference.
-   * @see #setOperation(EObject)
+   * @see #setOperation(SimpleStatement)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getForStatement_Operation()
    * @model containment="true"
    * @generated
    */
-  EObject getOperation();
+  SimpleStatement getOperation();
 
   /**
    * Sets the value of the '{@link org.dataCentricDSL.ForStatement#getOperation <em>Operation</em>}' containment reference.
@@ -100,6 +99,6 @@ public interface ForStatement extends CompoundStatement
    * @see #getOperation()
    * @generated
    */
-  void setOperation(EObject value);
+  void setOperation(SimpleStatement value);
 
 } // ForStatement

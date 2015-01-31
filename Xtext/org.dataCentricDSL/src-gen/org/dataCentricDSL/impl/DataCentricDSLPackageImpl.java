@@ -12,13 +12,11 @@ import org.dataCentricDSL.DataCentricDSLFactory;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Division;
 import org.dataCentricDSL.Expression;
-import org.dataCentricDSL.ForMultiAssign;
 import org.dataCentricDSL.ForStatement;
 import org.dataCentricDSL.FunctionCall;
 import org.dataCentricDSL.FunctionDecl;
 import org.dataCentricDSL.IfStatement;
 import org.dataCentricDSL.Mod;
-import org.dataCentricDSL.MultiAssign;
 import org.dataCentricDSL.MultiAssignRightOperand;
 import org.dataCentricDSL.Multiplication;
 import org.dataCentricDSL.NumberLiteral;
@@ -184,20 +182,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * @generated
    */
   private EClass conditionElementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass forMultiAssignEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass multiAssignEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -744,86 +728,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getForMultiAssign()
-  {
-    return forMultiAssignEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getForMultiAssign_Left()
-  {
-    return (EReference)forMultiAssignEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getForMultiAssign_Op()
-  {
-    return (EAttribute)forMultiAssignEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getForMultiAssign_Right()
-  {
-    return (EAttribute)forMultiAssignEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getMultiAssign()
-  {
-    return multiAssignEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMultiAssign_Left()
-  {
-    return (EReference)multiAssignEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getMultiAssign_Op()
-  {
-    return (EAttribute)multiAssignEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMultiAssign_Right()
-  {
-    return (EReference)multiAssignEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getMultiAssignRightOperand()
   {
     return multiAssignRightOperandEClass;
@@ -1198,16 +1102,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
 
     conditionElementEClass = createEClass(CONDITION_ELEMENT);
 
-    forMultiAssignEClass = createEClass(FOR_MULTI_ASSIGN);
-    createEReference(forMultiAssignEClass, FOR_MULTI_ASSIGN__LEFT);
-    createEAttribute(forMultiAssignEClass, FOR_MULTI_ASSIGN__OP);
-    createEAttribute(forMultiAssignEClass, FOR_MULTI_ASSIGN__RIGHT);
-
-    multiAssignEClass = createEClass(MULTI_ASSIGN);
-    createEReference(multiAssignEClass, MULTI_ASSIGN__LEFT);
-    createEAttribute(multiAssignEClass, MULTI_ASSIGN__OP);
-    createEReference(multiAssignEClass, MULTI_ASSIGN__RIGHT);
-
     multiAssignRightOperandEClass = createEClass(MULTI_ASSIGN_RIGHT_OPERAND);
 
     postfixOperationEClass = createEClass(POSTFIX_OPERATION);
@@ -1294,7 +1188,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     ifStatementEClass.getESuperTypes().add(this.getCompoundStatement());
     whileStatementEClass.getESuperTypes().add(this.getCompoundStatement());
     forStatementEClass.getESuperTypes().add(this.getCompoundStatement());
-    multiAssignEClass.getESuperTypes().add(this.getSimpleStatement());
     postfixOperationEClass.getESuperTypes().add(this.getSimpleStatement());
     stringLiteralEClass.getESuperTypes().add(this.getExpression());
     numberLiteralEClass.getESuperTypes().add(this.getExpression());
@@ -1355,7 +1248,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(forStatementEClass, ForStatement.class, "ForStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getForStatement_ForVar(), this.getVariableDecl(), null, "forVar", null, 0, 1, ForStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getForStatement_ForCondition(), this.getStatementCondition(), null, "forCondition", null, 0, 1, ForStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getForStatement_Operation(), ecorePackage.getEObject(), null, "operation", null, 0, 1, ForStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForStatement_Operation(), this.getSimpleStatement(), null, "operation", null, 0, 1, ForStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementConditionEClass, StatementCondition.class, "StatementCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStatementCondition_StatementCondition(), this.getCondition(), null, "statementCondition", null, 0, -1, StatementCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1365,16 +1258,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEAttribute(getCondition_Op(), ecorePackage.getEString(), "op", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionElementEClass, ConditionElement.class, "ConditionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(forMultiAssignEClass, ForMultiAssign.class, "ForMultiAssign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getForMultiAssign_Left(), this.getVariableCall(), null, "left", null, 0, 1, ForMultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getForMultiAssign_Op(), ecorePackage.getEString(), "op", null, 0, 1, ForMultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getForMultiAssign_Right(), ecorePackage.getEInt(), "right", null, 0, 1, ForMultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(multiAssignEClass, MultiAssign.class, "MultiAssign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMultiAssign_Left(), this.getVariableCall(), null, "left", null, 0, 1, MultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMultiAssign_Op(), ecorePackage.getEString(), "op", null, 0, 1, MultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMultiAssign_Right(), this.getMultiAssignRightOperand(), null, "right", null, 0, 1, MultiAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(multiAssignRightOperandEClass, MultiAssignRightOperand.class, "MultiAssignRightOperand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

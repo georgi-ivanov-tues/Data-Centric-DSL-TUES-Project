@@ -56,7 +56,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="forCondition" eType="#//StatementCondition"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="#//SimpleStatement"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StatementCondition">
@@ -70,19 +70,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ForMultiAssign">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//VariableCall"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="right" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultiAssign" eSuperTypes="#//SimpleStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//VariableCall"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//MultiAssignRightOperand"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiAssignRightOperand"/>
   <eClassifiers xsi:type="ecore:EClass" name="PostfixOperation" eSuperTypes="#//SimpleStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="call" eType="#//VariableCall"

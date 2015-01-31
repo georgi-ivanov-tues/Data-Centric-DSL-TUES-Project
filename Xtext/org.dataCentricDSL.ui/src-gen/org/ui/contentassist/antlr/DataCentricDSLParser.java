@@ -51,7 +51,6 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConditionElementAccess().getAlternatives(), "rule__ConditionElement__Alternatives");
 					put(grammarAccess.getMultiAssignRightOperandAccess().getAlternatives(), "rule__MultiAssignRightOperand__Alternatives");
 					put(grammarAccess.getBooleanValueAccess().getValueAlternatives_0(), "rule__BooleanValue__ValueAlternatives_0");
-					put(grammarAccess.getMultiAssignOperatorAccess().getAlternatives(), "rule__MultiAssignOperator__Alternatives");
 					put(grammarAccess.getPostfixOperationOperatorAccess().getAlternatives(), "rule__PostfixOperationOperator__Alternatives");
 					put(grammarAccess.getOpCompareAccess().getAlternatives(), "rule__OpCompare__Alternatives");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
@@ -125,8 +124,6 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStatementConditionAccess().getGroup_1(), "rule__StatementCondition__Group_1__0");
 					put(grammarAccess.getConditionAccess().getGroup(), "rule__Condition__Group__0");
 					put(grammarAccess.getConditionAccess().getGroup_1(), "rule__Condition__Group_1__0");
-					put(grammarAccess.getForMultiAssignAccess().getGroup(), "rule__ForMultiAssign__Group__0");
-					put(grammarAccess.getMultiAssignAccess().getGroup(), "rule__MultiAssign__Group__0");
 					put(grammarAccess.getPostfixOperationAccess().getGroup(), "rule__PostfixOperation__Group__0");
 					put(grammarAccess.getElseIfAccess().getGroup(), "rule__ElseIf__Group__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
@@ -346,12 +343,6 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConditionAccess().getExpressionsAssignment_0(), "rule__Condition__ExpressionsAssignment_0");
 					put(grammarAccess.getConditionAccess().getOpAssignment_1_0(), "rule__Condition__OpAssignment_1_0");
 					put(grammarAccess.getConditionAccess().getExpressionsAssignment_1_1(), "rule__Condition__ExpressionsAssignment_1_1");
-					put(grammarAccess.getForMultiAssignAccess().getLeftAssignment_0(), "rule__ForMultiAssign__LeftAssignment_0");
-					put(grammarAccess.getForMultiAssignAccess().getOpAssignment_1(), "rule__ForMultiAssign__OpAssignment_1");
-					put(grammarAccess.getForMultiAssignAccess().getRightAssignment_2(), "rule__ForMultiAssign__RightAssignment_2");
-					put(grammarAccess.getMultiAssignAccess().getLeftAssignment_0(), "rule__MultiAssign__LeftAssignment_0");
-					put(grammarAccess.getMultiAssignAccess().getOpAssignment_1(), "rule__MultiAssign__OpAssignment_1");
-					put(grammarAccess.getMultiAssignAccess().getRightAssignment_2(), "rule__MultiAssign__RightAssignment_2");
 					put(grammarAccess.getPostfixOperationAccess().getCallAssignment_1(), "rule__PostfixOperation__CallAssignment_1");
 					put(grammarAccess.getPostfixOperationAccess().getOpAssignment_2(), "rule__PostfixOperation__OpAssignment_2");
 					put(grammarAccess.getStringLiteralAccess().getValueAssignment(), "rule__StringLiteral__ValueAssignment");

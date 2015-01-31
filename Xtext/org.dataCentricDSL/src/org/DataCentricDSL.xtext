@@ -16,7 +16,7 @@ SimpleStatement:
 	(VariableDecl | 
 	 QueryFunction | 
 	 PrintFunction | 
-	 MultiAssign | 
+//	 MultiAssign | 
 	 PostfixOperation | 
 	 FunctionCall) Semicolon
 ;
@@ -146,7 +146,9 @@ ForStatement:
 	{ForStatement}
 	For OpeningBracket forVar=VariableDecl Semicolon 
 		forCondition=StatementCondition Semicolon
-		operation=(PostfixOperation | ForMultiAssign | VariableDecl) 
+		operation=(PostfixOperation | 
+			//ForMultiAssign | 
+			VariableDecl) 
 		ClosingBracket OpeningCurlyBracket 
 			(statements+=Statement)* 
 	ClosingCurlyBracket
@@ -157,7 +159,7 @@ StatementCondition:
 ;
 
 Condition:
-	 expressions+=ConditionElement (op+=OpCompare expressions+=ConditionElement)?
+	expressions+=ConditionElement (op+=OpCompare expressions+=ConditionElement)?
 ;
 
 ConditionElement:
@@ -165,13 +167,13 @@ ConditionElement:
 	 BooleanValue)
 ;
 
-ForMultiAssign:
-	left=VariableCall op=MultiAssignOperator right=INT
-;
-
-MultiAssign:
-	left=VariableCall op=MultiAssignOperator right=MultiAssignRightOperand 
-;
+//ForMultiAssign:
+//	left=VariableCall op=MultiAssignOperator right=INT
+//;
+//
+//MultiAssign:
+//	left=VariableCall op=MultiAssignOperator right=MultiAssignRightOperand 
+//;
 
 MultiAssignRightOperand:
 	(Expression | 
@@ -195,13 +197,14 @@ BooleanValue:
 	'false')
 ;
 
-MultiAssignOperator:
-	('+=' | 
-	'-=' | 
-	'*=' | 
-	'/=' | 
-	'%=')
-;
+// still not supported in Antlr grammar
+//MultiAssignOperator:
+//	('+=' | 
+//	'-=' | 
+//	'*=' | 
+//	'/=' | 
+//	'%=')
+//;
 
 PostfixOperationOperator:
 	('--' |

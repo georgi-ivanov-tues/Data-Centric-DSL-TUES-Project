@@ -194,24 +194,6 @@ public interface DataCentricDSLFactory extends EFactory
   ConditionElement createConditionElement();
 
   /**
-   * Returns a new object of class '<em>For Multi Assign</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>For Multi Assign</em>'.
-   * @generated
-   */
-  ForMultiAssign createForMultiAssign();
-
-  /**
-   * Returns a new object of class '<em>Multi Assign</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multi Assign</em>'.
-   * @generated
-   */
-  MultiAssign createMultiAssign();
-
-  /**
    * Returns a new object of class '<em>Multi Assign Right Operand</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

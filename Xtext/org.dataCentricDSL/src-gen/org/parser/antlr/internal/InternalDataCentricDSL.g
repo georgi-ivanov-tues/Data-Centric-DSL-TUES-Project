@@ -206,31 +206,21 @@ ruleSimpleStatement returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getSimpleStatementAccess().getMultiAssignParserRuleCall_0_3()); 
+        newCompositeNode(grammarAccess.getSimpleStatementAccess().getPostfixOperationParserRuleCall_0_3()); 
     }
-    this_MultiAssign_3=ruleMultiAssign
+    this_PostfixOperation_3=rulePostfixOperation
     { 
-        $current = $this_MultiAssign_3.current; 
+        $current = $this_PostfixOperation_3.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getSimpleStatementAccess().getPostfixOperationParserRuleCall_0_4()); 
+        newCompositeNode(grammarAccess.getSimpleStatementAccess().getFunctionCallParserRuleCall_0_4()); 
     }
-    this_PostfixOperation_4=rulePostfixOperation
+    this_FunctionCall_4=ruleFunctionCall
     { 
-        $current = $this_PostfixOperation_4.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getSimpleStatementAccess().getFunctionCallParserRuleCall_0_5()); 
-    }
-    this_FunctionCall_5=ruleFunctionCall
-    { 
-        $current = $this_FunctionCall_5.current; 
+        $current = $this_FunctionCall_4.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1805,9 +1795,9 @@ ruleSemicolon
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getForStatementAccess().getOperationForMultiAssignParserRuleCall_7_0_1()); 
+	        newCompositeNode(grammarAccess.getForStatementAccess().getOperationVariableDeclParserRuleCall_7_0_1()); 
 	    }
-		lv_operation_7_2=ruleForMultiAssign		{
+		lv_operation_7_2=ruleVariableDecl		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getForStatementRule());
 	        }
@@ -1815,21 +1805,6 @@ ruleSemicolon
        			$current, 
        			"operation",
         		lv_operation_7_2, 
-        		"ForMultiAssign");
-	        afterParserOrEnumRuleCall();
-	    }
-
-    |		{ 
-	        newCompositeNode(grammarAccess.getForStatementAccess().getOperationVariableDeclParserRuleCall_7_0_2()); 
-	    }
-		lv_operation_7_3=ruleVariableDecl		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getForStatementRule());
-	        }
-       		set(
-       			$current, 
-       			"operation",
-        		lv_operation_7_3, 
         		"VariableDecl");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2075,194 +2050,6 @@ ruleConditionElement returns [EObject current=null]
 
 
 
-// Entry rule entryRuleForMultiAssign
-entryRuleForMultiAssign returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getForMultiAssignRule()); }
-	 iv_ruleForMultiAssign=ruleForMultiAssign 
-	 { $current=$iv_ruleForMultiAssign.current; } 
-	 EOF 
-;
-
-// Rule ForMultiAssign
-ruleForMultiAssign returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getForMultiAssignAccess().getLeftVariableCallParserRuleCall_0_0()); 
-	    }
-		lv_left_0_0=ruleVariableCall		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getForMultiAssignRule());
-	        }
-       		set(
-       			$current, 
-       			"left",
-        		lv_left_0_0, 
-        		"VariableCall");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getForMultiAssignAccess().getOpMultiAssignOperatorParserRuleCall_1_0()); 
-	    }
-		lv_op_1_0=ruleMultiAssignOperator		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getForMultiAssignRule());
-	        }
-       		set(
-       			$current, 
-       			"op",
-        		lv_op_1_0, 
-        		"MultiAssignOperator");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		lv_right_2_0=RULE_INT
-		{
-			newLeafNode(lv_right_2_0, grammarAccess.getForMultiAssignAccess().getRightINTTerminalRuleCall_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getForMultiAssignRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"right",
-        		lv_right_2_0, 
-        		"INT");
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRuleMultiAssign
-entryRuleMultiAssign returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getMultiAssignRule()); }
-	 iv_ruleMultiAssign=ruleMultiAssign 
-	 { $current=$iv_ruleMultiAssign.current; } 
-	 EOF 
-;
-
-// Rule MultiAssign
-ruleMultiAssign returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getMultiAssignAccess().getLeftVariableCallParserRuleCall_0_0()); 
-	    }
-		lv_left_0_0=ruleVariableCall		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getMultiAssignRule());
-	        }
-       		set(
-       			$current, 
-       			"left",
-        		lv_left_0_0, 
-        		"VariableCall");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getMultiAssignAccess().getOpMultiAssignOperatorParserRuleCall_1_0()); 
-	    }
-		lv_op_1_0=ruleMultiAssignOperator		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getMultiAssignRule());
-	        }
-       		set(
-       			$current, 
-       			"op",
-        		lv_op_1_0, 
-        		"MultiAssignOperator");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getMultiAssignAccess().getRightMultiAssignRightOperandParserRuleCall_2_0()); 
-	    }
-		lv_right_2_0=ruleMultiAssignRightOperand		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getMultiAssignRule());
-	        }
-       		set(
-       			$current, 
-       			"right",
-        		lv_right_2_0, 
-        		"MultiAssignRightOperand");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRuleMultiAssignRightOperand
-entryRuleMultiAssignRightOperand returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getMultiAssignRightOperandRule()); }
-	 iv_ruleMultiAssignRightOperand=ruleMultiAssignRightOperand 
-	 { $current=$iv_ruleMultiAssignRightOperand.current; } 
-	 EOF 
-;
-
-// Rule MultiAssignRightOperand
-ruleMultiAssignRightOperand returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getMultiAssignRightOperandAccess().getExpressionParserRuleCall_0()); 
-    }
-    this_Expression_0=ruleExpression
-    { 
-        $current = $this_Expression_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getMultiAssignRightOperandAccess().getQueryFunctionParserRuleCall_1()); 
-    }
-    this_QueryFunction_1=ruleQueryFunction
-    { 
-        $current = $this_QueryFunction_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
-;
-
-
-
 
 
 // Entry rule entryRulePostfixOperation
@@ -2452,61 +2239,6 @@ ruleBooleanValue returns [EObject current=null]
 )
 )
 ;
-
-
-
-
-
-// Entry rule entryRuleMultiAssignOperator
-entryRuleMultiAssignOperator returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getMultiAssignOperatorRule()); } 
-	 iv_ruleMultiAssignOperator=ruleMultiAssignOperator 
-	 { $current=$iv_ruleMultiAssignOperator.current.getText(); }  
-	 EOF 
-;
-
-// Rule MultiAssignOperator
-ruleMultiAssignOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-	kw='+=' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getMultiAssignOperatorAccess().getPlusSignEqualsSignKeyword_0()); 
-    }
-
-    |
-	kw='-=' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getMultiAssignOperatorAccess().getHyphenMinusEqualsSignKeyword_1()); 
-    }
-
-    |
-	kw='*=' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getMultiAssignOperatorAccess().getAsteriskEqualsSignKeyword_2()); 
-    }
-
-    |
-	kw='/=' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getMultiAssignOperatorAccess().getSolidusEqualsSignKeyword_3()); 
-    }
-
-    |
-	kw='%=' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getMultiAssignOperatorAccess().getPercentSignEqualsSignKeyword_4()); 
-    }
-)
-    ;
 
 
 

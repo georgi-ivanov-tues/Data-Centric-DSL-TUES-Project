@@ -634,98 +634,6 @@ public interface DataCentricDSLPackage extends EPackage
   int CONDITION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.ForMultiAssignImpl <em>For Multi Assign</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.ForMultiAssignImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getForMultiAssign()
-   * @generated
-   */
-  int FOR_MULTI_ASSIGN = 19;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_MULTI_ASSIGN__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_MULTI_ASSIGN__OP = 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_MULTI_ASSIGN__RIGHT = 2;
-
-  /**
-   * The number of structural features of the '<em>For Multi Assign</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_MULTI_ASSIGN_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.MultiAssignImpl <em>Multi Assign</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.MultiAssignImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiAssign()
-   * @generated
-   */
-  int MULTI_ASSIGN = 20;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTI_ASSIGN__LEFT = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTI_ASSIGN__OP = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTI_ASSIGN__RIGHT = SIMPLE_STATEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Multi Assign</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTI_ASSIGN_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 3;
-
-  /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.MultiAssignRightOperandImpl <em>Multi Assign Right Operand</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -733,7 +641,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiAssignRightOperand()
    * @generated
    */
-  int MULTI_ASSIGN_RIGHT_OPERAND = 21;
+  int MULTI_ASSIGN_RIGHT_OPERAND = 19;
 
   /**
    * The number of structural features of the '<em>Multi Assign Right Operand</em>' class.
@@ -752,7 +660,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPostfixOperation()
    * @generated
    */
-  int POSTFIX_OPERATION = 22;
+  int POSTFIX_OPERATION = 20;
 
   /**
    * The feature id for the '<em><b>Call</b></em>' containment reference.
@@ -789,7 +697,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 23;
+  int STRING_LITERAL = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -817,7 +725,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 24;
+  int NUMBER_LITERAL = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -845,7 +753,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 25;
+  int BOOLEAN_VALUE = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -873,7 +781,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableParam()
    * @generated
    */
-  int VARIABLE_PARAM = 26;
+  int VARIABLE_PARAM = 24;
 
   /**
    * The feature id for the '<em><b>Is Global</b></em>' attribute.
@@ -946,7 +854,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 27;
+  int ADDITION = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -983,7 +891,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getSubstraction()
    * @generated
    */
-  int SUBSTRACTION = 28;
+  int SUBSTRACTION = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1020,7 +928,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 29;
+  int MULTIPLICATION = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1057,7 +965,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getDivision()
    * @generated
    */
-  int DIVISION = 30;
+  int DIVISION = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1094,7 +1002,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMod()
    * @generated
    */
-  int MOD = 31;
+  int MOD = 29;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1544,92 +1452,6 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EClass getConditionElement();
-
-  /**
-   * Returns the meta object for class '{@link org.dataCentricDSL.ForMultiAssign <em>For Multi Assign</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>For Multi Assign</em>'.
-   * @see org.dataCentricDSL.ForMultiAssign
-   * @generated
-   */
-  EClass getForMultiAssign();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.ForMultiAssign#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.dataCentricDSL.ForMultiAssign#getLeft()
-   * @see #getForMultiAssign()
-   * @generated
-   */
-  EReference getForMultiAssign_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.dataCentricDSL.ForMultiAssign#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see org.dataCentricDSL.ForMultiAssign#getOp()
-   * @see #getForMultiAssign()
-   * @generated
-   */
-  EAttribute getForMultiAssign_Op();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.dataCentricDSL.ForMultiAssign#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Right</em>'.
-   * @see org.dataCentricDSL.ForMultiAssign#getRight()
-   * @see #getForMultiAssign()
-   * @generated
-   */
-  EAttribute getForMultiAssign_Right();
-
-  /**
-   * Returns the meta object for class '{@link org.dataCentricDSL.MultiAssign <em>Multi Assign</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Multi Assign</em>'.
-   * @see org.dataCentricDSL.MultiAssign
-   * @generated
-   */
-  EClass getMultiAssign();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.MultiAssign#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.dataCentricDSL.MultiAssign#getLeft()
-   * @see #getMultiAssign()
-   * @generated
-   */
-  EReference getMultiAssign_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.dataCentricDSL.MultiAssign#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see org.dataCentricDSL.MultiAssign#getOp()
-   * @see #getMultiAssign()
-   * @generated
-   */
-  EAttribute getMultiAssign_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.MultiAssign#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see org.dataCentricDSL.MultiAssign#getRight()
-   * @see #getMultiAssign()
-   * @generated
-   */
-  EReference getMultiAssign_Right();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.MultiAssignRightOperand <em>Multi Assign Right Operand</em>}'.
@@ -2319,74 +2141,6 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EClass CONDITION_ELEMENT = eINSTANCE.getConditionElement();
-
-    /**
-     * The meta object literal for the '{@link org.dataCentricDSL.impl.ForMultiAssignImpl <em>For Multi Assign</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.dataCentricDSL.impl.ForMultiAssignImpl
-     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getForMultiAssign()
-     * @generated
-     */
-    EClass FOR_MULTI_ASSIGN = eINSTANCE.getForMultiAssign();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_MULTI_ASSIGN__LEFT = eINSTANCE.getForMultiAssign_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FOR_MULTI_ASSIGN__OP = eINSTANCE.getForMultiAssign_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FOR_MULTI_ASSIGN__RIGHT = eINSTANCE.getForMultiAssign_Right();
-
-    /**
-     * The meta object literal for the '{@link org.dataCentricDSL.impl.MultiAssignImpl <em>Multi Assign</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.dataCentricDSL.impl.MultiAssignImpl
-     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiAssign()
-     * @generated
-     */
-    EClass MULTI_ASSIGN = eINSTANCE.getMultiAssign();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MULTI_ASSIGN__LEFT = eINSTANCE.getMultiAssign_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MULTI_ASSIGN__OP = eINSTANCE.getMultiAssign_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MULTI_ASSIGN__RIGHT = eINSTANCE.getMultiAssign_Right();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.MultiAssignRightOperandImpl <em>Multi Assign Right Operand</em>}' class.

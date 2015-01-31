@@ -237,22 +237,6 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DataCentricDSLPackage.FOR_MULTI_ASSIGN:
-      {
-        ForMultiAssign forMultiAssign = (ForMultiAssign)theEObject;
-        T result = caseForMultiAssign(forMultiAssign);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DataCentricDSLPackage.MULTI_ASSIGN:
-      {
-        MultiAssign multiAssign = (MultiAssign)theEObject;
-        T result = caseMultiAssign(multiAssign);
-        if (result == null) result = caseSimpleStatement(multiAssign);
-        if (result == null) result = caseStatement(multiAssign);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case DataCentricDSLPackage.MULTI_ASSIGN_RIGHT_OPERAND:
       {
         MultiAssignRightOperand multiAssignRightOperand = (MultiAssignRightOperand)theEObject;
@@ -661,38 +645,6 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConditionElement(ConditionElement object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>For Multi Assign</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>For Multi Assign</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseForMultiAssign(ForMultiAssign object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Multi Assign</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Multi Assign</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMultiAssign(MultiAssign object)
   {
     return null;
   }

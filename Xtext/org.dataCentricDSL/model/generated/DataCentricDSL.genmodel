@@ -60,16 +60,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Condition/op"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//ConditionElement"/>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//ForMultiAssign">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//ForMultiAssign/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//ForMultiAssign/op"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//ForMultiAssign/right"/>
-    </genClasses>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//MultiAssign">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//MultiAssign/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//MultiAssign/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//MultiAssign/right"/>
-    </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//MultiAssignRightOperand"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//PostfixOperation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//PostfixOperation/call"/>

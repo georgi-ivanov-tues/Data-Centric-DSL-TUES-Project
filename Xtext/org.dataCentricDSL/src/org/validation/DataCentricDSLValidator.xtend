@@ -10,13 +10,13 @@ import org.dataCentricDSL.ForStatement
 import org.dataCentricDSL.FunctionCall
 import org.dataCentricDSL.FunctionDecl
 import org.dataCentricDSL.IfStatement
-import org.dataCentricDSL.NumberLiteral
-import org.dataCentricDSL.StringLiteral
 import org.dataCentricDSL.VariableCall
 import org.dataCentricDSL.VariableDecl
 import org.dataCentricDSL.WhileStatement
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.validation.Check
+
+import static org.validation.ValidationUtils.*
 
 /**
  * Custom validation rules. 
@@ -25,29 +25,21 @@ import org.eclipse.xtext.validation.Check
  */
 class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
-	var boolean globalVariableFound = false;
-	
-//	@Check
-//	def void checkIfQueryStringIsEmpty(QueryFunction que){
-//		if(que.queryParam.toString.equals("")){
-//			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__QUERY_PARAM);
-//		}
-//	}
+	@Check
+	def void checkFunctionDeclarationPosition(FunctionDecl fd) {
+		if(!(fd.eContainer instanceof DataCentricDSL)) {
+			error("Fucntions must be defined before the code.", DataCentricDSLPackage.Literals::FUNCTION_DECL__NAME);
+		}
+	}
 	
 	@Check
-	def void checkConditionOperands(Condition c) {
+	def void checkConditionElementCompatibility(Condition c) {
 		if(c.expressions.length > 1) {
 			var leftOperand = c.expressions.get(0);
 			var rightOperand = c.expressions.get(1);
-			if(leftOperand instanceof NumberLiteral) {
-				if(!(rightOperand instanceof NumberLiteral)) {
-					error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
-				}
-			}
-			if(leftOperand instanceof StringLiteral) {
-				if(!(rightOperand instanceof StringLiteral)) {
-					error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
-				}
+			
+			if(!ValidationUtils.checkOperandsCompatibility(leftOperand, rightOperand)) {
+				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS);	
 			}
 		}
 	}
@@ -60,7 +52,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		}
 		
 		val elements = container.eContents.toArray.filter(typeof(FunctionDecl));
-		if(functionIsDeclared(elements, fc.name)) {
+		if(ValidationUtils.functionIsDeclared(elements, fc.name)) {
 			return;
 		}
 		
@@ -101,14 +93,14 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 						return;
 					}
 				}
-				if(container instanceof WhileStatement) {
-					if(namePersistsInArray((container as FunctionDecl).arguments, vc.variableCall)) {
+				if(container instanceof FunctionDecl) {
+					if(ValidationUtils.namePersistsInArray((container as FunctionDecl).arguments, vc.variableCall)) {
 						return;
 					}
 				}
 				containerElementIndex = container.eContents.indexOf(containerElement);
 				variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDecl));
-				if(variableIsDeclared(variables, vc.variableCall)) {
+				if(ValidationUtils.variableIsDeclared(variables, vc.variableCall)) {
 					return;
 				}
 				variables = null;
@@ -119,77 +111,13 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		}
 		containerElementIndex = container.eContents.indexOf(containerElement);
 		variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDecl));
-		if(variableIsDeclared(variables, vc.variableCall)) {
+		if(ValidationUtils.variableIsDeclared(variables, vc.variableCall)) {
 			return;
 		}
-		checkIfCalledVariableIsGlobal(container, vc.variableCall, containerElementIndex);
-		if(!globalVariableFound) {
+		ValidationUtils.checkIfCalledVariableIsGlobal(container, vc.variableCall, containerElementIndex);
+		if(!ValidationUtils.globalVariableFound) {
 			error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
 		}
-		globalVariableFound = false;
-	}
-
-	def void checkIfCalledVariableIsGlobal(EObject object, String name, int index) {
-		if(globalVariableFound) {
-			return;
-		}
-		if(object instanceof DataCentricDSL || object instanceof IfStatement
-			|| object instanceof ForStatement || object instanceof WhileStatement
-			|| object instanceof FunctionDecl
-		) {	
-			var int lastIndex;
-			var variableFound = false;
-			if(object instanceof DataCentricDSL) {
-				lastIndex = index;
-				variableFound = variableIsDeclared(object.eContents.subList(0, lastIndex).toArray
-									.filter(typeof(VariableDecl)).filter[isGlobal], name)
-			} else {
-				lastIndex = object.eContents.length;
-				variableFound = variableIsDeclared(object.eContents.toArray
-									.filter(typeof(VariableDecl)).filter[isGlobal], name);
-			}
-			if(variableFound) {
-				globalVariableFound = true;
-				return;
-			} else {
-				for(i : 0..< lastIndex) {
-					checkIfCalledVariableIsGlobal(object.eContents.get(i), name, -1);
-				}
-			}
-		} else if(object instanceof VariableDecl) {
-			if((object as VariableDecl).isGlobal && (object as VariableDecl).name.equals(name)) {
-				globalVariableFound = true;
-				return;
-			}
-		}
-	}
-
-	def boolean variableIsDeclared(VariableDecl[] variables, String name) {
-		if(variables != null) {
-			for(i : 0..< variables.length) {
-				if(variables.get(i).name.toString.equals(name)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	
-	def boolean functionIsDeclared(FunctionDecl[] functions, String name) {
-		for(i : 0..< functions.length) {
-			if(functions.get(i).name.toString.equals(name)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	def boolean namePersistsInArray(String[] array, String name) {
-		for(i : 0..< array.length) {
-			if(array.get(i).equals(name)) {
-				return true;
-			}
-		}
-		return false;
+		ValidationUtils.globalVariableFound = false;
 	}
 }
