@@ -6,22 +6,16 @@ import java.util.Collection;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.FunctionDecl;
-import org.dataCentricDSL.Statement;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,13 +26,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link org.dataCentricDSL.impl.FunctionDeclImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.FunctionDeclImpl#getArguments <em>Arguments</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.FunctionDeclImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionDeclImpl extends MinimalEObjectImpl.Container implements FunctionDecl
+public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionDecl
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -69,16 +62,6 @@ public class FunctionDeclImpl extends MinimalEObjectImpl.Container implements Fu
    * @ordered
    */
   protected EList<String> arguments;
-
-  /**
-   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStatements()
-   * @generated
-   * @ordered
-   */
-  protected EList<Statement> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -143,36 +126,6 @@ public class FunctionDeclImpl extends MinimalEObjectImpl.Container implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Statement> getStatements()
-  {
-    if (statements == null)
-    {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS);
-    }
-    return statements;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS:
-        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -182,8 +135,6 @@ public class FunctionDeclImpl extends MinimalEObjectImpl.Container implements Fu
         return getName();
       case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
         return getArguments();
-      case DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS:
-        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -206,10 +157,6 @@ public class FunctionDeclImpl extends MinimalEObjectImpl.Container implements Fu
         getArguments().clear();
         getArguments().addAll((Collection<? extends String>)newValue);
         return;
-      case DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS:
-        getStatements().clear();
-        getStatements().addAll((Collection<? extends Statement>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -230,9 +177,6 @@ public class FunctionDeclImpl extends MinimalEObjectImpl.Container implements Fu
       case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
         getArguments().clear();
         return;
-      case DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS:
-        getStatements().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -251,8 +195,6 @@ public class FunctionDeclImpl extends MinimalEObjectImpl.Container implements Fu
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
-      case DataCentricDSLPackage.FUNCTION_DECL__STATEMENTS:
-        return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

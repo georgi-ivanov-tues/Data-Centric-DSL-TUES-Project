@@ -170,11 +170,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createConditionElementAdapter();
       }
       @Override
-      public Adapter caseMultiAssignRightOperand(MultiAssignRightOperand object)
-      {
-        return createMultiAssignRightOperandAdapter();
-      }
-      @Override
       public Adapter casePostfixOperation(PostfixOperation object)
       {
         return createPostfixOperationAdapter();
@@ -527,21 +522,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConditionElementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.MultiAssignRightOperand <em>Multi Assign Right Operand</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.MultiAssignRightOperand
-   * @generated
-   */
-  public Adapter createMultiAssignRightOperandAdapter()
   {
     return null;
   }

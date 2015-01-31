@@ -77,12 +77,12 @@ ruleDataCentricDSL returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsFunctionDeclParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsStatementParserRuleCall_0()); 
 	    }
-		lv_elements_0_0=ruleFunctionDecl		{
+		lv_elements_0_0=ruleStatement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDataCentricDSLRule());
 	        }
@@ -90,30 +90,12 @@ ruleDataCentricDSL returns [EObject current=null]
        			$current, 
        			"elements",
         		lv_elements_0_0, 
-        		"FunctionDecl");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getDataCentricDSLAccess().getElementsStatementParserRuleCall_1_0()); 
-	    }
-		lv_elements_1_0=ruleStatement		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getDataCentricDSLRule());
-	        }
-       		add(
-       			$current, 
-       			"elements",
-        		lv_elements_1_0, 
         		"Statement");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*)
+)*
 ;
 
 
@@ -1189,31 +1171,41 @@ ruleCompoundStatement returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getCompoundStatementAccess().getIfStatementParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getCompoundStatementAccess().getFunctionDeclParserRuleCall_0()); 
     }
-    this_IfStatement_0=ruleIfStatement
+    this_FunctionDecl_0=ruleFunctionDecl
     { 
-        $current = $this_IfStatement_0.current; 
+        $current = $this_FunctionDecl_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getCompoundStatementAccess().getWhileStatementParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getCompoundStatementAccess().getIfStatementParserRuleCall_1()); 
     }
-    this_WhileStatement_1=ruleWhileStatement
+    this_IfStatement_1=ruleIfStatement
     { 
-        $current = $this_WhileStatement_1.current; 
+        $current = $this_IfStatement_1.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getCompoundStatementAccess().getForStatementParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getCompoundStatementAccess().getWhileStatementParserRuleCall_2()); 
     }
-    this_ForStatement_2=ruleForStatement
+    this_WhileStatement_2=ruleWhileStatement
     { 
-        $current = $this_ForStatement_2.current; 
+        $current = $this_WhileStatement_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCompoundStatementAccess().getForStatementParserRuleCall_3()); 
+    }
+    this_ForStatement_3=ruleForStatement
+    { 
+        $current = $this_ForStatement_3.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1878,16 +1870,16 @@ ruleStatementCondition returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStatementConditionAccess().getStatementConditionConditionParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getStatementConditionAccess().getConditionsConditionParserRuleCall_0_0()); 
 	    }
-		lv_statementCondition_0_0=ruleCondition		{
+		lv_conditions_0_0=ruleCondition		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStatementConditionRule());
 	        }
        		add(
        			$current, 
-       			"statementCondition",
-        		lv_statementCondition_0_0, 
+       			"conditions",
+        		lv_conditions_0_0, 
         		"Condition");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1913,16 +1905,16 @@ ruleOpOr
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStatementConditionAccess().getStatementConditionConditionParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getStatementConditionAccess().getConditionsConditionParserRuleCall_1_1_0()); 
 	    }
-		lv_statementCondition_3_0=ruleCondition		{
+		lv_conditions_3_0=ruleCondition		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStatementConditionRule());
 	        }
        		add(
        			$current, 
-       			"statementCondition",
-        		lv_statementCondition_3_0, 
+       			"conditions",
+        		lv_conditions_3_0, 
         		"Condition");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1952,52 +1944,42 @@ ruleCondition returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConditionAccess().getExpressionsConditionElementParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getConditionAccess().getConditionElementsConditionElementParserRuleCall_0_0()); 
 	    }
-		lv_expressions_0_0=ruleConditionElement		{
+		lv_conditionElements_0_0=ruleConditionElement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getConditionRule());
 	        }
        		add(
        			$current, 
-       			"expressions",
-        		lv_expressions_0_0, 
+       			"conditionElements",
+        		lv_conditionElements_0_0, 
         		"ConditionElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getConditionAccess().getOpOpCompareParserRuleCall_1_0_0()); 
-	    }
-		lv_op_1_0=ruleOpCompare		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getConditionRule());
-	        }
-       		add(
-       			$current, 
-       			"op",
-        		lv_op_1_0, 
-        		"OpCompare");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
 )(
+    { 
+        newCompositeNode(grammarAccess.getConditionAccess().getOpCompareParserRuleCall_1_0()); 
+    }
+ruleOpCompare
+    { 
+        afterParserOrEnumRuleCall();
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConditionAccess().getExpressionsConditionElementParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getConditionAccess().getConditionElementsConditionElementParserRuleCall_1_1_0()); 
 	    }
-		lv_expressions_2_0=ruleConditionElement		{
+		lv_conditionElements_2_0=ruleConditionElement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getConditionRule());
 	        }
        		add(
        			$current, 
-       			"expressions",
-        		lv_expressions_2_0, 
+       			"conditionElements",
+        		lv_conditionElements_2_0, 
         		"ConditionElement");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2045,8 +2027,6 @@ ruleConditionElement returns [EObject current=null]
     }
 )
 ;
-
-
 
 
 

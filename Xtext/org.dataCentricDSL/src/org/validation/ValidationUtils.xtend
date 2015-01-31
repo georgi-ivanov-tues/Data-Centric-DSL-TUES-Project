@@ -63,6 +63,7 @@ public class ValidationUtils {
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -72,6 +73,7 @@ public class ValidationUtils {
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -81,6 +83,7 @@ public class ValidationUtils {
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -100,6 +103,32 @@ public class ValidationUtils {
 				return false;
 			}	
 		}
+		
+		return true;
+	}
+	
+	def static boolean functionWithTheSameNameExists(FunctionDecl fd) {
+		var functionDeclarations = fd.eContainer.eContents.toArray.filter(typeof(FunctionDecl));
+		var indexOfThisFunctionDecl = fd.eContainer.eContents.indexOf(fd);
+		for(i : 0..< functionDeclarations.length) {
+			if(i != indexOfThisFunctionDecl) {
+				if(fd.name.equals(functionDeclarations.get(i).name)) {
+					return true;
+				}
+			}
+		}
+			
+		return false;
+	}
+	
+	def static boolean functionIsDeclaredBeforeTheCode(FunctionDecl fd) {
+		var elementsBeforeDeclaration = fd.eContainer.eContents.subList(0, fd.eContainer.eContents.indexOf(fd));
+		for(i : 0..< elementsBeforeDeclaration.length) {
+			if(!(elementsBeforeDeclaration.get(i) instanceof FunctionDecl)) {
+				return false;
+			}
+		}
+		
 		return true;
 	}
 	

@@ -404,13 +404,22 @@ public interface DataCentricDSLPackage extends EPackage
   int FUNCTION_DECL = 12;
 
   /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DECL__STATEMENTS = COMPOUND_STATEMENT__STATEMENTS;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_DECL__NAME = 0;
+  int FUNCTION_DECL__NAME = COMPOUND_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' attribute list.
@@ -419,16 +428,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_DECL__ARGUMENTS = 1;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DECL__STATEMENTS = 2;
+  int FUNCTION_DECL__ARGUMENTS = COMPOUND_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Function Decl</em>' class.
@@ -437,7 +437,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_DECL_FEATURE_COUNT = 3;
+  int FUNCTION_DECL_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.IfStatementImpl <em>If Statement</em>}' class.
@@ -579,13 +579,13 @@ public interface DataCentricDSLPackage extends EPackage
   int STATEMENT_CONDITION = 16;
 
   /**
-   * The feature id for the '<em><b>Statement Condition</b></em>' containment reference list.
+   * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT_CONDITION__STATEMENT_CONDITION = 0;
+  int STATEMENT_CONDITION__CONDITIONS = 0;
 
   /**
    * The number of structural features of the '<em>Statement Condition</em>' class.
@@ -607,22 +607,13 @@ public interface DataCentricDSLPackage extends EPackage
   int CONDITION = 17;
 
   /**
-   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+   * The feature id for the '<em><b>Condition Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDITION__EXPRESSIONS = 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION__OP = 1;
+  int CONDITION__CONDITION_ELEMENTS = 0;
 
   /**
    * The number of structural features of the '<em>Condition</em>' class.
@@ -631,26 +622,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.MultiAssignRightOperandImpl <em>Multi Assign Right Operand</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.MultiAssignRightOperandImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiAssignRightOperand()
-   * @generated
-   */
-  int MULTI_ASSIGN_RIGHT_OPERAND = 19;
-
-  /**
-   * The number of structural features of the '<em>Multi Assign Right Operand</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTI_ASSIGN_RIGHT_OPERAND_FEATURE_COUNT = 0;
+  int CONDITION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.PostfixOperationImpl <em>Postfix Operation</em>}' class.
@@ -660,7 +632,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPostfixOperation()
    * @generated
    */
-  int POSTFIX_OPERATION = 20;
+  int POSTFIX_OPERATION = 19;
 
   /**
    * The feature id for the '<em><b>Call</b></em>' containment reference.
@@ -697,7 +669,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 21;
+  int STRING_LITERAL = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -725,7 +697,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 22;
+  int NUMBER_LITERAL = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -753,7 +725,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 23;
+  int BOOLEAN_VALUE = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -781,7 +753,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableParam()
    * @generated
    */
-  int VARIABLE_PARAM = 24;
+  int VARIABLE_PARAM = 23;
 
   /**
    * The feature id for the '<em><b>Is Global</b></em>' attribute.
@@ -854,7 +826,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 25;
+  int ADDITION = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -891,7 +863,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getSubstraction()
    * @generated
    */
-  int SUBSTRACTION = 26;
+  int SUBSTRACTION = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -928,7 +900,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 27;
+  int MULTIPLICATION = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -965,7 +937,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getDivision()
    * @generated
    */
-  int DIVISION = 28;
+  int DIVISION = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1002,7 +974,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMod()
    * @generated
    */
-  int MOD = 29;
+  int MOD = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1295,17 +1267,6 @@ public interface DataCentricDSLPackage extends EPackage
   EAttribute getFunctionDecl_Arguments();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.FunctionDecl#getStatements <em>Statements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see org.dataCentricDSL.FunctionDecl#getStatements()
-   * @see #getFunctionDecl()
-   * @generated
-   */
-  EReference getFunctionDecl_Statements();
-
-  /**
    * Returns the meta object for class '{@link org.dataCentricDSL.IfStatement <em>If Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1401,15 +1362,15 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getStatementCondition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.StatementCondition#getStatementCondition <em>Statement Condition</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.StatementCondition#getConditions <em>Conditions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statement Condition</em>'.
-   * @see org.dataCentricDSL.StatementCondition#getStatementCondition()
+   * @return the meta object for the containment reference list '<em>Conditions</em>'.
+   * @see org.dataCentricDSL.StatementCondition#getConditions()
    * @see #getStatementCondition()
    * @generated
    */
-  EReference getStatementCondition_StatementCondition();
+  EReference getStatementCondition_Conditions();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.Condition <em>Condition</em>}'.
@@ -1422,26 +1383,15 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getCondition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.Condition#getExpressions <em>Expressions</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.Condition#getConditionElements <em>Condition Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Expressions</em>'.
-   * @see org.dataCentricDSL.Condition#getExpressions()
+   * @return the meta object for the containment reference list '<em>Condition Elements</em>'.
+   * @see org.dataCentricDSL.Condition#getConditionElements()
    * @see #getCondition()
    * @generated
    */
-  EReference getCondition_Expressions();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.dataCentricDSL.Condition#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Op</em>'.
-   * @see org.dataCentricDSL.Condition#getOp()
-   * @see #getCondition()
-   * @generated
-   */
-  EAttribute getCondition_Op();
+  EReference getCondition_ConditionElements();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.ConditionElement <em>Condition Element</em>}'.
@@ -1452,16 +1402,6 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EClass getConditionElement();
-
-  /**
-   * Returns the meta object for class '{@link org.dataCentricDSL.MultiAssignRightOperand <em>Multi Assign Right Operand</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Multi Assign Right Operand</em>'.
-   * @see org.dataCentricDSL.MultiAssignRightOperand
-   * @generated
-   */
-  EClass getMultiAssignRightOperand();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.PostfixOperation <em>Postfix Operation</em>}'.
@@ -2011,14 +1951,6 @@ public interface DataCentricDSLPackage extends EPackage
     EAttribute FUNCTION_DECL__ARGUMENTS = eINSTANCE.getFunctionDecl_Arguments();
 
     /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DECL__STATEMENTS = eINSTANCE.getFunctionDecl_Statements();
-
-    /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.IfStatementImpl <em>If Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2099,12 +2031,12 @@ public interface DataCentricDSLPackage extends EPackage
     EClass STATEMENT_CONDITION = eINSTANCE.getStatementCondition();
 
     /**
-     * The meta object literal for the '<em><b>Statement Condition</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STATEMENT_CONDITION__STATEMENT_CONDITION = eINSTANCE.getStatementCondition_StatementCondition();
+    EReference STATEMENT_CONDITION__CONDITIONS = eINSTANCE.getStatementCondition_Conditions();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.ConditionImpl <em>Condition</em>}' class.
@@ -2117,20 +2049,12 @@ public interface DataCentricDSLPackage extends EPackage
     EClass CONDITION = eINSTANCE.getCondition();
 
     /**
-     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Condition Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONDITION__EXPRESSIONS = eINSTANCE.getCondition_Expressions();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONDITION__OP = eINSTANCE.getCondition_Op();
+    EReference CONDITION__CONDITION_ELEMENTS = eINSTANCE.getCondition_ConditionElements();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.ConditionElementImpl <em>Condition Element</em>}' class.
@@ -2141,16 +2065,6 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EClass CONDITION_ELEMENT = eINSTANCE.getConditionElement();
-
-    /**
-     * The meta object literal for the '{@link org.dataCentricDSL.impl.MultiAssignRightOperandImpl <em>Multi Assign Right Operand</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.dataCentricDSL.impl.MultiAssignRightOperandImpl
-     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiAssignRightOperand()
-     * @generated
-     */
-    EClass MULTI_ASSIGN_RIGHT_OPERAND = eINSTANCE.getMultiAssignRightOperand();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.PostfixOperationImpl <em>Postfix Operation</em>}' class.

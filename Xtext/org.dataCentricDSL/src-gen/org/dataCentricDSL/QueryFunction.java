@@ -13,6 +13,6 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface QueryFunction extends SimpleStatement, MultiAssignRightOperand
+public interface QueryFunction extends SimpleStatement
 {
 } // QueryFunction

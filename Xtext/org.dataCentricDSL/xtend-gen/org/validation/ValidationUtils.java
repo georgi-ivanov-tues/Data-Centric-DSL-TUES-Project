@@ -173,4 +173,49 @@ public class ValidationUtils {
     }
     return true;
   }
+  
+  public static boolean functionWithTheSameNameExists(final FunctionDecl fd) {
+    EObject _eContainer = fd.eContainer();
+    EList<EObject> _eContents = _eContainer.eContents();
+    Object[] _array = _eContents.toArray();
+    Iterable<FunctionDecl> functionDeclarations = Iterables.<FunctionDecl>filter(((Iterable<?>)Conversions.doWrapArray(_array)), FunctionDecl.class);
+    EObject _eContainer_1 = fd.eContainer();
+    EList<EObject> _eContents_1 = _eContainer_1.eContents();
+    int indexOfThisFunctionDecl = _eContents_1.indexOf(fd);
+    final Iterable<FunctionDecl> _converted_functionDeclarations = (Iterable<FunctionDecl>)functionDeclarations;
+    int _length = ((Object[])Conversions.unwrapArray(_converted_functionDeclarations, Object.class)).length;
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
+    for (final Integer i : _doubleDotLessThan) {
+      if (((i).intValue() != indexOfThisFunctionDecl)) {
+        String _name = fd.getName();
+        final Iterable<FunctionDecl> _converted_functionDeclarations_1 = (Iterable<FunctionDecl>)functionDeclarations;
+        FunctionDecl _get = ((FunctionDecl[])Conversions.unwrapArray(_converted_functionDeclarations_1, FunctionDecl.class))[(i).intValue()];
+        String _name_1 = _get.getName();
+        boolean _equals = _name.equals(_name_1);
+        if (_equals) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  
+  public static boolean functionIsDeclaredBeforeTheCode(final FunctionDecl fd) {
+    EObject _eContainer = fd.eContainer();
+    EList<EObject> _eContents = _eContainer.eContents();
+    EObject _eContainer_1 = fd.eContainer();
+    EList<EObject> _eContents_1 = _eContainer_1.eContents();
+    int _indexOf = _eContents_1.indexOf(fd);
+    List<EObject> elementsBeforeDeclaration = _eContents.subList(0, _indexOf);
+    final List<EObject> _converted_elementsBeforeDeclaration = (List<EObject>)elementsBeforeDeclaration;
+    int _length = ((Object[])Conversions.unwrapArray(_converted_elementsBeforeDeclaration, Object.class)).length;
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
+    for (final Integer i : _doubleDotLessThan) {
+      EObject _get = elementsBeforeDeclaration.get((i).intValue());
+      if ((!(_get instanceof FunctionDecl))) {
+        return false;
+      }
+    }
+    return true;
+  }
 }

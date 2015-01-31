@@ -83,7 +83,6 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.STATEMENT_CONDITION: return createStatementCondition();
       case DataCentricDSLPackage.CONDITION: return createCondition();
       case DataCentricDSLPackage.CONDITION_ELEMENT: return createConditionElement();
-      case DataCentricDSLPackage.MULTI_ASSIGN_RIGHT_OPERAND: return createMultiAssignRightOperand();
       case DataCentricDSLPackage.POSTFIX_OPERATION: return createPostfixOperation();
       case DataCentricDSLPackage.STRING_LITERAL: return createStringLiteral();
       case DataCentricDSLPackage.NUMBER_LITERAL: return createNumberLiteral();
@@ -306,17 +305,6 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     ConditionElementImpl conditionElement = new ConditionElementImpl();
     return conditionElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MultiAssignRightOperand createMultiAssignRightOperand()
-  {
-    MultiAssignRightOperandImpl multiAssignRightOperand = new MultiAssignRightOperandImpl();
-    return multiAssignRightOperand;
   }
 
   /**

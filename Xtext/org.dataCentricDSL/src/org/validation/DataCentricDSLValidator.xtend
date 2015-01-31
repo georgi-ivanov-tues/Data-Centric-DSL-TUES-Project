@@ -28,18 +28,36 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	@Check
 	def void checkFunctionDeclarationPosition(FunctionDecl fd) {
 		if(!(fd.eContainer instanceof DataCentricDSL)) {
-			error("Fucntions must be defined before the code.", DataCentricDSLPackage.Literals::FUNCTION_DECL__NAME);
+			error("Functions cannot be declared within block statements.",
+				DataCentricDSLPackage.Literals::FUNCTION_DECL__NAME
+			);
+			return;
+			
+		} else {
+			if(!ValidationUtils.functionIsDeclaredBeforeTheCode(fd)) {
+				error("Functions must be declared at the beginning of the code.",
+					DataCentricDSLPackage.Literals::FUNCTION_DECL__NAME
+				);
+				return;
+			}
+			
+			if(ValidationUtils.functionWithTheSameNameExists(fd)) {
+				error("Function with the same name already exists.",
+					DataCentricDSLPackage.Literals::FUNCTION_DECL__NAME
+				);
+				return;
+			}
 		}
 	}
 	
 	@Check
 	def void checkConditionElementCompatibility(Condition c) {
-		if(c.expressions.length > 1) {
-			var leftOperand = c.expressions.get(0);
-			var rightOperand = c.expressions.get(1);
+		if(c.conditionElements.length > 1) {
+			var leftOperand = c.conditionElements.get(0);
+			var rightOperand = c.conditionElements.get(1);
 			
 			if(!ValidationUtils.checkOperandsCompatibility(leftOperand, rightOperand)) {
-				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS);	
+				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__CONDITION_ELEMENTS);	
 			}
 		}
 	}
@@ -57,22 +75,6 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		}
 		
 		error("Undefined function.", DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME);
-	}
-	
-	@Check
-	def void checkIfADeclaredFunctionWithTheSameNameExists(FunctionDecl fd) {
-		var functionDeclarations = fd.eContainer.eContents.toArray.filter(typeof(FunctionDecl));
-		var indexOfThisFunctionDecl = fd.eContainer.eContents.indexOf(fd);
-		for(i : 0..< functionDeclarations.length) {
-			if(i != indexOfThisFunctionDecl) {
-				if(fd.name.equals(functionDeclarations.get(i).name)) {
-					error("A declared function with the same name already exists.",
-						DataCentricDSLPackage.Literals::FUNCTION_DECL__NAME
-					);
-					return;
-				}
-			}
-		}
 	}
 	
 	@Check

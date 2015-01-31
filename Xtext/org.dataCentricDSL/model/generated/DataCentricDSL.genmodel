@@ -39,7 +39,6 @@
     <genClasses ecoreClass="DataCentricDSL.ecore#//FunctionDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//FunctionDecl/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//FunctionDecl/arguments"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//FunctionDecl/statements"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//IfStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//IfStatement/condition"/>
@@ -53,14 +52,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//ForStatement/operation"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//StatementCondition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//StatementCondition/statementCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//StatementCondition/conditions"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//Condition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Condition/expressions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//Condition/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//Condition/conditionElements"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//ConditionElement"/>
-    <genClasses ecoreClass="DataCentricDSL.ecore#//MultiAssignRightOperand"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//PostfixOperation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//PostfixOperation/call"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//PostfixOperation/op"/>

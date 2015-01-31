@@ -3,7 +3,6 @@ grammar org.DataCentricDSL with org.eclipse.xtext.xbase.Xbase
 generate dataCentricDSL "http://www.DataCentricDSL.org"
 
 DataCentricDSL:
-	(elements += FunctionDecl)*
 	(elements += Statement)*
 ;
 
@@ -13,7 +12,7 @@ Statement:
 ;
 
 SimpleStatement:
-	(VariableDecl | 
+	(VariableDecl |
 	 QueryFunction | 
 	 PrintFunction | 
 //	 MultiAssign | 
@@ -92,6 +91,7 @@ Primary returns Expression:
 ;
 
 CompoundStatement:
+	FunctionDecl |
 	IfStatement |
 //	not supported in Antlr grammar, for now
 //	SwitchStatement |
@@ -155,11 +155,11 @@ ForStatement:
 ;
 
 StatementCondition:
-	statementCondition+=Condition ((OpAnd | OpOr) statementCondition+=Condition)* 
+	conditions+=Condition ((OpAnd | OpOr) conditions+=Condition)* 
 ;
 
 Condition:
-	expressions+=ConditionElement (op+=OpCompare expressions+=ConditionElement)?
+	conditionElements+=ConditionElement (OpCompare conditionElements+=ConditionElement)?
 ;
 
 ConditionElement:
@@ -174,11 +174,11 @@ ConditionElement:
 //MultiAssign:
 //	left=VariableCall op=MultiAssignOperator right=MultiAssignRightOperand 
 //;
-
-MultiAssignRightOperand:
-	(Expression | 
-	 QueryFunction)
-;
+//
+//MultiAssignRightOperand:
+//	(Expression | 
+//	 QueryFunction)
+//;
 
 PostfixOperation:
 	{PostfixOperation} call=VariableCall op=PostfixOperationOperator

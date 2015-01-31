@@ -17,7 +17,6 @@ import org.dataCentricDSL.FunctionCall;
 import org.dataCentricDSL.FunctionDecl;
 import org.dataCentricDSL.IfStatement;
 import org.dataCentricDSL.Mod;
-import org.dataCentricDSL.MultiAssignRightOperand;
 import org.dataCentricDSL.Multiplication;
 import org.dataCentricDSL.NumberLiteral;
 import org.dataCentricDSL.PostfixOperation;
@@ -182,13 +181,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * @generated
    */
   private EClass conditionElementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass multiAssignRightOperandEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -578,16 +570,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionDecl_Statements()
-  {
-    return (EReference)functionDeclEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getIfStatement()
   {
     return ifStatementEClass;
@@ -678,7 +660,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatementCondition_StatementCondition()
+  public EReference getStatementCondition_Conditions()
   {
     return (EReference)statementConditionEClass.getEStructuralFeatures().get(0);
   }
@@ -698,19 +680,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCondition_Expressions()
+  public EReference getCondition_ConditionElements()
   {
     return (EReference)conditionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getCondition_Op()
-  {
-    return (EAttribute)conditionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -721,16 +693,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
   public EClass getConditionElement()
   {
     return conditionElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getMultiAssignRightOperand()
-  {
-    return multiAssignRightOperandEClass;
   }
 
   /**
@@ -1080,7 +1042,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     functionDeclEClass = createEClass(FUNCTION_DECL);
     createEAttribute(functionDeclEClass, FUNCTION_DECL__NAME);
     createEAttribute(functionDeclEClass, FUNCTION_DECL__ARGUMENTS);
-    createEReference(functionDeclEClass, FUNCTION_DECL__STATEMENTS);
 
     ifStatementEClass = createEClass(IF_STATEMENT);
     createEReference(ifStatementEClass, IF_STATEMENT__CONDITION);
@@ -1094,15 +1055,12 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     createEReference(forStatementEClass, FOR_STATEMENT__OPERATION);
 
     statementConditionEClass = createEClass(STATEMENT_CONDITION);
-    createEReference(statementConditionEClass, STATEMENT_CONDITION__STATEMENT_CONDITION);
+    createEReference(statementConditionEClass, STATEMENT_CONDITION__CONDITIONS);
 
     conditionEClass = createEClass(CONDITION);
-    createEReference(conditionEClass, CONDITION__EXPRESSIONS);
-    createEAttribute(conditionEClass, CONDITION__OP);
+    createEReference(conditionEClass, CONDITION__CONDITION_ELEMENTS);
 
     conditionElementEClass = createEClass(CONDITION_ELEMENT);
-
-    multiAssignRightOperandEClass = createEClass(MULTI_ASSIGN_RIGHT_OPERAND);
 
     postfixOperationEClass = createEClass(POSTFIX_OPERATION);
     createEReference(postfixOperationEClass, POSTFIX_OPERATION__CALL);
@@ -1175,7 +1133,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     simpleStatementEClass.getESuperTypes().add(this.getStatement());
     variableDeclEClass.getESuperTypes().add(this.getSimpleStatement());
     queryFunctionEClass.getESuperTypes().add(this.getSimpleStatement());
-    queryFunctionEClass.getESuperTypes().add(this.getMultiAssignRightOperand());
     queryEClass.getESuperTypes().add(this.getQueryFunction());
     printFunctionEClass.getESuperTypes().add(this.getSimpleStatement());
     printEClass.getESuperTypes().add(this.getPrintFunction());
@@ -1183,8 +1140,8 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     functionCallEClass.getESuperTypes().add(this.getExpression());
     variableCallEClass.getESuperTypes().add(this.getExpression());
     expressionEClass.getESuperTypes().add(this.getConditionElement());
-    expressionEClass.getESuperTypes().add(this.getMultiAssignRightOperand());
     compoundStatementEClass.getESuperTypes().add(this.getStatement());
+    functionDeclEClass.getESuperTypes().add(this.getCompoundStatement());
     ifStatementEClass.getESuperTypes().add(this.getCompoundStatement());
     whileStatementEClass.getESuperTypes().add(this.getCompoundStatement());
     forStatementEClass.getESuperTypes().add(this.getCompoundStatement());
@@ -1201,7 +1158,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
 
     // Initialize classes and features; add operations and parameters
     initEClass(dataCentricDSLEClass, DataCentricDSL.class, "DataCentricDSL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDataCentricDSL_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, DataCentricDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDataCentricDSL_Elements(), this.getStatement(), null, "elements", null, 0, -1, DataCentricDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1220,7 +1177,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(printFunctionEClass, PrintFunction.class, "PrintFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(printEClass, Print.class, "Print", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPrint_PrintParam(), this.getMultiAssignRightOperand(), null, "printParam", null, 0, 1, Print.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPrint_PrintParam(), ecorePackage.getEObject(), null, "printParam", null, 0, 1, Print.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionCall_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1237,7 +1194,6 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(functionDeclEClass, FunctionDecl.class, "FunctionDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionDecl_Arguments(), ecorePackage.getEString(), "arguments", null, 0, -1, FunctionDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionDecl_Statements(), this.getStatement(), null, "statements", null, 0, -1, FunctionDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIfStatement_Condition(), this.getStatementCondition(), null, "condition", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1251,15 +1207,12 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEReference(getForStatement_Operation(), this.getSimpleStatement(), null, "operation", null, 0, 1, ForStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementConditionEClass, StatementCondition.class, "StatementCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStatementCondition_StatementCondition(), this.getCondition(), null, "statementCondition", null, 0, -1, StatementCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatementCondition_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, StatementCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCondition_Expressions(), this.getConditionElement(), null, "expressions", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCondition_Op(), ecorePackage.getEString(), "op", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCondition_ConditionElements(), this.getConditionElement(), null, "conditionElements", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionElementEClass, ConditionElement.class, "ConditionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(multiAssignRightOperandEClass, MultiAssignRightOperand.class, "MultiAssignRightOperand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(postfixOperationEClass, PostfixOperation.class, "PostfixOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPostfixOperation_Call(), this.getVariableCall(), null, "call", null, 0, 1, PostfixOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

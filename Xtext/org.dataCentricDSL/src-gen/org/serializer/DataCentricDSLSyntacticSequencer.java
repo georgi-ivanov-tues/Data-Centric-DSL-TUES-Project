@@ -75,6 +75,8 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 			return getOpAndToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOpAssignmentRule())
 			return getOpAssignmentToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getOpCompareRule())
+			return getOpCompareToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOpDivisionRule())
 			return getOpDivisionToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOpModRule())
@@ -245,6 +247,22 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 		if (node != null)
 			return getTokenText(node);
 		return "=";
+	}
+	
+	/**
+	 * OpCompare:
+	 * 	('>' |
+	 * 	'<' |
+	 * 	'==' |
+	 * 	'<=' |
+	 * 	'>=' |
+	 * 	'!=')
+	 * ;
+	 */
+	protected String getOpCompareToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ">";
 	}
 	
 	/**

@@ -4,8 +4,6 @@ package org.dataCentricDSL;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Function Decl</b></em>'.
@@ -16,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.dataCentricDSL.FunctionDecl#getName <em>Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.FunctionDecl#getArguments <em>Arguments</em>}</li>
- *   <li>{@link org.dataCentricDSL.FunctionDecl#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface FunctionDecl extends EObject
+public interface FunctionDecl extends CompoundStatement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -67,21 +64,5 @@ public interface FunctionDecl extends EObject
    * @generated
    */
   EList<String> getArguments();
-
-  /**
-   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
-   * The list contents are of type {@link org.dataCentricDSL.Statement}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Statements</em>' containment reference list.
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getFunctionDecl_Statements()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Statement> getStatements();
 
 } // FunctionDecl

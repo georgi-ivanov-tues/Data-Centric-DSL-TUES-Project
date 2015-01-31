@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.StatementCondition#getStatementCondition <em>Statement Condition</em>}</li>
+ *   <li>{@link org.dataCentricDSL.StatementCondition#getConditions <em>Conditions</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,19 +25,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface StatementCondition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Statement Condition</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
    * The list contents are of type {@link org.dataCentricDSL.Condition}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Statement Condition</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Conditions</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statement Condition</em>' containment reference list.
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getStatementCondition_StatementCondition()
+   * @return the value of the '<em>Conditions</em>' containment reference list.
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getStatementCondition_Conditions()
    * @model containment="true"
    * @generated
    */
-  EList<Condition> getStatementCondition();
+  EList<Condition> getConditions();
 
 } // StatementCondition

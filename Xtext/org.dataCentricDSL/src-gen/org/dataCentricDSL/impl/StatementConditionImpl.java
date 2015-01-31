@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.StatementConditionImpl#getStatementCondition <em>Statement Condition</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.StatementConditionImpl#getConditions <em>Conditions</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,14 +36,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class StatementConditionImpl extends MinimalEObjectImpl.Container implements StatementCondition
 {
   /**
-   * The cached value of the '{@link #getStatementCondition() <em>Statement Condition</em>}' containment reference list.
+   * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatementCondition()
+   * @see #getConditions()
    * @generated
    * @ordered
    */
-  protected EList<Condition> statementCondition;
+  protected EList<Condition> conditions;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +71,13 @@ public class StatementConditionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Condition> getStatementCondition()
+  public EList<Condition> getConditions()
   {
-    if (statementCondition == null)
+    if (conditions == null)
     {
-      statementCondition = new EObjectContainmentEList<Condition>(Condition.class, this, DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION);
+      conditions = new EObjectContainmentEList<Condition>(Condition.class, this, DataCentricDSLPackage.STATEMENT_CONDITION__CONDITIONS);
     }
-    return statementCondition;
+    return conditions;
   }
 
   /**
@@ -90,8 +90,8 @@ public class StatementConditionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION:
-        return ((InternalEList<?>)getStatementCondition()).basicRemove(otherEnd, msgs);
+      case DataCentricDSLPackage.STATEMENT_CONDITION__CONDITIONS:
+        return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class StatementConditionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION:
-        return getStatementCondition();
+      case DataCentricDSLPackage.STATEMENT_CONDITION__CONDITIONS:
+        return getConditions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class StatementConditionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION:
-        getStatementCondition().clear();
-        getStatementCondition().addAll((Collection<? extends Condition>)newValue);
+      case DataCentricDSLPackage.STATEMENT_CONDITION__CONDITIONS:
+        getConditions().clear();
+        getConditions().addAll((Collection<? extends Condition>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class StatementConditionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION:
-        getStatementCondition().clear();
+      case DataCentricDSLPackage.STATEMENT_CONDITION__CONDITIONS:
+        getConditions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +158,8 @@ public class StatementConditionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.STATEMENT_CONDITION__STATEMENT_CONDITION:
-        return statementCondition != null && !statementCondition.isEmpty();
+      case DataCentricDSLPackage.STATEMENT_CONDITION__CONDITIONS:
+        return conditions != null && !conditions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
