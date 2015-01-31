@@ -2,6 +2,7 @@
  */
 package org.dataCentricDSL;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,12 +31,12 @@ public interface Print extends PrintFunction
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Print Param</em>' containment reference.
-   * @see #setPrintParam(MultiAssignRightOperand)
+   * @see #setPrintParam(EObject)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getPrint_PrintParam()
    * @model containment="true"
    * @generated
    */
-  MultiAssignRightOperand getPrintParam();
+  EObject getPrintParam();
 
   /**
    * Sets the value of the '{@link org.dataCentricDSL.Print#getPrintParam <em>Print Param</em>}' containment reference.
@@ -45,6 +46,6 @@ public interface Print extends PrintFunction
    * @see #getPrintParam()
    * @generated
    */
-  void setPrintParam(MultiAssignRightOperand value);
+  void setPrintParam(EObject value);
 
 } // Print

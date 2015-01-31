@@ -50,6 +50,15 @@ public interface DataCentricDSLFactory extends EFactory
   SimpleStatement createSimpleStatement();
 
   /**
+   * Returns a new object of class '<em>Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Definition</em>'.
+   * @generated
+   */
+  VariableDefinition createVariableDefinition();
+
+  /**
    * Returns a new object of class '<em>Variable Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -131,13 +140,13 @@ public interface DataCentricDSLFactory extends EFactory
   CompoundStatement createCompoundStatement();
 
   /**
-   * Returns a new object of class '<em>Function Decl</em>'.
+   * Returns a new object of class '<em>Function Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Decl</em>'.
+   * @return a new object of class '<em>Function Definition</em>'.
    * @generated
    */
-  FunctionDecl createFunctionDecl();
+  FunctionDefinition createFunctionDefinition();
 
   /**
    * Returns a new object of class '<em>If Statement</em>'.
@@ -192,33 +201,6 @@ public interface DataCentricDSLFactory extends EFactory
    * @generated
    */
   ConditionElement createConditionElement();
-
-  /**
-   * Returns a new object of class '<em>For Multi Assign</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>For Multi Assign</em>'.
-   * @generated
-   */
-  ForMultiAssign createForMultiAssign();
-
-  /**
-   * Returns a new object of class '<em>Multi Assign</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multi Assign</em>'.
-   * @generated
-   */
-  MultiAssign createMultiAssign();
-
-  /**
-   * Returns a new object of class '<em>Multi Assign Right Operand</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multi Assign Right Operand</em>'.
-   * @generated
-   */
-  MultiAssignRightOperand createMultiAssignRightOperand();
 
   /**
    * Returns a new object of class '<em>Postfix Operation</em>'.

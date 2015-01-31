@@ -3,13 +3,13 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.MultiAssignRightOperand;
 import org.dataCentricDSL.Print;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -37,7 +37,7 @@ public class PrintImpl extends PrintFunctionImpl implements Print
    * @generated
    * @ordered
    */
-  protected MultiAssignRightOperand printParam;
+  protected EObject printParam;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class PrintImpl extends PrintFunctionImpl implements Print
    * <!-- end-user-doc -->
    * @generated
    */
-  public MultiAssignRightOperand getPrintParam()
+  public EObject getPrintParam()
   {
     return printParam;
   }
@@ -75,9 +75,9 @@ public class PrintImpl extends PrintFunctionImpl implements Print
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPrintParam(MultiAssignRightOperand newPrintParam, NotificationChain msgs)
+  public NotificationChain basicSetPrintParam(EObject newPrintParam, NotificationChain msgs)
   {
-    MultiAssignRightOperand oldPrintParam = printParam;
+    EObject oldPrintParam = printParam;
     printParam = newPrintParam;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class PrintImpl extends PrintFunctionImpl implements Print
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrintParam(MultiAssignRightOperand newPrintParam)
+  public void setPrintParam(EObject newPrintParam)
   {
     if (newPrintParam != printParam)
     {
@@ -151,7 +151,7 @@ public class PrintImpl extends PrintFunctionImpl implements Print
     switch (featureID)
     {
       case DataCentricDSLPackage.PRINT__PRINT_PARAM:
-        setPrintParam((MultiAssignRightOperand)newValue);
+        setPrintParam((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class PrintImpl extends PrintFunctionImpl implements Print
     switch (featureID)
     {
       case DataCentricDSLPackage.PRINT__PRINT_PARAM:
-        setPrintParam((MultiAssignRightOperand)null);
+        setPrintParam((EObject)null);
         return;
     }
     super.eUnset(featureID);

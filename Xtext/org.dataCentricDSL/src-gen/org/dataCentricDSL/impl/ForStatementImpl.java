@@ -4,14 +4,14 @@ package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.ForStatement;
+import org.dataCentricDSL.SimpleStatement;
 import org.dataCentricDSL.StatementCondition;
-import org.dataCentricDSL.VariableDecl;
+import org.dataCentricDSL.VariableDefinition;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -41,7 +41,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * @generated
    * @ordered
    */
-  protected VariableDecl forVar;
+  protected VariableDefinition forVar;
 
   /**
    * The cached value of the '{@link #getForCondition() <em>For Condition</em>}' containment reference.
@@ -61,7 +61,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * @generated
    * @ordered
    */
-  protected EObject operation;
+  protected SimpleStatement operation;
 
   /**
    * <!-- begin-user-doc -->
@@ -89,7 +89,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDecl getForVar()
+  public VariableDefinition getForVar()
   {
     return forVar;
   }
@@ -99,9 +99,9 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetForVar(VariableDecl newForVar, NotificationChain msgs)
+  public NotificationChain basicSetForVar(VariableDefinition newForVar, NotificationChain msgs)
   {
-    VariableDecl oldForVar = forVar;
+    VariableDefinition oldForVar = forVar;
     forVar = newForVar;
     if (eNotificationRequired())
     {
@@ -116,7 +116,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setForVar(VariableDecl newForVar)
+  public void setForVar(VariableDefinition newForVar)
   {
     if (newForVar != forVar)
     {
@@ -185,7 +185,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getOperation()
+  public SimpleStatement getOperation()
   {
     return operation;
   }
@@ -195,9 +195,9 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetOperation(EObject newOperation, NotificationChain msgs)
+  public NotificationChain basicSetOperation(SimpleStatement newOperation, NotificationChain msgs)
   {
-    EObject oldOperation = operation;
+    SimpleStatement oldOperation = operation;
     operation = newOperation;
     if (eNotificationRequired())
     {
@@ -212,7 +212,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOperation(EObject newOperation)
+  public void setOperation(SimpleStatement newOperation)
   {
     if (newOperation != operation)
     {
@@ -279,13 +279,13 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
     switch (featureID)
     {
       case DataCentricDSLPackage.FOR_STATEMENT__FOR_VAR:
-        setForVar((VariableDecl)newValue);
+        setForVar((VariableDefinition)newValue);
         return;
       case DataCentricDSLPackage.FOR_STATEMENT__FOR_CONDITION:
         setForCondition((StatementCondition)newValue);
         return;
       case DataCentricDSLPackage.FOR_STATEMENT__OPERATION:
-        setOperation((EObject)newValue);
+        setOperation((SimpleStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -302,13 +302,13 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
     switch (featureID)
     {
       case DataCentricDSLPackage.FOR_STATEMENT__FOR_VAR:
-        setForVar((VariableDecl)null);
+        setForVar((VariableDefinition)null);
         return;
       case DataCentricDSLPackage.FOR_STATEMENT__FOR_CONDITION:
         setForCondition((StatementCondition)null);
         return;
       case DataCentricDSLPackage.FOR_STATEMENT__OPERATION:
-        setOperation((EObject)null);
+        setOperation((SimpleStatement)null);
         return;
     }
     super.eUnset(featureID);

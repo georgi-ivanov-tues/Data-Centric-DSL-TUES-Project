@@ -3,7 +3,7 @@ grammar org.DataCentricDSL with org.eclipse.xtext.xbase.Xbase
 generate dataCentricDSL "http://www.DataCentricDSL.org"
 
 DataCentricDSL:
-	(elements += (Statement | FunctionDecl))*
+	(elements += Statement)*
 ;
 
 Statement:
@@ -12,15 +12,15 @@ Statement:
 ;
 
 SimpleStatement:
-	(VariableDecl | 
+	(VariableDefinition |
 	 QueryFunction | 
 	 PrintFunction | 
-	 MultiAssign | 
+//	 MultiAssign | 
 	 PostfixOperation | 
 	 FunctionCall) Semicolon
 ;
 
-VariableDecl:
+VariableDefinition:
 	(isGlobal?=Global)? name=IDENTIFIER OpAssignment variableValue=VariableParam
 ;
 
@@ -91,6 +91,7 @@ Primary returns Expression:
 ;
 
 CompoundStatement:
+	FunctionDefinition |
 	IfStatement |
 //	not supported in Antlr grammar, for now
 //	SwitchStatement |
@@ -98,7 +99,7 @@ CompoundStatement:
 	ForStatement
 ;
 
-FunctionDecl:
+FunctionDefinition:
 	Func name=IDENTIFIER OpeningBracket
 		(arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)?
 		ClosingBracket OpeningCurlyBracket
@@ -143,20 +144,22 @@ WhileStatement:
 
 ForStatement:
 	{ForStatement}
-	For OpeningBracket forVar=VariableDecl Semicolon 
+	For OpeningBracket forVar=VariableDefinition Semicolon 
 		forCondition=StatementCondition Semicolon
-		operation=(PostfixOperation | ForMultiAssign | VariableDecl) 
+		operation=(PostfixOperation | 
+			//ForMultiAssign | 
+			VariableDefinition) 
 		ClosingBracket OpeningCurlyBracket 
 			(statements+=Statement)* 
 	ClosingCurlyBracket
 ;
 
 StatementCondition:
-	statementCondition+=Condition ((OpAnd | OpOr) statementCondition+=Condition)* 
+	conditions+=Condition ((OpAnd | OpOr) conditions+=Condition)* 
 ;
 
 Condition:
-	 expressions+=ConditionElement (op+=OpCompare expressions+=ConditionElement)?
+	conditionElements+=ConditionElement (OpCompare conditionElements+=ConditionElement)?
 ;
 
 ConditionElement:
@@ -164,18 +167,18 @@ ConditionElement:
 	 BooleanValue)
 ;
 
-ForMultiAssign:
-	left=VariableCall op=MultiAssignOperator right=INT
-;
-
-MultiAssign:
-	left=VariableCall op=MultiAssignOperator right=MultiAssignRightOperand 
-;
-
-MultiAssignRightOperand:
-	(Expression | 
-	 QueryFunction)
-;
+//ForMultiAssign:
+//	left=VariableCall op=MultiAssignOperator right=INT
+//;
+//
+//MultiAssign:
+//	left=VariableCall op=MultiAssignOperator right=MultiAssignRightOperand 
+//;
+//
+//MultiAssignRightOperand:
+//	(Expression | 
+//	 QueryFunction)
+//;
 
 PostfixOperation:
 	{PostfixOperation} call=VariableCall op=PostfixOperationOperator
@@ -194,13 +197,14 @@ BooleanValue:
 	'false')
 ;
 
-MultiAssignOperator:
-	('+=' | 
-	'-=' | 
-	'*=' | 
-	'/=' | 
-	'%=')
-;
+// still not supported in Antlr grammar
+//MultiAssignOperator:
+//	('+=' | 
+//	'-=' | 
+//	'*=' | 
+//	'/=' | 
+//	'%=')
+//;
 
 PostfixOperationOperator:
 	('--' |

@@ -67,6 +67,7 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.DATA_CENTRIC_DSL: return createDataCentricDSL();
       case DataCentricDSLPackage.STATEMENT: return createStatement();
       case DataCentricDSLPackage.SIMPLE_STATEMENT: return createSimpleStatement();
+      case DataCentricDSLPackage.VARIABLE_DEFINITION: return createVariableDefinition();
       case DataCentricDSLPackage.VARIABLE_DECL: return createVariableDecl();
       case DataCentricDSLPackage.QUERY_FUNCTION: return createQueryFunction();
       case DataCentricDSLPackage.QUERY: return createQuery();
@@ -76,16 +77,13 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.VARIABLE_CALL: return createVariableCall();
       case DataCentricDSLPackage.EXPRESSION: return createExpression();
       case DataCentricDSLPackage.COMPOUND_STATEMENT: return createCompoundStatement();
-      case DataCentricDSLPackage.FUNCTION_DECL: return createFunctionDecl();
+      case DataCentricDSLPackage.FUNCTION_DEFINITION: return createFunctionDefinition();
       case DataCentricDSLPackage.IF_STATEMENT: return createIfStatement();
       case DataCentricDSLPackage.WHILE_STATEMENT: return createWhileStatement();
       case DataCentricDSLPackage.FOR_STATEMENT: return createForStatement();
       case DataCentricDSLPackage.STATEMENT_CONDITION: return createStatementCondition();
       case DataCentricDSLPackage.CONDITION: return createCondition();
       case DataCentricDSLPackage.CONDITION_ELEMENT: return createConditionElement();
-      case DataCentricDSLPackage.FOR_MULTI_ASSIGN: return createForMultiAssign();
-      case DataCentricDSLPackage.MULTI_ASSIGN: return createMultiAssign();
-      case DataCentricDSLPackage.MULTI_ASSIGN_RIGHT_OPERAND: return createMultiAssignRightOperand();
       case DataCentricDSLPackage.POSTFIX_OPERATION: return createPostfixOperation();
       case DataCentricDSLPackage.STRING_LITERAL: return createStringLiteral();
       case DataCentricDSLPackage.NUMBER_LITERAL: return createNumberLiteral();
@@ -132,6 +130,17 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     SimpleStatementImpl simpleStatement = new SimpleStatementImpl();
     return simpleStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableDefinition createVariableDefinition()
+  {
+    VariableDefinitionImpl variableDefinition = new VariableDefinitionImpl();
+    return variableDefinition;
   }
 
   /**
@@ -238,10 +247,10 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public FunctionDecl createFunctionDecl()
+  public FunctionDefinition createFunctionDefinition()
   {
-    FunctionDeclImpl functionDecl = new FunctionDeclImpl();
-    return functionDecl;
+    FunctionDefinitionImpl functionDefinition = new FunctionDefinitionImpl();
+    return functionDefinition;
   }
 
   /**
@@ -308,39 +317,6 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     ConditionElementImpl conditionElement = new ConditionElementImpl();
     return conditionElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ForMultiAssign createForMultiAssign()
-  {
-    ForMultiAssignImpl forMultiAssign = new ForMultiAssignImpl();
-    return forMultiAssign;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MultiAssign createMultiAssign()
-  {
-    MultiAssignImpl multiAssign = new MultiAssignImpl();
-    return multiAssign;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MultiAssignRightOperand createMultiAssignRightOperand()
-  {
-    MultiAssignRightOperandImpl multiAssignRightOperand = new MultiAssignRightOperandImpl();
-    return multiAssignRightOperand;
   }
 
   /**

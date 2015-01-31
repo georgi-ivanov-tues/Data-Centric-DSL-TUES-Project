@@ -90,6 +90,11 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createSimpleStatementAdapter();
       }
       @Override
+      public Adapter caseVariableDefinition(VariableDefinition object)
+      {
+        return createVariableDefinitionAdapter();
+      }
+      @Override
       public Adapter caseVariableDecl(VariableDecl object)
       {
         return createVariableDeclAdapter();
@@ -135,9 +140,9 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createCompoundStatementAdapter();
       }
       @Override
-      public Adapter caseFunctionDecl(FunctionDecl object)
+      public Adapter caseFunctionDefinition(FunctionDefinition object)
       {
-        return createFunctionDeclAdapter();
+        return createFunctionDefinitionAdapter();
       }
       @Override
       public Adapter caseIfStatement(IfStatement object)
@@ -168,21 +173,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseConditionElement(ConditionElement object)
       {
         return createConditionElementAdapter();
-      }
-      @Override
-      public Adapter caseForMultiAssign(ForMultiAssign object)
-      {
-        return createForMultiAssignAdapter();
-      }
-      @Override
-      public Adapter caseMultiAssign(MultiAssign object)
-      {
-        return createMultiAssignAdapter();
-      }
-      @Override
-      public Adapter caseMultiAssignRightOperand(MultiAssignRightOperand object)
-      {
-        return createMultiAssignRightOperandAdapter();
       }
       @Override
       public Adapter casePostfixOperation(PostfixOperation object)
@@ -297,6 +287,21 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSimpleStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableDefinition <em>Variable Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.dataCentricDSL.VariableDefinition
+   * @generated
+   */
+  public Adapter createVariableDefinitionAdapter()
   {
     return null;
   }
@@ -437,16 +442,16 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.FunctionDecl <em>Function Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.FunctionDefinition <em>Function Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.dataCentricDSL.FunctionDecl
+   * @see org.dataCentricDSL.FunctionDefinition
    * @generated
    */
-  public Adapter createFunctionDeclAdapter()
+  public Adapter createFunctionDefinitionAdapter()
   {
     return null;
   }
@@ -537,51 +542,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConditionElementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.ForMultiAssign <em>For Multi Assign</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.ForMultiAssign
-   * @generated
-   */
-  public Adapter createForMultiAssignAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.MultiAssign <em>Multi Assign</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.MultiAssign
-   * @generated
-   */
-  public Adapter createMultiAssignAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.MultiAssignRightOperand <em>Multi Assign Right Operand</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.MultiAssignRightOperand
-   * @generated
-   */
-  public Adapter createMultiAssignRightOperandAdapter()
   {
     return null;
   }

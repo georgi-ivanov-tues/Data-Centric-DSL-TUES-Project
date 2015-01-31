@@ -8,16 +8,15 @@ import org.dataCentricDSL.DataCentricDSL
 import org.dataCentricDSL.DataCentricDSLPackage
 import org.dataCentricDSL.ForStatement
 import org.dataCentricDSL.FunctionCall
-import org.dataCentricDSL.FunctionDecl
+import org.dataCentricDSL.FunctionDefinition
 import org.dataCentricDSL.IfStatement
-import org.dataCentricDSL.NumberLiteral
-import org.dataCentricDSL.Query
-import org.dataCentricDSL.StringLiteral
 import org.dataCentricDSL.VariableCall
-import org.dataCentricDSL.VariableDecl
+import org.dataCentricDSL.VariableDefinition
 import org.dataCentricDSL.WhileStatement
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.validation.Check
+
+import static org.validation.ValidationUtils.*
 
 /**
  * Custom validation rules. 
@@ -26,40 +25,49 @@ import org.eclipse.xtext.validation.Check
  */
 class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
-	var boolean globalVariableFound = false;
-	
-//	@Check
-//	def void checkIfQueryStringIsEmpty(Query que){
-//		if(que.queryParam.toString.equals("")){
-//			error("Query string cannot be empty.", DataCentricDSLPackage.Literals::QUERY__QUERY_PARAM);
-//		}
-//	}
-	
 	@Check
-	def void checkConditionOperands(Condition c) {
-		var leftOperand = c.expressions.get(0);
-		var rightOperand = c.expressions.get(1);
-		if(leftOperand instanceof NumberLiteral) {
-			if(!(rightOperand instanceof NumberLiteral)) {
-				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
+	def void checkFunctionDeclarationPosition(FunctionDefinition fd) {
+		if(!(fd.eContainer instanceof DataCentricDSL)) {
+			error("Functions cannot be defined within block statements.",
+				DataCentricDSLPackage.Literals::FUNCTION_DEFINITION__NAME
+			);
+			return;
+			
+		} else {
+			if(!ValidationUtils.functionIsDeclaredBeforeTheCode(fd)) {
+				error("Functions must be defined at the beginning of the code.",
+					DataCentricDSLPackage.Literals::FUNCTION_DEFINITION__NAME
+				);
+				return;
 			}
-		}
-		if(leftOperand instanceof StringLiteral) {
-			if(!(rightOperand instanceof StringLiteral)) {
-				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__EXPRESSIONS)
+			
+			if(ValidationUtils.functionWithTheSameNameExists(fd)) {
+				error("Function with the same name already exists.",
+					DataCentricDSLPackage.Literals::FUNCTION_DEFINITION__NAME
+				);
+				return;
 			}
 		}
 	}
 	
 	@Check
-	def void checkIfCalledFunctionExists(FunctionCall fc) {
-		var container = fc.eContainer;
-		while(!(container instanceof DataCentricDSL)) {
-			container = container.eContainer;
+	def void checkConditionElementCompatibility(Condition c) {
+		if(c.conditionElements.length > 1) {
+			var leftOperand = c.conditionElements.get(0);
+			var rightOperand = c.conditionElements.get(1);
+			
+			if(!ValidationUtils.checkOperandsCompatibility(leftOperand, rightOperand)) {
+				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__CONDITION_ELEMENTS);	
+			}
 		}
+	}
+	
+	@Check
+	def void checkIfCalledFunctionExistsAndMatchesArguments(FunctionCall fc) {
+		var container = ValidationUtils.getDataCentricDSLContainer(fc);
 		
-		val Elements = (container as DataCentricDSL).elements.toArray.filter(typeof(FunctionDecl));
-		if(functionIsDeclared(Elements, fc.name)) {
+		val elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
+		if(ValidationUtils.functionIsDeclared(elements, fc.name)) {
 			return;
 		}
 		
@@ -67,97 +75,66 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	}
 	
 	@Check
+	def void checkIfCalledFunctionArgumentsCountMatches(FunctionCall fc) {
+		var container = ValidationUtils.getDataCentricDSLContainer(fc);
+		
+		var elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
+		if(ValidationUtils.functionIsDeclared(elements, fc.name)) {
+			for(i : 0..< elements.length) {
+				if(elements.get(i).name.equals(fc.name) && elements.get(i).arguments.length == fc.arguments.length) {
+					return;
+				}
+			}
+			
+			error("Called function arguments do not match function definition's arguments.",
+				DataCentricDSLPackage.Literals::FUNCTION_CALL__ARGUMENTS
+			);
+		}
+	}
+	
+	@Check
 	def void checkIfAssignedVariableExists(VariableCall vc) {
 		var container = vc.eContainer;
-		var VariableDecl[] variables = null;
+		var VariableDefinition[] variables = null;
+		var EObject containerElement = vc.eContainer;
+		var int containerElementIndex;
 		while(!(container instanceof DataCentricDSL)) {
 			container = container.eContainer;
 			
-			if(container instanceof IfStatement) {
-				variables = (container as IfStatement).statements.toArray.filter(typeof(VariableDecl));
-			} else if(container instanceof ForStatement) {
-				variables = (container as ForStatement).statements.toArray.filter(typeof(VariableDecl));
-				var DeclaratedVar = (container as ForStatement).forVar;
-				if(DeclaratedVar.name.toString.equals(vc.variableCall.toString)) {
+			if(container instanceof IfStatement || container instanceof ForStatement
+				|| container instanceof WhileStatement || container instanceof FunctionDefinition) {
+				
+				if(container instanceof ForStatement) {
+					var DeclaratedVar = (container as ForStatement).forVar;
+					if(DeclaratedVar.name.toString.equals(vc.variableCall.toString)) {
+						return;
+					}
+				}
+				if(container instanceof FunctionDefinition) {
+					if(ValidationUtils.namePersistsInArray((container as FunctionDefinition).arguments, vc.variableCall)) {
+						return;
+					}
+				}
+				containerElementIndex = container.eContents.indexOf(containerElement);
+				variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
+				if(ValidationUtils.variableIsDeclared(variables, vc.variableCall)) {
 					return;
 				}
-			} else if(container instanceof WhileStatement) {
-				variables = (container as WhileStatement).statements.toArray.filter(typeof(VariableDecl));
-			} else if(container instanceof FunctionDecl) {
-				variables = (container as FunctionDecl).statements.toArray.filter(typeof(VariableDecl));
-				if(namePersistsInArray((container as FunctionDecl).arguments, vc.variableCall)) {
-					return;
-				}
+				variables = null;
 			}
-			if(variableIsDeclared(variables, vc.variableCall)) {
-				return;
+			if(!(containerElement.eContainer instanceof DataCentricDSL)) {
+				containerElement = containerElement.eContainer;
 			}
-			variables = null;
 		}
-		variables = (container as DataCentricDSL).elements.toArray.filter(typeof(VariableDecl));
-		if(variableIsDeclared(variables, vc.variableCall)) {
+		containerElementIndex = container.eContents.indexOf(containerElement);
+		variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
+		if(ValidationUtils.variableIsDeclared(variables, vc.variableCall)) {
 			return;
 		}
-		checkIfCalledVariableIsGlobal(container, vc.variableCall);
-		if(!globalVariableFound) {
+		ValidationUtils.checkIfCalledVariableIsGlobal(container, vc.variableCall, containerElementIndex);
+		if(!ValidationUtils.globalVariableFound) {
 			error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
 		}
-		globalVariableFound = false;
-	}
-
-	def void checkIfCalledVariableIsGlobal(EObject object, String name) {
-		if(globalVariableFound) {
-			return;
-		}
-		
-		if(object instanceof DataCentricDSL || object instanceof IfStatement
-			|| object instanceof ForStatement || object instanceof WhileStatement
-			|| object instanceof FunctionDecl
-		) {	
-			if(variableIsDeclared(object.eContents.toArray
-				.filter(typeof(VariableDecl)).filter[isGlobal], name
-			)) {
-				globalVariableFound = true;
-				return;
-			} else {
-				for(i : 0..< object.eContents.length) {
-					checkIfCalledVariableIsGlobal(object.eContents.get(i), name);
-				}
-			}
-		} else if(object instanceof VariableDecl) {
-			if((object as VariableDecl).isGlobal && (object as VariableDecl).name.equals(name)) {
-				globalVariableFound = true;
-				return;
-			}
-		}
-	}
-
-	def boolean variableIsDeclared(VariableDecl[] variables, String name) {
-		if(variables != null) {
-			for(i : 0..< variables.length) {
-				if(variables.get(i).name.toString.equals(name)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	
-	def boolean functionIsDeclared(FunctionDecl[] functions, String name) {
-		for(i : 0..< functions.length) {
-			if(functions.get(i).name.toString.equals(name)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	def boolean namePersistsInArray(String[] array, String name) {
-		for(i : 0..< array.length) {
-			if(array.get(i).equals(name)) {
-				return true;
-			}
-		}
-		return false;
+		ValidationUtils.globalVariableFound = false;
 	}
 }

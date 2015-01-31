@@ -26,7 +26,7 @@ public interface DataCentricDSL extends EObject
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * The list contents are of type {@link org.dataCentricDSL.Statement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
@@ -38,6 +38,6 @@ public interface DataCentricDSL extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getElements();
+  EList<Statement> getElements();
 
 } // DataCentricDSL

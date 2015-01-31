@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,8 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.ConditionImpl#getExpressions <em>Expressions</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.ConditionImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.ConditionImpl#getConditionElements <em>Condition Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,24 +36,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ConditionImpl extends MinimalEObjectImpl.Container implements Condition
 {
   /**
-   * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
+   * The cached value of the '{@link #getConditionElements() <em>Condition Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpressions()
+   * @see #getConditionElements()
    * @generated
    * @ordered
    */
-  protected EList<ConditionElement> expressions;
-
-  /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> op;
+  protected EList<ConditionElement> conditionElements;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,27 +71,13 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ConditionElement> getExpressions()
+  public EList<ConditionElement> getConditionElements()
   {
-    if (expressions == null)
+    if (conditionElements == null)
     {
-      expressions = new EObjectContainmentEList<ConditionElement>(ConditionElement.class, this, DataCentricDSLPackage.CONDITION__EXPRESSIONS);
+      conditionElements = new EObjectContainmentEList<ConditionElement>(ConditionElement.class, this, DataCentricDSLPackage.CONDITION__CONDITION_ELEMENTS);
     }
-    return expressions;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getOp()
-  {
-    if (op == null)
-    {
-      op = new EDataTypeEList<String>(String.class, this, DataCentricDSLPackage.CONDITION__OP);
-    }
-    return op;
+    return conditionElements;
   }
 
   /**
@@ -116,8 +90,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.CONDITION__EXPRESSIONS:
-        return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
+      case DataCentricDSLPackage.CONDITION__CONDITION_ELEMENTS:
+        return ((InternalEList<?>)getConditionElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -132,10 +106,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.CONDITION__EXPRESSIONS:
-        return getExpressions();
-      case DataCentricDSLPackage.CONDITION__OP:
-        return getOp();
+      case DataCentricDSLPackage.CONDITION__CONDITION_ELEMENTS:
+        return getConditionElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,13 +123,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.CONDITION__EXPRESSIONS:
-        getExpressions().clear();
-        getExpressions().addAll((Collection<? extends ConditionElement>)newValue);
-        return;
-      case DataCentricDSLPackage.CONDITION__OP:
-        getOp().clear();
-        getOp().addAll((Collection<? extends String>)newValue);
+      case DataCentricDSLPackage.CONDITION__CONDITION_ELEMENTS:
+        getConditionElements().clear();
+        getConditionElements().addAll((Collection<? extends ConditionElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -173,11 +141,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.CONDITION__EXPRESSIONS:
-        getExpressions().clear();
-        return;
-      case DataCentricDSLPackage.CONDITION__OP:
-        getOp().clear();
+      case DataCentricDSLPackage.CONDITION__CONDITION_ELEMENTS:
+        getConditionElements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -193,29 +158,10 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.CONDITION__EXPRESSIONS:
-        return expressions != null && !expressions.isEmpty();
-      case DataCentricDSLPackage.CONDITION__OP:
-        return op != null && !op.isEmpty();
+      case DataCentricDSLPackage.CONDITION__CONDITION_ELEMENTS:
+        return conditionElements != null && !conditionElements.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (op: ");
-    result.append(op);
-    result.append(')');
-    return result.toString();
   }
 
 } //ConditionImpl

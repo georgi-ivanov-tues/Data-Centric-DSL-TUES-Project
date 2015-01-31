@@ -6,22 +6,22 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Function Decl</b></em>'.
+ * A representation of the model object '<em><b>Function Definition</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.FunctionDecl#getName <em>Name</em>}</li>
- *   <li>{@link org.dataCentricDSL.FunctionDecl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link org.dataCentricDSL.FunctionDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link org.dataCentricDSL.FunctionDefinition#getArguments <em>Arguments</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.dataCentricDSL.DataCentricDSLPackage#getFunctionDecl()
+ * @see org.dataCentricDSL.DataCentricDSLPackage#getFunctionDefinition()
  * @model
  * @generated
  */
-public interface FunctionDecl extends CompoundStatement
+public interface FunctionDefinition extends CompoundStatement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -33,14 +33,14 @@ public interface FunctionDecl extends CompoundStatement
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getFunctionDecl_Name()
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getFunctionDefinition_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.FunctionDecl#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.FunctionDefinition#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -59,10 +59,10 @@ public interface FunctionDecl extends CompoundStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Arguments</em>' attribute list.
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getFunctionDecl_Arguments()
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getFunctionDefinition_Arguments()
    * @model unique="false"
    * @generated
    */
   EList<String> getArguments();
 
-} // FunctionDecl
+} // FunctionDefinition

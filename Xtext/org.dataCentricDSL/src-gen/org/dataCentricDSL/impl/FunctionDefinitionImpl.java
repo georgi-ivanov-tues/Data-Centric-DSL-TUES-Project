@@ -5,7 +5,7 @@ package org.dataCentricDSL.impl;
 import java.util.Collection;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.FunctionDecl;
+import org.dataCentricDSL.FunctionDefinition;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -19,19 +19,19 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Function Decl</b></em>'.
+ * An implementation of the model object '<em><b>Function Definition</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.FunctionDeclImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.FunctionDeclImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.FunctionDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.FunctionDefinitionImpl#getArguments <em>Arguments</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionDecl
+public class FunctionDefinitionImpl extends CompoundStatementImpl implements FunctionDefinition
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -68,7 +68,7 @@ public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionD
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FunctionDeclImpl()
+  protected FunctionDefinitionImpl()
   {
     super();
   }
@@ -81,7 +81,7 @@ public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionD
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.FUNCTION_DECL;
+    return DataCentricDSLPackage.Literals.FUNCTION_DEFINITION;
   }
 
   /**
@@ -104,7 +104,7 @@ public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionD
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.FUNCTION_DECL__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.FUNCTION_DEFINITION__NAME, oldName, name));
   }
 
   /**
@@ -116,7 +116,7 @@ public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionD
   {
     if (arguments == null)
     {
-      arguments = new EDataTypeEList<String>(String.class, this, DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS);
+      arguments = new EDataTypeEList<String>(String.class, this, DataCentricDSLPackage.FUNCTION_DEFINITION__ARGUMENTS);
     }
     return arguments;
   }
@@ -131,9 +131,9 @@ public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionD
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_DECL__NAME:
+      case DataCentricDSLPackage.FUNCTION_DEFINITION__NAME:
         return getName();
-      case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
+      case DataCentricDSLPackage.FUNCTION_DEFINITION__ARGUMENTS:
         return getArguments();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -150,10 +150,10 @@ public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionD
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_DECL__NAME:
+      case DataCentricDSLPackage.FUNCTION_DEFINITION__NAME:
         setName((String)newValue);
         return;
-      case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
+      case DataCentricDSLPackage.FUNCTION_DEFINITION__ARGUMENTS:
         getArguments().clear();
         getArguments().addAll((Collection<? extends String>)newValue);
         return;
@@ -171,10 +171,10 @@ public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionD
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_DECL__NAME:
+      case DataCentricDSLPackage.FUNCTION_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
+      case DataCentricDSLPackage.FUNCTION_DEFINITION__ARGUMENTS:
         getArguments().clear();
         return;
     }
@@ -191,9 +191,9 @@ public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionD
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_DECL__NAME:
+      case DataCentricDSLPackage.FUNCTION_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DataCentricDSLPackage.FUNCTION_DECL__ARGUMENTS:
+      case DataCentricDSLPackage.FUNCTION_DEFINITION__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -218,4 +218,4 @@ public class FunctionDeclImpl extends CompoundStatementImpl implements FunctionD
     return result.toString();
   }
 
-} //FunctionDeclImpl
+} //FunctionDefinitionImpl
