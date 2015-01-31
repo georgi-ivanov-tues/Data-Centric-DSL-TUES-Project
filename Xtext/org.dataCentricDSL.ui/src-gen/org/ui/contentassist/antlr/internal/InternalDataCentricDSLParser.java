@@ -428,25 +428,25 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     // $ANTLR end "ruleSimpleStatement"
 
 
-    // $ANTLR start "entryRuleVariableDecl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:145:1: entryRuleVariableDecl : ruleVariableDecl EOF ;
-    public final void entryRuleVariableDecl() throws RecognitionException {
+    // $ANTLR start "entryRuleVariableDefinition"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:145:1: entryRuleVariableDefinition : ruleVariableDefinition EOF ;
+    public final void entryRuleVariableDefinition() throws RecognitionException {
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:146:1: ( ruleVariableDecl EOF )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:147:1: ruleVariableDecl EOF
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:146:1: ( ruleVariableDefinition EOF )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:147:1: ruleVariableDefinition EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclRule()); 
+               before(grammarAccess.getVariableDefinitionRule()); 
             }
-            pushFollow(FOLLOW_ruleVariableDecl_in_entryRuleVariableDecl248);
-            ruleVariableDecl();
+            pushFollow(FOLLOW_ruleVariableDefinition_in_entryRuleVariableDefinition248);
+            ruleVariableDefinition();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclRule()); 
+               after(grammarAccess.getVariableDefinitionRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDecl255); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDefinition255); if (state.failed) return ;
 
             }
 
@@ -459,30 +459,30 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "entryRuleVariableDecl"
+    // $ANTLR end "entryRuleVariableDefinition"
 
 
-    // $ANTLR start "ruleVariableDecl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:154:1: ruleVariableDecl : ( ( rule__VariableDecl__Group__0 ) ) ;
-    public final void ruleVariableDecl() throws RecognitionException {
+    // $ANTLR start "ruleVariableDefinition"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:154:1: ruleVariableDefinition : ( ( rule__VariableDefinition__Group__0 ) ) ;
+    public final void ruleVariableDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:158:2: ( ( ( rule__VariableDecl__Group__0 ) ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:159:1: ( ( rule__VariableDecl__Group__0 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:158:2: ( ( ( rule__VariableDefinition__Group__0 ) ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:159:1: ( ( rule__VariableDefinition__Group__0 ) )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:159:1: ( ( rule__VariableDecl__Group__0 ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:160:1: ( rule__VariableDecl__Group__0 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:159:1: ( ( rule__VariableDefinition__Group__0 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:160:1: ( rule__VariableDefinition__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getGroup()); 
+               before(grammarAccess.getVariableDefinitionAccess().getGroup()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:161:1: ( rule__VariableDecl__Group__0 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:161:2: rule__VariableDecl__Group__0
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:161:1: ( rule__VariableDefinition__Group__0 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:161:2: rule__VariableDefinition__Group__0
             {
-            pushFollow(FOLLOW_rule__VariableDecl__Group__0_in_ruleVariableDecl281);
-            rule__VariableDecl__Group__0();
+            pushFollow(FOLLOW_rule__VariableDefinition__Group__0_in_ruleVariableDefinition281);
+            rule__VariableDefinition__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -490,7 +490,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getGroup()); 
+               after(grammarAccess.getVariableDefinitionAccess().getGroup()); 
             }
 
             }
@@ -510,7 +510,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "ruleVariableDecl"
+    // $ANTLR end "ruleVariableDefinition"
 
 
     // $ANTLR start "entryRuleVariableParam"
@@ -1782,25 +1782,25 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     // $ANTLR end "ruleCompoundStatement"
 
 
-    // $ANTLR start "entryRuleFunctionDecl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:593:1: entryRuleFunctionDecl : ruleFunctionDecl EOF ;
-    public final void entryRuleFunctionDecl() throws RecognitionException {
+    // $ANTLR start "entryRuleFunctionDefinition"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:593:1: entryRuleFunctionDefinition : ruleFunctionDefinition EOF ;
+    public final void entryRuleFunctionDefinition() throws RecognitionException {
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:594:1: ( ruleFunctionDecl EOF )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:595:1: ruleFunctionDecl EOF
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:594:1: ( ruleFunctionDefinition EOF )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:595:1: ruleFunctionDefinition EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclRule()); 
+               before(grammarAccess.getFunctionDefinitionRule()); 
             }
-            pushFollow(FOLLOW_ruleFunctionDecl_in_entryRuleFunctionDecl1207);
-            ruleFunctionDecl();
+            pushFollow(FOLLOW_ruleFunctionDefinition_in_entryRuleFunctionDefinition1207);
+            ruleFunctionDefinition();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclRule()); 
+               after(grammarAccess.getFunctionDefinitionRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionDecl1214); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionDefinition1214); if (state.failed) return ;
 
             }
 
@@ -1813,30 +1813,30 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "entryRuleFunctionDecl"
+    // $ANTLR end "entryRuleFunctionDefinition"
 
 
-    // $ANTLR start "ruleFunctionDecl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:602:1: ruleFunctionDecl : ( ( rule__FunctionDecl__Group__0 ) ) ;
-    public final void ruleFunctionDecl() throws RecognitionException {
+    // $ANTLR start "ruleFunctionDefinition"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:602:1: ruleFunctionDefinition : ( ( rule__FunctionDefinition__Group__0 ) ) ;
+    public final void ruleFunctionDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:606:2: ( ( ( rule__FunctionDecl__Group__0 ) ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:607:1: ( ( rule__FunctionDecl__Group__0 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:606:2: ( ( ( rule__FunctionDefinition__Group__0 ) ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:607:1: ( ( rule__FunctionDefinition__Group__0 ) )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:607:1: ( ( rule__FunctionDecl__Group__0 ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:608:1: ( rule__FunctionDecl__Group__0 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:607:1: ( ( rule__FunctionDefinition__Group__0 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:608:1: ( rule__FunctionDefinition__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getGroup()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getGroup()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:609:1: ( rule__FunctionDecl__Group__0 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:609:2: rule__FunctionDecl__Group__0
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:609:1: ( rule__FunctionDefinition__Group__0 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:609:2: rule__FunctionDefinition__Group__0
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__0_in_ruleFunctionDecl1240);
-            rule__FunctionDecl__Group__0();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__0_in_ruleFunctionDefinition1240);
+            rule__FunctionDefinition__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1844,7 +1844,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getGroup()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getGroup()); 
             }
 
             }
@@ -1864,7 +1864,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "ruleFunctionDecl"
+    // $ANTLR end "ruleFunctionDefinition"
 
 
     // $ANTLR start "entryRuleIfStatement"
@@ -10941,13 +10941,13 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__SimpleStatement__Alternatives_0"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3736:1: rule__SimpleStatement__Alternatives_0 : ( ( ruleVariableDecl ) | ( ruleQueryFunction ) | ( rulePrintFunction ) | ( rulePostfixOperation ) | ( ruleFunctionCall ) );
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3736:1: rule__SimpleStatement__Alternatives_0 : ( ( ruleVariableDefinition ) | ( ruleQueryFunction ) | ( rulePrintFunction ) | ( rulePostfixOperation ) | ( ruleFunctionCall ) );
     public final void rule__SimpleStatement__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3740:1: ( ( ruleVariableDecl ) | ( ruleQueryFunction ) | ( rulePrintFunction ) | ( rulePostfixOperation ) | ( ruleFunctionCall ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3740:1: ( ( ruleVariableDefinition ) | ( ruleQueryFunction ) | ( rulePrintFunction ) | ( rulePostfixOperation ) | ( ruleFunctionCall ) )
             int alt4=5;
             switch ( input.LA(1) ) {
             case 29:
@@ -11005,21 +11005,21 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
 
             switch (alt4) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3741:1: ( ruleVariableDecl )
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3741:1: ( ruleVariableDefinition )
                     {
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3741:1: ( ruleVariableDecl )
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3742:1: ruleVariableDecl
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3741:1: ( ruleVariableDefinition )
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3742:1: ruleVariableDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getSimpleStatementAccess().getVariableDeclParserRuleCall_0_0()); 
+                       before(grammarAccess.getSimpleStatementAccess().getVariableDefinitionParserRuleCall_0_0()); 
                     }
-                    pushFollow(FOLLOW_ruleVariableDecl_in_rule__SimpleStatement__Alternatives_07883);
-                    ruleVariableDecl();
+                    pushFollow(FOLLOW_ruleVariableDefinition_in_rule__SimpleStatement__Alternatives_07883);
+                    ruleVariableDefinition();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getSimpleStatementAccess().getVariableDeclParserRuleCall_0_0()); 
+                       after(grammarAccess.getSimpleStatementAccess().getVariableDefinitionParserRuleCall_0_0()); 
                     }
 
                     }
@@ -11794,13 +11794,13 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__CompoundStatement__Alternatives"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3926:1: rule__CompoundStatement__Alternatives : ( ( ruleFunctionDecl ) | ( ruleIfStatement ) | ( ruleWhileStatement ) | ( ruleForStatement ) );
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3926:1: rule__CompoundStatement__Alternatives : ( ( ruleFunctionDefinition ) | ( ruleIfStatement ) | ( ruleWhileStatement ) | ( ruleForStatement ) );
     public final void rule__CompoundStatement__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3930:1: ( ( ruleFunctionDecl ) | ( ruleIfStatement ) | ( ruleWhileStatement ) | ( ruleForStatement ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3930:1: ( ( ruleFunctionDefinition ) | ( ruleIfStatement ) | ( ruleWhileStatement ) | ( ruleForStatement ) )
             int alt11=4;
             switch ( input.LA(1) ) {
             case 33:
@@ -11833,21 +11833,21 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
 
             switch (alt11) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3931:1: ( ruleFunctionDecl )
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3931:1: ( ruleFunctionDefinition )
                     {
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3931:1: ( ruleFunctionDecl )
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3932:1: ruleFunctionDecl
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3931:1: ( ruleFunctionDefinition )
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3932:1: ruleFunctionDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getCompoundStatementAccess().getFunctionDeclParserRuleCall_0()); 
+                       before(grammarAccess.getCompoundStatementAccess().getFunctionDefinitionParserRuleCall_0()); 
                     }
-                    pushFollow(FOLLOW_ruleFunctionDecl_in_rule__CompoundStatement__Alternatives8332);
-                    ruleFunctionDecl();
+                    pushFollow(FOLLOW_ruleFunctionDefinition_in_rule__CompoundStatement__Alternatives8332);
+                    ruleFunctionDefinition();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getCompoundStatementAccess().getFunctionDeclParserRuleCall_0()); 
+                       after(grammarAccess.getCompoundStatementAccess().getFunctionDefinitionParserRuleCall_0()); 
                     }
 
                     }
@@ -11942,13 +11942,13 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ForStatement__OperationAlternatives_7_0"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3960:1: rule__ForStatement__OperationAlternatives_7_0 : ( ( rulePostfixOperation ) | ( ruleVariableDecl ) );
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3960:1: rule__ForStatement__OperationAlternatives_7_0 : ( ( rulePostfixOperation ) | ( ruleVariableDefinition ) );
     public final void rule__ForStatement__OperationAlternatives_7_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3964:1: ( ( rulePostfixOperation ) | ( ruleVariableDecl ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3964:1: ( ( rulePostfixOperation ) | ( ruleVariableDefinition ) )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -12004,21 +12004,21 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
                     }
                     break;
                 case 2 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3971:6: ( ruleVariableDecl )
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3971:6: ( ruleVariableDefinition )
                     {
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3971:6: ( ruleVariableDecl )
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3972:1: ruleVariableDecl
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3971:6: ( ruleVariableDefinition )
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:3972:1: ruleVariableDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getForStatementAccess().getOperationVariableDeclParserRuleCall_7_0_1()); 
+                       before(grammarAccess.getForStatementAccess().getOperationVariableDefinitionParserRuleCall_7_0_1()); 
                     }
-                    pushFollow(FOLLOW_ruleVariableDecl_in_rule__ForStatement__OperationAlternatives_7_08432);
-                    ruleVariableDecl();
+                    pushFollow(FOLLOW_ruleVariableDefinition_in_rule__ForStatement__OperationAlternatives_7_08432);
+                    ruleVariableDefinition();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getForStatementAccess().getOperationVariableDeclParserRuleCall_7_0_1()); 
+                       after(grammarAccess.getForStatementAccess().getOperationVariableDefinitionParserRuleCall_7_0_1()); 
                     }
 
                     }
@@ -17295,23 +17295,23 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__SimpleStatement__Group__1__Impl"
 
 
-    // $ANTLR start "rule__VariableDecl__Group__0"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5357:1: rule__VariableDecl__Group__0 : rule__VariableDecl__Group__0__Impl rule__VariableDecl__Group__1 ;
-    public final void rule__VariableDecl__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__Group__0"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5357:1: rule__VariableDefinition__Group__0 : rule__VariableDefinition__Group__0__Impl rule__VariableDefinition__Group__1 ;
+    public final void rule__VariableDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5361:1: ( rule__VariableDecl__Group__0__Impl rule__VariableDecl__Group__1 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5362:2: rule__VariableDecl__Group__0__Impl rule__VariableDecl__Group__1
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5361:1: ( rule__VariableDefinition__Group__0__Impl rule__VariableDefinition__Group__1 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5362:2: rule__VariableDefinition__Group__0__Impl rule__VariableDefinition__Group__1
             {
-            pushFollow(FOLLOW_rule__VariableDecl__Group__0__Impl_in_rule__VariableDecl__Group__011646);
-            rule__VariableDecl__Group__0__Impl();
+            pushFollow(FOLLOW_rule__VariableDefinition__Group__0__Impl_in_rule__VariableDefinition__Group__011646);
+            rule__VariableDefinition__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__VariableDecl__Group__1_in_rule__VariableDecl__Group__011649);
-            rule__VariableDecl__Group__1();
+            pushFollow(FOLLOW_rule__VariableDefinition__Group__1_in_rule__VariableDefinition__Group__011649);
+            rule__VariableDefinition__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -17330,26 +17330,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__Group__0"
+    // $ANTLR end "rule__VariableDefinition__Group__0"
 
 
-    // $ANTLR start "rule__VariableDecl__Group__0__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5369:1: rule__VariableDecl__Group__0__Impl : ( ( rule__VariableDecl__IsGlobalAssignment_0 )? ) ;
-    public final void rule__VariableDecl__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__Group__0__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5369:1: rule__VariableDefinition__Group__0__Impl : ( ( rule__VariableDefinition__IsGlobalAssignment_0 )? ) ;
+    public final void rule__VariableDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5373:1: ( ( ( rule__VariableDecl__IsGlobalAssignment_0 )? ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5374:1: ( ( rule__VariableDecl__IsGlobalAssignment_0 )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5373:1: ( ( ( rule__VariableDefinition__IsGlobalAssignment_0 )? ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5374:1: ( ( rule__VariableDefinition__IsGlobalAssignment_0 )? )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5374:1: ( ( rule__VariableDecl__IsGlobalAssignment_0 )? )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5375:1: ( rule__VariableDecl__IsGlobalAssignment_0 )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5374:1: ( ( rule__VariableDefinition__IsGlobalAssignment_0 )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5375:1: ( rule__VariableDefinition__IsGlobalAssignment_0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getIsGlobalAssignment_0()); 
+               before(grammarAccess.getVariableDefinitionAccess().getIsGlobalAssignment_0()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5376:1: ( rule__VariableDecl__IsGlobalAssignment_0 )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5376:1: ( rule__VariableDefinition__IsGlobalAssignment_0 )?
             int alt56=2;
             int LA56_0 = input.LA(1);
 
@@ -17358,10 +17358,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
             switch (alt56) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5376:2: rule__VariableDecl__IsGlobalAssignment_0
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5376:2: rule__VariableDefinition__IsGlobalAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__VariableDecl__IsGlobalAssignment_0_in_rule__VariableDecl__Group__0__Impl11676);
-                    rule__VariableDecl__IsGlobalAssignment_0();
+                    pushFollow(FOLLOW_rule__VariableDefinition__IsGlobalAssignment_0_in_rule__VariableDefinition__Group__0__Impl11676);
+                    rule__VariableDefinition__IsGlobalAssignment_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -17372,7 +17372,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getIsGlobalAssignment_0()); 
+               after(grammarAccess.getVariableDefinitionAccess().getIsGlobalAssignment_0()); 
             }
 
             }
@@ -17392,26 +17392,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__Group__0__Impl"
+    // $ANTLR end "rule__VariableDefinition__Group__0__Impl"
 
 
-    // $ANTLR start "rule__VariableDecl__Group__1"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5386:1: rule__VariableDecl__Group__1 : rule__VariableDecl__Group__1__Impl rule__VariableDecl__Group__2 ;
-    public final void rule__VariableDecl__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__Group__1"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5386:1: rule__VariableDefinition__Group__1 : rule__VariableDefinition__Group__1__Impl rule__VariableDefinition__Group__2 ;
+    public final void rule__VariableDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5390:1: ( rule__VariableDecl__Group__1__Impl rule__VariableDecl__Group__2 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5391:2: rule__VariableDecl__Group__1__Impl rule__VariableDecl__Group__2
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5390:1: ( rule__VariableDefinition__Group__1__Impl rule__VariableDefinition__Group__2 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5391:2: rule__VariableDefinition__Group__1__Impl rule__VariableDefinition__Group__2
             {
-            pushFollow(FOLLOW_rule__VariableDecl__Group__1__Impl_in_rule__VariableDecl__Group__111707);
-            rule__VariableDecl__Group__1__Impl();
+            pushFollow(FOLLOW_rule__VariableDefinition__Group__1__Impl_in_rule__VariableDefinition__Group__111707);
+            rule__VariableDefinition__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__VariableDecl__Group__2_in_rule__VariableDecl__Group__111710);
-            rule__VariableDecl__Group__2();
+            pushFollow(FOLLOW_rule__VariableDefinition__Group__2_in_rule__VariableDefinition__Group__111710);
+            rule__VariableDefinition__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -17430,30 +17430,30 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__Group__1"
+    // $ANTLR end "rule__VariableDefinition__Group__1"
 
 
-    // $ANTLR start "rule__VariableDecl__Group__1__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5398:1: rule__VariableDecl__Group__1__Impl : ( ( rule__VariableDecl__NameAssignment_1 ) ) ;
-    public final void rule__VariableDecl__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__Group__1__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5398:1: rule__VariableDefinition__Group__1__Impl : ( ( rule__VariableDefinition__NameAssignment_1 ) ) ;
+    public final void rule__VariableDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5402:1: ( ( ( rule__VariableDecl__NameAssignment_1 ) ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5403:1: ( ( rule__VariableDecl__NameAssignment_1 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5402:1: ( ( ( rule__VariableDefinition__NameAssignment_1 ) ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5403:1: ( ( rule__VariableDefinition__NameAssignment_1 ) )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5403:1: ( ( rule__VariableDecl__NameAssignment_1 ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5404:1: ( rule__VariableDecl__NameAssignment_1 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5403:1: ( ( rule__VariableDefinition__NameAssignment_1 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5404:1: ( rule__VariableDefinition__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getNameAssignment_1()); 
+               before(grammarAccess.getVariableDefinitionAccess().getNameAssignment_1()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5405:1: ( rule__VariableDecl__NameAssignment_1 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5405:2: rule__VariableDecl__NameAssignment_1
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5405:1: ( rule__VariableDefinition__NameAssignment_1 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5405:2: rule__VariableDefinition__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__VariableDecl__NameAssignment_1_in_rule__VariableDecl__Group__1__Impl11737);
-            rule__VariableDecl__NameAssignment_1();
+            pushFollow(FOLLOW_rule__VariableDefinition__NameAssignment_1_in_rule__VariableDefinition__Group__1__Impl11737);
+            rule__VariableDefinition__NameAssignment_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -17461,7 +17461,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getNameAssignment_1()); 
+               after(grammarAccess.getVariableDefinitionAccess().getNameAssignment_1()); 
             }
 
             }
@@ -17481,26 +17481,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__Group__1__Impl"
+    // $ANTLR end "rule__VariableDefinition__Group__1__Impl"
 
 
-    // $ANTLR start "rule__VariableDecl__Group__2"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5415:1: rule__VariableDecl__Group__2 : rule__VariableDecl__Group__2__Impl rule__VariableDecl__Group__3 ;
-    public final void rule__VariableDecl__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__Group__2"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5415:1: rule__VariableDefinition__Group__2 : rule__VariableDefinition__Group__2__Impl rule__VariableDefinition__Group__3 ;
+    public final void rule__VariableDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5419:1: ( rule__VariableDecl__Group__2__Impl rule__VariableDecl__Group__3 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5420:2: rule__VariableDecl__Group__2__Impl rule__VariableDecl__Group__3
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5419:1: ( rule__VariableDefinition__Group__2__Impl rule__VariableDefinition__Group__3 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5420:2: rule__VariableDefinition__Group__2__Impl rule__VariableDefinition__Group__3
             {
-            pushFollow(FOLLOW_rule__VariableDecl__Group__2__Impl_in_rule__VariableDecl__Group__211767);
-            rule__VariableDecl__Group__2__Impl();
+            pushFollow(FOLLOW_rule__VariableDefinition__Group__2__Impl_in_rule__VariableDefinition__Group__211767);
+            rule__VariableDefinition__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__VariableDecl__Group__3_in_rule__VariableDecl__Group__211770);
-            rule__VariableDecl__Group__3();
+            pushFollow(FOLLOW_rule__VariableDefinition__Group__3_in_rule__VariableDefinition__Group__211770);
+            rule__VariableDefinition__Group__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -17519,12 +17519,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__Group__2"
+    // $ANTLR end "rule__VariableDefinition__Group__2"
 
 
-    // $ANTLR start "rule__VariableDecl__Group__2__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5427:1: rule__VariableDecl__Group__2__Impl : ( ruleOpAssignment ) ;
-    public final void rule__VariableDecl__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__Group__2__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5427:1: rule__VariableDefinition__Group__2__Impl : ( ruleOpAssignment ) ;
+    public final void rule__VariableDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -17536,15 +17536,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5433:1: ruleOpAssignment
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getOpAssignmentParserRuleCall_2()); 
+               before(grammarAccess.getVariableDefinitionAccess().getOpAssignmentParserRuleCall_2()); 
             }
-            pushFollow(FOLLOW_ruleOpAssignment_in_rule__VariableDecl__Group__2__Impl11797);
+            pushFollow(FOLLOW_ruleOpAssignment_in_rule__VariableDefinition__Group__2__Impl11797);
             ruleOpAssignment();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getOpAssignmentParserRuleCall_2()); 
+               after(grammarAccess.getVariableDefinitionAccess().getOpAssignmentParserRuleCall_2()); 
             }
 
             }
@@ -17564,21 +17564,21 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__Group__2__Impl"
+    // $ANTLR end "rule__VariableDefinition__Group__2__Impl"
 
 
-    // $ANTLR start "rule__VariableDecl__Group__3"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5444:1: rule__VariableDecl__Group__3 : rule__VariableDecl__Group__3__Impl ;
-    public final void rule__VariableDecl__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__Group__3"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5444:1: rule__VariableDefinition__Group__3 : rule__VariableDefinition__Group__3__Impl ;
+    public final void rule__VariableDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5448:1: ( rule__VariableDecl__Group__3__Impl )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5449:2: rule__VariableDecl__Group__3__Impl
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5448:1: ( rule__VariableDefinition__Group__3__Impl )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5449:2: rule__VariableDefinition__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__VariableDecl__Group__3__Impl_in_rule__VariableDecl__Group__311826);
-            rule__VariableDecl__Group__3__Impl();
+            pushFollow(FOLLOW_rule__VariableDefinition__Group__3__Impl_in_rule__VariableDefinition__Group__311826);
+            rule__VariableDefinition__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -17597,30 +17597,30 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__Group__3"
+    // $ANTLR end "rule__VariableDefinition__Group__3"
 
 
-    // $ANTLR start "rule__VariableDecl__Group__3__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5455:1: rule__VariableDecl__Group__3__Impl : ( ( rule__VariableDecl__VariableValueAssignment_3 ) ) ;
-    public final void rule__VariableDecl__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__Group__3__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5455:1: rule__VariableDefinition__Group__3__Impl : ( ( rule__VariableDefinition__VariableValueAssignment_3 ) ) ;
+    public final void rule__VariableDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5459:1: ( ( ( rule__VariableDecl__VariableValueAssignment_3 ) ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5460:1: ( ( rule__VariableDecl__VariableValueAssignment_3 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5459:1: ( ( ( rule__VariableDefinition__VariableValueAssignment_3 ) ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5460:1: ( ( rule__VariableDefinition__VariableValueAssignment_3 ) )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5460:1: ( ( rule__VariableDecl__VariableValueAssignment_3 ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5461:1: ( rule__VariableDecl__VariableValueAssignment_3 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5460:1: ( ( rule__VariableDefinition__VariableValueAssignment_3 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5461:1: ( rule__VariableDefinition__VariableValueAssignment_3 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getVariableValueAssignment_3()); 
+               before(grammarAccess.getVariableDefinitionAccess().getVariableValueAssignment_3()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5462:1: ( rule__VariableDecl__VariableValueAssignment_3 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5462:2: rule__VariableDecl__VariableValueAssignment_3
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5462:1: ( rule__VariableDefinition__VariableValueAssignment_3 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5462:2: rule__VariableDefinition__VariableValueAssignment_3
             {
-            pushFollow(FOLLOW_rule__VariableDecl__VariableValueAssignment_3_in_rule__VariableDecl__Group__3__Impl11853);
-            rule__VariableDecl__VariableValueAssignment_3();
+            pushFollow(FOLLOW_rule__VariableDefinition__VariableValueAssignment_3_in_rule__VariableDefinition__Group__3__Impl11853);
+            rule__VariableDefinition__VariableValueAssignment_3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -17628,7 +17628,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getVariableValueAssignment_3()); 
+               after(grammarAccess.getVariableDefinitionAccess().getVariableValueAssignment_3()); 
             }
 
             }
@@ -17648,7 +17648,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__Group__3__Impl"
+    // $ANTLR end "rule__VariableDefinition__Group__3__Impl"
 
 
     // $ANTLR start "rule__VariableParam__Group__0"
@@ -21418,23 +21418,23 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__Primary__Group_3__2__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__0"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6840:1: rule__FunctionDecl__Group__0 : rule__FunctionDecl__Group__0__Impl rule__FunctionDecl__Group__1 ;
-    public final void rule__FunctionDecl__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__0"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6840:1: rule__FunctionDefinition__Group__0 : rule__FunctionDefinition__Group__0__Impl rule__FunctionDefinition__Group__1 ;
+    public final void rule__FunctionDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6844:1: ( rule__FunctionDecl__Group__0__Impl rule__FunctionDecl__Group__1 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6845:2: rule__FunctionDecl__Group__0__Impl rule__FunctionDecl__Group__1
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6844:1: ( rule__FunctionDefinition__Group__0__Impl rule__FunctionDefinition__Group__1 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6845:2: rule__FunctionDefinition__Group__0__Impl rule__FunctionDefinition__Group__1
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__0__Impl_in_rule__FunctionDecl__Group__014561);
-            rule__FunctionDecl__Group__0__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__0__Impl_in_rule__FunctionDefinition__Group__014561);
+            rule__FunctionDefinition__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__1_in_rule__FunctionDecl__Group__014564);
-            rule__FunctionDecl__Group__1();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__1_in_rule__FunctionDefinition__Group__014564);
+            rule__FunctionDefinition__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -21453,12 +21453,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__0"
+    // $ANTLR end "rule__FunctionDefinition__Group__0"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__0__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6852:1: rule__FunctionDecl__Group__0__Impl : ( ruleFunc ) ;
-    public final void rule__FunctionDecl__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__0__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6852:1: rule__FunctionDefinition__Group__0__Impl : ( ruleFunc ) ;
+    public final void rule__FunctionDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -21470,15 +21470,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6858:1: ruleFunc
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getFuncParserRuleCall_0()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getFuncParserRuleCall_0()); 
             }
-            pushFollow(FOLLOW_ruleFunc_in_rule__FunctionDecl__Group__0__Impl14591);
+            pushFollow(FOLLOW_ruleFunc_in_rule__FunctionDefinition__Group__0__Impl14591);
             ruleFunc();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getFuncParserRuleCall_0()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getFuncParserRuleCall_0()); 
             }
 
             }
@@ -21498,26 +21498,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__0__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group__0__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__1"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6869:1: rule__FunctionDecl__Group__1 : rule__FunctionDecl__Group__1__Impl rule__FunctionDecl__Group__2 ;
-    public final void rule__FunctionDecl__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__1"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6869:1: rule__FunctionDefinition__Group__1 : rule__FunctionDefinition__Group__1__Impl rule__FunctionDefinition__Group__2 ;
+    public final void rule__FunctionDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6873:1: ( rule__FunctionDecl__Group__1__Impl rule__FunctionDecl__Group__2 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6874:2: rule__FunctionDecl__Group__1__Impl rule__FunctionDecl__Group__2
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6873:1: ( rule__FunctionDefinition__Group__1__Impl rule__FunctionDefinition__Group__2 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6874:2: rule__FunctionDefinition__Group__1__Impl rule__FunctionDefinition__Group__2
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__1__Impl_in_rule__FunctionDecl__Group__114620);
-            rule__FunctionDecl__Group__1__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__1__Impl_in_rule__FunctionDefinition__Group__114620);
+            rule__FunctionDefinition__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__2_in_rule__FunctionDecl__Group__114623);
-            rule__FunctionDecl__Group__2();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__2_in_rule__FunctionDefinition__Group__114623);
+            rule__FunctionDefinition__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -21536,30 +21536,30 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__1"
+    // $ANTLR end "rule__FunctionDefinition__Group__1"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__1__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6881:1: rule__FunctionDecl__Group__1__Impl : ( ( rule__FunctionDecl__NameAssignment_1 ) ) ;
-    public final void rule__FunctionDecl__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__1__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6881:1: rule__FunctionDefinition__Group__1__Impl : ( ( rule__FunctionDefinition__NameAssignment_1 ) ) ;
+    public final void rule__FunctionDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6885:1: ( ( ( rule__FunctionDecl__NameAssignment_1 ) ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6886:1: ( ( rule__FunctionDecl__NameAssignment_1 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6885:1: ( ( ( rule__FunctionDefinition__NameAssignment_1 ) ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6886:1: ( ( rule__FunctionDefinition__NameAssignment_1 ) )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6886:1: ( ( rule__FunctionDecl__NameAssignment_1 ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6887:1: ( rule__FunctionDecl__NameAssignment_1 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6886:1: ( ( rule__FunctionDefinition__NameAssignment_1 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6887:1: ( rule__FunctionDefinition__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getNameAssignment_1()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getNameAssignment_1()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6888:1: ( rule__FunctionDecl__NameAssignment_1 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6888:2: rule__FunctionDecl__NameAssignment_1
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6888:1: ( rule__FunctionDefinition__NameAssignment_1 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6888:2: rule__FunctionDefinition__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__NameAssignment_1_in_rule__FunctionDecl__Group__1__Impl14650);
-            rule__FunctionDecl__NameAssignment_1();
+            pushFollow(FOLLOW_rule__FunctionDefinition__NameAssignment_1_in_rule__FunctionDefinition__Group__1__Impl14650);
+            rule__FunctionDefinition__NameAssignment_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -21567,7 +21567,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getNameAssignment_1()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getNameAssignment_1()); 
             }
 
             }
@@ -21587,26 +21587,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__1__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group__1__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__2"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6898:1: rule__FunctionDecl__Group__2 : rule__FunctionDecl__Group__2__Impl rule__FunctionDecl__Group__3 ;
-    public final void rule__FunctionDecl__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__2"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6898:1: rule__FunctionDefinition__Group__2 : rule__FunctionDefinition__Group__2__Impl rule__FunctionDefinition__Group__3 ;
+    public final void rule__FunctionDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6902:1: ( rule__FunctionDecl__Group__2__Impl rule__FunctionDecl__Group__3 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6903:2: rule__FunctionDecl__Group__2__Impl rule__FunctionDecl__Group__3
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6902:1: ( rule__FunctionDefinition__Group__2__Impl rule__FunctionDefinition__Group__3 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6903:2: rule__FunctionDefinition__Group__2__Impl rule__FunctionDefinition__Group__3
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__2__Impl_in_rule__FunctionDecl__Group__214680);
-            rule__FunctionDecl__Group__2__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__2__Impl_in_rule__FunctionDefinition__Group__214680);
+            rule__FunctionDefinition__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__3_in_rule__FunctionDecl__Group__214683);
-            rule__FunctionDecl__Group__3();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__3_in_rule__FunctionDefinition__Group__214683);
+            rule__FunctionDefinition__Group__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -21625,12 +21625,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__2"
+    // $ANTLR end "rule__FunctionDefinition__Group__2"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__2__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6910:1: rule__FunctionDecl__Group__2__Impl : ( ruleOpeningBracket ) ;
-    public final void rule__FunctionDecl__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__2__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6910:1: rule__FunctionDefinition__Group__2__Impl : ( ruleOpeningBracket ) ;
+    public final void rule__FunctionDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -21642,15 +21642,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6916:1: ruleOpeningBracket
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getOpeningBracketParserRuleCall_2()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getOpeningBracketParserRuleCall_2()); 
             }
-            pushFollow(FOLLOW_ruleOpeningBracket_in_rule__FunctionDecl__Group__2__Impl14710);
+            pushFollow(FOLLOW_ruleOpeningBracket_in_rule__FunctionDefinition__Group__2__Impl14710);
             ruleOpeningBracket();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getOpeningBracketParserRuleCall_2()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getOpeningBracketParserRuleCall_2()); 
             }
 
             }
@@ -21670,26 +21670,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__2__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group__2__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__3"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6927:1: rule__FunctionDecl__Group__3 : rule__FunctionDecl__Group__3__Impl rule__FunctionDecl__Group__4 ;
-    public final void rule__FunctionDecl__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__3"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6927:1: rule__FunctionDefinition__Group__3 : rule__FunctionDefinition__Group__3__Impl rule__FunctionDefinition__Group__4 ;
+    public final void rule__FunctionDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6931:1: ( rule__FunctionDecl__Group__3__Impl rule__FunctionDecl__Group__4 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6932:2: rule__FunctionDecl__Group__3__Impl rule__FunctionDecl__Group__4
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6931:1: ( rule__FunctionDefinition__Group__3__Impl rule__FunctionDefinition__Group__4 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6932:2: rule__FunctionDefinition__Group__3__Impl rule__FunctionDefinition__Group__4
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__3__Impl_in_rule__FunctionDecl__Group__314739);
-            rule__FunctionDecl__Group__3__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__3__Impl_in_rule__FunctionDefinition__Group__314739);
+            rule__FunctionDefinition__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__4_in_rule__FunctionDecl__Group__314742);
-            rule__FunctionDecl__Group__4();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__4_in_rule__FunctionDefinition__Group__314742);
+            rule__FunctionDefinition__Group__4();
 
             state._fsp--;
             if (state.failed) return ;
@@ -21708,26 +21708,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__3"
+    // $ANTLR end "rule__FunctionDefinition__Group__3"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__3__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6939:1: rule__FunctionDecl__Group__3__Impl : ( ( rule__FunctionDecl__Group_3__0 )? ) ;
-    public final void rule__FunctionDecl__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__3__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6939:1: rule__FunctionDefinition__Group__3__Impl : ( ( rule__FunctionDefinition__Group_3__0 )? ) ;
+    public final void rule__FunctionDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6943:1: ( ( ( rule__FunctionDecl__Group_3__0 )? ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6944:1: ( ( rule__FunctionDecl__Group_3__0 )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6943:1: ( ( ( rule__FunctionDefinition__Group_3__0 )? ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6944:1: ( ( rule__FunctionDefinition__Group_3__0 )? )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6944:1: ( ( rule__FunctionDecl__Group_3__0 )? )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6945:1: ( rule__FunctionDecl__Group_3__0 )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6944:1: ( ( rule__FunctionDefinition__Group_3__0 )? )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6945:1: ( rule__FunctionDefinition__Group_3__0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getGroup_3()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getGroup_3()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6946:1: ( rule__FunctionDecl__Group_3__0 )?
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6946:1: ( rule__FunctionDefinition__Group_3__0 )?
             int alt64=2;
             int LA64_0 = input.LA(1);
 
@@ -21736,10 +21736,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
             switch (alt64) {
                 case 1 :
-                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6946:2: rule__FunctionDecl__Group_3__0
+                    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6946:2: rule__FunctionDefinition__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__FunctionDecl__Group_3__0_in_rule__FunctionDecl__Group__3__Impl14769);
-                    rule__FunctionDecl__Group_3__0();
+                    pushFollow(FOLLOW_rule__FunctionDefinition__Group_3__0_in_rule__FunctionDefinition__Group__3__Impl14769);
+                    rule__FunctionDefinition__Group_3__0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -21750,7 +21750,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getGroup_3()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getGroup_3()); 
             }
 
             }
@@ -21770,26 +21770,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__3__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group__3__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__4"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6956:1: rule__FunctionDecl__Group__4 : rule__FunctionDecl__Group__4__Impl rule__FunctionDecl__Group__5 ;
-    public final void rule__FunctionDecl__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__4"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6956:1: rule__FunctionDefinition__Group__4 : rule__FunctionDefinition__Group__4__Impl rule__FunctionDefinition__Group__5 ;
+    public final void rule__FunctionDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6960:1: ( rule__FunctionDecl__Group__4__Impl rule__FunctionDecl__Group__5 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6961:2: rule__FunctionDecl__Group__4__Impl rule__FunctionDecl__Group__5
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6960:1: ( rule__FunctionDefinition__Group__4__Impl rule__FunctionDefinition__Group__5 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6961:2: rule__FunctionDefinition__Group__4__Impl rule__FunctionDefinition__Group__5
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__4__Impl_in_rule__FunctionDecl__Group__414800);
-            rule__FunctionDecl__Group__4__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__4__Impl_in_rule__FunctionDefinition__Group__414800);
+            rule__FunctionDefinition__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__5_in_rule__FunctionDecl__Group__414803);
-            rule__FunctionDecl__Group__5();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__5_in_rule__FunctionDefinition__Group__414803);
+            rule__FunctionDefinition__Group__5();
 
             state._fsp--;
             if (state.failed) return ;
@@ -21808,12 +21808,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__4"
+    // $ANTLR end "rule__FunctionDefinition__Group__4"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__4__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6968:1: rule__FunctionDecl__Group__4__Impl : ( ruleClosingBracket ) ;
-    public final void rule__FunctionDecl__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__4__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6968:1: rule__FunctionDefinition__Group__4__Impl : ( ruleClosingBracket ) ;
+    public final void rule__FunctionDefinition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -21825,15 +21825,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6974:1: ruleClosingBracket
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getClosingBracketParserRuleCall_4()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getClosingBracketParserRuleCall_4()); 
             }
-            pushFollow(FOLLOW_ruleClosingBracket_in_rule__FunctionDecl__Group__4__Impl14830);
+            pushFollow(FOLLOW_ruleClosingBracket_in_rule__FunctionDefinition__Group__4__Impl14830);
             ruleClosingBracket();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getClosingBracketParserRuleCall_4()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getClosingBracketParserRuleCall_4()); 
             }
 
             }
@@ -21853,26 +21853,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__4__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group__4__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__5"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6985:1: rule__FunctionDecl__Group__5 : rule__FunctionDecl__Group__5__Impl rule__FunctionDecl__Group__6 ;
-    public final void rule__FunctionDecl__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__5"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6985:1: rule__FunctionDefinition__Group__5 : rule__FunctionDefinition__Group__5__Impl rule__FunctionDefinition__Group__6 ;
+    public final void rule__FunctionDefinition__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6989:1: ( rule__FunctionDecl__Group__5__Impl rule__FunctionDecl__Group__6 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6990:2: rule__FunctionDecl__Group__5__Impl rule__FunctionDecl__Group__6
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6989:1: ( rule__FunctionDefinition__Group__5__Impl rule__FunctionDefinition__Group__6 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6990:2: rule__FunctionDefinition__Group__5__Impl rule__FunctionDefinition__Group__6
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__5__Impl_in_rule__FunctionDecl__Group__514859);
-            rule__FunctionDecl__Group__5__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__5__Impl_in_rule__FunctionDefinition__Group__514859);
+            rule__FunctionDefinition__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__6_in_rule__FunctionDecl__Group__514862);
-            rule__FunctionDecl__Group__6();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__6_in_rule__FunctionDefinition__Group__514862);
+            rule__FunctionDefinition__Group__6();
 
             state._fsp--;
             if (state.failed) return ;
@@ -21891,12 +21891,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__5"
+    // $ANTLR end "rule__FunctionDefinition__Group__5"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__5__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6997:1: rule__FunctionDecl__Group__5__Impl : ( ruleOpeningCurlyBracket ) ;
-    public final void rule__FunctionDecl__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__5__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:6997:1: rule__FunctionDefinition__Group__5__Impl : ( ruleOpeningCurlyBracket ) ;
+    public final void rule__FunctionDefinition__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -21908,15 +21908,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7003:1: ruleOpeningCurlyBracket
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getOpeningCurlyBracketParserRuleCall_5()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getOpeningCurlyBracketParserRuleCall_5()); 
             }
-            pushFollow(FOLLOW_ruleOpeningCurlyBracket_in_rule__FunctionDecl__Group__5__Impl14889);
+            pushFollow(FOLLOW_ruleOpeningCurlyBracket_in_rule__FunctionDefinition__Group__5__Impl14889);
             ruleOpeningCurlyBracket();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getOpeningCurlyBracketParserRuleCall_5()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getOpeningCurlyBracketParserRuleCall_5()); 
             }
 
             }
@@ -21936,26 +21936,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__5__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group__5__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__6"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7014:1: rule__FunctionDecl__Group__6 : rule__FunctionDecl__Group__6__Impl rule__FunctionDecl__Group__7 ;
-    public final void rule__FunctionDecl__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__6"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7014:1: rule__FunctionDefinition__Group__6 : rule__FunctionDefinition__Group__6__Impl rule__FunctionDefinition__Group__7 ;
+    public final void rule__FunctionDefinition__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7018:1: ( rule__FunctionDecl__Group__6__Impl rule__FunctionDecl__Group__7 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7019:2: rule__FunctionDecl__Group__6__Impl rule__FunctionDecl__Group__7
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7018:1: ( rule__FunctionDefinition__Group__6__Impl rule__FunctionDefinition__Group__7 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7019:2: rule__FunctionDefinition__Group__6__Impl rule__FunctionDefinition__Group__7
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__6__Impl_in_rule__FunctionDecl__Group__614918);
-            rule__FunctionDecl__Group__6__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__6__Impl_in_rule__FunctionDefinition__Group__614918);
+            rule__FunctionDefinition__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__7_in_rule__FunctionDecl__Group__614921);
-            rule__FunctionDecl__Group__7();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__7_in_rule__FunctionDefinition__Group__614921);
+            rule__FunctionDefinition__Group__7();
 
             state._fsp--;
             if (state.failed) return ;
@@ -21974,26 +21974,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__6"
+    // $ANTLR end "rule__FunctionDefinition__Group__6"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__6__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7026:1: rule__FunctionDecl__Group__6__Impl : ( ( rule__FunctionDecl__StatementsAssignment_6 )* ) ;
-    public final void rule__FunctionDecl__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__6__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7026:1: rule__FunctionDefinition__Group__6__Impl : ( ( rule__FunctionDefinition__StatementsAssignment_6 )* ) ;
+    public final void rule__FunctionDefinition__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7030:1: ( ( ( rule__FunctionDecl__StatementsAssignment_6 )* ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7031:1: ( ( rule__FunctionDecl__StatementsAssignment_6 )* )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7030:1: ( ( ( rule__FunctionDefinition__StatementsAssignment_6 )* ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7031:1: ( ( rule__FunctionDefinition__StatementsAssignment_6 )* )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7031:1: ( ( rule__FunctionDecl__StatementsAssignment_6 )* )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7032:1: ( rule__FunctionDecl__StatementsAssignment_6 )*
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7031:1: ( ( rule__FunctionDefinition__StatementsAssignment_6 )* )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7032:1: ( rule__FunctionDefinition__StatementsAssignment_6 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getStatementsAssignment_6()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getStatementsAssignment_6()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7033:1: ( rule__FunctionDecl__StatementsAssignment_6 )*
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7033:1: ( rule__FunctionDefinition__StatementsAssignment_6 )*
             loop65:
             do {
                 int alt65=2;
@@ -22006,10 +22006,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
 
                 switch (alt65) {
             	case 1 :
-            	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7033:2: rule__FunctionDecl__StatementsAssignment_6
+            	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7033:2: rule__FunctionDefinition__StatementsAssignment_6
             	    {
-            	    pushFollow(FOLLOW_rule__FunctionDecl__StatementsAssignment_6_in_rule__FunctionDecl__Group__6__Impl14948);
-            	    rule__FunctionDecl__StatementsAssignment_6();
+            	    pushFollow(FOLLOW_rule__FunctionDefinition__StatementsAssignment_6_in_rule__FunctionDefinition__Group__6__Impl14948);
+            	    rule__FunctionDefinition__StatementsAssignment_6();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -22023,7 +22023,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getStatementsAssignment_6()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getStatementsAssignment_6()); 
             }
 
             }
@@ -22043,21 +22043,21 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__6__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group__6__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__7"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7043:1: rule__FunctionDecl__Group__7 : rule__FunctionDecl__Group__7__Impl ;
-    public final void rule__FunctionDecl__Group__7() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__7"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7043:1: rule__FunctionDefinition__Group__7 : rule__FunctionDefinition__Group__7__Impl ;
+    public final void rule__FunctionDefinition__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7047:1: ( rule__FunctionDecl__Group__7__Impl )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7048:2: rule__FunctionDecl__Group__7__Impl
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7047:1: ( rule__FunctionDefinition__Group__7__Impl )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7048:2: rule__FunctionDefinition__Group__7__Impl
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group__7__Impl_in_rule__FunctionDecl__Group__714979);
-            rule__FunctionDecl__Group__7__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group__7__Impl_in_rule__FunctionDefinition__Group__714979);
+            rule__FunctionDefinition__Group__7__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -22076,12 +22076,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__7"
+    // $ANTLR end "rule__FunctionDefinition__Group__7"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group__7__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7054:1: rule__FunctionDecl__Group__7__Impl : ( ruleClosingCurlyBracket ) ;
-    public final void rule__FunctionDecl__Group__7__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group__7__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7054:1: rule__FunctionDefinition__Group__7__Impl : ( ruleClosingCurlyBracket ) ;
+    public final void rule__FunctionDefinition__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -22093,15 +22093,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7060:1: ruleClosingCurlyBracket
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getClosingCurlyBracketParserRuleCall_7()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getClosingCurlyBracketParserRuleCall_7()); 
             }
-            pushFollow(FOLLOW_ruleClosingCurlyBracket_in_rule__FunctionDecl__Group__7__Impl15006);
+            pushFollow(FOLLOW_ruleClosingCurlyBracket_in_rule__FunctionDefinition__Group__7__Impl15006);
             ruleClosingCurlyBracket();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getClosingCurlyBracketParserRuleCall_7()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getClosingCurlyBracketParserRuleCall_7()); 
             }
 
             }
@@ -22121,26 +22121,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group__7__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group__7__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group_3__0"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7087:1: rule__FunctionDecl__Group_3__0 : rule__FunctionDecl__Group_3__0__Impl rule__FunctionDecl__Group_3__1 ;
-    public final void rule__FunctionDecl__Group_3__0() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group_3__0"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7087:1: rule__FunctionDefinition__Group_3__0 : rule__FunctionDefinition__Group_3__0__Impl rule__FunctionDefinition__Group_3__1 ;
+    public final void rule__FunctionDefinition__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7091:1: ( rule__FunctionDecl__Group_3__0__Impl rule__FunctionDecl__Group_3__1 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7092:2: rule__FunctionDecl__Group_3__0__Impl rule__FunctionDecl__Group_3__1
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7091:1: ( rule__FunctionDefinition__Group_3__0__Impl rule__FunctionDefinition__Group_3__1 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7092:2: rule__FunctionDefinition__Group_3__0__Impl rule__FunctionDefinition__Group_3__1
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group_3__0__Impl_in_rule__FunctionDecl__Group_3__015051);
-            rule__FunctionDecl__Group_3__0__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group_3__0__Impl_in_rule__FunctionDefinition__Group_3__015051);
+            rule__FunctionDefinition__Group_3__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FunctionDecl__Group_3__1_in_rule__FunctionDecl__Group_3__015054);
-            rule__FunctionDecl__Group_3__1();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group_3__1_in_rule__FunctionDefinition__Group_3__015054);
+            rule__FunctionDefinition__Group_3__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -22159,30 +22159,30 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group_3__0"
+    // $ANTLR end "rule__FunctionDefinition__Group_3__0"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group_3__0__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7099:1: rule__FunctionDecl__Group_3__0__Impl : ( ( rule__FunctionDecl__ArgumentsAssignment_3_0 ) ) ;
-    public final void rule__FunctionDecl__Group_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group_3__0__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7099:1: rule__FunctionDefinition__Group_3__0__Impl : ( ( rule__FunctionDefinition__ArgumentsAssignment_3_0 ) ) ;
+    public final void rule__FunctionDefinition__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7103:1: ( ( ( rule__FunctionDecl__ArgumentsAssignment_3_0 ) ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7104:1: ( ( rule__FunctionDecl__ArgumentsAssignment_3_0 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7103:1: ( ( ( rule__FunctionDefinition__ArgumentsAssignment_3_0 ) ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7104:1: ( ( rule__FunctionDefinition__ArgumentsAssignment_3_0 ) )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7104:1: ( ( rule__FunctionDecl__ArgumentsAssignment_3_0 ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7105:1: ( rule__FunctionDecl__ArgumentsAssignment_3_0 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7104:1: ( ( rule__FunctionDefinition__ArgumentsAssignment_3_0 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7105:1: ( rule__FunctionDefinition__ArgumentsAssignment_3_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getArgumentsAssignment_3_0()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getArgumentsAssignment_3_0()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7106:1: ( rule__FunctionDecl__ArgumentsAssignment_3_0 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7106:2: rule__FunctionDecl__ArgumentsAssignment_3_0
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7106:1: ( rule__FunctionDefinition__ArgumentsAssignment_3_0 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7106:2: rule__FunctionDefinition__ArgumentsAssignment_3_0
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__ArgumentsAssignment_3_0_in_rule__FunctionDecl__Group_3__0__Impl15081);
-            rule__FunctionDecl__ArgumentsAssignment_3_0();
+            pushFollow(FOLLOW_rule__FunctionDefinition__ArgumentsAssignment_3_0_in_rule__FunctionDefinition__Group_3__0__Impl15081);
+            rule__FunctionDefinition__ArgumentsAssignment_3_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -22190,7 +22190,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getArgumentsAssignment_3_0()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getArgumentsAssignment_3_0()); 
             }
 
             }
@@ -22210,21 +22210,21 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group_3__0__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group_3__1"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7116:1: rule__FunctionDecl__Group_3__1 : rule__FunctionDecl__Group_3__1__Impl ;
-    public final void rule__FunctionDecl__Group_3__1() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group_3__1"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7116:1: rule__FunctionDefinition__Group_3__1 : rule__FunctionDefinition__Group_3__1__Impl ;
+    public final void rule__FunctionDefinition__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7120:1: ( rule__FunctionDecl__Group_3__1__Impl )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7121:2: rule__FunctionDecl__Group_3__1__Impl
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7120:1: ( rule__FunctionDefinition__Group_3__1__Impl )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7121:2: rule__FunctionDefinition__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group_3__1__Impl_in_rule__FunctionDecl__Group_3__115111);
-            rule__FunctionDecl__Group_3__1__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group_3__1__Impl_in_rule__FunctionDefinition__Group_3__115111);
+            rule__FunctionDefinition__Group_3__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -22243,26 +22243,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group_3__1"
+    // $ANTLR end "rule__FunctionDefinition__Group_3__1"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group_3__1__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7127:1: rule__FunctionDecl__Group_3__1__Impl : ( ( rule__FunctionDecl__Group_3_1__0 )* ) ;
-    public final void rule__FunctionDecl__Group_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group_3__1__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7127:1: rule__FunctionDefinition__Group_3__1__Impl : ( ( rule__FunctionDefinition__Group_3_1__0 )* ) ;
+    public final void rule__FunctionDefinition__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7131:1: ( ( ( rule__FunctionDecl__Group_3_1__0 )* ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7132:1: ( ( rule__FunctionDecl__Group_3_1__0 )* )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7131:1: ( ( ( rule__FunctionDefinition__Group_3_1__0 )* ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7132:1: ( ( rule__FunctionDefinition__Group_3_1__0 )* )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7132:1: ( ( rule__FunctionDecl__Group_3_1__0 )* )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7133:1: ( rule__FunctionDecl__Group_3_1__0 )*
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7132:1: ( ( rule__FunctionDefinition__Group_3_1__0 )* )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7133:1: ( rule__FunctionDefinition__Group_3_1__0 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getGroup_3_1()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getGroup_3_1()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7134:1: ( rule__FunctionDecl__Group_3_1__0 )*
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7134:1: ( rule__FunctionDefinition__Group_3_1__0 )*
             loop66:
             do {
                 int alt66=2;
@@ -22275,10 +22275,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
 
                 switch (alt66) {
             	case 1 :
-            	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7134:2: rule__FunctionDecl__Group_3_1__0
+            	    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7134:2: rule__FunctionDefinition__Group_3_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__FunctionDecl__Group_3_1__0_in_rule__FunctionDecl__Group_3__1__Impl15138);
-            	    rule__FunctionDecl__Group_3_1__0();
+            	    pushFollow(FOLLOW_rule__FunctionDefinition__Group_3_1__0_in_rule__FunctionDefinition__Group_3__1__Impl15138);
+            	    rule__FunctionDefinition__Group_3_1__0();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -22292,7 +22292,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getGroup_3_1()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getGroup_3_1()); 
             }
 
             }
@@ -22312,26 +22312,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group_3__1__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group_3_1__0"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7148:1: rule__FunctionDecl__Group_3_1__0 : rule__FunctionDecl__Group_3_1__0__Impl rule__FunctionDecl__Group_3_1__1 ;
-    public final void rule__FunctionDecl__Group_3_1__0() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group_3_1__0"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7148:1: rule__FunctionDefinition__Group_3_1__0 : rule__FunctionDefinition__Group_3_1__0__Impl rule__FunctionDefinition__Group_3_1__1 ;
+    public final void rule__FunctionDefinition__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7152:1: ( rule__FunctionDecl__Group_3_1__0__Impl rule__FunctionDecl__Group_3_1__1 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7153:2: rule__FunctionDecl__Group_3_1__0__Impl rule__FunctionDecl__Group_3_1__1
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7152:1: ( rule__FunctionDefinition__Group_3_1__0__Impl rule__FunctionDefinition__Group_3_1__1 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7153:2: rule__FunctionDefinition__Group_3_1__0__Impl rule__FunctionDefinition__Group_3_1__1
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group_3_1__0__Impl_in_rule__FunctionDecl__Group_3_1__015173);
-            rule__FunctionDecl__Group_3_1__0__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group_3_1__0__Impl_in_rule__FunctionDefinition__Group_3_1__015173);
+            rule__FunctionDefinition__Group_3_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FunctionDecl__Group_3_1__1_in_rule__FunctionDecl__Group_3_1__015176);
-            rule__FunctionDecl__Group_3_1__1();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group_3_1__1_in_rule__FunctionDefinition__Group_3_1__015176);
+            rule__FunctionDefinition__Group_3_1__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -22350,12 +22350,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group_3_1__0"
+    // $ANTLR end "rule__FunctionDefinition__Group_3_1__0"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group_3_1__0__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7160:1: rule__FunctionDecl__Group_3_1__0__Impl : ( ruleComma ) ;
-    public final void rule__FunctionDecl__Group_3_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group_3_1__0__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7160:1: rule__FunctionDefinition__Group_3_1__0__Impl : ( ruleComma ) ;
+    public final void rule__FunctionDefinition__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -22367,15 +22367,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7166:1: ruleComma
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getCommaParserRuleCall_3_1_0()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getCommaParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleComma_in_rule__FunctionDecl__Group_3_1__0__Impl15203);
+            pushFollow(FOLLOW_ruleComma_in_rule__FunctionDefinition__Group_3_1__0__Impl15203);
             ruleComma();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getCommaParserRuleCall_3_1_0()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getCommaParserRuleCall_3_1_0()); 
             }
 
             }
@@ -22395,21 +22395,21 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group_3_1__0__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group_3_1__0__Impl"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group_3_1__1"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7177:1: rule__FunctionDecl__Group_3_1__1 : rule__FunctionDecl__Group_3_1__1__Impl ;
-    public final void rule__FunctionDecl__Group_3_1__1() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group_3_1__1"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7177:1: rule__FunctionDefinition__Group_3_1__1 : rule__FunctionDefinition__Group_3_1__1__Impl ;
+    public final void rule__FunctionDefinition__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7181:1: ( rule__FunctionDecl__Group_3_1__1__Impl )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7182:2: rule__FunctionDecl__Group_3_1__1__Impl
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7181:1: ( rule__FunctionDefinition__Group_3_1__1__Impl )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7182:2: rule__FunctionDefinition__Group_3_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__Group_3_1__1__Impl_in_rule__FunctionDecl__Group_3_1__115232);
-            rule__FunctionDecl__Group_3_1__1__Impl();
+            pushFollow(FOLLOW_rule__FunctionDefinition__Group_3_1__1__Impl_in_rule__FunctionDefinition__Group_3_1__115232);
+            rule__FunctionDefinition__Group_3_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -22428,30 +22428,30 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group_3_1__1"
+    // $ANTLR end "rule__FunctionDefinition__Group_3_1__1"
 
 
-    // $ANTLR start "rule__FunctionDecl__Group_3_1__1__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7188:1: rule__FunctionDecl__Group_3_1__1__Impl : ( ( rule__FunctionDecl__ArgumentsAssignment_3_1_1 ) ) ;
-    public final void rule__FunctionDecl__Group_3_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__Group_3_1__1__Impl"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7188:1: rule__FunctionDefinition__Group_3_1__1__Impl : ( ( rule__FunctionDefinition__ArgumentsAssignment_3_1_1 ) ) ;
+    public final void rule__FunctionDefinition__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7192:1: ( ( ( rule__FunctionDecl__ArgumentsAssignment_3_1_1 ) ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7193:1: ( ( rule__FunctionDecl__ArgumentsAssignment_3_1_1 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7192:1: ( ( ( rule__FunctionDefinition__ArgumentsAssignment_3_1_1 ) ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7193:1: ( ( rule__FunctionDefinition__ArgumentsAssignment_3_1_1 ) )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7193:1: ( ( rule__FunctionDecl__ArgumentsAssignment_3_1_1 ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7194:1: ( rule__FunctionDecl__ArgumentsAssignment_3_1_1 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7193:1: ( ( rule__FunctionDefinition__ArgumentsAssignment_3_1_1 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7194:1: ( rule__FunctionDefinition__ArgumentsAssignment_3_1_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getArgumentsAssignment_3_1_1()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getArgumentsAssignment_3_1_1()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7195:1: ( rule__FunctionDecl__ArgumentsAssignment_3_1_1 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7195:2: rule__FunctionDecl__ArgumentsAssignment_3_1_1
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7195:1: ( rule__FunctionDefinition__ArgumentsAssignment_3_1_1 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:7195:2: rule__FunctionDefinition__ArgumentsAssignment_3_1_1
             {
-            pushFollow(FOLLOW_rule__FunctionDecl__ArgumentsAssignment_3_1_1_in_rule__FunctionDecl__Group_3_1__1__Impl15259);
-            rule__FunctionDecl__ArgumentsAssignment_3_1_1();
+            pushFollow(FOLLOW_rule__FunctionDefinition__ArgumentsAssignment_3_1_1_in_rule__FunctionDefinition__Group_3_1__1__Impl15259);
+            rule__FunctionDefinition__ArgumentsAssignment_3_1_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -22459,7 +22459,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getArgumentsAssignment_3_1_1()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getArgumentsAssignment_3_1_1()); 
             }
 
             }
@@ -22479,7 +22479,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__Group_3_1__1__Impl"
+    // $ANTLR end "rule__FunctionDefinition__Group_3_1__1__Impl"
 
 
     // $ANTLR start "rule__IfStatement__Group__0"
@@ -64062,9 +64062,9 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__DataCentricDSL__ElementsAssignment"
 
 
-    // $ANTLR start "rule__VariableDecl__IsGlobalAssignment_0"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22364:1: rule__VariableDecl__IsGlobalAssignment_0 : ( ruleGlobal ) ;
-    public final void rule__VariableDecl__IsGlobalAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__IsGlobalAssignment_0"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22364:1: rule__VariableDefinition__IsGlobalAssignment_0 : ( ruleGlobal ) ;
+    public final void rule__VariableDefinition__IsGlobalAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -64076,15 +64076,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22370:1: ruleGlobal
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getIsGlobalGlobalParserRuleCall_0_0()); 
+               before(grammarAccess.getVariableDefinitionAccess().getIsGlobalGlobalParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleGlobal_in_rule__VariableDecl__IsGlobalAssignment_045090);
+            pushFollow(FOLLOW_ruleGlobal_in_rule__VariableDefinition__IsGlobalAssignment_045090);
             ruleGlobal();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getIsGlobalGlobalParserRuleCall_0_0()); 
+               after(grammarAccess.getVariableDefinitionAccess().getIsGlobalGlobalParserRuleCall_0_0()); 
             }
 
             }
@@ -64104,12 +64104,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__IsGlobalAssignment_0"
+    // $ANTLR end "rule__VariableDefinition__IsGlobalAssignment_0"
 
 
-    // $ANTLR start "rule__VariableDecl__NameAssignment_1"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22379:1: rule__VariableDecl__NameAssignment_1 : ( RULE_IDENTIFIER ) ;
-    public final void rule__VariableDecl__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__NameAssignment_1"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22379:1: rule__VariableDefinition__NameAssignment_1 : ( RULE_IDENTIFIER ) ;
+    public final void rule__VariableDefinition__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -64121,11 +64121,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22385:1: RULE_IDENTIFIER
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
+               before(grammarAccess.getVariableDefinitionAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__VariableDecl__NameAssignment_145121); if (state.failed) return ;
+            match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__VariableDefinition__NameAssignment_145121); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
+               after(grammarAccess.getVariableDefinitionAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
             }
 
             }
@@ -64145,12 +64145,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__NameAssignment_1"
+    // $ANTLR end "rule__VariableDefinition__NameAssignment_1"
 
 
-    // $ANTLR start "rule__VariableDecl__VariableValueAssignment_3"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22394:1: rule__VariableDecl__VariableValueAssignment_3 : ( ruleVariableParam ) ;
-    public final void rule__VariableDecl__VariableValueAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__VariableDefinition__VariableValueAssignment_3"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22394:1: rule__VariableDefinition__VariableValueAssignment_3 : ( ruleVariableParam ) ;
+    public final void rule__VariableDefinition__VariableValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -64162,15 +64162,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22400:1: ruleVariableParam
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariableDeclAccess().getVariableValueVariableParamParserRuleCall_3_0()); 
+               before(grammarAccess.getVariableDefinitionAccess().getVariableValueVariableParamParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleVariableParam_in_rule__VariableDecl__VariableValueAssignment_345152);
+            pushFollow(FOLLOW_ruleVariableParam_in_rule__VariableDefinition__VariableValueAssignment_345152);
             ruleVariableParam();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariableDeclAccess().getVariableValueVariableParamParserRuleCall_3_0()); 
+               after(grammarAccess.getVariableDefinitionAccess().getVariableValueVariableParamParserRuleCall_3_0()); 
             }
 
             }
@@ -64190,7 +64190,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__VariableDecl__VariableValueAssignment_3"
+    // $ANTLR end "rule__VariableDefinition__VariableValueAssignment_3"
 
 
     // $ANTLR start "rule__VariableParam__VariableExpressionParamAssignment_1_0"
@@ -64827,9 +64827,9 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__Mod__RightAssignment_1_2"
 
 
-    // $ANTLR start "rule__FunctionDecl__NameAssignment_1"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22621:1: rule__FunctionDecl__NameAssignment_1 : ( RULE_IDENTIFIER ) ;
-    public final void rule__FunctionDecl__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__NameAssignment_1"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22621:1: rule__FunctionDefinition__NameAssignment_1 : ( RULE_IDENTIFIER ) ;
+    public final void rule__FunctionDefinition__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -64841,11 +64841,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22627:1: RULE_IDENTIFIER
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDecl__NameAssignment_145621); if (state.failed) return ;
+            match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDefinition__NameAssignment_145621); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
             }
 
             }
@@ -64865,12 +64865,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__NameAssignment_1"
+    // $ANTLR end "rule__FunctionDefinition__NameAssignment_1"
 
 
-    // $ANTLR start "rule__FunctionDecl__ArgumentsAssignment_3_0"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22636:1: rule__FunctionDecl__ArgumentsAssignment_3_0 : ( RULE_IDENTIFIER ) ;
-    public final void rule__FunctionDecl__ArgumentsAssignment_3_0() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__ArgumentsAssignment_3_0"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22636:1: rule__FunctionDefinition__ArgumentsAssignment_3_0 : ( RULE_IDENTIFIER ) ;
+    public final void rule__FunctionDefinition__ArgumentsAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -64882,11 +64882,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22642:1: RULE_IDENTIFIER
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_0_0()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_0_0()); 
             }
-            match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDecl__ArgumentsAssignment_3_045652); if (state.failed) return ;
+            match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDefinition__ArgumentsAssignment_3_045652); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_0_0()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_0_0()); 
             }
 
             }
@@ -64906,12 +64906,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__ArgumentsAssignment_3_0"
+    // $ANTLR end "rule__FunctionDefinition__ArgumentsAssignment_3_0"
 
 
-    // $ANTLR start "rule__FunctionDecl__ArgumentsAssignment_3_1_1"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22651:1: rule__FunctionDecl__ArgumentsAssignment_3_1_1 : ( RULE_IDENTIFIER ) ;
-    public final void rule__FunctionDecl__ArgumentsAssignment_3_1_1() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__ArgumentsAssignment_3_1_1"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22651:1: rule__FunctionDefinition__ArgumentsAssignment_3_1_1 : ( RULE_IDENTIFIER ) ;
+    public final void rule__FunctionDefinition__ArgumentsAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -64923,11 +64923,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22657:1: RULE_IDENTIFIER
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_1_1_0()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_1_1_0()); 
             }
-            match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDecl__ArgumentsAssignment_3_1_145683); if (state.failed) return ;
+            match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDefinition__ArgumentsAssignment_3_1_145683); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_1_1_0()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_1_1_0()); 
             }
 
             }
@@ -64947,12 +64947,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__ArgumentsAssignment_3_1_1"
+    // $ANTLR end "rule__FunctionDefinition__ArgumentsAssignment_3_1_1"
 
 
-    // $ANTLR start "rule__FunctionDecl__StatementsAssignment_6"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22666:1: rule__FunctionDecl__StatementsAssignment_6 : ( ruleStatement ) ;
-    public final void rule__FunctionDecl__StatementsAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__FunctionDefinition__StatementsAssignment_6"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22666:1: rule__FunctionDefinition__StatementsAssignment_6 : ( ruleStatement ) ;
+    public final void rule__FunctionDefinition__StatementsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -64964,15 +64964,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22672:1: ruleStatement
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionDeclAccess().getStatementsStatementParserRuleCall_6_0()); 
+               before(grammarAccess.getFunctionDefinitionAccess().getStatementsStatementParserRuleCall_6_0()); 
             }
-            pushFollow(FOLLOW_ruleStatement_in_rule__FunctionDecl__StatementsAssignment_645714);
+            pushFollow(FOLLOW_ruleStatement_in_rule__FunctionDefinition__StatementsAssignment_645714);
             ruleStatement();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionDeclAccess().getStatementsStatementParserRuleCall_6_0()); 
+               after(grammarAccess.getFunctionDefinitionAccess().getStatementsStatementParserRuleCall_6_0()); 
             }
 
             }
@@ -64992,7 +64992,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionDecl__StatementsAssignment_6"
+    // $ANTLR end "rule__FunctionDefinition__StatementsAssignment_6"
 
 
     // $ANTLR start "rule__IfStatement__ConditionAssignment_3"
@@ -65311,28 +65311,28 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ForStatement__ForVarAssignment_3"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22786:1: rule__ForStatement__ForVarAssignment_3 : ( ruleVariableDecl ) ;
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22786:1: rule__ForStatement__ForVarAssignment_3 : ( ruleVariableDefinition ) ;
     public final void rule__ForStatement__ForVarAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22790:1: ( ( ruleVariableDecl ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22791:1: ( ruleVariableDecl )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22790:1: ( ( ruleVariableDefinition ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22791:1: ( ruleVariableDefinition )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22791:1: ( ruleVariableDecl )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22792:1: ruleVariableDecl
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22791:1: ( ruleVariableDefinition )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22792:1: ruleVariableDefinition
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getForStatementAccess().getForVarVariableDeclParserRuleCall_3_0()); 
+               before(grammarAccess.getForStatementAccess().getForVarVariableDefinitionParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleVariableDecl_in_rule__ForStatement__ForVarAssignment_345962);
-            ruleVariableDecl();
+            pushFollow(FOLLOW_ruleVariableDefinition_in_rule__ForStatement__ForVarAssignment_345962);
+            ruleVariableDefinition();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getForStatementAccess().getForVarVariableDeclParserRuleCall_3_0()); 
+               after(grammarAccess.getForStatementAccess().getForVarVariableDefinitionParserRuleCall_3_0()); 
             }
 
             }
@@ -77394,9 +77394,9 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_ruleSimpleStatement_in_entryRuleSimpleStatement188 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSimpleStatement195 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SimpleStatement__Group__0_in_ruleSimpleStatement221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDecl_in_entryRuleVariableDecl248 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDecl255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableDecl__Group__0_in_ruleVariableDecl281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDefinition_in_entryRuleVariableDefinition248 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDefinition255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__Group__0_in_ruleVariableDefinition281 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableParam_in_entryRuleVariableParam308 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleVariableParam315 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableParam__Group__0_in_ruleVariableParam341 = new BitSet(new long[]{0x0000000000000002L});
@@ -77442,9 +77442,9 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_ruleCompoundStatement_in_entryRuleCompoundStatement1147 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCompoundStatement1154 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__CompoundStatement__Alternatives_in_ruleCompoundStatement1180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionDecl_in_entryRuleFunctionDecl1207 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionDecl1214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__0_in_ruleFunctionDecl1240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionDefinition_in_entryRuleFunctionDefinition1207 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionDefinition1214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__0_in_ruleFunctionDefinition1240 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIfStatement_in_entryRuleIfStatement1267 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIfStatement1274 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__IfStatement__Group__0_in_ruleIfStatement1300 = new BitSet(new long[]{0x0000000000000002L});
@@ -77772,7 +77772,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_rule__QualifiedNameInStaticImport__Group__0_in_ruleQualifiedNameInStaticImport7795 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_ruleSimpleStatement_in_rule__Statement__Alternatives7834 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCompoundStatement_in_rule__Statement__Alternatives7851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDecl_in_rule__SimpleStatement__Alternatives_07883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDefinition_in_rule__SimpleStatement__Alternatives_07883 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQueryFunction_in_rule__SimpleStatement__Alternatives_07900 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePrintFunction_in_rule__SimpleStatement__Alternatives_07917 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePostfixOperation_in_rule__SimpleStatement__Alternatives_07934 = new BitSet(new long[]{0x0000000000000002L});
@@ -77792,12 +77792,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_ruleVariableCall_in_rule__Primary__Alternatives8265 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFunctionCall_in_rule__Primary__Alternatives8282 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Primary__Group_3__0_in_rule__Primary__Alternatives8299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionDecl_in_rule__CompoundStatement__Alternatives8332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionDefinition_in_rule__CompoundStatement__Alternatives8332 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIfStatement_in_rule__CompoundStatement__Alternatives8349 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWhileStatement_in_rule__CompoundStatement__Alternatives8366 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleForStatement_in_rule__CompoundStatement__Alternatives8383 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePostfixOperation_in_rule__ForStatement__OperationAlternatives_7_08415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDecl_in_rule__ForStatement__OperationAlternatives_7_08432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDefinition_in_rule__ForStatement__OperationAlternatives_7_08432 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpAnd_in_rule__StatementCondition__Alternatives_1_08464 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpOr_in_rule__StatementCondition__Alternatives_1_08481 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__ConditionElement__Alternatives8513 = new BitSet(new long[]{0x0000000000000002L});
@@ -77934,17 +77934,17 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_rule__SimpleStatement__Alternatives_0_in_rule__SimpleStatement__Group__0__Impl11556 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SimpleStatement__Group__1__Impl_in_rule__SimpleStatement__Group__111586 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSemicolon_in_rule__SimpleStatement__Group__1__Impl11613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableDecl__Group__0__Impl_in_rule__VariableDecl__Group__011646 = new BitSet(new long[]{0x0000000020000100L});
-    public static final BitSet FOLLOW_rule__VariableDecl__Group__1_in_rule__VariableDecl__Group__011649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableDecl__IsGlobalAssignment_0_in_rule__VariableDecl__Group__0__Impl11676 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableDecl__Group__1__Impl_in_rule__VariableDecl__Group__111707 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__VariableDecl__Group__2_in_rule__VariableDecl__Group__111710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableDecl__NameAssignment_1_in_rule__VariableDecl__Group__1__Impl11737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableDecl__Group__2__Impl_in_rule__VariableDecl__Group__211767 = new BitSet(new long[]{0x000000C1E1000700L});
-    public static final BitSet FOLLOW_rule__VariableDecl__Group__3_in_rule__VariableDecl__Group__211770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpAssignment_in_rule__VariableDecl__Group__2__Impl11797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableDecl__Group__3__Impl_in_rule__VariableDecl__Group__311826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableDecl__VariableValueAssignment_3_in_rule__VariableDecl__Group__3__Impl11853 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__Group__0__Impl_in_rule__VariableDefinition__Group__011646 = new BitSet(new long[]{0x0000000020000100L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__Group__1_in_rule__VariableDefinition__Group__011649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__IsGlobalAssignment_0_in_rule__VariableDefinition__Group__0__Impl11676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__Group__1__Impl_in_rule__VariableDefinition__Group__111707 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__Group__2_in_rule__VariableDefinition__Group__111710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__NameAssignment_1_in_rule__VariableDefinition__Group__1__Impl11737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__Group__2__Impl_in_rule__VariableDefinition__Group__211767 = new BitSet(new long[]{0x000000C1E1000700L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__Group__3_in_rule__VariableDefinition__Group__211770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpAssignment_in_rule__VariableDefinition__Group__2__Impl11797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__Group__3__Impl_in_rule__VariableDefinition__Group__311826 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableDefinition__VariableValueAssignment_3_in_rule__VariableDefinition__Group__3__Impl11853 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableParam__Group__0__Impl_in_rule__VariableParam__Group__011891 = new BitSet(new long[]{0x000000C1E1000700L});
     public static final BitSet FOLLOW_rule__VariableParam__Group__1_in_rule__VariableParam__Group__011894 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableParam__Group__1__Impl_in_rule__VariableParam__Group__111952 = new BitSet(new long[]{0x0000000000000002L});
@@ -78052,39 +78052,39 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_ruleAddition_in_rule__Primary__Group_3__1__Impl14470 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Primary__Group_3__2__Impl_in_rule__Primary__Group_3__214499 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleClosingBracket_in_rule__Primary__Group_3__2__Impl14526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__0__Impl_in_rule__FunctionDecl__Group__014561 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__1_in_rule__FunctionDecl__Group__014564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunc_in_rule__FunctionDecl__Group__0__Impl14591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__1__Impl_in_rule__FunctionDecl__Group__114620 = new BitSet(new long[]{0x00000001E1000500L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__2_in_rule__FunctionDecl__Group__114623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__NameAssignment_1_in_rule__FunctionDecl__Group__1__Impl14650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__2__Impl_in_rule__FunctionDecl__Group__214680 = new BitSet(new long[]{0x00000001E3000700L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__3_in_rule__FunctionDecl__Group__214683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpeningBracket_in_rule__FunctionDecl__Group__2__Impl14710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__3__Impl_in_rule__FunctionDecl__Group__314739 = new BitSet(new long[]{0x00000001E3000700L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__4_in_rule__FunctionDecl__Group__314742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group_3__0_in_rule__FunctionDecl__Group__3__Impl14769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__4__Impl_in_rule__FunctionDecl__Group__414800 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__5_in_rule__FunctionDecl__Group__414803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClosingBracket_in_rule__FunctionDecl__Group__4__Impl14830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__5__Impl_in_rule__FunctionDecl__Group__514859 = new BitSet(new long[]{0x00000037F0000100L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__6_in_rule__FunctionDecl__Group__514862 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpeningCurlyBracket_in_rule__FunctionDecl__Group__5__Impl14889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__6__Impl_in_rule__FunctionDecl__Group__614918 = new BitSet(new long[]{0x00000037F0000100L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__7_in_rule__FunctionDecl__Group__614921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__StatementsAssignment_6_in_rule__FunctionDecl__Group__6__Impl14948 = new BitSet(new long[]{0x00000037E0000102L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group__7__Impl_in_rule__FunctionDecl__Group__714979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClosingCurlyBracket_in_rule__FunctionDecl__Group__7__Impl15006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group_3__0__Impl_in_rule__FunctionDecl__Group_3__015051 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group_3__1_in_rule__FunctionDecl__Group_3__015054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__ArgumentsAssignment_3_0_in_rule__FunctionDecl__Group_3__0__Impl15081 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group_3__1__Impl_in_rule__FunctionDecl__Group_3__115111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group_3_1__0_in_rule__FunctionDecl__Group_3__1__Impl15138 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group_3_1__0__Impl_in_rule__FunctionDecl__Group_3_1__015173 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group_3_1__1_in_rule__FunctionDecl__Group_3_1__015176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComma_in_rule__FunctionDecl__Group_3_1__0__Impl15203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__Group_3_1__1__Impl_in_rule__FunctionDecl__Group_3_1__115232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionDecl__ArgumentsAssignment_3_1_1_in_rule__FunctionDecl__Group_3_1__1__Impl15259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__0__Impl_in_rule__FunctionDefinition__Group__014561 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__1_in_rule__FunctionDefinition__Group__014564 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunc_in_rule__FunctionDefinition__Group__0__Impl14591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__1__Impl_in_rule__FunctionDefinition__Group__114620 = new BitSet(new long[]{0x00000001E1000500L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__2_in_rule__FunctionDefinition__Group__114623 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__NameAssignment_1_in_rule__FunctionDefinition__Group__1__Impl14650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__2__Impl_in_rule__FunctionDefinition__Group__214680 = new BitSet(new long[]{0x00000001E3000700L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__3_in_rule__FunctionDefinition__Group__214683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpeningBracket_in_rule__FunctionDefinition__Group__2__Impl14710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__3__Impl_in_rule__FunctionDefinition__Group__314739 = new BitSet(new long[]{0x00000001E3000700L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__4_in_rule__FunctionDefinition__Group__314742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group_3__0_in_rule__FunctionDefinition__Group__3__Impl14769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__4__Impl_in_rule__FunctionDefinition__Group__414800 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__5_in_rule__FunctionDefinition__Group__414803 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClosingBracket_in_rule__FunctionDefinition__Group__4__Impl14830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__5__Impl_in_rule__FunctionDefinition__Group__514859 = new BitSet(new long[]{0x00000037F0000100L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__6_in_rule__FunctionDefinition__Group__514862 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpeningCurlyBracket_in_rule__FunctionDefinition__Group__5__Impl14889 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__6__Impl_in_rule__FunctionDefinition__Group__614918 = new BitSet(new long[]{0x00000037F0000100L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__7_in_rule__FunctionDefinition__Group__614921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__StatementsAssignment_6_in_rule__FunctionDefinition__Group__6__Impl14948 = new BitSet(new long[]{0x00000037E0000102L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group__7__Impl_in_rule__FunctionDefinition__Group__714979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClosingCurlyBracket_in_rule__FunctionDefinition__Group__7__Impl15006 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group_3__0__Impl_in_rule__FunctionDefinition__Group_3__015051 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group_3__1_in_rule__FunctionDefinition__Group_3__015054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__ArgumentsAssignment_3_0_in_rule__FunctionDefinition__Group_3__0__Impl15081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group_3__1__Impl_in_rule__FunctionDefinition__Group_3__115111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group_3_1__0_in_rule__FunctionDefinition__Group_3__1__Impl15138 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group_3_1__0__Impl_in_rule__FunctionDefinition__Group_3_1__015173 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group_3_1__1_in_rule__FunctionDefinition__Group_3_1__015176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComma_in_rule__FunctionDefinition__Group_3_1__0__Impl15203 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__Group_3_1__1__Impl_in_rule__FunctionDefinition__Group_3_1__115232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionDefinition__ArgumentsAssignment_3_1_1_in_rule__FunctionDefinition__Group_3_1__1__Impl15259 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__IfStatement__Group__0__Impl_in_rule__IfStatement__Group__015293 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_rule__IfStatement__Group__1_in_rule__IfStatement__Group__015296 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__IfStatement__Group__1__Impl_in_rule__IfStatement__Group__115354 = new BitSet(new long[]{0x00000001E1000500L});
@@ -79303,9 +79303,9 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_rule__QualifiedNameInStaticImport__Group__1__Impl_in_rule__QualifiedNameInStaticImport__Group__144991 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_63_in_rule__QualifiedNameInStaticImport__Group__1__Impl45019 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStatement_in_rule__DataCentricDSL__ElementsAssignment45059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGlobal_in_rule__VariableDecl__IsGlobalAssignment_045090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__VariableDecl__NameAssignment_145121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableParam_in_rule__VariableDecl__VariableValueAssignment_345152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGlobal_in_rule__VariableDefinition__IsGlobalAssignment_045090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__VariableDefinition__NameAssignment_145121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableParam_in_rule__VariableDefinition__VariableValueAssignment_345152 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__VariableParam__VariableExpressionParamAssignment_1_045183 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQueryFunction_in_rule__VariableParam__VariableQueryParamAssignment_1_145214 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanValue_in_rule__VariableParam__VariableBolleanValueAssignment_1_245245 = new BitSet(new long[]{0x0000000000000002L});
@@ -79320,10 +79320,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_ruleDivision_in_rule__Multiplication__RightAssignment_1_245528 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMod_in_rule__Division__RightAssignment_1_245559 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePrimary_in_rule__Mod__RightAssignment_1_245590 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDecl__NameAssignment_145621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDecl__ArgumentsAssignment_3_045652 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDecl__ArgumentsAssignment_3_1_145683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatement_in_rule__FunctionDecl__StatementsAssignment_645714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDefinition__NameAssignment_145621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDefinition__ArgumentsAssignment_3_045652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__FunctionDefinition__ArgumentsAssignment_3_1_145683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatement_in_rule__FunctionDefinition__StatementsAssignment_645714 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStatementCondition_in_rule__IfStatement__ConditionAssignment_345745 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStatement_in_rule__IfStatement__StatementsAssignment_645776 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStatementCondition_in_rule__IfStatement__ConditionAssignment_8_245807 = new BitSet(new long[]{0x0000000000000002L});
@@ -79331,7 +79331,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_ruleStatement_in_rule__IfStatement__StatementsAssignment_9_245869 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStatementCondition_in_rule__WhileStatement__WhileConditionAssignment_345900 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStatement_in_rule__WhileStatement__StatementsAssignment_645931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDecl_in_rule__ForStatement__ForVarAssignment_345962 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDefinition_in_rule__ForStatement__ForVarAssignment_345962 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStatementCondition_in_rule__ForStatement__ForConditionAssignment_545993 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ForStatement__OperationAlternatives_7_0_in_rule__ForStatement__OperationAssignment_746024 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStatement_in_rule__ForStatement__StatementsAssignment_1046057 = new BitSet(new long[]{0x0000000000000002L});

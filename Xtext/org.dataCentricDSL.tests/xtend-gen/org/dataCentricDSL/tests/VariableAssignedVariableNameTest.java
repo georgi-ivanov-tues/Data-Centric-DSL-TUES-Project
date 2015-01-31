@@ -19,6 +19,7 @@ public class VariableAssignedVariableNameTest {
   @Test
   public void testVariableAssignedVariableName() {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method variableVarParam is undefined for the type VariableAssignedVariableNameTest");
+      + "\nThe method variableVarParam is undefined for the type VariableAssignedVariableNameTest"
+      + "\nThe method variableValue is undefined for the type VariableAssignedVariableNameTest");
   }
 }

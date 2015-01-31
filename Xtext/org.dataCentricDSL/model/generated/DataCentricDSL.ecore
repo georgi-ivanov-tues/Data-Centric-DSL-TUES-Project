@@ -7,12 +7,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleStatement" eSuperTypes="#//Statement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableDecl" eSuperTypes="#//SimpleStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDefinition" eSuperTypes="#//SimpleStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isGlobal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variableValue" eType="#//VariableDecl"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDecl"/>
   <eClassifiers xsi:type="ecore:EClass" name="QueryFunction" eSuperTypes="#//SimpleStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="#//QueryFunction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="queryParam" eType="#//Expression"
@@ -36,7 +37,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//Statement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FunctionDecl" eSuperTypes="#//CompoundStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionDefinition" eSuperTypes="#//CompoundStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="arguments" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -50,7 +51,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForStatement" eSuperTypes="#//CompoundStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="forVar" eType="#//VariableDecl"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forVar" eType="#//VariableDefinition"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="forCondition" eType="#//StatementCondition"
         containment="true"/>

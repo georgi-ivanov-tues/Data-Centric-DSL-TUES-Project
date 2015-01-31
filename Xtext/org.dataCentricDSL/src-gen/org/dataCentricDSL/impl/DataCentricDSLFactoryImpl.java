@@ -67,6 +67,7 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.DATA_CENTRIC_DSL: return createDataCentricDSL();
       case DataCentricDSLPackage.STATEMENT: return createStatement();
       case DataCentricDSLPackage.SIMPLE_STATEMENT: return createSimpleStatement();
+      case DataCentricDSLPackage.VARIABLE_DEFINITION: return createVariableDefinition();
       case DataCentricDSLPackage.VARIABLE_DECL: return createVariableDecl();
       case DataCentricDSLPackage.QUERY_FUNCTION: return createQueryFunction();
       case DataCentricDSLPackage.QUERY: return createQuery();
@@ -76,7 +77,7 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.VARIABLE_CALL: return createVariableCall();
       case DataCentricDSLPackage.EXPRESSION: return createExpression();
       case DataCentricDSLPackage.COMPOUND_STATEMENT: return createCompoundStatement();
-      case DataCentricDSLPackage.FUNCTION_DECL: return createFunctionDecl();
+      case DataCentricDSLPackage.FUNCTION_DEFINITION: return createFunctionDefinition();
       case DataCentricDSLPackage.IF_STATEMENT: return createIfStatement();
       case DataCentricDSLPackage.WHILE_STATEMENT: return createWhileStatement();
       case DataCentricDSLPackage.FOR_STATEMENT: return createForStatement();
@@ -129,6 +130,17 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     SimpleStatementImpl simpleStatement = new SimpleStatementImpl();
     return simpleStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableDefinition createVariableDefinition()
+  {
+    VariableDefinitionImpl variableDefinition = new VariableDefinitionImpl();
+    return variableDefinition;
   }
 
   /**
@@ -235,10 +247,10 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public FunctionDecl createFunctionDecl()
+  public FunctionDefinition createFunctionDefinition()
   {
-    FunctionDeclImpl functionDecl = new FunctionDeclImpl();
-    return functionDecl;
+    FunctionDefinitionImpl functionDefinition = new FunctionDefinitionImpl();
+    return functionDefinition;
   }
 
   /**

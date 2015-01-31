@@ -6,13 +6,14 @@ import org.dataCentricDSL.ConditionElement
 import org.dataCentricDSL.DataCentricDSL
 import org.dataCentricDSL.Division
 import org.dataCentricDSL.ForStatement
-import org.dataCentricDSL.FunctionDecl
+import org.dataCentricDSL.FunctionDefinition
 import org.dataCentricDSL.IfStatement
 import org.dataCentricDSL.Mod
 import org.dataCentricDSL.Multiplication
 import org.dataCentricDSL.NumberLiteral
 import org.dataCentricDSL.Substraction
 import org.dataCentricDSL.VariableDecl
+import org.dataCentricDSL.VariableDefinition
 import org.dataCentricDSL.WhileStatement
 import org.eclipse.emf.ecore.EObject
 
@@ -26,18 +27,18 @@ public class ValidationUtils {
 		}
 		if(object instanceof DataCentricDSL || object instanceof IfStatement
 			|| object instanceof ForStatement || object instanceof WhileStatement
-			|| object instanceof FunctionDecl
+			|| object instanceof FunctionDefinition
 		) {	
 			var int lastIndex;
 			var variableFound = false;
 			if(object instanceof DataCentricDSL) {
 				lastIndex = index;
 				variableFound = variableIsDeclared(object.eContents.subList(0, lastIndex).toArray
-									.filter(typeof(VariableDecl)).filter[isGlobal], name)
+									.filter(typeof(VariableDefinition)).filter[isGlobal], name)
 			} else {
 				lastIndex = object.eContents.length;
 				variableFound = variableIsDeclared(object.eContents.toArray
-									.filter(typeof(VariableDecl)).filter[isGlobal], name);
+									.filter(typeof(VariableDefinition)).filter[isGlobal], name);
 			}
 			if(variableFound) {
 				globalVariableFound = true;
@@ -48,14 +49,14 @@ public class ValidationUtils {
 				}
 			}
 		} else if(object instanceof VariableDecl) {
-			if((object as VariableDecl).isGlobal && (object as VariableDecl).name.equals(name)) {
+			if((object as VariableDefinition).isGlobal && (object as VariableDefinition).name.equals(name)) {
 				globalVariableFound = true;
 				return;
 			}
 		}
 	}
 
-	def static boolean variableIsDeclared(VariableDecl[] variables, String name) {
+	def static boolean variableIsDeclared(VariableDefinition[] variables, String name) {
 		if(variables != null) {
 			for(i : 0..< variables.length) {
 				if(variables.get(i).name.toString.equals(name)) {
@@ -67,7 +68,7 @@ public class ValidationUtils {
 		return false;
 	}
 	
-	def static boolean functionIsDeclared(FunctionDecl[] functions, String name) {
+	def static boolean functionIsDeclared(FunctionDefinition[] functions, String name) {
 		for(i : 0..< functions.length) {
 			if(functions.get(i).name.toString.equals(name)) {
 				return true;
@@ -107,8 +108,8 @@ public class ValidationUtils {
 		return true;
 	}
 	
-	def static boolean functionWithTheSameNameExists(FunctionDecl fd) {
-		var functionDeclarations = fd.eContainer.eContents.toArray.filter(typeof(FunctionDecl));
+	def static boolean functionWithTheSameNameExists(FunctionDefinition fd) {
+		var functionDeclarations = fd.eContainer.eContents.toArray.filter(typeof(FunctionDefinition));
 		var indexOfThisFunctionDecl = fd.eContainer.eContents.indexOf(fd);
 		for(i : 0..< functionDeclarations.length) {
 			if(i != indexOfThisFunctionDecl) {
@@ -121,15 +122,24 @@ public class ValidationUtils {
 		return false;
 	}
 	
-	def static boolean functionIsDeclaredBeforeTheCode(FunctionDecl fd) {
+	def static boolean functionIsDeclaredBeforeTheCode(FunctionDefinition fd) {
 		var elementsBeforeDeclaration = fd.eContainer.eContents.subList(0, fd.eContainer.eContents.indexOf(fd));
 		for(i : 0..< elementsBeforeDeclaration.length) {
-			if(!(elementsBeforeDeclaration.get(i) instanceof FunctionDecl)) {
+			if(!(elementsBeforeDeclaration.get(i) instanceof FunctionDefinition)) {
 				return false;
 			}
 		}
 		
 		return true;
+	}
+	
+	def static EObject getDataCentricDSLContainer(EObject element) {
+		var container = element.eContainer;
+		while(!(container instanceof DataCentricDSL)) {
+			container = container.eContainer;
+		}
+		
+		return container;
 	}
 	
 }

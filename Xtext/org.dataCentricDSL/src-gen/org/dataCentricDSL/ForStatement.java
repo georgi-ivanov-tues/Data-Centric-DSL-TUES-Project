@@ -32,12 +32,12 @@ public interface ForStatement extends CompoundStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>For Var</em>' containment reference.
-   * @see #setForVar(VariableDecl)
+   * @see #setForVar(VariableDefinition)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getForStatement_ForVar()
    * @model containment="true"
    * @generated
    */
-  VariableDecl getForVar();
+  VariableDefinition getForVar();
 
   /**
    * Sets the value of the '{@link org.dataCentricDSL.ForStatement#getForVar <em>For Var</em>}' containment reference.
@@ -47,7 +47,7 @@ public interface ForStatement extends CompoundStatement
    * @see #getForVar()
    * @generated
    */
-  void setForVar(VariableDecl value);
+  void setForVar(VariableDefinition value);
 
   /**
    * Returns the value of the '<em><b>For Condition</b></em>' containment reference.

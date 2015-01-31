@@ -8,10 +8,10 @@ import org.dataCentricDSL.DataCentricDSL
 import org.dataCentricDSL.DataCentricDSLPackage
 import org.dataCentricDSL.ForStatement
 import org.dataCentricDSL.FunctionCall
-import org.dataCentricDSL.FunctionDecl
+import org.dataCentricDSL.FunctionDefinition
 import org.dataCentricDSL.IfStatement
 import org.dataCentricDSL.VariableCall
-import org.dataCentricDSL.VariableDecl
+import org.dataCentricDSL.VariableDefinition
 import org.dataCentricDSL.WhileStatement
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.validation.Check
@@ -26,24 +26,24 @@ import static org.validation.ValidationUtils.*
 class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
-	def void checkFunctionDeclarationPosition(FunctionDecl fd) {
+	def void checkFunctionDeclarationPosition(FunctionDefinition fd) {
 		if(!(fd.eContainer instanceof DataCentricDSL)) {
-			error("Functions cannot be declared within block statements.",
-				DataCentricDSLPackage.Literals::FUNCTION_DECL__NAME
+			error("Functions cannot be defined within block statements.",
+				DataCentricDSLPackage.Literals::FUNCTION_DEFINITION__NAME
 			);
 			return;
 			
 		} else {
 			if(!ValidationUtils.functionIsDeclaredBeforeTheCode(fd)) {
-				error("Functions must be declared at the beginning of the code.",
-					DataCentricDSLPackage.Literals::FUNCTION_DECL__NAME
+				error("Functions must be defined at the beginning of the code.",
+					DataCentricDSLPackage.Literals::FUNCTION_DEFINITION__NAME
 				);
 				return;
 			}
 			
 			if(ValidationUtils.functionWithTheSameNameExists(fd)) {
 				error("Function with the same name already exists.",
-					DataCentricDSLPackage.Literals::FUNCTION_DECL__NAME
+					DataCentricDSLPackage.Literals::FUNCTION_DEFINITION__NAME
 				);
 				return;
 			}
@@ -63,13 +63,10 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	}
 	
 	@Check
-	def void checkIfCalledFunctionExists(FunctionCall fc) {
-		var container = fc.eContainer;
-		while(!(container instanceof DataCentricDSL)) {
-			container = container.eContainer;
-		}
+	def void checkIfCalledFunctionExistsAndMatchesArguments(FunctionCall fc) {
+		var container = ValidationUtils.getDataCentricDSLContainer(fc);
 		
-		val elements = container.eContents.toArray.filter(typeof(FunctionDecl));
+		val elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
 		if(ValidationUtils.functionIsDeclared(elements, fc.name)) {
 			return;
 		}
@@ -78,16 +75,34 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	}
 	
 	@Check
+	def void checkIfCalledFunctionArgumentsCountMatches(FunctionCall fc) {
+		var container = ValidationUtils.getDataCentricDSLContainer(fc);
+		
+		var elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
+		if(ValidationUtils.functionIsDeclared(elements, fc.name)) {
+			for(i : 0..< elements.length) {
+				if(elements.get(i).name.equals(fc.name) && elements.get(i).arguments.length == fc.arguments.length) {
+					return;
+				}
+			}
+			
+			error("Called function arguments do not match function definition's arguments.",
+				DataCentricDSLPackage.Literals::FUNCTION_CALL__ARGUMENTS
+			);
+		}
+	}
+	
+	@Check
 	def void checkIfAssignedVariableExists(VariableCall vc) {
 		var container = vc.eContainer;
-		var VariableDecl[] variables = null;
+		var VariableDefinition[] variables = null;
 		var EObject containerElement = vc.eContainer;
 		var int containerElementIndex;
 		while(!(container instanceof DataCentricDSL)) {
 			container = container.eContainer;
 			
 			if(container instanceof IfStatement || container instanceof ForStatement
-				|| container instanceof WhileStatement || container instanceof FunctionDecl) {
+				|| container instanceof WhileStatement || container instanceof FunctionDefinition) {
 				
 				if(container instanceof ForStatement) {
 					var DeclaratedVar = (container as ForStatement).forVar;
@@ -95,13 +110,13 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 						return;
 					}
 				}
-				if(container instanceof FunctionDecl) {
-					if(ValidationUtils.namePersistsInArray((container as FunctionDecl).arguments, vc.variableCall)) {
+				if(container instanceof FunctionDefinition) {
+					if(ValidationUtils.namePersistsInArray((container as FunctionDefinition).arguments, vc.variableCall)) {
 						return;
 					}
 				}
 				containerElementIndex = container.eContents.indexOf(containerElement);
-				variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDecl));
+				variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
 				if(ValidationUtils.variableIsDeclared(variables, vc.variableCall)) {
 					return;
 				}
@@ -112,7 +127,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 			}
 		}
 		containerElementIndex = container.eContents.indexOf(containerElement);
-		variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDecl));
+		variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
 		if(ValidationUtils.variableIsDeclared(variables, vc.variableCall)) {
 			return;
 		}

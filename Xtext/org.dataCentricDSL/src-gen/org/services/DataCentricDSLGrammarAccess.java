@@ -59,7 +59,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final RuleCall cVariableDeclParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cVariableDefinitionParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
 		private final RuleCall cQueryFunctionParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
 		private final RuleCall cPrintFunctionParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
 		private final RuleCall cPostfixOperationParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
@@ -67,20 +67,20 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSemicolonParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//SimpleStatement:
-		//	(VariableDecl | QueryFunction | PrintFunction | //	 MultiAssign | 
+		//	(VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
 		//	PostfixOperation | FunctionCall) Semicolon;
 		public ParserRule getRule() { return rule; }
 
-		//(VariableDecl | QueryFunction | PrintFunction | //	 MultiAssign | 
+		//(VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
 		//PostfixOperation | FunctionCall) Semicolon
 		public Group getGroup() { return cGroup; }
 
-		//VariableDecl | QueryFunction | PrintFunction | //	 MultiAssign | 
+		//VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
 		//PostfixOperation | FunctionCall
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
-		//VariableDecl
-		public RuleCall getVariableDeclParserRuleCall_0_0() { return cVariableDeclParserRuleCall_0_0; }
+		//VariableDefinition
+		public RuleCall getVariableDefinitionParserRuleCall_0_0() { return cVariableDefinitionParserRuleCall_0_0; }
 
 		//QueryFunction
 		public RuleCall getQueryFunctionParserRuleCall_0_1() { return cQueryFunctionParserRuleCall_0_1; }
@@ -99,8 +99,8 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getSemicolonParserRuleCall_1() { return cSemicolonParserRuleCall_1; }
 	}
 
-	public class VariableDeclElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableDecl");
+	public class VariableDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cIsGlobalAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cIsGlobalGlobalParserRuleCall_0_0 = (RuleCall)cIsGlobalAssignment_0.eContents().get(0);
@@ -110,7 +110,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cVariableValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cVariableValueVariableParamParserRuleCall_3_0 = (RuleCall)cVariableValueAssignment_3.eContents().get(0);
 		
-		//VariableDecl:
+		//VariableDefinition:
 		//	isGlobal?=Global? name=IDENTIFIER OpAssignment variableValue=VariableParam;
 		public ParserRule getRule() { return rule; }
 
@@ -604,24 +604,24 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class CompoundStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CompoundStatement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cFunctionDeclParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFunctionDefinitionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIfStatementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cWhileStatementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cForStatementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//CompoundStatement:
-		//	FunctionDecl | IfStatement | //	not supported in Antlr grammar, for now
+		//	FunctionDefinition | IfStatement | //	not supported in Antlr grammar, for now
 		//	//	SwitchStatement |
 		//	WhileStatement | ForStatement;
 		public ParserRule getRule() { return rule; }
 
-		//FunctionDecl | IfStatement | //	not supported in Antlr grammar, for now
+		//FunctionDefinition | IfStatement | //	not supported in Antlr grammar, for now
 		////	SwitchStatement |
 		//WhileStatement | ForStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//FunctionDecl
-		public RuleCall getFunctionDeclParserRuleCall_0() { return cFunctionDeclParserRuleCall_0; }
+		//FunctionDefinition
+		public RuleCall getFunctionDefinitionParserRuleCall_0() { return cFunctionDefinitionParserRuleCall_0; }
 
 		//IfStatement
 		public RuleCall getIfStatementParserRuleCall_1() { return cIfStatementParserRuleCall_1; }
@@ -635,8 +635,8 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getForStatementParserRuleCall_3() { return cForStatementParserRuleCall_3; }
 	}
 
-	public class FunctionDeclElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FunctionDecl");
+	public class FunctionDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FunctionDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cFuncParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -655,7 +655,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cStatementsStatementParserRuleCall_6_0 = (RuleCall)cStatementsAssignment_6.eContents().get(0);
 		private final RuleCall cClosingCurlyBracketParserRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 		
-		//FunctionDecl:
+		//FunctionDefinition:
 		//	Func name=IDENTIFIER OpeningBracket (arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)? ClosingBracket
 		//	OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
 		public ParserRule getRule() { return rule; }
@@ -907,7 +907,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cForParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final RuleCall cOpeningBracketParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cForVarAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cForVarVariableDeclParserRuleCall_3_0 = (RuleCall)cForVarAssignment_3.eContents().get(0);
+		private final RuleCall cForVarVariableDefinitionParserRuleCall_3_0 = (RuleCall)cForVarAssignment_3.eContents().get(0);
 		private final RuleCall cSemicolonParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		private final Assignment cForConditionAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cForConditionStatementConditionParserRuleCall_5_0 = (RuleCall)cForConditionAssignment_5.eContents().get(0);
@@ -915,7 +915,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOperationAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final Alternatives cOperationAlternatives_7_0 = (Alternatives)cOperationAssignment_7.eContents().get(0);
 		private final RuleCall cOperationPostfixOperationParserRuleCall_7_0_0 = (RuleCall)cOperationAlternatives_7_0.eContents().get(0);
-		private final RuleCall cOperationVariableDeclParserRuleCall_7_0_1 = (RuleCall)cOperationAlternatives_7_0.eContents().get(1);
+		private final RuleCall cOperationVariableDefinitionParserRuleCall_7_0_1 = (RuleCall)cOperationAlternatives_7_0.eContents().get(1);
 		private final RuleCall cClosingBracketParserRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 		private final RuleCall cOpeningCurlyBracketParserRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
 		private final Assignment cStatementsAssignment_10 = (Assignment)cGroup.eContents().get(10);
@@ -923,14 +923,14 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cClosingCurlyBracketParserRuleCall_11 = (RuleCall)cGroup.eContents().get(11);
 		
 		//ForStatement:
-		//	{ForStatement} For OpeningBracket forVar=VariableDecl Semicolon forCondition=StatementCondition Semicolon
+		//	{ForStatement} For OpeningBracket forVar=VariableDefinition Semicolon forCondition=StatementCondition Semicolon
 		//	operation=(PostfixOperation | //ForMultiAssign | 
-		//	VariableDecl) ClosingBracket OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
+		//	VariableDefinition) ClosingBracket OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
 		public ParserRule getRule() { return rule; }
 
-		//{ForStatement} For OpeningBracket forVar=VariableDecl Semicolon forCondition=StatementCondition Semicolon
+		//{ForStatement} For OpeningBracket forVar=VariableDefinition Semicolon forCondition=StatementCondition Semicolon
 		//operation=(PostfixOperation | //ForMultiAssign | 
-		//VariableDecl) ClosingBracket OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket
+		//VariableDefinition) ClosingBracket OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket
 		public Group getGroup() { return cGroup; }
 
 		//{ForStatement}
@@ -942,11 +942,11 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//OpeningBracket
 		public RuleCall getOpeningBracketParserRuleCall_2() { return cOpeningBracketParserRuleCall_2; }
 
-		//forVar=VariableDecl
+		//forVar=VariableDefinition
 		public Assignment getForVarAssignment_3() { return cForVarAssignment_3; }
 
-		//VariableDecl
-		public RuleCall getForVarVariableDeclParserRuleCall_3_0() { return cForVarVariableDeclParserRuleCall_3_0; }
+		//VariableDefinition
+		public RuleCall getForVarVariableDefinitionParserRuleCall_3_0() { return cForVarVariableDefinitionParserRuleCall_3_0; }
 
 		//Semicolon
 		public RuleCall getSemicolonParserRuleCall_4() { return cSemicolonParserRuleCall_4; }
@@ -961,19 +961,19 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getSemicolonParserRuleCall_6() { return cSemicolonParserRuleCall_6; }
 
 		//operation=(PostfixOperation | //ForMultiAssign | 
-		//VariableDecl)
+		//VariableDefinition)
 		public Assignment getOperationAssignment_7() { return cOperationAssignment_7; }
 
 		//PostfixOperation | //ForMultiAssign | 
-		//VariableDecl
+		//VariableDefinition
 		public Alternatives getOperationAlternatives_7_0() { return cOperationAlternatives_7_0; }
 
 		//PostfixOperation
 		public RuleCall getOperationPostfixOperationParserRuleCall_7_0_0() { return cOperationPostfixOperationParserRuleCall_7_0_0; }
 
 		////ForMultiAssign | 
-		//VariableDecl
-		public RuleCall getOperationVariableDeclParserRuleCall_7_0_1() { return cOperationVariableDeclParserRuleCall_7_0_1; }
+		//VariableDefinition
+		public RuleCall getOperationVariableDefinitionParserRuleCall_7_0_1() { return cOperationVariableDefinitionParserRuleCall_7_0_1; }
 
 		//ClosingBracket
 		public RuleCall getClosingBracketParserRuleCall_8() { return cClosingBracketParserRuleCall_8; }
@@ -1555,7 +1555,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final DataCentricDSLElements pDataCentricDSL;
 	private final StatementElements pStatement;
 	private final SimpleStatementElements pSimpleStatement;
-	private final VariableDeclElements pVariableDecl;
+	private final VariableDefinitionElements pVariableDefinition;
 	private final VariableParamElements pVariableParam;
 	private final QueryFunctionElements pQueryFunction;
 	private final QueryParamElements pQueryParam;
@@ -1571,7 +1571,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final ModElements pMod;
 	private final PrimaryElements pPrimary;
 	private final CompoundStatementElements pCompoundStatement;
-	private final FunctionDeclElements pFunctionDecl;
+	private final FunctionDefinitionElements pFunctionDefinition;
 	private final IfStatementElements pIfStatement;
 	private final WhileStatementElements pWhileStatement;
 	private final ForStatementElements pForStatement;
@@ -1623,7 +1623,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDataCentricDSL = new DataCentricDSLElements();
 		this.pStatement = new StatementElements();
 		this.pSimpleStatement = new SimpleStatementElements();
-		this.pVariableDecl = new VariableDeclElements();
+		this.pVariableDefinition = new VariableDefinitionElements();
 		this.pVariableParam = new VariableParamElements();
 		this.pQueryFunction = new QueryFunctionElements();
 		this.pQueryParam = new QueryParamElements();
@@ -1639,7 +1639,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMod = new ModElements();
 		this.pPrimary = new PrimaryElements();
 		this.pCompoundStatement = new CompoundStatementElements();
-		this.pFunctionDecl = new FunctionDeclElements();
+		this.pFunctionDefinition = new FunctionDefinitionElements();
 		this.pIfStatement = new IfStatementElements();
 		this.pWhileStatement = new WhileStatementElements();
 		this.pForStatement = new ForStatementElements();
@@ -1728,7 +1728,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SimpleStatement:
-	//	(VariableDecl | QueryFunction | PrintFunction | //	 MultiAssign | 
+	//	(VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
 	//	PostfixOperation | FunctionCall) Semicolon;
 	public SimpleStatementElements getSimpleStatementAccess() {
 		return pSimpleStatement;
@@ -1738,14 +1738,14 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getSimpleStatementAccess().getRule();
 	}
 
-	//VariableDecl:
+	//VariableDefinition:
 	//	isGlobal?=Global? name=IDENTIFIER OpAssignment variableValue=VariableParam;
-	public VariableDeclElements getVariableDeclAccess() {
-		return pVariableDecl;
+	public VariableDefinitionElements getVariableDefinitionAccess() {
+		return pVariableDefinition;
 	}
 	
-	public ParserRule getVariableDeclRule() {
-		return getVariableDeclAccess().getRule();
+	public ParserRule getVariableDefinitionRule() {
+		return getVariableDefinitionAccess().getRule();
 	}
 
 	//VariableParam returns VariableDecl:
@@ -1890,7 +1890,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//CompoundStatement:
-	//	FunctionDecl | IfStatement | //	not supported in Antlr grammar, for now
+	//	FunctionDefinition | IfStatement | //	not supported in Antlr grammar, for now
 	//	//	SwitchStatement |
 	//	WhileStatement | ForStatement;
 	public CompoundStatementElements getCompoundStatementAccess() {
@@ -1901,15 +1901,15 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getCompoundStatementAccess().getRule();
 	}
 
-	//FunctionDecl:
+	//FunctionDefinition:
 	//	Func name=IDENTIFIER OpeningBracket (arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)? ClosingBracket
 	//	OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
-	public FunctionDeclElements getFunctionDeclAccess() {
-		return pFunctionDecl;
+	public FunctionDefinitionElements getFunctionDefinitionAccess() {
+		return pFunctionDefinition;
 	}
 	
-	public ParserRule getFunctionDeclRule() {
-		return getFunctionDeclAccess().getRule();
+	public ParserRule getFunctionDefinitionRule() {
+		return getFunctionDefinitionAccess().getRule();
 	}
 
 	//IfStatement:
@@ -1948,9 +1948,9 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ForStatement:
-	//	{ForStatement} For OpeningBracket forVar=VariableDecl Semicolon forCondition=StatementCondition Semicolon
+	//	{ForStatement} For OpeningBracket forVar=VariableDefinition Semicolon forCondition=StatementCondition Semicolon
 	//	operation=(PostfixOperation | //ForMultiAssign | 
-	//	VariableDecl) ClosingBracket OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
+	//	VariableDefinition) ClosingBracket OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
 	public ForStatementElements getForStatementAccess() {
 		return pForStatement;
 	}

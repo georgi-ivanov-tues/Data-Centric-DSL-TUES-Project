@@ -19,6 +19,7 @@ public class VariableStringValueTest {
   @Test
   public void testVariableStringValue() {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method variableStringParam is undefined for the type VariableStringValueTest");
+      + "\nThe method variableStringParam is undefined for the type VariableStringValueTest"
+      + "\nThe method variableValue is undefined for the type VariableStringValueTest");
   }
 }

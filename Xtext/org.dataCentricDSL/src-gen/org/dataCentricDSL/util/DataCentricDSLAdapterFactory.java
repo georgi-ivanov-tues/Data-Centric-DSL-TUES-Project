@@ -90,6 +90,11 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createSimpleStatementAdapter();
       }
       @Override
+      public Adapter caseVariableDefinition(VariableDefinition object)
+      {
+        return createVariableDefinitionAdapter();
+      }
+      @Override
       public Adapter caseVariableDecl(VariableDecl object)
       {
         return createVariableDeclAdapter();
@@ -135,9 +140,9 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createCompoundStatementAdapter();
       }
       @Override
-      public Adapter caseFunctionDecl(FunctionDecl object)
+      public Adapter caseFunctionDefinition(FunctionDefinition object)
       {
-        return createFunctionDeclAdapter();
+        return createFunctionDefinitionAdapter();
       }
       @Override
       public Adapter caseIfStatement(IfStatement object)
@@ -287,6 +292,21 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableDefinition <em>Variable Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.dataCentricDSL.VariableDefinition
+   * @generated
+   */
+  public Adapter createVariableDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableDecl <em>Variable Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -422,16 +442,16 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.FunctionDecl <em>Function Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.FunctionDefinition <em>Function Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.dataCentricDSL.FunctionDecl
+   * @see org.dataCentricDSL.FunctionDefinition
    * @generated
    */
-  public Adapter createFunctionDeclAdapter()
+  public Adapter createFunctionDefinitionAdapter()
   {
     return null;
   }

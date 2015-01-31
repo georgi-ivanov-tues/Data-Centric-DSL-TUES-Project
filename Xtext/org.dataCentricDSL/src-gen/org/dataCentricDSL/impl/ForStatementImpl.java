@@ -6,7 +6,7 @@ import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.ForStatement;
 import org.dataCentricDSL.SimpleStatement;
 import org.dataCentricDSL.StatementCondition;
-import org.dataCentricDSL.VariableDecl;
+import org.dataCentricDSL.VariableDefinition;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -41,7 +41,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * @generated
    * @ordered
    */
-  protected VariableDecl forVar;
+  protected VariableDefinition forVar;
 
   /**
    * The cached value of the '{@link #getForCondition() <em>For Condition</em>}' containment reference.
@@ -89,7 +89,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDecl getForVar()
+  public VariableDefinition getForVar()
   {
     return forVar;
   }
@@ -99,9 +99,9 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetForVar(VariableDecl newForVar, NotificationChain msgs)
+  public NotificationChain basicSetForVar(VariableDefinition newForVar, NotificationChain msgs)
   {
-    VariableDecl oldForVar = forVar;
+    VariableDefinition oldForVar = forVar;
     forVar = newForVar;
     if (eNotificationRequired())
     {
@@ -116,7 +116,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setForVar(VariableDecl newForVar)
+  public void setForVar(VariableDefinition newForVar)
   {
     if (newForVar != forVar)
     {
@@ -279,7 +279,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
     switch (featureID)
     {
       case DataCentricDSLPackage.FOR_STATEMENT__FOR_VAR:
-        setForVar((VariableDecl)newValue);
+        setForVar((VariableDefinition)newValue);
         return;
       case DataCentricDSLPackage.FOR_STATEMENT__FOR_CONDITION:
         setForCondition((StatementCondition)newValue);
@@ -302,7 +302,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
     switch (featureID)
     {
       case DataCentricDSLPackage.FOR_STATEMENT__FOR_VAR:
-        setForVar((VariableDecl)null);
+        setForVar((VariableDefinition)null);
         return;
       case DataCentricDSLPackage.FOR_STATEMENT__FOR_CONDITION:
         setForCondition((StatementCondition)null);

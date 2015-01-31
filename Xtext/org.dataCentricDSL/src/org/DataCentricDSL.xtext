@@ -12,7 +12,7 @@ Statement:
 ;
 
 SimpleStatement:
-	(VariableDecl |
+	(VariableDefinition |
 	 QueryFunction | 
 	 PrintFunction | 
 //	 MultiAssign | 
@@ -20,7 +20,7 @@ SimpleStatement:
 	 FunctionCall) Semicolon
 ;
 
-VariableDecl:
+VariableDefinition:
 	(isGlobal?=Global)? name=IDENTIFIER OpAssignment variableValue=VariableParam
 ;
 
@@ -91,7 +91,7 @@ Primary returns Expression:
 ;
 
 CompoundStatement:
-	FunctionDecl |
+	FunctionDefinition |
 	IfStatement |
 //	not supported in Antlr grammar, for now
 //	SwitchStatement |
@@ -99,7 +99,7 @@ CompoundStatement:
 	ForStatement
 ;
 
-FunctionDecl:
+FunctionDefinition:
 	Func name=IDENTIFIER OpeningBracket
 		(arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)?
 		ClosingBracket OpeningCurlyBracket
@@ -144,11 +144,11 @@ WhileStatement:
 
 ForStatement:
 	{ForStatement}
-	For OpeningBracket forVar=VariableDecl Semicolon 
+	For OpeningBracket forVar=VariableDefinition Semicolon 
 		forCondition=StatementCondition Semicolon
 		operation=(PostfixOperation | 
 			//ForMultiAssign | 
-			VariableDecl) 
+			VariableDefinition) 
 		ClosingBracket OpeningCurlyBracket 
 			(statements+=Statement)* 
 	ClosingCurlyBracket

@@ -10,7 +10,7 @@ import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.Division;
 import org.dataCentricDSL.ForStatement;
 import org.dataCentricDSL.FunctionCall;
-import org.dataCentricDSL.FunctionDecl;
+import org.dataCentricDSL.FunctionDefinition;
 import org.dataCentricDSL.IfStatement;
 import org.dataCentricDSL.Mod;
 import org.dataCentricDSL.Multiplication;
@@ -22,7 +22,7 @@ import org.dataCentricDSL.StatementCondition;
 import org.dataCentricDSL.StringLiteral;
 import org.dataCentricDSL.Substraction;
 import org.dataCentricDSL.VariableCall;
-import org.dataCentricDSL.VariableDecl;
+import org.dataCentricDSL.VariableDefinition;
 import org.dataCentricDSL.VariableParam;
 import org.dataCentricDSL.WhileStatement;
 import org.eclipse.emf.ecore.EObject;
@@ -175,11 +175,11 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
-			case DataCentricDSLPackage.FUNCTION_DECL:
+			case DataCentricDSLPackage.FUNCTION_DEFINITION:
 				if(context == grammarAccess.getCompoundStatementRule() ||
-				   context == grammarAccess.getFunctionDeclRule() ||
+				   context == grammarAccess.getFunctionDefinitionRule() ||
 				   context == grammarAccess.getStatementRule()) {
-					sequence_FunctionDecl(context, (FunctionDecl) semanticObject); 
+					sequence_FunctionDefinition(context, (FunctionDefinition) semanticObject); 
 					return; 
 				}
 				else break;
@@ -334,11 +334,11 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
-			case DataCentricDSLPackage.VARIABLE_DECL:
+			case DataCentricDSLPackage.VARIABLE_DEFINITION:
 				if(context == grammarAccess.getSimpleStatementRule() ||
 				   context == grammarAccess.getStatementRule() ||
-				   context == grammarAccess.getVariableDeclRule()) {
-					sequence_VariableDecl(context, (VariableDecl) semanticObject); 
+				   context == grammarAccess.getVariableDefinitionRule()) {
+					sequence_VariableDefinition(context, (VariableDefinition) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1524,7 +1524,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (forVar=VariableDecl forCondition=StatementCondition (operation=PostfixOperation | operation=VariableDecl) statements+=Statement*)
+	 *     (forVar=VariableDefinition forCondition=StatementCondition (operation=PostfixOperation | operation=VariableDefinition) statements+=Statement*)
 	 */
 	protected void sequence_ForStatement(EObject context, ForStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1544,7 +1544,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 * Constraint:
 	 *     (name=IDENTIFIER (arguments+=IDENTIFIER arguments+=IDENTIFIER*)? statements+=Statement*)
 	 */
-	protected void sequence_FunctionDecl(EObject context, FunctionDecl semanticObject) {
+	protected void sequence_FunctionDefinition(EObject context, FunctionDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1720,7 +1720,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	 * Constraint:
 	 *     (isGlobal?=Global? name=IDENTIFIER variableValue=VariableParam)
 	 */
-	protected void sequence_VariableDecl(EObject context, VariableDecl semanticObject) {
+	protected void sequence_VariableDefinition(EObject context, VariableDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

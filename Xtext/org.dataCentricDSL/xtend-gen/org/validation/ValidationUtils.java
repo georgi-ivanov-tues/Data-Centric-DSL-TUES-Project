@@ -9,13 +9,14 @@ import org.dataCentricDSL.ConditionElement;
 import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.Division;
 import org.dataCentricDSL.ForStatement;
-import org.dataCentricDSL.FunctionDecl;
+import org.dataCentricDSL.FunctionDefinition;
 import org.dataCentricDSL.IfStatement;
 import org.dataCentricDSL.Mod;
 import org.dataCentricDSL.Multiplication;
 import org.dataCentricDSL.NumberLiteral;
 import org.dataCentricDSL.Substraction;
 import org.dataCentricDSL.VariableDecl;
+import org.dataCentricDSL.VariableDefinition;
 import org.dataCentricDSL.WhileStatement;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -36,7 +37,7 @@ public class ValidationUtils {
     if (((((object instanceof DataCentricDSL) || (object instanceof IfStatement)) || (object instanceof ForStatement)) || (object instanceof WhileStatement))) {
       _or = true;
     } else {
-      _or = (object instanceof FunctionDecl);
+      _or = (object instanceof FunctionDefinition);
     }
     if (_or) {
       int lastIndex = 0;
@@ -46,14 +47,14 @@ public class ValidationUtils {
         EList<EObject> _eContents = ((DataCentricDSL)object).eContents();
         List<EObject> _subList = _eContents.subList(0, lastIndex);
         Object[] _array = _subList.toArray();
-        Iterable<VariableDecl> _filter = Iterables.<VariableDecl>filter(((Iterable<?>)Conversions.doWrapArray(_array)), VariableDecl.class);
-        final Function1<VariableDecl, Boolean> _function = new Function1<VariableDecl, Boolean>() {
-          public Boolean apply(final VariableDecl it) {
+        Iterable<VariableDefinition> _filter = Iterables.<VariableDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), VariableDefinition.class);
+        final Function1<VariableDefinition, Boolean> _function = new Function1<VariableDefinition, Boolean>() {
+          public Boolean apply(final VariableDefinition it) {
             return Boolean.valueOf(it.isIsGlobal());
           }
         };
-        Iterable<VariableDecl> _filter_1 = IterableExtensions.<VariableDecl>filter(_filter, _function);
-        boolean _variableIsDeclared = ValidationUtils.variableIsDeclared(((VariableDecl[])Conversions.unwrapArray(_filter_1, VariableDecl.class)), name);
+        Iterable<VariableDefinition> _filter_1 = IterableExtensions.<VariableDefinition>filter(_filter, _function);
+        boolean _variableIsDeclared = ValidationUtils.variableIsDeclared(((VariableDefinition[])Conversions.unwrapArray(_filter_1, VariableDefinition.class)), name);
         variableFound = _variableIsDeclared;
       } else {
         EList<EObject> _eContents_1 = object.eContents();
@@ -61,14 +62,14 @@ public class ValidationUtils {
         lastIndex = _length;
         EList<EObject> _eContents_2 = object.eContents();
         Object[] _array_1 = _eContents_2.toArray();
-        Iterable<VariableDecl> _filter_2 = Iterables.<VariableDecl>filter(((Iterable<?>)Conversions.doWrapArray(_array_1)), VariableDecl.class);
-        final Function1<VariableDecl, Boolean> _function_1 = new Function1<VariableDecl, Boolean>() {
-          public Boolean apply(final VariableDecl it) {
+        Iterable<VariableDefinition> _filter_2 = Iterables.<VariableDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array_1)), VariableDefinition.class);
+        final Function1<VariableDefinition, Boolean> _function_1 = new Function1<VariableDefinition, Boolean>() {
+          public Boolean apply(final VariableDefinition it) {
             return Boolean.valueOf(it.isIsGlobal());
           }
         };
-        Iterable<VariableDecl> _filter_3 = IterableExtensions.<VariableDecl>filter(_filter_2, _function_1);
-        boolean _variableIsDeclared_1 = ValidationUtils.variableIsDeclared(((VariableDecl[])Conversions.unwrapArray(_filter_3, VariableDecl.class)), name);
+        Iterable<VariableDefinition> _filter_3 = IterableExtensions.<VariableDefinition>filter(_filter_2, _function_1);
+        boolean _variableIsDeclared_1 = ValidationUtils.variableIsDeclared(((VariableDefinition[])Conversions.unwrapArray(_filter_3, VariableDefinition.class)), name);
         variableFound = _variableIsDeclared_1;
       }
       if (variableFound) {
@@ -85,11 +86,11 @@ public class ValidationUtils {
     } else {
       if ((object instanceof VariableDecl)) {
         boolean _and = false;
-        boolean _isIsGlobal = ((VariableDecl) object).isIsGlobal();
+        boolean _isIsGlobal = ((VariableDefinition) object).isIsGlobal();
         if (!_isIsGlobal) {
           _and = false;
         } else {
-          String _name = ((VariableDecl) object).getName();
+          String _name = ((VariableDefinition) object).getName();
           boolean _equals = _name.equals(name);
           _and = _equals;
         }
@@ -101,13 +102,13 @@ public class ValidationUtils {
     }
   }
   
-  public static boolean variableIsDeclared(final VariableDecl[] variables, final String name) {
+  public static boolean variableIsDeclared(final VariableDefinition[] variables, final String name) {
     boolean _notEquals = (!Objects.equal(variables, null));
     if (_notEquals) {
       int _length = variables.length;
       ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
       for (final Integer i : _doubleDotLessThan) {
-        VariableDecl _get = variables[(i).intValue()];
+        VariableDefinition _get = variables[(i).intValue()];
         String _name = _get.getName();
         String _string = _name.toString();
         boolean _equals = _string.equals(name);
@@ -119,11 +120,11 @@ public class ValidationUtils {
     return false;
   }
   
-  public static boolean functionIsDeclared(final FunctionDecl[] functions, final String name) {
+  public static boolean functionIsDeclared(final FunctionDefinition[] functions, final String name) {
     int _length = functions.length;
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
     for (final Integer i : _doubleDotLessThan) {
-      FunctionDecl _get = functions[(i).intValue()];
+      FunctionDefinition _get = functions[(i).intValue()];
       String _name = _get.getName();
       String _string = _name.toString();
       boolean _equals = _string.equals(name);
@@ -174,22 +175,22 @@ public class ValidationUtils {
     return true;
   }
   
-  public static boolean functionWithTheSameNameExists(final FunctionDecl fd) {
+  public static boolean functionWithTheSameNameExists(final FunctionDefinition fd) {
     EObject _eContainer = fd.eContainer();
     EList<EObject> _eContents = _eContainer.eContents();
     Object[] _array = _eContents.toArray();
-    Iterable<FunctionDecl> functionDeclarations = Iterables.<FunctionDecl>filter(((Iterable<?>)Conversions.doWrapArray(_array)), FunctionDecl.class);
+    Iterable<FunctionDefinition> functionDeclarations = Iterables.<FunctionDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), FunctionDefinition.class);
     EObject _eContainer_1 = fd.eContainer();
     EList<EObject> _eContents_1 = _eContainer_1.eContents();
     int indexOfThisFunctionDecl = _eContents_1.indexOf(fd);
-    final Iterable<FunctionDecl> _converted_functionDeclarations = (Iterable<FunctionDecl>)functionDeclarations;
+    final Iterable<FunctionDefinition> _converted_functionDeclarations = (Iterable<FunctionDefinition>)functionDeclarations;
     int _length = ((Object[])Conversions.unwrapArray(_converted_functionDeclarations, Object.class)).length;
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
     for (final Integer i : _doubleDotLessThan) {
       if (((i).intValue() != indexOfThisFunctionDecl)) {
         String _name = fd.getName();
-        final Iterable<FunctionDecl> _converted_functionDeclarations_1 = (Iterable<FunctionDecl>)functionDeclarations;
-        FunctionDecl _get = ((FunctionDecl[])Conversions.unwrapArray(_converted_functionDeclarations_1, FunctionDecl.class))[(i).intValue()];
+        final Iterable<FunctionDefinition> _converted_functionDeclarations_1 = (Iterable<FunctionDefinition>)functionDeclarations;
+        FunctionDefinition _get = ((FunctionDefinition[])Conversions.unwrapArray(_converted_functionDeclarations_1, FunctionDefinition.class))[(i).intValue()];
         String _name_1 = _get.getName();
         boolean _equals = _name.equals(_name_1);
         if (_equals) {
@@ -200,7 +201,7 @@ public class ValidationUtils {
     return false;
   }
   
-  public static boolean functionIsDeclaredBeforeTheCode(final FunctionDecl fd) {
+  public static boolean functionIsDeclaredBeforeTheCode(final FunctionDefinition fd) {
     EObject _eContainer = fd.eContainer();
     EList<EObject> _eContents = _eContainer.eContents();
     EObject _eContainer_1 = fd.eContainer();
@@ -212,10 +213,19 @@ public class ValidationUtils {
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
     for (final Integer i : _doubleDotLessThan) {
       EObject _get = elementsBeforeDeclaration.get((i).intValue());
-      if ((!(_get instanceof FunctionDecl))) {
+      if ((!(_get instanceof FunctionDefinition))) {
         return false;
       }
     }
     return true;
+  }
+  
+  public static EObject getDataCentricDSLContainer(final EObject element) {
+    EObject container = element.eContainer();
+    while ((!(container instanceof DataCentricDSL))) {
+      EObject _eContainer = container.eContainer();
+      container = _eContainer;
+    }
+    return container;
   }
 }

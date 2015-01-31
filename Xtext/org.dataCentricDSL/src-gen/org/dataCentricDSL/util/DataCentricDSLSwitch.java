@@ -94,12 +94,19 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DataCentricDSLPackage.VARIABLE_DEFINITION:
+      {
+        VariableDefinition variableDefinition = (VariableDefinition)theEObject;
+        T result = caseVariableDefinition(variableDefinition);
+        if (result == null) result = caseSimpleStatement(variableDefinition);
+        if (result == null) result = caseStatement(variableDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DataCentricDSLPackage.VARIABLE_DECL:
       {
         VariableDecl variableDecl = (VariableDecl)theEObject;
         T result = caseVariableDecl(variableDecl);
-        if (result == null) result = caseSimpleStatement(variableDecl);
-        if (result == null) result = caseStatement(variableDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -177,12 +184,12 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DataCentricDSLPackage.FUNCTION_DECL:
+      case DataCentricDSLPackage.FUNCTION_DEFINITION:
       {
-        FunctionDecl functionDecl = (FunctionDecl)theEObject;
-        T result = caseFunctionDecl(functionDecl);
-        if (result == null) result = caseCompoundStatement(functionDecl);
-        if (result == null) result = caseStatement(functionDecl);
+        FunctionDefinition functionDefinition = (FunctionDefinition)theEObject;
+        T result = caseFunctionDefinition(functionDefinition);
+        if (result == null) result = caseCompoundStatement(functionDefinition);
+        if (result == null) result = caseStatement(functionDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -274,8 +281,6 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         VariableParam variableParam = (VariableParam)theEObject;
         T result = caseVariableParam(variableParam);
         if (result == null) result = caseVariableDecl(variableParam);
-        if (result == null) result = caseSimpleStatement(variableParam);
-        if (result == null) result = caseStatement(variableParam);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -372,6 +377,22 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSimpleStatement(SimpleStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableDefinition(VariableDefinition object)
   {
     return null;
   }
@@ -521,17 +542,17 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Function Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Function Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Function Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Function Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFunctionDecl(FunctionDecl object)
+  public T caseFunctionDefinition(FunctionDefinition object)
   {
     return null;
   }

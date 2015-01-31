@@ -462,11 +462,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSimpleStatement"
-    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:155:1: ruleSimpleStatement returns [EObject current=null] : ( (this_VariableDecl_0= ruleVariableDecl | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall ) ruleSemicolon ) ;
+    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:155:1: ruleSimpleStatement returns [EObject current=null] : ( (this_VariableDefinition_0= ruleVariableDefinition | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall ) ruleSemicolon ) ;
     public final EObject ruleSimpleStatement() throws RecognitionException {
         EObject current = null;
 
-        EObject this_VariableDecl_0 = null;
+        EObject this_VariableDefinition_0 = null;
 
         EObject this_QueryFunction_1 = null;
 
@@ -480,13 +480,13 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:158:28: ( ( (this_VariableDecl_0= ruleVariableDecl | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall ) ruleSemicolon ) )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:159:1: ( (this_VariableDecl_0= ruleVariableDecl | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall ) ruleSemicolon )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:158:28: ( ( (this_VariableDefinition_0= ruleVariableDefinition | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall ) ruleSemicolon ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:159:1: ( (this_VariableDefinition_0= ruleVariableDefinition | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall ) ruleSemicolon )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:159:1: ( (this_VariableDecl_0= ruleVariableDecl | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall ) ruleSemicolon )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:159:2: (this_VariableDecl_0= ruleVariableDecl | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall ) ruleSemicolon
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:159:1: ( (this_VariableDefinition_0= ruleVariableDefinition | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall ) ruleSemicolon )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:159:2: (this_VariableDefinition_0= ruleVariableDefinition | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall ) ruleSemicolon
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:159:2: (this_VariableDecl_0= ruleVariableDecl | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:159:2: (this_VariableDefinition_0= ruleVariableDefinition | this_QueryFunction_1= ruleQueryFunction | this_PrintFunction_2= rulePrintFunction | this_PostfixOperation_3= rulePostfixOperation | this_FunctionCall_4= ruleFunctionCall )
             int alt3=5;
             switch ( input.LA(1) ) {
             case 39:
@@ -544,21 +544,21 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
             switch (alt3) {
                 case 1 :
-                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:160:5: this_VariableDecl_0= ruleVariableDecl
+                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:160:5: this_VariableDefinition_0= ruleVariableDefinition
                     {
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getSimpleStatementAccess().getVariableDeclParserRuleCall_0_0()); 
+                              newCompositeNode(grammarAccess.getSimpleStatementAccess().getVariableDefinitionParserRuleCall_0_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleVariableDecl_in_ruleSimpleStatement343);
-                    this_VariableDecl_0=ruleVariableDecl();
+                    pushFollow(FOLLOW_ruleVariableDefinition_in_ruleSimpleStatement343);
+                    this_VariableDefinition_0=ruleVariableDefinition();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
-                              current = this_VariableDecl_0; 
+                              current = this_VariableDefinition_0; 
                               afterParserOrEnumRuleCall();
                           
                     }
@@ -693,30 +693,30 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleSimpleStatement"
 
 
-    // $ANTLR start "entryRuleVariableDecl"
-    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:224:1: entryRuleVariableDecl returns [EObject current=null] : iv_ruleVariableDecl= ruleVariableDecl EOF ;
-    public final EObject entryRuleVariableDecl() throws RecognitionException {
+    // $ANTLR start "entryRuleVariableDefinition"
+    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:224:1: entryRuleVariableDefinition returns [EObject current=null] : iv_ruleVariableDefinition= ruleVariableDefinition EOF ;
+    public final EObject entryRuleVariableDefinition() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleVariableDecl = null;
+        EObject iv_ruleVariableDefinition = null;
 
 
         try {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:225:2: (iv_ruleVariableDecl= ruleVariableDecl EOF )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:226:2: iv_ruleVariableDecl= ruleVariableDecl EOF
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:225:2: (iv_ruleVariableDefinition= ruleVariableDefinition EOF )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:226:2: iv_ruleVariableDefinition= ruleVariableDefinition EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getVariableDeclRule()); 
+               newCompositeNode(grammarAccess.getVariableDefinitionRule()); 
             }
-            pushFollow(FOLLOW_ruleVariableDecl_in_entryRuleVariableDecl502);
-            iv_ruleVariableDecl=ruleVariableDecl();
+            pushFollow(FOLLOW_ruleVariableDefinition_in_entryRuleVariableDefinition502);
+            iv_ruleVariableDefinition=ruleVariableDefinition();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleVariableDecl; 
+               current =iv_ruleVariableDefinition; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDecl512); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDefinition512); if (state.failed) return current;
 
             }
 
@@ -730,12 +730,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleVariableDecl"
+    // $ANTLR end "entryRuleVariableDefinition"
 
 
-    // $ANTLR start "ruleVariableDecl"
-    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:233:1: ruleVariableDecl returns [EObject current=null] : ( ( (lv_isGlobal_0_0= ruleGlobal ) )? ( (lv_name_1_0= RULE_IDENTIFIER ) ) ruleOpAssignment ( (lv_variableValue_3_0= ruleVariableParam ) ) ) ;
-    public final EObject ruleVariableDecl() throws RecognitionException {
+    // $ANTLR start "ruleVariableDefinition"
+    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:233:1: ruleVariableDefinition returns [EObject current=null] : ( ( (lv_isGlobal_0_0= ruleGlobal ) )? ( (lv_name_1_0= RULE_IDENTIFIER ) ) ruleOpAssignment ( (lv_variableValue_3_0= ruleVariableParam ) ) ) ;
+    public final EObject ruleVariableDefinition() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_1_0=null;
@@ -769,10 +769,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getVariableDeclAccess().getIsGlobalGlobalParserRuleCall_0_0()); 
+                      	        newCompositeNode(grammarAccess.getVariableDefinitionAccess().getIsGlobalGlobalParserRuleCall_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleGlobal_in_ruleVariableDecl558);
+                    pushFollow(FOLLOW_ruleGlobal_in_ruleVariableDefinition558);
                     lv_isGlobal_0_0=ruleGlobal();
 
                     state._fsp--;
@@ -780,7 +780,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                       	        if (current==null) {
-                      	            current = createModelElementForParent(grammarAccess.getVariableDeclRule());
+                      	            current = createModelElementForParent(grammarAccess.getVariableDefinitionRule());
                       	        }
                              		set(
                              			current, 
@@ -805,16 +805,16 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:256:1: (lv_name_1_0= RULE_IDENTIFIER )
             // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:257:3: lv_name_1_0= RULE_IDENTIFIER
             {
-            lv_name_1_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleVariableDecl576); if (state.failed) return current;
+            lv_name_1_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleVariableDefinition576); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(lv_name_1_0, grammarAccess.getVariableDeclAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
+              			newLeafNode(lv_name_1_0, grammarAccess.getVariableDefinitionAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
               		
             }
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getVariableDeclRule());
+              	            current = createModelElement(grammarAccess.getVariableDefinitionRule());
               	        }
                      		setWithLastConsumed(
                      			current, 
@@ -831,10 +831,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
             if ( state.backtracking==0 ) {
                
-                      newCompositeNode(grammarAccess.getVariableDeclAccess().getOpAssignmentParserRuleCall_2()); 
+                      newCompositeNode(grammarAccess.getVariableDefinitionAccess().getOpAssignmentParserRuleCall_2()); 
                   
             }
-            pushFollow(FOLLOW_ruleOpAssignment_in_ruleVariableDecl597);
+            pushFollow(FOLLOW_ruleOpAssignment_in_ruleVariableDefinition597);
             ruleOpAssignment();
 
             state._fsp--;
@@ -852,10 +852,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getVariableDeclAccess().getVariableValueVariableParamParserRuleCall_3_0()); 
+              	        newCompositeNode(grammarAccess.getVariableDefinitionAccess().getVariableValueVariableParamParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleVariableParam_in_ruleVariableDecl617);
+            pushFollow(FOLLOW_ruleVariableParam_in_ruleVariableDefinition617);
             lv_variableValue_3_0=ruleVariableParam();
 
             state._fsp--;
@@ -863,7 +863,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getVariableDeclRule());
+              	            current = createModelElementForParent(grammarAccess.getVariableDefinitionRule());
               	        }
                      		set(
                      			current, 
@@ -898,7 +898,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleVariableDecl"
+    // $ANTLR end "ruleVariableDefinition"
 
 
     // $ANTLR start "entryRuleVariableParam"
@@ -3491,11 +3491,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompoundStatement"
-    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1168:1: ruleCompoundStatement returns [EObject current=null] : (this_FunctionDecl_0= ruleFunctionDecl | this_IfStatement_1= ruleIfStatement | this_WhileStatement_2= ruleWhileStatement | this_ForStatement_3= ruleForStatement ) ;
+    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1168:1: ruleCompoundStatement returns [EObject current=null] : (this_FunctionDefinition_0= ruleFunctionDefinition | this_IfStatement_1= ruleIfStatement | this_WhileStatement_2= ruleWhileStatement | this_ForStatement_3= ruleForStatement ) ;
     public final EObject ruleCompoundStatement() throws RecognitionException {
         EObject current = null;
 
-        EObject this_FunctionDecl_0 = null;
+        EObject this_FunctionDefinition_0 = null;
 
         EObject this_IfStatement_1 = null;
 
@@ -3507,10 +3507,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1171:28: ( (this_FunctionDecl_0= ruleFunctionDecl | this_IfStatement_1= ruleIfStatement | this_WhileStatement_2= ruleWhileStatement | this_ForStatement_3= ruleForStatement ) )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1172:1: (this_FunctionDecl_0= ruleFunctionDecl | this_IfStatement_1= ruleIfStatement | this_WhileStatement_2= ruleWhileStatement | this_ForStatement_3= ruleForStatement )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1171:28: ( (this_FunctionDefinition_0= ruleFunctionDefinition | this_IfStatement_1= ruleIfStatement | this_WhileStatement_2= ruleWhileStatement | this_ForStatement_3= ruleForStatement ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1172:1: (this_FunctionDefinition_0= ruleFunctionDefinition | this_IfStatement_1= ruleIfStatement | this_WhileStatement_2= ruleWhileStatement | this_ForStatement_3= ruleForStatement )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1172:1: (this_FunctionDecl_0= ruleFunctionDecl | this_IfStatement_1= ruleIfStatement | this_WhileStatement_2= ruleWhileStatement | this_ForStatement_3= ruleForStatement )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1172:1: (this_FunctionDefinition_0= ruleFunctionDefinition | this_IfStatement_1= ruleIfStatement | this_WhileStatement_2= ruleWhileStatement | this_ForStatement_3= ruleForStatement )
             int alt18=4;
             switch ( input.LA(1) ) {
             case 43:
@@ -3543,21 +3543,21 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
             switch (alt18) {
                 case 1 :
-                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1173:5: this_FunctionDecl_0= ruleFunctionDecl
+                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1173:5: this_FunctionDefinition_0= ruleFunctionDefinition
                     {
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getCompoundStatementAccess().getFunctionDeclParserRuleCall_0()); 
+                              newCompositeNode(grammarAccess.getCompoundStatementAccess().getFunctionDefinitionParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleFunctionDecl_in_ruleCompoundStatement2644);
-                    this_FunctionDecl_0=ruleFunctionDecl();
+                    pushFollow(FOLLOW_ruleFunctionDefinition_in_ruleCompoundStatement2644);
+                    this_FunctionDefinition_0=ruleFunctionDefinition();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
-                              current = this_FunctionDecl_0; 
+                              current = this_FunctionDefinition_0; 
                               afterParserOrEnumRuleCall();
                           
                     }
@@ -3652,30 +3652,30 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleCompoundStatement"
 
 
-    // $ANTLR start "entryRuleFunctionDecl"
-    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1219:1: entryRuleFunctionDecl returns [EObject current=null] : iv_ruleFunctionDecl= ruleFunctionDecl EOF ;
-    public final EObject entryRuleFunctionDecl() throws RecognitionException {
+    // $ANTLR start "entryRuleFunctionDefinition"
+    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1219:1: entryRuleFunctionDefinition returns [EObject current=null] : iv_ruleFunctionDefinition= ruleFunctionDefinition EOF ;
+    public final EObject entryRuleFunctionDefinition() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleFunctionDecl = null;
+        EObject iv_ruleFunctionDefinition = null;
 
 
         try {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1220:2: (iv_ruleFunctionDecl= ruleFunctionDecl EOF )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1221:2: iv_ruleFunctionDecl= ruleFunctionDecl EOF
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1220:2: (iv_ruleFunctionDefinition= ruleFunctionDefinition EOF )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1221:2: iv_ruleFunctionDefinition= ruleFunctionDefinition EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getFunctionDeclRule()); 
+               newCompositeNode(grammarAccess.getFunctionDefinitionRule()); 
             }
-            pushFollow(FOLLOW_ruleFunctionDecl_in_entryRuleFunctionDecl2760);
-            iv_ruleFunctionDecl=ruleFunctionDecl();
+            pushFollow(FOLLOW_ruleFunctionDefinition_in_entryRuleFunctionDefinition2760);
+            iv_ruleFunctionDefinition=ruleFunctionDefinition();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleFunctionDecl; 
+               current =iv_ruleFunctionDefinition; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionDecl2770); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionDefinition2770); if (state.failed) return current;
 
             }
 
@@ -3689,12 +3689,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleFunctionDecl"
+    // $ANTLR end "entryRuleFunctionDefinition"
 
 
-    // $ANTLR start "ruleFunctionDecl"
-    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1228:1: ruleFunctionDecl returns [EObject current=null] : ( ruleFunc ( (lv_name_1_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_3_0= RULE_IDENTIFIER ) ) ( ruleComma ( (lv_arguments_5_0= RULE_IDENTIFIER ) ) )* )? ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_8_0= ruleStatement ) )* ruleClosingCurlyBracket ) ;
-    public final EObject ruleFunctionDecl() throws RecognitionException {
+    // $ANTLR start "ruleFunctionDefinition"
+    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1228:1: ruleFunctionDefinition returns [EObject current=null] : ( ruleFunc ( (lv_name_1_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_3_0= RULE_IDENTIFIER ) ) ( ruleComma ( (lv_arguments_5_0= RULE_IDENTIFIER ) ) )* )? ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_8_0= ruleStatement ) )* ruleClosingCurlyBracket ) ;
+    public final EObject ruleFunctionDefinition() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_1_0=null;
@@ -3714,10 +3714,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             {
             if ( state.backtracking==0 ) {
                
-                      newCompositeNode(grammarAccess.getFunctionDeclAccess().getFuncParserRuleCall_0()); 
+                      newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getFuncParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleFunc_in_ruleFunctionDecl2811);
+            pushFollow(FOLLOW_ruleFunc_in_ruleFunctionDefinition2811);
             ruleFunc();
 
             state._fsp--;
@@ -3733,16 +3733,16 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1241:1: (lv_name_1_0= RULE_IDENTIFIER )
             // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1242:3: lv_name_1_0= RULE_IDENTIFIER
             {
-            lv_name_1_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDecl2827); if (state.failed) return current;
+            lv_name_1_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDefinition2827); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(lv_name_1_0, grammarAccess.getFunctionDeclAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
+              			newLeafNode(lv_name_1_0, grammarAccess.getFunctionDefinitionAccess().getNameIDENTIFIERTerminalRuleCall_1_0()); 
               		
             }
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getFunctionDeclRule());
+              	            current = createModelElement(grammarAccess.getFunctionDefinitionRule());
               	        }
                      		setWithLastConsumed(
                      			current, 
@@ -3759,10 +3759,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
             if ( state.backtracking==0 ) {
                
-                      newCompositeNode(grammarAccess.getFunctionDeclAccess().getOpeningBracketParserRuleCall_2()); 
+                      newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getOpeningBracketParserRuleCall_2()); 
                   
             }
-            pushFollow(FOLLOW_ruleOpeningBracket_in_ruleFunctionDecl2848);
+            pushFollow(FOLLOW_ruleOpeningBracket_in_ruleFunctionDefinition2848);
             ruleOpeningBracket();
 
             state._fsp--;
@@ -3789,16 +3789,16 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                     // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1267:1: (lv_arguments_3_0= RULE_IDENTIFIER )
                     // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1268:3: lv_arguments_3_0= RULE_IDENTIFIER
                     {
-                    lv_arguments_3_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDecl2865); if (state.failed) return current;
+                    lv_arguments_3_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDefinition2865); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			newLeafNode(lv_arguments_3_0, grammarAccess.getFunctionDeclAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_0_0()); 
+                      			newLeafNode(lv_arguments_3_0, grammarAccess.getFunctionDefinitionAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_0_0()); 
                       		
                     }
                     if ( state.backtracking==0 ) {
 
                       	        if (current==null) {
-                      	            current = createModelElement(grammarAccess.getFunctionDeclRule());
+                      	            current = createModelElement(grammarAccess.getFunctionDefinitionRule());
                       	        }
                              		addWithLastConsumed(
                              			current, 
@@ -3830,10 +3830,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
-                    	              newCompositeNode(grammarAccess.getFunctionDeclAccess().getCommaParserRuleCall_3_1_0()); 
+                    	              newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getCommaParserRuleCall_3_1_0()); 
                     	          
                     	    }
-                    	    pushFollow(FOLLOW_ruleComma_in_ruleFunctionDecl2887);
+                    	    pushFollow(FOLLOW_ruleComma_in_ruleFunctionDefinition2887);
                     	    ruleComma();
 
                     	    state._fsp--;
@@ -3849,16 +3849,16 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                     	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1293:1: (lv_arguments_5_0= RULE_IDENTIFIER )
                     	    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1294:3: lv_arguments_5_0= RULE_IDENTIFIER
                     	    {
-                    	    lv_arguments_5_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDecl2903); if (state.failed) return current;
+                    	    lv_arguments_5_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDefinition2903); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
-                    	      			newLeafNode(lv_arguments_5_0, grammarAccess.getFunctionDeclAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_1_1_0()); 
+                    	      			newLeafNode(lv_arguments_5_0, grammarAccess.getFunctionDefinitionAccess().getArgumentsIDENTIFIERTerminalRuleCall_3_1_1_0()); 
                     	      		
                     	    }
                     	    if ( state.backtracking==0 ) {
 
                     	      	        if (current==null) {
-                    	      	            current = createModelElement(grammarAccess.getFunctionDeclRule());
+                    	      	            current = createModelElement(grammarAccess.getFunctionDefinitionRule());
                     	      	        }
                     	             		addWithLastConsumed(
                     	             			current, 
@@ -3890,10 +3890,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
             if ( state.backtracking==0 ) {
                
-                      newCompositeNode(grammarAccess.getFunctionDeclAccess().getClosingBracketParserRuleCall_4()); 
+                      newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getClosingBracketParserRuleCall_4()); 
                   
             }
-            pushFollow(FOLLOW_ruleClosingBracket_in_ruleFunctionDecl2928);
+            pushFollow(FOLLOW_ruleClosingBracket_in_ruleFunctionDefinition2928);
             ruleClosingBracket();
 
             state._fsp--;
@@ -3905,10 +3905,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-                      newCompositeNode(grammarAccess.getFunctionDeclAccess().getOpeningCurlyBracketParserRuleCall_5()); 
+                      newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getOpeningCurlyBracketParserRuleCall_5()); 
                   
             }
-            pushFollow(FOLLOW_ruleOpeningCurlyBracket_in_ruleFunctionDecl2943);
+            pushFollow(FOLLOW_ruleOpeningCurlyBracket_in_ruleFunctionDefinition2943);
             ruleOpeningCurlyBracket();
 
             state._fsp--;
@@ -3938,10 +3938,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getFunctionDeclAccess().getStatementsStatementParserRuleCall_6_0()); 
+            	      	        newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getStatementsStatementParserRuleCall_6_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleStatement_in_ruleFunctionDecl2963);
+            	    pushFollow(FOLLOW_ruleStatement_in_ruleFunctionDefinition2963);
             	    lv_statements_8_0=ruleStatement();
 
             	    state._fsp--;
@@ -3949,7 +3949,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
             	    if ( state.backtracking==0 ) {
 
             	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getFunctionDeclRule());
+            	      	            current = createModelElementForParent(grammarAccess.getFunctionDefinitionRule());
             	      	        }
             	             		add(
             	             			current, 
@@ -3973,10 +3973,10 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
             if ( state.backtracking==0 ) {
                
-                      newCompositeNode(grammarAccess.getFunctionDeclAccess().getClosingCurlyBracketParserRuleCall_7()); 
+                      newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getClosingCurlyBracketParserRuleCall_7()); 
                   
             }
-            pushFollow(FOLLOW_ruleClosingCurlyBracket_in_ruleFunctionDecl2980);
+            pushFollow(FOLLOW_ruleClosingCurlyBracket_in_ruleFunctionDefinition2980);
             ruleClosingCurlyBracket();
 
             state._fsp--;
@@ -4005,7 +4005,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleFunctionDecl"
+    // $ANTLR end "ruleFunctionDefinition"
 
 
     // $ANTLR start "entryRuleIfStatement"
@@ -4877,7 +4877,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForStatement"
-    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1693:1: ruleForStatement returns [EObject current=null] : ( () ruleFor ruleOpeningBracket ( (lv_forVar_3_0= ruleVariableDecl ) ) ruleSemicolon ( (lv_forCondition_5_0= ruleStatementCondition ) ) ruleSemicolon ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDecl ) ) ) ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_10_0= ruleStatement ) )* ruleClosingCurlyBracket ) ;
+    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1693:1: ruleForStatement returns [EObject current=null] : ( () ruleFor ruleOpeningBracket ( (lv_forVar_3_0= ruleVariableDefinition ) ) ruleSemicolon ( (lv_forCondition_5_0= ruleStatementCondition ) ) ruleSemicolon ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDefinition ) ) ) ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_10_0= ruleStatement ) )* ruleClosingCurlyBracket ) ;
     public final EObject ruleForStatement() throws RecognitionException {
         EObject current = null;
 
@@ -4895,11 +4895,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1696:28: ( ( () ruleFor ruleOpeningBracket ( (lv_forVar_3_0= ruleVariableDecl ) ) ruleSemicolon ( (lv_forCondition_5_0= ruleStatementCondition ) ) ruleSemicolon ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDecl ) ) ) ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_10_0= ruleStatement ) )* ruleClosingCurlyBracket ) )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1697:1: ( () ruleFor ruleOpeningBracket ( (lv_forVar_3_0= ruleVariableDecl ) ) ruleSemicolon ( (lv_forCondition_5_0= ruleStatementCondition ) ) ruleSemicolon ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDecl ) ) ) ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_10_0= ruleStatement ) )* ruleClosingCurlyBracket )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1696:28: ( ( () ruleFor ruleOpeningBracket ( (lv_forVar_3_0= ruleVariableDefinition ) ) ruleSemicolon ( (lv_forCondition_5_0= ruleStatementCondition ) ) ruleSemicolon ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDefinition ) ) ) ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_10_0= ruleStatement ) )* ruleClosingCurlyBracket ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1697:1: ( () ruleFor ruleOpeningBracket ( (lv_forVar_3_0= ruleVariableDefinition ) ) ruleSemicolon ( (lv_forCondition_5_0= ruleStatementCondition ) ) ruleSemicolon ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDefinition ) ) ) ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_10_0= ruleStatement ) )* ruleClosingCurlyBracket )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1697:1: ( () ruleFor ruleOpeningBracket ( (lv_forVar_3_0= ruleVariableDecl ) ) ruleSemicolon ( (lv_forCondition_5_0= ruleStatementCondition ) ) ruleSemicolon ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDecl ) ) ) ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_10_0= ruleStatement ) )* ruleClosingCurlyBracket )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1697:2: () ruleFor ruleOpeningBracket ( (lv_forVar_3_0= ruleVariableDecl ) ) ruleSemicolon ( (lv_forCondition_5_0= ruleStatementCondition ) ) ruleSemicolon ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDecl ) ) ) ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_10_0= ruleStatement ) )* ruleClosingCurlyBracket
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1697:1: ( () ruleFor ruleOpeningBracket ( (lv_forVar_3_0= ruleVariableDefinition ) ) ruleSemicolon ( (lv_forCondition_5_0= ruleStatementCondition ) ) ruleSemicolon ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDefinition ) ) ) ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_10_0= ruleStatement ) )* ruleClosingCurlyBracket )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1697:2: () ruleFor ruleOpeningBracket ( (lv_forVar_3_0= ruleVariableDefinition ) ) ruleSemicolon ( (lv_forCondition_5_0= ruleStatementCondition ) ) ruleSemicolon ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDefinition ) ) ) ruleClosingBracket ruleOpeningCurlyBracket ( (lv_statements_10_0= ruleStatement ) )* ruleClosingCurlyBracket
             {
             // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1697:2: ()
             // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1698:5: 
@@ -4944,19 +4944,19 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1719:1: ( (lv_forVar_3_0= ruleVariableDecl ) )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1720:1: (lv_forVar_3_0= ruleVariableDecl )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1719:1: ( (lv_forVar_3_0= ruleVariableDefinition ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1720:1: (lv_forVar_3_0= ruleVariableDefinition )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1720:1: (lv_forVar_3_0= ruleVariableDecl )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1721:3: lv_forVar_3_0= ruleVariableDecl
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1720:1: (lv_forVar_3_0= ruleVariableDefinition )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1721:3: lv_forVar_3_0= ruleVariableDefinition
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getForStatementAccess().getForVarVariableDeclParserRuleCall_3_0()); 
+              	        newCompositeNode(grammarAccess.getForStatementAccess().getForVarVariableDefinitionParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleVariableDecl_in_ruleForStatement3697);
-            lv_forVar_3_0=ruleVariableDecl();
+            pushFollow(FOLLOW_ruleVariableDefinition_in_ruleForStatement3697);
+            lv_forVar_3_0=ruleVariableDefinition();
 
             state._fsp--;
             if (state.failed) return current;
@@ -4969,7 +4969,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                      			current, 
                      			"forVar",
                       		lv_forVar_3_0, 
-                      		"VariableDecl");
+                      		"VariableDefinition");
               	        afterParserOrEnumRuleCall();
               	    
             }
@@ -5044,13 +5044,13 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1771:1: ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDecl ) ) )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1772:1: ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDecl ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1771:1: ( ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDefinition ) ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1772:1: ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDefinition ) )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1772:1: ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDecl ) )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1773:1: (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDecl )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1772:1: ( (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDefinition ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1773:1: (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDefinition )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1773:1: (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDecl )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1773:1: (lv_operation_7_1= rulePostfixOperation | lv_operation_7_2= ruleVariableDefinition )
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -5112,15 +5112,15 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1789:8: lv_operation_7_2= ruleVariableDecl
+                    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:1789:8: lv_operation_7_2= ruleVariableDefinition
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getForStatementAccess().getOperationVariableDeclParserRuleCall_7_0_1()); 
+                      	        newCompositeNode(grammarAccess.getForStatementAccess().getOperationVariableDefinitionParserRuleCall_7_0_1()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleVariableDecl_in_ruleForStatement3790);
-                    lv_operation_7_2=ruleVariableDecl();
+                    pushFollow(FOLLOW_ruleVariableDefinition_in_ruleForStatement3790);
+                    lv_operation_7_2=ruleVariableDefinition();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -5133,7 +5133,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
                              			current, 
                              			"operation",
                               		lv_operation_7_2, 
-                              		"VariableDecl");
+                              		"VariableDefinition");
                       	        afterParserOrEnumRuleCall();
                       	    
                     }
@@ -31239,18 +31239,18 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleCompoundStatement_in_ruleStatement250 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSimpleStatement_in_entryRuleSimpleStatement285 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSimpleStatement295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDecl_in_ruleSimpleStatement343 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_ruleVariableDefinition_in_ruleSimpleStatement343 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_ruleQueryFunction_in_ruleSimpleStatement370 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_rulePrintFunction_in_ruleSimpleStatement397 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_rulePostfixOperation_in_ruleSimpleStatement424 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_ruleFunctionCall_in_ruleSimpleStatement451 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_ruleSemicolon_in_ruleSimpleStatement467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDecl_in_entryRuleVariableDecl502 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDecl512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGlobal_in_ruleVariableDecl558 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_ruleVariableDecl576 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_ruleOpAssignment_in_ruleVariableDecl597 = new BitSet(new long[]{0x0000078400018070L});
-    public static final BitSet FOLLOW_ruleVariableParam_in_ruleVariableDecl617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDefinition_in_entryRuleVariableDefinition502 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDefinition512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGlobal_in_ruleVariableDefinition558 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_ruleVariableDefinition576 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_ruleOpAssignment_in_ruleVariableDefinition597 = new BitSet(new long[]{0x0000078400018070L});
+    public static final BitSet FOLLOW_ruleVariableParam_in_ruleVariableDefinition617 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableParam_in_entryRuleVariableParam653 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleVariableParam663 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleVariableParam719 = new BitSet(new long[]{0x0000000000000002L});
@@ -31323,22 +31323,22 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleClosingBracket_in_rulePrimary2551 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCompoundStatement_in_entryRuleCompoundStatement2587 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCompoundStatement2597 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionDecl_in_ruleCompoundStatement2644 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionDefinition_in_ruleCompoundStatement2644 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIfStatement_in_ruleCompoundStatement2671 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWhileStatement_in_ruleCompoundStatement2698 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleForStatement_in_ruleCompoundStatement2725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionDecl_in_entryRuleFunctionDecl2760 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionDecl2770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunc_in_ruleFunctionDecl2811 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDecl2827 = new BitSet(new long[]{0x0000078400000050L});
-    public static final BitSet FOLLOW_ruleOpeningBracket_in_ruleFunctionDecl2848 = new BitSet(new long[]{0x0000078C00000070L});
-    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDecl2865 = new BitSet(new long[]{0x0000079C00000070L});
-    public static final BitSet FOLLOW_ruleComma_in_ruleFunctionDecl2887 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDecl2903 = new BitSet(new long[]{0x0000079C00000070L});
-    public static final BitSet FOLLOW_ruleClosingBracket_in_ruleFunctionDecl2928 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_ruleOpeningCurlyBracket_in_ruleFunctionDecl2943 = new BitSet(new long[]{0x0000DFC000000010L});
-    public static final BitSet FOLLOW_ruleStatement_in_ruleFunctionDecl2963 = new BitSet(new long[]{0x0000DFC000000010L});
-    public static final BitSet FOLLOW_ruleClosingCurlyBracket_in_ruleFunctionDecl2980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionDefinition_in_entryRuleFunctionDefinition2760 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionDefinition2770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunc_in_ruleFunctionDefinition2811 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDefinition2827 = new BitSet(new long[]{0x0000078400000050L});
+    public static final BitSet FOLLOW_ruleOpeningBracket_in_ruleFunctionDefinition2848 = new BitSet(new long[]{0x0000078C00000070L});
+    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDefinition2865 = new BitSet(new long[]{0x0000079C00000070L});
+    public static final BitSet FOLLOW_ruleComma_in_ruleFunctionDefinition2887 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_ruleFunctionDefinition2903 = new BitSet(new long[]{0x0000079C00000070L});
+    public static final BitSet FOLLOW_ruleClosingBracket_in_ruleFunctionDefinition2928 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_ruleOpeningCurlyBracket_in_ruleFunctionDefinition2943 = new BitSet(new long[]{0x0000DFC000000010L});
+    public static final BitSet FOLLOW_ruleStatement_in_ruleFunctionDefinition2963 = new BitSet(new long[]{0x0000DFC000000010L});
+    public static final BitSet FOLLOW_ruleClosingCurlyBracket_in_ruleFunctionDefinition2980 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIfStatement_in_entryRuleIfStatement3015 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIfStatement3025 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIf_in_ruleIfStatement3075 = new BitSet(new long[]{0x0000078400000050L});
@@ -31372,12 +31372,12 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleForStatement3612 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFor_in_ruleForStatement3662 = new BitSet(new long[]{0x0000078400000050L});
     public static final BitSet FOLLOW_ruleOpeningBracket_in_ruleForStatement3677 = new BitSet(new long[]{0x0000008000000010L});
-    public static final BitSet FOLLOW_ruleVariableDecl_in_ruleForStatement3697 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_ruleVariableDefinition_in_ruleForStatement3697 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_ruleSemicolon_in_ruleForStatement3713 = new BitSet(new long[]{0x0000078400018070L});
     public static final BitSet FOLLOW_ruleStatementCondition_in_ruleForStatement3733 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_ruleSemicolon_in_ruleForStatement3749 = new BitSet(new long[]{0x0000008000000010L});
     public static final BitSet FOLLOW_rulePostfixOperation_in_ruleForStatement3771 = new BitSet(new long[]{0x0000078C00000070L});
-    public static final BitSet FOLLOW_ruleVariableDecl_in_ruleForStatement3790 = new BitSet(new long[]{0x0000078C00000070L});
+    public static final BitSet FOLLOW_ruleVariableDefinition_in_ruleForStatement3790 = new BitSet(new long[]{0x0000078C00000070L});
     public static final BitSet FOLLOW_ruleClosingBracket_in_ruleForStatement3809 = new BitSet(new long[]{0x0000002000000000L});
     public static final BitSet FOLLOW_ruleOpeningCurlyBracket_in_ruleForStatement3824 = new BitSet(new long[]{0x0000DFC000000010L});
     public static final BitSet FOLLOW_ruleStatement_in_ruleForStatement3844 = new BitSet(new long[]{0x0000DFC000000010L});
