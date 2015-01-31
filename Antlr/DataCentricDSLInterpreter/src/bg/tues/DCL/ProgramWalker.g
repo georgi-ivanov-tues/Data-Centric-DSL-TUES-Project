@@ -15,7 +15,7 @@ options {
   import bg.tues.DCL.tree.expressions.operations.*;
   import java.util.Map; 
   import java.util.HashMap;
-  
+  import java.io.PrintStream;
   import java.util.List;
   import java.util.ArrayList;
   import java.sql.Connection;
@@ -28,36 +28,49 @@ options {
 
 @members {
   public Map<String, Function> functions = null;
+  public Map<String, Object> context = new HashMap<String, Object>();
   Scope currentScope = null;
-    
+  Scope globalScope = null;
+  private Connection dataSource;
+  private PrintStream outputStream;
+  
+  public ProgramWalker(TreeNodeStream input, Scope scope, Map<String, Function> fns) {
+    super(input, new RecognizerSharedState());
+    this.globalScope = scope;
+    this.functions = fns;
+    outputStream = System.out;
+  }
+  
   public ProgramWalker(TreeNodeStream input, Map<String, Object> context, Map<String, Function> fns) {
     super(input, new RecognizerSharedState());
-    this.context = context;
-    functions = fns;
+    this.globalScope = new Scope();
+    resolveOptions(context);
+    this.functions = fns;
   }
-  
-//  public ProgramWalker(CommonTreeNodeStream nodes, Map<String, Function> fns) {
-//    this(nodes, null, fns);
-//  }
-  
-  public ProgramWalker(CommonTreeNodeStream nds, Scope sc, Map<String, Function> fns) {
-    super(nds);
-    currentScope = sc;
-    functions = fns;
-  }
-  
-   public ProgramWalker(TreeNodeStream input, Map<String, Object> context) {
+    
+  public ProgramWalker(TreeNodeStream input, Scope scope, Map<String, Object> context, Map<String, Function> fns) {
     super(input, new RecognizerSharedState());
-    this.context = context;
+    this.globalScope = scope;
+    resolveOptions(context);
+    this.functions = fns;
   }
   
-  public ProgramWalker(TreeNodeStream input, RecognizerSharedState state, Map<String, Object> context) {
+  public ProgramWalker(TreeNodeStream input, RecognizerSharedState state, Scope scope, Map<String, Object> context, Map<String, Function> fns) {
     super(input, state);
-    this.context = context;
+    this.globalScope = scope;
+    resolveOptions(context);
+    this.functions = fns;
   }
-   
-  public Map<String, Object> context = new HashMap<String, Object>();
   
+  private void resolveOptions(Map<String, Object> context) {
+    dataSource = (Connection) context.get("dataSource");
+    PrintStream o = (PrintStream) context.get("outputStream");
+    if(o == null) {
+      outputStream = System.out;
+    } else {
+      outputStream = o;
+    }
+  }
 }
 
 program returns [Node node]
@@ -71,8 +84,12 @@ block returns [Node node]
 @init {
   BlockNode bn = new BlockNode();
   node = bn;
-  Scope scope = new Scope(currentScope);
-  currentScope = scope;
+  if(currentScope == null) {
+    currentScope = globalScope;
+  } else {
+    Scope scope = new Scope(currentScope);
+    currentScope = scope;
+  }
 }
 @after { 
   currentScope = currentScope.parent();
@@ -94,7 +111,7 @@ statement returns [Node node]
   ;
 
 query returns [Node node]: 
-  ^('query' expression {node = new QueryNode($expression.node, (Connection) context.get("dataSource"));})
+  ^('query' expression {node = new QueryNode($expression.node, dataSource);})
 ;
 
 variableCall returns [String value]:
@@ -127,8 +144,8 @@ functionCall returns [Node node]
       node = function;
       
   }
-  |  ^(FUNC_CALL Println expression?) {node = new PrintlnNode($expression.node);}
-  |  ^(FUNC_CALL Print expression) {node = new PrintNode($expression.node);}
+  |  ^(FUNC_CALL Println expression?) {node = new PrintlnNode($expression.node, outputStream);}
+  |  ^(FUNC_CALL Print expression) {node = new PrintNode($expression.node, outputStream);}
   |  ^(FUNC_CALL Assert expression) 
   |  ^(FUNC_CALL Size expression)
   ;

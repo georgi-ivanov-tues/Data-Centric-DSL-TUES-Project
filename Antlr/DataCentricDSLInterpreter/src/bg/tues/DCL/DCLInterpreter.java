@@ -8,7 +8,6 @@ import java.util.Map;
 
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 
@@ -25,7 +24,7 @@ public class DCLInterpreter {
 
 		CommonTree tree = (CommonTree)parser.program().getTree();
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
-
+		
 		Map<String, Object> myMap = new HashMap<String, Object>();
 		myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
 

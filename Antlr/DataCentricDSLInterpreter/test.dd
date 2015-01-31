@@ -1,4 +1,5 @@
 println 'new\nline\ttab';
+println query "SELECT * FROM People";
 
 /*func xaxa(i) {
 	if(i == 1) {
