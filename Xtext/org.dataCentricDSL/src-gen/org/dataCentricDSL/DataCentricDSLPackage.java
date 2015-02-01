@@ -198,41 +198,22 @@ public interface DataCentricDSLPackage extends EPackage
   int QUERY_FUNCTION = 5;
 
   /**
-   * The number of structural features of the '<em>Query Function</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUERY_FUNCTION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.QueryImpl <em>Query</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.QueryImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getQuery()
-   * @generated
-   */
-  int QUERY = 6;
-
-  /**
    * The feature id for the '<em><b>Query Param</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUERY__QUERY_PARAM = QUERY_FUNCTION_FEATURE_COUNT + 0;
+  int QUERY_FUNCTION__QUERY_PARAM = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Query</em>' class.
+   * The number of structural features of the '<em>Query Function</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUERY_FEATURE_COUNT = QUERY_FUNCTION_FEATURE_COUNT + 1;
+  int QUERY_FUNCTION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.PrintFunctionImpl <em>Print Function</em>}' class.
@@ -242,26 +223,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPrintFunction()
    * @generated
    */
-  int PRINT_FUNCTION = 7;
-
-  /**
-   * The number of structural features of the '<em>Print Function</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRINT_FUNCTION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.PrintImpl <em>Print</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.PrintImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPrint()
-   * @generated
-   */
-  int PRINT = 8;
+  int PRINT_FUNCTION = 6;
 
   /**
    * The feature id for the '<em><b>Print Param</b></em>' containment reference.
@@ -270,16 +232,35 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRINT__PRINT_PARAM = PRINT_FUNCTION_FEATURE_COUNT + 0;
+  int PRINT_FUNCTION__PRINT_PARAM = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Print</em>' class.
+   * The number of structural features of the '<em>Print Function</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRINT_FEATURE_COUNT = PRINT_FUNCTION_FEATURE_COUNT + 1;
+  int PRINT_FUNCTION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.PrintParamImpl <em>Print Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.PrintParamImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPrintParam()
+   * @generated
+   */
+  int PRINT_PARAM = 7;
+
+  /**
+   * The number of structural features of the '<em>Print Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRINT_PARAM_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.FunctionCallImpl <em>Function Call</em>}' class.
@@ -289,7 +270,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunctionCall()
    * @generated
    */
-  int FUNCTION_CALL = 9;
+  int FUNCTION_CALL = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -326,7 +307,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getConditionElement()
    * @generated
    */
-  int CONDITION_ELEMENT = 19;
+  int CONDITION_ELEMENT = 18;
 
   /**
    * The number of structural features of the '<em>Condition Element</em>' class.
@@ -345,7 +326,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 11;
+  int EXPRESSION = 10;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -364,7 +345,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableCall()
    * @generated
    */
-  int VARIABLE_CALL = 10;
+  int VARIABLE_CALL = 9;
 
   /**
    * The feature id for the '<em><b>Variable Call</b></em>' attribute.
@@ -392,7 +373,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getCompoundStatement()
    * @generated
    */
-  int COMPOUND_STATEMENT = 12;
+  int COMPOUND_STATEMENT = 11;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -420,7 +401,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getFunctionDefinition()
    * @generated
    */
-  int FUNCTION_DEFINITION = 13;
+  int FUNCTION_DEFINITION = 12;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -450,13 +431,22 @@ public interface DataCentricDSLPackage extends EPackage
   int FUNCTION_DEFINITION__ARGUMENTS = COMPOUND_STATEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Return Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DEFINITION__RETURN_VALUE = COMPOUND_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Function Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_DEFINITION_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 2;
+  int FUNCTION_DEFINITION_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.IfStatementImpl <em>If Statement</em>}' class.
@@ -466,7 +456,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getIfStatement()
    * @generated
    */
-  int IF_STATEMENT = 14;
+  int IF_STATEMENT = 13;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -503,7 +493,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getWhileStatement()
    * @generated
    */
-  int WHILE_STATEMENT = 15;
+  int WHILE_STATEMENT = 14;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -540,7 +530,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getForStatement()
    * @generated
    */
-  int FOR_STATEMENT = 16;
+  int FOR_STATEMENT = 15;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -595,7 +585,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getStatementCondition()
    * @generated
    */
-  int STATEMENT_CONDITION = 17;
+  int STATEMENT_CONDITION = 16;
 
   /**
    * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
@@ -604,7 +594,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_CONDITION__CONDITIONS = 0;
+  int STATEMENT_CONDITION__CONDITIONS = PRINT_PARAM_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Statement Condition</em>' class.
@@ -613,7 +603,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_CONDITION_FEATURE_COUNT = 1;
+  int STATEMENT_CONDITION_FEATURE_COUNT = PRINT_PARAM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.ConditionImpl <em>Condition</em>}' class.
@@ -623,7 +613,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 18;
+  int CONDITION = 17;
 
   /**
    * The feature id for the '<em><b>Condition Elements</b></em>' containment reference list.
@@ -635,13 +625,22 @@ public interface DataCentricDSLPackage extends EPackage
   int CONDITION__CONDITION_ELEMENTS = 0;
 
   /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION__OP = 1;
+
+  /**
    * The number of structural features of the '<em>Condition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDITION_FEATURE_COUNT = 1;
+  int CONDITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.PostfixOperationImpl <em>Postfix Operation</em>}' class.
@@ -651,7 +650,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPostfixOperation()
    * @generated
    */
-  int POSTFIX_OPERATION = 20;
+  int POSTFIX_OPERATION = 19;
 
   /**
    * The feature id for the '<em><b>Call</b></em>' containment reference.
@@ -688,7 +687,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 21;
+  int STRING_LITERAL = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -716,7 +715,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 22;
+  int NUMBER_LITERAL = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -744,7 +743,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 23;
+  int BOOLEAN_VALUE = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -772,7 +771,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableParam()
    * @generated
    */
-  int VARIABLE_PARAM = 24;
+  int VARIABLE_PARAM = 23;
 
   /**
    * The feature id for the '<em><b>Variable Expression Param</b></em>' containment reference.
@@ -818,7 +817,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 25;
+  int ADDITION = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -855,7 +854,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getSubstraction()
    * @generated
    */
-  int SUBSTRACTION = 26;
+  int SUBSTRACTION = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -892,7 +891,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 27;
+  int MULTIPLICATION = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -929,7 +928,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getDivision()
    * @generated
    */
-  int DIVISION = 28;
+  int DIVISION = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -966,7 +965,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMod()
    * @generated
    */
-  int MOD = 29;
+  int MOD = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1101,25 +1100,15 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getQueryFunction();
 
   /**
-   * Returns the meta object for class '{@link org.dataCentricDSL.Query <em>Query</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Query</em>'.
-   * @see org.dataCentricDSL.Query
-   * @generated
-   */
-  EClass getQuery();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.Query#getQueryParam <em>Query Param</em>}'.
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.QueryFunction#getQueryParam <em>Query Param</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Query Param</em>'.
-   * @see org.dataCentricDSL.Query#getQueryParam()
-   * @see #getQuery()
+   * @see org.dataCentricDSL.QueryFunction#getQueryParam()
+   * @see #getQueryFunction()
    * @generated
    */
-  EReference getQuery_QueryParam();
+  EReference getQueryFunction_QueryParam();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.PrintFunction <em>Print Function</em>}'.
@@ -1132,25 +1121,25 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getPrintFunction();
 
   /**
-   * Returns the meta object for class '{@link org.dataCentricDSL.Print <em>Print</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Print</em>'.
-   * @see org.dataCentricDSL.Print
-   * @generated
-   */
-  EClass getPrint();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.Print#getPrintParam <em>Print Param</em>}'.
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.PrintFunction#getPrintParam <em>Print Param</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Print Param</em>'.
-   * @see org.dataCentricDSL.Print#getPrintParam()
-   * @see #getPrint()
+   * @see org.dataCentricDSL.PrintFunction#getPrintParam()
+   * @see #getPrintFunction()
    * @generated
    */
-  EReference getPrint_PrintParam();
+  EReference getPrintFunction_PrintParam();
+
+  /**
+   * Returns the meta object for class '{@link org.dataCentricDSL.PrintParam <em>Print Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Print Param</em>'.
+   * @see org.dataCentricDSL.PrintParam
+   * @generated
+   */
+  EClass getPrintParam();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.FunctionCall <em>Function Call</em>}'.
@@ -1267,6 +1256,17 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EAttribute getFunctionDefinition_Arguments();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.FunctionDefinition#getReturnValue <em>Return Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Return Value</em>'.
+   * @see org.dataCentricDSL.FunctionDefinition#getReturnValue()
+   * @see #getFunctionDefinition()
+   * @generated
+   */
+  EReference getFunctionDefinition_ReturnValue();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.IfStatement <em>If Statement</em>}'.
@@ -1394,6 +1394,17 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EReference getCondition_ConditionElements();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.Condition#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.dataCentricDSL.Condition#getOp()
+   * @see #getCondition()
+   * @generated
+   */
+  EAttribute getCondition_Op();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.ConditionElement <em>Condition Element</em>}'.
@@ -1819,22 +1830,12 @@ public interface DataCentricDSLPackage extends EPackage
     EClass QUERY_FUNCTION = eINSTANCE.getQueryFunction();
 
     /**
-     * The meta object literal for the '{@link org.dataCentricDSL.impl.QueryImpl <em>Query</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.dataCentricDSL.impl.QueryImpl
-     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getQuery()
-     * @generated
-     */
-    EClass QUERY = eINSTANCE.getQuery();
-
-    /**
      * The meta object literal for the '<em><b>Query Param</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference QUERY__QUERY_PARAM = eINSTANCE.getQuery_QueryParam();
+    EReference QUERY_FUNCTION__QUERY_PARAM = eINSTANCE.getQueryFunction_QueryParam();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.PrintFunctionImpl <em>Print Function</em>}' class.
@@ -1847,22 +1848,22 @@ public interface DataCentricDSLPackage extends EPackage
     EClass PRINT_FUNCTION = eINSTANCE.getPrintFunction();
 
     /**
-     * The meta object literal for the '{@link org.dataCentricDSL.impl.PrintImpl <em>Print</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.dataCentricDSL.impl.PrintImpl
-     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPrint()
-     * @generated
-     */
-    EClass PRINT = eINSTANCE.getPrint();
-
-    /**
      * The meta object literal for the '<em><b>Print Param</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PRINT__PRINT_PARAM = eINSTANCE.getPrint_PrintParam();
+    EReference PRINT_FUNCTION__PRINT_PARAM = eINSTANCE.getPrintFunction_PrintParam();
+
+    /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.PrintParamImpl <em>Print Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.PrintParamImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPrintParam()
+     * @generated
+     */
+    EClass PRINT_PARAM = eINSTANCE.getPrintParam();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.FunctionCallImpl <em>Function Call</em>}' class.
@@ -1961,6 +1962,14 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EAttribute FUNCTION_DEFINITION__ARGUMENTS = eINSTANCE.getFunctionDefinition_Arguments();
+
+    /**
+     * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_DEFINITION__RETURN_VALUE = eINSTANCE.getFunctionDefinition_ReturnValue();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.IfStatementImpl <em>If Statement</em>}' class.
@@ -2067,6 +2076,14 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EReference CONDITION__CONDITION_ELEMENTS = eINSTANCE.getCondition_ConditionElements();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONDITION__OP = eINSTANCE.getCondition_Op();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.ConditionElementImpl <em>Condition Element</em>}' class.

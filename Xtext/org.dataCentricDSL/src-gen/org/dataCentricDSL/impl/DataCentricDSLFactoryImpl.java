@@ -70,9 +70,8 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.VARIABLE_DEFINITION: return createVariableDefinition();
       case DataCentricDSLPackage.VARIABLE_DECL: return createVariableDecl();
       case DataCentricDSLPackage.QUERY_FUNCTION: return createQueryFunction();
-      case DataCentricDSLPackage.QUERY: return createQuery();
       case DataCentricDSLPackage.PRINT_FUNCTION: return createPrintFunction();
-      case DataCentricDSLPackage.PRINT: return createPrint();
+      case DataCentricDSLPackage.PRINT_PARAM: return createPrintParam();
       case DataCentricDSLPackage.FUNCTION_CALL: return createFunctionCall();
       case DataCentricDSLPackage.VARIABLE_CALL: return createVariableCall();
       case DataCentricDSLPackage.EXPRESSION: return createExpression();
@@ -170,17 +169,6 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Query createQuery()
-  {
-    QueryImpl query = new QueryImpl();
-    return query;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public PrintFunction createPrintFunction()
   {
     PrintFunctionImpl printFunction = new PrintFunctionImpl();
@@ -192,10 +180,10 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Print createPrint()
+  public PrintParam createPrintParam()
   {
-    PrintImpl print = new PrintImpl();
-    return print;
+    PrintParamImpl printParam = new PrintParamImpl();
+    return printParam;
   }
 
   /**

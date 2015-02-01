@@ -3,18 +3,13 @@ package org.validation;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.util.List;
-import org.dataCentricDSL.Addition;
 import org.dataCentricDSL.BooleanValue;
 import org.dataCentricDSL.ConditionElement;
 import org.dataCentricDSL.DataCentricDSL;
-import org.dataCentricDSL.Division;
 import org.dataCentricDSL.ForStatement;
 import org.dataCentricDSL.FunctionDefinition;
 import org.dataCentricDSL.IfStatement;
-import org.dataCentricDSL.Mod;
-import org.dataCentricDSL.Multiplication;
-import org.dataCentricDSL.NumberLiteral;
-import org.dataCentricDSL.Substraction;
+import org.dataCentricDSL.VariableCall;
 import org.dataCentricDSL.VariableDecl;
 import org.dataCentricDSL.VariableDefinition;
 import org.dataCentricDSL.WhileStatement;
@@ -24,6 +19,7 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.validation.ErrorMessages;
 
 @SuppressWarnings("all")
 public class ValidationUtils {
@@ -148,31 +144,38 @@ public class ValidationUtils {
     return false;
   }
   
-  public static boolean checkOperandsCompatibility(final ConditionElement leftOperand, final ConditionElement rightOperand) {
-    boolean _or = false;
-    if ((((((leftOperand instanceof Addition) || (leftOperand instanceof Substraction)) || (leftOperand instanceof Multiplication)) || (leftOperand instanceof Division)) || (leftOperand instanceof Mod))) {
-      _or = true;
+  public static String operandsCOmpatibilityErrorMessage(final ConditionElement leftOperand, final ConditionElement rightOperand, final String operator) {
+    boolean _and = false;
+    if (!(leftOperand instanceof BooleanValue)) {
+      _and = false;
     } else {
-      _or = (leftOperand instanceof NumberLiteral);
+      _and = (rightOperand instanceof BooleanValue);
     }
-    if (_or) {
-      if ((rightOperand instanceof BooleanValue)) {
-        return false;
-      }
-    } else {
-      boolean _or_1 = false;
-      if ((((((rightOperand instanceof Addition) || (rightOperand instanceof Substraction)) || (rightOperand instanceof Multiplication)) || (rightOperand instanceof Division)) || (rightOperand instanceof Mod))) {
-        _or_1 = true;
-      } else {
-        _or_1 = (rightOperand instanceof NumberLiteral);
-      }
-      if (_or_1) {
-        if ((leftOperand instanceof BooleanValue)) {
-          return false;
+    if (_and) {
+      boolean _equals = operator.equals("==");
+      boolean _not = (!_equals);
+      if (_not) {
+        boolean _equals_1 = operator.equals("!=");
+        boolean _not_1 = (!_equals_1);
+        if (_not_1) {
+          return ErrorMessages.UNDEFINED_OPERATOR_BOOLEAN_VALUES;
+        } else {
+          return null;
         }
       }
     }
-    return true;
+    if ((leftOperand instanceof BooleanValue)) {
+      if (((!(rightOperand instanceof BooleanValue)) && (!(rightOperand instanceof VariableCall)))) {
+        return ErrorMessages.INCOMPATIBLE_OPERANDS;
+      }
+    } else {
+      if ((rightOperand instanceof BooleanValue)) {
+        if (((!(leftOperand instanceof BooleanValue)) && (!(leftOperand instanceof VariableCall)))) {
+          return ErrorMessages.INCOMPATIBLE_OPERANDS;
+        }
+      }
+    }
+    return null;
   }
   
   public static boolean functionWithTheSameNameExists(final FunctionDefinition fd) {

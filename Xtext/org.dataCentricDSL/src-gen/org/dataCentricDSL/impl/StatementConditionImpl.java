@@ -15,8 +15,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class StatementConditionImpl extends MinimalEObjectImpl.Container implements StatementCondition
+public class StatementConditionImpl extends PrintParamImpl implements StatementCondition
 {
   /**
    * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.

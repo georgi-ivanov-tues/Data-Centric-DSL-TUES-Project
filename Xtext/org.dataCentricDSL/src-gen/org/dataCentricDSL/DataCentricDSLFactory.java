@@ -77,15 +77,6 @@ public interface DataCentricDSLFactory extends EFactory
   QueryFunction createQueryFunction();
 
   /**
-   * Returns a new object of class '<em>Query</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Query</em>'.
-   * @generated
-   */
-  Query createQuery();
-
-  /**
    * Returns a new object of class '<em>Print Function</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -95,13 +86,13 @@ public interface DataCentricDSLFactory extends EFactory
   PrintFunction createPrintFunction();
 
   /**
-   * Returns a new object of class '<em>Print</em>'.
+   * Returns a new object of class '<em>Print Param</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Print</em>'.
+   * @return a new object of class '<em>Print Param</em>'.
    * @generated
    */
-  Print createPrint();
+  PrintParam createPrintParam();
 
   /**
    * Returns a new object of class '<em>Function Call</em>'.

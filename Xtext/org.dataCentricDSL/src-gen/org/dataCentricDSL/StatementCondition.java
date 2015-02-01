@@ -4,8 +4,6 @@ package org.dataCentricDSL;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Statement Condition</b></em>'.
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface StatementCondition extends EObject
+public interface StatementCondition extends PrintParam
 {
   /**
    * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.

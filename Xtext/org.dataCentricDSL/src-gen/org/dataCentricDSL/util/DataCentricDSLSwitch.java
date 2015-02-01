@@ -115,17 +115,8 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         QueryFunction queryFunction = (QueryFunction)theEObject;
         T result = caseQueryFunction(queryFunction);
         if (result == null) result = caseSimpleStatement(queryFunction);
+        if (result == null) result = casePrintParam(queryFunction);
         if (result == null) result = caseStatement(queryFunction);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DataCentricDSLPackage.QUERY:
-      {
-        Query query = (Query)theEObject;
-        T result = caseQuery(query);
-        if (result == null) result = caseQueryFunction(query);
-        if (result == null) result = caseSimpleStatement(query);
-        if (result == null) result = caseStatement(query);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -138,13 +129,10 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DataCentricDSLPackage.PRINT:
+      case DataCentricDSLPackage.PRINT_PARAM:
       {
-        Print print = (Print)theEObject;
-        T result = casePrint(print);
-        if (result == null) result = casePrintFunction(print);
-        if (result == null) result = caseSimpleStatement(print);
-        if (result == null) result = caseStatement(print);
+        PrintParam printParam = (PrintParam)theEObject;
+        T result = casePrintParam(printParam);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -224,6 +212,7 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
       {
         StatementCondition statementCondition = (StatementCondition)theEObject;
         T result = caseStatementCondition(statementCondition);
+        if (result == null) result = casePrintParam(statementCondition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -430,22 +419,6 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Query</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Query</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseQuery(Query object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Print Function</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -462,17 +435,17 @@ public class DataCentricDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Print</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Print Param</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Print</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Print Param</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePrint(Print object)
+  public T casePrintParam(PrintParam object)
   {
     return null;
   }

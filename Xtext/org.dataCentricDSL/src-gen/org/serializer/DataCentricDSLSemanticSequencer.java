@@ -16,8 +16,8 @@ import org.dataCentricDSL.Mod;
 import org.dataCentricDSL.Multiplication;
 import org.dataCentricDSL.NumberLiteral;
 import org.dataCentricDSL.PostfixOperation;
-import org.dataCentricDSL.Print;
-import org.dataCentricDSL.Query;
+import org.dataCentricDSL.PrintFunction;
+import org.dataCentricDSL.QueryFunction;
 import org.dataCentricDSL.StatementCondition;
 import org.dataCentricDSL.StringLiteral;
 import org.dataCentricDSL.Substraction;
@@ -254,26 +254,26 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
-			case DataCentricDSLPackage.PRINT:
+			case DataCentricDSLPackage.PRINT_FUNCTION:
 				if(context == grammarAccess.getPrintFunctionRule() ||
-				   context == grammarAccess.getPrintParamRule() ||
 				   context == grammarAccess.getSimpleStatementRule() ||
 				   context == grammarAccess.getStatementRule()) {
-					sequence_PrintParam(context, (Print) semanticObject); 
+					sequence_PrintFunction(context, (PrintFunction) semanticObject); 
 					return; 
 				}
 				else break;
-			case DataCentricDSLPackage.QUERY:
-				if(context == grammarAccess.getQueryFunctionRule() ||
-				   context == grammarAccess.getQueryParamRule() ||
+			case DataCentricDSLPackage.QUERY_FUNCTION:
+				if(context == grammarAccess.getPrintParamRule() ||
+				   context == grammarAccess.getQueryFunctionRule() ||
 				   context == grammarAccess.getSimpleStatementRule() ||
 				   context == grammarAccess.getStatementRule()) {
-					sequence_QueryParam(context, (Query) semanticObject); 
+					sequence_QueryFunction(context, (QueryFunction) semanticObject); 
 					return; 
 				}
 				else break;
 			case DataCentricDSLPackage.STATEMENT_CONDITION:
-				if(context == grammarAccess.getStatementConditionRule()) {
+				if(context == grammarAccess.getPrintParamRule() ||
+				   context == grammarAccess.getStatementConditionRule()) {
 					sequence_StatementCondition(context, (StatementCondition) semanticObject); 
 					return; 
 				}
@@ -1487,7 +1487,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (conditionElements+=ConditionElement conditionElements+=ConditionElement?)
+	 *     (conditionElements+=ConditionElement (op=OpCompare conditionElements+=ConditionElement)?)
 	 */
 	protected void sequence_Condition(EObject context, Condition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1542,7 +1542,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=IDENTIFIER (arguments+=IDENTIFIER arguments+=IDENTIFIER*)? statements+=Statement*)
+	 *     (name=IDENTIFIER (arguments+=IDENTIFIER arguments+=IDENTIFIER*)? statements+=Statement* returnValue=StatementCondition?)
 	 */
 	protected void sequence_FunctionDefinition(EObject context, FunctionDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1633,25 +1633,32 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (printParam=QueryFunction | printParam=Expression)
+	 *     printParam=PrintParam
 	 */
-	protected void sequence_PrintParam(EObject context, Print semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_PrintFunction(EObject context, PrintFunction semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.PRINT_FUNCTION__PRINT_PARAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.PRINT_FUNCTION__PRINT_PARAM));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPrintFunctionAccess().getPrintParamPrintParamParserRuleCall_1_0(), semanticObject.getPrintParam());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     queryParam=Expression
+	 *     queryParam=StatementCondition
 	 */
-	protected void sequence_QueryParam(EObject context, Query semanticObject) {
+	protected void sequence_QueryFunction(EObject context, QueryFunction semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.QUERY__QUERY_PARAM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.QUERY__QUERY_PARAM));
+			if(transientValues.isValueTransient(semanticObject, DataCentricDSLPackage.Literals.QUERY_FUNCTION__QUERY_PARAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DataCentricDSLPackage.Literals.QUERY_FUNCTION__QUERY_PARAM));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getQueryParamAccess().getQueryParamExpressionParserRuleCall_0(), semanticObject.getQueryParam());
+		feeder.accept(grammarAccess.getQueryFunctionAccess().getQueryParamStatementConditionParserRuleCall_1_0(), semanticObject.getQueryParam());
 		feeder.finish();
 	}
 	

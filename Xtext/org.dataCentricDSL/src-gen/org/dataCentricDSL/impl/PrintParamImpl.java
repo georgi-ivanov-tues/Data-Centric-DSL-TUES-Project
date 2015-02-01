@@ -3,7 +3,7 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.MultiAssignRightOperand;
+import org.dataCentricDSL.PrintParam;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -11,21 +11,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Multi Assign Right Operand</b></em>'.
+ * An implementation of the model object '<em><b>Print Param</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class MultiAssignRightOperandImpl extends MinimalEObjectImpl.Container implements MultiAssignRightOperand
+public class PrintParamImpl extends MinimalEObjectImpl.Container implements PrintParam
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MultiAssignRightOperandImpl()
+  protected PrintParamImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public class MultiAssignRightOperandImpl extends MinimalEObjectImpl.Container im
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.MULTI_ASSIGN_RIGHT_OPERAND;
+    return DataCentricDSLPackage.Literals.PRINT_PARAM;
   }
 
-} //MultiAssignRightOperandImpl
+} //PrintParamImpl

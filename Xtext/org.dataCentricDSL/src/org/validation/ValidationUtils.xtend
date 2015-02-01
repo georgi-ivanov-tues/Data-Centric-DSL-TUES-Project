@@ -1,17 +1,12 @@
 package org.validation;
 
-import org.dataCentricDSL.Addition
 import org.dataCentricDSL.BooleanValue
 import org.dataCentricDSL.ConditionElement
 import org.dataCentricDSL.DataCentricDSL
-import org.dataCentricDSL.Division
 import org.dataCentricDSL.ForStatement
 import org.dataCentricDSL.FunctionDefinition
 import org.dataCentricDSL.IfStatement
-import org.dataCentricDSL.Mod
-import org.dataCentricDSL.Multiplication
-import org.dataCentricDSL.NumberLiteral
-import org.dataCentricDSL.Substraction
+import org.dataCentricDSL.VariableCall
 import org.dataCentricDSL.VariableDecl
 import org.dataCentricDSL.VariableDefinition
 import org.dataCentricDSL.WhileStatement
@@ -88,24 +83,32 @@ public class ValidationUtils {
 		return false;
 	}
 	
-	def static boolean checkOperandsCompatibility(ConditionElement leftOperand, ConditionElement rightOperand) {
-		if(leftOperand instanceof Addition || leftOperand instanceof Substraction
-			|| leftOperand instanceof Multiplication || leftOperand instanceof Division
-			|| leftOperand instanceof Mod || leftOperand instanceof NumberLiteral
-		) {
-			if(rightOperand instanceof BooleanValue) {
-				return false;
+	def static String operandsCOmpatibilityErrorMessage(ConditionElement leftOperand, 
+		ConditionElement rightOperand, String operator
+	) {
+		if(leftOperand instanceof BooleanValue && rightOperand instanceof BooleanValue) {
+			if(!operator.equals("==")) {
+				if(!operator.equals("!=")) {
+					return ErrorMessages.UNDEFINED_OPERATOR_BOOLEAN_VALUES;
+				} else {
+					return null;
+				}
 			}
-		} else if(rightOperand instanceof Addition || rightOperand instanceof Substraction
-			|| rightOperand instanceof Multiplication || rightOperand instanceof Division
-			|| rightOperand instanceof Mod || rightOperand instanceof NumberLiteral
-		) {
-			if(leftOperand instanceof BooleanValue) {
-				return false;
-			}	
 		}
 		
-		return true;
+		if(leftOperand instanceof BooleanValue) {
+			if(!(rightOperand instanceof BooleanValue)
+				&& !(rightOperand instanceof VariableCall)) {
+				return ErrorMessages.INCOMPATIBLE_OPERANDS;
+			}
+		} else if(rightOperand instanceof BooleanValue) {
+			if(!(leftOperand instanceof BooleanValue)
+				&& !(leftOperand instanceof VariableCall)) {
+				return ErrorMessages.INCOMPATIBLE_OPERANDS;
+			}
+		}
+		
+		return null;
 	}
 	
 	def static boolean functionWithTheSameNameExists(FunctionDefinition fd) {

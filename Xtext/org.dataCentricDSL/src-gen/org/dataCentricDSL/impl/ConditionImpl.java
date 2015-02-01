@@ -8,6 +8,7 @@ import org.dataCentricDSL.Condition;
 import org.dataCentricDSL.ConditionElement;
 import org.dataCentricDSL.DataCentricDSLPackage;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -28,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.dataCentricDSL.impl.ConditionImpl#getConditionElements <em>Condition Elements</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.ConditionImpl#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +47,26 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @ordered
    */
   protected EList<ConditionElement> conditionElements;
+
+  /**
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected static final String OP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected String op = OP_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,6 +108,29 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getOp()
+  {
+    return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(String newOp)
+  {
+    String oldOp = op;
+    op = newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.CONDITION__OP, oldOp, op));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -108,6 +154,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
     {
       case DataCentricDSLPackage.CONDITION__CONDITION_ELEMENTS:
         return getConditionElements();
+      case DataCentricDSLPackage.CONDITION__OP:
+        return getOp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -127,6 +175,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
         getConditionElements().clear();
         getConditionElements().addAll((Collection<? extends ConditionElement>)newValue);
         return;
+      case DataCentricDSLPackage.CONDITION__OP:
+        setOp((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -144,6 +195,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
       case DataCentricDSLPackage.CONDITION__CONDITION_ELEMENTS:
         getConditionElements().clear();
         return;
+      case DataCentricDSLPackage.CONDITION__OP:
+        setOp(OP_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -160,8 +214,27 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
     {
       case DataCentricDSLPackage.CONDITION__CONDITION_ELEMENTS:
         return conditionElements != null && !conditionElements.isEmpty();
+      case DataCentricDSLPackage.CONDITION__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (op: ");
+    result.append(op);
+    result.append(')');
+    return result.toString();
   }
 
 } //ConditionImpl

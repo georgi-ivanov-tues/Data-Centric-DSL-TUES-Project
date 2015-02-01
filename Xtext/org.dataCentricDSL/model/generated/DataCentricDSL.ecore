@@ -14,16 +14,15 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDecl"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QueryFunction" eSuperTypes="#//SimpleStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="#//QueryFunction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="queryParam" eType="#//Expression"
+  <eClassifiers xsi:type="ecore:EClass" name="QueryFunction" eSuperTypes="#//SimpleStatement #//PrintParam">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queryParam" eType="#//StatementCondition"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrintFunction" eSuperTypes="#//SimpleStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Print" eSuperTypes="#//PrintFunction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="printParam" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+  <eClassifiers xsi:type="ecore:EClass" name="PrintFunction" eSuperTypes="#//SimpleStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="printParam" eType="#//PrintParam"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrintParam"/>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//SimpleStatement #//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
@@ -41,6 +40,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="arguments" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" eType="#//StatementCondition"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfStatement" eSuperTypes="#//CompoundStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" upperBound="-1"
@@ -58,13 +59,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="#//SimpleStatement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StatementCondition">
+  <eClassifiers xsi:type="ecore:EClass" name="StatementCondition" eSuperTypes="#//PrintParam">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
         eType="#//Condition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditionElements" upperBound="-1"
         eType="#//ConditionElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="PostfixOperation" eSuperTypes="#//SimpleStatement">

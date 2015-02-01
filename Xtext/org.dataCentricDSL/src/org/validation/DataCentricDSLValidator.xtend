@@ -3,6 +3,7 @@
  */
 package org.validation
 
+import org.dataCentricDSL.BooleanValue
 import org.dataCentricDSL.Condition
 import org.dataCentricDSL.DataCentricDSL
 import org.dataCentricDSL.DataCentricDSLPackage
@@ -10,6 +11,8 @@ import org.dataCentricDSL.ForStatement
 import org.dataCentricDSL.FunctionCall
 import org.dataCentricDSL.FunctionDefinition
 import org.dataCentricDSL.IfStatement
+import org.dataCentricDSL.QueryFunction
+import org.dataCentricDSL.StatementCondition
 import org.dataCentricDSL.VariableCall
 import org.dataCentricDSL.VariableDefinition
 import org.dataCentricDSL.WhileStatement
@@ -26,23 +29,40 @@ import static org.validation.ValidationUtils.*
 class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
+	def void checkQueryParameter(QueryFunction qf) {
+		var expression = qf.queryParam as StatementCondition;
+		var condition = expression.conditions.get(0) as Condition;
+		
+		if(expression.conditions.length == 1 
+			&& condition.conditionElements.length == 1 
+			&& !(condition.conditionElements.get(0) instanceof BooleanValue)
+		) {
+			return;
+		}
+		
+		error(ErrorMessages.QUERY_FUNCTION_PARAMETER_BOOLEAN_EXPRESSION, 
+			DataCentricDSLPackage.Literals::QUERY_FUNCTION__QUERY_PARAM
+		);
+	}
+	
+	@Check
 	def void checkFunctionDeclarationPosition(FunctionDefinition fd) {
 		if(!(fd.eContainer instanceof DataCentricDSL)) {
-			error("Functions cannot be defined within block statements.",
+			error(ErrorMessages.FUNCTION_WITHIN_BLOCK_STATEMENT,
 				DataCentricDSLPackage.Literals::FUNCTION_DEFINITION__NAME
 			);
 			return;
 			
 		} else {
 			if(!ValidationUtils.functionIsDeclaredBeforeTheCode(fd)) {
-				error("Functions must be defined at the beginning of the code.",
+				error(ErrorMessages.FUNCTIONS_BEGINNING_OF_CODE,
 					DataCentricDSLPackage.Literals::FUNCTION_DEFINITION__NAME
 				);
 				return;
 			}
 			
 			if(ValidationUtils.functionWithTheSameNameExists(fd)) {
-				error("Function with the same name already exists.",
+				error(ErrorMessages.FUNCTION_SAME_NAME,
 					DataCentricDSLPackage.Literals::FUNCTION_DEFINITION__NAME
 				);
 				return;
@@ -52,12 +72,25 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
 	def void checkConditionElementCompatibility(Condition c) {
-		if(c.conditionElements.length > 1) {
+ 		if(c.conditionElements.length > 1) {
 			var leftOperand = c.conditionElements.get(0);
 			var rightOperand = c.conditionElements.get(1);
+			var errorMessage = ValidationUtils
+								.operandsCOmpatibilityErrorMessage(leftOperand,
+									rightOperand,
+									c.op
+								);
 			
-			if(!ValidationUtils.checkOperandsCompatibility(leftOperand, rightOperand)) {
-				error("Operands of incompatible types.", DataCentricDSLPackage.Literals::CONDITION__CONDITION_ELEMENTS);	
+			if(errorMessage != null) {
+				if(errorMessage.contains("operator")) {
+					error(errorMessage, 
+						DataCentricDSLPackage.Literals::CONDITION__OP
+					);
+				} else {
+					error(errorMessage, 
+						DataCentricDSLPackage.Literals::CONDITION__CONDITION_ELEMENTS
+					);
+				}	
 			}
 		}
 	}
@@ -71,7 +104,9 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 			return;
 		}
 		
-		error("Undefined function.", DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME);
+		error(ErrorMessages.UNDEFINED_FUNCTION, 
+			DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME
+		);
 	}
 	
 	@Check
@@ -81,12 +116,19 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		var elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
 		if(ValidationUtils.functionIsDeclared(elements, fc.name)) {
 			for(i : 0..< elements.length) {
-				if(elements.get(i).name.equals(fc.name) && elements.get(i).arguments.length == fc.arguments.length) {
-					return;
+				if(elements.get(i).name.equals(fc.name) 
+					&& elements.get(i).arguments.length == fc.arguments.length
+				) {
+					if(!ValidationUtils.functionIsDeclaredBeforeTheCode(elements.get(i))) {
+						error(ErrorMessages.UNDEFINED_FUNCTION, 
+							DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME
+						);
+					}
+					return;		
 				}
 			}
 			
-			error("Called function arguments do not match function definition's arguments.",
+			error(ErrorMessages.FUNCTION_CALL_ARGUMENTS_MISMATCH,
 				DataCentricDSLPackage.Literals::FUNCTION_CALL__ARGUMENTS
 			);
 		}
@@ -111,7 +153,10 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 					}
 				}
 				if(container instanceof FunctionDefinition) {
-					if(ValidationUtils.namePersistsInArray((container as FunctionDefinition).arguments, vc.variableCall)) {
+					if(ValidationUtils
+						.namePersistsInArray((container as FunctionDefinition).arguments,
+							vc.variableCall
+						)) {
 						return;
 					}
 				}
@@ -133,7 +178,9 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		}
 		ValidationUtils.checkIfCalledVariableIsGlobal(container, vc.variableCall, containerElementIndex);
 		if(!ValidationUtils.globalVariableFound) {
-			error("Undefined variable.", DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL);
+			error(ErrorMessages.UNDEFINED_VARIABLE, 
+				DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL
+			);
 		}
 		ValidationUtils.globalVariableFound = false;
 	}

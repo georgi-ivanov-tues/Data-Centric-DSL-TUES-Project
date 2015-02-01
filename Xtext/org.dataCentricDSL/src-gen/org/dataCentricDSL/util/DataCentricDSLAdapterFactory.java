@@ -105,19 +105,14 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createQueryFunctionAdapter();
       }
       @Override
-      public Adapter caseQuery(Query object)
-      {
-        return createQueryAdapter();
-      }
-      @Override
       public Adapter casePrintFunction(PrintFunction object)
       {
         return createPrintFunctionAdapter();
       }
       @Override
-      public Adapter casePrint(Print object)
+      public Adapter casePrintParam(PrintParam object)
       {
-        return createPrintAdapter();
+        return createPrintParamAdapter();
       }
       @Override
       public Adapter caseFunctionCall(FunctionCall object)
@@ -337,21 +332,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.Query <em>Query</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.Query
-   * @generated
-   */
-  public Adapter createQueryAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.dataCentricDSL.PrintFunction <em>Print Function</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -367,16 +347,16 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.Print <em>Print</em>}'.
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.PrintParam <em>Print Param</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.dataCentricDSL.Print
+   * @see org.dataCentricDSL.PrintParam
    * @generated
    */
-  public Adapter createPrintAdapter()
+  public Adapter createPrintParamAdapter()
   {
     return null;
   }

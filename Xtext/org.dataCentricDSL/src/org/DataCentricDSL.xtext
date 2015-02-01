@@ -32,20 +32,16 @@ VariableParam returns VariableDecl:
 ;
 
 QueryFunction:
-	Query QueryParam
-;
-
-QueryParam returns Query: 
-	 queryParam=Expression
+	Query queryParam=StatementCondition
 ;
 
 PrintFunction:
-	(Print | Println) PrintParam
+	(Print | Println) printParam=PrintParam
 ;
 
-PrintParam returns Print:
-	printParam=(QueryFunction | 
-	 Expression)
+PrintParam:
+	(QueryFunction |
+	 StatementCondition)
 ;
 
 FunctionCall:
@@ -104,6 +100,7 @@ FunctionDefinition:
 		(arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)?
 		ClosingBracket OpeningCurlyBracket
 		(statements+=Statement)*
+		('return' returnValue=StatementCondition)?
 	ClosingCurlyBracket
 ;
 
@@ -159,7 +156,7 @@ StatementCondition:
 ;
 
 Condition:
-	conditionElements+=ConditionElement (OpCompare conditionElements+=ConditionElement)?
+	conditionElements+=ConditionElement (op=OpCompare conditionElements+=ConditionElement)?
 ;
 
 ConditionElement:
