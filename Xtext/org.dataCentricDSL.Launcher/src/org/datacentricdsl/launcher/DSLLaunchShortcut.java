@@ -1,19 +1,27 @@
 package org.datacentricdsl.launcher;
 
-import java.awt.Component;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
-
-import bg.tues.DCL.DCLInterpreter;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.ui.ILaunchShortcut2;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.console.ConsolePlugin;
+import org.eclipse.ui.console.IConsole;
+import org.eclipse.ui.console.IConsoleManager;
+import org.eclipse.ui.console.MessageConsole;
+import org.eclipse.ui.console.MessageConsoleStream;
+
+import bg.tues.DCL.DCLInterpreter;
 
 public class DSLLaunchShortcut implements ILaunchShortcut2 {
 
@@ -24,26 +32,57 @@ public class DSLLaunchShortcut implements ILaunchShortcut2 {
 			if (newSelection.getFirstElement() instanceof IResource) {
 				IResource resource = (IResource) newSelection.getFirstElement();
 				IPath absolutePath = resource.getLocation();
-				System.out.println(absolutePath);
-				
-				//Component frame = null;
-				//JOptionPane.showMessageDialog(frame, "Something useful will show when Joni and Kiro make the API." + "File Path  = " + absolutePath);
-					
+
 				DCLInterpreter interpreter = new DCLInterpreter();
-				try {
-					interpreter.execute(absolutePath.toString());
-					/*Component frame = null;
-					JOptionPane.showMessageDialog(frame, "File = " + absolutePath + " was successfully read");*/
-				} catch (IOException e) {
-					e.printStackTrace();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				MessageConsole myConsole = findConsole("DD Console");
+				MessageConsoleStream out = myConsole.newMessageStream();
+				PrintStream printStream = new PrintStream(out);
+
+				executeScriptASync(absolutePath, interpreter, printStream); 
 			}
 
 		}
+	}
+
+	private void executeScriptASync(final IPath absolutePath, final DCLInterpreter interpreter,
+			final PrintStream printStream){
+		Job job = new Job("My Job") {
+			@Override
+			protected IStatus run(IProgressMonitor monitor) {
+				monitor.beginTask("Doing something time consuming here", 100);
+				try {
+					executeScript(absolutePath, interpreter, printStream);
+
+				} catch (Exception e1) {
+					e1.printStackTrace();
+					return Status.CANCEL_STATUS;
+				}
+
+				return Status.OK_STATUS;
+			}
+		};
+		job.schedule(); 
+
+	}
+
+	private void executeScript(IPath absolutePath, DCLInterpreter interpreter,
+			PrintStream printStream) throws IOException, SQLException, Exception {
+		interpreter.execute(absolutePath.toString(), printStream);
+
+	}
+
+	private MessageConsole findConsole(String name) {
+		ConsolePlugin plugin = ConsolePlugin.getDefault();
+		IConsoleManager conMan = plugin.getConsoleManager();
+		IConsole[] existing = conMan.getConsoles();
+		for (int i = 0; i < existing.length; i++){
+			if (name.equals(existing[i].getName())){
+				return (MessageConsole) existing[i];
+			}
+		}
+		MessageConsole myConsole = new MessageConsole(name, null);
+		conMan.addConsoles(new IConsole[]{myConsole});
+		return myConsole;
 	}
 
 	@Override
