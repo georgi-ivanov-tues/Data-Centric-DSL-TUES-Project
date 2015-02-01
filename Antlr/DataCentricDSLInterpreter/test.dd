@@ -1,5 +1,13 @@
-println 'new\nline\ttab';
-println query "SELECT * FROM People";
+
+
+
+a = true;
+if(a == true && 2 == 2){
+	print "YES!";
+}
+
+
+// print 2 + 2 * 3 - 7 + 8 / 2;
 
 /*func xaxa(i) {
 	if(i == 1) {

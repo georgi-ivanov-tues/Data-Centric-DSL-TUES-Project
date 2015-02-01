@@ -1,4 +1,4 @@
-package bg.tues.DCL.tree.funcions;
+package bg.tues.DCL.tree.functions;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

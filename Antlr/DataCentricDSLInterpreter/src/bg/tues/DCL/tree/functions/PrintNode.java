@@ -1,23 +1,22 @@
-package bg.tues.DCL.tree.funcions;
-
-import bg.tues.DCL.Value;
-import bg.tues.DCL.tree.Node;
+package bg.tues.DCL.tree.functions;
 
 import java.io.PrintStream;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-public class PrintlnNode implements Node {
+import bg.tues.DCL.Value;
+import bg.tues.DCL.tree.Node;
 
+public class PrintNode implements Node {
 	private Node expression;
 	private PrintStream out;
 
-	public PrintlnNode(Node e) {
+	public PrintNode(Node e) {
 		this(e, System.out);
 	}
 
-	public PrintlnNode(Node e, PrintStream o) {
+	public PrintNode(Node e, PrintStream o) {
 		expression = e;
 		out = o;
 	}
@@ -32,7 +31,7 @@ public class PrintlnNode implements Node {
 				e.printStackTrace();
 			}
 		}else{
-			out.println(value);
+			out.print(value);
 		}
 		return Value.VOID;
 	}
@@ -46,8 +45,6 @@ public class PrintlnNode implements Node {
 				String columnValue = resultSet.getString(i);
 				System.out.printf("%15s", columnValue);
 			}
-			System.out.println("");
 		}
 	}
 }
-

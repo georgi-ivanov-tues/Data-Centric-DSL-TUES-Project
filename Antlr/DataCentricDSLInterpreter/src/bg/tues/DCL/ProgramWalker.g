@@ -9,9 +9,9 @@ options {
   package bg.tues.DCL;
   import bg.tues.DCL.*;
   import bg.tues.DCL.tree.*;
-  import bg.tues.DCL.tree.funcions.PrintlnNode;
-  import bg.tues.DCL.tree.funcions.PrintNode;
-  import bg.tues.DCL.tree.funcions.QueryNode;
+  import bg.tues.DCL.tree.functions.PrintlnNode;
+  import bg.tues.DCL.tree.functions.PrintNode;
+  import bg.tues.DCL.tree.functions.QueryNode;
   import bg.tues.DCL.tree.expressions.operations.*;
   import java.util.Map; 
   import java.util.HashMap;
@@ -92,7 +92,9 @@ block returns [Node node]
   }
 }
 @after { 
-  currentScope = currentScope.parent();
+  if(currentScope != null){
+    currentScope = currentScope.parent();
+  }
 } 
   :  ^(BLOCK 
         ^( STATEMENTS (statement  {bn.addStatement($statement.node);})* ) 
@@ -189,8 +191,8 @@ exprList returns [java.util.List<Node> e]
 expression returns [Node node]
   :  ^(TERNARY expression expression expression)
   |  ^(In expression expression)
-  |  ^('||' a=expression b=expression) 
-  |  ^('&&' a=expression b=expression) 
+  |  ^('||' a=expression b=expression) {node = new OrNode($a.node, $b.node);}
+  |  ^('&&' a=expression b=expression) {node = new AndNode($a.node, $b.node);}
   |  ^('==' a=expression b=expression) {node = new EqualsNode($a.node, $b.node);}
   |  ^('!=' a=expression b=expression) {node = new NotEqualsNode($a.node, $b.node);}
   |  ^('>=' a=expression b=expression) {node = new GreaterThanAndEqualsNode($a.node, $b.node);}

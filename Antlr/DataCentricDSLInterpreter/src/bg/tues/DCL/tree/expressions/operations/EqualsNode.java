@@ -25,6 +25,10 @@ public class EqualsNode implements Node {
 		if(a.isString() && b.isString()) {
 			return new Value(a.asString().compareTo(b.asString()) == 0);
 		}
+		
+		if(a.isBoolean() && b.isBoolean()) {
+			return new Value(a.asBoolean().compareTo(b.asBoolean()) == 0);
+		}
 
 		throw new RuntimeException("Illegal expression: " + this);
 	}
