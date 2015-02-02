@@ -18,7 +18,7 @@ public class OrNode implements Node{
 		Value a = lhs.evaluate();
 		Value b = rhs.evaluate();
 
-		if(a.isNumber() && b.isNumber()) {
+		if(a.isBoolean() && b.isBoolean()) {
 			return new Value(a.asBoolean() || b.asBoolean());
 		}
 
