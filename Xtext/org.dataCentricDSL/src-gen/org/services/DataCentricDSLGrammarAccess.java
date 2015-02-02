@@ -1189,13 +1189,13 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//value=("true" | "false")
 		public Assignment getValueAssignment() { return cValueAssignment; }
 
-		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/DataCentricDSL.xtext#/0/@rules.28/@alternatives/@terminal'
+		//"true" | "false"
 		public Alternatives getValueAlternatives_0() { return cValueAlternatives_0; }
 
-		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/DataCentricDSL.xtext#/0/@rules.28/@alternatives/@terminal/@elements.0'
+		//"true"
 		public Keyword getValueTrueKeyword_0_0() { return cValueTrueKeyword_0_0; }
 
-		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/org/DataCentricDSL.xtext#/0/@rules.28/@alternatives/@terminal/@elements.1'
+		//"false"
 		public Keyword getValueFalseKeyword_0_1() { return cValueFalseKeyword_0_1; }
 	}
 
