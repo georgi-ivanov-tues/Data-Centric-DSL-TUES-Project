@@ -3,6 +3,20 @@
 */
 package org.ui.quickfix
 
+import org.dataCentricDSL.DataCentricDSL
+import org.dataCentricDSL.DataCentricDSLFactory
+import org.dataCentricDSL.FunctionCall
+import org.dataCentricDSL.FunctionDefinition
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.ui.editor.model.edit.IModificationContext
+import org.eclipse.xtext.ui.editor.model.edit.ISemanticModification
+import org.eclipse.xtext.ui.editor.quickfix.Fix
+import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
+import org.eclipse.xtext.validation.Issue
+import org.eclipse.xtext.xbase.ui.quickfix.XbaseQuickfixProvider
+import org.validation.ErrorMessages
+import org.validation.ValidationUtils
+
 //import org.eclipse.xtext.ui.editor.quickfix.Fix
 //import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 //import org.eclipse.xtext.validation.Issue
@@ -12,7 +26,7 @@ package org.ui.quickfix
  *
  * see http://www.eclipse.org/Xtext/documentation.html#quickfixes
  */
-class DataCentricDSLQuickfixProvider extends org.eclipse.xtext.xbase.ui.quickfix.XbaseQuickfixProvider {
+class DataCentricDSLQuickfixProvider extends XbaseQuickfixProvider {
 
 //	@Fix(MyDslValidator::INVALID_NAME)
 //	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
@@ -23,4 +37,30 @@ class DataCentricDSLQuickfixProvider extends org.eclipse.xtext.xbase.ui.quickfix
 //			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
 //		]
 //	}
+
+	@Fix(ErrorMessages.UNDEFINED_FUNCTION)
+	def createFunction(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue, 
+			"Create function '" + issue.data.get(0).toString + "'",
+			"Creates a function with the desired name.",
+			null,
+			new ISemanticModification() {
+				
+				override apply(EObject element, IModificationContext context) throws Exception {
+//					var FunctionCall fc = element as FunctionCall;
+//					var dataCentricDSLContainer = ValidationUtils.getDataCentricDSLContainer(fc) as DataCentricDSL;
+//					var FunctionDefinition fd = DataCentricDSLFactory.eINSTANCE.createFunctionDefinition;
+//					fd.name = issue.data.get(0).toString;
+//					dataCentricDSLContainer.elements.add(0, fd);
+					var StringBuilder builder = new StringBuilder();
+					builder.append("func ");
+					builder.append(issue.data.get(0).toString);
+					builder.append("() {\n\n}\n\n");
+					var xtextDocument = context.xtextDocument;
+					xtextDocument.replace(0, 0, builder.toString);
+				}
+				
+			}
+		);
+	}
 }

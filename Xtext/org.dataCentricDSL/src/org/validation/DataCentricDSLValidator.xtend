@@ -105,7 +105,9 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		}
 		
 		error(ErrorMessages.UNDEFINED_FUNCTION, 
-			DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME
+			DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME,
+			ErrorMessages.UNDEFINED_FUNCTION,
+			fc.name
 		);
 	}
 	
@@ -121,7 +123,9 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 				) {
 					if(!ValidationUtils.functionIsDeclaredBeforeTheCode(elements.get(i))) {
 						error(ErrorMessages.UNDEFINED_FUNCTION, 
-							DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME
+							DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME,
+							ErrorMessages.UNDEFINED_FUNCTION,
+							fc.name
 						);
 					}
 					return;		
