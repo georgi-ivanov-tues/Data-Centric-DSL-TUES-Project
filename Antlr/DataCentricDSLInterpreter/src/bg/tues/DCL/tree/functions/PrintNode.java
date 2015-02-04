@@ -41,9 +41,9 @@ public class PrintNode implements Node {
 		int columnCount = metaData.getColumnCount();
 		while(resultSet.next()) {
 			for(int i = 1; i <= columnCount; i++) {
-				if(i > 1) System.out.print(" ");
+				if(i > 1) out.print(" ");
 				String columnValue = resultSet.getString(i);
-				System.out.printf("%15s", columnValue);
+				out.printf("%15s", columnValue);
 			}
 		}
 	}

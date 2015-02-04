@@ -1,9 +1,7 @@
 package bg.tues.DCL;
 
-import java.io.IOException;
 import java.io.PrintStream;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +14,7 @@ import bg.tues.DCL.derbyDB.CreateDB;
 
 public class DCLInterpreter {
 
-	public void execute(String absolutePath, PrintStream out) throws IOException, Exception, SQLException{
+	public void execute(String absolutePath, PrintStream out) throws Exception{
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(new ANTLRFileStream(absolutePath));
 
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -35,6 +33,34 @@ public class DCLInterpreter {
 		myMap.put("outputStream", out);
 
 		ProgramWalker walker = new ProgramWalker(nodes, myMap, parser.functions);
+		walker.program();
+	}
+	
+	public void execute(String absolutePath, Map<String, Object> context) throws Exception{
+		DataCentricDSLLexer lexer = new DataCentricDSLLexer(new ANTLRFileStream(absolutePath));
+
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
+
+		CommonTree tree = (CommonTree)parser.program().getTree();
+		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+
+		ProgramWalker walker = new ProgramWalker(nodes, context, parser.functions);
+		walker.program();
+	}
+	
+	public void execute(String absolutePath, Scope scope, Map<String, Object> context) throws Exception{
+		DataCentricDSLLexer lexer = new DataCentricDSLLexer(new ANTLRFileStream(absolutePath));
+
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
+
+		CommonTree tree = (CommonTree)parser.program().getTree();
+		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+
+		ProgramWalker walker = new ProgramWalker(nodes, scope, context, parser.functions);
 		walker.program();
 	}
 }

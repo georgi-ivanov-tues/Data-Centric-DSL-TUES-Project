@@ -4,6 +4,8 @@ if(a || 2==1){
 	print "a";
 }
 
+println query "SELECT * FROM people";
+
 //a = true;
 //if(a == true && 2 == 2){
 //	print "YES!";
