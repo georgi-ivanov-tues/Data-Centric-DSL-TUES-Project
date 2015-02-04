@@ -183,7 +183,9 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		ValidationUtils.checkIfCalledVariableIsGlobal(container, vc.variableCall, containerElementIndex);
 		if(!ValidationUtils.globalVariableFound) {
 			error(ErrorMessages.UNDEFINED_VARIABLE, 
-				DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL
+				DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL,
+				ErrorMessages.UNDEFINED_VARIABLE,
+				vc.variableCall
 			);
 		}
 		ValidationUtils.globalVariableFound = false;

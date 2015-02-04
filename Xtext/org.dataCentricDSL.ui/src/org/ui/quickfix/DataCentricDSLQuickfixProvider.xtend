@@ -3,11 +3,8 @@
 */
 package org.ui.quickfix
 
-import org.dataCentricDSL.DataCentricDSL
-import org.dataCentricDSL.DataCentricDSLFactory
-import org.dataCentricDSL.FunctionCall
-import org.dataCentricDSL.FunctionDefinition
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.ui.editor.model.edit.IModification
 import org.eclipse.xtext.ui.editor.model.edit.IModificationContext
 import org.eclipse.xtext.ui.editor.model.edit.ISemanticModification
 import org.eclipse.xtext.ui.editor.quickfix.Fix
@@ -15,7 +12,6 @@ import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
 import org.eclipse.xtext.xbase.ui.quickfix.XbaseQuickfixProvider
 import org.validation.ErrorMessages
-import org.validation.ValidationUtils
 
 //import org.eclipse.xtext.ui.editor.quickfix.Fix
 //import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
@@ -44,9 +40,9 @@ class DataCentricDSLQuickfixProvider extends XbaseQuickfixProvider {
 			"Create function '" + issue.data.get(0).toString + "'",
 			"Creates a function with the desired name.",
 			null,
-			new ISemanticModification() {
+			new IModification() {
 				
-				override apply(EObject element, IModificationContext context) throws Exception {
+				override apply(IModificationContext context) throws Exception {
 //					var FunctionCall fc = element as FunctionCall;
 //					var dataCentricDSLContainer = ValidationUtils.getDataCentricDSLContainer(fc) as DataCentricDSL;
 //					var FunctionDefinition fd = DataCentricDSLFactory.eINSTANCE.createFunctionDefinition;
@@ -62,5 +58,70 @@ class DataCentricDSLQuickfixProvider extends XbaseQuickfixProvider {
 				
 			}
 		);
+	}
+	
+	@Fix(ErrorMessages.UNDEFINED_VARIABLE)
+	def defineLocalVariable(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue,
+			"Define variable '" + issue.data.get(0).toString + "'",
+			"Defines a variable with the desired name.",
+			null,
+			new IModification() {
+				
+				override apply(IModificationContext context) throws Exception {
+					var xtextDocument = context.xtextDocument;
+					var currentLineInformation = xtextDocument.getLineInformation(issue.lineNumber - 1);
+					var currentLine = xtextDocument.get(currentLineInformation.offset, 
+						currentLineInformation.length
+					);
+					var numberOfIndentations = currentLine.split("\t").length;
+					var StringBuilder lineToBeAdded = new StringBuilder();
+					if(numberOfIndentations > 1) {
+						for(i : 1 ..< numberOfIndentations) {
+							lineToBeAdded.append("\t");
+						}
+					}
+					
+					lineToBeAdded.append(issue.data.get(0));
+					lineToBeAdded.append(" = \n");
+					xtextDocument.replace(currentLineInformation.offset, 0,
+						lineToBeAdded.toString);
+				}
+				
+			}
+		)
+	}
+	
+	@Fix(ErrorMessages.UNDEFINED_VARIABLE)
+	def defineGlobalVariable(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue,
+			"Define global variable '" + issue.data.get(0).toString + "'",
+			"Defines a global variable with the desired name.",
+			null,
+			new IModification() {
+				
+				override apply(IModificationContext context) throws Exception {
+					var xtextDocument = context.xtextDocument;
+					var currentLineInformation = xtextDocument.getLineInformation(issue.lineNumber - 1);
+					var currentLine = xtextDocument.get(currentLineInformation.offset, 
+						currentLineInformation.length
+					);
+					var numberOfIndentations = currentLine.split("\t").length;
+					var StringBuilder lineToBeAdded = new StringBuilder();
+					if(numberOfIndentations > 1) {
+						for(i : 1 ..< numberOfIndentations) {
+							lineToBeAdded.append("\t");
+						}
+					}
+					
+					lineToBeAdded.append("global ");
+					lineToBeAdded.append(issue.data.get(0));
+					lineToBeAdded.append(" = \n");
+					xtextDocument.replace(currentLineInformation.offset, 0,
+						lineToBeAdded.toString);
+				}
+				
+			}
+		)
 	}
 }
