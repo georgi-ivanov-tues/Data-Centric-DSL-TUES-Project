@@ -73,10 +73,9 @@ options {
   }
 }
 
-program returns [Node node]
+program returns [Value returnValue]
   :  block{
-      node = $block.node; 
-      node.evaluate();
+      returnValue = $block.node.evaluate(); 
     } 
   ;
  
@@ -110,10 +109,13 @@ statement returns [Node node]
   |  whileStatement {node = $whileStatement.node;}
   |  incrementation {node = $incrementation.node;}
   |  query {node = $query.node;}
+  |  println {node = $println.node;}
+  |  print {node = $print.node;}
   ;
 
 query returns [Node node]: 
-  ^('query' expression {node = new QueryNode($expression.node, dataSource);})
+  ^('query' (expression {node = new QueryNode($expression.node, dataSource);}
+  | functionCall {node = new QueryNode($functionCall.node, dataSource);}))
 ;
 
 variableCall returns [String value]:
@@ -121,15 +123,24 @@ variableCall returns [String value]:
 ;
 
 assignment returns [Node node] 
-  :  ^(ASSIGNMENT i=Identifier x=indexes? e=expression {node = new AssignmentNode($i.text, $x.e, $e.node, currentScope);})
-  |  ^('global' ASSIGNMENT i=Identifier x=indexes? e=expression {
+  :  ^(ASSIGNMENT i=Identifier x=indexes? (expression {node = new AssignmentNode($i.text, $x.e, $expression.node, currentScope);}
+  |  functionCall {node = new AssignmentNode($i.text, $x.e, $functionCall.node, currentScope);}))
+  |  ^('global' ASSIGNMENT i=Identifier x=indexes? (expression {
         Scope globalScope = currentScope;
         
         while(globalScope.parent() != null){
           globalScope = globalScope.parent();
         }
-        node = new AssignmentNode($i.text, $x.e, $e.node, globalScope);
-        })
+        node = new AssignmentNode($i.text, $x.e, $expression.node, globalScope);
+        }
+   |  functionCall {
+        Scope globalScope = currentScope;
+        
+        while(globalScope.parent() != null){
+          globalScope = globalScope.parent();
+        }
+        node = new AssignmentNode($i.text, $x.e, $functionCall.node, globalScope);
+        }))
   ;
 
 functionCall returns [Node node]
@@ -146,12 +157,23 @@ functionCall returns [Node node]
       node = function;
       
   }
-  |  ^(FUNC_CALL Println expression?) {node = new PrintlnNode($expression.node, outputStream);}
-  |  ^(FUNC_CALL Print expression) {node = new PrintNode($expression.node, outputStream);}
+//  |  ^(FUNC_CALL Println expression?) {node = new PrintlnNode($expression.node, outputStream);}
+//  |  ^(FUNC_CALL Println functionCall) {node = new PrintlnNode($functionCall.node, outputStream);}
+//  |  ^(FUNC_CALL Print expression) {node = new PrintNode($expression.node, outputStream);}
   |  ^(FUNC_CALL Assert expression) 
   |  ^(FUNC_CALL Size expression)
   ;
 
+println returns [Node node]
+  :  ^(PRINTLN functionCall) {node = new PrintlnNode($functionCall.node, outputStream);}
+  |  ^(PRINTLN expression?) {node = new PrintlnNode($expression.node, outputStream);}
+  ;
+  
+print returns [Node node]
+  :  ^(PRINT functionCall) {node = new PrintNode($functionCall.node, outputStream);}
+  |  ^(PRINT expression?) {node = new PrintNode($expression.node, outputStream);}
+  ;
+  
 ifStatement returns [Node node]
 @init  {
   IfNode ifNode = new IfNode();
@@ -221,8 +243,8 @@ incrementation returns [Node node]
 ;
 
 lookup returns [Node node]
-  :  ^(LOOKUP functionCall indexes?)
-  |  ^(LOOKUP list indexes?)
+//  :  ^(LOOKUP functionCall indexes?)
+  :  ^(LOOKUP list indexes?)
   |  ^(LOOKUP expression indexes?) 
   |  ^(LOOKUP i=Identifier x=indexes?) 
       {

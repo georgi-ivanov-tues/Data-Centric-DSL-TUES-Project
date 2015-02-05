@@ -77,7 +77,7 @@ public class Function implements Node{
 		params = par;
 	}
 	
-	public void invoke(List<Node> params, Map<String, Function> functions) {
+	public Value invoke(List<Node> params, Map<String, Function> functions) {
 		if(params.size() != identifiers.size()) {
 			throw new RuntimeException("Illegal function call: " + identifiers.size() +
 					" parameters expected for function \'" + id + "\'");
@@ -94,20 +94,20 @@ public class Function implements Node{
 			// TODO Decide about context and scope and fix
 			ProgramWalker walker = new ProgramWalker(nodes, scope, functions);
 			walker.context.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
-			walker.program();
+			return walker.program();
 		} catch (RecognitionException e) {
 			// do not recover from this
 			throw new RuntimeException("Something went wrong, terminating...", e);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return Value.NULL;
 	
 	}
 	
 	@Override
 	public Value evaluate() {
-		invoke(params,functions);
-		return Value.VOID;
+		return invoke(params,functions);
 	}
 
 	private List<String> toList(CommonTree tree) {

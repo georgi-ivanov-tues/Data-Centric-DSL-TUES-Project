@@ -23,6 +23,7 @@ public class DCLInterpreter {
 
 		CommonTree tree = (CommonTree)parser.program().getTree();
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+		System.out.println(tree.toStringTree());
 		
 		if(out == null){
 			out = System.out;
@@ -59,6 +60,7 @@ public class DCLInterpreter {
 
 		CommonTree tree = (CommonTree)parser.program().getTree();
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+		System.out.println(nodes);
 
 		ProgramWalker walker = new ProgramWalker(nodes, scope, context, parser.functions);
 		walker.program();

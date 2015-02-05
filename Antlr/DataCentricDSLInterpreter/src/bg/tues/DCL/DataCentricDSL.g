@@ -21,6 +21,8 @@ tokens {
   INDEXES;
   LIST;
   LOOKUP;
+  PRINT;
+  PRINTLN;
 }
 
 @parser::header {
@@ -94,10 +96,12 @@ statement
   |  forStatement
   |  whileStatement
   |  query ';' -> query
+  |  println ';' -> println
+  |  print ';' -> print
   ;
 
 query: 
-  'query'^ expression
+  'query'^ (expression | functionCall)
 ;
 
 variableCall:
@@ -105,16 +109,28 @@ variableCall:
 ;
 
 assignment
-  :  Identifier indexes? '=' expression -> ^(ASSIGNMENT Identifier indexes? expression)
-  | 'global' Identifier indexes? '=' expression -> ^('global' ASSIGNMENT Identifier indexes? expression)
+  :  Identifier indexes? '=' (expression -> ^(ASSIGNMENT Identifier indexes? expression)
+  |  functionCall -> ^(ASSIGNMENT Identifier indexes? functionCall))
+  |  'global' Identifier indexes? '=' (expression -> ^('global' ASSIGNMENT Identifier indexes? expression)
+  |  functionCall -> ^('global' ASSIGNMENT Identifier indexes? functionCall))
   ;
 
 functionCall
   :  Identifier '(' exprList? ')' -> ^(FUNC_CALL Identifier exprList?)
-  |  Println  expression    -> ^(FUNC_CALL Println expression)
-  |  Print expression     -> ^(FUNC_CALL Print expression)
+//  |  Println  expression    -> ^(FUNC_CALL Println expression)
+//  |  Print expression     -> ^(FUNC_CALL Print expression)
   |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
   |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)
+  ;
+
+println
+  : Println (expression -> ^(PRINTLN expression)
+  | functionCall -> ^(PRINTLN functionCall) )
+  ;
+  
+print
+  : Print (expression -> ^(PRINT expression)
+  | functionCall -> ^(PRINT functionCall) )
   ;
 
 ifStatement

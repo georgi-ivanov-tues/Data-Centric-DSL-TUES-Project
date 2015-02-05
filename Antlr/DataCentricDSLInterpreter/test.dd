@@ -1,10 +1,11 @@
-
-a = true;
-if(a || 2==1){
-	print "a";
+func someFunc(b) {
+	c = 5;
+	return c + b;
 }
 
-println query "SELECT * FROM people";
+b = 10;
+global a = someFunc(b);
+println a;
 
 //a = true;
 //if(a == true && 2 == 2){
