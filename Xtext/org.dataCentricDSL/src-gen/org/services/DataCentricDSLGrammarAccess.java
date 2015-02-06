@@ -64,19 +64,20 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPrintFunctionParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
 		private final RuleCall cPostfixOperationParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
 		private final RuleCall cFunctionCallParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
+		private final RuleCall cReturnStatementParserRuleCall_0_5 = (RuleCall)cAlternatives_0.eContents().get(5);
 		private final RuleCall cSemicolonParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//SimpleStatement:
 		//	(VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
-		//	PostfixOperation | FunctionCall) Semicolon;
+		//	PostfixOperation | FunctionCall | ReturnStatement) Semicolon;
 		public ParserRule getRule() { return rule; }
 
 		//(VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
-		//PostfixOperation | FunctionCall) Semicolon
+		//PostfixOperation | FunctionCall | ReturnStatement) Semicolon
 		public Group getGroup() { return cGroup; }
 
 		//VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
-		//PostfixOperation | FunctionCall
+		//PostfixOperation | FunctionCall | ReturnStatement
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//VariableDefinition
@@ -94,6 +95,9 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//FunctionCall
 		public RuleCall getFunctionCallParserRuleCall_0_4() { return cFunctionCallParserRuleCall_0_4; }
+
+		//ReturnStatement
+		public RuleCall getReturnStatementParserRuleCall_0_5() { return cReturnStatementParserRuleCall_0_5; }
 
 		//Semicolon
 		public RuleCall getSemicolonParserRuleCall_1() { return cSemicolonParserRuleCall_1; }
@@ -619,20 +623,15 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOpeningCurlyBracketParserRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
 		private final Assignment cStatementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cStatementsStatementParserRuleCall_6_0 = (RuleCall)cStatementsAssignment_6.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cReturnKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cReturnValueAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cReturnValueConditionStatementParserRuleCall_7_1_0 = (RuleCall)cReturnValueAssignment_7_1.eContents().get(0);
-		private final RuleCall cSemicolonParserRuleCall_7_2 = (RuleCall)cGroup_7.eContents().get(2);
-		private final RuleCall cClosingCurlyBracketParserRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		private final RuleCall cClosingCurlyBracketParserRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 		
 		//FunctionDefinition:
 		//	Func name=IDENTIFIER OpeningBracket (arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)? ClosingBracket
-		//	OpeningCurlyBracket statements+=Statement* ("return" returnValue=ConditionStatement Semicolon)? ClosingCurlyBracket;
+		//	OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
 		public ParserRule getRule() { return rule; }
 
 		//Func name=IDENTIFIER OpeningBracket (arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)? ClosingBracket
-		//OpeningCurlyBracket statements+=Statement* ("return" returnValue=ConditionStatement Semicolon)? ClosingCurlyBracket
+		//OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket
 		public Group getGroup() { return cGroup; }
 
 		//Func
@@ -680,23 +679,32 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//Statement
 		public RuleCall getStatementsStatementParserRuleCall_6_0() { return cStatementsStatementParserRuleCall_6_0; }
 
-		//("return" returnValue=ConditionStatement Semicolon)?
-		public Group getGroup_7() { return cGroup_7; }
+		//ClosingCurlyBracket
+		public RuleCall getClosingCurlyBracketParserRuleCall_7() { return cClosingCurlyBracketParserRuleCall_7; }
+	}
+
+	public class ReturnStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReturnStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cReturnKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cReturnValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cReturnValueConditionStatementParserRuleCall_1_0 = (RuleCall)cReturnValueAssignment_1.eContents().get(0);
+		
+		//ReturnStatement:
+		//	"return" returnValue=ConditionStatement;
+		public ParserRule getRule() { return rule; }
+
+		//"return" returnValue=ConditionStatement
+		public Group getGroup() { return cGroup; }
 
 		//"return"
-		public Keyword getReturnKeyword_7_0() { return cReturnKeyword_7_0; }
+		public Keyword getReturnKeyword_0() { return cReturnKeyword_0; }
 
 		//returnValue=ConditionStatement
-		public Assignment getReturnValueAssignment_7_1() { return cReturnValueAssignment_7_1; }
+		public Assignment getReturnValueAssignment_1() { return cReturnValueAssignment_1; }
 
 		//ConditionStatement
-		public RuleCall getReturnValueConditionStatementParserRuleCall_7_1_0() { return cReturnValueConditionStatementParserRuleCall_7_1_0; }
-
-		//Semicolon
-		public RuleCall getSemicolonParserRuleCall_7_2() { return cSemicolonParserRuleCall_7_2; }
-
-		//ClosingCurlyBracket
-		public RuleCall getClosingCurlyBracketParserRuleCall_8() { return cClosingCurlyBracketParserRuleCall_8; }
+		public RuleCall getReturnValueConditionStatementParserRuleCall_1_0() { return cReturnValueConditionStatementParserRuleCall_1_0; }
 	}
 
 	public class IfStatementElements extends AbstractParserRuleElementFinder {
@@ -1561,6 +1569,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final PrimaryElements pPrimary;
 	private final CompoundStatementElements pCompoundStatement;
 	private final FunctionDefinitionElements pFunctionDefinition;
+	private final ReturnStatementElements pReturnStatement;
 	private final IfStatementElements pIfStatement;
 	private final WhileStatementElements pWhileStatement;
 	private final ForStatementElements pForStatement;
@@ -1628,6 +1637,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pPrimary = new PrimaryElements();
 		this.pCompoundStatement = new CompoundStatementElements();
 		this.pFunctionDefinition = new FunctionDefinitionElements();
+		this.pReturnStatement = new ReturnStatementElements();
 		this.pIfStatement = new IfStatementElements();
 		this.pWhileStatement = new WhileStatementElements();
 		this.pForStatement = new ForStatementElements();
@@ -1717,7 +1727,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//SimpleStatement:
 	//	(VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
-	//	PostfixOperation | FunctionCall) Semicolon;
+	//	PostfixOperation | FunctionCall | ReturnStatement) Semicolon;
 	public SimpleStatementElements getSimpleStatementAccess() {
 		return pSimpleStatement;
 	}
@@ -1880,13 +1890,23 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//FunctionDefinition:
 	//	Func name=IDENTIFIER OpeningBracket (arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)? ClosingBracket
-	//	OpeningCurlyBracket statements+=Statement* ("return" returnValue=ConditionStatement Semicolon)? ClosingCurlyBracket;
+	//	OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
 	public FunctionDefinitionElements getFunctionDefinitionAccess() {
 		return pFunctionDefinition;
 	}
 	
 	public ParserRule getFunctionDefinitionRule() {
 		return getFunctionDefinitionAccess().getRule();
+	}
+
+	//ReturnStatement:
+	//	"return" returnValue=ConditionStatement;
+	public ReturnStatementElements getReturnStatementAccess() {
+		return pReturnStatement;
+	}
+	
+	public ParserRule getReturnStatementRule() {
+		return getReturnStatementAccess().getRule();
 	}
 
 	//IfStatement:

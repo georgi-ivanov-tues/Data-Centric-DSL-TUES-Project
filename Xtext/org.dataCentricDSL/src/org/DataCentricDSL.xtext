@@ -17,7 +17,8 @@ SimpleStatement:
 	 PrintFunction | 
 //	 MultiAssign | 
 	 PostfixOperation | 
-	 FunctionCall) Semicolon
+	 FunctionCall |
+	 ReturnStatement) Semicolon
 ;
 
 VariableDefinition:
@@ -99,8 +100,11 @@ FunctionDefinition:
 		(arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)?
 		ClosingBracket OpeningCurlyBracket
 		(statements+=Statement)*
-		('return' returnValue=ConditionStatement Semicolon)?
 	ClosingCurlyBracket
+;
+
+ReturnStatement:
+	'return' returnValue=ConditionStatement
 ;
 
 IfStatement:

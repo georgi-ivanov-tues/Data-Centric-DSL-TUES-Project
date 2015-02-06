@@ -412,22 +412,41 @@ public interface DataCentricDSLPackage extends EPackage
   int FUNCTION_DEFINITION__ARGUMENTS = COMPOUND_STATEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Return Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__RETURN_VALUE = COMPOUND_STATEMENT_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>Function Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_DEFINITION_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 3;
+  int FUNCTION_DEFINITION_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.ReturnStatementImpl <em>Return Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.ReturnStatementImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getReturnStatement()
+   * @generated
+   */
+  int RETURN_STATEMENT = 13;
+
+  /**
+   * The feature id for the '<em><b>Return Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__RETURN_VALUE = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Return Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.IfStatementImpl <em>If Statement</em>}' class.
@@ -437,7 +456,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getIfStatement()
    * @generated
    */
-  int IF_STATEMENT = 13;
+  int IF_STATEMENT = 14;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -474,7 +493,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getWhileStatement()
    * @generated
    */
-  int WHILE_STATEMENT = 14;
+  int WHILE_STATEMENT = 15;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -511,7 +530,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getForStatement()
    * @generated
    */
-  int FOR_STATEMENT = 15;
+  int FOR_STATEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -566,7 +585,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getConditionStatement()
    * @generated
    */
-  int CONDITION_STATEMENT = 16;
+  int CONDITION_STATEMENT = 17;
 
   /**
    * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
@@ -594,7 +613,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 17;
+  int CONDITION = 18;
 
   /**
    * The feature id for the '<em><b>Condition Elements</b></em>' containment reference list.
@@ -631,7 +650,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getConditionElement()
    * @generated
    */
-  int CONDITION_ELEMENT = 18;
+  int CONDITION_ELEMENT = 19;
 
   /**
    * The number of structural features of the '<em>Condition Element</em>' class.
@@ -650,7 +669,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getPostfixOperation()
    * @generated
    */
-  int POSTFIX_OPERATION = 19;
+  int POSTFIX_OPERATION = 20;
 
   /**
    * The feature id for the '<em><b>Call</b></em>' containment reference.
@@ -687,7 +706,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 20;
+  int STRING_LITERAL = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -715,7 +734,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 21;
+  int NUMBER_LITERAL = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -743,7 +762,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 22;
+  int BOOLEAN_VALUE = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -771,7 +790,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 23;
+  int ADDITION = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -808,7 +827,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getSubstraction()
    * @generated
    */
-  int SUBSTRACTION = 24;
+  int SUBSTRACTION = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -845,7 +864,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 25;
+  int MULTIPLICATION = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -882,7 +901,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getDivision()
    * @generated
    */
-  int DIVISION = 26;
+  int DIVISION = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -919,7 +938,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMod()
    * @generated
    */
-  int MOD = 27;
+  int MOD = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1212,15 +1231,25 @@ public interface DataCentricDSLPackage extends EPackage
   EAttribute getFunctionDefinition_Arguments();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.FunctionDefinition#getReturnValue <em>Return Value</em>}'.
+   * Returns the meta object for class '{@link org.dataCentricDSL.ReturnStatement <em>Return Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Return Statement</em>'.
+   * @see org.dataCentricDSL.ReturnStatement
+   * @generated
+   */
+  EClass getReturnStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.ReturnStatement#getReturnValue <em>Return Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Return Value</em>'.
-   * @see org.dataCentricDSL.FunctionDefinition#getReturnValue()
-   * @see #getFunctionDefinition()
+   * @see org.dataCentricDSL.ReturnStatement#getReturnValue()
+   * @see #getReturnStatement()
    * @generated
    */
-  EReference getFunctionDefinition_ReturnValue();
+  EReference getReturnStatement_ReturnValue();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.IfStatement <em>If Statement</em>}'.
@@ -1875,12 +1904,22 @@ public interface DataCentricDSLPackage extends EPackage
     EAttribute FUNCTION_DEFINITION__ARGUMENTS = eINSTANCE.getFunctionDefinition_Arguments();
 
     /**
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.ReturnStatementImpl <em>Return Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.dataCentricDSL.impl.ReturnStatementImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getReturnStatement()
+     * @generated
+     */
+    EClass RETURN_STATEMENT = eINSTANCE.getReturnStatement();
+
+    /**
      * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FUNCTION_DEFINITION__RETURN_VALUE = eINSTANCE.getFunctionDefinition_ReturnValue();
+    EReference RETURN_STATEMENT__RETURN_VALUE = eINSTANCE.getReturnStatement_ReturnValue();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.IfStatementImpl <em>If Statement</em>}' class.

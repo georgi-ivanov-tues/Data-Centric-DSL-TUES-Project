@@ -140,6 +140,15 @@ public interface DataCentricDSLFactory extends EFactory
   FunctionDefinition createFunctionDefinition();
 
   /**
+   * Returns a new object of class '<em>Return Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Statement</em>'.
+   * @generated
+   */
+  ReturnStatement createReturnStatement();
+
+  /**
    * Returns a new object of class '<em>If Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

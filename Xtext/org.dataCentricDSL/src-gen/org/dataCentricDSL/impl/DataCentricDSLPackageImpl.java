@@ -24,6 +24,7 @@ import org.dataCentricDSL.PostfixOperation;
 import org.dataCentricDSL.PrintFunction;
 import org.dataCentricDSL.PrintParam;
 import org.dataCentricDSL.QueryFunction;
+import org.dataCentricDSL.ReturnStatement;
 import org.dataCentricDSL.SimpleStatement;
 import org.dataCentricDSL.Statement;
 import org.dataCentricDSL.StringLiteral;
@@ -138,6 +139,13 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * @generated
    */
   private EClass functionDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass returnStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -562,9 +570,19 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionDefinition_ReturnValue()
+  public EClass getReturnStatement()
   {
-    return (EReference)functionDefinitionEClass.getEStructuralFeatures().get(2);
+    return returnStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReturnStatement_ReturnValue()
+  {
+    return (EReference)returnStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1014,7 +1032,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     functionDefinitionEClass = createEClass(FUNCTION_DEFINITION);
     createEAttribute(functionDefinitionEClass, FUNCTION_DEFINITION__NAME);
     createEAttribute(functionDefinitionEClass, FUNCTION_DEFINITION__ARGUMENTS);
-    createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__RETURN_VALUE);
+
+    returnStatementEClass = createEClass(RETURN_STATEMENT);
+    createEReference(returnStatementEClass, RETURN_STATEMENT__RETURN_VALUE);
 
     ifStatementEClass = createEClass(IF_STATEMENT);
     createEReference(ifStatementEClass, IF_STATEMENT__CONDITION);
@@ -1112,6 +1132,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     expressionEClass.getESuperTypes().add(this.getConditionElement());
     compoundStatementEClass.getESuperTypes().add(this.getStatement());
     functionDefinitionEClass.getESuperTypes().add(this.getCompoundStatement());
+    returnStatementEClass.getESuperTypes().add(this.getSimpleStatement());
     ifStatementEClass.getESuperTypes().add(this.getCompoundStatement());
     whileStatementEClass.getESuperTypes().add(this.getCompoundStatement());
     forStatementEClass.getESuperTypes().add(this.getCompoundStatement());
@@ -1165,7 +1186,9 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(functionDefinitionEClass, FunctionDefinition.class, "FunctionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionDefinition_Arguments(), ecorePackage.getEString(), "arguments", null, 0, -1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionDefinition_ReturnValue(), this.getConditionStatement(), null, "returnValue", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(returnStatementEClass, ReturnStatement.class, "ReturnStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReturnStatement_ReturnValue(), this.getConditionStatement(), null, "returnValue", null, 0, 1, ReturnStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIfStatement_Condition(), this.getConditionStatement(), null, "condition", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

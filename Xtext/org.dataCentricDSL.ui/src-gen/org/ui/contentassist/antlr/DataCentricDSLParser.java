@@ -112,7 +112,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionDefinitionAccess().getGroup(), "rule__FunctionDefinition__Group__0");
 					put(grammarAccess.getFunctionDefinitionAccess().getGroup_3(), "rule__FunctionDefinition__Group_3__0");
 					put(grammarAccess.getFunctionDefinitionAccess().getGroup_3_1(), "rule__FunctionDefinition__Group_3_1__0");
-					put(grammarAccess.getFunctionDefinitionAccess().getGroup_7(), "rule__FunctionDefinition__Group_7__0");
+					put(grammarAccess.getReturnStatementAccess().getGroup(), "rule__ReturnStatement__Group__0");
 					put(grammarAccess.getIfStatementAccess().getGroup(), "rule__IfStatement__Group__0");
 					put(grammarAccess.getIfStatementAccess().getGroup_8(), "rule__IfStatement__Group_8__0");
 					put(grammarAccess.getIfStatementAccess().getGroup_9(), "rule__IfStatement__Group_9__0");
@@ -321,7 +321,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionDefinitionAccess().getArgumentsAssignment_3_0(), "rule__FunctionDefinition__ArgumentsAssignment_3_0");
 					put(grammarAccess.getFunctionDefinitionAccess().getArgumentsAssignment_3_1_1(), "rule__FunctionDefinition__ArgumentsAssignment_3_1_1");
 					put(grammarAccess.getFunctionDefinitionAccess().getStatementsAssignment_6(), "rule__FunctionDefinition__StatementsAssignment_6");
-					put(grammarAccess.getFunctionDefinitionAccess().getReturnValueAssignment_7_1(), "rule__FunctionDefinition__ReturnValueAssignment_7_1");
+					put(grammarAccess.getReturnStatementAccess().getReturnValueAssignment_1(), "rule__ReturnStatement__ReturnValueAssignment_1");
 					put(grammarAccess.getIfStatementAccess().getConditionAssignment_3(), "rule__IfStatement__ConditionAssignment_3");
 					put(grammarAccess.getIfStatementAccess().getStatementsAssignment_6(), "rule__IfStatement__StatementsAssignment_6");
 					put(grammarAccess.getIfStatementAccess().getConditionAssignment_8_2(), "rule__IfStatement__ConditionAssignment_8_2");

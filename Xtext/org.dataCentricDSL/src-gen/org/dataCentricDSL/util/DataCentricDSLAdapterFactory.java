@@ -140,6 +140,11 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createFunctionDefinitionAdapter();
       }
       @Override
+      public Adapter caseReturnStatement(ReturnStatement object)
+      {
+        return createReturnStatementAdapter();
+      }
+      @Override
       public Adapter caseIfStatement(IfStatement object)
       {
         return createIfStatementAdapter();
@@ -427,6 +432,21 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFunctionDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.ReturnStatement <em>Return Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.dataCentricDSL.ReturnStatement
+   * @generated
+   */
+  public Adapter createReturnStatementAdapter()
   {
     return null;
   }

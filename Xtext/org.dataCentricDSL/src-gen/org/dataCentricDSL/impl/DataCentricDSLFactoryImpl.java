@@ -77,6 +77,7 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.EXPRESSION: return createExpression();
       case DataCentricDSLPackage.COMPOUND_STATEMENT: return createCompoundStatement();
       case DataCentricDSLPackage.FUNCTION_DEFINITION: return createFunctionDefinition();
+      case DataCentricDSLPackage.RETURN_STATEMENT: return createReturnStatement();
       case DataCentricDSLPackage.IF_STATEMENT: return createIfStatement();
       case DataCentricDSLPackage.WHILE_STATEMENT: return createWhileStatement();
       case DataCentricDSLPackage.FOR_STATEMENT: return createForStatement();
@@ -238,6 +239,17 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     FunctionDefinitionImpl functionDefinition = new FunctionDefinitionImpl();
     return functionDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReturnStatement createReturnStatement()
+  {
+    ReturnStatementImpl returnStatement = new ReturnStatementImpl();
+    return returnStatement;
   }
 
   /**

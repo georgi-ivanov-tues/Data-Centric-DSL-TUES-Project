@@ -205,6 +205,16 @@ ruleSimpleStatement returns [EObject current=null]
         $current = $this_FunctionCall_4.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getSimpleStatementAccess().getReturnStatementParserRuleCall_0_5()); 
+    }
+    this_ReturnStatement_5=ruleReturnStatement
+    { 
+        $current = $this_ReturnStatement_5.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
     { 
         newCompositeNode(grammarAccess.getSimpleStatementAccess().getSemicolonParserRuleCall_1()); 
@@ -1270,45 +1280,58 @@ ruleOpeningCurlyBracket
 	    }
 
 )
-)*(	otherlv_9='return' 
-    {
-    	newLeafNode(otherlv_9, grammarAccess.getFunctionDefinitionAccess().getReturnKeyword_7_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getReturnValueConditionStatementParserRuleCall_7_1_0()); 
-	    }
-		lv_returnValue_10_0=ruleConditionStatement		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getFunctionDefinitionRule());
-	        }
-       		set(
-       			$current, 
-       			"returnValue",
-        		lv_returnValue_10_0, 
-        		"ConditionStatement");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
+)*
     { 
-        newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getSemicolonParserRuleCall_7_2()); 
-    }
-ruleSemicolon
-    { 
-        afterParserOrEnumRuleCall();
-    }
-)?
-    { 
-        newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getClosingCurlyBracketParserRuleCall_8()); 
+        newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getClosingCurlyBracketParserRuleCall_7()); 
     }
 ruleClosingCurlyBracket
     { 
         afterParserOrEnumRuleCall();
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleReturnStatement
+entryRuleReturnStatement returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getReturnStatementRule()); }
+	 iv_ruleReturnStatement=ruleReturnStatement 
+	 { $current=$iv_ruleReturnStatement.current; } 
+	 EOF 
+;
+
+// Rule ReturnStatement
+ruleReturnStatement returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='return' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getReturnStatementAccess().getReturnKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getReturnStatementAccess().getReturnValueConditionStatementParserRuleCall_1_0()); 
+	    }
+		lv_returnValue_1_0=ruleConditionStatement		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getReturnStatementRule());
+	        }
+       		set(
+       			$current, 
+       			"returnValue",
+        		lv_returnValue_1_0, 
+        		"ConditionStatement");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 
 

@@ -4,17 +4,14 @@ package org.dataCentricDSL.impl;
 
 import java.util.Collection;
 
-import org.dataCentricDSL.ConditionStatement;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.FunctionDefinition;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -29,7 +26,6 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <ul>
  *   <li>{@link org.dataCentricDSL.impl.FunctionDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.FunctionDefinitionImpl#getArguments <em>Arguments</em>}</li>
- *   <li>{@link org.dataCentricDSL.impl.FunctionDefinitionImpl#getReturnValue <em>Return Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,16 +62,6 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
    * @ordered
    */
   protected EList<String> arguments;
-
-  /**
-   * The cached value of the '{@link #getReturnValue() <em>Return Value</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getReturnValue()
-   * @generated
-   * @ordered
-   */
-  protected ConditionStatement returnValue;
 
   /**
    * <!-- begin-user-doc -->
@@ -140,70 +126,6 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConditionStatement getReturnValue()
-  {
-    return returnValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetReturnValue(ConditionStatement newReturnValue, NotificationChain msgs)
-  {
-    ConditionStatement oldReturnValue = returnValue;
-    returnValue = newReturnValue;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE, oldReturnValue, newReturnValue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setReturnValue(ConditionStatement newReturnValue)
-  {
-    if (newReturnValue != returnValue)
-    {
-      NotificationChain msgs = null;
-      if (returnValue != null)
-        msgs = ((InternalEObject)returnValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE, null, msgs);
-      if (newReturnValue != null)
-        msgs = ((InternalEObject)newReturnValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE, null, msgs);
-      msgs = basicSetReturnValue(newReturnValue, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE, newReturnValue, newReturnValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE:
-        return basicSetReturnValue(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -213,8 +135,6 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
         return getName();
       case DataCentricDSLPackage.FUNCTION_DEFINITION__ARGUMENTS:
         return getArguments();
-      case DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE:
-        return getReturnValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -237,9 +157,6 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
         getArguments().clear();
         getArguments().addAll((Collection<? extends String>)newValue);
         return;
-      case DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE:
-        setReturnValue((ConditionStatement)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -260,9 +177,6 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
       case DataCentricDSLPackage.FUNCTION_DEFINITION__ARGUMENTS:
         getArguments().clear();
         return;
-      case DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE:
-        setReturnValue((ConditionStatement)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -281,8 +195,6 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DataCentricDSLPackage.FUNCTION_DEFINITION__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
-      case DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE:
-        return returnValue != null;
     }
     return super.eIsSet(featureID);
   }
