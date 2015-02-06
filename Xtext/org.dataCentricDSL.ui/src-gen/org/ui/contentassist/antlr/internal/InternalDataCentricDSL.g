@@ -5589,9 +5589,9 @@ rule__FunctionCall__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getFunctionCallAccess().getNameAssignment_0()); }
-(rule__FunctionCall__NameAssignment_0)
-{ after(grammarAccess.getFunctionCallAccess().getNameAssignment_0()); }
+{ before(grammarAccess.getFunctionCallAccess().getCalledFunctionNameAssignment_0()); }
+(rule__FunctionCall__CalledFunctionNameAssignment_0)
+{ after(grammarAccess.getFunctionCallAccess().getCalledFunctionNameAssignment_0()); }
 )
 
 ;
@@ -22470,14 +22470,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionCall__NameAssignment_0
+rule__FunctionCall__CalledFunctionNameAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionCallAccess().getNameIDENTIFIERTerminalRuleCall_0_0()); }
-	RULE_IDENTIFIER{ after(grammarAccess.getFunctionCallAccess().getNameIDENTIFIERTerminalRuleCall_0_0()); }
+{ before(grammarAccess.getFunctionCallAccess().getCalledFunctionNameIDENTIFIERTerminalRuleCall_0_0()); }
+	RULE_IDENTIFIER{ after(grammarAccess.getFunctionCallAccess().getCalledFunctionNameIDENTIFIERTerminalRuleCall_0_0()); }
 )
 
 ;

@@ -100,14 +100,14 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		var container = ValidationUtils.getDataCentricDSLContainer(fc);
 		
 		val elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
-		if(ValidationUtils.functionIsDeclared(elements, fc.name)) {
+		if(ValidationUtils.functionIsDeclared(elements, fc.calledFunctionName)) {
 			return;
 		}
 		
 		error(ErrorMessages.UNDEFINED_FUNCTION, 
-			DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME,
+			DataCentricDSLPackage.Literals::FUNCTION_CALL__CALLED_FUNCTION_NAME,
 			ErrorMessages.UNDEFINED_FUNCTION,
-			fc.name
+			fc.calledFunctionName
 		);
 	}
 	
@@ -116,16 +116,16 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		var container = ValidationUtils.getDataCentricDSLContainer(fc);
 		
 		var elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
-		if(ValidationUtils.functionIsDeclared(elements, fc.name)) {
+		if(ValidationUtils.functionIsDeclared(elements, fc.calledFunctionName)) {
 			for(i : 0..< elements.length) {
-				if(elements.get(i).name.equals(fc.name) 
+				if(elements.get(i).name.equals(fc.calledFunctionName) 
 					&& elements.get(i).arguments.length == fc.arguments.length
 				) {
 					if(!ValidationUtils.functionIsDeclaredBeforeTheCode(elements.get(i))) {
 						error(ErrorMessages.UNDEFINED_FUNCTION, 
-							DataCentricDSLPackage.Literals::FUNCTION_CALL__NAME,
+							DataCentricDSLPackage.Literals::FUNCTION_CALL__CALLED_FUNCTION_NAME,
 							ErrorMessages.UNDEFINED_FUNCTION,
-							fc.name
+							fc.calledFunctionName
 						);
 					}
 					return;		
@@ -211,17 +211,34 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 				);
 				ValidationUtils.checkIfVariableIsUsed(elementsFromPosition, vd.name);
 				if(!ValidationUtils.variableIsUsed) {
-					warning("Variable is never used.",
-						DataCentricDSLPackage.Literals.VARIABLE_DEFINITION__NAME
+					warning(ErrorMessages.UNUSED_VARIABLE,
+						DataCentricDSLPackage.Literals.VARIABLE_DEFINITION__NAME,
+						ErrorMessages.UNUSED_VARIABLE,
+						vd.name
 					);
 				}
 			} else {
-				warning("Variable is never used.",
-					DataCentricDSLPackage.Literals.VARIABLE_DEFINITION__NAME
+				warning(ErrorMessages.UNUSED_VARIABLE,
+					DataCentricDSLPackage.Literals.VARIABLE_DEFINITION__NAME,
+					ErrorMessages.UNUSED_VARIABLE,
+					vd.name
 				);
 			}
 		}
 		ValidationUtils.variableIsUsed = false;
+ 	}
+ 	
+ 	@Check
+ 	def void checkIfFunctionIsUsed(FunctionDefinition fd) {
+ 		ValidationUtils.checkIfFunctionIsUsed(fd.eContainer.eContents, fd.name);
+ 		if(!ValidationUtils.functionIsUsed) {
+ 			warning(ErrorMessages.UNUSED_FUNCTION,
+ 				DataCentricDSLPackage.Literals.FUNCTION_DEFINITION__NAME,
+ 				ErrorMessages.UNUSED_FUNCTION,
+ 				fd.name
+ 			)
+ 		}
+ 		ValidationUtils.functionIsUsed = false;
  	}
 	
 }

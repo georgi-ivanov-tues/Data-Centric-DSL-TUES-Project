@@ -3,8 +3,11 @@
 */
 package org.ui.quickfix
 
+import org.dataCentricDSL.DataCentricDSL
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.ui.editor.model.edit.IModification
 import org.eclipse.xtext.ui.editor.model.edit.IModificationContext
+import org.eclipse.xtext.ui.editor.model.edit.ISemanticModification
 import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
@@ -41,11 +44,6 @@ class DataCentricDSLQuickfixProvider extends XbaseQuickfixProvider {
 			new IModification() {
 				
 				override apply(IModificationContext context) throws Exception {
-//					var FunctionCall fc = element as FunctionCall;
-//					var dataCentricDSLContainer = ValidationUtils.getDataCentricDSLContainer(fc) as DataCentricDSL;
-//					var FunctionDefinition fd = DataCentricDSLFactory.eINSTANCE.createFunctionDefinition;
-//					fd.name = issue.data.get(0).toString;
-//					dataCentricDSLContainer.elements.add(0, fd);
 					var StringBuilder builder = new StringBuilder();
 					builder.append("func ");
 					builder.append(issue.data.get(0).toString);
@@ -61,8 +59,8 @@ class DataCentricDSLQuickfixProvider extends XbaseQuickfixProvider {
 	@Fix(ErrorMessages.UNDEFINED_VARIABLE)
 	def defineLocalVariable(Issue issue, IssueResolutionAcceptor acceptor) {
 		acceptor.accept(issue,
-			"Define variable '" + issue.data.get(0).toString + "'",
-			"Defines a variable with the desired name.",
+			"Define local variable '" + issue.data.get(0).toString + "'",
+			"Defines a local variable with the desired name.",
 			null,
 			new IModification() {
 				
@@ -117,6 +115,44 @@ class DataCentricDSLQuickfixProvider extends XbaseQuickfixProvider {
 					lineToBeAdded.append(" = \n");
 					xtextDocument.replace(currentLineInformation.offset, 0,
 						lineToBeAdded.toString);
+				}
+				
+			}
+		)
+	}
+	
+	@Fix(ErrorMessages.UNUSED_VARIABLE)
+	def removeVariableDefinition(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue,
+			"Remove variable definition '" + issue.data.get(0) + "'",
+			"Removes the variable definition.",
+			null,
+			new IModification() {
+				
+				override apply(IModificationContext context) throws Exception {
+					var xtextDocument = context.xtextDocument;
+					var currentLineInformation = xtextDocument.getLineInformation(issue.lineNumber - 1);
+					xtextDocument.replace(currentLineInformation.offset,
+						currentLineInformation.length,
+						""
+					);
+				}
+				
+			}
+		)
+	}
+	
+	@Fix(ErrorMessages.UNUSED_FUNCTION)
+	def removeFunctionDefinition(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue,
+			"Remove function definition '" + issue.data.get(0) + "'",
+			"Removes the function definition.",
+			null,
+			new ISemanticModification() {
+				
+				override apply(EObject element, IModificationContext context) throws Exception {
+					var dataCentricDSLElement = element.eContainer as DataCentricDSL;
+					dataCentricDSLElement.elements.remove(element);	
 				}
 				
 			}

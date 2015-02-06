@@ -273,13 +273,13 @@ public interface DataCentricDSLPackage extends EPackage
   int FUNCTION_CALL = 8;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Called Function Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_CALL__NAME = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+  int FUNCTION_CALL__CALLED_FUNCTION_NAME = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -1106,15 +1106,15 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getFunctionCall();
 
   /**
-   * Returns the meta object for the attribute '{@link org.dataCentricDSL.FunctionCall#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.FunctionCall#getCalledFunctionName <em>Called Function Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.dataCentricDSL.FunctionCall#getName()
+   * @return the meta object for the attribute '<em>Called Function Name</em>'.
+   * @see org.dataCentricDSL.FunctionCall#getCalledFunctionName()
    * @see #getFunctionCall()
    * @generated
    */
-  EAttribute getFunctionCall_Name();
+  EAttribute getFunctionCall_CalledFunctionName();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.FunctionCall#getArguments <em>Arguments</em>}'.
@@ -1787,12 +1787,12 @@ public interface DataCentricDSLPackage extends EPackage
     EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Called Function Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FUNCTION_CALL__NAME = eINSTANCE.getFunctionCall_Name();
+    EAttribute FUNCTION_CALL__CALLED_FUNCTION_NAME = eINSTANCE.getFunctionCall_CalledFunctionName();
 
     /**
      * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.

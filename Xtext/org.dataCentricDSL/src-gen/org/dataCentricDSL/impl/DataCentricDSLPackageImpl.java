@@ -462,7 +462,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunctionCall_Name()
+  public EAttribute getFunctionCall_CalledFunctionName()
   {
     return (EAttribute)functionCallEClass.getEStructuralFeatures().get(0);
   }
@@ -1000,7 +1000,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     printParamEClass = createEClass(PRINT_PARAM);
 
     functionCallEClass = createEClass(FUNCTION_CALL);
-    createEAttribute(functionCallEClass, FUNCTION_CALL__NAME);
+    createEAttribute(functionCallEClass, FUNCTION_CALL__CALLED_FUNCTION_NAME);
     createEReference(functionCallEClass, FUNCTION_CALL__ARGUMENTS);
 
     variableCallEClass = createEClass(VARIABLE_CALL);
@@ -1151,7 +1151,7 @@ public class DataCentricDSLPackageImpl extends EPackageImpl implements DataCentr
     initEClass(printParamEClass, PrintParam.class, "PrintParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunctionCall_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFunctionCall_CalledFunctionName(), ecorePackage.getEString(), "calledFunctionName", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionCall_Arguments(), this.getExpression(), null, "arguments", null, 0, -1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableCallEClass, VariableCall.class, "VariableCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

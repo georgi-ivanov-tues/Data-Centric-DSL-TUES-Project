@@ -1546,7 +1546,7 @@ public class DataCentricDSLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=IDENTIFIER (arguments+=Expression arguments+=Expression*)?)
+	 *     (calledFunctionName=IDENTIFIER (arguments+=Expression arguments+=Expression*)?)
 	 */
 	protected void sequence_FunctionCall(EObject context, FunctionCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

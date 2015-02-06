@@ -7,6 +7,7 @@ import org.dataCentricDSL.BooleanValue;
 import org.dataCentricDSL.ConditionElement;
 import org.dataCentricDSL.DataCentricDSL;
 import org.dataCentricDSL.ForStatement;
+import org.dataCentricDSL.FunctionCall;
 import org.dataCentricDSL.FunctionDefinition;
 import org.dataCentricDSL.IfStatement;
 import org.dataCentricDSL.VariableCall;
@@ -25,6 +26,8 @@ public class ValidationUtils {
   public static boolean globalVariableFound = false;
   
   public static boolean variableIsUsed = false;
+  
+  public static boolean functionIsUsed = false;
   
   public static void checkIfCalledVariableIsGlobal(final EObject object, final String name, final int index) {
     if (ValidationUtils.globalVariableFound) {
@@ -262,6 +265,30 @@ public class ValidationUtils {
         EObject _get_2 = elementContents.get((i).intValue());
         EList<EObject> _eContents = _get_2.eContents();
         ValidationUtils.checkIfVariableIsUsed(_eContents, name);
+      }
+    }
+  }
+  
+  public static void checkIfFunctionIsUsed(final List<EObject> elementContents, final String name) {
+    if (ValidationUtils.functionIsUsed) {
+      return;
+    }
+    int _length = ((Object[])Conversions.unwrapArray(elementContents, Object.class)).length;
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
+    for (final Integer i : _doubleDotLessThan) {
+      EObject _get = elementContents.get((i).intValue());
+      if ((_get instanceof FunctionCall)) {
+        EObject _get_1 = elementContents.get((i).intValue());
+        String _calledFunctionName = ((FunctionCall) _get_1).getCalledFunctionName();
+        boolean _equals = _calledFunctionName.equals(name);
+        if (_equals) {
+          ValidationUtils.functionIsUsed = true;
+          return;
+        }
+      } else {
+        EObject _get_2 = elementContents.get((i).intValue());
+        EList<EObject> _eContents = _get_2.eContents();
+        ValidationUtils.checkIfFunctionIsUsed(_eContents, name);
       }
     }
   }

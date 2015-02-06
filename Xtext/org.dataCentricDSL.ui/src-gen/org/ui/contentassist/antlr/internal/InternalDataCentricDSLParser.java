@@ -17927,26 +17927,26 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FunctionCall__Group__0__Impl"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5586:1: rule__FunctionCall__Group__0__Impl : ( ( rule__FunctionCall__NameAssignment_0 ) ) ;
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5586:1: rule__FunctionCall__Group__0__Impl : ( ( rule__FunctionCall__CalledFunctionNameAssignment_0 ) ) ;
     public final void rule__FunctionCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5590:1: ( ( ( rule__FunctionCall__NameAssignment_0 ) ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5591:1: ( ( rule__FunctionCall__NameAssignment_0 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5590:1: ( ( ( rule__FunctionCall__CalledFunctionNameAssignment_0 ) ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5591:1: ( ( rule__FunctionCall__CalledFunctionNameAssignment_0 ) )
             {
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5591:1: ( ( rule__FunctionCall__NameAssignment_0 ) )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5592:1: ( rule__FunctionCall__NameAssignment_0 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5591:1: ( ( rule__FunctionCall__CalledFunctionNameAssignment_0 ) )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5592:1: ( rule__FunctionCall__CalledFunctionNameAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionCallAccess().getNameAssignment_0()); 
+               before(grammarAccess.getFunctionCallAccess().getCalledFunctionNameAssignment_0()); 
             }
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5593:1: ( rule__FunctionCall__NameAssignment_0 )
-            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5593:2: rule__FunctionCall__NameAssignment_0
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5593:1: ( rule__FunctionCall__CalledFunctionNameAssignment_0 )
+            // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:5593:2: rule__FunctionCall__CalledFunctionNameAssignment_0
             {
-            pushFollow(FOLLOW_rule__FunctionCall__NameAssignment_0_in_rule__FunctionCall__Group__0__Impl12099);
-            rule__FunctionCall__NameAssignment_0();
+            pushFollow(FOLLOW_rule__FunctionCall__CalledFunctionNameAssignment_0_in_rule__FunctionCall__Group__0__Impl12099);
+            rule__FunctionCall__CalledFunctionNameAssignment_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -17954,7 +17954,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionCallAccess().getNameAssignment_0()); 
+               after(grammarAccess.getFunctionCallAccess().getCalledFunctionNameAssignment_0()); 
             }
 
             }
@@ -64381,9 +64381,9 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__PrintFunction__PrintParamAssignment_1"
 
 
-    // $ANTLR start "rule__FunctionCall__NameAssignment_0"
-    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22473:1: rule__FunctionCall__NameAssignment_0 : ( RULE_IDENTIFIER ) ;
-    public final void rule__FunctionCall__NameAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__FunctionCall__CalledFunctionNameAssignment_0"
+    // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22473:1: rule__FunctionCall__CalledFunctionNameAssignment_0 : ( RULE_IDENTIFIER ) ;
+    public final void rule__FunctionCall__CalledFunctionNameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -64395,11 +64395,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
             // ../org.dataCentricDSL.ui/src-gen/org/ui/contentassist/antlr/internal/InternalDataCentricDSL.g:22479:1: RULE_IDENTIFIER
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFunctionCallAccess().getNameIDENTIFIERTerminalRuleCall_0_0()); 
+               before(grammarAccess.getFunctionCallAccess().getCalledFunctionNameIDENTIFIERTerminalRuleCall_0_0()); 
             }
-            match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__FunctionCall__NameAssignment_045310); if (state.failed) return ;
+            match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__FunctionCall__CalledFunctionNameAssignment_045310); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFunctionCallAccess().getNameIDENTIFIERTerminalRuleCall_0_0()); 
+               after(grammarAccess.getFunctionCallAccess().getCalledFunctionNameIDENTIFIERTerminalRuleCall_0_0()); 
             }
 
             }
@@ -64419,7 +64419,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionCall__NameAssignment_0"
+    // $ANTLR end "rule__FunctionCall__CalledFunctionNameAssignment_0"
 
 
     // $ANTLR start "rule__FunctionCall__ArgumentsAssignment_2_0"
@@ -78001,7 +78001,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_rule__PrintFunction__PrintParamAssignment_1_in_rule__PrintFunction__Group__1__Impl12035 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__FunctionCall__Group__0__Impl_in_rule__FunctionCall__Group__012069 = new BitSet(new long[]{0x00000001E1000500L});
     public static final BitSet FOLLOW_rule__FunctionCall__Group__1_in_rule__FunctionCall__Group__012072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FunctionCall__NameAssignment_0_in_rule__FunctionCall__Group__0__Impl12099 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FunctionCall__CalledFunctionNameAssignment_0_in_rule__FunctionCall__Group__0__Impl12099 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__FunctionCall__Group__1__Impl_in_rule__FunctionCall__Group__112129 = new BitSet(new long[]{0x00000001E3000700L});
     public static final BitSet FOLLOW_rule__FunctionCall__Group__2_in_rule__FunctionCall__Group__112132 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpeningBracket_in_rule__FunctionCall__Group__1__Impl12159 = new BitSet(new long[]{0x0000000000000002L});
@@ -79359,7 +79359,7 @@ public class InternalDataCentricDSLParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_ruleVariableParam_in_rule__VariableDefinition__VariableValueAssignment_345217 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleConditionStatement_in_rule__QueryFunction__QueryParamAssignment_145248 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePrintParam_in_rule__PrintFunction__PrintParamAssignment_145279 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__FunctionCall__NameAssignment_045310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__FunctionCall__CalledFunctionNameAssignment_045310 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__FunctionCall__ArgumentsAssignment_2_045341 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__FunctionCall__ArgumentsAssignment_2_1_145372 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__VariableCall__CalledVariableNameAssignment_145403 = new BitSet(new long[]{0x0000000000000002L});

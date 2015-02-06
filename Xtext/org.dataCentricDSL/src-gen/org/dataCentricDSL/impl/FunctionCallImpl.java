@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.FunctionCallImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.FunctionCallImpl#getCalledFunctionName <em>Called Function Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.impl.FunctionCallImpl#getArguments <em>Arguments</em>}</li>
  * </ul>
  * </p>
@@ -38,24 +38,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class FunctionCallImpl extends SimpleStatementImpl implements FunctionCall
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getCalledFunctionName() <em>Called Function Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getCalledFunctionName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String CALLED_FUNCTION_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getCalledFunctionName() <em>Called Function Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getCalledFunctionName()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String calledFunctionName = CALLED_FUNCTION_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
@@ -93,9 +93,9 @@ public class FunctionCallImpl extends SimpleStatementImpl implements FunctionCal
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getCalledFunctionName()
   {
-    return name;
+    return calledFunctionName;
   }
 
   /**
@@ -103,12 +103,12 @@ public class FunctionCallImpl extends SimpleStatementImpl implements FunctionCal
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setCalledFunctionName(String newCalledFunctionName)
   {
-    String oldName = name;
-    name = newName;
+    String oldCalledFunctionName = calledFunctionName;
+    calledFunctionName = newCalledFunctionName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.FUNCTION_CALL__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.FUNCTION_CALL__CALLED_FUNCTION_NAME, oldCalledFunctionName, calledFunctionName));
   }
 
   /**
@@ -151,8 +151,8 @@ public class FunctionCallImpl extends SimpleStatementImpl implements FunctionCal
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_CALL__NAME:
-        return getName();
+      case DataCentricDSLPackage.FUNCTION_CALL__CALLED_FUNCTION_NAME:
+        return getCalledFunctionName();
       case DataCentricDSLPackage.FUNCTION_CALL__ARGUMENTS:
         return getArguments();
     }
@@ -170,8 +170,8 @@ public class FunctionCallImpl extends SimpleStatementImpl implements FunctionCal
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_CALL__NAME:
-        setName((String)newValue);
+      case DataCentricDSLPackage.FUNCTION_CALL__CALLED_FUNCTION_NAME:
+        setCalledFunctionName((String)newValue);
         return;
       case DataCentricDSLPackage.FUNCTION_CALL__ARGUMENTS:
         getArguments().clear();
@@ -191,8 +191,8 @@ public class FunctionCallImpl extends SimpleStatementImpl implements FunctionCal
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_CALL__NAME:
-        setName(NAME_EDEFAULT);
+      case DataCentricDSLPackage.FUNCTION_CALL__CALLED_FUNCTION_NAME:
+        setCalledFunctionName(CALLED_FUNCTION_NAME_EDEFAULT);
         return;
       case DataCentricDSLPackage.FUNCTION_CALL__ARGUMENTS:
         getArguments().clear();
@@ -211,8 +211,8 @@ public class FunctionCallImpl extends SimpleStatementImpl implements FunctionCal
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.FUNCTION_CALL__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DataCentricDSLPackage.FUNCTION_CALL__CALLED_FUNCTION_NAME:
+        return CALLED_FUNCTION_NAME_EDEFAULT == null ? calledFunctionName != null : !CALLED_FUNCTION_NAME_EDEFAULT.equals(calledFunctionName);
       case DataCentricDSLPackage.FUNCTION_CALL__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
     }
@@ -230,8 +230,8 @@ public class FunctionCallImpl extends SimpleStatementImpl implements FunctionCal
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (calledFunctionName: ");
+    result.append(calledFunctionName);
     result.append(')');
     return result.toString();
   }

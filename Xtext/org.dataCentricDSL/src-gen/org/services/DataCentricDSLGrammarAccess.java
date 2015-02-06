@@ -242,8 +242,8 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class FunctionCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FunctionCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDENTIFIERTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cCalledFunctionNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCalledFunctionNameIDENTIFIERTerminalRuleCall_0_0 = (RuleCall)cCalledFunctionNameAssignment_0.eContents().get(0);
 		private final RuleCall cOpeningBracketParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cArgumentsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
@@ -255,17 +255,17 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cClosingBracketParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//FunctionCall:
-		//	name=IDENTIFIER OpeningBracket (arguments+=Expression (Comma arguments+=Expression)*)? ClosingBracket;
+		//	calledFunctionName=IDENTIFIER OpeningBracket (arguments+=Expression (Comma arguments+=Expression)*)? ClosingBracket;
 		public ParserRule getRule() { return rule; }
 
-		//name=IDENTIFIER OpeningBracket (arguments+=Expression (Comma arguments+=Expression)*)? ClosingBracket
+		//calledFunctionName=IDENTIFIER OpeningBracket (arguments+=Expression (Comma arguments+=Expression)*)? ClosingBracket
 		public Group getGroup() { return cGroup; }
 
-		//name=IDENTIFIER
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		//calledFunctionName=IDENTIFIER
+		public Assignment getCalledFunctionNameAssignment_0() { return cCalledFunctionNameAssignment_0; }
 
 		//IDENTIFIER
-		public RuleCall getNameIDENTIFIERTerminalRuleCall_0_0() { return cNameIDENTIFIERTerminalRuleCall_0_0; }
+		public RuleCall getCalledFunctionNameIDENTIFIERTerminalRuleCall_0_0() { return cCalledFunctionNameIDENTIFIERTerminalRuleCall_0_0; }
 
 		//OpeningBracket
 		public RuleCall getOpeningBracketParserRuleCall_1() { return cOpeningBracketParserRuleCall_1; }
@@ -1777,7 +1777,7 @@ public class DataCentricDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FunctionCall:
-	//	name=IDENTIFIER OpeningBracket (arguments+=Expression (Comma arguments+=Expression)*)? ClosingBracket;
+	//	calledFunctionName=IDENTIFIER OpeningBracket (arguments+=Expression (Comma arguments+=Expression)*)? ClosingBracket;
 	public FunctionCallElements getFunctionCallAccess() {
 		return pFunctionCall;
 	}

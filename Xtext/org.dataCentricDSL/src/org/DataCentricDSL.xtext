@@ -44,7 +44,7 @@ PrintParam:
 ;
 
 FunctionCall:
-	name=IDENTIFIER OpeningBracket  
+	calledFunctionName=IDENTIFIER OpeningBracket  
 		(arguments+=(Expression) 
 		(Comma arguments+=(Expression))*)?
 	 ClosingBracket

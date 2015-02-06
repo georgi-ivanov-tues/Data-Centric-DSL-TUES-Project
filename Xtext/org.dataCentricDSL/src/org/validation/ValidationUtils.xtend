@@ -5,6 +5,7 @@ import org.dataCentricDSL.BooleanValue
 import org.dataCentricDSL.ConditionElement
 import org.dataCentricDSL.DataCentricDSL
 import org.dataCentricDSL.ForStatement
+import org.dataCentricDSL.FunctionCall
 import org.dataCentricDSL.FunctionDefinition
 import org.dataCentricDSL.IfStatement
 import org.dataCentricDSL.VariableCall
@@ -16,6 +17,7 @@ public class ValidationUtils {
 	
 	var public static boolean globalVariableFound = false;
 	var public static boolean variableIsUsed = false;
+	var public static boolean functionIsUsed = false;
 	
 	def static void checkIfCalledVariableIsGlobal(EObject object, String name, int index) {
 		if(globalVariableFound) {
@@ -171,4 +173,19 @@ public class ValidationUtils {
 		}
 	}
 	
+	def static void checkIfFunctionIsUsed(List<EObject> elementContents, String name) {
+		if(functionIsUsed) {
+			return;
+		}
+		for(i : 0..< elementContents.length) {
+			if(elementContents.get(i) instanceof FunctionCall) {
+				if((elementContents.get(i) as FunctionCall).calledFunctionName.equals(name)) {
+					functionIsUsed = true;
+					return;
+				}
+			} else {
+				checkIfFunctionIsUsed(elementContents.get(i).eContents, name);
+			}
+		}
+	}
 }

@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.FunctionCall#getName <em>Name</em>}</li>
+ *   <li>{@link org.dataCentricDSL.FunctionCall#getCalledFunctionName <em>Called Function Name</em>}</li>
  *   <li>{@link org.dataCentricDSL.FunctionCall#getArguments <em>Arguments</em>}</li>
  * </ul>
  * </p>
@@ -24,30 +24,30 @@ import org.eclipse.emf.common.util.EList;
 public interface FunctionCall extends SimpleStatement, Expression
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Called Function Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Called Function Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getFunctionCall_Name()
+   * @return the value of the '<em>Called Function Name</em>' attribute.
+   * @see #setCalledFunctionName(String)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getFunctionCall_CalledFunctionName()
    * @model
    * @generated
    */
-  String getName();
+  String getCalledFunctionName();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.FunctionCall#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.FunctionCall#getCalledFunctionName <em>Called Function Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Called Function Name</em>' attribute.
+   * @see #getCalledFunctionName()
    * @generated
    */
-  void setName(String value);
+  void setCalledFunctionName(String value);
 
   /**
    * Returns the value of the '<em><b>Arguments</b></em>' containment reference list.

@@ -20,4 +20,8 @@ public class ErrorMessages {
 		
 	val public static final INCOMPATIBLE_OPERANDS = "Operands of incompatible types.";
 	
+	val public static final UNUSED_VARIABLE = "Variable is never used.";
+	
+	val public static final UNUSED_FUNCTION = "Function is never used.";
+	
 }

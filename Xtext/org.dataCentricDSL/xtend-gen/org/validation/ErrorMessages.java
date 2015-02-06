@@ -19,4 +19,8 @@ public class ErrorMessages {
   public final static String UNDEFINED_OPERATOR_BOOLEAN_VALUES = "Undefined operator for boolean values.";
   
   public final static String INCOMPATIBLE_OPERANDS = "Operands of incompatible types.";
+  
+  public final static String UNUSED_VARIABLE = "Variable is never used.";
+  
+  public final static String UNUSED_FUNCTION = "Function is never used.";
 }

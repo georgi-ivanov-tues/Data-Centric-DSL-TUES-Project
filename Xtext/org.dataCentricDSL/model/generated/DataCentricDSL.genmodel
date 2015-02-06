@@ -26,7 +26,7 @@
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//PrintParam"/>
     <genClasses ecoreClass="DataCentricDSL.ecore#//FunctionCall">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//FunctionCall/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataCentricDSL.ecore#//FunctionCall/calledFunctionName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataCentricDSL.ecore#//FunctionCall/arguments"/>
     </genClasses>
     <genClasses ecoreClass="DataCentricDSL.ecore#//VariableCall">

@@ -1565,11 +1565,11 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionCall"
-    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:509:1: ruleFunctionCall returns [EObject current=null] : ( ( (lv_name_0_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_2_0= ruleExpression ) ) ( ruleComma ( (lv_arguments_4_0= ruleExpression ) ) )* )? ruleClosingBracket ) ;
+    // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:509:1: ruleFunctionCall returns [EObject current=null] : ( ( (lv_calledFunctionName_0_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_2_0= ruleExpression ) ) ( ruleComma ( (lv_arguments_4_0= ruleExpression ) ) )* )? ruleClosingBracket ) ;
     public final EObject ruleFunctionCall() throws RecognitionException {
         EObject current = null;
 
-        Token lv_name_0_0=null;
+        Token lv_calledFunctionName_0_0=null;
         EObject lv_arguments_2_0 = null;
 
         EObject lv_arguments_4_0 = null;
@@ -1578,22 +1578,22 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:512:28: ( ( ( (lv_name_0_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_2_0= ruleExpression ) ) ( ruleComma ( (lv_arguments_4_0= ruleExpression ) ) )* )? ruleClosingBracket ) )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:513:1: ( ( (lv_name_0_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_2_0= ruleExpression ) ) ( ruleComma ( (lv_arguments_4_0= ruleExpression ) ) )* )? ruleClosingBracket )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:512:28: ( ( ( (lv_calledFunctionName_0_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_2_0= ruleExpression ) ) ( ruleComma ( (lv_arguments_4_0= ruleExpression ) ) )* )? ruleClosingBracket ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:513:1: ( ( (lv_calledFunctionName_0_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_2_0= ruleExpression ) ) ( ruleComma ( (lv_arguments_4_0= ruleExpression ) ) )* )? ruleClosingBracket )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:513:1: ( ( (lv_name_0_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_2_0= ruleExpression ) ) ( ruleComma ( (lv_arguments_4_0= ruleExpression ) ) )* )? ruleClosingBracket )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:513:2: ( (lv_name_0_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_2_0= ruleExpression ) ) ( ruleComma ( (lv_arguments_4_0= ruleExpression ) ) )* )? ruleClosingBracket
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:513:1: ( ( (lv_calledFunctionName_0_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_2_0= ruleExpression ) ) ( ruleComma ( (lv_arguments_4_0= ruleExpression ) ) )* )? ruleClosingBracket )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:513:2: ( (lv_calledFunctionName_0_0= RULE_IDENTIFIER ) ) ruleOpeningBracket ( ( (lv_arguments_2_0= ruleExpression ) ) ( ruleComma ( (lv_arguments_4_0= ruleExpression ) ) )* )? ruleClosingBracket
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:513:2: ( (lv_name_0_0= RULE_IDENTIFIER ) )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:514:1: (lv_name_0_0= RULE_IDENTIFIER )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:513:2: ( (lv_calledFunctionName_0_0= RULE_IDENTIFIER ) )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:514:1: (lv_calledFunctionName_0_0= RULE_IDENTIFIER )
             {
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:514:1: (lv_name_0_0= RULE_IDENTIFIER )
-            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:515:3: lv_name_0_0= RULE_IDENTIFIER
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:514:1: (lv_calledFunctionName_0_0= RULE_IDENTIFIER )
+            // ../org.dataCentricDSL/src-gen/org/parser/antlr/internal/InternalDataCentricDSL.g:515:3: lv_calledFunctionName_0_0= RULE_IDENTIFIER
             {
-            lv_name_0_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleFunctionCall1207); if (state.failed) return current;
+            lv_calledFunctionName_0_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleFunctionCall1207); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(lv_name_0_0, grammarAccess.getFunctionCallAccess().getNameIDENTIFIERTerminalRuleCall_0_0()); 
+              			newLeafNode(lv_calledFunctionName_0_0, grammarAccess.getFunctionCallAccess().getCalledFunctionNameIDENTIFIERTerminalRuleCall_0_0()); 
               		
             }
             if ( state.backtracking==0 ) {
@@ -1603,8 +1603,8 @@ public class InternalDataCentricDSLParser extends AbstractInternalAntlrParser {
               	        }
                      		setWithLastConsumed(
                      			current, 
-                     			"name",
-                      		lv_name_0_0, 
+                     			"calledFunctionName",
+                      		lv_calledFunctionName_0_0, 
                       		"IDENTIFIER");
               	    
             }

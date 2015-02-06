@@ -512,9 +512,9 @@ ruleFunctionCall returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_name_0_0=RULE_IDENTIFIER
+		lv_calledFunctionName_0_0=RULE_IDENTIFIER
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getFunctionCallAccess().getNameIDENTIFIERTerminalRuleCall_0_0()); 
+			newLeafNode(lv_calledFunctionName_0_0, grammarAccess.getFunctionCallAccess().getCalledFunctionNameIDENTIFIERTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -522,8 +522,8 @@ ruleFunctionCall returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"name",
-        		lv_name_0_0, 
+       			"calledFunctionName",
+        		lv_calledFunctionName_0_0, 
         		"IDENTIFIER");
 	    }
 
