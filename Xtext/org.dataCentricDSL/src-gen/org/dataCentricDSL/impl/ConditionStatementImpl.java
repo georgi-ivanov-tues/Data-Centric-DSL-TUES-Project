@@ -4,9 +4,9 @@ package org.dataCentricDSL.impl;
 
 import java.util.Collection;
 
+import org.dataCentricDSL.Condition;
 import org.dataCentricDSL.ConditionStatement;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.IfStatement;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -20,35 +20,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>If Statement</b></em>'.
+ * An implementation of the model object '<em><b>Condition Statement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.IfStatementImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.ConditionStatementImpl#getConditions <em>Conditions</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class IfStatementImpl extends CompoundStatementImpl implements IfStatement
+public class ConditionStatementImpl extends PrintParamImpl implements ConditionStatement
 {
   /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference list.
+   * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCondition()
+   * @see #getConditions()
    * @generated
    * @ordered
    */
-  protected EList<ConditionStatement> condition;
+  protected EList<Condition> conditions;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IfStatementImpl()
+  protected ConditionStatementImpl()
   {
     super();
   }
@@ -61,7 +61,7 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   @Override
   protected EClass eStaticClass()
   {
-    return DataCentricDSLPackage.Literals.IF_STATEMENT;
+    return DataCentricDSLPackage.Literals.CONDITION_STATEMENT;
   }
 
   /**
@@ -69,13 +69,13 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ConditionStatement> getCondition()
+  public EList<Condition> getConditions()
   {
-    if (condition == null)
+    if (conditions == null)
     {
-      condition = new EObjectContainmentEList<ConditionStatement>(ConditionStatement.class, this, DataCentricDSLPackage.IF_STATEMENT__CONDITION);
+      conditions = new EObjectContainmentEList<Condition>(Condition.class, this, DataCentricDSLPackage.CONDITION_STATEMENT__CONDITIONS);
     }
-    return condition;
+    return conditions;
   }
 
   /**
@@ -88,8 +88,8 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.IF_STATEMENT__CONDITION:
-        return ((InternalEList<?>)getCondition()).basicRemove(otherEnd, msgs);
+      case DataCentricDSLPackage.CONDITION_STATEMENT__CONDITIONS:
+        return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +104,8 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.IF_STATEMENT__CONDITION:
-        return getCondition();
+      case DataCentricDSLPackage.CONDITION_STATEMENT__CONDITIONS:
+        return getConditions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +121,9 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.IF_STATEMENT__CONDITION:
-        getCondition().clear();
-        getCondition().addAll((Collection<? extends ConditionStatement>)newValue);
+      case DataCentricDSLPackage.CONDITION_STATEMENT__CONDITIONS:
+        getConditions().clear();
+        getConditions().addAll((Collection<? extends Condition>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.IF_STATEMENT__CONDITION:
-        getCondition().clear();
+      case DataCentricDSLPackage.CONDITION_STATEMENT__CONDITIONS:
+        getConditions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,10 +156,10 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.IF_STATEMENT__CONDITION:
-        return condition != null && !condition.isEmpty();
+      case DataCentricDSLPackage.CONDITION_STATEMENT__CONDITIONS:
+        return conditions != null && !conditions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //IfStatementImpl
+} //ConditionStatementImpl

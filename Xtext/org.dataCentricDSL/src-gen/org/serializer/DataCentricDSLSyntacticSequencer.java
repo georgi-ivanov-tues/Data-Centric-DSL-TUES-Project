@@ -19,11 +19,11 @@ import org.services.DataCentricDSLGrammarAccess;
 public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DataCentricDSLGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_ConditionStatement_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1;
 	protected AbstractElementAlias match_IfStatement___ElseParserRuleCall_9_0_OpeningCurlyBracketParserRuleCall_9_1_ClosingCurlyBracketParserRuleCall_9_3__q;
 	protected AbstractElementAlias match_Primary_OpeningBracketParserRuleCall_3_0_a;
 	protected AbstractElementAlias match_Primary_OpeningBracketParserRuleCall_3_0_p;
 	protected AbstractElementAlias match_PrintFunction_PrintParserRuleCall_0_0_or_PrintlnParserRuleCall_0_1;
-	protected AbstractElementAlias match_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1;
 	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
 	protected AbstractElementAlias match_XExpressionInClosure_SemicolonKeyword_1_1_q;
 	protected AbstractElementAlias match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q;
@@ -34,11 +34,11 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DataCentricDSLGrammarAccess) access;
+		match_ConditionStatement_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionStatementAccess().getOpAndParserRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getConditionStatementAccess().getOpOrParserRuleCall_1_0_1()));
 		match_IfStatement___ElseParserRuleCall_9_0_OpeningCurlyBracketParserRuleCall_9_1_ClosingCurlyBracketParserRuleCall_9_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getElseParserRuleCall_9_0()), new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getOpeningCurlyBracketParserRuleCall_9_1()), new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getClosingCurlyBracketParserRuleCall_9_3()));
 		match_Primary_OpeningBracketParserRuleCall_3_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getOpeningBracketParserRuleCall_3_0());
 		match_Primary_OpeningBracketParserRuleCall_3_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getOpeningBracketParserRuleCall_3_0());
 		match_PrintFunction_PrintParserRuleCall_0_0_or_PrintlnParserRuleCall_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPrintFunctionAccess().getPrintParserRuleCall_0_0()), new TokenAlias(false, false, grammarAccess.getPrintFunctionAccess().getPrintlnParserRuleCall_0_1()));
-		match_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementConditionAccess().getOpAndParserRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getStatementConditionAccess().getOpOrParserRuleCall_1_0_1()));
 		match_XBlockExpression_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
 		match_XExpressionInClosure_SemicolonKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getXExpressionInClosureAccess().getSemicolonKeyword_1_1());
 		match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getXFunctionTypeRefAccess().getLeftParenthesisKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_2()));
@@ -396,7 +396,9 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_IfStatement___ElseParserRuleCall_9_0_OpeningCurlyBracketParserRuleCall_9_1_ClosingCurlyBracketParserRuleCall_9_3__q.equals(syntax))
+			if(match_ConditionStatement_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1.equals(syntax))
+				emit_ConditionStatement_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_IfStatement___ElseParserRuleCall_9_0_OpeningCurlyBracketParserRuleCall_9_1_ClosingCurlyBracketParserRuleCall_9_3__q.equals(syntax))
 				emit_IfStatement___ElseParserRuleCall_9_0_OpeningCurlyBracketParserRuleCall_9_1_ClosingCurlyBracketParserRuleCall_9_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Primary_OpeningBracketParserRuleCall_3_0_a.equals(syntax))
 				emit_Primary_OpeningBracketParserRuleCall_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -404,8 +406,6 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 				emit_Primary_OpeningBracketParserRuleCall_3_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_PrintFunction_PrintParserRuleCall_0_0_or_PrintlnParserRuleCall_0_1.equals(syntax))
 				emit_PrintFunction_PrintParserRuleCall_0_0_or_PrintlnParserRuleCall_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1.equals(syntax))
-				emit_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XBlockExpression_SemicolonKeyword_2_1_q.equals(syntax))
 				emit_XBlockExpression_SemicolonKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XExpressionInClosure_SemicolonKeyword_1_1_q.equals(syntax))
@@ -422,6 +422,14 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     OpAnd | OpOr
+	 */
+	protected void emit_ConditionStatement_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     (Else OpeningCurlyBracket ClosingCurlyBracket)?
@@ -451,14 +459,6 @@ public class DataCentricDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	 *     Print | Println
 	 */
 	protected void emit_PrintFunction_PrintParserRuleCall_0_0_or_PrintlnParserRuleCall_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     OpAnd | OpOr
-	 */
-	protected void emit_StatementCondition_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

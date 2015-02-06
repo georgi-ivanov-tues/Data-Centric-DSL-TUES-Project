@@ -5,6 +5,7 @@ package org.validation
 
 import org.dataCentricDSL.BooleanValue
 import org.dataCentricDSL.Condition
+import org.dataCentricDSL.ConditionStatement
 import org.dataCentricDSL.DataCentricDSL
 import org.dataCentricDSL.DataCentricDSLPackage
 import org.dataCentricDSL.ForStatement
@@ -12,7 +13,6 @@ import org.dataCentricDSL.FunctionCall
 import org.dataCentricDSL.FunctionDefinition
 import org.dataCentricDSL.IfStatement
 import org.dataCentricDSL.QueryFunction
-import org.dataCentricDSL.StatementCondition
 import org.dataCentricDSL.VariableCall
 import org.dataCentricDSL.VariableDefinition
 import org.dataCentricDSL.WhileStatement
@@ -30,7 +30,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	
 	@Check
 	def void checkQueryParameter(QueryFunction qf) {
-		var expression = qf.queryParam as StatementCondition;
+		var expression = qf.queryParam as ConditionStatement;
 		var condition = expression.conditions.get(0) as Condition;
 		
 		if(expression.conditions.length == 1 
@@ -152,21 +152,21 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 				
 				if(container instanceof ForStatement) {
 					var DeclaratedVar = (container as ForStatement).forVar;
-					if(DeclaratedVar.name.toString.equals(vc.variableCall.toString)) {
+					if(DeclaratedVar.name.toString.equals(vc.calledVariableName.toString)) {
 						return;
 					}
 				}
 				if(container instanceof FunctionDefinition) {
 					if(ValidationUtils
 						.namePersistsInArray((container as FunctionDefinition).arguments,
-							vc.variableCall
+							vc.calledVariableName
 						)) {
 						return;
 					}
 				}
 				containerElementIndex = container.eContents.indexOf(containerElement);
 				variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
-				if(ValidationUtils.variableIsDeclared(variables, vc.variableCall)) {
+				if(ValidationUtils.variableIsDeclared(variables, vc.calledVariableName)) {
 					return;
 				}
 				variables = null;
@@ -177,17 +177,51 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		}
 		containerElementIndex = container.eContents.indexOf(containerElement);
 		variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
-		if(ValidationUtils.variableIsDeclared(variables, vc.variableCall)) {
+		if(ValidationUtils.variableIsDeclared(variables, vc.calledVariableName)) {
 			return;
 		}
-		ValidationUtils.checkIfCalledVariableIsGlobal(container, vc.variableCall, containerElementIndex);
+		ValidationUtils.checkIfCalledVariableIsGlobal(container, vc.calledVariableName, containerElementIndex);
 		if(!ValidationUtils.globalVariableFound) {
 			error(ErrorMessages.UNDEFINED_VARIABLE, 
-				DataCentricDSLPackage.Literals::VARIABLE_CALL__VARIABLE_CALL,
+				DataCentricDSLPackage.Literals::VARIABLE_CALL__CALLED_VARIABLE_NAME,
 				ErrorMessages.UNDEFINED_VARIABLE,
-				vc.variableCall
+				vc.calledVariableName
 			);
 		}
 		ValidationUtils.globalVariableFound = false;
 	}
+	
+	@Check
+	def void checkIfVariableIsUsed(VariableDefinition vd) {
+		if(vd.eContainer instanceof ForStatement) {
+			if(vd.eContainer.eContents.indexOf(vd) == 1) {
+				return;
+			}
+		}
+		var positionInContainer = vd.eContainer.eContents.indexOf(vd) + 1;
+		var listFromPosition = vd.eContainer.eContents.subList(positionInContainer, vd.eContainer.eContents.length);
+		ValidationUtils.checkIfVariableIsUsed(listFromPosition, vd.name);
+		if(!ValidationUtils.variableIsUsed) {
+			if(vd.isGlobal) {
+				var container = ValidationUtils.getContainerBeforeDataCentricDSLContainer(vd);
+				var dataCentricDSLElement = container.eContainer;
+				positionInContainer = dataCentricDSLElement.eContents.indexOf(container) + 1;
+				var elementsFromPosition = dataCentricDSLElement.eContents.subList(positionInContainer, 
+					dataCentricDSLElement.eContents.length
+				);
+				ValidationUtils.checkIfVariableIsUsed(elementsFromPosition, vd.name);
+				if(!ValidationUtils.variableIsUsed) {
+					warning("Variable is never used.",
+						DataCentricDSLPackage.Literals.VARIABLE_DEFINITION__NAME
+					);
+				}
+			} else {
+				warning("Variable is never used.",
+					DataCentricDSLPackage.Literals.VARIABLE_DEFINITION__NAME
+				);
+			}
+		}
+		ValidationUtils.variableIsUsed = false;
+ 	}
+	
 }

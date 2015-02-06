@@ -19,7 +19,7 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface QueryFunction extends SimpleStatement, PrintParam
+public interface QueryFunction extends SimpleStatement, VariableParam, PrintParam
 {
   /**
    * Returns the value of the '<em><b>Query Param</b></em>' containment reference.
@@ -30,12 +30,12 @@ public interface QueryFunction extends SimpleStatement, PrintParam
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Query Param</em>' containment reference.
-   * @see #setQueryParam(StatementCondition)
+   * @see #setQueryParam(ConditionStatement)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getQueryFunction_QueryParam()
    * @model containment="true"
    * @generated
    */
-  StatementCondition getQueryParam();
+  ConditionStatement getQueryParam();
 
   /**
    * Sets the value of the '{@link org.dataCentricDSL.QueryFunction#getQueryParam <em>Query Param</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface QueryFunction extends SimpleStatement, PrintParam
    * @see #getQueryParam()
    * @generated
    */
-  void setQueryParam(StatementCondition value);
+  void setQueryParam(ConditionStatement value);
 
 } // QueryFunction

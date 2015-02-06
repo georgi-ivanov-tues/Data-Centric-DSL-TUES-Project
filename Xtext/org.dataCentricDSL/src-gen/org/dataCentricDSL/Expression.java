@@ -13,6 +13,6 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface Expression extends ConditionElement
+public interface Expression extends VariableParam, ConditionElement
 {
 } // Expression

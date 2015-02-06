@@ -75,12 +75,12 @@ public interface FunctionDefinition extends CompoundStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Return Value</em>' containment reference.
-   * @see #setReturnValue(StatementCondition)
+   * @see #setReturnValue(ConditionStatement)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getFunctionDefinition_ReturnValue()
    * @model containment="true"
    * @generated
    */
-  StatementCondition getReturnValue();
+  ConditionStatement getReturnValue();
 
   /**
    * Sets the value of the '{@link org.dataCentricDSL.FunctionDefinition#getReturnValue <em>Return Value</em>}' containment reference.
@@ -90,6 +90,6 @@ public interface FunctionDefinition extends CompoundStatement
    * @see #getReturnValue()
    * @generated
    */
-  void setReturnValue(StatementCondition value);
+  void setReturnValue(ConditionStatement value);
 
 } // FunctionDefinition

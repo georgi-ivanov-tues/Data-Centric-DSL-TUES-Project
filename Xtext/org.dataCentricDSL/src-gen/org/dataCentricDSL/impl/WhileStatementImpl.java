@@ -2,8 +2,8 @@
  */
 package org.dataCentricDSL.impl;
 
+import org.dataCentricDSL.ConditionStatement;
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.StatementCondition;
 import org.dataCentricDSL.WhileStatement;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -37,7 +37,7 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
    * @generated
    * @ordered
    */
-  protected StatementCondition whileCondition;
+  protected ConditionStatement whileCondition;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public StatementCondition getWhileCondition()
+  public ConditionStatement getWhileCondition()
   {
     return whileCondition;
   }
@@ -75,9 +75,9 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetWhileCondition(StatementCondition newWhileCondition, NotificationChain msgs)
+  public NotificationChain basicSetWhileCondition(ConditionStatement newWhileCondition, NotificationChain msgs)
   {
-    StatementCondition oldWhileCondition = whileCondition;
+    ConditionStatement oldWhileCondition = whileCondition;
     whileCondition = newWhileCondition;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setWhileCondition(StatementCondition newWhileCondition)
+  public void setWhileCondition(ConditionStatement newWhileCondition)
   {
     if (newWhileCondition != whileCondition)
     {
@@ -151,7 +151,7 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
     switch (featureID)
     {
       case DataCentricDSLPackage.WHILE_STATEMENT__WHILE_CONDITION:
-        setWhileCondition((StatementCondition)newValue);
+        setWhileCondition((ConditionStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
     switch (featureID)
     {
       case DataCentricDSLPackage.WHILE_STATEMENT__WHILE_CONDITION:
-        setWhileCondition((StatementCondition)null);
+        setWhileCondition((ConditionStatement)null);
         return;
     }
     super.eUnset(featureID);

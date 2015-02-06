@@ -2,10 +2,10 @@
  */
 package org.dataCentricDSL.impl;
 
+import org.dataCentricDSL.ConditionStatement;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.ForStatement;
 import org.dataCentricDSL.SimpleStatement;
-import org.dataCentricDSL.StatementCondition;
 import org.dataCentricDSL.VariableDefinition;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -51,7 +51,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * @generated
    * @ordered
    */
-  protected StatementCondition forCondition;
+  protected ConditionStatement forCondition;
 
   /**
    * The cached value of the '{@link #getOperation() <em>Operation</em>}' containment reference.
@@ -137,7 +137,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public StatementCondition getForCondition()
+  public ConditionStatement getForCondition()
   {
     return forCondition;
   }
@@ -147,9 +147,9 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetForCondition(StatementCondition newForCondition, NotificationChain msgs)
+  public NotificationChain basicSetForCondition(ConditionStatement newForCondition, NotificationChain msgs)
   {
-    StatementCondition oldForCondition = forCondition;
+    ConditionStatement oldForCondition = forCondition;
     forCondition = newForCondition;
     if (eNotificationRequired())
     {
@@ -164,7 +164,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setForCondition(StatementCondition newForCondition)
+  public void setForCondition(ConditionStatement newForCondition)
   {
     if (newForCondition != forCondition)
     {
@@ -282,7 +282,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
         setForVar((VariableDefinition)newValue);
         return;
       case DataCentricDSLPackage.FOR_STATEMENT__FOR_CONDITION:
-        setForCondition((StatementCondition)newValue);
+        setForCondition((ConditionStatement)newValue);
         return;
       case DataCentricDSLPackage.FOR_STATEMENT__OPERATION:
         setOperation((SimpleStatement)newValue);
@@ -305,7 +305,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
         setForVar((VariableDefinition)null);
         return;
       case DataCentricDSLPackage.FOR_STATEMENT__FOR_CONDITION:
-        setForCondition((StatementCondition)null);
+        setForCondition((ConditionStatement)null);
         return;
       case DataCentricDSLPackage.FOR_STATEMENT__OPERATION:
         setOperation((SimpleStatement)null);

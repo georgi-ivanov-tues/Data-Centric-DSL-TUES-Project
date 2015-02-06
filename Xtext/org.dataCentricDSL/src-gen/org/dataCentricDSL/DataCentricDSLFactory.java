@@ -59,13 +59,13 @@ public interface DataCentricDSLFactory extends EFactory
   VariableDefinition createVariableDefinition();
 
   /**
-   * Returns a new object of class '<em>Variable Decl</em>'.
+   * Returns a new object of class '<em>Variable Param</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Decl</em>'.
+   * @return a new object of class '<em>Variable Param</em>'.
    * @generated
    */
-  VariableDecl createVariableDecl();
+  VariableParam createVariableParam();
 
   /**
    * Returns a new object of class '<em>Query Function</em>'.
@@ -167,13 +167,13 @@ public interface DataCentricDSLFactory extends EFactory
   ForStatement createForStatement();
 
   /**
-   * Returns a new object of class '<em>Statement Condition</em>'.
+   * Returns a new object of class '<em>Condition Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Statement Condition</em>'.
+   * @return a new object of class '<em>Condition Statement</em>'.
    * @generated
    */
-  StatementCondition createStatementCondition();
+  ConditionStatement createConditionStatement();
 
   /**
    * Returns a new object of class '<em>Condition</em>'.
@@ -228,15 +228,6 @@ public interface DataCentricDSLFactory extends EFactory
    * @generated
    */
   BooleanValue createBooleanValue();
-
-  /**
-   * Returns a new object of class '<em>Variable Param</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Param</em>'.
-   * @generated
-   */
-  VariableParam createVariableParam();
 
   /**
    * Returns a new object of class '<em>Addition</em>'.

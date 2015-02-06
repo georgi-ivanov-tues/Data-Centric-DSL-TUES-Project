@@ -30,12 +30,12 @@ public interface WhileStatement extends CompoundStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>While Condition</em>' containment reference.
-   * @see #setWhileCondition(StatementCondition)
+   * @see #setWhileCondition(ConditionStatement)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getWhileStatement_WhileCondition()
    * @model containment="true"
    * @generated
    */
-  StatementCondition getWhileCondition();
+  ConditionStatement getWhileCondition();
 
   /**
    * Sets the value of the '{@link org.dataCentricDSL.WhileStatement#getWhileCondition <em>While Condition</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface WhileStatement extends CompoundStatement
    * @see #getWhileCondition()
    * @generated
    */
-  void setWhileCondition(StatementCondition value);
+  void setWhileCondition(ConditionStatement value);
 
 } // WhileStatement

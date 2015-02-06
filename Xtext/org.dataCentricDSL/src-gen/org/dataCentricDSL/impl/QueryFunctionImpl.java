@@ -2,9 +2,9 @@
  */
 package org.dataCentricDSL.impl;
 
+import org.dataCentricDSL.ConditionStatement;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.QueryFunction;
-import org.dataCentricDSL.StatementCondition;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -37,7 +37,7 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
    * @generated
    * @ordered
    */
-  protected StatementCondition queryParam;
+  protected ConditionStatement queryParam;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
    * <!-- end-user-doc -->
    * @generated
    */
-  public StatementCondition getQueryParam()
+  public ConditionStatement getQueryParam()
   {
     return queryParam;
   }
@@ -75,9 +75,9 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetQueryParam(StatementCondition newQueryParam, NotificationChain msgs)
+  public NotificationChain basicSetQueryParam(ConditionStatement newQueryParam, NotificationChain msgs)
   {
-    StatementCondition oldQueryParam = queryParam;
+    ConditionStatement oldQueryParam = queryParam;
     queryParam = newQueryParam;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setQueryParam(StatementCondition newQueryParam)
+  public void setQueryParam(ConditionStatement newQueryParam)
   {
     if (newQueryParam != queryParam)
     {
@@ -151,7 +151,7 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
     switch (featureID)
     {
       case DataCentricDSLPackage.QUERY_FUNCTION__QUERY_PARAM:
-        setQueryParam((StatementCondition)newValue);
+        setQueryParam((ConditionStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
     switch (featureID)
     {
       case DataCentricDSLPackage.QUERY_FUNCTION__QUERY_PARAM:
-        setQueryParam((StatementCondition)null);
+        setQueryParam((ConditionStatement)null);
         return;
     }
     super.eUnset(featureID);

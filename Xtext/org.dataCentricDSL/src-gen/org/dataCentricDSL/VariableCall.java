@@ -11,7 +11,7 @@ package org.dataCentricDSL;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.dataCentricDSL.VariableCall#getVariableCall <em>Variable Call</em>}</li>
+ *   <li>{@link org.dataCentricDSL.VariableCall#getCalledVariableName <em>Called Variable Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +22,29 @@ package org.dataCentricDSL;
 public interface VariableCall extends Expression
 {
   /**
-   * Returns the value of the '<em><b>Variable Call</b></em>' attribute.
+   * Returns the value of the '<em><b>Called Variable Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Variable Call</em>' attribute isn't clear,
+   * If the meaning of the '<em>Called Variable Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variable Call</em>' attribute.
-   * @see #setVariableCall(String)
-   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableCall_VariableCall()
+   * @return the value of the '<em>Called Variable Name</em>' attribute.
+   * @see #setCalledVariableName(String)
+   * @see org.dataCentricDSL.DataCentricDSLPackage#getVariableCall_CalledVariableName()
    * @model
    * @generated
    */
-  String getVariableCall();
+  String getCalledVariableName();
 
   /**
-   * Sets the value of the '{@link org.dataCentricDSL.VariableCall#getVariableCall <em>Variable Call</em>}' attribute.
+   * Sets the value of the '{@link org.dataCentricDSL.VariableCall#getCalledVariableName <em>Called Variable Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Variable Call</em>' attribute.
-   * @see #getVariableCall()
+   * @param value the new value of the '<em>Called Variable Name</em>' attribute.
+   * @see #getCalledVariableName()
    * @generated
    */
-  void setVariableCall(String value);
+  void setCalledVariableName(String value);
 
 } // VariableCall

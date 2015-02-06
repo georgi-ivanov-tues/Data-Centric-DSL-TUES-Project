@@ -19,7 +19,7 @@ package org.dataCentricDSL;
  * @model
  * @generated
  */
-public interface BooleanValue extends ConditionElement
+public interface BooleanValue extends VariableParam, ConditionElement
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

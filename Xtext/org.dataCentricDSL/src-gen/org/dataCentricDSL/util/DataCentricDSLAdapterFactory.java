@@ -95,9 +95,9 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createVariableDefinitionAdapter();
       }
       @Override
-      public Adapter caseVariableDecl(VariableDecl object)
+      public Adapter caseVariableParam(VariableParam object)
       {
-        return createVariableDeclAdapter();
+        return createVariableParamAdapter();
       }
       @Override
       public Adapter caseQueryFunction(QueryFunction object)
@@ -155,9 +155,9 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
         return createForStatementAdapter();
       }
       @Override
-      public Adapter caseStatementCondition(StatementCondition object)
+      public Adapter caseConditionStatement(ConditionStatement object)
       {
-        return createStatementConditionAdapter();
+        return createConditionStatementAdapter();
       }
       @Override
       public Adapter caseCondition(Condition object)
@@ -188,11 +188,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseBooleanValue(BooleanValue object)
       {
         return createBooleanValueAdapter();
-      }
-      @Override
-      public Adapter caseVariableParam(VariableParam object)
-      {
-        return createVariableParamAdapter();
       }
       @Override
       public Adapter caseAddition(Addition object)
@@ -302,16 +297,16 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableDecl <em>Variable Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableParam <em>Variable Param</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.dataCentricDSL.VariableDecl
+   * @see org.dataCentricDSL.VariableParam
    * @generated
    */
-  public Adapter createVariableDeclAdapter()
+  public Adapter createVariableParamAdapter()
   {
     return null;
   }
@@ -482,16 +477,16 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.StatementCondition <em>Statement Condition</em>}'.
+   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.ConditionStatement <em>Condition Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.dataCentricDSL.StatementCondition
+   * @see org.dataCentricDSL.ConditionStatement
    * @generated
    */
-  public Adapter createStatementConditionAdapter()
+  public Adapter createConditionStatementAdapter()
   {
     return null;
   }
@@ -582,21 +577,6 @@ public class DataCentricDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBooleanValueAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.dataCentricDSL.VariableParam <em>Variable Param</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.dataCentricDSL.VariableParam
-   * @generated
-   */
-  public Adapter createVariableParamAdapter()
   {
     return null;
   }
