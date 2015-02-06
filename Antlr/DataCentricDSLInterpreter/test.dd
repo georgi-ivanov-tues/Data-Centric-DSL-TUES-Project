@@ -1,9 +1,15 @@
 func someFunc(b) {
 	c = 5;
-	return c + b;
+	for(c = 5; 5 == 5; c++) {
+		println "blq blq";
+		if(b == c) {
+			println "something";
+			return c;
+		}
+	}
 }
 
-b = 10;
+b = 11;
 global a = someFunc(b);
 println a;
 

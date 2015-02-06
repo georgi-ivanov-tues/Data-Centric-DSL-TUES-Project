@@ -21,7 +21,10 @@ public class WhileNode implements Node {
 		}
 
 		while(value.asBoolean()) {
-			block.evaluate();
+			value = block.evaluate();
+			if(value != Value.VOID) {
+				return value;
+			}
 			value = condition.evaluate();
 		}
 

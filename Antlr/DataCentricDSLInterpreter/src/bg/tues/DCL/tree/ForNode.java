@@ -24,6 +24,7 @@ public class ForNode implements Node{
 	@Override
 	public Value evaluate() {
 		initExpression.evaluate();
+		// do we need this?
 		Value value = condition.evaluate();
 		
 		if(!value.isBoolean()) {
@@ -32,7 +33,10 @@ public class ForNode implements Node{
 		}
 
 		for (initExpression.evaluate(); condition.evaluate().asBoolean(); aftExpression.evaluate()) {
-			block.evaluate();
+			value = block.evaluate();
+			if(value != Value.VOID) {
+				return value;
+			}
 		}
 		
 		return Value.VOID;
