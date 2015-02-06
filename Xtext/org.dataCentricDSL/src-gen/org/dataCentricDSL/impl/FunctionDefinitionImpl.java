@@ -4,9 +4,9 @@ package org.dataCentricDSL.impl;
 
 import java.util.Collection;
 
+import org.dataCentricDSL.ConditionStatement;
 import org.dataCentricDSL.DataCentricDSLPackage;
 import org.dataCentricDSL.FunctionDefinition;
-import org.dataCentricDSL.StatementCondition;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -75,7 +75,7 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
    * @generated
    * @ordered
    */
-  protected StatementCondition returnValue;
+  protected ConditionStatement returnValue;
 
   /**
    * <!-- begin-user-doc -->
@@ -140,7 +140,7 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
-  public StatementCondition getReturnValue()
+  public ConditionStatement getReturnValue()
   {
     return returnValue;
   }
@@ -150,9 +150,9 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetReturnValue(StatementCondition newReturnValue, NotificationChain msgs)
+  public NotificationChain basicSetReturnValue(ConditionStatement newReturnValue, NotificationChain msgs)
   {
-    StatementCondition oldReturnValue = returnValue;
+    ConditionStatement oldReturnValue = returnValue;
     returnValue = newReturnValue;
     if (eNotificationRequired())
     {
@@ -167,7 +167,7 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setReturnValue(StatementCondition newReturnValue)
+  public void setReturnValue(ConditionStatement newReturnValue)
   {
     if (newReturnValue != returnValue)
     {
@@ -238,7 +238,7 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
         getArguments().addAll((Collection<? extends String>)newValue);
         return;
       case DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE:
-        setReturnValue((StatementCondition)newValue);
+        setReturnValue((ConditionStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -261,7 +261,7 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
         getArguments().clear();
         return;
       case DataCentricDSLPackage.FUNCTION_DEFINITION__RETURN_VALUE:
-        setReturnValue((StatementCondition)null);
+        setReturnValue((ConditionStatement)null);
         return;
     }
     super.eUnset(featureID);

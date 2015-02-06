@@ -3,8 +3,8 @@
 package org.dataCentricDSL.impl;
 
 import org.dataCentricDSL.DataCentricDSLPackage;
-import org.dataCentricDSL.VariableDecl;
 import org.dataCentricDSL.VariableDefinition;
+import org.dataCentricDSL.VariableParam;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -79,7 +79,7 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
    * @generated
    * @ordered
    */
-  protected VariableDecl variableValue;
+  protected VariableParam variableValue;
 
   /**
    * <!-- begin-user-doc -->
@@ -153,7 +153,7 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDecl getVariableValue()
+  public VariableParam getVariableValue()
   {
     return variableValue;
   }
@@ -163,9 +163,9 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVariableValue(VariableDecl newVariableValue, NotificationChain msgs)
+  public NotificationChain basicSetVariableValue(VariableParam newVariableValue, NotificationChain msgs)
   {
-    VariableDecl oldVariableValue = variableValue;
+    VariableParam oldVariableValue = variableValue;
     variableValue = newVariableValue;
     if (eNotificationRequired())
     {
@@ -180,7 +180,7 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableValue(VariableDecl newVariableValue)
+  public void setVariableValue(VariableParam newVariableValue)
   {
     if (newVariableValue != variableValue)
     {
@@ -249,7 +249,7 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
         setName((String)newValue);
         return;
       case DataCentricDSLPackage.VARIABLE_DEFINITION__VARIABLE_VALUE:
-        setVariableValue((VariableDecl)newValue);
+        setVariableValue((VariableParam)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -272,7 +272,7 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
         setName(NAME_EDEFAULT);
         return;
       case DataCentricDSLPackage.VARIABLE_DEFINITION__VARIABLE_VALUE:
-        setVariableValue((VariableDecl)null);
+        setVariableValue((VariableParam)null);
         return;
     }
     super.eUnset(featureID);

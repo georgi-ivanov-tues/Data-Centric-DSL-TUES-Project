@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ExpressionImpl extends ConditionElementImpl implements Expression
+public class ExpressionImpl extends VariableParamImpl implements Expression
 {
   /**
    * <!-- begin-user-doc -->

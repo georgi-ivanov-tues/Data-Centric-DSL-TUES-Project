@@ -10,7 +10,6 @@ import org.dataCentricDSL.ForStatement;
 import org.dataCentricDSL.FunctionDefinition;
 import org.dataCentricDSL.IfStatement;
 import org.dataCentricDSL.VariableCall;
-import org.dataCentricDSL.VariableDecl;
 import org.dataCentricDSL.VariableDefinition;
 import org.dataCentricDSL.WhileStatement;
 import org.eclipse.emf.common.util.EList;
@@ -24,6 +23,8 @@ import org.validation.ErrorMessages;
 @SuppressWarnings("all")
 public class ValidationUtils {
   public static boolean globalVariableFound = false;
+  
+  public static boolean variableIsUsed = false;
   
   public static void checkIfCalledVariableIsGlobal(final EObject object, final String name, final int index) {
     if (ValidationUtils.globalVariableFound) {
@@ -80,7 +81,7 @@ public class ValidationUtils {
         }
       }
     } else {
-      if ((object instanceof VariableDecl)) {
+      if ((object instanceof VariableDefinition)) {
         boolean _and = false;
         boolean _isIsGlobal = ((VariableDefinition) object).isIsGlobal();
         if (!_isIsGlobal) {
@@ -230,5 +231,29 @@ public class ValidationUtils {
       container = _eContainer;
     }
     return container;
+  }
+  
+  public static void checkIfVariableIsUsed(final List<EObject> elementContents, final String name) {
+    if (ValidationUtils.variableIsUsed) {
+      return;
+    }
+    int _length = ((Object[])Conversions.unwrapArray(elementContents, Object.class)).length;
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
+    for (final Integer i : _doubleDotLessThan) {
+      EObject _get = elementContents.get((i).intValue());
+      if ((_get instanceof VariableCall)) {
+        EObject _get_1 = elementContents.get((i).intValue());
+        String _calledVariableName = ((VariableCall) _get_1).getCalledVariableName();
+        boolean _equals = _calledVariableName.equals(name);
+        if (_equals) {
+          ValidationUtils.variableIsUsed = true;
+          return;
+        }
+      } else {
+        EObject _get_2 = elementContents.get((i).intValue());
+        EList<EObject> _eContents = _get_2.eContents();
+        ValidationUtils.checkIfVariableIsUsed(_eContents, name);
+      }
+    }
   }
 }

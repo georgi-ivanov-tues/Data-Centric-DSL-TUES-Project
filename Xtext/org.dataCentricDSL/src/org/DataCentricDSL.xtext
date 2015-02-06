@@ -24,15 +24,14 @@ VariableDefinition:
 	(isGlobal?=Global)? name=IDENTIFIER OpAssignment variableValue=VariableParam
 ;
 
-VariableParam returns VariableDecl:
-	{VariableParam} 
-	(variableExpressionParam=Expression | 
-	 variableQueryParam=QueryFunction |
-	 variableBolleanValue=BooleanValue)
+VariableParam:
+	(Expression | 
+	 QueryFunction |
+	 BooleanValue)
 ;
 
 QueryFunction:
-	Query queryParam=StatementCondition
+	Query queryParam=ConditionStatement
 ;
 
 PrintFunction:
@@ -41,7 +40,7 @@ PrintFunction:
 
 PrintParam:
 	(QueryFunction |
-	 StatementCondition)
+	 ConditionStatement)
 ;
 
 FunctionCall:
@@ -52,7 +51,7 @@ FunctionCall:
 ;
 
 VariableCall:
-	{VariableCall} variableCall=IDENTIFIER
+	{VariableCall} calledVariableName=IDENTIFIER
 ;
 
 Expression:
@@ -100,16 +99,16 @@ FunctionDefinition:
 		(arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)?
 		ClosingBracket OpeningCurlyBracket
 		(statements+=Statement)*
-		('return' returnValue=StatementCondition)?
+		('return' returnValue=ConditionStatement Semicolon)?
 	ClosingCurlyBracket
 ;
 
 IfStatement:
 	{IfStatement}
-	If OpeningBracket condition += StatementCondition ClosingBracket OpeningCurlyBracket
+	If OpeningBracket condition += ConditionStatement ClosingBracket OpeningCurlyBracket
 		(statements+=Statement)*
 	ClosingCurlyBracket
-	( ElseIf OpeningBracket condition+=StatementCondition ClosingBracket OpeningCurlyBracket
+	( ElseIf OpeningBracket condition+=ConditionStatement ClosingBracket OpeningCurlyBracket
 		(statements+=Statement)*
 	ClosingCurlyBracket
 	)*
@@ -134,7 +133,7 @@ SwitchStatement:
 
 WhileStatement:
 	{WhileStatement}
-	While OpeningBracket whileCondition=StatementCondition ClosingBracket OpeningCurlyBracket 
+	While OpeningBracket whileCondition=ConditionStatement ClosingBracket OpeningCurlyBracket 
 		(statements+=Statement)* 
 	ClosingCurlyBracket
 ;
@@ -142,7 +141,7 @@ WhileStatement:
 ForStatement:
 	{ForStatement}
 	For OpeningBracket forVar=VariableDefinition Semicolon 
-		forCondition=StatementCondition Semicolon
+		forCondition=ConditionStatement Semicolon
 		operation=(PostfixOperation | 
 			//ForMultiAssign | 
 			VariableDefinition) 
@@ -151,7 +150,7 @@ ForStatement:
 	ClosingCurlyBracket
 ;
 
-StatementCondition:
+ConditionStatement:
 	conditions+=Condition ((OpAnd | OpOr) conditions+=Condition)* 
 ;
 

@@ -1,5 +1,6 @@
 package org.validation;
 
+import java.util.List
 import org.dataCentricDSL.BooleanValue
 import org.dataCentricDSL.ConditionElement
 import org.dataCentricDSL.DataCentricDSL
@@ -7,7 +8,6 @@ import org.dataCentricDSL.ForStatement
 import org.dataCentricDSL.FunctionDefinition
 import org.dataCentricDSL.IfStatement
 import org.dataCentricDSL.VariableCall
-import org.dataCentricDSL.VariableDecl
 import org.dataCentricDSL.VariableDefinition
 import org.dataCentricDSL.WhileStatement
 import org.eclipse.emf.ecore.EObject
@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject
 public class ValidationUtils {
 	
 	var public static boolean globalVariableFound = false;
+	var public static boolean variableIsUsed = false;
 	
 	def static void checkIfCalledVariableIsGlobal(EObject object, String name, int index) {
 		if(globalVariableFound) {
@@ -43,7 +44,7 @@ public class ValidationUtils {
 					checkIfCalledVariableIsGlobal(object.eContents.get(i), name, -1);
 				}
 			}
-		} else if(object instanceof VariableDecl) {
+		} else if(object instanceof VariableDefinition) {
 			if((object as VariableDefinition).isGlobal && (object as VariableDefinition).name.equals(name)) {
 				globalVariableFound = true;
 				return;
@@ -143,6 +144,22 @@ public class ValidationUtils {
 		}
 		
 		return container;
+	}
+	
+	def static void checkIfVariableIsUsed(List<EObject> elementContents, String name) {
+		if(variableIsUsed) {
+			return;
+		}
+		for(i : 0..< elementContents.length) {
+			if(elementContents.get(i) instanceof VariableCall) {
+				if((elementContents.get(i) as VariableCall).calledVariableName.equals(name)) {
+					variableIsUsed = true;
+					return;
+				}
+			} else {
+				checkIfVariableIsUsed(elementContents.get(i).eContents, name);
+			}
+		}
 	}
 	
 }

@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.dataCentricDSL.impl.VariableCallImpl#getVariableCall <em>Variable Call</em>}</li>
+ *   <li>{@link org.dataCentricDSL.impl.VariableCallImpl#getCalledVariableName <em>Called Variable Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,24 +27,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class VariableCallImpl extends ExpressionImpl implements VariableCall
 {
   /**
-   * The default value of the '{@link #getVariableCall() <em>Variable Call</em>}' attribute.
+   * The default value of the '{@link #getCalledVariableName() <em>Called Variable Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariableCall()
+   * @see #getCalledVariableName()
    * @generated
    * @ordered
    */
-  protected static final String VARIABLE_CALL_EDEFAULT = null;
+  protected static final String CALLED_VARIABLE_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVariableCall() <em>Variable Call</em>}' attribute.
+   * The cached value of the '{@link #getCalledVariableName() <em>Called Variable Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariableCall()
+   * @see #getCalledVariableName()
    * @generated
    * @ordered
    */
-  protected String variableCall = VARIABLE_CALL_EDEFAULT;
+  protected String calledVariableName = CALLED_VARIABLE_NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,9 +72,9 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVariableCall()
+  public String getCalledVariableName()
   {
-    return variableCall;
+    return calledVariableName;
   }
 
   /**
@@ -82,12 +82,12 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableCall(String newVariableCall)
+  public void setCalledVariableName(String newCalledVariableName)
   {
-    String oldVariableCall = variableCall;
-    variableCall = newVariableCall;
+    String oldCalledVariableName = calledVariableName;
+    calledVariableName = newCalledVariableName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL, oldVariableCall, variableCall));
+      eNotify(new ENotificationImpl(this, Notification.SET, DataCentricDSLPackage.VARIABLE_CALL__CALLED_VARIABLE_NAME, oldCalledVariableName, calledVariableName));
   }
 
   /**
@@ -100,8 +100,8 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
-        return getVariableCall();
+      case DataCentricDSLPackage.VARIABLE_CALL__CALLED_VARIABLE_NAME:
+        return getCalledVariableName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -116,8 +116,8 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
-        setVariableCall((String)newValue);
+      case DataCentricDSLPackage.VARIABLE_CALL__CALLED_VARIABLE_NAME:
+        setCalledVariableName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -133,8 +133,8 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
-        setVariableCall(VARIABLE_CALL_EDEFAULT);
+      case DataCentricDSLPackage.VARIABLE_CALL__CALLED_VARIABLE_NAME:
+        setCalledVariableName(CALLED_VARIABLE_NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -150,8 +150,8 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
   {
     switch (featureID)
     {
-      case DataCentricDSLPackage.VARIABLE_CALL__VARIABLE_CALL:
-        return VARIABLE_CALL_EDEFAULT == null ? variableCall != null : !VARIABLE_CALL_EDEFAULT.equals(variableCall);
+      case DataCentricDSLPackage.VARIABLE_CALL__CALLED_VARIABLE_NAME:
+        return CALLED_VARIABLE_NAME_EDEFAULT == null ? calledVariableName != null : !CALLED_VARIABLE_NAME_EDEFAULT.equals(calledVariableName);
     }
     return super.eIsSet(featureID);
   }
@@ -167,8 +167,8 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (variableCall: ");
-    result.append(variableCall);
+    result.append(" (calledVariableName: ");
+    result.append(calledVariableName);
     result.append(')');
     return result.toString();
   }

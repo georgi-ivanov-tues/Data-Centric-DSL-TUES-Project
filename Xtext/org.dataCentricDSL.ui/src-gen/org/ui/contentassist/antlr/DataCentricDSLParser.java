@@ -39,7 +39,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 					put(grammarAccess.getSimpleStatementAccess().getAlternatives_0(), "rule__SimpleStatement__Alternatives_0");
-					put(grammarAccess.getVariableParamAccess().getAlternatives_1(), "rule__VariableParam__Alternatives_1");
+					put(grammarAccess.getVariableParamAccess().getAlternatives(), "rule__VariableParam__Alternatives");
 					put(grammarAccess.getPrintFunctionAccess().getAlternatives_0(), "rule__PrintFunction__Alternatives_0");
 					put(grammarAccess.getPrintParamAccess().getAlternatives(), "rule__PrintParam__Alternatives");
 					put(grammarAccess.getAdditionAccess().getAlternatives_0(), "rule__Addition__Alternatives_0");
@@ -47,7 +47,7 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
 					put(grammarAccess.getCompoundStatementAccess().getAlternatives(), "rule__CompoundStatement__Alternatives");
 					put(grammarAccess.getForStatementAccess().getOperationAlternatives_7_0(), "rule__ForStatement__OperationAlternatives_7_0");
-					put(grammarAccess.getStatementConditionAccess().getAlternatives_1_0(), "rule__StatementCondition__Alternatives_1_0");
+					put(grammarAccess.getConditionStatementAccess().getAlternatives_1_0(), "rule__ConditionStatement__Alternatives_1_0");
 					put(grammarAccess.getConditionElementAccess().getAlternatives(), "rule__ConditionElement__Alternatives");
 					put(grammarAccess.getBooleanValueAccess().getValueAlternatives_0(), "rule__BooleanValue__ValueAlternatives_0");
 					put(grammarAccess.getPostfixOperationOperatorAccess().getAlternatives(), "rule__PostfixOperationOperator__Alternatives");
@@ -92,7 +92,6 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1_0_3(), "rule__XImportDeclaration__Alternatives_1_0_3");
 					put(grammarAccess.getSimpleStatementAccess().getGroup(), "rule__SimpleStatement__Group__0");
 					put(grammarAccess.getVariableDefinitionAccess().getGroup(), "rule__VariableDefinition__Group__0");
-					put(grammarAccess.getVariableParamAccess().getGroup(), "rule__VariableParam__Group__0");
 					put(grammarAccess.getQueryFunctionAccess().getGroup(), "rule__QueryFunction__Group__0");
 					put(grammarAccess.getPrintFunctionAccess().getGroup(), "rule__PrintFunction__Group__0");
 					put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
@@ -119,8 +118,8 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIfStatementAccess().getGroup_9(), "rule__IfStatement__Group_9__0");
 					put(grammarAccess.getWhileStatementAccess().getGroup(), "rule__WhileStatement__Group__0");
 					put(grammarAccess.getForStatementAccess().getGroup(), "rule__ForStatement__Group__0");
-					put(grammarAccess.getStatementConditionAccess().getGroup(), "rule__StatementCondition__Group__0");
-					put(grammarAccess.getStatementConditionAccess().getGroup_1(), "rule__StatementCondition__Group_1__0");
+					put(grammarAccess.getConditionStatementAccess().getGroup(), "rule__ConditionStatement__Group__0");
+					put(grammarAccess.getConditionStatementAccess().getGroup_1(), "rule__ConditionStatement__Group_1__0");
 					put(grammarAccess.getConditionAccess().getGroup(), "rule__Condition__Group__0");
 					put(grammarAccess.getConditionAccess().getGroup_1(), "rule__Condition__Group_1__0");
 					put(grammarAccess.getPostfixOperationAccess().getGroup(), "rule__PostfixOperation__Group__0");
@@ -307,15 +306,12 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableDefinitionAccess().getIsGlobalAssignment_0(), "rule__VariableDefinition__IsGlobalAssignment_0");
 					put(grammarAccess.getVariableDefinitionAccess().getNameAssignment_1(), "rule__VariableDefinition__NameAssignment_1");
 					put(grammarAccess.getVariableDefinitionAccess().getVariableValueAssignment_3(), "rule__VariableDefinition__VariableValueAssignment_3");
-					put(grammarAccess.getVariableParamAccess().getVariableExpressionParamAssignment_1_0(), "rule__VariableParam__VariableExpressionParamAssignment_1_0");
-					put(grammarAccess.getVariableParamAccess().getVariableQueryParamAssignment_1_1(), "rule__VariableParam__VariableQueryParamAssignment_1_1");
-					put(grammarAccess.getVariableParamAccess().getVariableBolleanValueAssignment_1_2(), "rule__VariableParam__VariableBolleanValueAssignment_1_2");
 					put(grammarAccess.getQueryFunctionAccess().getQueryParamAssignment_1(), "rule__QueryFunction__QueryParamAssignment_1");
 					put(grammarAccess.getPrintFunctionAccess().getPrintParamAssignment_1(), "rule__PrintFunction__PrintParamAssignment_1");
 					put(grammarAccess.getFunctionCallAccess().getNameAssignment_0(), "rule__FunctionCall__NameAssignment_0");
 					put(grammarAccess.getFunctionCallAccess().getArgumentsAssignment_2_0(), "rule__FunctionCall__ArgumentsAssignment_2_0");
 					put(grammarAccess.getFunctionCallAccess().getArgumentsAssignment_2_1_1(), "rule__FunctionCall__ArgumentsAssignment_2_1_1");
-					put(grammarAccess.getVariableCallAccess().getVariableCallAssignment_1(), "rule__VariableCall__VariableCallAssignment_1");
+					put(grammarAccess.getVariableCallAccess().getCalledVariableNameAssignment_1(), "rule__VariableCall__CalledVariableNameAssignment_1");
 					put(grammarAccess.getAdditionAccess().getRightAssignment_1_2(), "rule__Addition__RightAssignment_1_2");
 					put(grammarAccess.getSubstractionAccess().getRightAssignment_1_2(), "rule__Substraction__RightAssignment_1_2");
 					put(grammarAccess.getMultiplicationAccess().getRightAssignment_1_2(), "rule__Multiplication__RightAssignment_1_2");
@@ -337,8 +333,8 @@ public class DataCentricDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForStatementAccess().getForConditionAssignment_5(), "rule__ForStatement__ForConditionAssignment_5");
 					put(grammarAccess.getForStatementAccess().getOperationAssignment_7(), "rule__ForStatement__OperationAssignment_7");
 					put(grammarAccess.getForStatementAccess().getStatementsAssignment_10(), "rule__ForStatement__StatementsAssignment_10");
-					put(grammarAccess.getStatementConditionAccess().getConditionsAssignment_0(), "rule__StatementCondition__ConditionsAssignment_0");
-					put(grammarAccess.getStatementConditionAccess().getConditionsAssignment_1_1(), "rule__StatementCondition__ConditionsAssignment_1_1");
+					put(grammarAccess.getConditionStatementAccess().getConditionsAssignment_0(), "rule__ConditionStatement__ConditionsAssignment_0");
+					put(grammarAccess.getConditionStatementAccess().getConditionsAssignment_1_1(), "rule__ConditionStatement__ConditionsAssignment_1_1");
 					put(grammarAccess.getConditionAccess().getConditionElementsAssignment_0(), "rule__Condition__ConditionElementsAssignment_0");
 					put(grammarAccess.getConditionAccess().getOpAssignment_1_0(), "rule__Condition__OpAssignment_1_0");
 					put(grammarAccess.getConditionAccess().getConditionElementsAssignment_1_1(), "rule__Condition__ConditionElementsAssignment_1_1");

@@ -68,7 +68,7 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.STATEMENT: return createStatement();
       case DataCentricDSLPackage.SIMPLE_STATEMENT: return createSimpleStatement();
       case DataCentricDSLPackage.VARIABLE_DEFINITION: return createVariableDefinition();
-      case DataCentricDSLPackage.VARIABLE_DECL: return createVariableDecl();
+      case DataCentricDSLPackage.VARIABLE_PARAM: return createVariableParam();
       case DataCentricDSLPackage.QUERY_FUNCTION: return createQueryFunction();
       case DataCentricDSLPackage.PRINT_FUNCTION: return createPrintFunction();
       case DataCentricDSLPackage.PRINT_PARAM: return createPrintParam();
@@ -80,14 +80,13 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
       case DataCentricDSLPackage.IF_STATEMENT: return createIfStatement();
       case DataCentricDSLPackage.WHILE_STATEMENT: return createWhileStatement();
       case DataCentricDSLPackage.FOR_STATEMENT: return createForStatement();
-      case DataCentricDSLPackage.STATEMENT_CONDITION: return createStatementCondition();
+      case DataCentricDSLPackage.CONDITION_STATEMENT: return createConditionStatement();
       case DataCentricDSLPackage.CONDITION: return createCondition();
       case DataCentricDSLPackage.CONDITION_ELEMENT: return createConditionElement();
       case DataCentricDSLPackage.POSTFIX_OPERATION: return createPostfixOperation();
       case DataCentricDSLPackage.STRING_LITERAL: return createStringLiteral();
       case DataCentricDSLPackage.NUMBER_LITERAL: return createNumberLiteral();
       case DataCentricDSLPackage.BOOLEAN_VALUE: return createBooleanValue();
-      case DataCentricDSLPackage.VARIABLE_PARAM: return createVariableParam();
       case DataCentricDSLPackage.ADDITION: return createAddition();
       case DataCentricDSLPackage.SUBSTRACTION: return createSubstraction();
       case DataCentricDSLPackage.MULTIPLICATION: return createMultiplication();
@@ -147,10 +146,10 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDecl createVariableDecl()
+  public VariableParam createVariableParam()
   {
-    VariableDeclImpl variableDecl = new VariableDeclImpl();
-    return variableDecl;
+    VariableParamImpl variableParam = new VariableParamImpl();
+    return variableParam;
   }
 
   /**
@@ -279,10 +278,10 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
    * <!-- end-user-doc -->
    * @generated
    */
-  public StatementCondition createStatementCondition()
+  public ConditionStatement createConditionStatement()
   {
-    StatementConditionImpl statementCondition = new StatementConditionImpl();
-    return statementCondition;
+    ConditionStatementImpl conditionStatement = new ConditionStatementImpl();
+    return conditionStatement;
   }
 
   /**
@@ -349,17 +348,6 @@ public class DataCentricDSLFactoryImpl extends EFactoryImpl implements DataCentr
   {
     BooleanValueImpl booleanValue = new BooleanValueImpl();
     return booleanValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableParam createVariableParam()
-  {
-    VariableParamImpl variableParam = new VariableParamImpl();
-    return variableParam;
   }
 
   /**

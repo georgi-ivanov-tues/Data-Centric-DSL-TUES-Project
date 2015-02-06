@@ -317,69 +317,36 @@ ruleVariableParam returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getVariableParamAccess().getVariableParamAction_0(),
-            $current);
+(
+    { 
+        newCompositeNode(grammarAccess.getVariableParamAccess().getExpressionParserRuleCall_0()); 
     }
-)((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getVariableParamAccess().getVariableExpressionParamExpressionParserRuleCall_1_0_0()); 
-	    }
-		lv_variableExpressionParam_1_0=ruleExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getVariableParamRule());
-	        }
-       		set(
-       			$current, 
-       			"variableExpressionParam",
-        		lv_variableExpressionParam_1_0, 
-        		"Expression");
-	        afterParserOrEnumRuleCall();
-	    }
+    this_Expression_0=ruleExpression
+    { 
+        $current = $this_Expression_0.current; 
+        afterParserOrEnumRuleCall();
+    }
 
-)
-)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getVariableParamAccess().getVariableQueryParamQueryFunctionParserRuleCall_1_1_0()); 
-	    }
-		lv_variableQueryParam_2_0=ruleQueryFunction		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getVariableParamRule());
-	        }
-       		set(
-       			$current, 
-       			"variableQueryParam",
-        		lv_variableQueryParam_2_0, 
-        		"QueryFunction");
-	        afterParserOrEnumRuleCall();
-	    }
+    |
+    { 
+        newCompositeNode(grammarAccess.getVariableParamAccess().getQueryFunctionParserRuleCall_1()); 
+    }
+    this_QueryFunction_1=ruleQueryFunction
+    { 
+        $current = $this_QueryFunction_1.current; 
+        afterParserOrEnumRuleCall();
+    }
 
+    |
+    { 
+        newCompositeNode(grammarAccess.getVariableParamAccess().getBooleanValueParserRuleCall_2()); 
+    }
+    this_BooleanValue_2=ruleBooleanValue
+    { 
+        $current = $this_BooleanValue_2.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
-)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getVariableParamAccess().getVariableBolleanValueBooleanValueParserRuleCall_1_2_0()); 
-	    }
-		lv_variableBolleanValue_3_0=ruleBooleanValue		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getVariableParamRule());
-	        }
-       		set(
-       			$current, 
-       			"variableBolleanValue",
-        		lv_variableBolleanValue_3_0, 
-        		"BooleanValue");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)))
 ;
 
 
@@ -411,9 +378,9 @@ ruleQuery
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getQueryFunctionAccess().getQueryParamStatementConditionParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getQueryFunctionAccess().getQueryParamConditionStatementParserRuleCall_1_0()); 
 	    }
-		lv_queryParam_1_0=ruleStatementCondition		{
+		lv_queryParam_1_0=ruleConditionStatement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getQueryFunctionRule());
 	        }
@@ -421,7 +388,7 @@ ruleQuery
        			$current, 
        			"queryParam",
         		lv_queryParam_1_0, 
-        		"StatementCondition");
+        		"ConditionStatement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -515,11 +482,11 @@ rulePrintParam returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getPrintParamAccess().getStatementConditionParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getPrintParamAccess().getConditionStatementParserRuleCall_1()); 
     }
-    this_StatementCondition_1=ruleStatementCondition
+    this_ConditionStatement_1=ruleConditionStatement
     { 
-        $current = $this_StatementCondition_1.current; 
+        $current = $this_ConditionStatement_1.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -650,9 +617,9 @@ ruleVariableCall returns [EObject current=null]
     }
 )(
 (
-		lv_variableCall_1_0=RULE_IDENTIFIER
+		lv_calledVariableName_1_0=RULE_IDENTIFIER
 		{
-			newLeafNode(lv_variableCall_1_0, grammarAccess.getVariableCallAccess().getVariableCallIDENTIFIERTerminalRuleCall_1_0()); 
+			newLeafNode(lv_calledVariableName_1_0, grammarAccess.getVariableCallAccess().getCalledVariableNameIDENTIFIERTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -660,8 +627,8 @@ ruleVariableCall returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"variableCall",
-        		lv_variableCall_1_0, 
+       			"calledVariableName",
+        		lv_calledVariableName_1_0, 
         		"IDENTIFIER");
 	    }
 
@@ -1310,9 +1277,9 @@ ruleOpeningCurlyBracket
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getReturnValueStatementConditionParserRuleCall_7_1_0()); 
+	        newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getReturnValueConditionStatementParserRuleCall_7_1_0()); 
 	    }
-		lv_returnValue_10_0=ruleStatementCondition		{
+		lv_returnValue_10_0=ruleConditionStatement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFunctionDefinitionRule());
 	        }
@@ -1320,12 +1287,20 @@ ruleOpeningCurlyBracket
        			$current, 
        			"returnValue",
         		lv_returnValue_10_0, 
-        		"StatementCondition");
+        		"ConditionStatement");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?
+)
+    { 
+        newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getSemicolonParserRuleCall_7_2()); 
+    }
+ruleSemicolon
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)?
     { 
         newCompositeNode(grammarAccess.getFunctionDefinitionAccess().getClosingCurlyBracketParserRuleCall_8()); 
     }
@@ -1379,9 +1354,9 @@ ruleOpeningBracket
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIfStatementAccess().getConditionStatementConditionParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getIfStatementAccess().getConditionConditionStatementParserRuleCall_3_0()); 
 	    }
-		lv_condition_3_0=ruleStatementCondition		{
+		lv_condition_3_0=ruleConditionStatement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getIfStatementRule());
 	        }
@@ -1389,7 +1364,7 @@ ruleOpeningBracket
        			$current, 
        			"condition",
         		lv_condition_3_0, 
-        		"StatementCondition");
+        		"ConditionStatement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1455,9 +1430,9 @@ ruleOpeningBracket
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIfStatementAccess().getConditionStatementConditionParserRuleCall_8_2_0()); 
+	        newCompositeNode(grammarAccess.getIfStatementAccess().getConditionConditionStatementParserRuleCall_8_2_0()); 
 	    }
-		lv_condition_10_0=ruleStatementCondition		{
+		lv_condition_10_0=ruleConditionStatement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getIfStatementRule());
 	        }
@@ -1465,7 +1440,7 @@ ruleOpeningBracket
        			$current, 
        			"condition",
         		lv_condition_10_0, 
-        		"StatementCondition");
+        		"ConditionStatement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1600,9 +1575,9 @@ ruleOpeningBracket
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getWhileStatementAccess().getWhileConditionStatementConditionParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getWhileStatementAccess().getWhileConditionConditionStatementParserRuleCall_3_0()); 
 	    }
-		lv_whileCondition_3_0=ruleStatementCondition		{
+		lv_whileCondition_3_0=ruleConditionStatement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getWhileStatementRule());
 	        }
@@ -1610,7 +1585,7 @@ ruleOpeningBracket
        			$current, 
        			"whileCondition",
         		lv_whileCondition_3_0, 
-        		"StatementCondition");
+        		"ConditionStatement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1729,9 +1704,9 @@ ruleSemicolon
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getForStatementAccess().getForConditionStatementConditionParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getForStatementAccess().getForConditionConditionStatementParserRuleCall_5_0()); 
 	    }
-		lv_forCondition_5_0=ruleStatementCondition		{
+		lv_forCondition_5_0=ruleConditionStatement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getForStatementRule());
 	        }
@@ -1739,7 +1714,7 @@ ruleSemicolon
        			$current, 
        			"forCondition",
         		lv_forCondition_5_0, 
-        		"StatementCondition");
+        		"ConditionStatement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1837,28 +1812,28 @@ ruleClosingCurlyBracket
 
 
 
-// Entry rule entryRuleStatementCondition
-entryRuleStatementCondition returns [EObject current=null] 
+// Entry rule entryRuleConditionStatement
+entryRuleConditionStatement returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getStatementConditionRule()); }
-	 iv_ruleStatementCondition=ruleStatementCondition 
-	 { $current=$iv_ruleStatementCondition.current; } 
+	{ newCompositeNode(grammarAccess.getConditionStatementRule()); }
+	 iv_ruleConditionStatement=ruleConditionStatement 
+	 { $current=$iv_ruleConditionStatement.current; } 
 	 EOF 
 ;
 
-// Rule StatementCondition
-ruleStatementCondition returns [EObject current=null] 
+// Rule ConditionStatement
+ruleConditionStatement returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStatementConditionAccess().getConditionsConditionParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getConditionStatementAccess().getConditionsConditionParserRuleCall_0_0()); 
 	    }
 		lv_conditions_0_0=ruleCondition		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStatementConditionRule());
+	            $current = createModelElementForParent(grammarAccess.getConditionStatementRule());
 	        }
        		add(
        			$current, 
@@ -1871,7 +1846,7 @@ ruleStatementCondition returns [EObject current=null]
 )
 )((
     { 
-        newCompositeNode(grammarAccess.getStatementConditionAccess().getOpAndParserRuleCall_1_0_0()); 
+        newCompositeNode(grammarAccess.getConditionStatementAccess().getOpAndParserRuleCall_1_0_0()); 
     }
 ruleOpAnd
     { 
@@ -1880,7 +1855,7 @@ ruleOpAnd
 
     |
     { 
-        newCompositeNode(grammarAccess.getStatementConditionAccess().getOpOrParserRuleCall_1_0_1()); 
+        newCompositeNode(grammarAccess.getConditionStatementAccess().getOpOrParserRuleCall_1_0_1()); 
     }
 ruleOpOr
     { 
@@ -1889,11 +1864,11 @@ ruleOpOr
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStatementConditionAccess().getConditionsConditionParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getConditionStatementAccess().getConditionsConditionParserRuleCall_1_1_0()); 
 	    }
 		lv_conditions_3_0=ruleCondition		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStatementConditionRule());
+	            $current = createModelElementForParent(grammarAccess.getConditionStatementRule());
 	        }
        		add(
        			$current, 

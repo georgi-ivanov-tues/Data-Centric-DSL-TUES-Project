@@ -169,23 +169,23 @@ public interface DataCentricDSLPackage extends EPackage
   int VARIABLE_DEFINITION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.VariableDeclImpl <em>Variable Decl</em>}' class.
+   * The meta object id for the '{@link org.dataCentricDSL.impl.VariableParamImpl <em>Variable Param</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.VariableDeclImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableDecl()
+   * @see org.dataCentricDSL.impl.VariableParamImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableParam()
    * @generated
    */
-  int VARIABLE_DECL = 4;
+  int VARIABLE_PARAM = 4;
 
   /**
-   * The number of structural features of the '<em>Variable Decl</em>' class.
+   * The number of structural features of the '<em>Variable Param</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL_FEATURE_COUNT = 0;
+  int VARIABLE_PARAM_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.QueryFunctionImpl <em>Query Function</em>}' class.
@@ -300,25 +300,6 @@ public interface DataCentricDSLPackage extends EPackage
   int FUNCTION_CALL_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.ConditionElementImpl <em>Condition Element</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.ConditionElementImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getConditionElement()
-   * @generated
-   */
-  int CONDITION_ELEMENT = 18;
-
-  /**
-   * The number of structural features of the '<em>Condition Element</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_ELEMENT_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.ExpressionImpl <em>Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -335,7 +316,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = CONDITION_ELEMENT_FEATURE_COUNT + 0;
+  int EXPRESSION_FEATURE_COUNT = VARIABLE_PARAM_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.VariableCallImpl <em>Variable Call</em>}' class.
@@ -348,13 +329,13 @@ public interface DataCentricDSLPackage extends EPackage
   int VARIABLE_CALL = 9;
 
   /**
-   * The feature id for the '<em><b>Variable Call</b></em>' attribute.
+   * The feature id for the '<em><b>Called Variable Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_CALL__VARIABLE_CALL = EXPRESSION_FEATURE_COUNT + 0;
+  int VARIABLE_CALL__CALLED_VARIABLE_NAME = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Variable Call</em>' class.
@@ -578,14 +559,14 @@ public interface DataCentricDSLPackage extends EPackage
   int FOR_STATEMENT_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.StatementConditionImpl <em>Statement Condition</em>}' class.
+   * The meta object id for the '{@link org.dataCentricDSL.impl.ConditionStatementImpl <em>Condition Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.StatementConditionImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getStatementCondition()
+   * @see org.dataCentricDSL.impl.ConditionStatementImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getConditionStatement()
    * @generated
    */
-  int STATEMENT_CONDITION = 16;
+  int CONDITION_STATEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
@@ -594,16 +575,16 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_CONDITION__CONDITIONS = PRINT_PARAM_FEATURE_COUNT + 0;
+  int CONDITION_STATEMENT__CONDITIONS = PRINT_PARAM_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Statement Condition</em>' class.
+   * The number of structural features of the '<em>Condition Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT_CONDITION_FEATURE_COUNT = PRINT_PARAM_FEATURE_COUNT + 1;
+  int CONDITION_STATEMENT_FEATURE_COUNT = PRINT_PARAM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.ConditionImpl <em>Condition</em>}' class.
@@ -641,6 +622,25 @@ public interface DataCentricDSLPackage extends EPackage
    * @ordered
    */
   int CONDITION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.dataCentricDSL.impl.ConditionElementImpl <em>Condition Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.dataCentricDSL.impl.ConditionElementImpl
+   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getConditionElement()
+   * @generated
+   */
+  int CONDITION_ELEMENT = 18;
+
+  /**
+   * The number of structural features of the '<em>Condition Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_ELEMENT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.PostfixOperationImpl <em>Postfix Operation</em>}' class.
@@ -752,7 +752,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOOLEAN_VALUE__VALUE = CONDITION_ELEMENT_FEATURE_COUNT + 0;
+  int BOOLEAN_VALUE__VALUE = VARIABLE_PARAM_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Boolean Value</em>' class.
@@ -761,53 +761,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOOLEAN_VALUE_FEATURE_COUNT = CONDITION_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.dataCentricDSL.impl.VariableParamImpl <em>Variable Param</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.dataCentricDSL.impl.VariableParamImpl
-   * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableParam()
-   * @generated
-   */
-  int VARIABLE_PARAM = 23;
-
-  /**
-   * The feature id for the '<em><b>Variable Expression Param</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_PARAM__VARIABLE_EXPRESSION_PARAM = VARIABLE_DECL_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Variable Query Param</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_PARAM__VARIABLE_QUERY_PARAM = VARIABLE_DECL_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Variable Bollean Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_PARAM__VARIABLE_BOLLEAN_VALUE = VARIABLE_DECL_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Variable Param</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_PARAM_FEATURE_COUNT = VARIABLE_DECL_FEATURE_COUNT + 3;
+  int BOOLEAN_VALUE_FEATURE_COUNT = VARIABLE_PARAM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.dataCentricDSL.impl.AdditionImpl <em>Addition</em>}' class.
@@ -817,7 +771,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 24;
+  int ADDITION = 23;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -854,7 +808,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getSubstraction()
    * @generated
    */
-  int SUBSTRACTION = 25;
+  int SUBSTRACTION = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -891,7 +845,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 26;
+  int MULTIPLICATION = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -928,7 +882,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getDivision()
    * @generated
    */
-  int DIVISION = 27;
+  int DIVISION = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -965,7 +919,7 @@ public interface DataCentricDSLPackage extends EPackage
    * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getMod()
    * @generated
    */
-  int MOD = 28;
+  int MOD = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1080,14 +1034,14 @@ public interface DataCentricDSLPackage extends EPackage
   EReference getVariableDefinition_VariableValue();
 
   /**
-   * Returns the meta object for class '{@link org.dataCentricDSL.VariableDecl <em>Variable Decl</em>}'.
+   * Returns the meta object for class '{@link org.dataCentricDSL.VariableParam <em>Variable Param</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Decl</em>'.
-   * @see org.dataCentricDSL.VariableDecl
+   * @return the meta object for class '<em>Variable Param</em>'.
+   * @see org.dataCentricDSL.VariableParam
    * @generated
    */
-  EClass getVariableDecl();
+  EClass getVariableParam();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.QueryFunction <em>Query Function</em>}'.
@@ -1184,15 +1138,15 @@ public interface DataCentricDSLPackage extends EPackage
   EClass getVariableCall();
 
   /**
-   * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableCall#getVariableCall <em>Variable Call</em>}'.
+   * Returns the meta object for the attribute '{@link org.dataCentricDSL.VariableCall#getCalledVariableName <em>Called Variable Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Variable Call</em>'.
-   * @see org.dataCentricDSL.VariableCall#getVariableCall()
+   * @return the meta object for the attribute '<em>Called Variable Name</em>'.
+   * @see org.dataCentricDSL.VariableCall#getCalledVariableName()
    * @see #getVariableCall()
    * @generated
    */
-  EAttribute getVariableCall_VariableCall();
+  EAttribute getVariableCall_CalledVariableName();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.Expression <em>Expression</em>}'.
@@ -1354,25 +1308,25 @@ public interface DataCentricDSLPackage extends EPackage
   EReference getForStatement_Operation();
 
   /**
-   * Returns the meta object for class '{@link org.dataCentricDSL.StatementCondition <em>Statement Condition</em>}'.
+   * Returns the meta object for class '{@link org.dataCentricDSL.ConditionStatement <em>Condition Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Statement Condition</em>'.
-   * @see org.dataCentricDSL.StatementCondition
+   * @return the meta object for class '<em>Condition Statement</em>'.
+   * @see org.dataCentricDSL.ConditionStatement
    * @generated
    */
-  EClass getStatementCondition();
+  EClass getConditionStatement();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.StatementCondition#getConditions <em>Conditions</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.dataCentricDSL.ConditionStatement#getConditions <em>Conditions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Conditions</em>'.
-   * @see org.dataCentricDSL.StatementCondition#getConditions()
-   * @see #getStatementCondition()
+   * @see org.dataCentricDSL.ConditionStatement#getConditions()
+   * @see #getConditionStatement()
    * @generated
    */
-  EReference getStatementCondition_Conditions();
+  EReference getConditionStatement_Conditions();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.Condition <em>Condition</em>}'.
@@ -1510,49 +1464,6 @@ public interface DataCentricDSLPackage extends EPackage
    * @generated
    */
   EAttribute getBooleanValue_Value();
-
-  /**
-   * Returns the meta object for class '{@link org.dataCentricDSL.VariableParam <em>Variable Param</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Param</em>'.
-   * @see org.dataCentricDSL.VariableParam
-   * @generated
-   */
-  EClass getVariableParam();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.VariableParam#getVariableExpressionParam <em>Variable Expression Param</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Variable Expression Param</em>'.
-   * @see org.dataCentricDSL.VariableParam#getVariableExpressionParam()
-   * @see #getVariableParam()
-   * @generated
-   */
-  EReference getVariableParam_VariableExpressionParam();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.VariableParam#getVariableQueryParam <em>Variable Query Param</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Variable Query Param</em>'.
-   * @see org.dataCentricDSL.VariableParam#getVariableQueryParam()
-   * @see #getVariableParam()
-   * @generated
-   */
-  EReference getVariableParam_VariableQueryParam();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.dataCentricDSL.VariableParam#getVariableBolleanValue <em>Variable Bollean Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Variable Bollean Value</em>'.
-   * @see org.dataCentricDSL.VariableParam#getVariableBolleanValue()
-   * @see #getVariableParam()
-   * @generated
-   */
-  EReference getVariableParam_VariableBolleanValue();
 
   /**
    * Returns the meta object for class '{@link org.dataCentricDSL.Addition <em>Addition</em>}'.
@@ -1810,14 +1721,14 @@ public interface DataCentricDSLPackage extends EPackage
     EReference VARIABLE_DEFINITION__VARIABLE_VALUE = eINSTANCE.getVariableDefinition_VariableValue();
 
     /**
-     * The meta object literal for the '{@link org.dataCentricDSL.impl.VariableDeclImpl <em>Variable Decl</em>}' class.
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.VariableParamImpl <em>Variable Param</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.dataCentricDSL.impl.VariableDeclImpl
-     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableDecl()
+     * @see org.dataCentricDSL.impl.VariableParamImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableParam()
      * @generated
      */
-    EClass VARIABLE_DECL = eINSTANCE.getVariableDecl();
+    EClass VARIABLE_PARAM = eINSTANCE.getVariableParam();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.QueryFunctionImpl <em>Query Function</em>}' class.
@@ -1902,12 +1813,12 @@ public interface DataCentricDSLPackage extends EPackage
     EClass VARIABLE_CALL = eINSTANCE.getVariableCall();
 
     /**
-     * The meta object literal for the '<em><b>Variable Call</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Called Variable Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE_CALL__VARIABLE_CALL = eINSTANCE.getVariableCall_VariableCall();
+    EAttribute VARIABLE_CALL__CALLED_VARIABLE_NAME = eINSTANCE.getVariableCall_CalledVariableName();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -2042,14 +1953,14 @@ public interface DataCentricDSLPackage extends EPackage
     EReference FOR_STATEMENT__OPERATION = eINSTANCE.getForStatement_Operation();
 
     /**
-     * The meta object literal for the '{@link org.dataCentricDSL.impl.StatementConditionImpl <em>Statement Condition</em>}' class.
+     * The meta object literal for the '{@link org.dataCentricDSL.impl.ConditionStatementImpl <em>Condition Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.dataCentricDSL.impl.StatementConditionImpl
-     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getStatementCondition()
+     * @see org.dataCentricDSL.impl.ConditionStatementImpl
+     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getConditionStatement()
      * @generated
      */
-    EClass STATEMENT_CONDITION = eINSTANCE.getStatementCondition();
+    EClass CONDITION_STATEMENT = eINSTANCE.getConditionStatement();
 
     /**
      * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
@@ -2057,7 +1968,7 @@ public interface DataCentricDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STATEMENT_CONDITION__CONDITIONS = eINSTANCE.getStatementCondition_Conditions();
+    EReference CONDITION_STATEMENT__CONDITIONS = eINSTANCE.getConditionStatement_Conditions();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.ConditionImpl <em>Condition</em>}' class.
@@ -2174,40 +2085,6 @@ public interface DataCentricDSLPackage extends EPackage
      * @generated
      */
     EAttribute BOOLEAN_VALUE__VALUE = eINSTANCE.getBooleanValue_Value();
-
-    /**
-     * The meta object literal for the '{@link org.dataCentricDSL.impl.VariableParamImpl <em>Variable Param</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.dataCentricDSL.impl.VariableParamImpl
-     * @see org.dataCentricDSL.impl.DataCentricDSLPackageImpl#getVariableParam()
-     * @generated
-     */
-    EClass VARIABLE_PARAM = eINSTANCE.getVariableParam();
-
-    /**
-     * The meta object literal for the '<em><b>Variable Expression Param</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_PARAM__VARIABLE_EXPRESSION_PARAM = eINSTANCE.getVariableParam_VariableExpressionParam();
-
-    /**
-     * The meta object literal for the '<em><b>Variable Query Param</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_PARAM__VARIABLE_QUERY_PARAM = eINSTANCE.getVariableParam_VariableQueryParam();
-
-    /**
-     * The meta object literal for the '<em><b>Variable Bollean Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_PARAM__VARIABLE_BOLLEAN_VALUE = eINSTANCE.getVariableParam_VariableBolleanValue();
 
     /**
      * The meta object literal for the '{@link org.dataCentricDSL.impl.AdditionImpl <em>Addition</em>}' class.

@@ -24,7 +24,7 @@ public interface IfStatement extends CompoundStatement
 {
   /**
    * Returns the value of the '<em><b>Condition</b></em>' containment reference list.
-   * The list contents are of type {@link org.dataCentricDSL.StatementCondition}.
+   * The list contents are of type {@link org.dataCentricDSL.ConditionStatement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Condition</em>' containment reference list isn't clear,
@@ -36,6 +36,6 @@ public interface IfStatement extends CompoundStatement
    * @model containment="true"
    * @generated
    */
-  EList<StatementCondition> getCondition();
+  EList<ConditionStatement> getCondition();
 
 } // IfStatement

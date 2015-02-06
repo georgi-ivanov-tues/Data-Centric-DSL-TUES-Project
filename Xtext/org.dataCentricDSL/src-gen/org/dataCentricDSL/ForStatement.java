@@ -58,12 +58,12 @@ public interface ForStatement extends CompoundStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>For Condition</em>' containment reference.
-   * @see #setForCondition(StatementCondition)
+   * @see #setForCondition(ConditionStatement)
    * @see org.dataCentricDSL.DataCentricDSLPackage#getForStatement_ForCondition()
    * @model containment="true"
    * @generated
    */
-  StatementCondition getForCondition();
+  ConditionStatement getForCondition();
 
   /**
    * Sets the value of the '{@link org.dataCentricDSL.ForStatement#getForCondition <em>For Condition</em>}' containment reference.
@@ -73,7 +73,7 @@ public interface ForStatement extends CompoundStatement
    * @see #getForCondition()
    * @generated
    */
-  void setForCondition(StatementCondition value);
+  void setForCondition(ConditionStatement value);
 
   /**
    * Returns the value of the '<em><b>Operation</b></em>' containment reference.
