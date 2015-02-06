@@ -146,6 +146,15 @@ public class ValidationUtils {
 		return container;
 	}
 	
+	def static EObject getContainerBeforeDataCentricDSLContainer(EObject element) {
+		var container = element.eContainer;
+		while(!(container.eContainer instanceof DataCentricDSL)) {
+			container = container.eContainer;
+		}
+		
+		return container;
+	}
+	
 	def static void checkIfVariableIsUsed(List<EObject> elementContents, String name) {
 		if(variableIsUsed) {
 			return;

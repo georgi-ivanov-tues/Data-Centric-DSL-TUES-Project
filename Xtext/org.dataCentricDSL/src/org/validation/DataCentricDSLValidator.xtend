@@ -202,9 +202,24 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 		var listFromPosition = vd.eContainer.eContents.subList(positionInContainer, vd.eContainer.eContents.length);
 		ValidationUtils.checkIfVariableIsUsed(listFromPosition, vd.name);
 		if(!ValidationUtils.variableIsUsed) {
-			warning("Variable is never used.",
-				DataCentricDSLPackage.Literals.VARIABLE_DEFINITION__NAME
-			);
+			if(vd.isGlobal) {
+				var container = ValidationUtils.getContainerBeforeDataCentricDSLContainer(vd);
+				var dataCentricDSLElement = container.eContainer;
+				positionInContainer = dataCentricDSLElement.eContents.indexOf(container) + 1;
+				var elementsFromPosition = dataCentricDSLElement.eContents.subList(positionInContainer, 
+					dataCentricDSLElement.eContents.length
+				);
+				ValidationUtils.checkIfVariableIsUsed(elementsFromPosition, vd.name);
+				if(!ValidationUtils.variableIsUsed) {
+					warning("Variable is never used.",
+						DataCentricDSLPackage.Literals.VARIABLE_DEFINITION__NAME
+					);
+				}
+			} else {
+				warning("Variable is never used.",
+					DataCentricDSLPackage.Literals.VARIABLE_DEFINITION__NAME
+				);
+			}
 		}
 		ValidationUtils.variableIsUsed = false;
  	}
