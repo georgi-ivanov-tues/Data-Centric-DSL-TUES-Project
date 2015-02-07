@@ -13,6 +13,7 @@ import org.dataCentricDSL.FunctionCall
 import org.dataCentricDSL.FunctionDefinition
 import org.dataCentricDSL.IfStatement
 import org.dataCentricDSL.QueryFunction
+import org.dataCentricDSL.ReturnStatement
 import org.dataCentricDSL.VariableCall
 import org.dataCentricDSL.VariableDefinition
 import org.dataCentricDSL.WhileStatement
@@ -251,6 +252,42 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
  			)
  		}
  		ValidationUtils.functionIsUsed = false;
+ 	}
+ 	
+ 	@Check
+ 	def void validateReturnStatement(ReturnStatement rs) {
+ 		var container = rs.eContainer;
+ 		if(!(container instanceof IfStatement) && !(container instanceof ForStatement)
+ 			&& !(container instanceof WhileStatement) 
+ 		) {
+	 		if(container.eContents.indexOf(rs) < (container.eContents.length - 1)) {
+	 			warning(ErrorMessages.UNREACHABLE_CODE,
+	 				DataCentricDSLPackage.Literals.RETURN_STATEMENT__RETURN_VALUE
+	 			);
+	 		}
+	 	} else {
+	 		var EObject[] elements;
+	 		if(container instanceof IfStatement) {
+	 			elements = (container as IfStatement).statements; 	
+ 			} else if(container instanceof ForStatement) {
+ 				elements = (container as ForStatement).statements;
+ 			} else if(container instanceof WhileStatement) {
+ 				elements = (container as WhileStatement).statements;
+ 			}
+ 			
+ 			if(elements.indexOf(rs) < elements.length - 1) {
+ 				warning(ErrorMessages.UNREACHABLE_CODE,
+	 				DataCentricDSLPackage.Literals.RETURN_STATEMENT__RETURN_VALUE
+	 			);
+ 			} else {
+ 				container = getContainerBeforeDataCentricDSLContainer(rs);
+ 				if(!(container instanceof FunctionDefinition)) {
+ 					error(ErrorMessages.WRONG_RETURN_STATEMENT_POSITION,
+ 						DataCentricDSLPackage.Literals.RETURN_STATEMENT__RETURN_VALUE
+ 					);
+ 				}
+ 			}
+	 	}
  	}
 	
 }

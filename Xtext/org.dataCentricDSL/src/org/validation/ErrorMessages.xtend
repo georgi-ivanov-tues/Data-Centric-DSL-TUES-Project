@@ -20,8 +20,12 @@ public class ErrorMessages {
 		
 	val public static final INCOMPATIBLE_OPERANDS = "Operands of incompatible types.";
 	
-	val public static final UNUSED_VARIABLE = "Variable is never used.";
+	val public static final UNUSED_VARIABLE = "Variable is not used.";
 	
-	val public static final UNUSED_FUNCTION = "Function is never used.";
+	val public static final UNUSED_FUNCTION = "Function is not used.";
+	
+	val public static final UNREACHABLE_CODE = "Code after return statement is unreachable.";
+	
+	val public static final WRONG_RETURN_STATEMENT_POSITION = "Return statement is only allowed at the end of the code.";
 		
 }

@@ -20,7 +20,11 @@ public class ErrorMessages {
   
   public final static String INCOMPATIBLE_OPERANDS = "Operands of incompatible types.";
   
-  public final static String UNUSED_VARIABLE = "Variable is never used.";
+  public final static String UNUSED_VARIABLE = "Variable is not used.";
   
-  public final static String UNUSED_FUNCTION = "Function is never used.";
+  public final static String UNUSED_FUNCTION = "Function is not used.";
+  
+  public final static String UNREACHABLE_CODE = "Code after return statement is unreachable.";
+  
+  public final static String WRONG_RETURN_STATEMENT_POSITION = "Return statement is only allowed at the end of the code.";
 }

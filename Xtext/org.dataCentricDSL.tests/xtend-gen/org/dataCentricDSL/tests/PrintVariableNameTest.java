@@ -3,14 +3,9 @@ package org.dataCentricDSL.tests;
 import com.google.inject.Inject;
 import org.DataCentricDSLInjectorProvider;
 import org.dataCentricDSL.DataCentricDSL;
-import org.dataCentricDSL.Statement;
-import org.dataCentricDSL.VariableCall;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.junit4.util.ParseHelper;
-import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -23,16 +18,7 @@ public class PrintVariableNameTest {
   
   @Test
   public void testPrintVariableName() {
-    try {
-      final DataCentricDSL model = this.parser.parse(
-        "queryString = \"SELECT * FROM parse\";\r\n\t\t\t print queryString;\r\n\t\t\t");
-      EList<Statement> _elements = model.getElements();
-      Statement _get = _elements.get(1);
-      final VariableCall variableCall = ((VariableCall) _get);
-      String _variableCall = variableCall.getVariableCall();
-      Assert.assertEquals("queryString", _variableCall);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method variableCall is undefined for the type PrintVariableNameTest");
   }
 }
