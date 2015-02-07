@@ -216,6 +216,18 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 						ErrorMessages.UNUSED_VARIABLE,
 						vd.name
 					);
+				} else {
+					ValidationUtils.variableIsUsed = false;
+					positionInContainer = vd.eContainer.eContents.indexOf(vd) + 1;
+					listFromPosition = vd.eContainer.eContents.subList(0, positionInContainer);
+					ValidationUtils.checkIfVariableIsUsed(listFromPosition, vd.name);
+					if(ValidationUtils.variableIsUsed) {
+						warning(ErrorMessages.UNUSED_VARIABLE,
+							DataCentricDSLPackage.Literals.VARIABLE_DEFINITION__NAME,
+							ErrorMessages.UNUSED_VARIABLE,
+							vd.name
+						);
+					} 
 				}
 			} else {
 				warning(ErrorMessages.UNUSED_VARIABLE,

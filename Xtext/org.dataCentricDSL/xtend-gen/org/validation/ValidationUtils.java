@@ -245,8 +245,13 @@ public class ValidationUtils {
   public static EObject getContainerBeforeDataCentricDSLContainer(final EObject element) {
     EObject container = element.eContainer();
     while ((!(container.eContainer() instanceof DataCentricDSL))) {
-      EObject _eContainer = container.eContainer();
-      container = _eContainer;
+      {
+        EObject _eContainer = container.eContainer();
+        container = _eContainer;
+        EList<EObject> _eContents = container.eContents();
+        String _name = ((VariableDefinition) element).getName();
+        ValidationUtils.checkIfVariableIsUsed(_eContents, _name);
+      }
     }
     return container;
   }

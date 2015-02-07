@@ -157,6 +157,7 @@ public class ValidationUtils {
 		var container = element.eContainer;
 		while(!(container.eContainer instanceof DataCentricDSL)) {
 			container = container.eContainer;
+			checkIfVariableIsUsed(container.eContents, (element as VariableDefinition).name)
 		}
 		
 		return container;
