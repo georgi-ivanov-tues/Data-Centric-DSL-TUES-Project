@@ -70,6 +70,16 @@ class DidiValidator extends AbstractDidiValidator {
 				);
 				return;
 			}
+			
+			ValidationUtils.checkIfFunctionIsUsed(fd.eContainer.eContents, fd.name);
+	 		if(!ValidationUtils.functionIsUsed) {
+	 			warning(ErrorMessages.UNUSED_FUNCTION,
+	 				DidiPackage.Literals.FUNCTION_DEFINITION__NAME,
+	 				ErrorMessages.UNUSED_FUNCTION,
+	 				fd.name
+	 			)
+	 		}
+	 		ValidationUtils.functionIsUsed = false;
 		}
 	}
 	
@@ -99,7 +109,7 @@ class DidiValidator extends AbstractDidiValidator {
 	}
 	
 	@Check
-	def void checkIfCalledFunctionExistsAndMatchesArguments(FunctionCall fc) {
+	def void checkIfCalledFunctionExists(FunctionCall fc) {
 		var container = ValidationUtils.getDidiModel(fc);
 		
 		val elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
@@ -241,19 +251,6 @@ class DidiValidator extends AbstractDidiValidator {
 			}
 		}
 		ValidationUtils.variableIsUsed = false;
- 	}
- 	
- 	@Check
- 	def void checkIfFunctionIsUsed(FunctionDefinition fd) {
- 		ValidationUtils.checkIfFunctionIsUsed(fd.eContainer.eContents, fd.name);
- 		if(!ValidationUtils.functionIsUsed) {
- 			warning(ErrorMessages.UNUSED_FUNCTION,
- 				DidiPackage.Literals.FUNCTION_DEFINITION__NAME,
- 				ErrorMessages.UNUSED_FUNCTION,
- 				fd.name
- 			)
- 		}
- 		ValidationUtils.functionIsUsed = false;
  	}
  	
  	@Check

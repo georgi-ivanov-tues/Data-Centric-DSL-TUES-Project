@@ -92,6 +92,17 @@ public class DidiValidator extends AbstractDidiValidator {
           DidiPackage.Literals.FUNCTION_DEFINITION__NAME);
         return;
       }
+      EObject _eContainer_1 = fd.eContainer();
+      EList<EObject> _eContents = _eContainer_1.eContents();
+      String _name = fd.getName();
+      ValidationUtils.checkIfFunctionIsUsed(_eContents, _name);
+      if ((!ValidationUtils.functionIsUsed)) {
+        String _name_1 = fd.getName();
+        this.warning(ErrorMessages.UNUSED_FUNCTION, 
+          DidiPackage.Literals.FUNCTION_DEFINITION__NAME, 
+          ErrorMessages.UNUSED_FUNCTION, _name_1);
+      }
+      ValidationUtils.functionIsUsed = false;
     }
   }
   
@@ -122,7 +133,7 @@ public class DidiValidator extends AbstractDidiValidator {
   }
   
   @Check
-  public void checkIfCalledFunctionExistsAndMatchesArguments(final FunctionCall fc) {
+  public void checkIfCalledFunctionExists(final FunctionCall fc) {
     EObject container = ValidationUtils.getDidiModel(fc);
     EList<EObject> _eContents = container.eContents();
     Object[] _array = _eContents.toArray();
@@ -341,21 +352,6 @@ public class DidiValidator extends AbstractDidiValidator {
       }
     }
     ValidationUtils.variableIsUsed = false;
-  }
-  
-  @Check
-  public void checkIfFunctionIsUsed(final FunctionDefinition fd) {
-    EObject _eContainer = fd.eContainer();
-    EList<EObject> _eContents = _eContainer.eContents();
-    String _name = fd.getName();
-    ValidationUtils.checkIfFunctionIsUsed(_eContents, _name);
-    if ((!ValidationUtils.functionIsUsed)) {
-      String _name_1 = fd.getName();
-      this.warning(ErrorMessages.UNUSED_FUNCTION, 
-        DidiPackage.Literals.FUNCTION_DEFINITION__NAME, 
-        ErrorMessages.UNUSED_FUNCTION, _name_1);
-    }
-    ValidationUtils.functionIsUsed = false;
   }
   
   @Check
