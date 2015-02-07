@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/bg.tues.sdk_1.0.0.qualifier.jar" id="bg.tues.sdk" version="1.0.0.qualifier">
+      <category name="DSL"/>
+   </feature>
+   <category-def name="DSL" label="dataCentricDSL"/>
+</site>

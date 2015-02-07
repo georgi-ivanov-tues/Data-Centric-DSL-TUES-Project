@@ -1,4 +1,4 @@
-package org.datacentricdsl.launcher;
+package bg;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -23,7 +23,7 @@ import org.eclipse.ui.console.MessageConsoleStream;
 
 import bg.tues.DCL.DCLInterpreter;
 
-public class DSLLaunchShortcut implements ILaunchShortcut2 {
+public class LaunchShortcut implements ILaunchShortcut2 {
 
 	@Override
 	public void launch(ISelection selection, String mode) {
