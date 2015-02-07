@@ -1,9 +1,9 @@
 <plugin>
 	<extension point="org.eclipse.debug.ui.launchShortcuts">
 		<shortcut
-        	class="org.datacentricdsl.launcher.DSLLaunchShortcut"
+        	class="bg.LaunchShortcut"
         	icon="images/dsl.gif"
-        	id="org.datacentricdsl.launcher.DSLLaunchShortcut"
+        	id="bg.LaunchShortcut"
         	label="Run DSL"
         	modes="run, debug">
     	 <contextualLaunch>

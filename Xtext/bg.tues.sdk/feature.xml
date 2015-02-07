@@ -4,6 +4,10 @@
       label="Didi SDK Feature "
       version="1.0.0.qualifier">
 
+   <includes
+         id="bg.tues.sdk"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="org.eclipse.xtext"/>
       <import plugin="org.eclipse.xtext.util"/>
@@ -63,5 +67,11 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="DataCentricDSLInterpreter"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
 </feature>

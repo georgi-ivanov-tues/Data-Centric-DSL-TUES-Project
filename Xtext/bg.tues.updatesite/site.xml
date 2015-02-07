@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/bg.tues.sdk_1.0.0.201502072040.jar" id="bg.tues.sdk" version="1.0.0.201502072040">
-      <category name="DSL"/>
+   <feature url="features/bg.tues.sdk_1.0.0.qualifier.jar" id="bg.tues.sdk" version="1.0.0.qualifier">
+      <category name="dd"/>
    </feature>
-   <category-def name="DSL" label="dataCentricDSL"/>
+   <category-def name="dd" label="DIDI SDK"/>
 </site>

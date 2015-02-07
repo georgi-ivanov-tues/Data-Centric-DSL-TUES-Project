@@ -12,64 +12,9 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalDidiLexer extends Lexer {
-    public static final int RULE_ID=4;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=14;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int T__93=93;
-    public static final int T__19=19;
-    public static final int T__94=94;
-    public static final int T__91=91;
     public static final int RULE_HEX=5;
-    public static final int T__92=92;
-    public static final int T__16=16;
-    public static final int T__90=90;
-    public static final int T__15=15;
-    public static final int T__18=18;
-    public static final int T__17=17;
-    public static final int RULE_DECIMAL=7;
-    public static final int RULE_NUMBER_LITERAL=10;
-    public static final int T__80=80;
-    public static final int T__81=81;
-    public static final int T__82=82;
-    public static final int T__83=83;
-    public static final int T__85=85;
-    public static final int T__84=84;
-    public static final int T__87=87;
-    public static final int T__86=86;
-    public static final int T__89=89;
-    public static final int T__88=88;
-    public static final int RULE_ML_COMMENT=11;
-    public static final int RULE_STRING=9;
-    public static final int T__71=71;
-    public static final int T__72=72;
-    public static final int T__70=70;
-    public static final int T__76=76;
-    public static final int T__75=75;
-    public static final int T__74=74;
-    public static final int T__73=73;
-    public static final int T__79=79;
-    public static final int T__78=78;
-    public static final int T__77=77;
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__62=62;
-    public static final int T__63=63;
-    public static final int T__61=61;
-    public static final int T__60=60;
+    public static final int T__50=50;
+    public static final int T__59=59;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
@@ -78,32 +23,87 @@ public class InternalDidiLexer extends Lexer {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int T__59=59;
+    public static final int T__60=60;
+    public static final int T__61=61;
+    public static final int RULE_ID=4;
     public static final int RULE_INT=6;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_IDENTIFIER=8;
-    public static final int RULE_SL_COMMENT=12;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__66=66;
+    public static final int RULE_ML_COMMENT=11;
+    public static final int T__67=67;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__91=91;
+    public static final int T__92=92;
+    public static final int T__93=93;
+    public static final int T__94=94;
+    public static final int T__90=90;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int RULE_NUMBER_LITERAL=10;
+    public static final int RULE_DECIMAL=7;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int T__70=70;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int RULE_IDENTIFIER=8;
+    public static final int RULE_STRING=9;
+    public static final int RULE_SL_COMMENT=12;
+    public static final int T__77=77;
+    public static final int T__78=78;
+    public static final int T__79=79;
+    public static final int T__73=73;
+    public static final int EOF=-1;
+    public static final int T__74=74;
+    public static final int T__75=75;
+    public static final int T__76=76;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
     public static final int RULE_WS=13;
+    public static final int RULE_ANY_OTHER=14;
+    public static final int T__88=88;
+    public static final int T__89=89;
+    public static final int T__84=84;
+    public static final int T__85=85;
+    public static final int T__86=86;
+    public static final int T__87=87;
 
     // delegates
     // delegators
@@ -3450,10 +3450,10 @@ public class InternalDidiLexer extends Lexer {
     protected DFA26 dfa26 = new DFA26(this);
     static final String DFA26_eotS =
         "\1\uffff\1\62\1\66\1\71\1\75\1\77\1\102\1\104\1\106\6\uffff\10"+
-        "\117\1\141\1\144\1\146\1\150\1\153\4\117\3\uffff\1\167\3\117\2\176"+
+        "\117\1\141\1\144\1\146\1\150\1\153\4\117\3\uffff\1\167\3\117\2\177"+
         "\1\117\1\57\25\uffff\1\u0085\14\uffff\2\117\2\uffff\6\117\1\u008d"+
         "\10\117\5\uffff\1\u0098\1\uffff\1\u009a\4\uffff\6\117\1\u00a2\5"+
-        "\uffff\1\117\1\u00a4\3\117\2\uffff\1\u00a9\1\uffff\1\176\4\uffff"+
+        "\uffff\1\117\1\u00a4\3\117\1\uffff\1\u00a9\2\uffff\1\177\4\uffff"+
         "\4\117\1\u00ae\2\117\1\uffff\6\117\1\u00b7\2\117\4\uffff\1\u00ba"+
         "\1\u00bb\5\117\1\uffff\1\117\1\uffff\2\117\1\u00c4\1\117\1\uffff"+
         "\3\117\1\u00c9\1\uffff\4\117\1\u00ce\2\117\1\u00d1\1\uffff\2\117"+
@@ -3470,8 +3470,8 @@ public class InternalDidiLexer extends Lexer {
     static final String DFA26_minS =
         "\1\0\1\53\1\55\2\52\2\75\1\46\1\174\6\uffff\10\44\3\75\2\56\4\44"+
         "\3\uffff\1\72\3\44\2\60\2\44\25\uffff\1\75\14\uffff\2\44\2\uffff"+
-        "\17\44\5\uffff\1\75\1\uffff\1\74\4\uffff\7\44\5\uffff\5\44\2\uffff"+
-        "\1\60\1\uffff\1\60\4\uffff\7\44\1\uffff\11\44\4\uffff\7\44\1\uffff"+
+        "\17\44\5\uffff\1\75\1\uffff\1\74\4\uffff\7\44\5\uffff\5\44\1\uffff"+
+        "\1\60\2\uffff\1\60\4\uffff\7\44\1\uffff\11\44\4\uffff\7\44\1\uffff"+
         "\1\44\1\uffff\4\44\1\uffff\4\44\1\uffff\10\44\1\uffff\2\44\2\uffff"+
         "\10\44\1\uffff\4\44\1\uffff\4\44\1\uffff\2\44\1\uffff\10\44\1\uffff"+
         "\1\44\1\uffff\1\44\1\uffff\1\44\2\uffff\5\44\1\uffff\1\44\1\uffff"+
@@ -3482,7 +3482,7 @@ public class InternalDidiLexer extends Lexer {
         "\1\uffff\1\75\1\76\3\75\1\76\1\46\1\174\6\uffff\10\172\1\75\1\76"+
         "\1\75\1\56\1\72\4\172\3\uffff\1\72\3\172\1\170\1\154\2\172\25\uffff"+
         "\1\75\14\uffff\2\172\2\uffff\17\172\5\uffff\1\75\1\uffff\1\74\4"+
-        "\uffff\7\172\5\uffff\5\172\2\uffff\1\154\1\uffff\1\154\4\uffff\7"+
+        "\uffff\7\172\5\uffff\5\172\1\uffff\1\154\2\uffff\1\154\4\uffff\7"+
         "\172\1\uffff\11\172\4\uffff\7\172\1\uffff\1\172\1\uffff\4\172\1"+
         "\uffff\4\172\1\uffff\10\172\1\uffff\2\172\2\uffff\10\172\1\uffff"+
         "\4\172\1\uffff\4\172\1\uffff\2\172\1\uffff\10\172\1\uffff\1\172"+
@@ -3497,7 +3497,7 @@ public class InternalDidiLexer extends Lexer {
         "\1\7\1\114\1\10\1\117\1\11\1\12\1\13\1\14\1\15\1\16\2\uffff\1\122"+
         "\1\126\17\uffff\1\40\1\34\1\37\1\55\1\35\1\uffff\1\60\1\uffff\1"+
         "\61\1\56\1\116\1\113\7\uffff\1\73\1\74\1\75\1\115\1\77\5\uffff\1"+
-        "\123\1\121\1\uffff\1\125\1\uffff\1\127\1\132\1\47\1\36\7\uffff\1"+
+        "\123\1\uffff\1\121\1\125\1\uffff\1\127\1\132\1\47\1\36\7\uffff\1"+
         "\24\11\uffff\1\50\1\41\1\52\1\53\7\uffff\1\72\1\uffff\1\102\4\uffff"+
         "\1\124\4\uffff\1\27\10\uffff\1\107\2\uffff\1\62\1\120\10\uffff\1"+
         "\103\4\uffff\1\23\4\uffff\1\25\2\uffff\1\30\10\uffff\1\101\1\uffff"+
@@ -3567,11 +3567,11 @@ public class InternalDidiLexer extends Lexer {
             "\1\172\31\116",
             "\1\120\13\uffff\12\116\7\uffff\32\116\4\uffff\1\116\1\uffff"+
             "\4\116\1\173\17\116\1\174\5\116",
-            "\12\177\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080\13"+
-            "\uffff\1\175\6\uffff\1\177\2\uffff\1\u0080\1\uffff\3\u0080\5"+
+            "\12\176\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080\13"+
+            "\uffff\1\175\6\uffff\1\176\2\uffff\1\u0080\1\uffff\3\u0080\5"+
             "\uffff\1\u0080\13\uffff\1\175",
             "\12\u0081\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080"+
-            "\22\uffff\1\177\2\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080",
+            "\22\uffff\1\176\2\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080",
             "\1\120\13\uffff\12\116\7\uffff\32\116\4\uffff\1\116\1\uffff"+
             "\32\116",
             "\1\120\34\uffff\32\120\4\uffff\1\120\1\uffff\32\120",
@@ -3687,12 +3687,12 @@ public class InternalDidiLexer extends Lexer {
             "\1\120\13\uffff\12\116\7\uffff\32\116\4\uffff\1\116\1\uffff"+
             "\13\116\1\u00a8\16\116",
             "",
+            "\12\176\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080\22"+
+            "\uffff\1\176\2\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080",
             "",
-            "\12\177\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080\22"+
-            "\uffff\1\177\2\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080",
             "",
             "\12\u0081\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080"+
-            "\22\uffff\1\177\2\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080",
+            "\22\uffff\1\176\2\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080",
             "",
             "",
             "",
