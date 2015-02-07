@@ -123,7 +123,7 @@ public class DidiValidator extends AbstractDidiValidator {
   
   @Check
   public void checkIfCalledFunctionExistsAndMatchesArguments(final FunctionCall fc) {
-    EObject container = ValidationUtils.getDataCentricDSLContainer(fc);
+    EObject container = ValidationUtils.getDidiModel(fc);
     EList<EObject> _eContents = container.eContents();
     Object[] _array = _eContents.toArray();
     final Iterable<FunctionDefinition> elements = Iterables.<FunctionDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), FunctionDefinition.class);
@@ -140,7 +140,7 @@ public class DidiValidator extends AbstractDidiValidator {
   
   @Check
   public void checkIfCalledFunctionArgumentsCountMatches(final FunctionCall fc) {
-    EObject container = ValidationUtils.getDataCentricDSLContainer(fc);
+    EObject container = ValidationUtils.getDidiModel(fc);
     EList<EObject> _eContents = container.eContents();
     Object[] _array = _eContents.toArray();
     Iterable<FunctionDefinition> elements = Iterables.<FunctionDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), FunctionDefinition.class);
@@ -296,14 +296,14 @@ public class DidiValidator extends AbstractDidiValidator {
     if ((!ValidationUtils.variableIsUsed)) {
       boolean _isIsGlobal = vd.isIsGlobal();
       if (_isIsGlobal) {
-        EObject container = ValidationUtils.getContainerBeforeDataCentricDSLContainer(vd);
-        EObject dataCentricDSLElement = container.eContainer();
-        EList<EObject> _eContents_4 = dataCentricDSLElement.eContents();
+        EObject container = ValidationUtils.getContainerBeforeDidiModel(vd);
+        EObject didiModelElement = container.eContainer();
+        EList<EObject> _eContents_4 = didiModelElement.eContents();
         int _indexOf_2 = _eContents_4.indexOf(container);
         int _plus = (_indexOf_2 + 1);
         positionInContainer = _plus;
-        EList<EObject> _eContents_5 = dataCentricDSLElement.eContents();
-        EList<EObject> _eContents_6 = dataCentricDSLElement.eContents();
+        EList<EObject> _eContents_5 = didiModelElement.eContents();
+        EList<EObject> _eContents_6 = didiModelElement.eContents();
         int _length_1 = ((Object[])Conversions.unwrapArray(_eContents_6, Object.class)).length;
         List<EObject> elementsFromPosition = _eContents_5.subList(positionInContainer, _length_1);
         String _name_1 = vd.getName();
@@ -397,8 +397,8 @@ public class DidiValidator extends AbstractDidiValidator {
         this.warning(ErrorMessages.UNREACHABLE_CODE, 
           DidiPackage.Literals.RETURN_STATEMENT__RETURN_VALUE);
       } else {
-        EObject _containerBeforeDataCentricDSLContainer = ValidationUtils.getContainerBeforeDataCentricDSLContainer(rs);
-        container = _containerBeforeDataCentricDSLContainer;
+        EObject _containerBeforeDidiModel = ValidationUtils.getContainerBeforeDidiModel(rs);
+        container = _containerBeforeDidiModel;
         if ((!(container instanceof FunctionDefinition))) {
           this.error(ErrorMessages.WRONG_RETURN_STATEMENT_POSITION, 
             DidiPackage.Literals.RETURN_STATEMENT__RETURN_VALUE);

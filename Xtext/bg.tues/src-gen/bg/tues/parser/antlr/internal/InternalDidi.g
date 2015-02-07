@@ -1309,9 +1309,13 @@ ruleReturnStatement returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='return' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getReturnStatementAccess().getReturnKeyword_0());
+(
+    { 
+        newCompositeNode(grammarAccess.getReturnStatementAccess().getReturnParserRuleCall_0()); 
+    }
+ruleReturn
+    { 
+        afterParserOrEnumRuleCall();
     }
 (
 (
@@ -2968,6 +2972,33 @@ ruleFor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getForAccess().getForKeyword()); 
+    }
+
+    ;
+
+
+
+
+
+// Entry rule entryRuleReturn
+entryRuleReturn returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getReturnRule()); } 
+	 iv_ruleReturn=ruleReturn 
+	 { $current=$iv_ruleReturn.current.getText(); }  
+	 EOF 
+;
+
+// Rule Return
+ruleReturn returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+	kw='return' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReturnAccess().getReturnKeyword()); 
     }
 
     ;

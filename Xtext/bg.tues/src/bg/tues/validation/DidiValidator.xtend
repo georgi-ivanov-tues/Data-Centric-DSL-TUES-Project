@@ -100,7 +100,7 @@ class DidiValidator extends AbstractDidiValidator {
 	
 	@Check
 	def void checkIfCalledFunctionExistsAndMatchesArguments(FunctionCall fc) {
-		var container = ValidationUtils.getDataCentricDSLContainer(fc);
+		var container = ValidationUtils.getDidiModel(fc);
 		
 		val elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
 		if(ValidationUtils.functionIsDeclared(elements, fc.calledFunctionName)) {
@@ -116,7 +116,7 @@ class DidiValidator extends AbstractDidiValidator {
 	
 	@Check
 	def void checkIfCalledFunctionArgumentsCountMatches(FunctionCall fc) {
-		var container = ValidationUtils.getDataCentricDSLContainer(fc);
+		var container = ValidationUtils.getDidiModel(fc);
 		
 		var elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
 		if(ValidationUtils.functionIsDeclared(elements, fc.calledFunctionName)) {
@@ -206,11 +206,11 @@ class DidiValidator extends AbstractDidiValidator {
 		ValidationUtils.checkIfVariableIsUsed(listFromPosition, vd.name);
 		if(!ValidationUtils.variableIsUsed) {
 			if(vd.isGlobal) {
-				var container = ValidationUtils.getContainerBeforeDataCentricDSLContainer(vd);
-				var dataCentricDSLElement = container.eContainer;
-				positionInContainer = dataCentricDSLElement.eContents.indexOf(container) + 1;
-				var elementsFromPosition = dataCentricDSLElement.eContents.subList(positionInContainer, 
-					dataCentricDSLElement.eContents.length
+				var container = ValidationUtils.getContainerBeforeDidiModel(vd);
+				var didiModelElement = container.eContainer;
+				positionInContainer = didiModelElement.eContents.indexOf(container) + 1;
+				var elementsFromPosition = didiModelElement.eContents.subList(positionInContainer, 
+					didiModelElement.eContents.length
 				);
 				ValidationUtils.checkIfVariableIsUsed(elementsFromPosition, vd.name);
 				if(!ValidationUtils.variableIsUsed) {
@@ -282,7 +282,7 @@ class DidiValidator extends AbstractDidiValidator {
 	 				DidiPackage.Literals.RETURN_STATEMENT__RETURN_VALUE
 	 			);
  			} else {
- 				container = getContainerBeforeDataCentricDSLContainer(rs);
+ 				container = getContainerBeforeDidiModel(rs);
  				if(!(container instanceof FunctionDefinition)) {
  					error(ErrorMessages.WRONG_RETURN_STATEMENT_POSITION,
  						DidiPackage.Literals.RETURN_STATEMENT__RETURN_VALUE

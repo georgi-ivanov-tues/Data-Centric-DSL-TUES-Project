@@ -1671,6 +1671,36 @@ finally {
 
 
 
+// Entry rule entryRuleReturn
+entryRuleReturn 
+:
+{ before(grammarAccess.getReturnRule()); }
+	 ruleReturn
+{ after(grammarAccess.getReturnRule()); } 
+	 EOF 
+;
+
+// Rule Return
+ruleReturn
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getReturnAccess().getReturnKeyword()); }
+
+	'return' 
+
+{ after(grammarAccess.getReturnAccess().getReturnKeyword()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleXExpression
 entryRuleXExpression 
 :
@@ -7167,11 +7197,9 @@ rule__ReturnStatement__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getReturnStatementAccess().getReturnKeyword_0()); }
-
-	'return' 
-
-{ after(grammarAccess.getReturnStatementAccess().getReturnKeyword_0()); }
+{ before(grammarAccess.getReturnStatementAccess().getReturnParserRuleCall_0()); }
+	ruleReturn
+{ after(grammarAccess.getReturnStatementAccess().getReturnParserRuleCall_0()); }
 )
 
 ;

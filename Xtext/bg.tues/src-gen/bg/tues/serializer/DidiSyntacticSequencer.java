@@ -97,6 +97,8 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getPrintlnToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getQueryRule())
 			return getQueryToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getReturnRule())
+			return getReturnToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getSemicolonRule())
 			return getSemicolonToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getWhileRule())
@@ -366,6 +368,17 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "query";
+	}
+	
+	/**
+	 * Return:
+	 * 	'return'
+	 * ;
+	 */
+	protected String getReturnToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "return";
 	}
 	
 	/**

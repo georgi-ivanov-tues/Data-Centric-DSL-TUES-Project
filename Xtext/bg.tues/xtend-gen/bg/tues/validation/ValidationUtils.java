@@ -233,7 +233,7 @@ public class ValidationUtils {
     return true;
   }
   
-  public static EObject getDataCentricDSLContainer(final EObject element) {
+  public static EObject getDidiModel(final EObject element) {
     EObject container = element.eContainer();
     while ((!(container instanceof DidiModel))) {
       EObject _eContainer = container.eContainer();
@@ -242,7 +242,7 @@ public class ValidationUtils {
     return container;
   }
   
-  public static EObject getContainerBeforeDataCentricDSLContainer(final EObject element) {
+  public static EObject getContainerBeforeDidiModel(final EObject element) {
     EObject container = element.eContainer();
     while ((!(container.eContainer() instanceof DidiModel))) {
       {

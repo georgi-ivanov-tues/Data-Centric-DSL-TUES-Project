@@ -104,7 +104,7 @@ FunctionDefinition:
 ;
 
 ReturnStatement:
-	'return' returnValue=ConditionStatement
+	Return returnValue=ConditionStatement
 ;
 
 IfStatement:
@@ -314,6 +314,10 @@ While:
 
 For:
 	'for'
+;
+
+Return:
+	'return'
 ;
 
 terminal NUMBER_LITERAL:

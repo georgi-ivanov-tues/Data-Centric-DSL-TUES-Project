@@ -144,7 +144,7 @@ public class ValidationUtils {
 		return true;
 	}
 	
-	def static EObject getDataCentricDSLContainer(EObject element) {
+	def static EObject getDidiModel(EObject element) {
 		var container = element.eContainer;
 		while(!(container instanceof DidiModel)) {
 			container = container.eContainer;
@@ -153,7 +153,7 @@ public class ValidationUtils {
 		return container;
 	}
 	
-	def static EObject getContainerBeforeDataCentricDSLContainer(EObject element) {
+	def static EObject getContainerBeforeDidiModel(EObject element) {
 		var container = element.eContainer;
 		while(!(container.eContainer instanceof DidiModel)) {
 			container = container.eContainer;

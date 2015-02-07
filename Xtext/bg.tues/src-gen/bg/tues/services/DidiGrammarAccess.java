@@ -686,19 +686,19 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	public class ReturnStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReturnStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cReturnKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cReturnParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cReturnValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cReturnValueConditionStatementParserRuleCall_1_0 = (RuleCall)cReturnValueAssignment_1.eContents().get(0);
 		
 		//ReturnStatement:
-		//	"return" returnValue=ConditionStatement;
+		//	Return returnValue=ConditionStatement;
 		public ParserRule getRule() { return rule; }
 
-		//"return" returnValue=ConditionStatement
+		//Return returnValue=ConditionStatement
 		public Group getGroup() { return cGroup; }
 
-		//"return"
-		public Keyword getReturnKeyword_0() { return cReturnKeyword_0; }
+		//Return
+		public RuleCall getReturnParserRuleCall_0() { return cReturnParserRuleCall_0; }
 
 		//returnValue=ConditionStatement
 		public Assignment getReturnValueAssignment_1() { return cReturnValueAssignment_1; }
@@ -1548,6 +1548,18 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		//"for"
 		public Keyword getForKeyword() { return cForKeyword; }
 	}
+
+	public class ReturnElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Return");
+		private final Keyword cReturnKeyword = (Keyword)rule.eContents().get(1);
+		
+		//Return:
+		//	"return";
+		public ParserRule getRule() { return rule; }
+
+		//"return"
+		public Keyword getReturnKeyword() { return cReturnKeyword; }
+	}
 	
 	
 	private final DidiModelElements pDidiModel;
@@ -1606,6 +1618,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	private final ElseElements pElse;
 	private final WhileElements pWhile;
 	private final ForElements pFor;
+	private final ReturnElements pReturn;
 	private final TerminalRule tNUMBER_LITERAL;
 	private final TerminalRule tIDENTIFIER;
 	
@@ -1674,6 +1687,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		this.pElse = new ElseElements();
 		this.pWhile = new WhileElements();
 		this.pFor = new ForElements();
+		this.pReturn = new ReturnElements();
 		this.tNUMBER_LITERAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER_LITERAL");
 		this.tIDENTIFIER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "IDENTIFIER");
 	}
@@ -1900,7 +1914,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ReturnStatement:
-	//	"return" returnValue=ConditionStatement;
+	//	Return returnValue=ConditionStatement;
 	public ReturnStatementElements getReturnStatementAccess() {
 		return pReturnStatement;
 	}
@@ -2304,6 +2318,16 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getForRule() {
 		return getForAccess().getRule();
+	}
+
+	//Return:
+	//	"return";
+	public ReturnElements getReturnAccess() {
+		return pReturn;
+	}
+	
+	public ParserRule getReturnRule() {
+		return getReturnAccess().getRule();
 	}
 
 	//terminal NUMBER_LITERAL:
