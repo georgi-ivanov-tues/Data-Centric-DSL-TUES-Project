@@ -46,7 +46,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	}
 	
 	@Check
-	def void checkFunctionDeclarationPosition(FunctionDefinition fd) {
+	def void validateFunctionDefinition(FunctionDefinition fd) {
 		if(!(fd.eContainer instanceof DataCentricDSL)) {
 			error(ErrorMessages.FUNCTION_WITHIN_BLOCK_STATEMENT,
 				DataCentricDSLPackage.Literals::FUNCTION_DEFINITION__NAME
@@ -141,7 +141,7 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 	@Check
 	def void checkIfAssignedVariableExists(VariableCall vc) {
 		var container = vc.eContainer;
-		var VariableDefinition[] variables = null;
+		var EObject[] elements = null; 
 		var EObject containerElement = vc.eContainer;
 		var int containerElementIndex;
 		while(!(container instanceof DataCentricDSL)) {
@@ -165,18 +165,18 @@ class DataCentricDSLValidator extends AbstractDataCentricDSLValidator {
 					}
 				}
 				containerElementIndex = container.eContents.indexOf(containerElement);
-				variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
-				if(ValidationUtils.variableIsDeclared(variables, vc.calledVariableName)) {
+				elements = container.eContents.subList(0, containerElementIndex);
+				if(ValidationUtils.variableIsDeclared(elements, vc.calledVariableName)) {
 					return;
 				}
-				variables = null;
+				elements = null;
 			}
 			if(!(containerElement.eContainer instanceof DataCentricDSL)) {
 				containerElement = containerElement.eContainer;
 			}
 		}
 		containerElementIndex = container.eContents.indexOf(containerElement);
-		variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
+		var variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
 		if(ValidationUtils.variableIsDeclared(variables, vc.calledVariableName)) {
 			return;
 		}

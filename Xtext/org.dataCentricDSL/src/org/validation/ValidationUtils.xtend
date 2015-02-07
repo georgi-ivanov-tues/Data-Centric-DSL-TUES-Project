@@ -48,17 +48,22 @@ public class ValidationUtils {
 			}
 		} else if(object instanceof VariableDefinition) {
 			if((object as VariableDefinition).isGlobal && (object as VariableDefinition).name.equals(name)) {
-				globalVariableFound = true;
+ 				globalVariableFound = true;
 				return;
 			}
 		}
 	}
 
-	def static boolean variableIsDeclared(VariableDefinition[] variables, String name) {
-		if(variables != null) {
-			for(i : 0..< variables.length) {
-				if(variables.get(i).name.toString.equals(name)) {
-					return true;
+	def static boolean variableIsDeclared(EObject[] elements, String name) {
+		if(elements != null) {
+			for(i : 0..< elements.length) {
+				if(elements.get(i) instanceof VariableDefinition) {
+					var variableDefinition = (elements.get(i) as VariableDefinition);
+					if(variableDefinition.name.equals(name)) {
+						return true;
+					}
+				} else {
+					checkIfCalledVariableIsGlobal(elements.get(i), name, -1);
 				}
 			}
 		}

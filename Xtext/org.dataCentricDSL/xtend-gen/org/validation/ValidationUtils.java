@@ -54,7 +54,7 @@ public class ValidationUtils {
           }
         };
         Iterable<VariableDefinition> _filter_1 = IterableExtensions.<VariableDefinition>filter(_filter, _function);
-        boolean _variableIsDeclared = ValidationUtils.variableIsDeclared(((VariableDefinition[])Conversions.unwrapArray(_filter_1, VariableDefinition.class)), name);
+        boolean _variableIsDeclared = ValidationUtils.variableIsDeclared(((EObject[])Conversions.unwrapArray(_filter_1, EObject.class)), name);
         variableFound = _variableIsDeclared;
       } else {
         EList<EObject> _eContents_1 = object.eContents();
@@ -69,7 +69,7 @@ public class ValidationUtils {
           }
         };
         Iterable<VariableDefinition> _filter_3 = IterableExtensions.<VariableDefinition>filter(_filter_2, _function_1);
-        boolean _variableIsDeclared_1 = ValidationUtils.variableIsDeclared(((VariableDefinition[])Conversions.unwrapArray(_filter_3, VariableDefinition.class)), name);
+        boolean _variableIsDeclared_1 = ValidationUtils.variableIsDeclared(((EObject[])Conversions.unwrapArray(_filter_3, EObject.class)), name);
         variableFound = _variableIsDeclared_1;
       }
       if (variableFound) {
@@ -102,18 +102,24 @@ public class ValidationUtils {
     }
   }
   
-  public static boolean variableIsDeclared(final VariableDefinition[] variables, final String name) {
-    boolean _notEquals = (!Objects.equal(variables, null));
+  public static boolean variableIsDeclared(final EObject[] elements, final String name) {
+    boolean _notEquals = (!Objects.equal(elements, null));
     if (_notEquals) {
-      int _length = variables.length;
+      int _length = elements.length;
       ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
       for (final Integer i : _doubleDotLessThan) {
-        VariableDefinition _get = variables[(i).intValue()];
-        String _name = _get.getName();
-        String _string = _name.toString();
-        boolean _equals = _string.equals(name);
-        if (_equals) {
-          return true;
+        Object _get = elements[(i).intValue()];
+        if ((_get instanceof VariableDefinition)) {
+          EObject _get_1 = elements[(i).intValue()];
+          VariableDefinition variableDefinition = ((VariableDefinition) _get_1);
+          String _name = variableDefinition.getName();
+          boolean _equals = _name.equals(name);
+          if (_equals) {
+            return true;
+          }
+        } else {
+          EObject _get_2 = elements[(i).intValue()];
+          ValidationUtils.checkIfCalledVariableIsGlobal(_get_2, name, (-1));
         }
       }
     }
