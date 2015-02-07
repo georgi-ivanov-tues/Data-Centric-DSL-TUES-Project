@@ -1,0 +1,326 @@
+grammar bg.tues.Didi with org.eclipse.xtext.xbase.Xbase
+
+generate didi "http://www.tues.bg/Didi"
+
+DidiModel:
+	(elements += Statement)*
+;
+
+Statement:
+	(SimpleStatement | 
+	 CompoundStatement)
+;
+
+SimpleStatement:
+	(VariableDefinition |
+	 QueryFunction | 
+	 PrintFunction | 
+//	 MultiAssign | 
+	 PostfixOperation | 
+	 FunctionCall |
+	 ReturnStatement) Semicolon
+;
+
+VariableDefinition:
+	(isGlobal?=Global)? name=IDENTIFIER OpAssignment variableValue=VariableParam
+;
+
+VariableParam:
+	(Expression | 
+	 QueryFunction |
+	 BooleanValue)
+;
+
+QueryFunction:
+	Query queryParam=ConditionStatement
+;
+
+PrintFunction:
+	(Print | Println) printParam=PrintParam
+;
+
+PrintParam:
+	(QueryFunction |
+	 ConditionStatement)
+;
+
+FunctionCall:
+	calledFunctionName=IDENTIFIER OpeningBracket  
+		(arguments+=(Expression) 
+		(Comma arguments+=(Expression))*)?
+	 ClosingBracket
+;
+
+VariableCall:
+	{VariableCall} calledVariableName=IDENTIFIER
+;
+
+Expression:
+	Addition
+;
+
+Addition returns Expression:
+	(Substraction | StringLiteral) ({Addition.left=current} OpAddition right=(Substraction | StringLiteral))*
+;
+
+Substraction returns Expression:
+	Multiplication ({Substraction.left=current} OpSubstraction right=Multiplication)*
+;
+
+Multiplication returns Expression:
+	Division ({Multiplication.left=current} OpMultiplication right=Division)*
+;
+ 
+Division returns Expression:
+	Mod ({Division.left=current} OpDivision right=Mod)*
+;
+
+Mod returns Expression:
+	Primary ({Mod.left=current} OpMod right=Primary)*
+;
+
+Primary returns Expression:
+	(NumberLiteral | 
+	 VariableCall | 
+	 FunctionCall |
+	 OpeningBracket Addition ClosingBracket)
+;
+
+CompoundStatement:
+	FunctionDefinition |
+	IfStatement |
+//	not supported in Antlr grammar, for now
+//	SwitchStatement |
+	WhileStatement |
+	ForStatement
+;
+
+FunctionDefinition:
+	Func name=IDENTIFIER OpeningBracket
+		(arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)?
+		ClosingBracket OpeningCurlyBracket
+		(statements+=Statement)*
+	ClosingCurlyBracket
+;
+
+ReturnStatement:
+	'return' returnValue=ConditionStatement
+;
+
+IfStatement:
+	{IfStatement}
+	If OpeningBracket condition += ConditionStatement ClosingBracket OpeningCurlyBracket
+		(statements+=Statement)*
+	ClosingCurlyBracket
+	( ElseIf OpeningBracket condition+=ConditionStatement ClosingBracket OpeningCurlyBracket
+		(statements+=Statement)*
+	ClosingCurlyBracket
+	)*
+	( Else OpeningCurlyBracket 
+		(statements+=Statement)*
+	ClosingCurlyBracket
+	)?
+;
+
+/*
+SwitchStatement:
+	{SwitchStatement}
+	'switch' OpeningBracket name=VariableCall ClosingBracket OpeningCurlyBracket
+		('case' cases+=STRING ':'
+			(statements+=Statement)*
+		)*
+		('default' ':'
+			(statements+=Statement)*
+		)?
+	ClosingCurlyBracket
+;*/
+
+WhileStatement:
+	{WhileStatement}
+	While OpeningBracket whileCondition=ConditionStatement ClosingBracket OpeningCurlyBracket 
+		(statements+=Statement)* 
+	ClosingCurlyBracket
+;
+
+ForStatement:
+	{ForStatement}
+	For OpeningBracket forVar=VariableDefinition Semicolon 
+		forCondition=ConditionStatement Semicolon
+		operation=(PostfixOperation | 
+			//ForMultiAssign | 
+			VariableDefinition) 
+		ClosingBracket OpeningCurlyBracket 
+			(statements+=Statement)* 
+	ClosingCurlyBracket
+;
+
+ConditionStatement:
+	conditions+=Condition ((OpAnd | OpOr) conditions+=Condition)* 
+;
+
+Condition:
+	conditionElements+=ConditionElement (op=OpCompare conditionElements+=ConditionElement)?
+;
+
+ConditionElement:
+	(Expression |
+	 BooleanValue)
+;
+
+//ForMultiAssign:
+//	left=VariableCall op=MultiAssignOperator right=INT
+//;
+//
+//MultiAssign:
+//	left=VariableCall op=MultiAssignOperator right=MultiAssignRightOperand 
+//;
+//
+//MultiAssignRightOperand:
+//	(Expression | 
+//	 QueryFunction)
+//;
+
+PostfixOperation:
+	{PostfixOperation} call=VariableCall op=PostfixOperationOperator
+;
+
+StringLiteral:
+	value=STRING
+;
+
+NumberLiteral:
+	value=NUMBER_LITERAL
+;
+
+BooleanValue:
+	value=('true' | 
+	'false')
+;
+
+// still not supported in Antlr grammar
+//MultiAssignOperator:
+//	('+=' | 
+//	'-=' | 
+//	'*=' | 
+//	'/=' | 
+//	'%=')
+//;
+
+PostfixOperationOperator:
+	('--' |
+	'++')
+;
+
+OpAddition:
+	'+'
+;
+
+OpSubstraction:
+	'-'
+;
+
+OpMultiplication:
+	'*'
+;
+
+OpDivision:
+	'/'
+;
+
+OpMod:
+	'%'
+;
+
+OpAssignment:
+	'='
+;
+
+OpAnd:
+	'&&'
+;
+
+OpOr:
+	'||'
+;
+
+OpCompare:
+	('>' |
+	'<' |
+	'==' |
+	'<=' |
+	'>=' |
+	'!=')
+;
+
+Semicolon:
+	';'
+;
+
+OpeningBracket:
+	'('
+;
+
+ClosingBracket:
+	')'
+;
+
+Comma:
+	','
+;
+
+OpeningCurlyBracket:
+	'{'
+;
+
+ClosingCurlyBracket:
+	'}'
+;
+
+Global:
+	'global'
+;
+
+Query:
+	'query'
+;
+
+Print:
+	'print'
+;
+
+Println:
+	'println'
+;
+
+Func:
+	'func'
+;
+
+If:
+	'if'
+;
+
+ElseIf:
+	Else If
+;
+
+Else:
+	'else'
+;
+
+While:
+	'while'
+;
+
+For:
+	'for'
+;
+
+terminal NUMBER_LITERAL:
+	'0' | (('1'..'9') ('0'..'9')*) ('.' ('0'..'9')*)?
+;
+
+terminal IDENTIFIER:
+	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*
+;
+

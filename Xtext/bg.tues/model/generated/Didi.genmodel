@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/bg.tues/src-gen" editDirectory="/bg.tues.edit/src"
+    editorDirectory="/bg.tues.editor/src" modelPluginID="bg.tues" forceOverwrite="true"
+    modelName="Didi" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="bg.tues.edit" editorPluginID="bg.tues.editor"
+    runtimeVersion="2.10">
+  <genPackages prefix="Didi" basePackage="bg.tues" disposableProviderFactory="true"
+      fileExtensions="dd" ecorePackage="Didi.ecore#/">
+    <genClasses ecoreClass="Didi.ecore#//DidiModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//DidiModel/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//Statement"/>
+    <genClasses ecoreClass="Didi.ecore#//SimpleStatement"/>
+    <genClasses ecoreClass="Didi.ecore#//VariableDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//VariableDefinition/isGlobal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//VariableDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//VariableDefinition/variableValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//VariableParam"/>
+    <genClasses ecoreClass="Didi.ecore#//QueryFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//QueryFunction/queryParam"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//PrintFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//PrintFunction/printParam"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//PrintParam"/>
+    <genClasses ecoreClass="Didi.ecore#//FunctionCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//FunctionCall/calledFunctionName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//FunctionCall/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//VariableCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//VariableCall/calledVariableName"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//Expression"/>
+    <genClasses ecoreClass="Didi.ecore#//CompoundStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//CompoundStatement/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//FunctionDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//FunctionDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//FunctionDefinition/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//ReturnStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ReturnStatement/returnValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//IfStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//IfStatement/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//WhileStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//WhileStatement/whileCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//ForStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ForStatement/forVar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ForStatement/forCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ForStatement/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//ConditionStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ConditionStatement/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//Condition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Condition/conditionElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//Condition/op"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//ConditionElement"/>
+    <genClasses ecoreClass="Didi.ecore#//PostfixOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//PostfixOperation/call"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//PostfixOperation/op"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//StringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//StringLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//NumberLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//NumberLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//BooleanValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//Addition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Addition/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Addition/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//Substraction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Substraction/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Substraction/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//Multiplication">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Multiplication/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Multiplication/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//Division">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Division/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Division/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//Mod">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Mod/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Mod/right"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
