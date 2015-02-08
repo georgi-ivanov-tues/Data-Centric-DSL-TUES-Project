@@ -14,10 +14,12 @@ import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
+
 import bg.tues.DCL.DataCentricDSLLexer;
 import bg.tues.DCL.DataCentricDSLParser;
 import bg.tues.DCL.DataCentricDSLParser.program_return;
 import bg.tues.DCL.ProgramWalker;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,7 +41,7 @@ public class PrintlnQueryTest {
 	}
 	
 	@Test
-	public void QueryExecutionTest() throws RecognitionException {
+	public void QueryExecutionTest() throws RecognitionException, SQLException {
 		CharStream cs = new ANTLRStringStream("println query \"SELECT first_name FROM people WHERE first_name = 'Georgi'\";");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -47,12 +49,10 @@ public class PrintlnQueryTest {
 		program_return program = parser.program();
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.getTree());
 		Map<String, Object> myMap = new HashMap<String, Object>();
-		try {
-			myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
+		myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
+		myMap.put("outputStream", System.out);
+
+		ProgramWalker walker = new ProgramWalker(nodeStream, myMap, parser.functions);
 		walker.program();
 		
 		String str = outContent.toString();

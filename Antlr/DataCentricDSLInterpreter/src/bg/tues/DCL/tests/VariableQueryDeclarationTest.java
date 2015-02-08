@@ -13,10 +13,12 @@ import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
+
 import bg.tues.DCL.DataCentricDSLLexer;
 import bg.tues.DCL.DataCentricDSLParser;
 import bg.tues.DCL.DataCentricDSLParser.program_return;
 import bg.tues.DCL.ProgramWalker;
+
 import org.junit.Test;
 
 import bg.tues.DCL.derbyDB.CreateDB;
@@ -24,7 +26,7 @@ import bg.tues.DCL.derbyDB.CreateDB;
 public class VariableQueryDeclarationTest {
 	
 	@Test
-	public void VariableQueryDeclarationTest() throws RecognitionException{
+	public void VariableQueryDeclarationTest() throws RecognitionException, SQLException{
 		CharStream cs = new ANTLRStringStream("result = query \"SELECT first_name FROM people\";");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -32,14 +34,11 @@ public class VariableQueryDeclarationTest {
 		program_return program = parser.program();
 		CommonTreeNodeStream nodeStream = new CommonTreeNodeStream(program.getTree());
 		Map<String, Object> myMap = new HashMap<String, Object>();
-		try {
-			myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		ProgramWalker walker = new ProgramWalker(nodeStream, myMap);
-		
-		walker.program();
+		myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
+		myMap.put("outputStream", System.out);
+
+		ProgramWalker walker = new ProgramWalker(nodeStream, myMap, parser.functions);
+		walker.program(); 
 		ResultSet result = (ResultSet) walker.context.get("result");
 		try {
 			result.next();

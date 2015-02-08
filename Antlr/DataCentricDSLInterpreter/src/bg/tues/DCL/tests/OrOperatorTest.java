@@ -3,7 +3,6 @@ package bg.tues.DCL.tests;
 import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -25,7 +24,8 @@ import bg.tues.DCL.ProgramWalker;
 import bg.tues.DCL.DataCentricDSLParser.program_return;
 import bg.tues.DCL.derbyDB.CreateDB;
 
-public class PrintTest {
+public class OrOperatorTest {
+
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 	@Before
@@ -39,8 +39,8 @@ public class PrintTest {
 	}
 	
 	@Test
-	public void PrintExecutionTest() throws RecognitionException, IOException, SQLException {
-		CharStream cs = new ANTLRStringStream("print \"Hello \"; print \"World\";");
+	public void VariableCallDeclarationTest() throws RecognitionException, SQLException{
+		CharStream cs = new ANTLRStringStream("a = false;if(a == true || 2 == 2){print \"YES!\";}");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DataCentricDSLParser parser = new DataCentricDSLParser(tokens);
@@ -51,8 +51,7 @@ public class PrintTest {
 		myMap.put("outputStream", System.out);
 
 		ProgramWalker walker = new ProgramWalker(nodeStream, myMap, parser.functions);
-		walker.program();
-		
-		assertEquals("Hello World", outContent.toString().trim());
+		walker.program(); 
+		assertEquals("YES!", outContent.toString().trim());
 	}
-}	
+}
