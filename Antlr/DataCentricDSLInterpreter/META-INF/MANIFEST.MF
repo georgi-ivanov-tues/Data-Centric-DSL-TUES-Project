@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: DataCentricDSLInterpreter
-Bundle-SymbolicName: DataCentricDSLInterpreter
+Bundle-SymbolicName: bg.tues.didi.interpreter
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: DataCentricDSLInterpreter.jar,
  antlr-3.5.2-complete.jar,
@@ -18,12 +18,12 @@ Export-Package: antlr,
  antlr.debug,
  antlr.debug.misc,
  antlr.preprocessor,
- bg.tues.DCL,
- bg.tues.DCL.derbyDB,
- bg.tues.DCL.tests,
- bg.tues.DCL.tree,
- bg.tues.DCL.tree.expressions.operations,
  bg.tues.DCL.tree.funcions,
+ bg.tues.didi,
+ bg.tues.didi.derbydb,
+ bg.tues.didi.tests,
+ bg.tues.didi.tree,
+ bg.tues.didi.tree.expressions.operations,
  org.antlr,
  org.antlr.analysis,
  org.antlr.codegen,
