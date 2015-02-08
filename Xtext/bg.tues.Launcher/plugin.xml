@@ -4,11 +4,11 @@
         	class="bg.LaunchShortcut"
         	icon="images/dsl.gif"
         	id="bg.LaunchShortcut"
-        	label="Run DSL"
+        	label="Didi Script"
         	modes="run, debug">
     	 <contextualLaunch>
-         	<contextLabel mode="run" label="Run DCL" />
-         	<contextLabel mode="debug" label="Debug DCL" />
+         	<contextLabel mode="run" label="Run Didi Script" />
+         	<contextLabel mode="debug" label="Debug Didi Script" />
          	<enablement >
            	 <with variable="selection">
            		<count value="1"/>
