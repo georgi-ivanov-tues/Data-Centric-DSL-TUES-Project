@@ -13,6 +13,6 @@ package bg.tues.didi;
  * @model
  * @generated
  */
-public interface Expression extends VariableParam, ConditionElement
+public interface Expression extends VariableValue, ConditionElement
 {
 } // Expression

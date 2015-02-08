@@ -17,14 +17,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//VariableDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//VariableDefinition/variableValue"/>
     </genClasses>
-    <genClasses ecoreClass="Didi.ecore#//VariableParam"/>
+    <genClasses ecoreClass="Didi.ecore#//VariableValue"/>
     <genClasses ecoreClass="Didi.ecore#//QueryFunction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//QueryFunction/queryParam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//QueryFunction/queryArgument"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//UpdateFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//UpdateFunction/updateArgument"/>
     </genClasses>
     <genClasses ecoreClass="Didi.ecore#//PrintFunction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//PrintFunction/printParam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//PrintFunction/printArgument"/>
     </genClasses>
-    <genClasses ecoreClass="Didi.ecore#//PrintParam"/>
+    <genClasses ecoreClass="Didi.ecore#//PrintArgument"/>
     <genClasses ecoreClass="Didi.ecore#//FunctionCall">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//FunctionCall/calledFunctionName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//FunctionCall/arguments"/>
@@ -38,7 +41,7 @@
     </genClasses>
     <genClasses ecoreClass="Didi.ecore#//FunctionDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//FunctionDefinition/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//FunctionDefinition/arguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//FunctionDefinition/parameters"/>
     </genClasses>
     <genClasses ecoreClass="Didi.ecore#//ReturnStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ReturnStatement/returnValue"/>

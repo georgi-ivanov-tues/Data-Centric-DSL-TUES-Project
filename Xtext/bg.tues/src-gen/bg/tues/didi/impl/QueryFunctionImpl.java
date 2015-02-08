@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link bg.tues.didi.impl.QueryFunctionImpl#getQueryParam <em>Query Param</em>}</li>
+ *   <li>{@link bg.tues.didi.impl.QueryFunctionImpl#getQueryArgument <em>Query Argument</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,14 +30,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunction
 {
   /**
-   * The cached value of the '{@link #getQueryParam() <em>Query Param</em>}' containment reference.
+   * The cached value of the '{@link #getQueryArgument() <em>Query Argument</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQueryParam()
+   * @see #getQueryArgument()
    * @generated
    * @ordered
    */
-  protected ConditionStatement queryParam;
+  protected ConditionStatement queryArgument;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,9 +65,9 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConditionStatement getQueryParam()
+  public ConditionStatement getQueryArgument()
   {
-    return queryParam;
+    return queryArgument;
   }
 
   /**
@@ -75,13 +75,13 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetQueryParam(ConditionStatement newQueryParam, NotificationChain msgs)
+  public NotificationChain basicSetQueryArgument(ConditionStatement newQueryArgument, NotificationChain msgs)
   {
-    ConditionStatement oldQueryParam = queryParam;
-    queryParam = newQueryParam;
+    ConditionStatement oldQueryArgument = queryArgument;
+    queryArgument = newQueryArgument;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DidiPackage.QUERY_FUNCTION__QUERY_PARAM, oldQueryParam, newQueryParam);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DidiPackage.QUERY_FUNCTION__QUERY_ARGUMENT, oldQueryArgument, newQueryArgument);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setQueryParam(ConditionStatement newQueryParam)
+  public void setQueryArgument(ConditionStatement newQueryArgument)
   {
-    if (newQueryParam != queryParam)
+    if (newQueryArgument != queryArgument)
     {
       NotificationChain msgs = null;
-      if (queryParam != null)
-        msgs = ((InternalEObject)queryParam).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DidiPackage.QUERY_FUNCTION__QUERY_PARAM, null, msgs);
-      if (newQueryParam != null)
-        msgs = ((InternalEObject)newQueryParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DidiPackage.QUERY_FUNCTION__QUERY_PARAM, null, msgs);
-      msgs = basicSetQueryParam(newQueryParam, msgs);
+      if (queryArgument != null)
+        msgs = ((InternalEObject)queryArgument).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DidiPackage.QUERY_FUNCTION__QUERY_ARGUMENT, null, msgs);
+      if (newQueryArgument != null)
+        msgs = ((InternalEObject)newQueryArgument).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DidiPackage.QUERY_FUNCTION__QUERY_ARGUMENT, null, msgs);
+      msgs = basicSetQueryArgument(newQueryArgument, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DidiPackage.QUERY_FUNCTION__QUERY_PARAM, newQueryParam, newQueryParam));
+      eNotify(new ENotificationImpl(this, Notification.SET, DidiPackage.QUERY_FUNCTION__QUERY_ARGUMENT, newQueryArgument, newQueryArgument));
   }
 
   /**
@@ -118,8 +118,8 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
   {
     switch (featureID)
     {
-      case DidiPackage.QUERY_FUNCTION__QUERY_PARAM:
-        return basicSetQueryParam(null, msgs);
+      case DidiPackage.QUERY_FUNCTION__QUERY_ARGUMENT:
+        return basicSetQueryArgument(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
   {
     switch (featureID)
     {
-      case DidiPackage.QUERY_FUNCTION__QUERY_PARAM:
-        return getQueryParam();
+      case DidiPackage.QUERY_FUNCTION__QUERY_ARGUMENT:
+        return getQueryArgument();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
   {
     switch (featureID)
     {
-      case DidiPackage.QUERY_FUNCTION__QUERY_PARAM:
-        setQueryParam((ConditionStatement)newValue);
+      case DidiPackage.QUERY_FUNCTION__QUERY_ARGUMENT:
+        setQueryArgument((ConditionStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
   {
     switch (featureID)
     {
-      case DidiPackage.QUERY_FUNCTION__QUERY_PARAM:
-        setQueryParam((ConditionStatement)null);
+      case DidiPackage.QUERY_FUNCTION__QUERY_ARGUMENT:
+        setQueryArgument((ConditionStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,8 +184,8 @@ public class QueryFunctionImpl extends SimpleStatementImpl implements QueryFunct
   {
     switch (featureID)
     {
-      case DidiPackage.QUERY_FUNCTION__QUERY_PARAM:
-        return queryParam != null;
+      case DidiPackage.QUERY_FUNCTION__QUERY_ARGUMENT:
+        return queryArgument != null;
     }
     return super.eIsSet(featureID);
   }

@@ -95,9 +95,9 @@ public class DidiAdapterFactory extends AdapterFactoryImpl
         return createVariableDefinitionAdapter();
       }
       @Override
-      public Adapter caseVariableParam(VariableParam object)
+      public Adapter caseVariableValue(VariableValue object)
       {
-        return createVariableParamAdapter();
+        return createVariableValueAdapter();
       }
       @Override
       public Adapter caseQueryFunction(QueryFunction object)
@@ -105,14 +105,19 @@ public class DidiAdapterFactory extends AdapterFactoryImpl
         return createQueryFunctionAdapter();
       }
       @Override
+      public Adapter caseUpdateFunction(UpdateFunction object)
+      {
+        return createUpdateFunctionAdapter();
+      }
+      @Override
       public Adapter casePrintFunction(PrintFunction object)
       {
         return createPrintFunctionAdapter();
       }
       @Override
-      public Adapter casePrintParam(PrintParam object)
+      public Adapter casePrintArgument(PrintArgument object)
       {
-        return createPrintParamAdapter();
+        return createPrintArgumentAdapter();
       }
       @Override
       public Adapter caseFunctionCall(FunctionCall object)
@@ -302,16 +307,16 @@ public class DidiAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link bg.tues.didi.VariableParam <em>Variable Param</em>}'.
+   * Creates a new adapter for an object of class '{@link bg.tues.didi.VariableValue <em>Variable Value</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see bg.tues.didi.VariableParam
+   * @see bg.tues.didi.VariableValue
    * @generated
    */
-  public Adapter createVariableParamAdapter()
+  public Adapter createVariableValueAdapter()
   {
     return null;
   }
@@ -332,6 +337,21 @@ public class DidiAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link bg.tues.didi.UpdateFunction <em>Update Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see bg.tues.didi.UpdateFunction
+   * @generated
+   */
+  public Adapter createUpdateFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link bg.tues.didi.PrintFunction <em>Print Function</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -347,16 +367,16 @@ public class DidiAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link bg.tues.didi.PrintParam <em>Print Param</em>}'.
+   * Creates a new adapter for an object of class '{@link bg.tues.didi.PrintArgument <em>Print Argument</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see bg.tues.didi.PrintParam
+   * @see bg.tues.didi.PrintArgument
    * @generated
    */
-  public Adapter createPrintParamAdapter()
+  public Adapter createPrintArgumentAdapter()
   {
     return null;
   }

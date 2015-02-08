@@ -19,7 +19,7 @@ package bg.tues.didi;
  * @model
  * @generated
  */
-public interface BooleanValue extends VariableParam, ConditionElement
+public interface BooleanValue extends VariableValue, ConditionElement
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

@@ -101,6 +101,8 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getReturnToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getSemicolonRule())
 			return getSemicolonToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getUpdateRule())
+			return getUpdateToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getWhileRule())
 			return getWhileToken(semanticObject, ruleCall, node);
 		return "";
@@ -390,6 +392,17 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return ";";
+	}
+	
+	/**
+	 * Update:
+	 * 	'update'
+	 * ;
+	 */
+	protected String getUpdateToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "update";
 	}
 	
 	/**

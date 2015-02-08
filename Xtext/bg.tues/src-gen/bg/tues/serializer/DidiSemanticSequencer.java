@@ -20,6 +20,7 @@ import bg.tues.didi.QueryFunction;
 import bg.tues.didi.ReturnStatement;
 import bg.tues.didi.StringLiteral;
 import bg.tues.didi.Substraction;
+import bg.tues.didi.UpdateFunction;
 import bg.tues.didi.VariableCall;
 import bg.tues.didi.VariableDefinition;
 import bg.tues.didi.WhileStatement;
@@ -105,7 +106,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getPrimaryRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_Addition(context, (Addition) semanticObject); 
 					return; 
 				}
@@ -113,7 +114,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 			case DidiPackage.BOOLEAN_VALUE:
 				if(context == grammarAccess.getBooleanValueRule() ||
 				   context == grammarAccess.getConditionElementRule() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_BooleanValue(context, (BooleanValue) semanticObject); 
 					return; 
 				}
@@ -126,7 +127,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				else break;
 			case DidiPackage.CONDITION_STATEMENT:
 				if(context == grammarAccess.getConditionStatementRule() ||
-				   context == grammarAccess.getPrintParamRule()) {
+				   context == grammarAccess.getPrintArgumentRule()) {
 					sequence_ConditionStatement(context, (ConditionStatement) semanticObject); 
 					return; 
 				}
@@ -151,7 +152,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getPrimaryRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_Division(context, (Division) semanticObject); 
 					return; 
 				}
@@ -181,7 +182,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getStatementRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_FunctionCall(context, (FunctionCall) semanticObject); 
 					return; 
 				}
@@ -216,7 +217,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getPrimaryRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_Mod(context, (Mod) semanticObject); 
 					return; 
 				}
@@ -235,7 +236,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getPrimaryRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_Multiplication(context, (Multiplication) semanticObject); 
 					return; 
 				}
@@ -255,7 +256,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getPrimaryRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_NumberLiteral(context, (NumberLiteral) semanticObject); 
 					return; 
 				}
@@ -277,11 +278,11 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case DidiPackage.QUERY_FUNCTION:
-				if(context == grammarAccess.getPrintParamRule() ||
+				if(context == grammarAccess.getPrintArgumentRule() ||
 				   context == grammarAccess.getQueryFunctionRule() ||
 				   context == grammarAccess.getSimpleStatementRule() ||
 				   context == grammarAccess.getStatementRule() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_QueryFunction(context, (QueryFunction) semanticObject); 
 					return; 
 				}
@@ -309,7 +310,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getStringLiteralRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_StringLiteral(context, (StringLiteral) semanticObject); 
 					return; 
 				}
@@ -328,8 +329,16 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getPrimaryRule() ||
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_Substraction(context, (Substraction) semanticObject); 
+					return; 
+				}
+				else break;
+			case DidiPackage.UPDATE_FUNCTION:
+				if(context == grammarAccess.getSimpleStatementRule() ||
+				   context == grammarAccess.getStatementRule() ||
+				   context == grammarAccess.getUpdateFunctionRule()) {
+					sequence_UpdateFunction(context, (UpdateFunction) semanticObject); 
 					return; 
 				}
 				else break;
@@ -348,7 +357,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getSubstractionRule() ||
 				   context == grammarAccess.getSubstractionAccess().getSubstractionLeftAction_1_0() ||
 				   context == grammarAccess.getVariableCallRule() ||
-				   context == grammarAccess.getVariableParamRule()) {
+				   context == grammarAccess.getVariableValueRule()) {
 					sequence_VariableCall(context, (VariableCall) semanticObject); 
 					return; 
 				}
@@ -1564,7 +1573,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=IDENTIFIER (arguments+=IDENTIFIER arguments+=IDENTIFIER*)? statements+=Statement*)
+	 *     (name=IDENTIFIER (parameters+=IDENTIFIER parameters+=IDENTIFIER*)? statements+=Statement*)
 	 */
 	protected void sequence_FunctionDefinition(EObject context, FunctionDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1655,32 +1664,32 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     printParam=PrintParam
+	 *     printArgument=PrintArgument
 	 */
 	protected void sequence_PrintFunction(EObject context, PrintFunction semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DidiPackage.Literals.PRINT_FUNCTION__PRINT_PARAM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DidiPackage.Literals.PRINT_FUNCTION__PRINT_PARAM));
+			if(transientValues.isValueTransient(semanticObject, DidiPackage.Literals.PRINT_FUNCTION__PRINT_ARGUMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DidiPackage.Literals.PRINT_FUNCTION__PRINT_ARGUMENT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPrintFunctionAccess().getPrintParamPrintParamParserRuleCall_1_0(), semanticObject.getPrintParam());
+		feeder.accept(grammarAccess.getPrintFunctionAccess().getPrintArgumentPrintArgumentParserRuleCall_1_0(), semanticObject.getPrintArgument());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     queryParam=ConditionStatement
+	 *     queryArgument=ConditionStatement
 	 */
 	protected void sequence_QueryFunction(EObject context, QueryFunction semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DidiPackage.Literals.QUERY_FUNCTION__QUERY_PARAM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DidiPackage.Literals.QUERY_FUNCTION__QUERY_PARAM));
+			if(transientValues.isValueTransient(semanticObject, DidiPackage.Literals.QUERY_FUNCTION__QUERY_ARGUMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DidiPackage.Literals.QUERY_FUNCTION__QUERY_ARGUMENT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getQueryFunctionAccess().getQueryParamConditionStatementParserRuleCall_1_0(), semanticObject.getQueryParam());
+		feeder.accept(grammarAccess.getQueryFunctionAccess().getQueryArgumentConditionStatementParserRuleCall_1_0(), semanticObject.getQueryArgument());
 		feeder.finish();
 	}
 	
@@ -1738,6 +1747,22 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     updateArgument=ConditionStatement
+	 */
+	protected void sequence_UpdateFunction(EObject context, UpdateFunction semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DidiPackage.Literals.UPDATE_FUNCTION__UPDATE_ARGUMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DidiPackage.Literals.UPDATE_FUNCTION__UPDATE_ARGUMENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUpdateFunctionAccess().getUpdateArgumentConditionStatementParserRuleCall_1_0(), semanticObject.getUpdateArgument());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     calledVariableName=IDENTIFIER
 	 */
 	protected void sequence_VariableCall(EObject context, VariableCall semanticObject) {
@@ -1754,7 +1779,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (isGlobal?=Global? name=IDENTIFIER variableValue=VariableParam)
+	 *     (isGlobal?=Global? name=IDENTIFIER variableValue=VariableValue)
 	 */
 	protected void sequence_VariableDefinition(EObject context, VariableDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

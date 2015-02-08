@@ -17,6 +17,7 @@ import bg.tues.didi.IfStatement;
 import bg.tues.didi.QueryFunction;
 import bg.tues.didi.ReturnStatement;
 import bg.tues.didi.Statement;
+import bg.tues.didi.UpdateFunction;
 import bg.tues.didi.VariableCall;
 import bg.tues.didi.VariableDefinition;
 import bg.tues.didi.WhileStatement;
@@ -40,9 +41,9 @@ import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 @SuppressWarnings("all")
 public class DidiValidator extends AbstractDidiValidator {
   @Check
-  public void checkQueryParameter(final QueryFunction qf) {
-    ConditionStatement _queryParam = qf.getQueryParam();
-    ConditionStatement expression = ((ConditionStatement) _queryParam);
+  public void checkQueryFunctionParameter(final QueryFunction qf) {
+    ConditionStatement _queryArgument = qf.getQueryArgument();
+    ConditionStatement expression = ((ConditionStatement) _queryArgument);
     EList<Condition> _conditions = expression.getConditions();
     Condition _get = _conditions.get(0);
     Condition condition = ((Condition) _get);
@@ -68,7 +69,39 @@ public class DidiValidator extends AbstractDidiValidator {
       return;
     }
     this.error(ErrorMessages.QUERY_FUNCTION_PARAMETER_BOOLEAN_EXPRESSION, 
-      DidiPackage.Literals.QUERY_FUNCTION__QUERY_PARAM);
+      DidiPackage.Literals.QUERY_FUNCTION__QUERY_ARGUMENT);
+  }
+  
+  @Check
+  public void checkUpdateFunctionParameter(final UpdateFunction uf) {
+    ConditionStatement _updateArgument = uf.getUpdateArgument();
+    ConditionStatement expression = ((ConditionStatement) _updateArgument);
+    EList<Condition> _conditions = expression.getConditions();
+    Condition _get = _conditions.get(0);
+    Condition condition = ((Condition) _get);
+    boolean _and = false;
+    boolean _and_1 = false;
+    EList<Condition> _conditions_1 = expression.getConditions();
+    int _length = ((Object[])Conversions.unwrapArray(_conditions_1, Object.class)).length;
+    boolean _equals = (_length == 1);
+    if (!_equals) {
+      _and_1 = false;
+    } else {
+      EList<ConditionElement> _conditionElements = condition.getConditionElements();
+      int _length_1 = ((Object[])Conversions.unwrapArray(_conditionElements, Object.class)).length;
+      boolean _equals_1 = (_length_1 == 1);
+      _and_1 = _equals_1;
+    }
+    if (!_and_1) {
+      _and = false;
+    } else {
+      _and = (!(condition.getConditionElements().get(0) instanceof BooleanValue));
+    }
+    if (_and) {
+      return;
+    }
+    this.error(ErrorMessages.UPDATE_FUNCTION_PARAMETER_BOOLEAN_EXPRESSION, 
+      DidiPackage.Literals.UPDATE_FUNCTION__UPDATE_ARGUMENT);
   }
   
   @Check
@@ -174,10 +207,10 @@ public class DidiValidator extends AbstractDidiValidator {
         } else {
           final Iterable<FunctionDefinition> _converted_elements_3 = (Iterable<FunctionDefinition>)elements;
           FunctionDefinition _get_1 = ((FunctionDefinition[])Conversions.unwrapArray(_converted_elements_3, FunctionDefinition.class))[(i).intValue()];
-          EList<String> _arguments = _get_1.getArguments();
-          int _length_1 = ((Object[])Conversions.unwrapArray(_arguments, Object.class)).length;
-          EList<Expression> _arguments_1 = fc.getArguments();
-          int _length_2 = ((Object[])Conversions.unwrapArray(_arguments_1, Object.class)).length;
+          EList<String> _parameters = _get_1.getParameters();
+          int _length_1 = ((Object[])Conversions.unwrapArray(_parameters, Object.class)).length;
+          EList<Expression> _arguments = fc.getArguments();
+          int _length_2 = ((Object[])Conversions.unwrapArray(_arguments, Object.class)).length;
           boolean _equals_1 = (_length_1 == _length_2);
           _and = _equals_1;
         }
@@ -229,9 +262,9 @@ public class DidiValidator extends AbstractDidiValidator {
             }
           }
           if ((container instanceof FunctionDefinition)) {
-            EList<String> _arguments = ((FunctionDefinition) container).getArguments();
+            EList<String> _parameters = ((FunctionDefinition) container).getParameters();
             String _calledVariableName_1 = vc.getCalledVariableName();
-            boolean _namePersistsInArray = ValidationUtils.namePersistsInArray(((String[])Conversions.unwrapArray(_arguments, String.class)), _calledVariableName_1);
+            boolean _namePersistsInArray = ValidationUtils.namePersistsInArray(((String[])Conversions.unwrapArray(_parameters, String.class)), _calledVariableName_1);
             if (_namePersistsInArray) {
               return;
             }

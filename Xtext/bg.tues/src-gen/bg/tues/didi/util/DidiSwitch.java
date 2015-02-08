@@ -103,10 +103,10 @@ public class DidiSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DidiPackage.VARIABLE_PARAM:
+      case DidiPackage.VARIABLE_VALUE:
       {
-        VariableParam variableParam = (VariableParam)theEObject;
-        T result = caseVariableParam(variableParam);
+        VariableValue variableValue = (VariableValue)theEObject;
+        T result = caseVariableValue(variableValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,9 +115,18 @@ public class DidiSwitch<T> extends Switch<T>
         QueryFunction queryFunction = (QueryFunction)theEObject;
         T result = caseQueryFunction(queryFunction);
         if (result == null) result = caseSimpleStatement(queryFunction);
-        if (result == null) result = caseVariableParam(queryFunction);
-        if (result == null) result = casePrintParam(queryFunction);
+        if (result == null) result = caseVariableValue(queryFunction);
+        if (result == null) result = casePrintArgument(queryFunction);
         if (result == null) result = caseStatement(queryFunction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DidiPackage.UPDATE_FUNCTION:
+      {
+        UpdateFunction updateFunction = (UpdateFunction)theEObject;
+        T result = caseUpdateFunction(updateFunction);
+        if (result == null) result = caseSimpleStatement(updateFunction);
+        if (result == null) result = caseStatement(updateFunction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -130,10 +139,10 @@ public class DidiSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DidiPackage.PRINT_PARAM:
+      case DidiPackage.PRINT_ARGUMENT:
       {
-        PrintParam printParam = (PrintParam)theEObject;
-        T result = casePrintParam(printParam);
+        PrintArgument printArgument = (PrintArgument)theEObject;
+        T result = casePrintArgument(printArgument);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -144,7 +153,7 @@ public class DidiSwitch<T> extends Switch<T>
         if (result == null) result = caseSimpleStatement(functionCall);
         if (result == null) result = caseExpression(functionCall);
         if (result == null) result = caseStatement(functionCall);
-        if (result == null) result = caseVariableParam(functionCall);
+        if (result == null) result = caseVariableValue(functionCall);
         if (result == null) result = caseConditionElement(functionCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -154,7 +163,7 @@ public class DidiSwitch<T> extends Switch<T>
         VariableCall variableCall = (VariableCall)theEObject;
         T result = caseVariableCall(variableCall);
         if (result == null) result = caseExpression(variableCall);
-        if (result == null) result = caseVariableParam(variableCall);
+        if (result == null) result = caseVariableValue(variableCall);
         if (result == null) result = caseConditionElement(variableCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -163,7 +172,7 @@ public class DidiSwitch<T> extends Switch<T>
       {
         Expression expression = (Expression)theEObject;
         T result = caseExpression(expression);
-        if (result == null) result = caseVariableParam(expression);
+        if (result == null) result = caseVariableValue(expression);
         if (result == null) result = caseConditionElement(expression);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -225,7 +234,7 @@ public class DidiSwitch<T> extends Switch<T>
       {
         ConditionStatement conditionStatement = (ConditionStatement)theEObject;
         T result = caseConditionStatement(conditionStatement);
-        if (result == null) result = casePrintParam(conditionStatement);
+        if (result == null) result = casePrintArgument(conditionStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -257,7 +266,7 @@ public class DidiSwitch<T> extends Switch<T>
         StringLiteral stringLiteral = (StringLiteral)theEObject;
         T result = caseStringLiteral(stringLiteral);
         if (result == null) result = caseExpression(stringLiteral);
-        if (result == null) result = caseVariableParam(stringLiteral);
+        if (result == null) result = caseVariableValue(stringLiteral);
         if (result == null) result = caseConditionElement(stringLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -267,7 +276,7 @@ public class DidiSwitch<T> extends Switch<T>
         NumberLiteral numberLiteral = (NumberLiteral)theEObject;
         T result = caseNumberLiteral(numberLiteral);
         if (result == null) result = caseExpression(numberLiteral);
-        if (result == null) result = caseVariableParam(numberLiteral);
+        if (result == null) result = caseVariableValue(numberLiteral);
         if (result == null) result = caseConditionElement(numberLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -276,7 +285,7 @@ public class DidiSwitch<T> extends Switch<T>
       {
         BooleanValue booleanValue = (BooleanValue)theEObject;
         T result = caseBooleanValue(booleanValue);
-        if (result == null) result = caseVariableParam(booleanValue);
+        if (result == null) result = caseVariableValue(booleanValue);
         if (result == null) result = caseConditionElement(booleanValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -286,7 +295,7 @@ public class DidiSwitch<T> extends Switch<T>
         Addition addition = (Addition)theEObject;
         T result = caseAddition(addition);
         if (result == null) result = caseExpression(addition);
-        if (result == null) result = caseVariableParam(addition);
+        if (result == null) result = caseVariableValue(addition);
         if (result == null) result = caseConditionElement(addition);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -296,7 +305,7 @@ public class DidiSwitch<T> extends Switch<T>
         Substraction substraction = (Substraction)theEObject;
         T result = caseSubstraction(substraction);
         if (result == null) result = caseExpression(substraction);
-        if (result == null) result = caseVariableParam(substraction);
+        if (result == null) result = caseVariableValue(substraction);
         if (result == null) result = caseConditionElement(substraction);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -306,7 +315,7 @@ public class DidiSwitch<T> extends Switch<T>
         Multiplication multiplication = (Multiplication)theEObject;
         T result = caseMultiplication(multiplication);
         if (result == null) result = caseExpression(multiplication);
-        if (result == null) result = caseVariableParam(multiplication);
+        if (result == null) result = caseVariableValue(multiplication);
         if (result == null) result = caseConditionElement(multiplication);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -316,7 +325,7 @@ public class DidiSwitch<T> extends Switch<T>
         Division division = (Division)theEObject;
         T result = caseDivision(division);
         if (result == null) result = caseExpression(division);
-        if (result == null) result = caseVariableParam(division);
+        if (result == null) result = caseVariableValue(division);
         if (result == null) result = caseConditionElement(division);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -326,7 +335,7 @@ public class DidiSwitch<T> extends Switch<T>
         Mod mod = (Mod)theEObject;
         T result = caseMod(mod);
         if (result == null) result = caseExpression(mod);
-        if (result == null) result = caseVariableParam(mod);
+        if (result == null) result = caseVariableValue(mod);
         if (result == null) result = caseConditionElement(mod);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -400,17 +409,17 @@ public class DidiSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Param</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Variable Value</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Param</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Variable Value</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariableParam(VariableParam object)
+  public T caseVariableValue(VariableValue object)
   {
     return null;
   }
@@ -432,6 +441,22 @@ public class DidiSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Update Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Update Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUpdateFunction(UpdateFunction object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Print Function</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -448,17 +473,17 @@ public class DidiSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Print Param</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Print Argument</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Print Param</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Print Argument</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePrintParam(PrintParam object)
+  public T casePrintArgument(PrintArgument object)
   {
     return null;
   }
