@@ -84,12 +84,12 @@ public interface VariableDefinition extends SimpleStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Variable Value</em>' containment reference.
-   * @see #setVariableValue(VariableParam)
+   * @see #setVariableValue(VariableValue)
    * @see bg.tues.didi.DidiPackage#getVariableDefinition_VariableValue()
    * @model containment="true"
    * @generated
    */
-  VariableParam getVariableValue();
+  VariableValue getVariableValue();
 
   /**
    * Sets the value of the '{@link bg.tues.didi.VariableDefinition#getVariableValue <em>Variable Value</em>}' containment reference.
@@ -99,6 +99,6 @@ public interface VariableDefinition extends SimpleStatement
    * @see #getVariableValue()
    * @generated
    */
-  void setVariableValue(VariableParam value);
+  void setVariableValue(VariableValue value);
 
 } // VariableDefinition

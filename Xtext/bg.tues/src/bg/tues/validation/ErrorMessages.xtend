@@ -6,9 +6,11 @@ public class ErrorMessages {
 	
 	val public static final UNDEFINED_VARIABLE = "Undefined variable.";
 	
-	val public static final FUNCTION_CALL_ARGUMENTS_MISMATCH = "Function call's arguments do not match function definition's arguments.";
+	val public static final FUNCTION_CALL_ARGUMENTS_MISMATCH = "Function call's arguments do not match function definition's parameters.";
 	
-	val public static final QUERY_FUNCTION_PARAMETER_BOOLEAN_EXPRESSION = "Query function's parameter cannot be a boolean expression.";
+	val public static final QUERY_FUNCTION_PARAMETER_BOOLEAN_EXPRESSION = "Query function's argument cannot be a boolean expression.";
+	
+	val public static final UPDATE_FUNCTION_PARAMETER_BOOLEAN_EXPRESSION = "Update function's argument cannot be a boolean expression.";
 		
 	val public static final FUNCTION_WITHIN_BLOCK_STATEMENT = "Functions cannot be defined within block statements.";
 		

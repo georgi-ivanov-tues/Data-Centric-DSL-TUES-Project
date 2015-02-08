@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ConditionStatement extends PrintParam
+public interface ConditionStatement extends PrintArgument
 {
   /**
    * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.

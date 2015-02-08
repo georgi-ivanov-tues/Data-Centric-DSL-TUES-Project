@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ConditionStatementImpl extends PrintParamImpl implements ConditionStatement
+public class ConditionStatementImpl extends PrintArgumentImpl implements ConditionStatement
 {
   /**
    * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.

@@ -59,13 +59,13 @@ public interface DidiFactory extends EFactory
   VariableDefinition createVariableDefinition();
 
   /**
-   * Returns a new object of class '<em>Variable Param</em>'.
+   * Returns a new object of class '<em>Variable Value</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Param</em>'.
+   * @return a new object of class '<em>Variable Value</em>'.
    * @generated
    */
-  VariableParam createVariableParam();
+  VariableValue createVariableValue();
 
   /**
    * Returns a new object of class '<em>Query Function</em>'.
@@ -77,6 +77,15 @@ public interface DidiFactory extends EFactory
   QueryFunction createQueryFunction();
 
   /**
+   * Returns a new object of class '<em>Update Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Function</em>'.
+   * @generated
+   */
+  UpdateFunction createUpdateFunction();
+
+  /**
    * Returns a new object of class '<em>Print Function</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -86,13 +95,13 @@ public interface DidiFactory extends EFactory
   PrintFunction createPrintFunction();
 
   /**
-   * Returns a new object of class '<em>Print Param</em>'.
+   * Returns a new object of class '<em>Print Argument</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Print Param</em>'.
+   * @return a new object of class '<em>Print Argument</em>'.
    * @generated
    */
-  PrintParam createPrintParam();
+  PrintArgument createPrintArgument();
 
   /**
    * Returns a new object of class '<em>Function Call</em>'.

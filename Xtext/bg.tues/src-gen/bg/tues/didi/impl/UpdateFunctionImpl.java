@@ -2,9 +2,9 @@
  */
 package bg.tues.didi.impl;
 
+import bg.tues.didi.ConditionStatement;
 import bg.tues.didi.DidiPackage;
-import bg.tues.didi.PrintArgument;
-import bg.tues.didi.PrintFunction;
+import bg.tues.didi.UpdateFunction;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,35 +16,35 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Print Function</b></em>'.
+ * An implementation of the model object '<em><b>Update Function</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link bg.tues.didi.impl.PrintFunctionImpl#getPrintArgument <em>Print Argument</em>}</li>
+ *   <li>{@link bg.tues.didi.impl.UpdateFunctionImpl#getUpdateArgument <em>Update Argument</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunction
+public class UpdateFunctionImpl extends SimpleStatementImpl implements UpdateFunction
 {
   /**
-   * The cached value of the '{@link #getPrintArgument() <em>Print Argument</em>}' containment reference.
+   * The cached value of the '{@link #getUpdateArgument() <em>Update Argument</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrintArgument()
+   * @see #getUpdateArgument()
    * @generated
    * @ordered
    */
-  protected PrintArgument printArgument;
+  protected ConditionStatement updateArgument;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PrintFunctionImpl()
+  protected UpdateFunctionImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunct
   @Override
   protected EClass eStaticClass()
   {
-    return DidiPackage.Literals.PRINT_FUNCTION;
+    return DidiPackage.Literals.UPDATE_FUNCTION;
   }
 
   /**
@@ -65,9 +65,9 @@ public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunct
    * <!-- end-user-doc -->
    * @generated
    */
-  public PrintArgument getPrintArgument()
+  public ConditionStatement getUpdateArgument()
   {
-    return printArgument;
+    return updateArgument;
   }
 
   /**
@@ -75,13 +75,13 @@ public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunct
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPrintArgument(PrintArgument newPrintArgument, NotificationChain msgs)
+  public NotificationChain basicSetUpdateArgument(ConditionStatement newUpdateArgument, NotificationChain msgs)
   {
-    PrintArgument oldPrintArgument = printArgument;
-    printArgument = newPrintArgument;
+    ConditionStatement oldUpdateArgument = updateArgument;
+    updateArgument = newUpdateArgument;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DidiPackage.PRINT_FUNCTION__PRINT_ARGUMENT, oldPrintArgument, newPrintArgument);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DidiPackage.UPDATE_FUNCTION__UPDATE_ARGUMENT, oldUpdateArgument, newUpdateArgument);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunct
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrintArgument(PrintArgument newPrintArgument)
+  public void setUpdateArgument(ConditionStatement newUpdateArgument)
   {
-    if (newPrintArgument != printArgument)
+    if (newUpdateArgument != updateArgument)
     {
       NotificationChain msgs = null;
-      if (printArgument != null)
-        msgs = ((InternalEObject)printArgument).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DidiPackage.PRINT_FUNCTION__PRINT_ARGUMENT, null, msgs);
-      if (newPrintArgument != null)
-        msgs = ((InternalEObject)newPrintArgument).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DidiPackage.PRINT_FUNCTION__PRINT_ARGUMENT, null, msgs);
-      msgs = basicSetPrintArgument(newPrintArgument, msgs);
+      if (updateArgument != null)
+        msgs = ((InternalEObject)updateArgument).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DidiPackage.UPDATE_FUNCTION__UPDATE_ARGUMENT, null, msgs);
+      if (newUpdateArgument != null)
+        msgs = ((InternalEObject)newUpdateArgument).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DidiPackage.UPDATE_FUNCTION__UPDATE_ARGUMENT, null, msgs);
+      msgs = basicSetUpdateArgument(newUpdateArgument, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DidiPackage.PRINT_FUNCTION__PRINT_ARGUMENT, newPrintArgument, newPrintArgument));
+      eNotify(new ENotificationImpl(this, Notification.SET, DidiPackage.UPDATE_FUNCTION__UPDATE_ARGUMENT, newUpdateArgument, newUpdateArgument));
   }
 
   /**
@@ -118,8 +118,8 @@ public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunct
   {
     switch (featureID)
     {
-      case DidiPackage.PRINT_FUNCTION__PRINT_ARGUMENT:
-        return basicSetPrintArgument(null, msgs);
+      case DidiPackage.UPDATE_FUNCTION__UPDATE_ARGUMENT:
+        return basicSetUpdateArgument(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunct
   {
     switch (featureID)
     {
-      case DidiPackage.PRINT_FUNCTION__PRINT_ARGUMENT:
-        return getPrintArgument();
+      case DidiPackage.UPDATE_FUNCTION__UPDATE_ARGUMENT:
+        return getUpdateArgument();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunct
   {
     switch (featureID)
     {
-      case DidiPackage.PRINT_FUNCTION__PRINT_ARGUMENT:
-        setPrintArgument((PrintArgument)newValue);
+      case DidiPackage.UPDATE_FUNCTION__UPDATE_ARGUMENT:
+        setUpdateArgument((ConditionStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunct
   {
     switch (featureID)
     {
-      case DidiPackage.PRINT_FUNCTION__PRINT_ARGUMENT:
-        setPrintArgument((PrintArgument)null);
+      case DidiPackage.UPDATE_FUNCTION__UPDATE_ARGUMENT:
+        setUpdateArgument((ConditionStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +184,10 @@ public class PrintFunctionImpl extends SimpleStatementImpl implements PrintFunct
   {
     switch (featureID)
     {
-      case DidiPackage.PRINT_FUNCTION__PRINT_ARGUMENT:
-        return printArgument != null;
+      case DidiPackage.UPDATE_FUNCTION__UPDATE_ARGUMENT:
+        return updateArgument != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //PrintFunctionImpl
+} //UpdateFunctionImpl

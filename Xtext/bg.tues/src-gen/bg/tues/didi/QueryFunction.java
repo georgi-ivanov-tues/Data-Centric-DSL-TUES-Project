@@ -11,7 +11,7 @@ package bg.tues.didi;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link bg.tues.didi.QueryFunction#getQueryParam <em>Query Param</em>}</li>
+ *   <li>{@link bg.tues.didi.QueryFunction#getQueryArgument <em>Query Argument</em>}</li>
  * </ul>
  * </p>
  *
@@ -19,32 +19,32 @@ package bg.tues.didi;
  * @model
  * @generated
  */
-public interface QueryFunction extends SimpleStatement, VariableParam, PrintParam
+public interface QueryFunction extends SimpleStatement, VariableValue, PrintArgument
 {
   /**
-   * Returns the value of the '<em><b>Query Param</b></em>' containment reference.
+   * Returns the value of the '<em><b>Query Argument</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Query Param</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Query Argument</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Query Param</em>' containment reference.
-   * @see #setQueryParam(ConditionStatement)
-   * @see bg.tues.didi.DidiPackage#getQueryFunction_QueryParam()
+   * @return the value of the '<em>Query Argument</em>' containment reference.
+   * @see #setQueryArgument(ConditionStatement)
+   * @see bg.tues.didi.DidiPackage#getQueryFunction_QueryArgument()
    * @model containment="true"
    * @generated
    */
-  ConditionStatement getQueryParam();
+  ConditionStatement getQueryArgument();
 
   /**
-   * Sets the value of the '{@link bg.tues.didi.QueryFunction#getQueryParam <em>Query Param</em>}' containment reference.
+   * Sets the value of the '{@link bg.tues.didi.QueryFunction#getQueryArgument <em>Query Argument</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Query Param</em>' containment reference.
-   * @see #getQueryParam()
+   * @param value the new value of the '<em>Query Argument</em>' containment reference.
+   * @see #getQueryArgument()
    * @generated
    */
-  void setQueryParam(ConditionStatement value);
+  void setQueryArgument(ConditionStatement value);
 
 } // QueryFunction

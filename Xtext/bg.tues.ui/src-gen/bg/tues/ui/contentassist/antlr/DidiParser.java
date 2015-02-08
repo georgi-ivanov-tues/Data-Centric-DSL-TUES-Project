@@ -39,9 +39,9 @@ public class DidiParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 					put(grammarAccess.getSimpleStatementAccess().getAlternatives_0(), "rule__SimpleStatement__Alternatives_0");
-					put(grammarAccess.getVariableParamAccess().getAlternatives(), "rule__VariableParam__Alternatives");
+					put(grammarAccess.getVariableValueAccess().getAlternatives(), "rule__VariableValue__Alternatives");
 					put(grammarAccess.getPrintFunctionAccess().getAlternatives_0(), "rule__PrintFunction__Alternatives_0");
-					put(grammarAccess.getPrintParamAccess().getAlternatives(), "rule__PrintParam__Alternatives");
+					put(grammarAccess.getPrintArgumentAccess().getAlternatives(), "rule__PrintArgument__Alternatives");
 					put(grammarAccess.getAdditionAccess().getAlternatives_0(), "rule__Addition__Alternatives_0");
 					put(grammarAccess.getAdditionAccess().getRightAlternatives_1_2_0(), "rule__Addition__RightAlternatives_1_2_0");
 					put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
@@ -93,6 +93,7 @@ public class DidiParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSimpleStatementAccess().getGroup(), "rule__SimpleStatement__Group__0");
 					put(grammarAccess.getVariableDefinitionAccess().getGroup(), "rule__VariableDefinition__Group__0");
 					put(grammarAccess.getQueryFunctionAccess().getGroup(), "rule__QueryFunction__Group__0");
+					put(grammarAccess.getUpdateFunctionAccess().getGroup(), "rule__UpdateFunction__Group__0");
 					put(grammarAccess.getPrintFunctionAccess().getGroup(), "rule__PrintFunction__Group__0");
 					put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
 					put(grammarAccess.getFunctionCallAccess().getGroup_2(), "rule__FunctionCall__Group_2__0");
@@ -306,8 +307,9 @@ public class DidiParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableDefinitionAccess().getIsGlobalAssignment_0(), "rule__VariableDefinition__IsGlobalAssignment_0");
 					put(grammarAccess.getVariableDefinitionAccess().getNameAssignment_1(), "rule__VariableDefinition__NameAssignment_1");
 					put(grammarAccess.getVariableDefinitionAccess().getVariableValueAssignment_3(), "rule__VariableDefinition__VariableValueAssignment_3");
-					put(grammarAccess.getQueryFunctionAccess().getQueryParamAssignment_1(), "rule__QueryFunction__QueryParamAssignment_1");
-					put(grammarAccess.getPrintFunctionAccess().getPrintParamAssignment_1(), "rule__PrintFunction__PrintParamAssignment_1");
+					put(grammarAccess.getQueryFunctionAccess().getQueryArgumentAssignment_1(), "rule__QueryFunction__QueryArgumentAssignment_1");
+					put(grammarAccess.getUpdateFunctionAccess().getUpdateArgumentAssignment_1(), "rule__UpdateFunction__UpdateArgumentAssignment_1");
+					put(grammarAccess.getPrintFunctionAccess().getPrintArgumentAssignment_1(), "rule__PrintFunction__PrintArgumentAssignment_1");
 					put(grammarAccess.getFunctionCallAccess().getCalledFunctionNameAssignment_0(), "rule__FunctionCall__CalledFunctionNameAssignment_0");
 					put(grammarAccess.getFunctionCallAccess().getArgumentsAssignment_2_0(), "rule__FunctionCall__ArgumentsAssignment_2_0");
 					put(grammarAccess.getFunctionCallAccess().getArgumentsAssignment_2_1_1(), "rule__FunctionCall__ArgumentsAssignment_2_1_1");
@@ -318,8 +320,8 @@ public class DidiParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDivisionAccess().getRightAssignment_1_2(), "rule__Division__RightAssignment_1_2");
 					put(grammarAccess.getModAccess().getRightAssignment_1_2(), "rule__Mod__RightAssignment_1_2");
 					put(grammarAccess.getFunctionDefinitionAccess().getNameAssignment_1(), "rule__FunctionDefinition__NameAssignment_1");
-					put(grammarAccess.getFunctionDefinitionAccess().getArgumentsAssignment_3_0(), "rule__FunctionDefinition__ArgumentsAssignment_3_0");
-					put(grammarAccess.getFunctionDefinitionAccess().getArgumentsAssignment_3_1_1(), "rule__FunctionDefinition__ArgumentsAssignment_3_1_1");
+					put(grammarAccess.getFunctionDefinitionAccess().getParametersAssignment_3_0(), "rule__FunctionDefinition__ParametersAssignment_3_0");
+					put(grammarAccess.getFunctionDefinitionAccess().getParametersAssignment_3_1_1(), "rule__FunctionDefinition__ParametersAssignment_3_1_1");
 					put(grammarAccess.getFunctionDefinitionAccess().getStatementsAssignment_6(), "rule__FunctionDefinition__StatementsAssignment_6");
 					put(grammarAccess.getReturnStatementAccess().getReturnValueAssignment_1(), "rule__ReturnStatement__ReturnValueAssignment_1");
 					put(grammarAccess.getIfStatementAccess().getConditionAssignment_3(), "rule__IfStatement__ConditionAssignment_3");

@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link bg.tues.didi.impl.FunctionDefinitionImpl#getName <em>Name</em>}</li>
- *   <li>{@link bg.tues.didi.impl.FunctionDefinitionImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link bg.tues.didi.impl.FunctionDefinitionImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,14 +54,14 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' attribute list.
+   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArguments()
+   * @see #getParameters()
    * @generated
    * @ordered
    */
-  protected EList<String> arguments;
+  protected EList<String> parameters;
 
   /**
    * <!-- begin-user-doc -->
@@ -112,13 +112,13 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getArguments()
+  public EList<String> getParameters()
   {
-    if (arguments == null)
+    if (parameters == null)
     {
-      arguments = new EDataTypeEList<String>(String.class, this, DidiPackage.FUNCTION_DEFINITION__ARGUMENTS);
+      parameters = new EDataTypeEList<String>(String.class, this, DidiPackage.FUNCTION_DEFINITION__PARAMETERS);
     }
-    return arguments;
+    return parameters;
   }
 
   /**
@@ -133,8 +133,8 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
     {
       case DidiPackage.FUNCTION_DEFINITION__NAME:
         return getName();
-      case DidiPackage.FUNCTION_DEFINITION__ARGUMENTS:
-        return getArguments();
+      case DidiPackage.FUNCTION_DEFINITION__PARAMETERS:
+        return getParameters();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,9 +153,9 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
       case DidiPackage.FUNCTION_DEFINITION__NAME:
         setName((String)newValue);
         return;
-      case DidiPackage.FUNCTION_DEFINITION__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends String>)newValue);
+      case DidiPackage.FUNCTION_DEFINITION__PARAMETERS:
+        getParameters().clear();
+        getParameters().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -174,8 +174,8 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
       case DidiPackage.FUNCTION_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case DidiPackage.FUNCTION_DEFINITION__ARGUMENTS:
-        getArguments().clear();
+      case DidiPackage.FUNCTION_DEFINITION__PARAMETERS:
+        getParameters().clear();
         return;
     }
     super.eUnset(featureID);
@@ -193,8 +193,8 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
     {
       case DidiPackage.FUNCTION_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DidiPackage.FUNCTION_DEFINITION__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
+      case DidiPackage.FUNCTION_DEFINITION__PARAMETERS:
+        return parameters != null && !parameters.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -212,8 +212,8 @@ public class FunctionDefinitionImpl extends CompoundStatementImpl implements Fun
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", arguments: ");
-    result.append(arguments);
+    result.append(", parameters: ");
+    result.append(parameters);
     result.append(')');
     return result.toString();
   }
