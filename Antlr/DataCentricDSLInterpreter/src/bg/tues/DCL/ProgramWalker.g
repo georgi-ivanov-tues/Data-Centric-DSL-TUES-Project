@@ -24,6 +24,7 @@ options {
   import java.sql.SQLException;
   import java.sql.ResultSetMetaData;
   import java.util.Arrays;
+  import bg.tues.DCL.tree.functions.Update;
 }
 
 @members {
@@ -109,6 +110,7 @@ statement returns [Node node]
   |  whileStatement {node = $whileStatement.node;}
   |  incrementation {node = $incrementation.node;}
   |  query {node = $query.node;}
+  |  update {node = $update.node;}
   |  println {node = $println.node;}
   |  print {node = $print.node;}
   ;
@@ -116,6 +118,10 @@ statement returns [Node node]
 query returns [Node node]: 
   ^('query' (expression {node = new QueryNode($expression.node, dataSource);}
   | functionCall {node = new QueryNode($functionCall.node, dataSource);}))
+;
+
+update returns [Node node]: 
+  ^('update' (expression {node = new Update($expression.node, dataSource);}))
 ;
 
 variableCall returns [String value]:

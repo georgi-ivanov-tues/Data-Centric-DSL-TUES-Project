@@ -96,12 +96,17 @@ statement
   |  forStatement
   |  whileStatement
   |  query ';' -> query
+  |  update ';' -> update
   |  println ';' -> println
   |  print ';' -> print
   ;
 
 query: 
   'query'^ (expression | functionCall)
+;
+
+update:
+  'update'^ (expression)
 ;
 
 variableCall:

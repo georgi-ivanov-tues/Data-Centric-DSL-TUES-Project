@@ -1,13 +1,19 @@
-func compTwoNum(b) {
-	if(b == 5) {
-		return true;
-	}else{
-		return false;
-	}
-}
+//func compTwoNum(b) {
+//	if(b == 5) {
+//		return true;
+//	}else{
+//		return false;
+//	}
+//}
+//
+//b = 5;
+//println compTwoNum(b);
 
-b = 5;
-println compTwoNum(b);
+
+
+//update "CREATE TABLE PEOPLE2 (PERSON VARCHAR(26))";
+//update "INSERT INTO PEOPLE2 VALUES (\'Nedelcho\')";
+print query "SELECT * FROM people2";
 
 //a = true;
 //if(a == true && 2 == 2){
