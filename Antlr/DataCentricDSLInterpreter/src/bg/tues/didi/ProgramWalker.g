@@ -24,7 +24,7 @@ options {
   import java.sql.SQLException;
   import java.sql.ResultSetMetaData;
   import java.util.Arrays;
-  import bg.tues.didi.tree.functions.Update;
+  import bg.tues.didi.tree.functions.UpdateNode;
 }
 
 @members {
@@ -121,7 +121,7 @@ query returns [Node node]:
 ;
 
 update returns [Node node]: 
-  ^('update' (expression {node = new Update($expression.node, dataSource);}))
+  ^('update' (expression {node = new UpdateNode($expression.node, dataSource);}))
 ;
 
 variableCall returns [String value]:
@@ -160,6 +160,8 @@ functionCall returns [Node node]
         }
       Function function = functions.get($Identifier.text + paramSize);
       function.setParameters(paramSize == 0 ? new ArrayList<Node>() : $exprList.e);
+      function.setFunctions(functions);
+      function.setContext(context);
       node = function;
       
   }

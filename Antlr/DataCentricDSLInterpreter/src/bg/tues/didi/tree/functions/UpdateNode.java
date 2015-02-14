@@ -6,12 +6,12 @@ import java.sql.Statement;
 import bg.tues.didi.Value;
 import bg.tues.didi.tree.Node;
 
-public class Update  implements Node {
+public class UpdateNode  implements Node {
 
 	private static Node sqlStatement;
 	private Connection connection;
 
-	public Update(Node node, Connection conn) {
+	public UpdateNode(Node node, Connection conn) {
 		sqlStatement = node;
 		connection = conn;
 	}
@@ -19,16 +19,16 @@ public class Update  implements Node {
 	@Override
 	public Value evaluate() {
 		try {
-			executeQuery(sqlStatement.evaluate().toString());
+			executeUpdate(sqlStatement.evaluate().toString());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return Value.VOID;
 	}
 
-	public void executeQuery(String queryStatement) throws SQLException {
+	public void executeUpdate(String queryStatement) throws SQLException {
 		Statement statement = connection.createStatement();
-		int executeUpdateResult = statement.executeUpdate(queryStatement);
+		statement.executeUpdate(queryStatement);
 //		if(executeUpdateResult == 0){
 //			System.out.println();
 //		}else{

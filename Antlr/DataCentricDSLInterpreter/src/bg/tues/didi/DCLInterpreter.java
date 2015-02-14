@@ -17,7 +17,7 @@ import bg.tues.didi.derbydb.CreateDB;
 
 public class DCLInterpreter {
 
-	public void execute(String absolutePath, PrintStream out) throws Exception{
+	public Value execute(String absolutePath, PrintStream out) throws Exception{
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(new ANTLRFileStream(absolutePath));
 
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -37,10 +37,10 @@ public class DCLInterpreter {
 		myMap.put("outputStream", out);
 
 		ProgramWalker walker = new ProgramWalker(nodes, myMap, parser.functions);
-		walker.program();
+		return walker.program();
 	}
 	
-	public void execute(String absolutePath, Map<String, Object> context) throws Exception{
+	public Value execute(String absolutePath, Map<String, Object> context) throws Exception{
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(new ANTLRFileStream(absolutePath));
 
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -51,10 +51,10 @@ public class DCLInterpreter {
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
 
 		ProgramWalker walker = new ProgramWalker(nodes, context, parser.functions);
-		walker.program();
+		return walker.program();
 	}
 	
-	public void execute(String absolutePath, Scope scope, Map<String, Object> context) throws Exception{
+	public Value execute(String absolutePath, Scope scope, Map<String, Object> context) throws Exception{
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(new ANTLRFileStream(absolutePath));
 
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -66,7 +66,7 @@ public class DCLInterpreter {
 //		System.out.println(nodes);
 
 		ProgramWalker walker = new ProgramWalker(nodes, scope, context, parser.functions);
-		walker.program();
+		return walker.program();
 	}
 }
 

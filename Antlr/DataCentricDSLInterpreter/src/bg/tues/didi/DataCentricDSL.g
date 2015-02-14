@@ -68,7 +68,6 @@ tokens {
       case 'r': builder.append("\r"); break;
       case 't': builder.append("\t"); break;
       case 'b': builder.append("\b"); break;
-      case 'f': builder.append("\f"); break;
       case '"': builder.append("\""); break;
       case '\'': builder.append("'"); break;
       case '/': builder.append("/"); break;
@@ -80,7 +79,7 @@ tokens {
  
 
 program
-  :  (functionDecl)* block EOF -> block
+  :  (functionDef)* block EOF -> block
   ;
 
 block
@@ -122,8 +121,6 @@ assignment
 
 functionCall
   :  Identifier '(' exprList? ')' -> ^(FUNC_CALL Identifier exprList?)
-//  |  Println  expression    -> ^(FUNC_CALL Println expression)
-//  |  Print expression     -> ^(FUNC_CALL Print expression)
   |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
   |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)
   ;
@@ -154,11 +151,9 @@ elseStat
   :  Else '{' block '}' -> ^(EXP block)
   ;
 
-functionDecl
+functionDef
   :  'func' Identifier '(' idList? ')' '{' block '}'
    {defineFunction($Identifier.text, $idList.tree, $block.tree);}
-//  :  'func' Identifier '(' idList? ')' '{' statement '}'
-//     {defineFunction($Identifier.text, $idList.tree, $statement.tree);}
   ;
 
 forStatement
@@ -177,6 +172,10 @@ whileStatement
 idList
   :  Identifier (',' Identifier)* -> ^(ID_LIST Identifier+)
   ;
+  
+incrementation
+  : variableCall ('++'|'--')
+;
 
 exprList
   :  expression (',' expression)* -> ^(EXP_LIST expression+)
@@ -185,10 +184,6 @@ exprList
 expression
   :  condExpr | query
   ;
-
-incrementation
-  : variableCall ('++'|'--')
-;
 
 condExpr
   :  (orExpr -> orExpr) 
@@ -243,7 +238,6 @@ list
   ;
 
 lookup
-//  :  functionCall indexes?       -> ^(LOOKUP functionCall indexes?)
   :  list indexes?               -> ^(LOOKUP list indexes?)
   |  Identifier indexes?         -> ^(LOOKUP Identifier indexes?)
   |  String indexes?             -> ^(LOOKUP String indexes?)
@@ -254,6 +248,7 @@ indexes
   :  ('[' expression ']')+ -> ^(INDEXES expression+)
   ;
 
+// Tokens
 Println  : 'println';
 Print    : 'print';
 Assert   : 'assert';
