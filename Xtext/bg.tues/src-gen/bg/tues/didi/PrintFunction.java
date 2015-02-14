@@ -11,7 +11,7 @@ package bg.tues.didi;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link bg.tues.didi.PrintFunction#getPrintParam <em>Print Param</em>}</li>
+ *   <li>{@link bg.tues.didi.PrintFunction#getPrintArgument <em>Print Argument</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +22,29 @@ package bg.tues.didi;
 public interface PrintFunction extends SimpleStatement
 {
   /**
-   * Returns the value of the '<em><b>Print Param</b></em>' containment reference.
+   * Returns the value of the '<em><b>Print Argument</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Print Param</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Print Argument</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Print Param</em>' containment reference.
-   * @see #setPrintParam(PrintParam)
-   * @see bg.tues.didi.DidiPackage#getPrintFunction_PrintParam()
+   * @return the value of the '<em>Print Argument</em>' containment reference.
+   * @see #setPrintArgument(PrintArgument)
+   * @see bg.tues.didi.DidiPackage#getPrintFunction_PrintArgument()
    * @model containment="true"
    * @generated
    */
-  PrintParam getPrintParam();
+  PrintArgument getPrintArgument();
 
   /**
-   * Sets the value of the '{@link bg.tues.didi.PrintFunction#getPrintParam <em>Print Param</em>}' containment reference.
+   * Sets the value of the '{@link bg.tues.didi.PrintFunction#getPrintArgument <em>Print Argument</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Print Param</em>' containment reference.
-   * @see #getPrintParam()
+   * @param value the new value of the '<em>Print Argument</em>' containment reference.
+   * @see #getPrintArgument()
    * @generated
    */
-  void setPrintParam(PrintParam value);
+  void setPrintArgument(PrintArgument value);
 
 } // PrintFunction

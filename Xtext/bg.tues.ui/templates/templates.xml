@@ -49,6 +49,13 @@
 			enabled="true" 
 			name="QueryFunction">query</template>
 	<template autoinsert="true" 
+			context="bg.tues.Didi.UpdateFunction"
+			id="update-function"
+			deleted="false" 
+			description="Update function." 
+			enabled="true" 
+			name="UpdateFunction">update</template>
+	<template autoinsert="true" 
 			context="bg.tues.Didi.WhileStatement"
 			id="while-statement"
 			deleted="false" 

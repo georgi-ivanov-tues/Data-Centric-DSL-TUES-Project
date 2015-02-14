@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class BooleanValueImpl extends VariableParamImpl implements BooleanValue
+public class BooleanValueImpl extends VariableValueImpl implements BooleanValue
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.

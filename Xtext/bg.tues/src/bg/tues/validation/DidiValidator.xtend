@@ -14,6 +14,7 @@ import bg.tues.didi.FunctionDefinition
 import bg.tues.didi.IfStatement
 import bg.tues.didi.QueryFunction
 import bg.tues.didi.ReturnStatement
+import bg.tues.didi.UpdateFunction
 import bg.tues.didi.VariableCall
 import bg.tues.didi.VariableDefinition
 import bg.tues.didi.WhileStatement
@@ -32,8 +33,8 @@ import static bg.tues.validation.ValidationUtils.*
 class DidiValidator extends AbstractDidiValidator {
 
 	@Check
-	def void checkQueryParameter(QueryFunction qf) {
-		var expression = qf.queryParam as ConditionStatement;
+	def void checkQueryFunctionParameter(QueryFunction qf) {
+		var expression = qf.queryArgument as ConditionStatement;
 		var condition = expression.conditions.get(0) as Condition;
 		
 		if(expression.conditions.length == 1 
@@ -44,7 +45,24 @@ class DidiValidator extends AbstractDidiValidator {
 		}
 		
 		error(ErrorMessages.QUERY_FUNCTION_PARAMETER_BOOLEAN_EXPRESSION, 
-			DidiPackage.Literals::QUERY_FUNCTION__QUERY_PARAM
+			DidiPackage.Literals::QUERY_FUNCTION__QUERY_ARGUMENT
+		);
+	}
+	
+	@Check
+	def void checkUpdateFunctionParameter(UpdateFunction uf) {
+		var expression = uf.updateArgument as ConditionStatement;
+		var condition = expression.conditions.get(0) as Condition;
+		
+		if(expression.conditions.length == 1 
+			&& condition.conditionElements.length == 1 
+			&& !(condition.conditionElements.get(0) instanceof BooleanValue)
+		) {
+			return;
+		}
+		
+		error(ErrorMessages.UPDATE_FUNCTION_PARAMETER_BOOLEAN_EXPRESSION, 
+			DidiPackage.Literals::UPDATE_FUNCTION__UPDATE_ARGUMENT
 		);
 	}
 	
@@ -132,7 +150,7 @@ class DidiValidator extends AbstractDidiValidator {
 		if(ValidationUtils.functionIsDeclared(elements, fc.calledFunctionName)) {
 			for(i : 0..< elements.length) {
 				if(elements.get(i).name.equals(fc.calledFunctionName) 
-					&& elements.get(i).arguments.length == fc.arguments.length
+					&& elements.get(i).parameters.length == fc.arguments.length
 				) {
 					if(!ValidationUtils.functionIsDeclaredBeforeTheCode(elements.get(i))) {
 						error(ErrorMessages.UNDEFINED_FUNCTION, 
@@ -171,7 +189,7 @@ class DidiValidator extends AbstractDidiValidator {
 				}
 				if(container instanceof FunctionDefinition) {
 					if(ValidationUtils
-						.namePersistsInArray((container as FunctionDefinition).arguments,
+						.namePersistsInArray((container as FunctionDefinition).parameters,
 							vc.calledVariableName
 						)) {
 						return;

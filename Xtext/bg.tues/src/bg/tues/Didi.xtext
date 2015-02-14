@@ -14,6 +14,7 @@ Statement:
 SimpleStatement:
 	(VariableDefinition |
 	 QueryFunction | 
+	 UpdateFunction |
 	 PrintFunction | 
 //	 MultiAssign | 
 	 PostfixOperation | 
@@ -22,24 +23,28 @@ SimpleStatement:
 ;
 
 VariableDefinition:
-	(isGlobal?=Global)? name=IDENTIFIER OpAssignment variableValue=VariableParam
+	(isGlobal?=Global)? name=IDENTIFIER OpAssignment variableValue=VariableValue
 ;
 
-VariableParam:
+VariableValue:
 	(Expression | 
 	 QueryFunction |
 	 BooleanValue)
 ;
 
 QueryFunction:
-	Query queryParam=ConditionStatement
+	Query queryArgument=ConditionStatement
+;
+
+UpdateFunction:
+	Update updateArgument=ConditionStatement
 ;
 
 PrintFunction:
-	(Print | Println) printParam=PrintParam
+	(Print | Println) printArgument=PrintArgument
 ;
 
-PrintParam:
+PrintArgument:
 	(QueryFunction |
 	 ConditionStatement)
 ;
@@ -97,7 +102,7 @@ CompoundStatement:
 
 FunctionDefinition:
 	Func name=IDENTIFIER OpeningBracket
-		(arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)?
+		(parameters+=IDENTIFIER (Comma parameters+=IDENTIFIER)*)?
 		ClosingBracket OpeningCurlyBracket
 		(statements+=Statement)*
 	ClosingCurlyBracket
@@ -282,6 +287,10 @@ Global:
 
 Query:
 	'query'
+;
+
+Update:
+	'update'
 ;
 
 Print:

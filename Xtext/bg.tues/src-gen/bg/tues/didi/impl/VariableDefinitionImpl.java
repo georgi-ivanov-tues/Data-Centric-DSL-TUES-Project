@@ -4,7 +4,7 @@ package bg.tues.didi.impl;
 
 import bg.tues.didi.DidiPackage;
 import bg.tues.didi.VariableDefinition;
-import bg.tues.didi.VariableParam;
+import bg.tues.didi.VariableValue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -79,7 +79,7 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
    * @generated
    * @ordered
    */
-  protected VariableParam variableValue;
+  protected VariableValue variableValue;
 
   /**
    * <!-- begin-user-doc -->
@@ -153,7 +153,7 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableParam getVariableValue()
+  public VariableValue getVariableValue()
   {
     return variableValue;
   }
@@ -163,9 +163,9 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVariableValue(VariableParam newVariableValue, NotificationChain msgs)
+  public NotificationChain basicSetVariableValue(VariableValue newVariableValue, NotificationChain msgs)
   {
-    VariableParam oldVariableValue = variableValue;
+    VariableValue oldVariableValue = variableValue;
     variableValue = newVariableValue;
     if (eNotificationRequired())
     {
@@ -180,7 +180,7 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableValue(VariableParam newVariableValue)
+  public void setVariableValue(VariableValue newVariableValue)
   {
     if (newVariableValue != variableValue)
     {
@@ -249,7 +249,7 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
         setName((String)newValue);
         return;
       case DidiPackage.VARIABLE_DEFINITION__VARIABLE_VALUE:
-        setVariableValue((VariableParam)newValue);
+        setVariableValue((VariableValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -272,7 +272,7 @@ public class VariableDefinitionImpl extends SimpleStatementImpl implements Varia
         setName(NAME_EDEFAULT);
         return;
       case DidiPackage.VARIABLE_DEFINITION__VARIABLE_VALUE:
-        setVariableValue((VariableParam)null);
+        setVariableValue((VariableValue)null);
         return;
     }
     super.eUnset(featureID);

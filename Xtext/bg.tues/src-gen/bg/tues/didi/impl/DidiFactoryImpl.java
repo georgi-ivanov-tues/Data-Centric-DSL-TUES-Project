@@ -68,10 +68,11 @@ public class DidiFactoryImpl extends EFactoryImpl implements DidiFactory
       case DidiPackage.STATEMENT: return createStatement();
       case DidiPackage.SIMPLE_STATEMENT: return createSimpleStatement();
       case DidiPackage.VARIABLE_DEFINITION: return createVariableDefinition();
-      case DidiPackage.VARIABLE_PARAM: return createVariableParam();
+      case DidiPackage.VARIABLE_VALUE: return createVariableValue();
       case DidiPackage.QUERY_FUNCTION: return createQueryFunction();
+      case DidiPackage.UPDATE_FUNCTION: return createUpdateFunction();
       case DidiPackage.PRINT_FUNCTION: return createPrintFunction();
-      case DidiPackage.PRINT_PARAM: return createPrintParam();
+      case DidiPackage.PRINT_ARGUMENT: return createPrintArgument();
       case DidiPackage.FUNCTION_CALL: return createFunctionCall();
       case DidiPackage.VARIABLE_CALL: return createVariableCall();
       case DidiPackage.EXPRESSION: return createExpression();
@@ -147,10 +148,10 @@ public class DidiFactoryImpl extends EFactoryImpl implements DidiFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableParam createVariableParam()
+  public VariableValue createVariableValue()
   {
-    VariableParamImpl variableParam = new VariableParamImpl();
-    return variableParam;
+    VariableValueImpl variableValue = new VariableValueImpl();
+    return variableValue;
   }
 
   /**
@@ -169,6 +170,17 @@ public class DidiFactoryImpl extends EFactoryImpl implements DidiFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public UpdateFunction createUpdateFunction()
+  {
+    UpdateFunctionImpl updateFunction = new UpdateFunctionImpl();
+    return updateFunction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PrintFunction createPrintFunction()
   {
     PrintFunctionImpl printFunction = new PrintFunctionImpl();
@@ -180,10 +192,10 @@ public class DidiFactoryImpl extends EFactoryImpl implements DidiFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public PrintParam createPrintParam()
+  public PrintArgument createPrintArgument()
   {
-    PrintParamImpl printParam = new PrintParamImpl();
-    return printParam;
+    PrintArgumentImpl printArgument = new PrintArgumentImpl();
+    return printArgument;
   }
 
   /**

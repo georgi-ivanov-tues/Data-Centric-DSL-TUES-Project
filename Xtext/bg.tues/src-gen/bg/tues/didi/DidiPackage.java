@@ -169,23 +169,23 @@ public interface DidiPackage extends EPackage
   int VARIABLE_DEFINITION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link bg.tues.didi.impl.VariableParamImpl <em>Variable Param</em>}' class.
+   * The meta object id for the '{@link bg.tues.didi.impl.VariableValueImpl <em>Variable Value</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see bg.tues.didi.impl.VariableParamImpl
-   * @see bg.tues.didi.impl.DidiPackageImpl#getVariableParam()
+   * @see bg.tues.didi.impl.VariableValueImpl
+   * @see bg.tues.didi.impl.DidiPackageImpl#getVariableValue()
    * @generated
    */
-  int VARIABLE_PARAM = 4;
+  int VARIABLE_VALUE = 4;
 
   /**
-   * The number of structural features of the '<em>Variable Param</em>' class.
+   * The number of structural features of the '<em>Variable Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_PARAM_FEATURE_COUNT = 0;
+  int VARIABLE_VALUE_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link bg.tues.didi.impl.QueryFunctionImpl <em>Query Function</em>}' class.
@@ -198,13 +198,13 @@ public interface DidiPackage extends EPackage
   int QUERY_FUNCTION = 5;
 
   /**
-   * The feature id for the '<em><b>Query Param</b></em>' containment reference.
+   * The feature id for the '<em><b>Query Argument</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUERY_FUNCTION__QUERY_PARAM = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+  int QUERY_FUNCTION__QUERY_ARGUMENT = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Query Function</em>' class.
@@ -216,6 +216,34 @@ public interface DidiPackage extends EPackage
   int QUERY_FUNCTION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link bg.tues.didi.impl.UpdateFunctionImpl <em>Update Function</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see bg.tues.didi.impl.UpdateFunctionImpl
+   * @see bg.tues.didi.impl.DidiPackageImpl#getUpdateFunction()
+   * @generated
+   */
+  int UPDATE_FUNCTION = 6;
+
+  /**
+   * The feature id for the '<em><b>Update Argument</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_FUNCTION__UPDATE_ARGUMENT = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Update Function</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_FUNCTION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link bg.tues.didi.impl.PrintFunctionImpl <em>Print Function</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -223,16 +251,16 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getPrintFunction()
    * @generated
    */
-  int PRINT_FUNCTION = 6;
+  int PRINT_FUNCTION = 7;
 
   /**
-   * The feature id for the '<em><b>Print Param</b></em>' containment reference.
+   * The feature id for the '<em><b>Print Argument</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRINT_FUNCTION__PRINT_PARAM = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
+  int PRINT_FUNCTION__PRINT_ARGUMENT = SIMPLE_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Print Function</em>' class.
@@ -244,23 +272,23 @@ public interface DidiPackage extends EPackage
   int PRINT_FUNCTION_FEATURE_COUNT = SIMPLE_STATEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link bg.tues.didi.impl.PrintParamImpl <em>Print Param</em>}' class.
+   * The meta object id for the '{@link bg.tues.didi.impl.PrintArgumentImpl <em>Print Argument</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see bg.tues.didi.impl.PrintParamImpl
-   * @see bg.tues.didi.impl.DidiPackageImpl#getPrintParam()
+   * @see bg.tues.didi.impl.PrintArgumentImpl
+   * @see bg.tues.didi.impl.DidiPackageImpl#getPrintArgument()
    * @generated
    */
-  int PRINT_PARAM = 7;
+  int PRINT_ARGUMENT = 8;
 
   /**
-   * The number of structural features of the '<em>Print Param</em>' class.
+   * The number of structural features of the '<em>Print Argument</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRINT_PARAM_FEATURE_COUNT = 0;
+  int PRINT_ARGUMENT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link bg.tues.didi.impl.FunctionCallImpl <em>Function Call</em>}' class.
@@ -270,7 +298,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getFunctionCall()
    * @generated
    */
-  int FUNCTION_CALL = 8;
+  int FUNCTION_CALL = 9;
 
   /**
    * The feature id for the '<em><b>Called Function Name</b></em>' attribute.
@@ -307,7 +335,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 10;
+  int EXPRESSION = 11;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -316,7 +344,7 @@ public interface DidiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = VARIABLE_PARAM_FEATURE_COUNT + 0;
+  int EXPRESSION_FEATURE_COUNT = VARIABLE_VALUE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link bg.tues.didi.impl.VariableCallImpl <em>Variable Call</em>}' class.
@@ -326,7 +354,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getVariableCall()
    * @generated
    */
-  int VARIABLE_CALL = 9;
+  int VARIABLE_CALL = 10;
 
   /**
    * The feature id for the '<em><b>Called Variable Name</b></em>' attribute.
@@ -354,7 +382,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getCompoundStatement()
    * @generated
    */
-  int COMPOUND_STATEMENT = 11;
+  int COMPOUND_STATEMENT = 12;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -382,7 +410,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getFunctionDefinition()
    * @generated
    */
-  int FUNCTION_DEFINITION = 12;
+  int FUNCTION_DEFINITION = 13;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -403,13 +431,13 @@ public interface DidiPackage extends EPackage
   int FUNCTION_DEFINITION__NAME = COMPOUND_STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Arguments</b></em>' attribute list.
+   * The feature id for the '<em><b>Parameters</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_DEFINITION__ARGUMENTS = COMPOUND_STATEMENT_FEATURE_COUNT + 1;
+  int FUNCTION_DEFINITION__PARAMETERS = COMPOUND_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Function Definition</em>' class.
@@ -428,7 +456,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getReturnStatement()
    * @generated
    */
-  int RETURN_STATEMENT = 13;
+  int RETURN_STATEMENT = 14;
 
   /**
    * The feature id for the '<em><b>Return Value</b></em>' containment reference.
@@ -456,7 +484,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getIfStatement()
    * @generated
    */
-  int IF_STATEMENT = 14;
+  int IF_STATEMENT = 15;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -493,7 +521,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getWhileStatement()
    * @generated
    */
-  int WHILE_STATEMENT = 15;
+  int WHILE_STATEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -530,7 +558,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getForStatement()
    * @generated
    */
-  int FOR_STATEMENT = 16;
+  int FOR_STATEMENT = 17;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -585,7 +613,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getConditionStatement()
    * @generated
    */
-  int CONDITION_STATEMENT = 17;
+  int CONDITION_STATEMENT = 18;
 
   /**
    * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
@@ -594,7 +622,7 @@ public interface DidiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION_STATEMENT__CONDITIONS = PRINT_PARAM_FEATURE_COUNT + 0;
+  int CONDITION_STATEMENT__CONDITIONS = PRINT_ARGUMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Condition Statement</em>' class.
@@ -603,7 +631,7 @@ public interface DidiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION_STATEMENT_FEATURE_COUNT = PRINT_PARAM_FEATURE_COUNT + 1;
+  int CONDITION_STATEMENT_FEATURE_COUNT = PRINT_ARGUMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link bg.tues.didi.impl.ConditionImpl <em>Condition</em>}' class.
@@ -613,7 +641,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 18;
+  int CONDITION = 19;
 
   /**
    * The feature id for the '<em><b>Condition Elements</b></em>' containment reference list.
@@ -650,7 +678,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getConditionElement()
    * @generated
    */
-  int CONDITION_ELEMENT = 19;
+  int CONDITION_ELEMENT = 20;
 
   /**
    * The number of structural features of the '<em>Condition Element</em>' class.
@@ -669,7 +697,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getPostfixOperation()
    * @generated
    */
-  int POSTFIX_OPERATION = 20;
+  int POSTFIX_OPERATION = 21;
 
   /**
    * The feature id for the '<em><b>Call</b></em>' containment reference.
@@ -706,7 +734,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 21;
+  int STRING_LITERAL = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -734,7 +762,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 22;
+  int NUMBER_LITERAL = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -762,7 +790,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 23;
+  int BOOLEAN_VALUE = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -771,7 +799,7 @@ public interface DidiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOOLEAN_VALUE__VALUE = VARIABLE_PARAM_FEATURE_COUNT + 0;
+  int BOOLEAN_VALUE__VALUE = VARIABLE_VALUE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Boolean Value</em>' class.
@@ -780,7 +808,7 @@ public interface DidiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOOLEAN_VALUE_FEATURE_COUNT = VARIABLE_PARAM_FEATURE_COUNT + 1;
+  int BOOLEAN_VALUE_FEATURE_COUNT = VARIABLE_VALUE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link bg.tues.didi.impl.AdditionImpl <em>Addition</em>}' class.
@@ -790,7 +818,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 24;
+  int ADDITION = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -827,7 +855,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getSubstraction()
    * @generated
    */
-  int SUBSTRACTION = 25;
+  int SUBSTRACTION = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -864,7 +892,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 26;
+  int MULTIPLICATION = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -901,7 +929,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getDivision()
    * @generated
    */
-  int DIVISION = 27;
+  int DIVISION = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -938,7 +966,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getMod()
    * @generated
    */
-  int MOD = 28;
+  int MOD = 29;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1053,14 +1081,14 @@ public interface DidiPackage extends EPackage
   EReference getVariableDefinition_VariableValue();
 
   /**
-   * Returns the meta object for class '{@link bg.tues.didi.VariableParam <em>Variable Param</em>}'.
+   * Returns the meta object for class '{@link bg.tues.didi.VariableValue <em>Variable Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Param</em>'.
-   * @see bg.tues.didi.VariableParam
+   * @return the meta object for class '<em>Variable Value</em>'.
+   * @see bg.tues.didi.VariableValue
    * @generated
    */
-  EClass getVariableParam();
+  EClass getVariableValue();
 
   /**
    * Returns the meta object for class '{@link bg.tues.didi.QueryFunction <em>Query Function</em>}'.
@@ -1073,15 +1101,36 @@ public interface DidiPackage extends EPackage
   EClass getQueryFunction();
 
   /**
-   * Returns the meta object for the containment reference '{@link bg.tues.didi.QueryFunction#getQueryParam <em>Query Param</em>}'.
+   * Returns the meta object for the containment reference '{@link bg.tues.didi.QueryFunction#getQueryArgument <em>Query Argument</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Query Param</em>'.
-   * @see bg.tues.didi.QueryFunction#getQueryParam()
+   * @return the meta object for the containment reference '<em>Query Argument</em>'.
+   * @see bg.tues.didi.QueryFunction#getQueryArgument()
    * @see #getQueryFunction()
    * @generated
    */
-  EReference getQueryFunction_QueryParam();
+  EReference getQueryFunction_QueryArgument();
+
+  /**
+   * Returns the meta object for class '{@link bg.tues.didi.UpdateFunction <em>Update Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update Function</em>'.
+   * @see bg.tues.didi.UpdateFunction
+   * @generated
+   */
+  EClass getUpdateFunction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link bg.tues.didi.UpdateFunction#getUpdateArgument <em>Update Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Update Argument</em>'.
+   * @see bg.tues.didi.UpdateFunction#getUpdateArgument()
+   * @see #getUpdateFunction()
+   * @generated
+   */
+  EReference getUpdateFunction_UpdateArgument();
 
   /**
    * Returns the meta object for class '{@link bg.tues.didi.PrintFunction <em>Print Function</em>}'.
@@ -1094,25 +1143,25 @@ public interface DidiPackage extends EPackage
   EClass getPrintFunction();
 
   /**
-   * Returns the meta object for the containment reference '{@link bg.tues.didi.PrintFunction#getPrintParam <em>Print Param</em>}'.
+   * Returns the meta object for the containment reference '{@link bg.tues.didi.PrintFunction#getPrintArgument <em>Print Argument</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Print Param</em>'.
-   * @see bg.tues.didi.PrintFunction#getPrintParam()
+   * @return the meta object for the containment reference '<em>Print Argument</em>'.
+   * @see bg.tues.didi.PrintFunction#getPrintArgument()
    * @see #getPrintFunction()
    * @generated
    */
-  EReference getPrintFunction_PrintParam();
+  EReference getPrintFunction_PrintArgument();
 
   /**
-   * Returns the meta object for class '{@link bg.tues.didi.PrintParam <em>Print Param</em>}'.
+   * Returns the meta object for class '{@link bg.tues.didi.PrintArgument <em>Print Argument</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Print Param</em>'.
-   * @see bg.tues.didi.PrintParam
+   * @return the meta object for class '<em>Print Argument</em>'.
+   * @see bg.tues.didi.PrintArgument
    * @generated
    */
-  EClass getPrintParam();
+  EClass getPrintArgument();
 
   /**
    * Returns the meta object for class '{@link bg.tues.didi.FunctionCall <em>Function Call</em>}'.
@@ -1220,15 +1269,15 @@ public interface DidiPackage extends EPackage
   EAttribute getFunctionDefinition_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link bg.tues.didi.FunctionDefinition#getArguments <em>Arguments</em>}'.
+   * Returns the meta object for the attribute list '{@link bg.tues.didi.FunctionDefinition#getParameters <em>Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Arguments</em>'.
-   * @see bg.tues.didi.FunctionDefinition#getArguments()
+   * @return the meta object for the attribute list '<em>Parameters</em>'.
+   * @see bg.tues.didi.FunctionDefinition#getParameters()
    * @see #getFunctionDefinition()
    * @generated
    */
-  EAttribute getFunctionDefinition_Arguments();
+  EAttribute getFunctionDefinition_Parameters();
 
   /**
    * Returns the meta object for class '{@link bg.tues.didi.ReturnStatement <em>Return Statement</em>}'.
@@ -1750,14 +1799,14 @@ public interface DidiPackage extends EPackage
     EReference VARIABLE_DEFINITION__VARIABLE_VALUE = eINSTANCE.getVariableDefinition_VariableValue();
 
     /**
-     * The meta object literal for the '{@link bg.tues.didi.impl.VariableParamImpl <em>Variable Param</em>}' class.
+     * The meta object literal for the '{@link bg.tues.didi.impl.VariableValueImpl <em>Variable Value</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see bg.tues.didi.impl.VariableParamImpl
-     * @see bg.tues.didi.impl.DidiPackageImpl#getVariableParam()
+     * @see bg.tues.didi.impl.VariableValueImpl
+     * @see bg.tues.didi.impl.DidiPackageImpl#getVariableValue()
      * @generated
      */
-    EClass VARIABLE_PARAM = eINSTANCE.getVariableParam();
+    EClass VARIABLE_VALUE = eINSTANCE.getVariableValue();
 
     /**
      * The meta object literal for the '{@link bg.tues.didi.impl.QueryFunctionImpl <em>Query Function</em>}' class.
@@ -1770,12 +1819,30 @@ public interface DidiPackage extends EPackage
     EClass QUERY_FUNCTION = eINSTANCE.getQueryFunction();
 
     /**
-     * The meta object literal for the '<em><b>Query Param</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Query Argument</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference QUERY_FUNCTION__QUERY_PARAM = eINSTANCE.getQueryFunction_QueryParam();
+    EReference QUERY_FUNCTION__QUERY_ARGUMENT = eINSTANCE.getQueryFunction_QueryArgument();
+
+    /**
+     * The meta object literal for the '{@link bg.tues.didi.impl.UpdateFunctionImpl <em>Update Function</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see bg.tues.didi.impl.UpdateFunctionImpl
+     * @see bg.tues.didi.impl.DidiPackageImpl#getUpdateFunction()
+     * @generated
+     */
+    EClass UPDATE_FUNCTION = eINSTANCE.getUpdateFunction();
+
+    /**
+     * The meta object literal for the '<em><b>Update Argument</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_FUNCTION__UPDATE_ARGUMENT = eINSTANCE.getUpdateFunction_UpdateArgument();
 
     /**
      * The meta object literal for the '{@link bg.tues.didi.impl.PrintFunctionImpl <em>Print Function</em>}' class.
@@ -1788,22 +1855,22 @@ public interface DidiPackage extends EPackage
     EClass PRINT_FUNCTION = eINSTANCE.getPrintFunction();
 
     /**
-     * The meta object literal for the '<em><b>Print Param</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Print Argument</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PRINT_FUNCTION__PRINT_PARAM = eINSTANCE.getPrintFunction_PrintParam();
+    EReference PRINT_FUNCTION__PRINT_ARGUMENT = eINSTANCE.getPrintFunction_PrintArgument();
 
     /**
-     * The meta object literal for the '{@link bg.tues.didi.impl.PrintParamImpl <em>Print Param</em>}' class.
+     * The meta object literal for the '{@link bg.tues.didi.impl.PrintArgumentImpl <em>Print Argument</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see bg.tues.didi.impl.PrintParamImpl
-     * @see bg.tues.didi.impl.DidiPackageImpl#getPrintParam()
+     * @see bg.tues.didi.impl.PrintArgumentImpl
+     * @see bg.tues.didi.impl.DidiPackageImpl#getPrintArgument()
      * @generated
      */
-    EClass PRINT_PARAM = eINSTANCE.getPrintParam();
+    EClass PRINT_ARGUMENT = eINSTANCE.getPrintArgument();
 
     /**
      * The meta object literal for the '{@link bg.tues.didi.impl.FunctionCallImpl <em>Function Call</em>}' class.
@@ -1896,12 +1963,12 @@ public interface DidiPackage extends EPackage
     EAttribute FUNCTION_DEFINITION__NAME = eINSTANCE.getFunctionDefinition_Name();
 
     /**
-     * The meta object literal for the '<em><b>Arguments</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FUNCTION_DEFINITION__ARGUMENTS = eINSTANCE.getFunctionDefinition_Arguments();
+    EAttribute FUNCTION_DEFINITION__PARAMETERS = eINSTANCE.getFunctionDefinition_Parameters();
 
     /**
      * The meta object literal for the '{@link bg.tues.didi.impl.ReturnStatementImpl <em>Return Statement</em>}' class.

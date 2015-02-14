@@ -61,22 +61,23 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final RuleCall cVariableDefinitionParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
 		private final RuleCall cQueryFunctionParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
-		private final RuleCall cPrintFunctionParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
-		private final RuleCall cPostfixOperationParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
-		private final RuleCall cFunctionCallParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
-		private final RuleCall cReturnStatementParserRuleCall_0_5 = (RuleCall)cAlternatives_0.eContents().get(5);
+		private final RuleCall cUpdateFunctionParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
+		private final RuleCall cPrintFunctionParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
+		private final RuleCall cPostfixOperationParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
+		private final RuleCall cFunctionCallParserRuleCall_0_5 = (RuleCall)cAlternatives_0.eContents().get(5);
+		private final RuleCall cReturnStatementParserRuleCall_0_6 = (RuleCall)cAlternatives_0.eContents().get(6);
 		private final RuleCall cSemicolonParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//SimpleStatement:
-		//	(VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
+		//	(VariableDefinition | QueryFunction | UpdateFunction | PrintFunction | //	 MultiAssign | 
 		//	PostfixOperation | FunctionCall | ReturnStatement) Semicolon;
 		public ParserRule getRule() { return rule; }
 
-		//(VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
+		//(VariableDefinition | QueryFunction | UpdateFunction | PrintFunction | //	 MultiAssign | 
 		//PostfixOperation | FunctionCall | ReturnStatement) Semicolon
 		public Group getGroup() { return cGroup; }
 
-		//VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
+		//VariableDefinition | QueryFunction | UpdateFunction | PrintFunction | //	 MultiAssign | 
 		//PostfixOperation | FunctionCall | ReturnStatement
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
@@ -86,18 +87,21 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		//QueryFunction
 		public RuleCall getQueryFunctionParserRuleCall_0_1() { return cQueryFunctionParserRuleCall_0_1; }
 
+		//UpdateFunction
+		public RuleCall getUpdateFunctionParserRuleCall_0_2() { return cUpdateFunctionParserRuleCall_0_2; }
+
 		//PrintFunction
-		public RuleCall getPrintFunctionParserRuleCall_0_2() { return cPrintFunctionParserRuleCall_0_2; }
+		public RuleCall getPrintFunctionParserRuleCall_0_3() { return cPrintFunctionParserRuleCall_0_3; }
 
 		////	 MultiAssign | 
 		//PostfixOperation
-		public RuleCall getPostfixOperationParserRuleCall_0_3() { return cPostfixOperationParserRuleCall_0_3; }
+		public RuleCall getPostfixOperationParserRuleCall_0_4() { return cPostfixOperationParserRuleCall_0_4; }
 
 		//FunctionCall
-		public RuleCall getFunctionCallParserRuleCall_0_4() { return cFunctionCallParserRuleCall_0_4; }
+		public RuleCall getFunctionCallParserRuleCall_0_5() { return cFunctionCallParserRuleCall_0_5; }
 
 		//ReturnStatement
-		public RuleCall getReturnStatementParserRuleCall_0_5() { return cReturnStatementParserRuleCall_0_5; }
+		public RuleCall getReturnStatementParserRuleCall_0_6() { return cReturnStatementParserRuleCall_0_6; }
 
 		//Semicolon
 		public RuleCall getSemicolonParserRuleCall_1() { return cSemicolonParserRuleCall_1; }
@@ -112,13 +116,13 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDENTIFIERTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final RuleCall cOpAssignmentParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cVariableValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cVariableValueVariableParamParserRuleCall_3_0 = (RuleCall)cVariableValueAssignment_3.eContents().get(0);
+		private final RuleCall cVariableValueVariableValueParserRuleCall_3_0 = (RuleCall)cVariableValueAssignment_3.eContents().get(0);
 		
 		//VariableDefinition:
-		//	isGlobal?=Global? name=IDENTIFIER OpAssignment variableValue=VariableParam;
+		//	isGlobal?=Global? name=IDENTIFIER OpAssignment variableValue=VariableValue;
 		public ParserRule getRule() { return rule; }
 
-		//isGlobal?=Global? name=IDENTIFIER OpAssignment variableValue=VariableParam
+		//isGlobal?=Global? name=IDENTIFIER OpAssignment variableValue=VariableValue
 		public Group getGroup() { return cGroup; }
 
 		//isGlobal?=Global?
@@ -136,21 +140,21 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		//OpAssignment
 		public RuleCall getOpAssignmentParserRuleCall_2() { return cOpAssignmentParserRuleCall_2; }
 
-		//variableValue=VariableParam
+		//variableValue=VariableValue
 		public Assignment getVariableValueAssignment_3() { return cVariableValueAssignment_3; }
 
-		//VariableParam
-		public RuleCall getVariableValueVariableParamParserRuleCall_3_0() { return cVariableValueVariableParamParserRuleCall_3_0; }
+		//VariableValue
+		public RuleCall getVariableValueVariableValueParserRuleCall_3_0() { return cVariableValueVariableValueParserRuleCall_3_0; }
 	}
 
-	public class VariableParamElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableParam");
+	public class VariableValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cQueryFunctionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cBooleanValueParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//VariableParam:
+		//VariableValue:
 		//	Expression | QueryFunction | BooleanValue;
 		public ParserRule getRule() { return rule; }
 
@@ -171,24 +175,48 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QueryFunction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cQueryParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Assignment cQueryParamAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cQueryParamConditionStatementParserRuleCall_1_0 = (RuleCall)cQueryParamAssignment_1.eContents().get(0);
+		private final Assignment cQueryArgumentAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cQueryArgumentConditionStatementParserRuleCall_1_0 = (RuleCall)cQueryArgumentAssignment_1.eContents().get(0);
 		
 		//QueryFunction:
-		//	Query queryParam=ConditionStatement;
+		//	Query queryArgument=ConditionStatement;
 		public ParserRule getRule() { return rule; }
 
-		//Query queryParam=ConditionStatement
+		//Query queryArgument=ConditionStatement
 		public Group getGroup() { return cGroup; }
 
 		//Query
 		public RuleCall getQueryParserRuleCall_0() { return cQueryParserRuleCall_0; }
 
-		//queryParam=ConditionStatement
-		public Assignment getQueryParamAssignment_1() { return cQueryParamAssignment_1; }
+		//queryArgument=ConditionStatement
+		public Assignment getQueryArgumentAssignment_1() { return cQueryArgumentAssignment_1; }
 
 		//ConditionStatement
-		public RuleCall getQueryParamConditionStatementParserRuleCall_1_0() { return cQueryParamConditionStatementParserRuleCall_1_0; }
+		public RuleCall getQueryArgumentConditionStatementParserRuleCall_1_0() { return cQueryArgumentConditionStatementParserRuleCall_1_0; }
+	}
+
+	public class UpdateFunctionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UpdateFunction");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cUpdateParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cUpdateArgumentAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cUpdateArgumentConditionStatementParserRuleCall_1_0 = (RuleCall)cUpdateArgumentAssignment_1.eContents().get(0);
+		
+		//UpdateFunction:
+		//	Update updateArgument=ConditionStatement;
+		public ParserRule getRule() { return rule; }
+
+		//Update updateArgument=ConditionStatement
+		public Group getGroup() { return cGroup; }
+
+		//Update
+		public RuleCall getUpdateParserRuleCall_0() { return cUpdateParserRuleCall_0; }
+
+		//updateArgument=ConditionStatement
+		public Assignment getUpdateArgumentAssignment_1() { return cUpdateArgumentAssignment_1; }
+
+		//ConditionStatement
+		public RuleCall getUpdateArgumentConditionStatementParserRuleCall_1_0() { return cUpdateArgumentConditionStatementParserRuleCall_1_0; }
 	}
 
 	public class PrintFunctionElements extends AbstractParserRuleElementFinder {
@@ -197,14 +225,14 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final RuleCall cPrintParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
 		private final RuleCall cPrintlnParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
-		private final Assignment cPrintParamAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPrintParamPrintParamParserRuleCall_1_0 = (RuleCall)cPrintParamAssignment_1.eContents().get(0);
+		private final Assignment cPrintArgumentAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPrintArgumentPrintArgumentParserRuleCall_1_0 = (RuleCall)cPrintArgumentAssignment_1.eContents().get(0);
 		
 		//PrintFunction:
-		//	(Print | Println) printParam=PrintParam;
+		//	(Print | Println) printArgument=PrintArgument;
 		public ParserRule getRule() { return rule; }
 
-		//(Print | Println) printParam=PrintParam
+		//(Print | Println) printArgument=PrintArgument
 		public Group getGroup() { return cGroup; }
 
 		//Print | Println
@@ -216,20 +244,20 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		//Println
 		public RuleCall getPrintlnParserRuleCall_0_1() { return cPrintlnParserRuleCall_0_1; }
 
-		//printParam=PrintParam
-		public Assignment getPrintParamAssignment_1() { return cPrintParamAssignment_1; }
+		//printArgument=PrintArgument
+		public Assignment getPrintArgumentAssignment_1() { return cPrintArgumentAssignment_1; }
 
-		//PrintParam
-		public RuleCall getPrintParamPrintParamParserRuleCall_1_0() { return cPrintParamPrintParamParserRuleCall_1_0; }
+		//PrintArgument
+		public RuleCall getPrintArgumentPrintArgumentParserRuleCall_1_0() { return cPrintArgumentPrintArgumentParserRuleCall_1_0; }
 	}
 
-	public class PrintParamElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PrintParam");
+	public class PrintArgumentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PrintArgument");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cQueryFunctionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cConditionStatementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//PrintParam:
+		//PrintArgument:
 		//	QueryFunction | ConditionStatement;
 		public ParserRule getRule() { return rule; }
 
@@ -613,12 +641,12 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDENTIFIERTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final RuleCall cOpeningBracketParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cArgumentsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final RuleCall cArgumentsIDENTIFIERTerminalRuleCall_3_0_0 = (RuleCall)cArgumentsAssignment_3_0.eContents().get(0);
+		private final Assignment cParametersAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cParametersIDENTIFIERTerminalRuleCall_3_0_0 = (RuleCall)cParametersAssignment_3_0.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
 		private final RuleCall cCommaParserRuleCall_3_1_0 = (RuleCall)cGroup_3_1.eContents().get(0);
-		private final Assignment cArgumentsAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cArgumentsIDENTIFIERTerminalRuleCall_3_1_1_0 = (RuleCall)cArgumentsAssignment_3_1_1.eContents().get(0);
+		private final Assignment cParametersAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cParametersIDENTIFIERTerminalRuleCall_3_1_1_0 = (RuleCall)cParametersAssignment_3_1_1.eContents().get(0);
 		private final RuleCall cClosingBracketParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		private final RuleCall cOpeningCurlyBracketParserRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
 		private final Assignment cStatementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
@@ -626,11 +654,11 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cClosingCurlyBracketParserRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 		
 		//FunctionDefinition:
-		//	Func name=IDENTIFIER OpeningBracket (arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)? ClosingBracket
+		//	Func name=IDENTIFIER OpeningBracket (parameters+=IDENTIFIER (Comma parameters+=IDENTIFIER)*)? ClosingBracket
 		//	OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
 		public ParserRule getRule() { return rule; }
 
-		//Func name=IDENTIFIER OpeningBracket (arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)? ClosingBracket
+		//Func name=IDENTIFIER OpeningBracket (parameters+=IDENTIFIER (Comma parameters+=IDENTIFIER)*)? ClosingBracket
 		//OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket
 		public Group getGroup() { return cGroup; }
 
@@ -646,26 +674,26 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		//OpeningBracket
 		public RuleCall getOpeningBracketParserRuleCall_2() { return cOpeningBracketParserRuleCall_2; }
 
-		//(arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)?
+		//(parameters+=IDENTIFIER (Comma parameters+=IDENTIFIER)*)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//arguments+=IDENTIFIER
-		public Assignment getArgumentsAssignment_3_0() { return cArgumentsAssignment_3_0; }
+		//parameters+=IDENTIFIER
+		public Assignment getParametersAssignment_3_0() { return cParametersAssignment_3_0; }
 
 		//IDENTIFIER
-		public RuleCall getArgumentsIDENTIFIERTerminalRuleCall_3_0_0() { return cArgumentsIDENTIFIERTerminalRuleCall_3_0_0; }
+		public RuleCall getParametersIDENTIFIERTerminalRuleCall_3_0_0() { return cParametersIDENTIFIERTerminalRuleCall_3_0_0; }
 
-		//(Comma arguments+=IDENTIFIER)*
+		//(Comma parameters+=IDENTIFIER)*
 		public Group getGroup_3_1() { return cGroup_3_1; }
 
 		//Comma
 		public RuleCall getCommaParserRuleCall_3_1_0() { return cCommaParserRuleCall_3_1_0; }
 
-		//arguments+=IDENTIFIER
-		public Assignment getArgumentsAssignment_3_1_1() { return cArgumentsAssignment_3_1_1; }
+		//parameters+=IDENTIFIER
+		public Assignment getParametersAssignment_3_1_1() { return cParametersAssignment_3_1_1; }
 
 		//IDENTIFIER
-		public RuleCall getArgumentsIDENTIFIERTerminalRuleCall_3_1_1_0() { return cArgumentsIDENTIFIERTerminalRuleCall_3_1_1_0; }
+		public RuleCall getParametersIDENTIFIERTerminalRuleCall_3_1_1_0() { return cParametersIDENTIFIERTerminalRuleCall_3_1_1_0; }
 
 		//ClosingBracket
 		public RuleCall getClosingBracketParserRuleCall_4() { return cClosingBracketParserRuleCall_4; }
@@ -1445,6 +1473,18 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getQueryKeyword() { return cQueryKeyword; }
 	}
 
+	public class UpdateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Update");
+		private final Keyword cUpdateKeyword = (Keyword)rule.eContents().get(1);
+		
+		//Update:
+		//	"update";
+		public ParserRule getRule() { return rule; }
+
+		//"update"
+		public Keyword getUpdateKeyword() { return cUpdateKeyword; }
+	}
+
 	public class PrintElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Print");
 		private final Keyword cPrintKeyword = (Keyword)rule.eContents().get(1);
@@ -1566,10 +1606,11 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	private final StatementElements pStatement;
 	private final SimpleStatementElements pSimpleStatement;
 	private final VariableDefinitionElements pVariableDefinition;
-	private final VariableParamElements pVariableParam;
+	private final VariableValueElements pVariableValue;
 	private final QueryFunctionElements pQueryFunction;
+	private final UpdateFunctionElements pUpdateFunction;
 	private final PrintFunctionElements pPrintFunction;
-	private final PrintParamElements pPrintParam;
+	private final PrintArgumentElements pPrintArgument;
 	private final FunctionCallElements pFunctionCall;
 	private final VariableCallElements pVariableCall;
 	private final ExpressionElements pExpression;
@@ -1610,6 +1651,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	private final ClosingCurlyBracketElements pClosingCurlyBracket;
 	private final GlobalElements pGlobal;
 	private final QueryElements pQuery;
+	private final UpdateElements pUpdate;
 	private final PrintElements pPrint;
 	private final PrintlnElements pPrintln;
 	private final FuncElements pFunc;
@@ -1635,10 +1677,11 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		this.pStatement = new StatementElements();
 		this.pSimpleStatement = new SimpleStatementElements();
 		this.pVariableDefinition = new VariableDefinitionElements();
-		this.pVariableParam = new VariableParamElements();
+		this.pVariableValue = new VariableValueElements();
 		this.pQueryFunction = new QueryFunctionElements();
+		this.pUpdateFunction = new UpdateFunctionElements();
 		this.pPrintFunction = new PrintFunctionElements();
-		this.pPrintParam = new PrintParamElements();
+		this.pPrintArgument = new PrintArgumentElements();
 		this.pFunctionCall = new FunctionCallElements();
 		this.pVariableCall = new VariableCallElements();
 		this.pExpression = new ExpressionElements();
@@ -1679,6 +1722,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		this.pClosingCurlyBracket = new ClosingCurlyBracketElements();
 		this.pGlobal = new GlobalElements();
 		this.pQuery = new QueryElements();
+		this.pUpdate = new UpdateElements();
 		this.pPrint = new PrintElements();
 		this.pPrintln = new PrintlnElements();
 		this.pFunc = new FuncElements();
@@ -1740,7 +1784,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SimpleStatement:
-	//	(VariableDefinition | QueryFunction | PrintFunction | //	 MultiAssign | 
+	//	(VariableDefinition | QueryFunction | UpdateFunction | PrintFunction | //	 MultiAssign | 
 	//	PostfixOperation | FunctionCall | ReturnStatement) Semicolon;
 	public SimpleStatementElements getSimpleStatementAccess() {
 		return pSimpleStatement;
@@ -1751,7 +1795,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VariableDefinition:
-	//	isGlobal?=Global? name=IDENTIFIER OpAssignment variableValue=VariableParam;
+	//	isGlobal?=Global? name=IDENTIFIER OpAssignment variableValue=VariableValue;
 	public VariableDefinitionElements getVariableDefinitionAccess() {
 		return pVariableDefinition;
 	}
@@ -1760,18 +1804,18 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		return getVariableDefinitionAccess().getRule();
 	}
 
-	//VariableParam:
+	//VariableValue:
 	//	Expression | QueryFunction | BooleanValue;
-	public VariableParamElements getVariableParamAccess() {
-		return pVariableParam;
+	public VariableValueElements getVariableValueAccess() {
+		return pVariableValue;
 	}
 	
-	public ParserRule getVariableParamRule() {
-		return getVariableParamAccess().getRule();
+	public ParserRule getVariableValueRule() {
+		return getVariableValueAccess().getRule();
 	}
 
 	//QueryFunction:
-	//	Query queryParam=ConditionStatement;
+	//	Query queryArgument=ConditionStatement;
 	public QueryFunctionElements getQueryFunctionAccess() {
 		return pQueryFunction;
 	}
@@ -1780,8 +1824,18 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		return getQueryFunctionAccess().getRule();
 	}
 
+	//UpdateFunction:
+	//	Update updateArgument=ConditionStatement;
+	public UpdateFunctionElements getUpdateFunctionAccess() {
+		return pUpdateFunction;
+	}
+	
+	public ParserRule getUpdateFunctionRule() {
+		return getUpdateFunctionAccess().getRule();
+	}
+
 	//PrintFunction:
-	//	(Print | Println) printParam=PrintParam;
+	//	(Print | Println) printArgument=PrintArgument;
 	public PrintFunctionElements getPrintFunctionAccess() {
 		return pPrintFunction;
 	}
@@ -1790,14 +1844,14 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		return getPrintFunctionAccess().getRule();
 	}
 
-	//PrintParam:
+	//PrintArgument:
 	//	QueryFunction | ConditionStatement;
-	public PrintParamElements getPrintParamAccess() {
-		return pPrintParam;
+	public PrintArgumentElements getPrintArgumentAccess() {
+		return pPrintArgument;
 	}
 	
-	public ParserRule getPrintParamRule() {
-		return getPrintParamAccess().getRule();
+	public ParserRule getPrintArgumentRule() {
+		return getPrintArgumentAccess().getRule();
 	}
 
 	//FunctionCall:
@@ -1903,7 +1957,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FunctionDefinition:
-	//	Func name=IDENTIFIER OpeningBracket (arguments+=IDENTIFIER (Comma arguments+=IDENTIFIER)*)? ClosingBracket
+	//	Func name=IDENTIFIER OpeningBracket (parameters+=IDENTIFIER (Comma parameters+=IDENTIFIER)*)? ClosingBracket
 	//	OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
 	public FunctionDefinitionElements getFunctionDefinitionAccess() {
 		return pFunctionDefinition;
@@ -2238,6 +2292,16 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getQueryRule() {
 		return getQueryAccess().getRule();
+	}
+
+	//Update:
+	//	"update";
+	public UpdateElements getUpdateAccess() {
+		return pUpdate;
+	}
+	
+	public ParserRule getUpdateRule() {
+		return getUpdateAccess().getRule();
 	}
 
 	//Print:

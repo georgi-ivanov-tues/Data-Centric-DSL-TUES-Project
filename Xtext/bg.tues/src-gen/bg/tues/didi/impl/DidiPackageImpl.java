@@ -21,17 +21,18 @@ import bg.tues.didi.Mod;
 import bg.tues.didi.Multiplication;
 import bg.tues.didi.NumberLiteral;
 import bg.tues.didi.PostfixOperation;
+import bg.tues.didi.PrintArgument;
 import bg.tues.didi.PrintFunction;
-import bg.tues.didi.PrintParam;
 import bg.tues.didi.QueryFunction;
 import bg.tues.didi.ReturnStatement;
 import bg.tues.didi.SimpleStatement;
 import bg.tues.didi.Statement;
 import bg.tues.didi.StringLiteral;
 import bg.tues.didi.Substraction;
+import bg.tues.didi.UpdateFunction;
 import bg.tues.didi.VariableCall;
 import bg.tues.didi.VariableDefinition;
-import bg.tues.didi.VariableParam;
+import bg.tues.didi.VariableValue;
 import bg.tues.didi.WhileStatement;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -82,7 +83,7 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass variableParamEClass = null;
+  private EClass variableValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,6 +97,13 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass updateFunctionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass printFunctionEClass = null;
 
   /**
@@ -103,7 +111,7 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass printParamEClass = null;
+  private EClass printArgumentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -400,9 +408,9 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariableParam()
+  public EClass getVariableValue()
   {
-    return variableParamEClass;
+    return variableValueEClass;
   }
 
   /**
@@ -420,9 +428,29 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getQueryFunction_QueryParam()
+  public EReference getQueryFunction_QueryArgument()
   {
     return (EReference)queryFunctionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUpdateFunction()
+  {
+    return updateFunctionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUpdateFunction_UpdateArgument()
+  {
+    return (EReference)updateFunctionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -440,7 +468,7 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPrintFunction_PrintParam()
+  public EReference getPrintFunction_PrintArgument()
   {
     return (EReference)printFunctionEClass.getEStructuralFeatures().get(0);
   }
@@ -450,9 +478,9 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPrintParam()
+  public EClass getPrintArgument()
   {
-    return printParamEClass;
+    return printArgumentEClass;
   }
 
   /**
@@ -560,7 +588,7 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunctionDefinition_Arguments()
+  public EAttribute getFunctionDefinition_Parameters()
   {
     return (EAttribute)functionDefinitionEClass.getEStructuralFeatures().get(1);
   }
@@ -1007,15 +1035,18 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
     createEAttribute(variableDefinitionEClass, VARIABLE_DEFINITION__NAME);
     createEReference(variableDefinitionEClass, VARIABLE_DEFINITION__VARIABLE_VALUE);
 
-    variableParamEClass = createEClass(VARIABLE_PARAM);
+    variableValueEClass = createEClass(VARIABLE_VALUE);
 
     queryFunctionEClass = createEClass(QUERY_FUNCTION);
-    createEReference(queryFunctionEClass, QUERY_FUNCTION__QUERY_PARAM);
+    createEReference(queryFunctionEClass, QUERY_FUNCTION__QUERY_ARGUMENT);
+
+    updateFunctionEClass = createEClass(UPDATE_FUNCTION);
+    createEReference(updateFunctionEClass, UPDATE_FUNCTION__UPDATE_ARGUMENT);
 
     printFunctionEClass = createEClass(PRINT_FUNCTION);
-    createEReference(printFunctionEClass, PRINT_FUNCTION__PRINT_PARAM);
+    createEReference(printFunctionEClass, PRINT_FUNCTION__PRINT_ARGUMENT);
 
-    printParamEClass = createEClass(PRINT_PARAM);
+    printArgumentEClass = createEClass(PRINT_ARGUMENT);
 
     functionCallEClass = createEClass(FUNCTION_CALL);
     createEAttribute(functionCallEClass, FUNCTION_CALL__CALLED_FUNCTION_NAME);
@@ -1031,7 +1062,7 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
 
     functionDefinitionEClass = createEClass(FUNCTION_DEFINITION);
     createEAttribute(functionDefinitionEClass, FUNCTION_DEFINITION__NAME);
-    createEAttribute(functionDefinitionEClass, FUNCTION_DEFINITION__ARGUMENTS);
+    createEAttribute(functionDefinitionEClass, FUNCTION_DEFINITION__PARAMETERS);
 
     returnStatementEClass = createEClass(RETURN_STATEMENT);
     createEReference(returnStatementEClass, RETURN_STATEMENT__RETURN_VALUE);
@@ -1122,13 +1153,14 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
     simpleStatementEClass.getESuperTypes().add(this.getStatement());
     variableDefinitionEClass.getESuperTypes().add(this.getSimpleStatement());
     queryFunctionEClass.getESuperTypes().add(this.getSimpleStatement());
-    queryFunctionEClass.getESuperTypes().add(this.getVariableParam());
-    queryFunctionEClass.getESuperTypes().add(this.getPrintParam());
+    queryFunctionEClass.getESuperTypes().add(this.getVariableValue());
+    queryFunctionEClass.getESuperTypes().add(this.getPrintArgument());
+    updateFunctionEClass.getESuperTypes().add(this.getSimpleStatement());
     printFunctionEClass.getESuperTypes().add(this.getSimpleStatement());
     functionCallEClass.getESuperTypes().add(this.getSimpleStatement());
     functionCallEClass.getESuperTypes().add(this.getExpression());
     variableCallEClass.getESuperTypes().add(this.getExpression());
-    expressionEClass.getESuperTypes().add(this.getVariableParam());
+    expressionEClass.getESuperTypes().add(this.getVariableValue());
     expressionEClass.getESuperTypes().add(this.getConditionElement());
     compoundStatementEClass.getESuperTypes().add(this.getStatement());
     functionDefinitionEClass.getESuperTypes().add(this.getCompoundStatement());
@@ -1136,11 +1168,11 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
     ifStatementEClass.getESuperTypes().add(this.getCompoundStatement());
     whileStatementEClass.getESuperTypes().add(this.getCompoundStatement());
     forStatementEClass.getESuperTypes().add(this.getCompoundStatement());
-    conditionStatementEClass.getESuperTypes().add(this.getPrintParam());
+    conditionStatementEClass.getESuperTypes().add(this.getPrintArgument());
     postfixOperationEClass.getESuperTypes().add(this.getSimpleStatement());
     stringLiteralEClass.getESuperTypes().add(this.getExpression());
     numberLiteralEClass.getESuperTypes().add(this.getExpression());
-    booleanValueEClass.getESuperTypes().add(this.getVariableParam());
+    booleanValueEClass.getESuperTypes().add(this.getVariableValue());
     booleanValueEClass.getESuperTypes().add(this.getConditionElement());
     additionEClass.getESuperTypes().add(this.getExpression());
     substractionEClass.getESuperTypes().add(this.getExpression());
@@ -1159,17 +1191,20 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
     initEClass(variableDefinitionEClass, VariableDefinition.class, "VariableDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableDefinition_IsGlobal(), ecorePackage.getEBoolean(), "isGlobal", null, 0, 1, VariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariableDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariableDefinition_VariableValue(), this.getVariableParam(), null, "variableValue", null, 0, 1, VariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableDefinition_VariableValue(), this.getVariableValue(), null, "variableValue", null, 0, 1, VariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(variableParamEClass, VariableParam.class, "VariableParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(variableValueEClass, VariableValue.class, "VariableValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(queryFunctionEClass, QueryFunction.class, "QueryFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getQueryFunction_QueryParam(), this.getConditionStatement(), null, "queryParam", null, 0, 1, QueryFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQueryFunction_QueryArgument(), this.getConditionStatement(), null, "queryArgument", null, 0, 1, QueryFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(updateFunctionEClass, UpdateFunction.class, "UpdateFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUpdateFunction_UpdateArgument(), this.getConditionStatement(), null, "updateArgument", null, 0, 1, UpdateFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(printFunctionEClass, PrintFunction.class, "PrintFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPrintFunction_PrintParam(), this.getPrintParam(), null, "printParam", null, 0, 1, PrintFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPrintFunction_PrintArgument(), this.getPrintArgument(), null, "printArgument", null, 0, 1, PrintFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(printParamEClass, PrintParam.class, "PrintParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(printArgumentEClass, PrintArgument.class, "PrintArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionCall_CalledFunctionName(), ecorePackage.getEString(), "calledFunctionName", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1185,7 +1220,7 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
 
     initEClass(functionDefinitionEClass, FunctionDefinition.class, "FunctionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunctionDefinition_Arguments(), ecorePackage.getEString(), "arguments", null, 0, -1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFunctionDefinition_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(returnStatementEClass, ReturnStatement.class, "ReturnStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReturnStatement_ReturnValue(), this.getConditionStatement(), null, "returnValue", null, 0, 1, ReturnStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

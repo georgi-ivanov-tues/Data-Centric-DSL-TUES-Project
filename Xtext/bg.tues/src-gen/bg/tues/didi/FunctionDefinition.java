@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link bg.tues.didi.FunctionDefinition#getName <em>Name</em>}</li>
- *   <li>{@link bg.tues.didi.FunctionDefinition#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link bg.tues.didi.FunctionDefinition#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,19 +50,19 @@ public interface FunctionDefinition extends CompoundStatement
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Arguments</b></em>' attribute list.
+   * Returns the value of the '<em><b>Parameters</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Arguments</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Parameters</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arguments</em>' attribute list.
-   * @see bg.tues.didi.DidiPackage#getFunctionDefinition_Arguments()
+   * @return the value of the '<em>Parameters</em>' attribute list.
+   * @see bg.tues.didi.DidiPackage#getFunctionDefinition_Parameters()
    * @model unique="false"
    * @generated
    */
-  EList<String> getArguments();
+  EList<String> getParameters();
 
 } // FunctionDefinition
