@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g 2015-02-08 20:47:52
+// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g 2015-02-14 19:18:06
 
   package bg.tues.didi;
   import bg.tues.didi.*;
@@ -18,7 +18,7 @@
   import java.sql.SQLException;
   import java.sql.ResultSetMetaData;
   import java.util.Arrays;
-  import bg.tues.didi.tree.functions.Update;
+  import bg.tues.didi.tree.functions.UpdateNode;
 
 
 import org.antlr.runtime.*;
@@ -612,7 +612,7 @@ public class ProgramWalker extends TreeParser {
 			expression16=expression();
 			state._fsp--;
 
-			node = new Update(expression16, dataSource);
+			node = new UpdateNode(expression16, dataSource);
 			}
 
 			match(input, Token.UP, null); 
@@ -968,13 +968,15 @@ public class ProgramWalker extends TreeParser {
 					        }
 					      Function function = functions.get((Identifier23!=null?Identifier23.getText():null) + paramSize);
 					      function.setParameters(paramSize == 0 ? new ArrayList<Node>() : exprList22);
+					      function.setFunctions(functions);
+					      function.setContext(context);
 					      node = function;
 					      
 					  
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:169:6: ^( FUNC_CALL Assert expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:171:6: ^( FUNC_CALL Assert expression )
 					{
 					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall443); 
 					match(input, Token.DOWN, null); 
@@ -988,7 +990,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:170:6: ^( FUNC_CALL Size expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:172:6: ^( FUNC_CALL Size expression )
 					{
 					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall457); 
 					match(input, Token.DOWN, null); 
@@ -1018,7 +1020,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "println"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:173:1: println returns [Node node] : ( ^( PRINTLN functionCall ) | ^( PRINTLN ( expression )? ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:175:1: println returns [Node node] : ( ^( PRINTLN functionCall ) | ^( PRINTLN ( expression )? ) );
 	public final Node println() throws RecognitionException {
 		Node node = null;
 
@@ -1027,7 +1029,7 @@ public class ProgramWalker extends TreeParser {
 		Node expression25 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:174:3: ( ^( PRINTLN functionCall ) | ^( PRINTLN ( expression )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:176:3: ( ^( PRINTLN functionCall ) | ^( PRINTLN ( expression )? ) )
 			int alt13=2;
 			int LA13_0 = input.LA(1);
 			if ( (LA13_0==PRINTLN) ) {
@@ -1079,7 +1081,7 @@ public class ProgramWalker extends TreeParser {
 
 			switch (alt13) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:174:6: ^( PRINTLN functionCall )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:176:6: ^( PRINTLN functionCall )
 					{
 					match(input,PRINTLN,FOLLOW_PRINTLN_in_println481); 
 					match(input, Token.DOWN, null); 
@@ -1093,12 +1095,12 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:175:6: ^( PRINTLN ( expression )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:177:6: ^( PRINTLN ( expression )? )
 					{
 					match(input,PRINTLN,FOLLOW_PRINTLN_in_println494); 
 					if ( input.LA(1)==Token.DOWN ) {
 						match(input, Token.DOWN, null); 
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:175:16: ( expression )?
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:177:16: ( expression )?
 						int alt12=2;
 						int LA12_0 = input.LA(1);
 						if ( ((LA12_0 >= Add && LA12_0 <= And)||LA12_0==Bool||LA12_0==Divide||LA12_0==Equals||(LA12_0 >= GT && LA12_0 <= GTEquals)||LA12_0==In||(LA12_0 >= LOOKUP && LA12_0 <= Number)||LA12_0==Or||LA12_0==Pow||(LA12_0 >= Subtract && LA12_0 <= TERNARY)||LA12_0==UNARY_MIN||LA12_0==76) ) {
@@ -1106,7 +1108,7 @@ public class ProgramWalker extends TreeParser {
 						}
 						switch (alt12) {
 							case 1 :
-								// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:175:16: expression
+								// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:177:16: expression
 								{
 								pushFollow(FOLLOW_expression_in_println496);
 								expression25=expression();
@@ -1140,7 +1142,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "print"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:178:1: print returns [Node node] : ( ^( PRINT functionCall ) | ^( PRINT ( expression )? ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:180:1: print returns [Node node] : ( ^( PRINT functionCall ) | ^( PRINT ( expression )? ) );
 	public final Node print() throws RecognitionException {
 		Node node = null;
 
@@ -1149,7 +1151,7 @@ public class ProgramWalker extends TreeParser {
 		Node expression27 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:179:3: ( ^( PRINT functionCall ) | ^( PRINT ( expression )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:181:3: ( ^( PRINT functionCall ) | ^( PRINT ( expression )? ) )
 			int alt15=2;
 			int LA15_0 = input.LA(1);
 			if ( (LA15_0==PRINT) ) {
@@ -1201,7 +1203,7 @@ public class ProgramWalker extends TreeParser {
 
 			switch (alt15) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:179:6: ^( PRINT functionCall )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:181:6: ^( PRINT functionCall )
 					{
 					match(input,PRINT,FOLLOW_PRINT_in_print521); 
 					match(input, Token.DOWN, null); 
@@ -1215,12 +1217,12 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:180:6: ^( PRINT ( expression )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:182:6: ^( PRINT ( expression )? )
 					{
 					match(input,PRINT,FOLLOW_PRINT_in_print534); 
 					if ( input.LA(1)==Token.DOWN ) {
 						match(input, Token.DOWN, null); 
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:180:14: ( expression )?
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:182:14: ( expression )?
 						int alt14=2;
 						int LA14_0 = input.LA(1);
 						if ( ((LA14_0 >= Add && LA14_0 <= And)||LA14_0==Bool||LA14_0==Divide||LA14_0==Equals||(LA14_0 >= GT && LA14_0 <= GTEquals)||LA14_0==In||(LA14_0 >= LOOKUP && LA14_0 <= Number)||LA14_0==Or||LA14_0==Pow||(LA14_0 >= Subtract && LA14_0 <= TERNARY)||LA14_0==UNARY_MIN||LA14_0==76) ) {
@@ -1228,7 +1230,7 @@ public class ProgramWalker extends TreeParser {
 						}
 						switch (alt14) {
 							case 1 :
-								// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:180:14: expression
+								// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:182:14: expression
 								{
 								pushFollow(FOLLOW_expression_in_print536);
 								expression27=expression();
@@ -1262,7 +1264,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "ifStatement"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:183:1: ifStatement returns [Node node] : ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:185:1: ifStatement returns [Node node] : ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) ;
 	public final Node ifStatement() throws RecognitionException {
 		Node node = null;
 
@@ -1276,12 +1278,12 @@ public class ProgramWalker extends TreeParser {
 		  node = ifNode;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:188:3: ( ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:188:6: ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:190:3: ( ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:190:6: ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? )
 			{
 			match(input,IF,FOLLOW_IF_in_ifStatement567); 
 			match(input, Token.DOWN, null); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:189:8: ( ^( EXP expression b1= block ) )+
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:191:8: ( ^( EXP expression b1= block ) )+
 			int cnt16=0;
 			loop16:
 			while (true) {
@@ -1301,7 +1303,7 @@ public class ProgramWalker extends TreeParser {
 
 				switch (alt16) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:189:9: ^( EXP expression b1= block )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:191:9: ^( EXP expression b1= block )
 					{
 					match(input,EXP,FOLLOW_EXP_in_ifStatement579); 
 					match(input, Token.DOWN, null); 
@@ -1327,7 +1329,7 @@ public class ProgramWalker extends TreeParser {
 				cnt16++;
 			}
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:190:8: ( ^( EXP b2= block ) )?
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:192:8: ( ^( EXP b2= block ) )?
 			int alt17=2;
 			int LA17_0 = input.LA(1);
 			if ( (LA17_0==EXP) ) {
@@ -1335,7 +1337,7 @@ public class ProgramWalker extends TreeParser {
 			}
 			switch (alt17) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:190:9: ^( EXP b2= block )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:192:9: ^( EXP b2= block )
 					{
 					match(input,EXP,FOLLOW_EXP_in_ifStatement602); 
 					match(input, Token.DOWN, null); 
@@ -1370,7 +1372,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "forStatement"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:194:1: forStatement returns [Node node] : ^( For a= assignment b= expression c= afterthought d= block ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:196:1: forStatement returns [Node node] : ^( For a= assignment b= expression c= afterthought d= block ) ;
 	public final Node forStatement() throws RecognitionException {
 		Node node = null;
 
@@ -1381,8 +1383,8 @@ public class ProgramWalker extends TreeParser {
 		Node d =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:195:3: ( ^( For a= assignment b= expression c= afterthought d= block ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:195:6: ^( For a= assignment b= expression c= afterthought d= block )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:197:3: ( ^( For a= assignment b= expression c= afterthought d= block ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:197:6: ^( For a= assignment b= expression c= afterthought d= block )
 			{
 			match(input,For,FOLLOW_For_in_forStatement651); 
 			match(input, Token.DOWN, null); 
@@ -1422,7 +1424,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "afterthought"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:198:1: afterthought returns [Node node] : ( ( Identifier '=' expression ) | incrementation ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:200:1: afterthought returns [Node node] : ( ( Identifier '=' expression ) | incrementation ) ;
 	public final Node afterthought() throws RecognitionException {
 		Node node = null;
 
@@ -1432,10 +1434,10 @@ public class ProgramWalker extends TreeParser {
 		Node incrementation31 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:198:33: ( ( ( Identifier '=' expression ) | incrementation ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:199:3: ( ( Identifier '=' expression ) | incrementation )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:200:33: ( ( ( Identifier '=' expression ) | incrementation ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:3: ( ( Identifier '=' expression ) | incrementation )
 			{
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:199:3: ( ( Identifier '=' expression ) | incrementation )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:3: ( ( Identifier '=' expression ) | incrementation )
 			int alt18=2;
 			int LA18_0 = input.LA(1);
 			if ( (LA18_0==Identifier) ) {
@@ -1469,10 +1471,10 @@ public class ProgramWalker extends TreeParser {
 
 			switch (alt18) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:199:4: ( Identifier '=' expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:4: ( Identifier '=' expression )
 					{
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:199:4: ( Identifier '=' expression )
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:199:5: Identifier '=' expression
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:4: ( Identifier '=' expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:5: Identifier '=' expression
 					{
 					Identifier29=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_afterthought688); 
 					match(input,Assign,FOLLOW_Assign_in_afterthought690); 
@@ -1486,7 +1488,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:200:5: incrementation
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:202:5: incrementation
 					{
 					pushFollow(FOLLOW_incrementation_in_afterthought702);
 					incrementation31=incrementation();
@@ -1515,7 +1517,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "whileStatement"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:203:1: whileStatement returns [Node node] : ^( While expression block ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:205:1: whileStatement returns [Node node] : ^( While expression block ) ;
 	public final Node whileStatement() throws RecognitionException {
 		Node node = null;
 
@@ -1524,8 +1526,8 @@ public class ProgramWalker extends TreeParser {
 		Node block33 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:204:3: ( ^( While expression block ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:204:6: ^( While expression block )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:206:3: ( ^( While expression block ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:206:6: ^( While expression block )
 			{
 			match(input,While,FOLLOW_While_in_whileStatement722); 
 			match(input, Token.DOWN, null); 
@@ -1557,18 +1559,18 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "idList"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:207:1: idList returns [java.util.List<String> i] : ^( ID_LIST ( Identifier )+ ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:209:1: idList returns [java.util.List<String> i] : ^( ID_LIST ( Identifier )+ ) ;
 	public final java.util.List<String> idList() throws RecognitionException {
 		java.util.List<String> i = null;
 
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:208:3: ( ^( ID_LIST ( Identifier )+ ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:208:6: ^( ID_LIST ( Identifier )+ )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:210:3: ( ^( ID_LIST ( Identifier )+ ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:210:6: ^( ID_LIST ( Identifier )+ )
 			{
 			match(input,ID_LIST,FOLLOW_ID_LIST_in_idList748); 
 			match(input, Token.DOWN, null); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:208:16: ( Identifier )+
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:210:16: ( Identifier )+
 			int cnt19=0;
 			loop19:
 			while (true) {
@@ -1580,7 +1582,7 @@ public class ProgramWalker extends TreeParser {
 
 				switch (alt19) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:208:16: Identifier
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:210:16: Identifier
 					{
 					match(input,Identifier,FOLLOW_Identifier_in_idList750); 
 					}
@@ -1613,7 +1615,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "exprList"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:211:1: exprList returns [java.util.List<Node> e] : ^( EXP_LIST (a= expression )+ ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:213:1: exprList returns [java.util.List<Node> e] : ^( EXP_LIST (a= expression )+ ) ;
 	public final java.util.List<Node> exprList() throws RecognitionException {
 		java.util.List<Node> e = null;
 
@@ -1624,12 +1626,12 @@ public class ProgramWalker extends TreeParser {
 		  e = new ArrayList<Node>();
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:215:3: ( ^( EXP_LIST (a= expression )+ ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:215:6: ^( EXP_LIST (a= expression )+ )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:217:3: ( ^( EXP_LIST (a= expression )+ ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:217:6: ^( EXP_LIST (a= expression )+ )
 			{
 			match(input,EXP_LIST,FOLLOW_EXP_LIST_in_exprList776); 
 			match(input, Token.DOWN, null); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:215:17: (a= expression )+
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:217:17: (a= expression )+
 			int cnt20=0;
 			loop20:
 			while (true) {
@@ -1641,7 +1643,7 @@ public class ProgramWalker extends TreeParser {
 
 				switch (alt20) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:215:18: a= expression
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:217:18: a= expression
 					{
 					pushFollow(FOLLOW_expression_in_exprList781);
 					a=expression();
@@ -1678,7 +1680,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "expression"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:219:1: expression returns [Node node] : ( ^( TERNARY expression expression expression ) | ^( In expression expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' expression expression ) | ^( '^' expression expression ) | ^( UNARY_MIN expression ) | ^( NEGATE expression ) | Number | Bool | Null | lookup | query );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:221:1: expression returns [Node node] : ( ^( TERNARY expression expression expression ) | ^( In expression expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' expression expression ) | ^( '^' expression expression ) | ^( UNARY_MIN expression ) | ^( NEGATE expression ) | Number | Bool | Null | lookup | query );
 	public final Node expression() throws RecognitionException {
 		Node node = null;
 
@@ -1691,7 +1693,7 @@ public class ProgramWalker extends TreeParser {
 		Node query37 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:220:3: ( ^( TERNARY expression expression expression ) | ^( In expression expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' expression expression ) | ^( '^' expression expression ) | ^( UNARY_MIN expression ) | ^( NEGATE expression ) | Number | Bool | Null | lookup | query )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:222:3: ( ^( TERNARY expression expression expression ) | ^( In expression expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' expression expression ) | ^( '^' expression expression ) | ^( UNARY_MIN expression ) | ^( NEGATE expression ) | Number | Bool | Null | lookup | query )
 			int alt21=23;
 			switch ( input.LA(1) ) {
 			case TERNARY:
@@ -1816,7 +1818,7 @@ public class ProgramWalker extends TreeParser {
 			}
 			switch (alt21) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:220:6: ^( TERNARY expression expression expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:222:6: ^( TERNARY expression expression expression )
 					{
 					match(input,TERNARY,FOLLOW_TERNARY_in_expression807); 
 					match(input, Token.DOWN, null); 
@@ -1837,7 +1839,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:221:6: ^( In expression expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:223:6: ^( In expression expression )
 					{
 					match(input,In,FOLLOW_In_in_expression822); 
 					match(input, Token.DOWN, null); 
@@ -1854,7 +1856,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:222:6: ^( '||' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:224:6: ^( '||' a= expression b= expression )
 					{
 					match(input,Or,FOLLOW_Or_in_expression835); 
 					match(input, Token.DOWN, null); 
@@ -1872,7 +1874,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 4 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:223:6: ^( '&&' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:225:6: ^( '&&' a= expression b= expression )
 					{
 					match(input,And,FOLLOW_And_in_expression854); 
 					match(input, Token.DOWN, null); 
@@ -1890,7 +1892,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 5 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:224:6: ^( '==' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:226:6: ^( '==' a= expression b= expression )
 					{
 					match(input,Equals,FOLLOW_Equals_in_expression873); 
 					match(input, Token.DOWN, null); 
@@ -1908,7 +1910,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 6 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:225:6: ^( '!=' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:227:6: ^( '!=' a= expression b= expression )
 					{
 					match(input,NEquals,FOLLOW_NEquals_in_expression892); 
 					match(input, Token.DOWN, null); 
@@ -1926,7 +1928,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 7 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:226:6: ^( '>=' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:228:6: ^( '>=' a= expression b= expression )
 					{
 					match(input,GTEquals,FOLLOW_GTEquals_in_expression911); 
 					match(input, Token.DOWN, null); 
@@ -1944,7 +1946,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 8 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:227:6: ^( '<=' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:229:6: ^( '<=' a= expression b= expression )
 					{
 					match(input,LTEquals,FOLLOW_LTEquals_in_expression930); 
 					match(input, Token.DOWN, null); 
@@ -1962,7 +1964,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 9 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:228:6: ^( '>' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:230:6: ^( '>' a= expression b= expression )
 					{
 					match(input,GT,FOLLOW_GT_in_expression949); 
 					match(input, Token.DOWN, null); 
@@ -1980,7 +1982,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 10 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:229:6: ^( '<' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:231:6: ^( '<' a= expression b= expression )
 					{
 					match(input,LT,FOLLOW_LT_in_expression968); 
 					match(input, Token.DOWN, null); 
@@ -1998,7 +2000,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 11 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:230:6: ^( '+' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:232:6: ^( '+' a= expression b= expression )
 					{
 					match(input,Add,FOLLOW_Add_in_expression987); 
 					match(input, Token.DOWN, null); 
@@ -2016,7 +2018,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 12 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:231:6: ^( '-' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:233:6: ^( '-' a= expression b= expression )
 					{
 					match(input,Subtract,FOLLOW_Subtract_in_expression1006); 
 					match(input, Token.DOWN, null); 
@@ -2034,7 +2036,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 13 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:232:6: ^( '*' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:234:6: ^( '*' a= expression b= expression )
 					{
 					match(input,Multiply,FOLLOW_Multiply_in_expression1025); 
 					match(input, Token.DOWN, null); 
@@ -2052,7 +2054,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 14 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:233:6: ^( '/' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:235:6: ^( '/' a= expression b= expression )
 					{
 					match(input,Divide,FOLLOW_Divide_in_expression1044); 
 					match(input, Token.DOWN, null); 
@@ -2070,7 +2072,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 15 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:234:6: ^( '%' expression expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:236:6: ^( '%' expression expression )
 					{
 					match(input,Modulus,FOLLOW_Modulus_in_expression1063); 
 					match(input, Token.DOWN, null); 
@@ -2087,7 +2089,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 16 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:235:6: ^( '^' expression expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:237:6: ^( '^' expression expression )
 					{
 					match(input,Pow,FOLLOW_Pow_in_expression1076); 
 					match(input, Token.DOWN, null); 
@@ -2104,7 +2106,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 17 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:236:6: ^( UNARY_MIN expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:238:6: ^( UNARY_MIN expression )
 					{
 					match(input,UNARY_MIN,FOLLOW_UNARY_MIN_in_expression1089); 
 					match(input, Token.DOWN, null); 
@@ -2117,7 +2119,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 18 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:237:6: ^( NEGATE expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:239:6: ^( NEGATE expression )
 					{
 					match(input,NEGATE,FOLLOW_NEGATE_in_expression1100); 
 					match(input, Token.DOWN, null); 
@@ -2130,27 +2132,27 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 19 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:238:6: Number
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:240:6: Number
 					{
 					Number34=(CommonTree)match(input,Number,FOLLOW_Number_in_expression1110); 
 					node = new AtomNode(Double.parseDouble((Number34!=null?Number34.getText():null)));
 					}
 					break;
 				case 20 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:239:6: Bool
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:241:6: Bool
 					{
 					Bool35=(CommonTree)match(input,Bool,FOLLOW_Bool_in_expression1119); 
 					node = new AtomNode(new Boolean((Bool35!=null?Bool35.getText():null)));
 					}
 					break;
 				case 21 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:240:6: Null
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:242:6: Null
 					{
 					match(input,Null,FOLLOW_Null_in_expression1129); 
 					}
 					break;
 				case 22 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:241:6: lookup
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:243:6: lookup
 					{
 					pushFollow(FOLLOW_lookup_in_expression1136);
 					lookup36=lookup();
@@ -2160,7 +2162,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 23 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:242:6: query
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:244:6: query
 					{
 					pushFollow(FOLLOW_query_in_expression1147);
 					query37=query();
@@ -2186,7 +2188,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "incrementation"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:245:1: incrementation returns [Node node] : ( variableCall ( '++' | '--' ) ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:247:1: incrementation returns [Node node] : ( variableCall ( '++' | '--' ) ) ;
 	public final Node incrementation() throws RecognitionException {
 		Node node = null;
 
@@ -2194,17 +2196,17 @@ public class ProgramWalker extends TreeParser {
 		String variableCall38 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:246:3: ( ( variableCall ( '++' | '--' ) ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:246:4: ( variableCall ( '++' | '--' ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:248:3: ( ( variableCall ( '++' | '--' ) ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:248:4: ( variableCall ( '++' | '--' ) )
 			{
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:246:4: ( variableCall ( '++' | '--' ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:246:5: variableCall ( '++' | '--' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:248:4: ( variableCall ( '++' | '--' ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:248:5: variableCall ( '++' | '--' )
 			{
 			pushFollow(FOLLOW_variableCall_in_incrementation1166);
 			variableCall38=variableCall();
 			state._fsp--;
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:246:18: ( '++' | '--' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:248:18: ( '++' | '--' )
 			int alt22=2;
 			int LA22_0 = input.LA(1);
 			if ( (LA22_0==Increment) ) {
@@ -2222,14 +2224,14 @@ public class ProgramWalker extends TreeParser {
 
 			switch (alt22) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:246:19: '++'
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:248:19: '++'
 					{
 					match(input,Increment,FOLLOW_Increment_in_incrementation1169); 
 					node = new IncrementationNode(variableCall38,1,currentScope);
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:247:5: '--'
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:249:5: '--'
 					{
 					match(input,73,FOLLOW_73_in_incrementation1176); 
 					node = new IncrementationNode(variableCall38,-1,currentScope);
@@ -2257,7 +2259,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "lookup"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:251:1: lookup returns [Node node] : ( ^( LOOKUP list ( indexes )? ) | ^( LOOKUP expression ( indexes )? ) | ^( LOOKUP i= Identifier (x= indexes )? ) | ^( LOOKUP String ( indexes )? ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:253:1: lookup returns [Node node] : ( ^( LOOKUP list ( indexes )? ) | ^( LOOKUP expression ( indexes )? ) | ^( LOOKUP i= Identifier (x= indexes )? ) | ^( LOOKUP String ( indexes )? ) );
 	public final Node lookup() throws RecognitionException {
 		Node node = null;
 
@@ -2267,7 +2269,7 @@ public class ProgramWalker extends TreeParser {
 		java.util.List<Node> x =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:253:3: ( ^( LOOKUP list ( indexes )? ) | ^( LOOKUP expression ( indexes )? ) | ^( LOOKUP i= Identifier (x= indexes )? ) | ^( LOOKUP String ( indexes )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:255:3: ( ^( LOOKUP list ( indexes )? ) | ^( LOOKUP expression ( indexes )? ) | ^( LOOKUP i= Identifier (x= indexes )? ) | ^( LOOKUP String ( indexes )? ) )
 			int alt27=4;
 			int LA27_0 = input.LA(1);
 			if ( (LA27_0==LOOKUP) ) {
@@ -2353,7 +2355,7 @@ public class ProgramWalker extends TreeParser {
 
 			switch (alt27) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:253:6: ^( LOOKUP list ( indexes )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:255:6: ^( LOOKUP list ( indexes )? )
 					{
 					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1201); 
 					match(input, Token.DOWN, null); 
@@ -2361,7 +2363,7 @@ public class ProgramWalker extends TreeParser {
 					list();
 					state._fsp--;
 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:253:20: ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:255:20: ( indexes )?
 					int alt23=2;
 					int LA23_0 = input.LA(1);
 					if ( (LA23_0==INDEXES) ) {
@@ -2369,7 +2371,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					switch (alt23) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:253:20: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:255:20: indexes
 							{
 							pushFollow(FOLLOW_indexes_in_lookup1205);
 							indexes();
@@ -2385,7 +2387,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:254:6: ^( LOOKUP expression ( indexes )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:256:6: ^( LOOKUP expression ( indexes )? )
 					{
 					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1215); 
 					match(input, Token.DOWN, null); 
@@ -2393,7 +2395,7 @@ public class ProgramWalker extends TreeParser {
 					expression();
 					state._fsp--;
 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:254:26: ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:256:26: ( indexes )?
 					int alt24=2;
 					int LA24_0 = input.LA(1);
 					if ( (LA24_0==INDEXES) ) {
@@ -2401,7 +2403,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					switch (alt24) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:254:26: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:256:26: indexes
 							{
 							pushFollow(FOLLOW_indexes_in_lookup1219);
 							indexes();
@@ -2417,12 +2419,12 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:255:6: ^( LOOKUP i= Identifier (x= indexes )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:257:6: ^( LOOKUP i= Identifier (x= indexes )? )
 					{
 					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1230); 
 					match(input, Token.DOWN, null); 
 					i=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup1234); 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:255:29: (x= indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:257:29: (x= indexes )?
 					int alt25=2;
 					int LA25_0 = input.LA(1);
 					if ( (LA25_0==INDEXES) ) {
@@ -2430,7 +2432,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					switch (alt25) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:255:29: x= indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:257:29: x= indexes
 							{
 							pushFollow(FOLLOW_indexes_in_lookup1238);
 							x=indexes();
@@ -2451,12 +2453,12 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 4 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:261:6: ^( LOOKUP String ( indexes )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:263:6: ^( LOOKUP String ( indexes )? )
 					{
 					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1257); 
 					match(input, Token.DOWN, null); 
 					String39=(CommonTree)match(input,String,FOLLOW_String_in_lookup1259); 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:261:22: ( indexes )?
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:263:22: ( indexes )?
 					int alt26=2;
 					int LA26_0 = input.LA(1);
 					if ( (LA26_0==INDEXES) ) {
@@ -2464,7 +2466,7 @@ public class ProgramWalker extends TreeParser {
 					}
 					switch (alt26) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:261:22: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:263:22: indexes
 							{
 							pushFollow(FOLLOW_indexes_in_lookup1261);
 							indexes();
@@ -2499,19 +2501,19 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "list"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:266:1: list returns [Node node] : ^( LIST ( exprList )? ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:268:1: list returns [Node node] : ^( LIST ( exprList )? ) ;
 	public final Node list() throws RecognitionException {
 		Node node = null;
 
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:267:3: ( ^( LIST ( exprList )? ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:267:6: ^( LIST ( exprList )? )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:269:3: ( ^( LIST ( exprList )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:269:6: ^( LIST ( exprList )? )
 			{
 			match(input,LIST,FOLLOW_LIST_in_list1286); 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:267:13: ( exprList )?
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:269:13: ( exprList )?
 				int alt28=2;
 				int LA28_0 = input.LA(1);
 				if ( (LA28_0==EXP_LIST) ) {
@@ -2519,7 +2521,7 @@ public class ProgramWalker extends TreeParser {
 				}
 				switch (alt28) {
 					case 1 :
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:267:13: exprList
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:269:13: exprList
 						{
 						pushFollow(FOLLOW_exprList_in_list1288);
 						exprList();
@@ -2550,7 +2552,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "indexes"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:270:1: indexes returns [java.util.List<Node> e] : ^( INDEXES ( expression )+ ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:272:1: indexes returns [java.util.List<Node> e] : ^( INDEXES ( expression )+ ) ;
 	public final java.util.List<Node> indexes() throws RecognitionException {
 		java.util.List<Node> e = null;
 
@@ -2559,12 +2561,12 @@ public class ProgramWalker extends TreeParser {
 
 		e = new java.util.ArrayList<Node>();
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:272:3: ( ^( INDEXES ( expression )+ ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:272:6: ^( INDEXES ( expression )+ )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:274:3: ( ^( INDEXES ( expression )+ ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:274:6: ^( INDEXES ( expression )+ )
 			{
 			match(input,INDEXES,FOLLOW_INDEXES_in_indexes1314); 
 			match(input, Token.DOWN, null); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:272:16: ( expression )+
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:274:16: ( expression )+
 			int cnt29=0;
 			loop29:
 			while (true) {
@@ -2576,7 +2578,7 @@ public class ProgramWalker extends TreeParser {
 
 				switch (alt29) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:272:17: expression
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:274:17: expression
 					{
 					pushFollow(FOLLOW_expression_in_indexes1317);
 					expression40=expression();
