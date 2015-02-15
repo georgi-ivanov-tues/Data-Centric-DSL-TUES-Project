@@ -158,7 +158,7 @@ functionCall returns [Node node]
         }else{
             paramSize = $exprList.e.size();
         }
-      Function function = functions.get($Identifier.text + paramSize);
+      Function function = new Function(functions.get($Identifier.text + paramSize));
       function.setParameters(paramSize == 0 ? new ArrayList<Node>() : $exprList.e);
       function.setFunctions(functions);
       function.setContext(context);

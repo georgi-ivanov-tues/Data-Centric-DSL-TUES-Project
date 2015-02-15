@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Sun Feb 08 21:09:27 EET 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-014b-6a98-b18e-000002f1e560 
-on database directory D:\Documents\Programing\GitHub\Data-Centric-DSL-TUES-Project\Antlr\DataCentricDSLInterpreter\test_database with class loader sun.misc.Launcher$AppClassLoader@31f39c59 
-Loaded from file:/D:/Documents/Programing/GitHub/Data-Centric-DSL-TUES-Project/Antlr/DataCentricDSLInterpreter/lib/derby.jar
+Sun Feb 15 21:47:53 EET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-014b-8ec8-662b-000003bdad68 
+on database directory D:\Language-GIT\Data-Centric-DSL-TUES-Project\Antlr\DataCentricDSLInterpreter\test_database with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/D:/Language-GIT/Data-Centric-DSL-TUES-Project/Antlr/DataCentricDSLInterpreter/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_51-b13
-user.dir=D:\Documents\Programing\GitHub\Data-Centric-DSL-TUES-Project\Antlr\DataCentricDSLInterpreter
-os.name=Windows 7
+java.runtime.version=1.8.0-b132
+user.dir=D:\Language-GIT\Data-Centric-DSL-TUES-Project\Antlr\DataCentricDSLInterpreter
+os.name=Windows 8.1
 os.arch=amd64
-os.version=6.1
+os.version=6.3
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

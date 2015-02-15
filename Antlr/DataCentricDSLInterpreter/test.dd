@@ -1,15 +1,19 @@
-println "qwes";
+func addNumbers(x, y) {
+	return x + y;
+}
 
-//func compTwoNum(b) {
-//	if(b == 5) {
-//		return true;
-//	}else{
-//		return false;
-//	}
-//}
-//
-//b = 5;
-//println compTwoNum(b);
+func compTwoNum(b) {
+	if(b == 5) {
+		result = addNumbers(3,5);
+		return result;
+	}else{
+		result = addNumbers(5,6);
+		return result;
+	}
+}
+
+b = 5;
+println compTwoNum(b);
 
 /*
 update "CREATE TABLE PEOPLE2 (PERSON VARCHAR(26))";
