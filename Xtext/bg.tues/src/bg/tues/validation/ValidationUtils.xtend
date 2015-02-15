@@ -31,11 +31,11 @@ public class ValidationUtils {
 			var variableFound = false;
 			if(object instanceof DidiModel) {
 				lastIndex = index;
-				variableFound = variableIsDeclared(object.eContents.subList(0, lastIndex).toArray
+				variableFound = variableIsDefined(object.eContents.subList(0, lastIndex).toArray
 									.filter(typeof(VariableDefinition)).filter[isGlobal], name)
 			} else {
 				lastIndex = object.eContents.length;
-				variableFound = variableIsDeclared(object.eContents.toArray
+				variableFound = variableIsDefined(object.eContents.toArray
 									.filter(typeof(VariableDefinition)).filter[isGlobal], name);
 			}
 			if(variableFound) {
@@ -54,7 +54,7 @@ public class ValidationUtils {
 		}
 	}
 
-	def static boolean variableIsDeclared(EObject[] elements, String name) {
+	def static boolean variableIsDefined(EObject[] elements, String name) {
 		if(elements != null) {
 			for(i : 0..< elements.length) {
 				if(elements.get(i) instanceof VariableDefinition) {
@@ -71,7 +71,7 @@ public class ValidationUtils {
 		return false;
 	}
 	
-	def static boolean functionIsDeclared(FunctionDefinition[] functions, String name) {
+	def static boolean functionIsDefined(FunctionDefinition[] functions, String name) {
 		for(i : 0..< functions.length) {
 			if(functions.get(i).name.toString.equals(name)) {
 				return true;
@@ -120,11 +120,11 @@ public class ValidationUtils {
 	}
 	
 	def static boolean functionWithTheSameNameExists(FunctionDefinition fd) {
-		var functionDeclarations = fd.eContainer.eContents.toArray.filter(typeof(FunctionDefinition));
-		var indexOfThisFunctionDecl = fd.eContainer.eContents.indexOf(fd);
-		for(i : 0..< functionDeclarations.length) {
-			if(i != indexOfThisFunctionDecl) {
-				if(fd.name.equals(functionDeclarations.get(i).name)) {
+		var functionDefinitions = fd.eContainer.eContents.toArray.filter(typeof(FunctionDefinition));
+		var indexOfThisFunctionDefinition = fd.eContainer.eContents.indexOf(fd);
+		for(i : 0..< functionDefinitions.length) {
+			if(i != indexOfThisFunctionDefinition) {
+				if(fd.name.equals(functionDefinitions.get(i).name)) {
 					return true;
 				}
 			}
@@ -133,10 +133,10 @@ public class ValidationUtils {
 		return false;
 	}
 	
-	def static boolean functionIsDeclaredBeforeTheCode(FunctionDefinition fd) {
-		var elementsBeforeDeclaration = fd.eContainer.eContents.subList(0, fd.eContainer.eContents.indexOf(fd));
-		for(i : 0..< elementsBeforeDeclaration.length) {
-			if(!(elementsBeforeDeclaration.get(i) instanceof FunctionDefinition)) {
+	def static boolean functionIsDefinedBeforeTheCode(FunctionDefinition fd) {
+		var elementsBeforeDefinition = fd.eContainer.eContents.subList(0, fd.eContainer.eContents.indexOf(fd));
+		for(i : 0..< elementsBeforeDefinition.length) {
+			if(!(elementsBeforeDefinition.get(i) instanceof FunctionDefinition)) {
 				return false;
 			}
 		}
@@ -156,8 +156,11 @@ public class ValidationUtils {
 	def static EObject getContainerBeforeDidiModel(EObject element) {
 		var container = element.eContainer;
 		while(!(container.eContainer instanceof DidiModel)) {
+			var temp = container;
 			container = container.eContainer;
-			checkIfVariableIsUsed(container.eContents, (element as VariableDefinition).name)
+			checkIfVariableIsUsed(container.eContents.subList(container.eContents.indexOf(temp) + 1, container.eContents.length),
+				(element as VariableDefinition).name
+			);
 		}
 		
 		return container;
@@ -173,9 +176,14 @@ public class ValidationUtils {
 					variableIsUsed = true;
 					return;
 				}
-			} else {
-				checkIfVariableIsUsed(elementContents.get(i).eContents, name);
 			}
+			if(elementContents.get(i) instanceof VariableDefinition) {
+				if((elementContents.get(i) as VariableDefinition).name.equals(name)) {
+					variableIsUsed = true;
+					return;
+				}
+			}
+			checkIfVariableIsUsed(elementContents.get(i).eContents, name);
 		}
 	}
 	
@@ -194,4 +202,58 @@ public class ValidationUtils {
 			}
 		}
 	}
+	
+	def static boolean variableIsDefinedBeforeElement(EObject element, String name) {
+		var container = element.eContainer;
+		var EObject[] elements = null; 
+		var EObject containerElement = element.eContainer;
+		var int containerElementIndex;
+		if(!(container instanceof DidiModel)) {
+			while(!(container instanceof DidiModel)) {
+				container = container.eContainer;
+				
+				if(container instanceof IfStatement || container instanceof ForStatement
+					|| container instanceof WhileStatement || container instanceof FunctionDefinition) {
+					
+					if(container instanceof ForStatement) {
+						var definedVar = (container as ForStatement).forVar;
+						if(definedVar.name.toString.equals(name.toString)) {
+							return true;
+						}
+					}
+					if(container instanceof FunctionDefinition) {
+						if(ValidationUtils
+							.namePersistsInArray((container as FunctionDefinition).parameters,
+								name
+							)) {
+							return true;
+						}
+					}
+					containerElementIndex = container.eContents.indexOf(containerElement);
+					elements = container.eContents.subList(0, containerElementIndex);
+					if(ValidationUtils.variableIsDefined(elements, name)) {
+						return true;
+					}
+					elements = null;
+				}
+				if(!(containerElement.eContainer instanceof DidiModel)) {
+					containerElement = containerElement.eContainer;
+				}
+			}
+		} else {
+			containerElement = element;
+		}
+		containerElementIndex = container.eContents.indexOf(containerElement);
+		var variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
+		if(ValidationUtils.variableIsDefined(variables, name)) {
+			return true;
+		}
+		ValidationUtils.checkIfCalledVariableIsGlobal(container, name, containerElementIndex);
+		if(!ValidationUtils.globalVariableFound) {
+			return false;
+		}
+		ValidationUtils.globalVariableFound = false;
+		return true;
+	}
+	
 }

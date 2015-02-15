@@ -75,7 +75,7 @@ class DidiValidator extends AbstractDidiValidator {
 			return;
 			
 		} else {
-			if(!ValidationUtils.functionIsDeclaredBeforeTheCode(fd)) {
+			if(!ValidationUtils.functionIsDefinedBeforeTheCode(fd)) {
 				error(ErrorMessages.FUNCTIONS_BEGINNING_OF_CODE,
 					DidiPackage.Literals::FUNCTION_DEFINITION__NAME
 				);
@@ -131,7 +131,7 @@ class DidiValidator extends AbstractDidiValidator {
 		var container = ValidationUtils.getDidiModel(fc);
 		
 		val elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
-		if(ValidationUtils.functionIsDeclared(elements, fc.calledFunctionName)) {
+		if(ValidationUtils.functionIsDefined(elements, fc.calledFunctionName)) {
 			return;
 		}
 		
@@ -147,12 +147,12 @@ class DidiValidator extends AbstractDidiValidator {
 		var container = ValidationUtils.getDidiModel(fc);
 		
 		var elements = container.eContents.toArray.filter(typeof(FunctionDefinition));
-		if(ValidationUtils.functionIsDeclared(elements, fc.calledFunctionName)) {
+		if(ValidationUtils.functionIsDefined(elements, fc.calledFunctionName)) {
 			for(i : 0..< elements.length) {
 				if(elements.get(i).name.equals(fc.calledFunctionName) 
 					&& elements.get(i).parameters.length == fc.arguments.length
 				) {
-					if(!ValidationUtils.functionIsDeclaredBeforeTheCode(elements.get(i))) {
+					if(!ValidationUtils.functionIsDefinedBeforeTheCode(elements.get(i))) {
 						error(ErrorMessages.UNDEFINED_FUNCTION, 
 							DidiPackage.Literals::FUNCTION_CALL__CALLED_FUNCTION_NAME,
 							ErrorMessages.UNDEFINED_FUNCTION,
@@ -170,56 +170,14 @@ class DidiValidator extends AbstractDidiValidator {
 	}
 	
 	@Check
-	def void checkIfAssignedVariableExists(VariableCall vc) {
-		var container = vc.eContainer;
-		var EObject[] elements = null; 
-		var EObject containerElement = vc.eContainer;
-		var int containerElementIndex;
-		while(!(container instanceof DidiModel)) {
-			container = container.eContainer;
-			
-			if(container instanceof IfStatement || container instanceof ForStatement
-				|| container instanceof WhileStatement || container instanceof FunctionDefinition) {
-				
-				if(container instanceof ForStatement) {
-					var DeclaratedVar = (container as ForStatement).forVar;
-					if(DeclaratedVar.name.toString.equals(vc.calledVariableName.toString)) {
-						return;
-					}
-				}
-				if(container instanceof FunctionDefinition) {
-					if(ValidationUtils
-						.namePersistsInArray((container as FunctionDefinition).parameters,
-							vc.calledVariableName
-						)) {
-						return;
-					}
-				}
-				containerElementIndex = container.eContents.indexOf(containerElement);
-				elements = container.eContents.subList(0, containerElementIndex);
-				if(ValidationUtils.variableIsDeclared(elements, vc.calledVariableName)) {
-					return;
-				}
-				elements = null;
-			}
-			if(!(containerElement.eContainer instanceof DidiModel)) {
-				containerElement = containerElement.eContainer;
-			}
-		}
-		containerElementIndex = container.eContents.indexOf(containerElement);
-		var variables = container.eContents.subList(0, containerElementIndex).toArray.filter(typeof(VariableDefinition));
-		if(ValidationUtils.variableIsDeclared(variables, vc.calledVariableName)) {
-			return;
-		}
-		ValidationUtils.checkIfCalledVariableIsGlobal(container, vc.calledVariableName, containerElementIndex);
-		if(!ValidationUtils.globalVariableFound) {
+	def void checkIfCalledVariableExists(VariableCall vc) {
+		if(!ValidationUtils.variableIsDefinedBeforeElement(vc, vc.calledVariableName)) {
 			error(ErrorMessages.UNDEFINED_VARIABLE, 
 				DidiPackage.Literals::VARIABLE_CALL__CALLED_VARIABLE_NAME,
 				ErrorMessages.UNDEFINED_VARIABLE,
 				vc.calledVariableName
 			);
 		}
-		ValidationUtils.globalVariableFound = false;
 	}
 	
 	@Check
@@ -234,7 +192,12 @@ class DidiValidator extends AbstractDidiValidator {
 		ValidationUtils.checkIfVariableIsUsed(listFromPosition, vd.name);
 		if(!ValidationUtils.variableIsUsed) {
 			if(vd.isGlobal) {
-				var container = ValidationUtils.getContainerBeforeDidiModel(vd);
+				var EObject container;
+				if(vd.eContainer instanceof DidiModel) {
+					container = vd;
+				} else {
+					container = ValidationUtils.getContainerBeforeDidiModel(vd);
+				}
 				var didiModelElement = container.eContainer;
 				positionInContainer = didiModelElement.eContents.indexOf(container) + 1;
 				var elementsFromPosition = didiModelElement.eContents.subList(positionInContainer, 
@@ -247,25 +210,15 @@ class DidiValidator extends AbstractDidiValidator {
 						ErrorMessages.UNUSED_VARIABLE,
 						vd.name
 					);
-				} else {
-					ValidationUtils.variableIsUsed = false;
-					positionInContainer = vd.eContainer.eContents.indexOf(vd) + 1;
-					listFromPosition = vd.eContainer.eContents.subList(0, positionInContainer);
-					ValidationUtils.checkIfVariableIsUsed(listFromPosition, vd.name);
-					if(ValidationUtils.variableIsUsed) {
-						warning(ErrorMessages.UNUSED_VARIABLE,
-							DidiPackage.Literals.VARIABLE_DEFINITION__NAME,
-							ErrorMessages.UNUSED_VARIABLE,
-							vd.name
-						);
-					} 
 				}
 			} else {
-				warning(ErrorMessages.UNUSED_VARIABLE,
-					DidiPackage.Literals.VARIABLE_DEFINITION__NAME,
-					ErrorMessages.UNUSED_VARIABLE,
-					vd.name
-				);
+				if(!ValidationUtils.variableIsDefinedBeforeElement(vd, vd.name)) {
+					warning(ErrorMessages.UNUSED_VARIABLE,
+						DidiPackage.Literals.VARIABLE_DEFINITION__NAME,
+						ErrorMessages.UNUSED_VARIABLE,
+						vd.name
+					);
+				}
 			}
 		}
 		ValidationUtils.variableIsUsed = false;

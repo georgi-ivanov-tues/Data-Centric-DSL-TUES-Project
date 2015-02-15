@@ -54,8 +54,8 @@ public class ValidationUtils {
           }
         };
         Iterable<VariableDefinition> _filter_1 = IterableExtensions.<VariableDefinition>filter(_filter, _function);
-        boolean _variableIsDeclared = ValidationUtils.variableIsDeclared(((EObject[])Conversions.unwrapArray(_filter_1, EObject.class)), name);
-        variableFound = _variableIsDeclared;
+        boolean _variableIsDefined = ValidationUtils.variableIsDefined(((EObject[])Conversions.unwrapArray(_filter_1, EObject.class)), name);
+        variableFound = _variableIsDefined;
       } else {
         EList<EObject> _eContents_1 = object.eContents();
         int _length = ((Object[])Conversions.unwrapArray(_eContents_1, Object.class)).length;
@@ -69,8 +69,8 @@ public class ValidationUtils {
           }
         };
         Iterable<VariableDefinition> _filter_3 = IterableExtensions.<VariableDefinition>filter(_filter_2, _function_1);
-        boolean _variableIsDeclared_1 = ValidationUtils.variableIsDeclared(((EObject[])Conversions.unwrapArray(_filter_3, EObject.class)), name);
-        variableFound = _variableIsDeclared_1;
+        boolean _variableIsDefined_1 = ValidationUtils.variableIsDefined(((EObject[])Conversions.unwrapArray(_filter_3, EObject.class)), name);
+        variableFound = _variableIsDefined_1;
       }
       if (variableFound) {
         ValidationUtils.globalVariableFound = true;
@@ -102,7 +102,7 @@ public class ValidationUtils {
     }
   }
   
-  public static boolean variableIsDeclared(final EObject[] elements, final String name) {
+  public static boolean variableIsDefined(final EObject[] elements, final String name) {
     boolean _notEquals = (!Objects.equal(elements, null));
     if (_notEquals) {
       int _length = elements.length;
@@ -126,7 +126,7 @@ public class ValidationUtils {
     return false;
   }
   
-  public static boolean functionIsDeclared(final FunctionDefinition[] functions, final String name) {
+  public static boolean functionIsDefined(final FunctionDefinition[] functions, final String name) {
     int _length = functions.length;
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
     for (final Integer i : _doubleDotLessThan) {
@@ -192,18 +192,18 @@ public class ValidationUtils {
     EObject _eContainer = fd.eContainer();
     EList<EObject> _eContents = _eContainer.eContents();
     Object[] _array = _eContents.toArray();
-    Iterable<FunctionDefinition> functionDeclarations = Iterables.<FunctionDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), FunctionDefinition.class);
+    Iterable<FunctionDefinition> functionDefinitions = Iterables.<FunctionDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), FunctionDefinition.class);
     EObject _eContainer_1 = fd.eContainer();
     EList<EObject> _eContents_1 = _eContainer_1.eContents();
-    int indexOfThisFunctionDecl = _eContents_1.indexOf(fd);
-    final Iterable<FunctionDefinition> _converted_functionDeclarations = (Iterable<FunctionDefinition>)functionDeclarations;
-    int _length = ((Object[])Conversions.unwrapArray(_converted_functionDeclarations, Object.class)).length;
+    int indexOfThisFunctionDefinition = _eContents_1.indexOf(fd);
+    final Iterable<FunctionDefinition> _converted_functionDefinitions = (Iterable<FunctionDefinition>)functionDefinitions;
+    int _length = ((Object[])Conversions.unwrapArray(_converted_functionDefinitions, Object.class)).length;
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
     for (final Integer i : _doubleDotLessThan) {
-      if (((i).intValue() != indexOfThisFunctionDecl)) {
+      if (((i).intValue() != indexOfThisFunctionDefinition)) {
         String _name = fd.getName();
-        final Iterable<FunctionDefinition> _converted_functionDeclarations_1 = (Iterable<FunctionDefinition>)functionDeclarations;
-        FunctionDefinition _get = ((FunctionDefinition[])Conversions.unwrapArray(_converted_functionDeclarations_1, FunctionDefinition.class))[(i).intValue()];
+        final Iterable<FunctionDefinition> _converted_functionDefinitions_1 = (Iterable<FunctionDefinition>)functionDefinitions;
+        FunctionDefinition _get = ((FunctionDefinition[])Conversions.unwrapArray(_converted_functionDefinitions_1, FunctionDefinition.class))[(i).intValue()];
         String _name_1 = _get.getName();
         boolean _equals = _name.equals(_name_1);
         if (_equals) {
@@ -214,18 +214,18 @@ public class ValidationUtils {
     return false;
   }
   
-  public static boolean functionIsDeclaredBeforeTheCode(final FunctionDefinition fd) {
+  public static boolean functionIsDefinedBeforeTheCode(final FunctionDefinition fd) {
     EObject _eContainer = fd.eContainer();
     EList<EObject> _eContents = _eContainer.eContents();
     EObject _eContainer_1 = fd.eContainer();
     EList<EObject> _eContents_1 = _eContainer_1.eContents();
     int _indexOf = _eContents_1.indexOf(fd);
-    List<EObject> elementsBeforeDeclaration = _eContents.subList(0, _indexOf);
-    final List<EObject> _converted_elementsBeforeDeclaration = (List<EObject>)elementsBeforeDeclaration;
-    int _length = ((Object[])Conversions.unwrapArray(_converted_elementsBeforeDeclaration, Object.class)).length;
+    List<EObject> elementsBeforeDefinition = _eContents.subList(0, _indexOf);
+    final List<EObject> _converted_elementsBeforeDefinition = (List<EObject>)elementsBeforeDefinition;
+    int _length = ((Object[])Conversions.unwrapArray(_converted_elementsBeforeDefinition, Object.class)).length;
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
     for (final Integer i : _doubleDotLessThan) {
-      EObject _get = elementsBeforeDeclaration.get((i).intValue());
+      EObject _get = elementsBeforeDefinition.get((i).intValue());
       if ((!(_get instanceof FunctionDefinition))) {
         return false;
       }
@@ -246,11 +246,18 @@ public class ValidationUtils {
     EObject container = element.eContainer();
     while ((!(container.eContainer() instanceof DidiModel))) {
       {
+        EObject temp = container;
         EObject _eContainer = container.eContainer();
         container = _eContainer;
         EList<EObject> _eContents = container.eContents();
+        EList<EObject> _eContents_1 = container.eContents();
+        int _indexOf = _eContents_1.indexOf(temp);
+        int _plus = (_indexOf + 1);
+        EList<EObject> _eContents_2 = container.eContents();
+        int _length = ((Object[])Conversions.unwrapArray(_eContents_2, Object.class)).length;
+        List<EObject> _subList = _eContents.subList(_plus, _length);
         String _name = ((VariableDefinition) element).getName();
-        ValidationUtils.checkIfVariableIsUsed(_eContents, _name);
+        ValidationUtils.checkIfVariableIsUsed(_subList, _name);
       }
     }
     return container;
@@ -263,18 +270,29 @@ public class ValidationUtils {
     int _length = ((Object[])Conversions.unwrapArray(elementContents, Object.class)).length;
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
     for (final Integer i : _doubleDotLessThan) {
-      EObject _get = elementContents.get((i).intValue());
-      if ((_get instanceof VariableCall)) {
-        EObject _get_1 = elementContents.get((i).intValue());
-        String _calledVariableName = ((VariableCall) _get_1).getCalledVariableName();
-        boolean _equals = _calledVariableName.equals(name);
-        if (_equals) {
-          ValidationUtils.variableIsUsed = true;
-          return;
+      {
+        EObject _get = elementContents.get((i).intValue());
+        if ((_get instanceof VariableCall)) {
+          EObject _get_1 = elementContents.get((i).intValue());
+          String _calledVariableName = ((VariableCall) _get_1).getCalledVariableName();
+          boolean _equals = _calledVariableName.equals(name);
+          if (_equals) {
+            ValidationUtils.variableIsUsed = true;
+            return;
+          }
         }
-      } else {
         EObject _get_2 = elementContents.get((i).intValue());
-        EList<EObject> _eContents = _get_2.eContents();
+        if ((_get_2 instanceof VariableDefinition)) {
+          EObject _get_3 = elementContents.get((i).intValue());
+          String _name = ((VariableDefinition) _get_3).getName();
+          boolean _equals_1 = _name.equals(name);
+          if (_equals_1) {
+            ValidationUtils.variableIsUsed = true;
+            return;
+          }
+        }
+        EObject _get_4 = elementContents.get((i).intValue());
+        EList<EObject> _eContents = _get_4.eContents();
         ValidationUtils.checkIfVariableIsUsed(_eContents, name);
       }
     }
@@ -302,5 +320,81 @@ public class ValidationUtils {
         ValidationUtils.checkIfFunctionIsUsed(_eContents, name);
       }
     }
+  }
+  
+  public static boolean variableIsDefinedBeforeElement(final EObject element, final String name) {
+    EObject container = element.eContainer();
+    EObject[] elements = null;
+    EObject containerElement = element.eContainer();
+    int containerElementIndex = 0;
+    if ((!(container instanceof DidiModel))) {
+      while ((!(container instanceof DidiModel))) {
+        {
+          EObject _eContainer = container.eContainer();
+          container = _eContainer;
+          boolean _or = false;
+          if ((((container instanceof IfStatement) || (container instanceof ForStatement)) || (container instanceof WhileStatement))) {
+            _or = true;
+          } else {
+            _or = (container instanceof FunctionDefinition);
+          }
+          if (_or) {
+            if ((container instanceof ForStatement)) {
+              VariableDefinition definedVar = ((ForStatement) container).getForVar();
+              String _name = definedVar.getName();
+              String _string = _name.toString();
+              String _string_1 = name.toString();
+              boolean _equals = _string.equals(_string_1);
+              if (_equals) {
+                return true;
+              }
+            }
+            if ((container instanceof FunctionDefinition)) {
+              EList<String> _parameters = ((FunctionDefinition) container).getParameters();
+              boolean _namePersistsInArray = ValidationUtils.namePersistsInArray(((String[])Conversions.unwrapArray(_parameters, String.class)), name);
+              if (_namePersistsInArray) {
+                return true;
+              }
+            }
+            EList<EObject> _eContents = container.eContents();
+            int _indexOf = _eContents.indexOf(containerElement);
+            containerElementIndex = _indexOf;
+            EList<EObject> _eContents_1 = container.eContents();
+            List<EObject> _subList = _eContents_1.subList(0, containerElementIndex);
+            elements = ((EObject[])Conversions.unwrapArray(_subList, EObject.class));
+            boolean _variableIsDefined = ValidationUtils.variableIsDefined(elements, name);
+            if (_variableIsDefined) {
+              return true;
+            }
+            elements = null;
+          }
+          EObject _eContainer_1 = containerElement.eContainer();
+          if ((!(_eContainer_1 instanceof DidiModel))) {
+            EObject _eContainer_2 = containerElement.eContainer();
+            containerElement = _eContainer_2;
+          }
+        }
+      }
+    } else {
+      containerElement = element;
+    }
+    EList<EObject> _eContents = container.eContents();
+    int _indexOf = _eContents.indexOf(containerElement);
+    containerElementIndex = _indexOf;
+    EList<EObject> _eContents_1 = container.eContents();
+    List<EObject> _subList = _eContents_1.subList(0, containerElementIndex);
+    Object[] _array = _subList.toArray();
+    Iterable<VariableDefinition> variables = Iterables.<VariableDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), VariableDefinition.class);
+    final Iterable<VariableDefinition> _converted_variables = (Iterable<VariableDefinition>)variables;
+    boolean _variableIsDefined = ValidationUtils.variableIsDefined(((EObject[])Conversions.unwrapArray(_converted_variables, EObject.class)), name);
+    if (_variableIsDefined) {
+      return true;
+    }
+    ValidationUtils.checkIfCalledVariableIsGlobal(container, name, containerElementIndex);
+    if ((!ValidationUtils.globalVariableFound)) {
+      return false;
+    }
+    ValidationUtils.globalVariableFound = false;
+    return true;
   }
 }

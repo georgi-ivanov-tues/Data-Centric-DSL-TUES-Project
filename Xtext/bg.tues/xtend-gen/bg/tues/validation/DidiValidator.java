@@ -112,8 +112,8 @@ public class DidiValidator extends AbstractDidiValidator {
         DidiPackage.Literals.FUNCTION_DEFINITION__NAME);
       return;
     } else {
-      boolean _functionIsDeclaredBeforeTheCode = ValidationUtils.functionIsDeclaredBeforeTheCode(fd);
-      boolean _not = (!_functionIsDeclaredBeforeTheCode);
+      boolean _functionIsDefinedBeforeTheCode = ValidationUtils.functionIsDefinedBeforeTheCode(fd);
+      boolean _not = (!_functionIsDefinedBeforeTheCode);
       if (_not) {
         this.error(ErrorMessages.FUNCTIONS_BEGINNING_OF_CODE, 
           DidiPackage.Literals.FUNCTION_DEFINITION__NAME);
@@ -172,8 +172,8 @@ public class DidiValidator extends AbstractDidiValidator {
     Object[] _array = _eContents.toArray();
     final Iterable<FunctionDefinition> elements = Iterables.<FunctionDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), FunctionDefinition.class);
     String _calledFunctionName = fc.getCalledFunctionName();
-    boolean _functionIsDeclared = ValidationUtils.functionIsDeclared(((FunctionDefinition[])Conversions.unwrapArray(elements, FunctionDefinition.class)), _calledFunctionName);
-    if (_functionIsDeclared) {
+    boolean _functionIsDefined = ValidationUtils.functionIsDefined(((FunctionDefinition[])Conversions.unwrapArray(elements, FunctionDefinition.class)), _calledFunctionName);
+    if (_functionIsDefined) {
       return;
     }
     String _calledFunctionName_1 = fc.getCalledFunctionName();
@@ -190,8 +190,8 @@ public class DidiValidator extends AbstractDidiValidator {
     Iterable<FunctionDefinition> elements = Iterables.<FunctionDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), FunctionDefinition.class);
     final Iterable<FunctionDefinition> _converted_elements = (Iterable<FunctionDefinition>)elements;
     String _calledFunctionName = fc.getCalledFunctionName();
-    boolean _functionIsDeclared = ValidationUtils.functionIsDeclared(((FunctionDefinition[])Conversions.unwrapArray(_converted_elements, FunctionDefinition.class)), _calledFunctionName);
-    if (_functionIsDeclared) {
+    boolean _functionIsDefined = ValidationUtils.functionIsDefined(((FunctionDefinition[])Conversions.unwrapArray(_converted_elements, FunctionDefinition.class)), _calledFunctionName);
+    if (_functionIsDefined) {
       final Iterable<FunctionDefinition> _converted_elements_1 = (Iterable<FunctionDefinition>)elements;
       int _length = ((Object[])Conversions.unwrapArray(_converted_elements_1, Object.class)).length;
       ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
@@ -217,8 +217,8 @@ public class DidiValidator extends AbstractDidiValidator {
         if (_and) {
           final Iterable<FunctionDefinition> _converted_elements_4 = (Iterable<FunctionDefinition>)elements;
           FunctionDefinition _get_2 = ((FunctionDefinition[])Conversions.unwrapArray(_converted_elements_4, FunctionDefinition.class))[(i).intValue()];
-          boolean _functionIsDeclaredBeforeTheCode = ValidationUtils.functionIsDeclaredBeforeTheCode(_get_2);
-          boolean _not = (!_functionIsDeclaredBeforeTheCode);
+          boolean _functionIsDefinedBeforeTheCode = ValidationUtils.functionIsDefinedBeforeTheCode(_get_2);
+          boolean _not = (!_functionIsDefinedBeforeTheCode);
           if (_not) {
             String _calledFunctionName_2 = fc.getCalledFunctionName();
             this.error(ErrorMessages.UNDEFINED_FUNCTION, 
@@ -234,83 +234,16 @@ public class DidiValidator extends AbstractDidiValidator {
   }
   
   @Check
-  public void checkIfAssignedVariableExists(final VariableCall vc) {
-    EObject container = vc.eContainer();
-    EObject[] elements = null;
-    EObject containerElement = vc.eContainer();
-    int containerElementIndex = 0;
-    while ((!(container instanceof DidiModel))) {
-      {
-        EObject _eContainer = container.eContainer();
-        container = _eContainer;
-        boolean _or = false;
-        if ((((container instanceof IfStatement) || (container instanceof ForStatement)) || (container instanceof WhileStatement))) {
-          _or = true;
-        } else {
-          _or = (container instanceof FunctionDefinition);
-        }
-        if (_or) {
-          if ((container instanceof ForStatement)) {
-            VariableDefinition DeclaratedVar = ((ForStatement) container).getForVar();
-            String _name = DeclaratedVar.getName();
-            String _string = _name.toString();
-            String _calledVariableName = vc.getCalledVariableName();
-            String _string_1 = _calledVariableName.toString();
-            boolean _equals = _string.equals(_string_1);
-            if (_equals) {
-              return;
-            }
-          }
-          if ((container instanceof FunctionDefinition)) {
-            EList<String> _parameters = ((FunctionDefinition) container).getParameters();
-            String _calledVariableName_1 = vc.getCalledVariableName();
-            boolean _namePersistsInArray = ValidationUtils.namePersistsInArray(((String[])Conversions.unwrapArray(_parameters, String.class)), _calledVariableName_1);
-            if (_namePersistsInArray) {
-              return;
-            }
-          }
-          EList<EObject> _eContents = container.eContents();
-          int _indexOf = _eContents.indexOf(containerElement);
-          containerElementIndex = _indexOf;
-          EList<EObject> _eContents_1 = container.eContents();
-          List<EObject> _subList = _eContents_1.subList(0, containerElementIndex);
-          elements = ((EObject[])Conversions.unwrapArray(_subList, EObject.class));
-          String _calledVariableName_2 = vc.getCalledVariableName();
-          boolean _variableIsDeclared = ValidationUtils.variableIsDeclared(elements, _calledVariableName_2);
-          if (_variableIsDeclared) {
-            return;
-          }
-          elements = null;
-        }
-        EObject _eContainer_1 = containerElement.eContainer();
-        if ((!(_eContainer_1 instanceof DidiModel))) {
-          EObject _eContainer_2 = containerElement.eContainer();
-          containerElement = _eContainer_2;
-        }
-      }
-    }
-    EList<EObject> _eContents = container.eContents();
-    int _indexOf = _eContents.indexOf(containerElement);
-    containerElementIndex = _indexOf;
-    EList<EObject> _eContents_1 = container.eContents();
-    List<EObject> _subList = _eContents_1.subList(0, containerElementIndex);
-    Object[] _array = _subList.toArray();
-    Iterable<VariableDefinition> variables = Iterables.<VariableDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), VariableDefinition.class);
-    final Iterable<VariableDefinition> _converted_variables = (Iterable<VariableDefinition>)variables;
+  public void checkIfCalledVariableExists(final VariableCall vc) {
     String _calledVariableName = vc.getCalledVariableName();
-    boolean _variableIsDeclared = ValidationUtils.variableIsDeclared(((EObject[])Conversions.unwrapArray(_converted_variables, EObject.class)), _calledVariableName);
-    if (_variableIsDeclared) {
-      return;
-    }
-    String _calledVariableName_1 = vc.getCalledVariableName();
-    ValidationUtils.checkIfCalledVariableIsGlobal(container, _calledVariableName_1, containerElementIndex);
-    if ((!ValidationUtils.globalVariableFound)) {
-      String _calledVariableName_2 = vc.getCalledVariableName();
+    boolean _variableIsDefinedBeforeElement = ValidationUtils.variableIsDefinedBeforeElement(vc, _calledVariableName);
+    boolean _not = (!_variableIsDefinedBeforeElement);
+    if (_not) {
+      String _calledVariableName_1 = vc.getCalledVariableName();
       this.error(ErrorMessages.UNDEFINED_VARIABLE, 
         DidiPackage.Literals.VARIABLE_CALL__CALLED_VARIABLE_NAME, 
-        ErrorMessages.UNDEFINED_VARIABLE, _calledVariableName_2);
+        ErrorMessages.UNDEFINED_VARIABLE, _calledVariableName_1);
     }
-    ValidationUtils.globalVariableFound = false;
   }
   
   @Check
@@ -340,7 +273,14 @@ public class DidiValidator extends AbstractDidiValidator {
     if ((!ValidationUtils.variableIsUsed)) {
       boolean _isIsGlobal = vd.isIsGlobal();
       if (_isIsGlobal) {
-        EObject container = ValidationUtils.getContainerBeforeDidiModel(vd);
+        EObject container = null;
+        EObject _eContainer_5 = vd.eContainer();
+        if ((_eContainer_5 instanceof DidiModel)) {
+          container = vd;
+        } else {
+          EObject _containerBeforeDidiModel = ValidationUtils.getContainerBeforeDidiModel(vd);
+          container = _containerBeforeDidiModel;
+        }
         EObject didiModelElement = container.eContainer();
         EList<EObject> _eContents_4 = didiModelElement.eContents();
         int _indexOf_2 = _eContents_4.indexOf(container);
@@ -357,31 +297,17 @@ public class DidiValidator extends AbstractDidiValidator {
           this.warning(ErrorMessages.UNUSED_VARIABLE, 
             DidiPackage.Literals.VARIABLE_DEFINITION__NAME, 
             ErrorMessages.UNUSED_VARIABLE, _name_2);
-        } else {
-          ValidationUtils.variableIsUsed = false;
-          EObject _eContainer_5 = vd.eContainer();
-          EList<EObject> _eContents_7 = _eContainer_5.eContents();
-          int _indexOf_3 = _eContents_7.indexOf(vd);
-          int _plus_1 = (_indexOf_3 + 1);
-          positionInContainer = _plus_1;
-          EObject _eContainer_6 = vd.eContainer();
-          EList<EObject> _eContents_8 = _eContainer_6.eContents();
-          List<EObject> _subList = _eContents_8.subList(0, positionInContainer);
-          listFromPosition = _subList;
-          String _name_3 = vd.getName();
-          ValidationUtils.checkIfVariableIsUsed(listFromPosition, _name_3);
-          if (ValidationUtils.variableIsUsed) {
-            String _name_4 = vd.getName();
-            this.warning(ErrorMessages.UNUSED_VARIABLE, 
-              DidiPackage.Literals.VARIABLE_DEFINITION__NAME, 
-              ErrorMessages.UNUSED_VARIABLE, _name_4);
-          }
         }
       } else {
-        String _name_5 = vd.getName();
-        this.warning(ErrorMessages.UNUSED_VARIABLE, 
-          DidiPackage.Literals.VARIABLE_DEFINITION__NAME, 
-          ErrorMessages.UNUSED_VARIABLE, _name_5);
+        String _name_3 = vd.getName();
+        boolean _variableIsDefinedBeforeElement = ValidationUtils.variableIsDefinedBeforeElement(vd, _name_3);
+        boolean _not = (!_variableIsDefinedBeforeElement);
+        if (_not) {
+          String _name_4 = vd.getName();
+          this.warning(ErrorMessages.UNUSED_VARIABLE, 
+            DidiPackage.Literals.VARIABLE_DEFINITION__NAME, 
+            ErrorMessages.UNUSED_VARIABLE, _name_4);
+        }
       }
     }
     ValidationUtils.variableIsUsed = false;
