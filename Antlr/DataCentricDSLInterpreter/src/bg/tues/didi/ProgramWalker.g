@@ -121,7 +121,7 @@ query returns [Node node]:
 ;
 
 update returns [Node node]: 
-  ^('update' (expression {node = new UpdateNode($expression.node, dataSource);}))
+  ^('update' (expression {node = new UpdateNode($expression.node, dataSource, outputStream);}))
 ;
 
 variableCall returns [String value]:

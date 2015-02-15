@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g 2015-02-14 19:18:06
+// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g 2015-02-15 19:01:40
 
   package bg.tues.didi;
   import bg.tues.didi.*;
@@ -612,7 +612,7 @@ public class ProgramWalker extends TreeParser {
 			expression16=expression();
 			state._fsp--;
 
-			node = new UpdateNode(expression16, dataSource);
+			node = new UpdateNode(expression16, dataSource, outputStream);
 			}
 
 			match(input, Token.UP, null); 
