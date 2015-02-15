@@ -4,6 +4,8 @@
 package bg.tues.ui.quickfix;
 
 import bg.tues.didi.DidiModel;
+import bg.tues.didi.Expression;
+import bg.tues.didi.FunctionCall;
 import bg.tues.didi.Statement;
 import bg.tues.validation.ErrorMessages;
 import org.eclipse.emf.common.util.EList;
@@ -37,15 +39,44 @@ public class DidiQuickfixProvider extends XbaseQuickfixProvider {
     acceptor.accept(issue, _plus_1, 
       "Creates a function with the desired name.", 
       null, 
-      new IModification() {
-        public void apply(final IModificationContext context) throws Exception {
+      new ISemanticModification() {
+        public void apply(final EObject element, final IModificationContext context) throws Exception {
           StringBuilder builder = new StringBuilder();
+          FunctionCall functionCall = ((FunctionCall) element);
           builder.append("func ");
           String[] _data = issue.getData();
           String _get = _data[0];
           String _string = _get.toString();
           builder.append(_string);
-          builder.append("() {\n\n}\n\n");
+          builder.append("(");
+          EList<Expression> _arguments = functionCall.getArguments();
+          int _length = ((Object[])Conversions.unwrapArray(_arguments, Object.class)).length;
+          boolean _greaterThan = (_length > 0);
+          if (_greaterThan) {
+            EList<Expression> _arguments_1 = functionCall.getArguments();
+            int _length_1 = ((Object[])Conversions.unwrapArray(_arguments_1, Object.class)).length;
+            boolean _greaterThan_1 = (_length_1 > 1);
+            if (_greaterThan_1) {
+              EList<Expression> _arguments_2 = functionCall.getArguments();
+              int _length_2 = ((Object[])Conversions.unwrapArray(_arguments_2, Object.class)).length;
+              ExclusiveRange _doubleDotLessThan = new ExclusiveRange(1, _length_2, true);
+              for (final Integer i : _doubleDotLessThan) {
+                {
+                  builder.append("param");
+                  builder.append(i);
+                  builder.append(", ");
+                }
+              }
+              builder.append("param");
+              EList<Expression> _arguments_3 = functionCall.getArguments();
+              int _length_3 = ((Object[])Conversions.unwrapArray(_arguments_3, Object.class)).length;
+              builder.append(_length_3);
+            } else {
+              builder.append("param");
+              builder.append(1);
+            }
+          }
+          builder.append(") {\n\n}\n\n");
           IXtextDocument xtextDocument = context.getXtextDocument();
           String _string_1 = builder.toString();
           xtextDocument.replace(0, 0, _string_1);

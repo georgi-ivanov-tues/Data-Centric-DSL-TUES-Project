@@ -4,6 +4,7 @@
 package bg.tues.ui.quickfix
 
 import bg.tues.didi.DidiModel
+import bg.tues.didi.FunctionCall
 import bg.tues.validation.ErrorMessages
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.ui.editor.model.edit.IModification
@@ -41,13 +42,29 @@ class DidiQuickfixProvider extends XbaseQuickfixProvider {
 			"Create function '" + issue.data.get(0).toString + "'",
 			"Creates a function with the desired name.",
 			null,
-			new IModification() {
+			new ISemanticModification() {
 				
-				override apply(IModificationContext context) throws Exception {
+				override apply(EObject element, IModificationContext context) throws Exception {
 					var StringBuilder builder = new StringBuilder();
+					var functionCall = element as FunctionCall;
 					builder.append("func ");
 					builder.append(issue.data.get(0).toString);
-					builder.append("() {\n\n}\n\n");
+					builder.append("(");
+					if(functionCall.arguments.length > 0) {
+						if(functionCall.arguments.length > 1) {
+							for(i : 1..< functionCall.arguments.length) {
+								builder.append("param");
+								builder.append(i);
+								builder.append(", ");
+							}
+							builder.append("param");
+							builder.append(functionCall.arguments.length);
+						} else {
+							builder.append("param");
+							builder.append(1);
+						}
+					}
+					builder.append(") {\n\n}\n\n");
 					var xtextDocument = context.xtextDocument;
 					xtextDocument.replace(0, 0, builder.toString);
 				}
