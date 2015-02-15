@@ -1,4 +1,7 @@
-func addNumbers(x, y) {
+println query "SELECT first_name FROM people";
+println query "SELECT last_name FROM people";
+
+/*func addNumbers(x, y) {
 	return x + y;
 }
 
@@ -13,7 +16,7 @@ func compTwoNum(b) {
 }
 
 b = 5;
-println compTwoNum(b);
+println compTwoNum(b);*/
 
 /*
 update "CREATE TABLE PEOPLE2 (PERSON VARCHAR(26))";

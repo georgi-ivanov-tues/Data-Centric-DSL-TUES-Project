@@ -10,7 +10,7 @@ import bg.tues.didi.tree.Node;
 
 public class QueryNode  implements Node {
 	
-	private static Node sqlStatement;
+	private Node sqlStatement;
 	private Connection connection;
 
 	public QueryNode(Node node, Connection conn) {

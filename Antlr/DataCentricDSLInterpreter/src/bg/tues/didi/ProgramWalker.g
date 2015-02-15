@@ -115,14 +115,15 @@ statement returns [Node node]
   |  print {node = $print.node;}
   ;
 
-query returns [Node node]: 
-  ^('query' (expression {node = new QueryNode($expression.node, dataSource);}
-  | functionCall {node = new QueryNode($functionCall.node, dataSource);}))
-;
+query returns [Node node]
+  : ^('query' expression) {node = new QueryNode($expression.node, dataSource);}
+  | ^('query' functionCall) {node = new QueryNode($functionCall.node, dataSource);}
+  ;
 
-update returns [Node node]: 
-  ^('update' (expression {node = new UpdateNode($expression.node, dataSource, outputStream);}))
-;
+update returns [Node node]
+  : ^('update' expression) {node = new UpdateNode($expression.node, dataSource, outputStream);}
+  | ^('update' functionCall) {node = new UpdateNode($functionCall.node, dataSource, outputStream);}
+  ;
 
 variableCall returns [String value]:
   Identifier {value=$Identifier.text;}

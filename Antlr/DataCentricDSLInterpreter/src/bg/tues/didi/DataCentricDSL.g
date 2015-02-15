@@ -105,7 +105,7 @@ query:
 ;
 
 update:
-  'update'^ (expression)
+  'update'^ (expression | functionCall)
 ;
 
 variableCall:
