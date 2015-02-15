@@ -4,10 +4,6 @@
       label="Didi SDK Feature "
       version="1.0.0.qualifier">
 
-   <includes
-         id="bg.tues.sdk"
-         version="0.0.0"/>
-
    <requires>
       <import plugin="org.eclipse.xtext"/>
       <import plugin="org.eclipse.xtext.util"/>
@@ -33,11 +29,11 @@
       <import plugin="org.eclipse.jdt.launching"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.debug.ui"/>
-      <import plugin="DataCentricDSLInterpreter" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.console" version="3.5.300" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.junit4"/>
       <import plugin="org.junit"/>
       <import plugin="org.hamcrest.core"/>
+      <import plugin="bg.tues.didi.interpreter" version="1.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -69,7 +65,7 @@
          unpack="false"/>
 
    <plugin
-         id="DataCentricDSLInterpreter"
+         id="bg.tues.didi.interpreter"
          download-size="0"
          install-size="0"
          version="0.0.0"/>

@@ -21,7 +21,8 @@ import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 
-import bg.tues.DCL.DCLInterpreter;
+import bg.tues.didi.DCLInterpreter;
+
 
 public class LaunchShortcut implements ILaunchShortcut2 {
 
@@ -72,14 +73,17 @@ public class LaunchShortcut implements ILaunchShortcut2 {
 	}
 
 	private MessageConsole findConsole(String name) {
+
 		ConsolePlugin plugin = ConsolePlugin.getDefault();
 		IConsoleManager conMan = plugin.getConsoleManager();
+
 		IConsole[] existing = conMan.getConsoles();
-		for (int i = 0; i < existing.length; i++){
+		//if console exists, clear it 
+		for (int i = 0; i < existing.length; i++)
 			if (name.equals(existing[i].getName())){
-				return (MessageConsole) existing[i];
+				((MessageConsole) existing[i]).clearConsole();
 			}
-		}
+
 		MessageConsole myConsole = new MessageConsole(name, null);
 		conMan.addConsoles(new IConsole[]{myConsole});
 		return myConsole;

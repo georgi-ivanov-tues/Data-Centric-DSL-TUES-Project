@@ -70,15 +70,18 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//SimpleStatement:
 		//	(VariableDefinition | QueryFunction | UpdateFunction | PrintFunction | //	 MultiAssign | 
-		//	PostfixOperation | FunctionCall | ReturnStatement) Semicolon;
+		// PostfixOperation |
+		//	FunctionCall | ReturnStatement) Semicolon;
 		public ParserRule getRule() { return rule; }
 
 		//(VariableDefinition | QueryFunction | UpdateFunction | PrintFunction | //	 MultiAssign | 
-		//PostfixOperation | FunctionCall | ReturnStatement) Semicolon
+		// PostfixOperation |
+		//FunctionCall | ReturnStatement) Semicolon
 		public Group getGroup() { return cGroup; }
 
 		//VariableDefinition | QueryFunction | UpdateFunction | PrintFunction | //	 MultiAssign | 
-		//PostfixOperation | FunctionCall | ReturnStatement
+		// PostfixOperation |
+		//FunctionCall | ReturnStatement
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//VariableDefinition
@@ -94,7 +97,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getPrintFunctionParserRuleCall_0_3() { return cPrintFunctionParserRuleCall_0_3; }
 
 		////	 MultiAssign | 
-		//PostfixOperation
+		// PostfixOperation
 		public RuleCall getPostfixOperationParserRuleCall_0_4() { return cPostfixOperationParserRuleCall_0_4; }
 
 		//FunctionCall
@@ -609,13 +612,15 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CompoundStatement:
 		//	FunctionDefinition | IfStatement | //	not supported in Antlr grammar, for now
-		//	//	SwitchStatement |
-		//	WhileStatement | ForStatement;
+		// //	SwitchStatement |
+		// WhileStatement |
+		//	ForStatement;
 		public ParserRule getRule() { return rule; }
 
 		//FunctionDefinition | IfStatement | //	not supported in Antlr grammar, for now
-		////	SwitchStatement |
-		//WhileStatement | ForStatement
+		// //	SwitchStatement |
+		// WhileStatement |
+		//ForStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//FunctionDefinition
@@ -625,8 +630,8 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getIfStatementParserRuleCall_1() { return cIfStatementParserRuleCall_1; }
 
 		////	not supported in Antlr grammar, for now
-		////	SwitchStatement |
-		//WhileStatement
+		// //	SwitchStatement |
+		// WhileStatement
 		public RuleCall getWhileStatementParserRuleCall_2() { return cWhileStatementParserRuleCall_2; }
 
 		//ForStatement
@@ -882,7 +887,8 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		//			(statements+=Statement)*
 		//		)?
 		//	ClosingCurlyBracket
-		//;* / WhileStatement:
+		//;* /
+		//WhileStatement:
 		//	{WhileStatement} While OpeningBracket whileCondition=ConditionStatement ClosingBracket OpeningCurlyBracket
 		//	statements+=Statement* ClosingCurlyBracket;
 		public ParserRule getRule() { return rule; }
@@ -947,12 +953,14 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		//ForStatement:
 		//	{ForStatement} For OpeningBracket forVar=VariableDefinition Semicolon forCondition=ConditionStatement Semicolon
 		//	operation=(PostfixOperation | //ForMultiAssign | 
-		//	VariableDefinition) ClosingBracket OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
+		// VariableDefinition) ClosingBracket OpeningCurlyBracket
+		//	statements+=Statement* ClosingCurlyBracket;
 		public ParserRule getRule() { return rule; }
 
 		//{ForStatement} For OpeningBracket forVar=VariableDefinition Semicolon forCondition=ConditionStatement Semicolon
 		//operation=(PostfixOperation | //ForMultiAssign | 
-		//VariableDefinition) ClosingBracket OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket
+		// VariableDefinition) ClosingBracket OpeningCurlyBracket
+		//statements+=Statement* ClosingCurlyBracket
 		public Group getGroup() { return cGroup; }
 
 		//{ForStatement}
@@ -983,18 +991,18 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getSemicolonParserRuleCall_6() { return cSemicolonParserRuleCall_6; }
 
 		//operation=(PostfixOperation | //ForMultiAssign | 
-		//VariableDefinition)
+		// VariableDefinition)
 		public Assignment getOperationAssignment_7() { return cOperationAssignment_7; }
 
 		//PostfixOperation | //ForMultiAssign | 
-		//VariableDefinition
+		// VariableDefinition
 		public Alternatives getOperationAlternatives_7_0() { return cOperationAlternatives_7_0; }
 
 		//PostfixOperation
 		public RuleCall getOperationPostfixOperationParserRuleCall_7_0_0() { return cOperationPostfixOperationParserRuleCall_7_0_0; }
 
 		////ForMultiAssign | 
-		//VariableDefinition
+		// VariableDefinition
 		public RuleCall getOperationVariableDefinitionParserRuleCall_7_0_1() { return cOperationVariableDefinitionParserRuleCall_7_0_1; }
 
 		//ClosingBracket
@@ -1127,18 +1135,20 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOpPostfixOperationOperatorParserRuleCall_2_0 = (RuleCall)cOpAssignment_2.eContents().get(0);
 		
 		////ForMultiAssign:
-		////	left=VariableCall op=MultiAssignOperator right=INT
-		////;
-		////
-		////MultiAssign:
+		// //	left=VariableCall op=MultiAssignOperator right=INT
+		// //;
+		// //
+		// //MultiAssign:
+		//
 		////	left=VariableCall op=MultiAssignOperator right=MultiAssignRightOperand 
-		////;
-		////
-		////MultiAssignRightOperand:
+		// //;
+		// //
+		// //MultiAssignRightOperand:
+		//
 		////	(Expression | 
-		////	 QueryFunction)
-		////;
-		//PostfixOperation:
+		// //	 QueryFunction)
+		// //;
+		// PostfixOperation:
 		//	{PostfixOperation} call=VariableCall op=PostfixOperationOperator;
 		public ParserRule getRule() { return rule; }
 
@@ -1224,14 +1234,15 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPlusSignPlusSignKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
 		//// still not supported in Antlr grammar
-		////MultiAssignOperator:
-		////	('+=' | 
-		////	'-=' | 
-		////	'*=' | 
-		////	'/=' | 
+		// //MultiAssignOperator:
+		// //	('+=' | 
+		// //	'-=' | 
+		// //	'*=' | 
+		// //	'/=' | 
+		//
 		////	'%=')
-		////;
-		//PostfixOperationOperator:
+		// //;
+		// PostfixOperationOperator:
 		//	"--" | "++";
 		public ParserRule getRule() { return rule; }
 
@@ -1785,7 +1796,8 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 
 	//SimpleStatement:
 	//	(VariableDefinition | QueryFunction | UpdateFunction | PrintFunction | //	 MultiAssign | 
-	//	PostfixOperation | FunctionCall | ReturnStatement) Semicolon;
+	// PostfixOperation |
+	//	FunctionCall | ReturnStatement) Semicolon;
 	public SimpleStatementElements getSimpleStatementAccess() {
 		return pSimpleStatement;
 	}
@@ -1946,8 +1958,9 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 
 	//CompoundStatement:
 	//	FunctionDefinition | IfStatement | //	not supported in Antlr grammar, for now
-	//	//	SwitchStatement |
-	//	WhileStatement | ForStatement;
+	// //	SwitchStatement |
+	// WhileStatement |
+	//	ForStatement;
 	public CompoundStatementElements getCompoundStatementAccess() {
 		return pCompoundStatement;
 	}
@@ -2001,7 +2014,8 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	//			(statements+=Statement)*
 	//		)?
 	//	ClosingCurlyBracket
-	//;* / WhileStatement:
+	//;* /
+	//WhileStatement:
 	//	{WhileStatement} While OpeningBracket whileCondition=ConditionStatement ClosingBracket OpeningCurlyBracket
 	//	statements+=Statement* ClosingCurlyBracket;
 	public WhileStatementElements getWhileStatementAccess() {
@@ -2015,7 +2029,8 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	//ForStatement:
 	//	{ForStatement} For OpeningBracket forVar=VariableDefinition Semicolon forCondition=ConditionStatement Semicolon
 	//	operation=(PostfixOperation | //ForMultiAssign | 
-	//	VariableDefinition) ClosingBracket OpeningCurlyBracket statements+=Statement* ClosingCurlyBracket;
+	// VariableDefinition) ClosingBracket OpeningCurlyBracket
+	//	statements+=Statement* ClosingCurlyBracket;
 	public ForStatementElements getForStatementAccess() {
 		return pForStatement;
 	}
@@ -2055,18 +2070,20 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////ForMultiAssign:
-	////	left=VariableCall op=MultiAssignOperator right=INT
-	////;
-	////
-	////MultiAssign:
+	// //	left=VariableCall op=MultiAssignOperator right=INT
+	// //;
+	// //
+	// //MultiAssign:
+	//
 	////	left=VariableCall op=MultiAssignOperator right=MultiAssignRightOperand 
-	////;
-	////
-	////MultiAssignRightOperand:
+	// //;
+	// //
+	// //MultiAssignRightOperand:
+	//
 	////	(Expression | 
-	////	 QueryFunction)
-	////;
-	//PostfixOperation:
+	// //	 QueryFunction)
+	// //;
+	// PostfixOperation:
 	//	{PostfixOperation} call=VariableCall op=PostfixOperationOperator;
 	public PostfixOperationElements getPostfixOperationAccess() {
 		return pPostfixOperation;
@@ -2107,14 +2124,15 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// still not supported in Antlr grammar
-	////MultiAssignOperator:
-	////	('+=' | 
-	////	'-=' | 
-	////	'*=' | 
-	////	'/=' | 
+	// //MultiAssignOperator:
+	// //	('+=' | 
+	// //	'-=' | 
+	// //	'*=' | 
+	// //	'/=' | 
+	//
 	////	'%=')
-	////;
-	//PostfixOperationOperator:
+	// //;
+	// PostfixOperationOperator:
 	//	"--" | "++";
 	public PostfixOperationOperatorElements getPostfixOperationOperatorAccess() {
 		return pPostfixOperationOperator;
