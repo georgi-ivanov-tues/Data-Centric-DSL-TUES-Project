@@ -124,7 +124,9 @@ public class ValidationUtils {
 		var indexOfThisFunctionDefinition = fd.eContainer.eContents.indexOf(fd);
 		for(i : 0..< functionDefinitions.length) {
 			if(i != indexOfThisFunctionDefinition) {
-				if(fd.name.equals(functionDefinitions.get(i).name)) {
+				if(fd.name.equals(functionDefinitions.get(i).name)
+					&& fd.parameters.length == functionDefinitions.get(i).parameters.length
+				) {
 					return true;
 				}
 			}

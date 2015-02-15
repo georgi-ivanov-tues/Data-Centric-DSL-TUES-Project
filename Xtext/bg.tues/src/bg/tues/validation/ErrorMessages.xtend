@@ -16,7 +16,7 @@ public class ErrorMessages {
 		
 	val public static final FUNCTIONS_BEGINNING_OF_CODE = "Functions must be defined at the beginning of the code.";
 		
-	val public static final FUNCTION_SAME_NAME = "Function with the same name already exists.";
+	val public static final FUNCTION_SAME_NAME_AND_PARAMETERS = "Function with the same name already exists.";
 	
 	val public static final UNDEFINED_OPERATOR_BOOLEAN_VALUES = "Undefined operator for boolean values.";
 		

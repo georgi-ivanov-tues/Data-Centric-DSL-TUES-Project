@@ -121,7 +121,7 @@ public class DidiValidator extends AbstractDidiValidator {
       }
       boolean _functionWithTheSameNameExists = ValidationUtils.functionWithTheSameNameExists(fd);
       if (_functionWithTheSameNameExists) {
-        this.error(ErrorMessages.FUNCTION_SAME_NAME, 
+        this.error(ErrorMessages.FUNCTION_SAME_NAME_AND_PARAMETERS, 
           DidiPackage.Literals.FUNCTION_DEFINITION__NAME);
         return;
       }

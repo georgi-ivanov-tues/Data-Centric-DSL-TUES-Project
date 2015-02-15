@@ -83,7 +83,7 @@ class DidiValidator extends AbstractDidiValidator {
 			}
 			
 			if(ValidationUtils.functionWithTheSameNameExists(fd)) {
-				error(ErrorMessages.FUNCTION_SAME_NAME,
+				error(ErrorMessages.FUNCTION_SAME_NAME_AND_PARAMETERS,
 					DidiPackage.Literals::FUNCTION_DEFINITION__NAME
 				);
 				return;
