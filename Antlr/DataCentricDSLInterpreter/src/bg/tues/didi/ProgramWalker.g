@@ -135,7 +135,7 @@ assignment returns [Node node]
   |  ^('global' ASSIGNMENT i=Identifier x=indexes? (expression {
         Scope globalScope = currentScope;
         
-        while(globalScope.parent() != null){
+        while(!(globalScope.isGlobalScope())){
           globalScope = globalScope.parent();
         }
         node = new AssignmentNode($i.text, $x.e, $expression.node, globalScope);
@@ -143,7 +143,7 @@ assignment returns [Node node]
    |  functionCall {
         Scope globalScope = currentScope;
         
-        while(globalScope.parent() != null){
+        while(!(globalScope.isGlobalScope())){
           globalScope = globalScope.parent();
         }
         node = new AssignmentNode($i.text, $x.e, $functionCall.node, globalScope);
@@ -163,12 +163,10 @@ functionCall returns [Node node]
       function.setParameters(paramSize == 0 ? new ArrayList<Node>() : $exprList.e);
       function.setFunctions(functions);
       function.setContext(context);
+      function.setScope(new Scope(currentScope));
       node = function;
       
   }
-//  |  ^(FUNC_CALL Println expression?) {node = new PrintlnNode($expression.node, outputStream);}
-//  |  ^(FUNC_CALL Println functionCall) {node = new PrintlnNode($functionCall.node, outputStream);}
-//  |  ^(FUNC_CALL Print expression) {node = new PrintNode($expression.node, outputStream);}
   |  ^(FUNC_CALL Assert expression) 
   |  ^(FUNC_CALL Size expression)
   ;
@@ -198,8 +196,8 @@ forStatement returns [Node node]
   :  ^(For a=assignment b=expression c=afterthought d=block) {node = new ForNode($a.node, $b.node, $c.node, $d.node, currentScope);}
   ;
 
-afterthought returns [Node node]:
-  ((Identifier '=' expression {node = new AssignmentNode($Identifier.text, $expression.node, currentScope);}) 
+afterthought returns [Node node]
+  : ((Identifier '=' expression {node = new AssignmentNode($Identifier.text, $expression.node, currentScope);}) 
   | incrementation {node = $incrementation.node;})
 ;
 
@@ -218,7 +216,6 @@ exprList returns [java.util.List<Node> e]
   :  ^(EXP_LIST (a=expression {e.add($a.node);})+)
   ; 
 
-// fix all other expressions!
 expression returns [Node node]
   :  ^(TERNARY expression expression expression)
   |  ^(In expression expression)
@@ -246,13 +243,12 @@ expression returns [Node node]
   ;
 
 incrementation returns [Node node]
-  :(variableCall ('++'{node = new IncrementationNode($variableCall.value,1,currentScope);}
+  : (variableCall ('++'{node = new IncrementationNode($variableCall.value,1,currentScope);}
   | '--' {node = new IncrementationNode($variableCall.value,-1,currentScope);})
   )
 ;
 
 lookup returns [Node node]
-//  :  ^(LOOKUP functionCall indexes?)
   :  ^(LOOKUP list indexes?)
   |  ^(LOOKUP expression indexes?) 
   |  ^(LOOKUP i=Identifier x=indexes?) 

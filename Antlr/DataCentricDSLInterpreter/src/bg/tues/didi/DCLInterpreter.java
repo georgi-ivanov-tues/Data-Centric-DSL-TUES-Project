@@ -26,17 +26,16 @@ public class DCLInterpreter {
 
 		CommonTree tree = (CommonTree)parser.program().getTree();
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
-//		System.out.println(tree.toStringTree());
 		
 		if(out == null){
 			out = System.out;
 		}
 
-		Map<String, Object> myMap = new HashMap<String, Object>();
-		myMap.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
-		myMap.put("outputStream", out);
+		Map<String, Object> context = new HashMap<String, Object>();
+		context.put("dataSource", DriverManager.getConnection(CreateDB.JDBC_URL));
+		context.put("outputStream", out);
 
-		ProgramWalker walker = new ProgramWalker(nodes, myMap, parser.functions);
+		ProgramWalker walker = new ProgramWalker(nodes, context, parser.functions);
 		return walker.program();
 	}
 	
@@ -63,7 +62,6 @@ public class DCLInterpreter {
 
 		CommonTree tree = (CommonTree)parser.program().getTree();
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
-//		System.out.println(nodes);
 
 		ProgramWalker walker = new ProgramWalker(nodes, scope, context, parser.functions);
 		return walker.program();

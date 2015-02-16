@@ -1,5 +1,15 @@
-println query "SELECT first_name FROM people";
-println query "SELECT last_name FROM people";
+func globalTest() {
+	global a = 15;
+	return a + b;
+}
+
+global b = 5;
+x = globalTest();
+println x;
+println a;
+
+//println query "SELECT first_name FROM people";
+//println query "SELECT last_name FROM people";
 
 /*func addNumbers(x, y) {
 	return x + y;

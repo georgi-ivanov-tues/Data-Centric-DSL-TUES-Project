@@ -11,16 +11,16 @@ public class Value implements Comparable<Value> {
   private Object value;
 
   private Value() {
-    // private constructor: only used for NULL and VOID
+    // Private constructor: only used for NULL and VOID
     value = new Object();
   }
 
   public Value(Object v) {
     if(v == null) {
-      throw new RuntimeException("v == null");
+      throw new RuntimeException("value == null");
     }
     value = v;
-    // only accept boolean, list, number or string types
+    // Only accept boolean, list, number or string types
     if(!(isBoolean() || isList() || isNumber() || isString() || isResultSet() || isFunction())) {
       throw new RuntimeException("Invalid data type: " + v + " (" + v.getClass() + ")");
     }

@@ -36,7 +36,6 @@ public class Function implements Node{
 	}
 
 	public Function(Function original) {
-		// Used for recursively calling 
 		id = original.id;
 		identifiers = original.identifiers;
 		code = original.code;
@@ -55,6 +54,9 @@ public class Function implements Node{
 		context = cont;
 	}
 	
+	public void setScope(Scope newScope) {
+		scope = newScope;
+	}
 	public Value invoke(List<Node> params, Map<String, Object> context, Map<String, Function> functions) {
 		if(params.size() != identifiers.size()) {
 			throw new RuntimeException("Illegal function call: " + identifiers.size() +
@@ -72,7 +74,7 @@ public class Function implements Node{
 			ProgramWalker walker = new ProgramWalker(nodes, scope, context, functions);
 			return walker.program();
 		} catch (RecognitionException e) {
-			// do not recover from this
+			// Do not recover from this
 			throw new RuntimeException("Something went wrong, terminating...", e);
 		}
 	
@@ -86,7 +88,7 @@ public class Function implements Node{
 	private List<String> toList(CommonTree tree) {
 		List<String> ids = new ArrayList<String>();
 
-		// convert the tree to a List of Strings
+		// Convert the tree to a List of Strings
 		for(int i = 0; i < tree.getChildCount(); i++) {
 			CommonTree child = (CommonTree)tree.getChild(i);
 			ids.add(child.getText());

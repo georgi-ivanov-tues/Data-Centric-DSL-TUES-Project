@@ -102,15 +102,15 @@ statement
 
 query: 
   'query'^ (expression | functionCall)
-;
+  ;
 
 update:
   'update'^ (expression | functionCall)
-;
+  ;
 
-variableCall:
-  Identifier
-;
+variableCall
+  : Identifier
+  ;
 
 assignment
   :  Identifier indexes? '=' (expression -> ^(ASSIGNMENT Identifier indexes? expression)
@@ -159,11 +159,11 @@ functionDef
 forStatement
   :  (For '(' assignment ';' expression ';' afterthought ')' '{' block '}' 
      -> ^(For assignment expression afterthought block))
-;
+  ;
 
-afterthought:
-  (Identifier '=' expression) | incrementation
-;
+afterthought
+  : (Identifier '=' expression) | incrementation
+  ;
 
 whileStatement
   :  While '(' expression ')' '{' block '}' -> ^(While expression block)
@@ -175,7 +175,7 @@ idList
   
 incrementation
   : variableCall ('++'|'--')
-;
+  ; 
 
 exprList
   :  expression (',' expression)* -> ^(EXP_LIST expression+)

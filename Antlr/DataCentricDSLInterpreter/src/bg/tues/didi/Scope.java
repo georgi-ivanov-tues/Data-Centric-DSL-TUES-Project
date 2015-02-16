@@ -9,7 +9,7 @@ public class Scope {
   private Map<String, Value> variables;
 
   public Scope() {
-    // only for the global scope, the parent is null
+    // The parent is null for the global scope
     this(null);
   }
 
@@ -22,8 +22,7 @@ public class Scope {
     if(resolve(var) != null) {
       // There is already such a variable, re-assign it
       this.reAssign(var, value);
-    }
-    else {
+    } else {
       // A newly declared variable
       variables.put(var, value);
     }
@@ -51,8 +50,7 @@ public class Scope {
     if(variables.containsKey(identifier)) {
       // The variable is declared in this scope
       variables.put(identifier, value);
-    }
-    else if(parent != null) {
+    } else if(parent != null) {
       // The variable was not declared in this scope, so let
       // the parent scope re-assign it
       parent.reAssign(identifier, value);
@@ -64,12 +62,10 @@ public class Scope {
     if(value != null) {
       // The variable resides in this scope
       return value;
-    }
-    else if(!isGlobalScope()) {
+    } else if(!isGlobalScope()) {
       // Let the parent scope look for the variable
       return parent.resolve(var);
-    }
-    else {
+    } else {
       // Unknown variable
       return null;
     }
