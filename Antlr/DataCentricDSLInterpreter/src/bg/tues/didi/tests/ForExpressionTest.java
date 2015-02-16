@@ -23,7 +23,6 @@ import bg.tues.didi.DataCentricDSLLexer;
 import bg.tues.didi.DataCentricDSLParser;
 import bg.tues.didi.DataCentricDSLParser.program_return;
 import bg.tues.didi.ProgramWalker;
-import bg.tues.didi.Function;
 import bg.tues.didi.derbydb.CreateDB;
 
 public class ForExpressionTest {

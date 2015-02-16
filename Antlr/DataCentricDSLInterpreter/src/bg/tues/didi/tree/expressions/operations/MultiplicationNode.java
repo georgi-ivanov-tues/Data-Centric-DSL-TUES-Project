@@ -18,7 +18,6 @@ public class MultiplicationNode implements Node {
 		Value a = lhs.evaluate();
 		Value b = rhs.evaluate();
 
-		// number * number
 		if(a.isNumber() && b.isNumber()) {
 			return new Value(a.asDouble() * b.asDouble());
 		}

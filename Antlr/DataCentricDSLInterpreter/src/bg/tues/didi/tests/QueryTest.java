@@ -1,9 +1,6 @@
 package bg.tues.didi.tests;
 
-import static org.junit.Assert.assertEquals;
-
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,13 +10,12 @@ import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
+import org.junit.Test;
+
 import bg.tues.didi.DataCentricDSLLexer;
 import bg.tues.didi.DataCentricDSLParser;
 import bg.tues.didi.DataCentricDSLParser.program_return;
 import bg.tues.didi.ProgramWalker;
-
-import org.junit.Test;
-
 import bg.tues.didi.derbydb.CreateDB;
 
 public class QueryTest {
@@ -38,19 +34,6 @@ public class QueryTest {
 
 		ProgramWalker walker = new ProgramWalker(nodeStream, myMap, parser.functions);
 		walker.program();
-		walker.lookup();
-//		try {
-//			result.next();
-//			assertEquals(result.getString(1), "Georgi");
-//			result.next();
-//			assertEquals(result.getString(1), "Kiril");
-//			result.next();
-//			assertEquals(result.getString(1), "Nedelcho");
-//			result.next();
-//			assertEquals(result.getString(1), "Bojidar");
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-		
+		walker.lookup();	
 	}
 }

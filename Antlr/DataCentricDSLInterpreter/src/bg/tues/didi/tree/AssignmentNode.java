@@ -35,14 +35,14 @@ public class AssignmentNode implements Node {
 			throw new RuntimeException("Can't assign VOID to " + identifier);
 		}
 
-		if (indexNodes.isEmpty()) { // a simple assignment
+		if (indexNodes.isEmpty()) { // A simple assignment
 			scope.assign(identifier, value);
 		}
-		else { // a possible list-lookup and reassignment
+		else { // A possible list-lookup and reassignment
 
 			Value list = scope.resolve(identifier);
 
-			// iterate up to `foo[x][y]` in case of `foo[x][y][z] = 42;`
+			// Iterate up to `foo[x][y]` in case of `foo[x][y][z] = 42;`
 			for (int i = 0; i < indexNodes.size() - 1 && list != null; i++) {
 				Value index = indexNodes.get(i).evaluate();
 
@@ -53,16 +53,16 @@ public class AssignmentNode implements Node {
 				int idx = index.asLong().intValue();
 				list = list.asList().get(idx);
 			}
-			// list is now pointing to `foo[x][y]` in case of `foo[x][y][z] = 42;`
+			// List is now pointing to `foo[x][y]` in case of `foo[x][y][z] = 42;`
 
-			// get the value `z`: the last index, in `foo[x][y][z] = 42;`
+			// Get the value `z`: the last index, in `foo[x][y][z] = 42;`
 			Value lastIndex = indexNodes.get(indexNodes.size() - 1).evaluate();
 
 			if (!lastIndex.isNumber() || !list.isList()) { // sanity checks
 				throw new RuntimeException("Illegal statement: " + this);
 			}
 
-			// re-assign `foo[x][y][z]`
+			// Re-assign `foo[x][y][z]`
 			List<Value> existing = list.asList();
 			existing.set(lastIndex.asLong().intValue(), value);
 		}

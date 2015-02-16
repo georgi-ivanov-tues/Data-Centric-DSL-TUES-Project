@@ -24,7 +24,6 @@ public class ForNode implements Node{
 	@Override
 	public Value evaluate() {
 		initExpression.evaluate();
-		// do we need this?
 		Value value = condition.evaluate();
 		
 		if(!value.isBoolean()) {

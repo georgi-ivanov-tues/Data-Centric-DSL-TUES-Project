@@ -28,12 +28,12 @@ public class BlockNode implements Node {
     for(Node stat : statements) {
       Value value = stat.evaluate();
       if(value != Value.VOID) {
-        // return early from this block if value is a return statement
+        // Return early from this block if value is a return statement
         return value;
       }
     }
 
-    // return VOID or returnStatement.evaluate() if it's not null
+    // Return VOID or returnStatement.evaluate() if it's not null
     return returnStatement == null ? Value.VOID : returnStatement.evaluate();
   }
 

@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,16 +14,14 @@ import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
-import bg.tues.didi.DataCentricDSLLexer;
-import bg.tues.didi.DataCentricDSLParser;
-import bg.tues.didi.DataCentricDSLParser.program_return;
-import bg.tues.didi.ProgramWalker;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import bg.tues.didi.Value;
+import bg.tues.didi.DataCentricDSLLexer;
+import bg.tues.didi.DataCentricDSLParser;
+import bg.tues.didi.DataCentricDSLParser.program_return;
+import bg.tues.didi.ProgramWalker;
 import bg.tues.didi.derbydb.CreateDB;
 
 public class QueryVariableCallTest {

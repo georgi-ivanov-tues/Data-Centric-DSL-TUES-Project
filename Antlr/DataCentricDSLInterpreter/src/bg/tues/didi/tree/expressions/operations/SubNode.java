@@ -18,17 +18,9 @@ public class SubNode implements Node {
 		Value a = lhs.evaluate();
 		Value b = rhs.evaluate();
 
-		// number - number
 		if(a.isNumber() && b.isNumber()) {
 			return new Value(a.asDouble() - b.asDouble());
 		}
-
-		//	    // list - any
-		//	    if(a.isList()) {
-		//	      List<TLValue> list = a.asList();
-		//	      list.add(b);
-		//	      return new TLValue(list);
-		//	    }
 
 		throw new RuntimeException("Illegal expression: " + this);
 	}

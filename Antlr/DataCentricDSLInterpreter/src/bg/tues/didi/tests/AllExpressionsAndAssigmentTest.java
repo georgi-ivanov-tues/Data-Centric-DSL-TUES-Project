@@ -23,8 +23,6 @@ import bg.tues.didi.DataCentricDSLParser;
 import bg.tues.didi.DataCentricDSLParser.program_return;
 import bg.tues.didi.ProgramWalker;
 import bg.tues.didi.derbydb.CreateDB;
-import bg.tues.didi.tree.IdentifierNode;
-import bg.tues.didi.tree.Node;
 
 public class AllExpressionsAndAssigmentTest {
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -40,7 +38,7 @@ public class AllExpressionsAndAssigmentTest {
 	}
 	
 	@Test
-	public void AllExpressionsAndAssigmentTest() throws RecognitionException, SQLException{
+	public void AllExpressionsAndAssigmentRunTest() throws RecognitionException, SQLException{
 		CharStream cs = new ANTLRStringStream("println 2 + 2 * 3 - 7 + 8 / 2;");
 		DataCentricDSLLexer lexer = new DataCentricDSLLexer(cs);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
