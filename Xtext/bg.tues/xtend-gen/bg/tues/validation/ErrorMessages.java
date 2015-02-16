@@ -16,7 +16,7 @@ public class ErrorMessages {
   
   public final static String FUNCTIONS_BEGINNING_OF_CODE = "Functions must be defined at the beginning of the code.";
   
-  public final static String FUNCTION_SAME_NAME = "Function with the same name already exists.";
+  public final static String FUNCTION_SAME_NAME_AND_PARAMETERS = "Function with the same name already exists.";
   
   public final static String UNDEFINED_OPERATOR_BOOLEAN_VALUES = "Undefined operator for boolean values.";
   

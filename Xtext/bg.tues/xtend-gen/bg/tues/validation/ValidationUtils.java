@@ -201,12 +201,25 @@ public class ValidationUtils {
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
     for (final Integer i : _doubleDotLessThan) {
       if (((i).intValue() != indexOfThisFunctionDefinition)) {
+        boolean _and = false;
         String _name = fd.getName();
         final Iterable<FunctionDefinition> _converted_functionDefinitions_1 = (Iterable<FunctionDefinition>)functionDefinitions;
         FunctionDefinition _get = ((FunctionDefinition[])Conversions.unwrapArray(_converted_functionDefinitions_1, FunctionDefinition.class))[(i).intValue()];
         String _name_1 = _get.getName();
         boolean _equals = _name.equals(_name_1);
-        if (_equals) {
+        if (!_equals) {
+          _and = false;
+        } else {
+          EList<String> _parameters = fd.getParameters();
+          int _length_1 = ((Object[])Conversions.unwrapArray(_parameters, Object.class)).length;
+          final Iterable<FunctionDefinition> _converted_functionDefinitions_2 = (Iterable<FunctionDefinition>)functionDefinitions;
+          FunctionDefinition _get_1 = ((FunctionDefinition[])Conversions.unwrapArray(_converted_functionDefinitions_2, FunctionDefinition.class))[(i).intValue()];
+          EList<String> _parameters_1 = _get_1.getParameters();
+          int _length_2 = ((Object[])Conversions.unwrapArray(_parameters_1, Object.class)).length;
+          boolean _equals_1 = (_length_1 == _length_2);
+          _and = _equals_1;
+        }
+        if (_and) {
           return true;
         }
       }
