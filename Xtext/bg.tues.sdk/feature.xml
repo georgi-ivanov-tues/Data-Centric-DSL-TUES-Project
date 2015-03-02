@@ -30,10 +30,11 @@
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.debug.ui"/>
       <import plugin="org.eclipse.ui.console" version="3.5.300" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext.junit4"/>
-      <import plugin="org.junit"/>
-      <import plugin="org.hamcrest.core"/>
       <import plugin="bg.tues.didi.interpreter" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.junit4"/>
+      <import plugin="org.hamcrest.core"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.junit" version="4.11.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin

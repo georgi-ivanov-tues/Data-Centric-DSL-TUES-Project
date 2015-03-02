@@ -171,3 +171,4 @@ Export-Package: antlr,
  org.stringtemplate.v4.debug,
  org.stringtemplate.v4.gui,
  org.stringtemplate.v4.misc
+Require-Bundle: org.junit;bundle-version="4.11.0"
