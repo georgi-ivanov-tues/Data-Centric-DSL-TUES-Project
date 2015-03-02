@@ -231,9 +231,9 @@ expression returns [Node node]
   |  ^('-' a=expression b=expression) {node = new SubNode($a.node, $b.node);}
   |  ^('*' a=expression b=expression) {node = new MultiplicationNode($a.node, $b.node);}
   |  ^('/' a=expression b=expression) {node = new DivisionNode($a.node, $b.node);}
-  |  ^('%' expression expression)
+  |  ^('%' a=expression b=expression) {node = new ModNode($a.node, $b.node);}
   |  ^('^' expression expression)
-  |  ^(UNARY_MIN expression)
+  |  ^(UNARY_MIN a=expression){node = new AtomNode("-" + $a.node);}
   |  ^(NEGATE expression)
   |  Number {node = new AtomNode(Double.parseDouble($Number.text));}
   |  Bool {node = new AtomNode(new Boolean($Bool.text));} 

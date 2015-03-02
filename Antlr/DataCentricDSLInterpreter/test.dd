@@ -1,3 +1,13 @@
+for(i = 0; i < 10; i++){
+	if(i % 2 == 0){
+		println i;
+	}
+}
+
+a = -2;
+println a;
+
+/*
 func globalTest() {
 	global a = 15;
 	return a + b;
@@ -7,7 +17,7 @@ global b = 5;
 x = globalTest();
 println x;
 println a;
-
+*/
 /*
 println query "SELECT first_name FROM people";
 println query "SELECT last_name FROM people";
