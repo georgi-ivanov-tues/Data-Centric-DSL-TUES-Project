@@ -232,9 +232,9 @@ expression returns [Node node]
   |  ^('*' a=expression b=expression) {node = new MultiplicationNode($a.node, $b.node);}
   |  ^('/' a=expression b=expression) {node = new DivisionNode($a.node, $b.node);}
   |  ^('%' a=expression b=expression) {node = new ModNode($a.node, $b.node);}
-  |  ^('^' expression expression)
+  |  ^('^' a=expression b=expression) {node = new PowerNode($a.node, $b.node);}
   |  ^(UNARY_MIN a=expression){node = new AtomNode("-" + $a.node);}
-  |  ^(NEGATE expression)
+  |  ^(NEGATE a=expression) {node = new BoolNegationNode($a.node);}
   |  Number {node = new AtomNode(Double.parseDouble($Number.text));}
   |  Bool {node = new AtomNode(new Boolean($Bool.text));} 
   |  Null

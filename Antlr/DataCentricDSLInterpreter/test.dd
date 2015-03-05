@@ -1,3 +1,6 @@
+println 2 ^ 3;
+
+/*
 for(i = 0; i < 10; i++){
 	if(i % 2 == 0){
 		println i;
@@ -6,7 +9,7 @@ for(i = 0; i < 10; i++){
 
 a = -2;
 println a;
-
+*/
 /*
 func globalTest() {
 	global a = 15;
