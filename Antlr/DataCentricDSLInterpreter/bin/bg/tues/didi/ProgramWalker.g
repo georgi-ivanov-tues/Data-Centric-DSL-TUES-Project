@@ -162,7 +162,12 @@ functionCall returns [Node node]
       Function function = new Function(functions.get($Identifier.text + paramSize));
       function.setParameters(paramSize == 0 ? new ArrayList<Node>() : $exprList.e);
       function.setFunctions(functions);
-      function.setContext(context);
+      
+       Map<String, Object> newContext = new HashMap<String, Object>();
+      newContext.put("dataSource", dataSource);
+      newContext.put("outputStream", outputStream);
+      
+      function.setContext(newContext);
       function.setScope(new Scope(currentScope));
       node = function;
       
