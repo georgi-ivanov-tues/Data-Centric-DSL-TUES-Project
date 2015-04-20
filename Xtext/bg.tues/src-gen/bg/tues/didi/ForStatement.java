@@ -2,6 +2,7 @@
  */
 package bg.tues.didi;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,7 @@ package bg.tues.didi;
  *   <li>{@link bg.tues.didi.ForStatement#getForVar <em>For Var</em>}</li>
  *   <li>{@link bg.tues.didi.ForStatement#getForCondition <em>For Condition</em>}</li>
  *   <li>{@link bg.tues.didi.ForStatement#getOperation <em>Operation</em>}</li>
+ *   <li>{@link bg.tues.didi.ForStatement#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,5 +102,21 @@ public interface ForStatement extends CompoundStatement
    * @generated
    */
   void setOperation(SimpleStatement value);
+
+  /**
+   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * The list contents are of type {@link bg.tues.didi.Statement}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Statements</em>' containment reference list.
+   * @see bg.tues.didi.DidiPackage#getForStatement_Statements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Statement> getStatements();
 
 } // ForStatement

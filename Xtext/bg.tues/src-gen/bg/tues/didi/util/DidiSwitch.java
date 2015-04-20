@@ -212,6 +212,27 @@ public class DidiSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DidiPackage.IF_FRAGMENT:
+      {
+        IfFragment ifFragment = (IfFragment)theEObject;
+        T result = caseIfFragment(ifFragment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DidiPackage.ELSE_IF_FRAGMENT:
+      {
+        ElseIfFragment elseIfFragment = (ElseIfFragment)theEObject;
+        T result = caseElseIfFragment(elseIfFragment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DidiPackage.ELSE_FRAGMENT:
+      {
+        ElseFragment elseFragment = (ElseFragment)theEObject;
+        T result = caseElseFragment(elseFragment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DidiPackage.WHILE_STATEMENT:
       {
         WhileStatement whileStatement = (WhileStatement)theEObject;
@@ -596,6 +617,54 @@ public class DidiSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIfStatement(IfStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Fragment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Fragment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfFragment(IfFragment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Else If Fragment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Else If Fragment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElseIfFragment(ElseIfFragment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Else Fragment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Else Fragment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElseFragment(ElseFragment object)
   {
     return null;
   }

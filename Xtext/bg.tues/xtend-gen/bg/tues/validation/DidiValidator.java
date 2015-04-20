@@ -9,10 +9,13 @@ import bg.tues.didi.ConditionElement;
 import bg.tues.didi.ConditionStatement;
 import bg.tues.didi.DidiModel;
 import bg.tues.didi.DidiPackage;
+import bg.tues.didi.ElseFragment;
+import bg.tues.didi.ElseIfFragment;
 import bg.tues.didi.Expression;
 import bg.tues.didi.ForStatement;
 import bg.tues.didi.FunctionCall;
 import bg.tues.didi.FunctionDefinition;
+import bg.tues.didi.IfFragment;
 import bg.tues.didi.IfStatement;
 import bg.tues.didi.QueryFunction;
 import bg.tues.didi.ReturnStatement;
@@ -316,7 +319,7 @@ public class DidiValidator extends AbstractDidiValidator {
   @Check
   public void validateReturnStatement(final ReturnStatement rs) {
     EObject container = rs.eContainer();
-    if ((((!(container instanceof IfStatement)) && (!(container instanceof ForStatement))) && (!(container instanceof WhileStatement)))) {
+    if ((((((!(container instanceof IfFragment)) && (!(container instanceof ElseIfFragment))) && (!(container instanceof ElseFragment))) && (!(container instanceof ForStatement))) && (!(container instanceof WhileStatement)))) {
       EList<EObject> _eContents = container.eContents();
       int _indexOf = _eContents.indexOf(rs);
       EList<EObject> _eContents_1 = container.eContents();
@@ -329,17 +332,27 @@ public class DidiValidator extends AbstractDidiValidator {
       }
     } else {
       EObject[] elements = null;
-      if ((container instanceof IfStatement)) {
-        EList<Statement> _statements = ((IfStatement) container).getStatements();
-        elements = ((EObject[])Conversions.unwrapArray(_statements, EObject.class));
+      if ((container instanceof IfFragment)) {
+        EList<Statement> _ifStatements = ((IfFragment) container).getIfStatements();
+        elements = ((EObject[])Conversions.unwrapArray(_ifStatements, EObject.class));
       } else {
-        if ((container instanceof ForStatement)) {
-          EList<Statement> _statements_1 = ((ForStatement) container).getStatements();
-          elements = ((EObject[])Conversions.unwrapArray(_statements_1, EObject.class));
+        if ((container instanceof ElseIfFragment)) {
+          EList<Statement> _elseIfStatements = ((ElseIfFragment) container).getElseIfStatements();
+          elements = ((EObject[])Conversions.unwrapArray(_elseIfStatements, EObject.class));
         } else {
-          if ((container instanceof WhileStatement)) {
-            EList<Statement> _statements_2 = ((WhileStatement) container).getStatements();
-            elements = ((EObject[])Conversions.unwrapArray(_statements_2, EObject.class));
+          if ((container instanceof ElseFragment)) {
+            EList<Statement> _elseStatements = ((ElseFragment) container).getElseStatements();
+            elements = ((EObject[])Conversions.unwrapArray(_elseStatements, EObject.class));
+          } else {
+            if ((container instanceof ForStatement)) {
+              EList<Statement> _statements = ((ForStatement) container).getStatements();
+              elements = ((EObject[])Conversions.unwrapArray(_statements, EObject.class));
+            } else {
+              if ((container instanceof WhileStatement)) {
+                EList<Statement> _statements_1 = ((WhileStatement) container).getStatements();
+                elements = ((EObject[])Conversions.unwrapArray(_statements_1, EObject.class));
+              }
+            }
           }
         }
       }
@@ -354,7 +367,7 @@ public class DidiValidator extends AbstractDidiValidator {
       } else {
         EObject _containerBeforeDidiModel = ValidationUtils.getContainerBeforeDidiModel(rs);
         container = _containerBeforeDidiModel;
-        if ((!(container instanceof FunctionDefinition))) {
+        if ((!((container instanceof FunctionDefinition) && (!(container instanceof IfStatement))))) {
           this.error(ErrorMessages.WRONG_RETURN_STATEMENT_POSITION, 
             DidiPackage.Literals.RETURN_STATEMENT__RETURN_VALUE);
         }

@@ -114,21 +114,34 @@ ReturnStatement:
 
 IfStatement:
 	{IfStatement}
-	If OpeningBracket condition += ConditionStatement ClosingBracket OpeningCurlyBracket
-		(statements+=Statement)*
-	ClosingCurlyBracket
-	( ElseIf OpeningBracket condition+=ConditionStatement ClosingBracket OpeningCurlyBracket
-		(statements+=Statement)*
-	ClosingCurlyBracket
+	conditions+=IfFragment
+	( conditions+=ElseIfFragment
 	)*
-	( Else OpeningCurlyBracket 
-		(statements+=Statement)*
-	ClosingCurlyBracket
+	( conditions+=ElseFragment
 	)?
 ;
 
+IfFragment:
+	If OpeningBracket condition += ConditionStatement ClosingBracket OpeningCurlyBracket
+		(ifStatements+=Statement)*
+	ClosingCurlyBracket
+;
+
+ElseIfFragment:
+	ElseIf OpeningBracket condition+=ConditionStatement ClosingBracket OpeningCurlyBracket
+		(elseIfStatements+=Statement)*
+	ClosingCurlyBracket
+;
+
+ElseFragment:
+	{ElseFragment}
+	Else OpeningCurlyBracket 
+		(elseStatements+=Statement)*
+	ClosingCurlyBracket
+;
+
 /*
-SwitchStatement:
+SwitchStatement:3
 	{SwitchStatement}
 	'switch' OpeningBracket name=VariableCall ClosingBracket OpeningCurlyBracket
 		('case' cases+=STRING ':'

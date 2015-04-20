@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link bg.tues.didi.FunctionDefinition#getName <em>Name</em>}</li>
  *   <li>{@link bg.tues.didi.FunctionDefinition#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link bg.tues.didi.FunctionDefinition#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,5 +65,21 @@ public interface FunctionDefinition extends CompoundStatement
    * @generated
    */
   EList<String> getParameters();
+
+  /**
+   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * The list contents are of type {@link bg.tues.didi.Statement}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Statements</em>' containment reference list.
+   * @see bg.tues.didi.DidiPackage#getFunctionDefinition_Statements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Statement> getStatements();
 
 } // FunctionDefinition

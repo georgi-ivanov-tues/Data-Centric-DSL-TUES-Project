@@ -3,7 +3,8 @@
 package bg.tues.didi.impl;
 
 import bg.tues.didi.DidiPackage;
-import bg.tues.didi.IfStatement;
+import bg.tues.didi.ElseFragment;
+import bg.tues.didi.Statement;
 
 import java.util.Collection;
 
@@ -12,43 +13,44 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>If Statement</b></em>'.
+ * An implementation of the model object '<em><b>Else Fragment</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link bg.tues.didi.impl.IfStatementImpl#getConditions <em>Conditions</em>}</li>
+ *   <li>{@link bg.tues.didi.impl.ElseFragmentImpl#getElseStatements <em>Else Statements</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class IfStatementImpl extends CompoundStatementImpl implements IfStatement
+public class ElseFragmentImpl extends MinimalEObjectImpl.Container implements ElseFragment
 {
   /**
-   * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
+   * The cached value of the '{@link #getElseStatements() <em>Else Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConditions()
+   * @see #getElseStatements()
    * @generated
    * @ordered
    */
-  protected EList<EObject> conditions;
+  protected EList<Statement> elseStatements;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IfStatementImpl()
+  protected ElseFragmentImpl()
   {
     super();
   }
@@ -61,7 +63,7 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   @Override
   protected EClass eStaticClass()
   {
-    return DidiPackage.Literals.IF_STATEMENT;
+    return DidiPackage.Literals.ELSE_FRAGMENT;
   }
 
   /**
@@ -69,13 +71,13 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EObject> getConditions()
+  public EList<Statement> getElseStatements()
   {
-    if (conditions == null)
+    if (elseStatements == null)
     {
-      conditions = new EObjectContainmentEList<EObject>(EObject.class, this, DidiPackage.IF_STATEMENT__CONDITIONS);
+      elseStatements = new EObjectContainmentEList<Statement>(Statement.class, this, DidiPackage.ELSE_FRAGMENT__ELSE_STATEMENTS);
     }
-    return conditions;
+    return elseStatements;
   }
 
   /**
@@ -88,8 +90,8 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   {
     switch (featureID)
     {
-      case DidiPackage.IF_STATEMENT__CONDITIONS:
-        return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
+      case DidiPackage.ELSE_FRAGMENT__ELSE_STATEMENTS:
+        return ((InternalEList<?>)getElseStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +106,8 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   {
     switch (featureID)
     {
-      case DidiPackage.IF_STATEMENT__CONDITIONS:
-        return getConditions();
+      case DidiPackage.ELSE_FRAGMENT__ELSE_STATEMENTS:
+        return getElseStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +123,9 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   {
     switch (featureID)
     {
-      case DidiPackage.IF_STATEMENT__CONDITIONS:
-        getConditions().clear();
-        getConditions().addAll((Collection<? extends EObject>)newValue);
+      case DidiPackage.ELSE_FRAGMENT__ELSE_STATEMENTS:
+        getElseStatements().clear();
+        getElseStatements().addAll((Collection<? extends Statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +141,8 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   {
     switch (featureID)
     {
-      case DidiPackage.IF_STATEMENT__CONDITIONS:
-        getConditions().clear();
+      case DidiPackage.ELSE_FRAGMENT__ELSE_STATEMENTS:
+        getElseStatements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,10 +158,10 @@ public class IfStatementImpl extends CompoundStatementImpl implements IfStatemen
   {
     switch (featureID)
     {
-      case DidiPackage.IF_STATEMENT__CONDITIONS:
-        return conditions != null && !conditions.isEmpty();
+      case DidiPackage.ELSE_FRAGMENT__ELSE_STATEMENTS:
+        return elseStatements != null && !elseStatements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //IfStatementImpl
+} //ElseFragmentImpl

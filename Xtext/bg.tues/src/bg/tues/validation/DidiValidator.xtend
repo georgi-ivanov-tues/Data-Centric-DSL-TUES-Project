@@ -8,9 +8,12 @@ import bg.tues.didi.Condition
 import bg.tues.didi.ConditionStatement
 import bg.tues.didi.DidiModel
 import bg.tues.didi.DidiPackage
+import bg.tues.didi.ElseFragment
+import bg.tues.didi.ElseIfFragment
 import bg.tues.didi.ForStatement
 import bg.tues.didi.FunctionCall
 import bg.tues.didi.FunctionDefinition
+import bg.tues.didi.IfFragment
 import bg.tues.didi.IfStatement
 import bg.tues.didi.QueryFunction
 import bg.tues.didi.ReturnStatement
@@ -227,7 +230,8 @@ class DidiValidator extends AbstractDidiValidator {
  	@Check
  	def void validateReturnStatement(ReturnStatement rs) {
  		var container = rs.eContainer;
- 		if(!(container instanceof IfStatement) && !(container instanceof ForStatement)
+ 		if(!(container instanceof IfFragment) && !(container instanceof ElseIfFragment)
+ 			&& !(container instanceof ElseFragment) && !(container instanceof ForStatement)
  			&& !(container instanceof WhileStatement) 
  		) {
 	 		if(container.eContents.indexOf(rs) < (container.eContents.length - 1)) {
@@ -237,8 +241,12 @@ class DidiValidator extends AbstractDidiValidator {
 	 		}
 	 	} else {
 	 		var EObject[] elements;
-	 		if(container instanceof IfStatement) {
-	 			elements = (container as IfStatement).statements; 	
+	 		if(container instanceof IfFragment) {
+	 			elements = (container as IfFragment).ifStatements; 	
+ 			} else if(container instanceof ElseIfFragment) {
+ 				elements = (container as ElseIfFragment).elseIfStatements;
+ 			} else if(container instanceof ElseFragment) {
+ 				elements = (container as ElseFragment).elseStatements;
  			} else if(container instanceof ForStatement) {
  				elements = (container as ForStatement).statements;
  			} else if(container instanceof WhileStatement) {
@@ -251,7 +259,10 @@ class DidiValidator extends AbstractDidiValidator {
 	 			);
  			} else {
  				container = getContainerBeforeDidiModel(rs);
- 				if(!(container instanceof FunctionDefinition)) {
+ 				if(!(container instanceof FunctionDefinition
+ 					&& !(container instanceof IfStatement)
+ 				)
+ 				) {
  					error(ErrorMessages.WRONG_RETURN_STATEMENT_POSITION,
  						DidiPackage.Literals.RETURN_STATEMENT__RETURN_VALUE
  					);

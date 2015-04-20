@@ -6,15 +6,23 @@ import bg.tues.didi.ConditionStatement;
 import bg.tues.didi.DidiPackage;
 import bg.tues.didi.ForStatement;
 import bg.tues.didi.SimpleStatement;
+import bg.tues.didi.Statement;
 import bg.tues.didi.VariableDefinition;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link bg.tues.didi.impl.ForStatementImpl#getForVar <em>For Var</em>}</li>
  *   <li>{@link bg.tues.didi.impl.ForStatementImpl#getForCondition <em>For Condition</em>}</li>
  *   <li>{@link bg.tues.didi.impl.ForStatementImpl#getOperation <em>Operation</em>}</li>
+ *   <li>{@link bg.tues.didi.impl.ForStatementImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +71,16 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * @ordered
    */
   protected SimpleStatement operation;
+
+  /**
+   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStatements()
+   * @generated
+   * @ordered
+   */
+  protected EList<Statement> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -233,6 +252,20 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Statement> getStatements()
+  {
+    if (statements == null)
+    {
+      statements = new EObjectContainmentEList<Statement>(Statement.class, this, DidiPackage.FOR_STATEMENT__STATEMENTS);
+    }
+    return statements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -244,6 +277,8 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
         return basicSetForCondition(null, msgs);
       case DidiPackage.FOR_STATEMENT__OPERATION:
         return basicSetOperation(null, msgs);
+      case DidiPackage.FOR_STATEMENT__STATEMENTS:
+        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -264,6 +299,8 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
         return getForCondition();
       case DidiPackage.FOR_STATEMENT__OPERATION:
         return getOperation();
+      case DidiPackage.FOR_STATEMENT__STATEMENTS:
+        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -273,6 +310,7 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -286,6 +324,10 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
         return;
       case DidiPackage.FOR_STATEMENT__OPERATION:
         setOperation((SimpleStatement)newValue);
+        return;
+      case DidiPackage.FOR_STATEMENT__STATEMENTS:
+        getStatements().clear();
+        getStatements().addAll((Collection<? extends Statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -310,6 +352,9 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
       case DidiPackage.FOR_STATEMENT__OPERATION:
         setOperation((SimpleStatement)null);
         return;
+      case DidiPackage.FOR_STATEMENT__STATEMENTS:
+        getStatements().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -330,6 +375,8 @@ public class ForStatementImpl extends CompoundStatementImpl implements ForStatem
         return forCondition != null;
       case DidiPackage.FOR_STATEMENT__OPERATION:
         return operation != null;
+      case DidiPackage.FOR_STATEMENT__STATEMENTS:
+        return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/bg.tues/src-gen" editDirectory="/bg.tues.edit/src"
     editorDirectory="/bg.tues.editor/src" modelPluginID="bg.tues" forceOverwrite="true"
     modelName="Didi" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" editPluginID="bg.tues.edit" editorPluginID="bg.tues.editor"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="bg.tues.edit" editorPluginID="bg.tues.editor"
     runtimeVersion="2.10">
   <genPackages prefix="Didi" basePackage="bg.tues" disposableProviderFactory="true"
       fileExtensions="dd" ecorePackage="Didi.ecore#/">
@@ -36,26 +36,38 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//VariableCall/calledVariableName"/>
     </genClasses>
     <genClasses ecoreClass="Didi.ecore#//Expression"/>
-    <genClasses ecoreClass="Didi.ecore#//CompoundStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//CompoundStatement/statements"/>
-    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//CompoundStatement"/>
     <genClasses ecoreClass="Didi.ecore#//FunctionDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//FunctionDefinition/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Didi.ecore#//FunctionDefinition/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//FunctionDefinition/statements"/>
     </genClasses>
     <genClasses ecoreClass="Didi.ecore#//ReturnStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ReturnStatement/returnValue"/>
     </genClasses>
     <genClasses ecoreClass="Didi.ecore#//IfStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//IfStatement/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//IfStatement/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//IfFragment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//IfFragment/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//IfFragment/ifStatements"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//ElseIfFragment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ElseIfFragment/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ElseIfFragment/elseIfStatements"/>
+    </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//ElseFragment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ElseFragment/elseStatements"/>
     </genClasses>
     <genClasses ecoreClass="Didi.ecore#//WhileStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//WhileStatement/whileCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//WhileStatement/statements"/>
     </genClasses>
     <genClasses ecoreClass="Didi.ecore#//ForStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ForStatement/forVar"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ForStatement/forCondition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ForStatement/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ForStatement/statements"/>
     </genClasses>
     <genClasses ecoreClass="Didi.ecore#//ConditionStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//ConditionStatement/conditions"/>

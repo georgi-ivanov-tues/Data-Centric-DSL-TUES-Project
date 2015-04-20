@@ -80,6 +80,9 @@ public class DidiFactoryImpl extends EFactoryImpl implements DidiFactory
       case DidiPackage.FUNCTION_DEFINITION: return createFunctionDefinition();
       case DidiPackage.RETURN_STATEMENT: return createReturnStatement();
       case DidiPackage.IF_STATEMENT: return createIfStatement();
+      case DidiPackage.IF_FRAGMENT: return createIfFragment();
+      case DidiPackage.ELSE_IF_FRAGMENT: return createElseIfFragment();
+      case DidiPackage.ELSE_FRAGMENT: return createElseFragment();
       case DidiPackage.WHILE_STATEMENT: return createWhileStatement();
       case DidiPackage.FOR_STATEMENT: return createForStatement();
       case DidiPackage.CONDITION_STATEMENT: return createConditionStatement();
@@ -273,6 +276,39 @@ public class DidiFactoryImpl extends EFactoryImpl implements DidiFactory
   {
     IfStatementImpl ifStatement = new IfStatementImpl();
     return ifStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IfFragment createIfFragment()
+  {
+    IfFragmentImpl ifFragment = new IfFragmentImpl();
+    return ifFragment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElseIfFragment createElseIfFragment()
+  {
+    ElseIfFragmentImpl elseIfFragment = new ElseIfFragmentImpl();
+    return elseIfFragment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElseFragment createElseFragment()
+  {
+    ElseFragmentImpl elseFragment = new ElseFragmentImpl();
+    return elseFragment;
   }
 
   /**

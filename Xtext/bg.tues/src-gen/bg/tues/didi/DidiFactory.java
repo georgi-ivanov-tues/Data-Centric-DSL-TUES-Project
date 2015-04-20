@@ -167,6 +167,33 @@ public interface DidiFactory extends EFactory
   IfStatement createIfStatement();
 
   /**
+   * Returns a new object of class '<em>If Fragment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Fragment</em>'.
+   * @generated
+   */
+  IfFragment createIfFragment();
+
+  /**
+   * Returns a new object of class '<em>Else If Fragment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Else If Fragment</em>'.
+   * @generated
+   */
+  ElseIfFragment createElseIfFragment();
+
+  /**
+   * Returns a new object of class '<em>Else Fragment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Else Fragment</em>'.
+   * @generated
+   */
+  ElseFragment createElseFragment();
+
+  /**
    * Returns a new object of class '<em>While Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

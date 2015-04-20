@@ -4,15 +4,23 @@ package bg.tues.didi.impl;
 
 import bg.tues.didi.ConditionStatement;
 import bg.tues.didi.DidiPackage;
+import bg.tues.didi.Statement;
 import bg.tues.didi.WhileStatement;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link bg.tues.didi.impl.WhileStatementImpl#getWhileCondition <em>While Condition</em>}</li>
+ *   <li>{@link bg.tues.didi.impl.WhileStatementImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +47,16 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
    * @ordered
    */
   protected ConditionStatement whileCondition;
+
+  /**
+   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStatements()
+   * @generated
+   * @ordered
+   */
+  protected EList<Statement> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -113,6 +132,20 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Statement> getStatements()
+  {
+    if (statements == null)
+    {
+      statements = new EObjectContainmentEList<Statement>(Statement.class, this, DidiPackage.WHILE_STATEMENT__STATEMENTS);
+    }
+    return statements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -120,6 +153,8 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
     {
       case DidiPackage.WHILE_STATEMENT__WHILE_CONDITION:
         return basicSetWhileCondition(null, msgs);
+      case DidiPackage.WHILE_STATEMENT__STATEMENTS:
+        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,6 +171,8 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
     {
       case DidiPackage.WHILE_STATEMENT__WHILE_CONDITION:
         return getWhileCondition();
+      case DidiPackage.WHILE_STATEMENT__STATEMENTS:
+        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -145,6 +182,7 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -152,6 +190,10 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
     {
       case DidiPackage.WHILE_STATEMENT__WHILE_CONDITION:
         setWhileCondition((ConditionStatement)newValue);
+        return;
+      case DidiPackage.WHILE_STATEMENT__STATEMENTS:
+        getStatements().clear();
+        getStatements().addAll((Collection<? extends Statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,6 +212,9 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
       case DidiPackage.WHILE_STATEMENT__WHILE_CONDITION:
         setWhileCondition((ConditionStatement)null);
         return;
+      case DidiPackage.WHILE_STATEMENT__STATEMENTS:
+        getStatements().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -186,6 +231,8 @@ public class WhileStatementImpl extends CompoundStatementImpl implements WhileSt
     {
       case DidiPackage.WHILE_STATEMENT__WHILE_CONDITION:
         return whileCondition != null;
+      case DidiPackage.WHILE_STATEMENT__STATEMENTS:
+        return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

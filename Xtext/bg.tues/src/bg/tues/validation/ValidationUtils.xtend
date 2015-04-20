@@ -3,9 +3,12 @@ package bg.tues.validation;
 import bg.tues.didi.BooleanValue
 import bg.tues.didi.ConditionElement
 import bg.tues.didi.DidiModel
+import bg.tues.didi.ElseFragment
+import bg.tues.didi.ElseIfFragment
 import bg.tues.didi.ForStatement
 import bg.tues.didi.FunctionCall
 import bg.tues.didi.FunctionDefinition
+import bg.tues.didi.IfFragment
 import bg.tues.didi.IfStatement
 import bg.tues.didi.VariableCall
 import bg.tues.didi.VariableDefinition
@@ -23,9 +26,10 @@ public class ValidationUtils {
 		if(globalVariableFound) {
 			return;
 		}
-		if(object instanceof DidiModel || object instanceof IfStatement
+		if(object instanceof DidiModel || object instanceof IfFragment
 			|| object instanceof ForStatement || object instanceof WhileStatement
-			|| object instanceof FunctionDefinition
+			|| object instanceof FunctionDefinition 
+			|| object instanceof ElseIfFragment || object instanceof ElseFragment
 		) {	
 			var int lastIndex;
 			var variableFound = false;
@@ -160,9 +164,11 @@ public class ValidationUtils {
 		while(!(container.eContainer instanceof DidiModel)) {
 			var temp = container;
 			container = container.eContainer;
-			checkIfVariableIsUsed(container.eContents.subList(container.eContents.indexOf(temp) + 1, container.eContents.length),
-				(element as VariableDefinition).name
-			);
+			if(element instanceof VariableDefinition) {
+				checkIfVariableIsUsed(container.eContents.subList(container.eContents.indexOf(temp) + 1, container.eContents.length),
+					(element as VariableDefinition).name
+				);
+			}
 		}
 		
 		return container;
@@ -214,7 +220,8 @@ public class ValidationUtils {
 			while(!(container instanceof DidiModel)) {
 				container = container.eContainer;
 				
-				if(container instanceof IfStatement || container instanceof ForStatement
+				if(container instanceof IfFragment || container instanceof ElseIfFragment
+					|| container instanceof ElseFragment || container instanceof ForStatement
 					|| container instanceof WhileStatement || container instanceof FunctionDefinition) {
 					
 					if(container instanceof ForStatement) {

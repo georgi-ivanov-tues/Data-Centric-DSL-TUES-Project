@@ -3,10 +3,12 @@ package bg.tues.validation;
 import bg.tues.didi.BooleanValue;
 import bg.tues.didi.ConditionElement;
 import bg.tues.didi.DidiModel;
+import bg.tues.didi.ElseFragment;
+import bg.tues.didi.ElseIfFragment;
 import bg.tues.didi.ForStatement;
 import bg.tues.didi.FunctionCall;
 import bg.tues.didi.FunctionDefinition;
-import bg.tues.didi.IfStatement;
+import bg.tues.didi.IfFragment;
 import bg.tues.didi.VariableCall;
 import bg.tues.didi.VariableDefinition;
 import bg.tues.didi.WhileStatement;
@@ -34,10 +36,10 @@ public class ValidationUtils {
       return;
     }
     boolean _or = false;
-    if (((((object instanceof DidiModel) || (object instanceof IfStatement)) || (object instanceof ForStatement)) || (object instanceof WhileStatement))) {
+    if (((((((object instanceof DidiModel) || (object instanceof IfFragment)) || (object instanceof ForStatement)) || (object instanceof WhileStatement)) || (object instanceof FunctionDefinition)) || (object instanceof ElseIfFragment))) {
       _or = true;
     } else {
-      _or = (object instanceof FunctionDefinition);
+      _or = (object instanceof ElseFragment);
     }
     if (_or) {
       int lastIndex = 0;
@@ -49,6 +51,7 @@ public class ValidationUtils {
         Object[] _array = _subList.toArray();
         Iterable<VariableDefinition> _filter = Iterables.<VariableDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array)), VariableDefinition.class);
         final Function1<VariableDefinition, Boolean> _function = new Function1<VariableDefinition, Boolean>() {
+          @Override
           public Boolean apply(final VariableDefinition it) {
             return Boolean.valueOf(it.isIsGlobal());
           }
@@ -64,6 +67,7 @@ public class ValidationUtils {
         Object[] _array_1 = _eContents_2.toArray();
         Iterable<VariableDefinition> _filter_2 = Iterables.<VariableDefinition>filter(((Iterable<?>)Conversions.doWrapArray(_array_1)), VariableDefinition.class);
         final Function1<VariableDefinition, Boolean> _function_1 = new Function1<VariableDefinition, Boolean>() {
+          @Override
           public Boolean apply(final VariableDefinition it) {
             return Boolean.valueOf(it.isIsGlobal());
           }
@@ -262,15 +266,17 @@ public class ValidationUtils {
         EObject temp = container;
         EObject _eContainer = container.eContainer();
         container = _eContainer;
-        EList<EObject> _eContents = container.eContents();
-        EList<EObject> _eContents_1 = container.eContents();
-        int _indexOf = _eContents_1.indexOf(temp);
-        int _plus = (_indexOf + 1);
-        EList<EObject> _eContents_2 = container.eContents();
-        int _length = ((Object[])Conversions.unwrapArray(_eContents_2, Object.class)).length;
-        List<EObject> _subList = _eContents.subList(_plus, _length);
-        String _name = ((VariableDefinition) element).getName();
-        ValidationUtils.checkIfVariableIsUsed(_subList, _name);
+        if ((element instanceof VariableDefinition)) {
+          EList<EObject> _eContents = container.eContents();
+          EList<EObject> _eContents_1 = container.eContents();
+          int _indexOf = _eContents_1.indexOf(temp);
+          int _plus = (_indexOf + 1);
+          EList<EObject> _eContents_2 = container.eContents();
+          int _length = ((Object[])Conversions.unwrapArray(_eContents_2, Object.class)).length;
+          List<EObject> _subList = _eContents.subList(_plus, _length);
+          String _name = ((VariableDefinition) element).getName();
+          ValidationUtils.checkIfVariableIsUsed(_subList, _name);
+        }
       }
     }
     return container;
@@ -346,7 +352,7 @@ public class ValidationUtils {
           EObject _eContainer = container.eContainer();
           container = _eContainer;
           boolean _or = false;
-          if ((((container instanceof IfStatement) || (container instanceof ForStatement)) || (container instanceof WhileStatement))) {
+          if ((((((container instanceof IfFragment) || (container instanceof ElseIfFragment)) || (container instanceof ElseFragment)) || (container instanceof ForStatement)) || (container instanceof WhileStatement))) {
             _or = true;
           } else {
             _or = (container instanceof FunctionDefinition);

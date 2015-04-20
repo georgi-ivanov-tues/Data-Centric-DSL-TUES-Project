@@ -1802,10 +1802,10 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_NUMBER_LITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:21: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )* )? ) )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:23: ( '0' | '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )* )? )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:21: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )* )? ) )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:23: ( '0' | '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )* )? )
             {
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:23: ( '0' | '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )* )? )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:23: ( '0' | '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )* )? )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1823,17 +1823,17 @@ public class InternalDidiLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:24: '0'
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:24: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:28: '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )* )?
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:28: '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )* )?
                     {
                     matchRange('1','9'); 
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:37: ( '0' .. '9' )*
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:37: ( '0' .. '9' )*
                     loop1:
                     do {
                         int alt1=2;
@@ -1846,7 +1846,7 @@ public class InternalDidiLexer extends Lexer {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:38: '0' .. '9'
+                    	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:38: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -1858,7 +1858,7 @@ public class InternalDidiLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:49: ( '.' ( '0' .. '9' )* )?
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:49: ( '.' ( '0' .. '9' )* )?
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1867,10 +1867,10 @@ public class InternalDidiLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:50: '.' ( '0' .. '9' )*
+                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:50: '.' ( '0' .. '9' )*
                             {
                             match('.'); 
-                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:54: ( '0' .. '9' )*
+                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:54: ( '0' .. '9' )*
                             loop2:
                             do {
                                 int alt2=2;
@@ -1883,7 +1883,7 @@ public class InternalDidiLexer extends Lexer {
 
                                 switch (alt2) {
                             	case 1 :
-                            	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25438:55: '0' .. '9'
+                            	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25630:55: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -1923,8 +1923,8 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_IDENTIFIER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25440:17: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25440:19: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25632:17: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25632:19: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1935,7 +1935,7 @@ public class InternalDidiLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25440:43: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25632:43: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop5:
             do {
                 int alt5=2;
@@ -1984,10 +1984,10 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:12: ( '0x' | '0X' )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:12: ( '0x' | '0X' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -2015,7 +2015,7 @@ public class InternalDidiLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:13: '0x'
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:13: '0x'
                     {
                     match("0x"); 
 
@@ -2023,7 +2023,7 @@ public class InternalDidiLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:18: '0X'
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:18: '0X'
                     {
                     match("0X"); 
 
@@ -2033,7 +2033,7 @@ public class InternalDidiLexer extends Lexer {
 
             }
 
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt7=0;
             loop7:
             do {
@@ -2071,7 +2071,7 @@ public class InternalDidiLexer extends Lexer {
                 cnt7++;
             } while (true);
 
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2080,10 +2080,10 @@ public class InternalDidiLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -2101,7 +2101,7 @@ public class InternalDidiLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2125,7 +2125,7 @@ public class InternalDidiLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25442:84: ( 'l' | 'L' )
+                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25634:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2164,11 +2164,11 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25444:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25444:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25636:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25636:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25444:21: ( '0' .. '9' | '_' )*
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25636:21: ( '0' .. '9' | '_' )*
             loop10:
             do {
                 int alt10=2;
@@ -2217,11 +2217,11 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25446:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25446:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25638:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25638:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25446:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25638:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2230,7 +2230,7 @@ public class InternalDidiLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25446:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25638:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2241,7 +2241,7 @@ public class InternalDidiLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25446:36: ( '+' | '-' )?
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25638:36: ( '+' | '-' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2274,7 +2274,7 @@ public class InternalDidiLexer extends Lexer {
 
             }
 
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25446:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25638:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt13=3;
             int LA13_0 = input.LA(1);
 
@@ -2286,7 +2286,7 @@ public class InternalDidiLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25446:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25638:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2310,7 +2310,7 @@ public class InternalDidiLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25446:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25638:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2343,10 +2343,10 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25448:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25448:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25640:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25640:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25448:11: ( '^' )?
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25640:11: ( '^' )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2355,7 +2355,7 @@ public class InternalDidiLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25448:11: '^'
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25640:11: '^'
                     {
                     match('^'); 
 
@@ -2373,7 +2373,7 @@ public class InternalDidiLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25448:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25640:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop15:
             do {
                 int alt15=2;
@@ -2422,10 +2422,10 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2443,10 +2443,10 @@ public class InternalDidiLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop16:
                     do {
                         int alt16=3;
@@ -2462,7 +2462,7 @@ public class InternalDidiLexer extends Lexer {
 
                         switch (alt16) {
                     	case 1 :
-                    	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:21: '\\\\' .
+                    	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2470,7 +2470,7 @@ public class InternalDidiLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2490,7 +2490,7 @@ public class InternalDidiLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:44: ( '\"' )?
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:44: ( '\"' )?
                     int alt17=2;
                     int LA17_0 = input.LA(1);
 
@@ -2499,7 +2499,7 @@ public class InternalDidiLexer extends Lexer {
                     }
                     switch (alt17) {
                         case 1 :
-                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:44: '\"'
+                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:44: '\"'
                             {
                             match('\"'); 
 
@@ -2512,10 +2512,10 @@ public class InternalDidiLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop18:
                     do {
                         int alt18=3;
@@ -2531,7 +2531,7 @@ public class InternalDidiLexer extends Lexer {
 
                         switch (alt18) {
                     	case 1 :
-                    	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:55: '\\\\' .
+                    	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2539,7 +2539,7 @@ public class InternalDidiLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2559,7 +2559,7 @@ public class InternalDidiLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:79: ( '\\'' )?
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:79: ( '\\'' )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -2568,7 +2568,7 @@ public class InternalDidiLexer extends Lexer {
                     }
                     switch (alt19) {
                         case 1 :
-                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25450:79: '\\''
+                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25642:79: '\\''
                             {
                             match('\''); 
 
@@ -2599,12 +2599,12 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25452:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25452:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25644:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25644:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25452:24: ( options {greedy=false; } : . )*
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25644:24: ( options {greedy=false; } : . )*
             loop21:
             do {
                 int alt21=2;
@@ -2629,7 +2629,7 @@ public class InternalDidiLexer extends Lexer {
 
                 switch (alt21) {
             	case 1 :
-            	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25452:52: .
+            	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25644:52: .
             	    {
             	    matchAny(); 
 
@@ -2659,12 +2659,12 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25454:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25454:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25646:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25646:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25454:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25646:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop22:
             do {
                 int alt22=2;
@@ -2677,7 +2677,7 @@ public class InternalDidiLexer extends Lexer {
 
                 switch (alt22) {
             	case 1 :
-            	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25454:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25646:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2697,7 +2697,7 @@ public class InternalDidiLexer extends Lexer {
                 }
             } while (true);
 
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25454:40: ( ( '\\r' )? '\\n' )?
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25646:40: ( ( '\\r' )? '\\n' )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -2706,9 +2706,9 @@ public class InternalDidiLexer extends Lexer {
             }
             switch (alt24) {
                 case 1 :
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25454:41: ( '\\r' )? '\\n'
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25646:41: ( '\\r' )? '\\n'
                     {
-                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25454:41: ( '\\r' )?
+                    // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25646:41: ( '\\r' )?
                     int alt23=2;
                     int LA23_0 = input.LA(1);
 
@@ -2717,7 +2717,7 @@ public class InternalDidiLexer extends Lexer {
                     }
                     switch (alt23) {
                         case 1 :
-                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25454:41: '\\r'
+                            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25646:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2749,10 +2749,10 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25456:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25456:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25648:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25648:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25456:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25648:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt25=0;
             loop25:
             do {
@@ -2806,8 +2806,8 @@ public class InternalDidiLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25458:16: ( . )
-            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25458:18: .
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25650:16: ( . )
+            // ../bg.tues.ui/src-gen/bg/tues/ui/contentassist/antlr/internal/InternalDidi.g:25650:18: .
             {
             matchAny(); 
 

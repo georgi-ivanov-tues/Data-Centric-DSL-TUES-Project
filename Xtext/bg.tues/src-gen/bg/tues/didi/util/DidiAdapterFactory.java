@@ -155,6 +155,21 @@ public class DidiAdapterFactory extends AdapterFactoryImpl
         return createIfStatementAdapter();
       }
       @Override
+      public Adapter caseIfFragment(IfFragment object)
+      {
+        return createIfFragmentAdapter();
+      }
+      @Override
+      public Adapter caseElseIfFragment(ElseIfFragment object)
+      {
+        return createElseIfFragmentAdapter();
+      }
+      @Override
+      public Adapter caseElseFragment(ElseFragment object)
+      {
+        return createElseFragmentAdapter();
+      }
+      @Override
       public Adapter caseWhileStatement(WhileStatement object)
       {
         return createWhileStatementAdapter();
@@ -482,6 +497,51 @@ public class DidiAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIfStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link bg.tues.didi.IfFragment <em>If Fragment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see bg.tues.didi.IfFragment
+   * @generated
+   */
+  public Adapter createIfFragmentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link bg.tues.didi.ElseIfFragment <em>Else If Fragment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see bg.tues.didi.ElseIfFragment
+   * @generated
+   */
+  public Adapter createElseIfFragmentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link bg.tues.didi.ElseFragment <em>Else Fragment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see bg.tues.didi.ElseFragment
+   * @generated
+   */
+  public Adapter createElseFragmentAdapter()
   {
     return null;
   }

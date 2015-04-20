@@ -40,6 +40,7 @@ public class DidiQuickfixProvider extends XbaseQuickfixProvider {
       "Creates a function with the desired name.", 
       null, 
       new ISemanticModification() {
+        @Override
         public void apply(final EObject element, final IModificationContext context) throws Exception {
           StringBuilder builder = new StringBuilder();
           FunctionCall functionCall = ((FunctionCall) element);
@@ -95,6 +96,7 @@ public class DidiQuickfixProvider extends XbaseQuickfixProvider {
       "Defines a local variable with the desired name.", 
       null, 
       new IModification() {
+        @Override
         public void apply(final IModificationContext context) throws Exception {
           IXtextDocument xtextDocument = context.getXtextDocument();
           Integer _lineNumber = issue.getLineNumber();
@@ -134,6 +136,7 @@ public class DidiQuickfixProvider extends XbaseQuickfixProvider {
       "Defines a global variable with the desired name.", 
       null, 
       new IModification() {
+        @Override
         public void apply(final IModificationContext context) throws Exception {
           IXtextDocument xtextDocument = context.getXtextDocument();
           Integer _lineNumber = issue.getLineNumber();
@@ -173,6 +176,7 @@ public class DidiQuickfixProvider extends XbaseQuickfixProvider {
       "Removes the variable definition.", 
       null, 
       new IModification() {
+        @Override
         public void apply(final IModificationContext context) throws Exception {
           IXtextDocument xtextDocument = context.getXtextDocument();
           Integer _lineNumber = issue.getLineNumber();
@@ -196,6 +200,7 @@ public class DidiQuickfixProvider extends XbaseQuickfixProvider {
       "Removes the function definition.", 
       null, 
       new ISemanticModification() {
+        @Override
         public void apply(final EObject element, final IModificationContext context) throws Exception {
           EObject _eContainer = element.eContainer();
           DidiModel didiModelElement = ((DidiModel) _eContainer);

@@ -385,22 +385,13 @@ public interface DidiPackage extends EPackage
   int COMPOUND_STATEMENT = 12;
 
   /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPOUND_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The number of structural features of the '<em>Compound Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOUND_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+  int COMPOUND_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link bg.tues.didi.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
@@ -411,15 +402,6 @@ public interface DidiPackage extends EPackage
    * @generated
    */
   int FUNCTION_DEFINITION = 13;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__STATEMENTS = COMPOUND_STATEMENT__STATEMENTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -440,13 +422,22 @@ public interface DidiPackage extends EPackage
   int FUNCTION_DEFINITION__PARAMETERS = COMPOUND_STATEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DEFINITION__STATEMENTS = COMPOUND_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Function Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_DEFINITION_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 2;
+  int FUNCTION_DEFINITION_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link bg.tues.didi.impl.ReturnStatementImpl <em>Return Statement</em>}' class.
@@ -487,22 +478,13 @@ public interface DidiPackage extends EPackage
   int IF_STATEMENT = 15;
 
   /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_STATEMENT__STATEMENTS = COMPOUND_STATEMENT__STATEMENTS;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__CONDITION = COMPOUND_STATEMENT_FEATURE_COUNT + 0;
+  int IF_STATEMENT__CONDITIONS = COMPOUND_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>If Statement</em>' class.
@@ -514,6 +496,108 @@ public interface DidiPackage extends EPackage
   int IF_STATEMENT_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link bg.tues.didi.impl.IfFragmentImpl <em>If Fragment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see bg.tues.didi.impl.IfFragmentImpl
+   * @see bg.tues.didi.impl.DidiPackageImpl#getIfFragment()
+   * @generated
+   */
+  int IF_FRAGMENT = 16;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_FRAGMENT__CONDITION = 0;
+
+  /**
+   * The feature id for the '<em><b>If Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_FRAGMENT__IF_STATEMENTS = 1;
+
+  /**
+   * The number of structural features of the '<em>If Fragment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_FRAGMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link bg.tues.didi.impl.ElseIfFragmentImpl <em>Else If Fragment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see bg.tues.didi.impl.ElseIfFragmentImpl
+   * @see bg.tues.didi.impl.DidiPackageImpl#getElseIfFragment()
+   * @generated
+   */
+  int ELSE_IF_FRAGMENT = 17;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELSE_IF_FRAGMENT__CONDITION = 0;
+
+  /**
+   * The feature id for the '<em><b>Else If Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELSE_IF_FRAGMENT__ELSE_IF_STATEMENTS = 1;
+
+  /**
+   * The number of structural features of the '<em>Else If Fragment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELSE_IF_FRAGMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link bg.tues.didi.impl.ElseFragmentImpl <em>Else Fragment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see bg.tues.didi.impl.ElseFragmentImpl
+   * @see bg.tues.didi.impl.DidiPackageImpl#getElseFragment()
+   * @generated
+   */
+  int ELSE_FRAGMENT = 18;
+
+  /**
+   * The feature id for the '<em><b>Else Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELSE_FRAGMENT__ELSE_STATEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Else Fragment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELSE_FRAGMENT_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link bg.tues.didi.impl.WhileStatementImpl <em>While Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -521,16 +605,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getWhileStatement()
    * @generated
    */
-  int WHILE_STATEMENT = 16;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHILE_STATEMENT__STATEMENTS = COMPOUND_STATEMENT__STATEMENTS;
+  int WHILE_STATEMENT = 19;
 
   /**
    * The feature id for the '<em><b>While Condition</b></em>' containment reference.
@@ -542,13 +617,22 @@ public interface DidiPackage extends EPackage
   int WHILE_STATEMENT__WHILE_CONDITION = COMPOUND_STATEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__STATEMENTS = COMPOUND_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>While Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHILE_STATEMENT_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 1;
+  int WHILE_STATEMENT_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link bg.tues.didi.impl.ForStatementImpl <em>For Statement</em>}' class.
@@ -558,16 +642,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getForStatement()
    * @generated
    */
-  int FOR_STATEMENT = 17;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__STATEMENTS = COMPOUND_STATEMENT__STATEMENTS;
+  int FOR_STATEMENT = 20;
 
   /**
    * The feature id for the '<em><b>For Var</b></em>' containment reference.
@@ -597,13 +672,22 @@ public interface DidiPackage extends EPackage
   int FOR_STATEMENT__OPERATION = COMPOUND_STATEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__STATEMENTS = COMPOUND_STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>For Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_STATEMENT_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 3;
+  int FOR_STATEMENT_FEATURE_COUNT = COMPOUND_STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link bg.tues.didi.impl.ConditionStatementImpl <em>Condition Statement</em>}' class.
@@ -613,7 +697,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getConditionStatement()
    * @generated
    */
-  int CONDITION_STATEMENT = 18;
+  int CONDITION_STATEMENT = 21;
 
   /**
    * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
@@ -641,7 +725,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 19;
+  int CONDITION = 22;
 
   /**
    * The feature id for the '<em><b>Condition Elements</b></em>' containment reference list.
@@ -678,7 +762,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getConditionElement()
    * @generated
    */
-  int CONDITION_ELEMENT = 20;
+  int CONDITION_ELEMENT = 23;
 
   /**
    * The number of structural features of the '<em>Condition Element</em>' class.
@@ -697,7 +781,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getPostfixOperation()
    * @generated
    */
-  int POSTFIX_OPERATION = 21;
+  int POSTFIX_OPERATION = 24;
 
   /**
    * The feature id for the '<em><b>Call</b></em>' containment reference.
@@ -734,7 +818,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 22;
+  int STRING_LITERAL = 25;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -762,7 +846,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 23;
+  int NUMBER_LITERAL = 26;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -790,7 +874,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 24;
+  int BOOLEAN_VALUE = 27;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -818,7 +902,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 25;
+  int ADDITION = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -855,7 +939,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getSubstraction()
    * @generated
    */
-  int SUBSTRACTION = 26;
+  int SUBSTRACTION = 29;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -892,7 +976,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 27;
+  int MULTIPLICATION = 30;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -929,7 +1013,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getDivision()
    * @generated
    */
-  int DIVISION = 28;
+  int DIVISION = 31;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -966,7 +1050,7 @@ public interface DidiPackage extends EPackage
    * @see bg.tues.didi.impl.DidiPackageImpl#getMod()
    * @generated
    */
-  int MOD = 29;
+  int MOD = 32;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1237,17 +1321,6 @@ public interface DidiPackage extends EPackage
   EClass getCompoundStatement();
 
   /**
-   * Returns the meta object for the containment reference list '{@link bg.tues.didi.CompoundStatement#getStatements <em>Statements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see bg.tues.didi.CompoundStatement#getStatements()
-   * @see #getCompoundStatement()
-   * @generated
-   */
-  EReference getCompoundStatement_Statements();
-
-  /**
    * Returns the meta object for class '{@link bg.tues.didi.FunctionDefinition <em>Function Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1278,6 +1351,17 @@ public interface DidiPackage extends EPackage
    * @generated
    */
   EAttribute getFunctionDefinition_Parameters();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link bg.tues.didi.FunctionDefinition#getStatements <em>Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see bg.tues.didi.FunctionDefinition#getStatements()
+   * @see #getFunctionDefinition()
+   * @generated
+   */
+  EReference getFunctionDefinition_Statements();
 
   /**
    * Returns the meta object for class '{@link bg.tues.didi.ReturnStatement <em>Return Statement</em>}'.
@@ -1311,15 +1395,100 @@ public interface DidiPackage extends EPackage
   EClass getIfStatement();
 
   /**
-   * Returns the meta object for the containment reference list '{@link bg.tues.didi.IfStatement#getCondition <em>Condition</em>}'.
+   * Returns the meta object for the containment reference list '{@link bg.tues.didi.IfStatement#getConditions <em>Conditions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Condition</em>'.
-   * @see bg.tues.didi.IfStatement#getCondition()
+   * @return the meta object for the containment reference list '<em>Conditions</em>'.
+   * @see bg.tues.didi.IfStatement#getConditions()
    * @see #getIfStatement()
    * @generated
    */
-  EReference getIfStatement_Condition();
+  EReference getIfStatement_Conditions();
+
+  /**
+   * Returns the meta object for class '{@link bg.tues.didi.IfFragment <em>If Fragment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If Fragment</em>'.
+   * @see bg.tues.didi.IfFragment
+   * @generated
+   */
+  EClass getIfFragment();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link bg.tues.didi.IfFragment#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Condition</em>'.
+   * @see bg.tues.didi.IfFragment#getCondition()
+   * @see #getIfFragment()
+   * @generated
+   */
+  EReference getIfFragment_Condition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link bg.tues.didi.IfFragment#getIfStatements <em>If Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>If Statements</em>'.
+   * @see bg.tues.didi.IfFragment#getIfStatements()
+   * @see #getIfFragment()
+   * @generated
+   */
+  EReference getIfFragment_IfStatements();
+
+  /**
+   * Returns the meta object for class '{@link bg.tues.didi.ElseIfFragment <em>Else If Fragment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Else If Fragment</em>'.
+   * @see bg.tues.didi.ElseIfFragment
+   * @generated
+   */
+  EClass getElseIfFragment();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link bg.tues.didi.ElseIfFragment#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Condition</em>'.
+   * @see bg.tues.didi.ElseIfFragment#getCondition()
+   * @see #getElseIfFragment()
+   * @generated
+   */
+  EReference getElseIfFragment_Condition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link bg.tues.didi.ElseIfFragment#getElseIfStatements <em>Else If Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Else If Statements</em>'.
+   * @see bg.tues.didi.ElseIfFragment#getElseIfStatements()
+   * @see #getElseIfFragment()
+   * @generated
+   */
+  EReference getElseIfFragment_ElseIfStatements();
+
+  /**
+   * Returns the meta object for class '{@link bg.tues.didi.ElseFragment <em>Else Fragment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Else Fragment</em>'.
+   * @see bg.tues.didi.ElseFragment
+   * @generated
+   */
+  EClass getElseFragment();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link bg.tues.didi.ElseFragment#getElseStatements <em>Else Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Else Statements</em>'.
+   * @see bg.tues.didi.ElseFragment#getElseStatements()
+   * @see #getElseFragment()
+   * @generated
+   */
+  EReference getElseFragment_ElseStatements();
 
   /**
    * Returns the meta object for class '{@link bg.tues.didi.WhileStatement <em>While Statement</em>}'.
@@ -1341,6 +1510,17 @@ public interface DidiPackage extends EPackage
    * @generated
    */
   EReference getWhileStatement_WhileCondition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link bg.tues.didi.WhileStatement#getStatements <em>Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see bg.tues.didi.WhileStatement#getStatements()
+   * @see #getWhileStatement()
+   * @generated
+   */
+  EReference getWhileStatement_Statements();
 
   /**
    * Returns the meta object for class '{@link bg.tues.didi.ForStatement <em>For Statement</em>}'.
@@ -1384,6 +1564,17 @@ public interface DidiPackage extends EPackage
    * @generated
    */
   EReference getForStatement_Operation();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link bg.tues.didi.ForStatement#getStatements <em>Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see bg.tues.didi.ForStatement#getStatements()
+   * @see #getForStatement()
+   * @generated
+   */
+  EReference getForStatement_Statements();
 
   /**
    * Returns the meta object for class '{@link bg.tues.didi.ConditionStatement <em>Condition Statement</em>}'.
@@ -1937,14 +2128,6 @@ public interface DidiPackage extends EPackage
     EClass COMPOUND_STATEMENT = eINSTANCE.getCompoundStatement();
 
     /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPOUND_STATEMENT__STATEMENTS = eINSTANCE.getCompoundStatement_Statements();
-
-    /**
      * The meta object literal for the '{@link bg.tues.didi.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1969,6 +2152,14 @@ public interface DidiPackage extends EPackage
      * @generated
      */
     EAttribute FUNCTION_DEFINITION__PARAMETERS = eINSTANCE.getFunctionDefinition_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_DEFINITION__STATEMENTS = eINSTANCE.getFunctionDefinition_Statements();
 
     /**
      * The meta object literal for the '{@link bg.tues.didi.impl.ReturnStatementImpl <em>Return Statement</em>}' class.
@@ -1999,12 +2190,82 @@ public interface DidiPackage extends EPackage
     EClass IF_STATEMENT = eINSTANCE.getIfStatement();
 
     /**
+     * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__CONDITIONS = eINSTANCE.getIfStatement_Conditions();
+
+    /**
+     * The meta object literal for the '{@link bg.tues.didi.impl.IfFragmentImpl <em>If Fragment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see bg.tues.didi.impl.IfFragmentImpl
+     * @see bg.tues.didi.impl.DidiPackageImpl#getIfFragment()
+     * @generated
+     */
+    EClass IF_FRAGMENT = eINSTANCE.getIfFragment();
+
+    /**
      * The meta object literal for the '<em><b>Condition</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_STATEMENT__CONDITION = eINSTANCE.getIfStatement_Condition();
+    EReference IF_FRAGMENT__CONDITION = eINSTANCE.getIfFragment_Condition();
+
+    /**
+     * The meta object literal for the '<em><b>If Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_FRAGMENT__IF_STATEMENTS = eINSTANCE.getIfFragment_IfStatements();
+
+    /**
+     * The meta object literal for the '{@link bg.tues.didi.impl.ElseIfFragmentImpl <em>Else If Fragment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see bg.tues.didi.impl.ElseIfFragmentImpl
+     * @see bg.tues.didi.impl.DidiPackageImpl#getElseIfFragment()
+     * @generated
+     */
+    EClass ELSE_IF_FRAGMENT = eINSTANCE.getElseIfFragment();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELSE_IF_FRAGMENT__CONDITION = eINSTANCE.getElseIfFragment_Condition();
+
+    /**
+     * The meta object literal for the '<em><b>Else If Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELSE_IF_FRAGMENT__ELSE_IF_STATEMENTS = eINSTANCE.getElseIfFragment_ElseIfStatements();
+
+    /**
+     * The meta object literal for the '{@link bg.tues.didi.impl.ElseFragmentImpl <em>Else Fragment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see bg.tues.didi.impl.ElseFragmentImpl
+     * @see bg.tues.didi.impl.DidiPackageImpl#getElseFragment()
+     * @generated
+     */
+    EClass ELSE_FRAGMENT = eINSTANCE.getElseFragment();
+
+    /**
+     * The meta object literal for the '<em><b>Else Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELSE_FRAGMENT__ELSE_STATEMENTS = eINSTANCE.getElseFragment_ElseStatements();
 
     /**
      * The meta object literal for the '{@link bg.tues.didi.impl.WhileStatementImpl <em>While Statement</em>}' class.
@@ -2023,6 +2284,14 @@ public interface DidiPackage extends EPackage
      * @generated
      */
     EReference WHILE_STATEMENT__WHILE_CONDITION = eINSTANCE.getWhileStatement_WhileCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHILE_STATEMENT__STATEMENTS = eINSTANCE.getWhileStatement_Statements();
 
     /**
      * The meta object literal for the '{@link bg.tues.didi.impl.ForStatementImpl <em>For Statement</em>}' class.
@@ -2057,6 +2326,14 @@ public interface DidiPackage extends EPackage
      * @generated
      */
     EReference FOR_STATEMENT__OPERATION = eINSTANCE.getForStatement_Operation();
+
+    /**
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__STATEMENTS = eINSTANCE.getForStatement_Statements();
 
     /**
      * The meta object literal for the '{@link bg.tues.didi.impl.ConditionStatementImpl <em>Condition Statement</em>}' class.
