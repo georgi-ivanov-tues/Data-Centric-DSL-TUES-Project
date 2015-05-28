@@ -26,7 +26,7 @@ public class ValidationUtils {
 		if(globalVariableFound) {
 			return;
 		}
-		if(object instanceof DidiModel || object instanceof IfFragment
+		if(object instanceof DidiModel || object instanceof IfFragment || object instanceof IfStatement
 			|| object instanceof ForStatement || object instanceof WhileStatement
 			|| object instanceof FunctionDefinition 
 			|| object instanceof ElseIfFragment || object instanceof ElseFragment

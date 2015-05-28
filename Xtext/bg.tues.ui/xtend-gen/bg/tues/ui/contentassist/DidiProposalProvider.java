@@ -3,11 +3,217 @@
  */
 package bg.tues.ui.contentassist;
 
+import bg.tues.didi.DidiModel;
+import bg.tues.didi.ElseFragment;
+import bg.tues.didi.ElseIfFragment;
+import bg.tues.didi.FunctionDefinition;
+import bg.tues.didi.IfFragment;
+import bg.tues.didi.Statement;
+import bg.tues.didi.VariableDefinition;
 import bg.tues.ui.contentassist.AbstractDidiProposalProvider;
+import com.google.common.collect.Iterables;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.ExclusiveRange;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
  */
 @SuppressWarnings("all")
 public class DidiProposalProvider extends AbstractDidiProposalProvider {
+  @Override
+  public void completeFunctionCall_CalledFunctionName(final EObject model, final Assignment assignment, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
+    super.completeFunctionCall_CalledFunctionName(model, assignment, context, acceptor);
+    EObject container = model.eContainer();
+    while ((!(container instanceof DidiModel))) {
+      EObject _eContainer = container.eContainer();
+      container = _eContainer;
+    }
+    DidiModel didiModel = ((DidiModel) container);
+    EList<Statement> _elements = didiModel.getElements();
+    Iterable<FunctionDefinition> functionDefinitions = Iterables.<FunctionDefinition>filter(_elements, FunctionDefinition.class);
+    for (final FunctionDefinition fd : functionDefinitions) {
+      {
+        String _name = fd.getName();
+        StringBuilder proposal = new StringBuilder(_name);
+        proposal.append("(");
+        EList<String> _parameters = fd.getParameters();
+        int _length = ((Object[])Conversions.unwrapArray(_parameters, Object.class)).length;
+        boolean _greaterThan = (_length > 0);
+        if (_greaterThan) {
+          EList<String> _parameters_1 = fd.getParameters();
+          int _length_1 = ((Object[])Conversions.unwrapArray(_parameters_1, Object.class)).length;
+          boolean _greaterThan_1 = (_length_1 > 1);
+          if (_greaterThan_1) {
+            EList<String> _parameters_2 = fd.getParameters();
+            int _length_2 = ((Object[])Conversions.unwrapArray(_parameters_2, Object.class)).length;
+            int _minus = (_length_2 - 1);
+            ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _minus, true);
+            for (final Integer i : _doubleDotLessThan) {
+              {
+                EList<String> _parameters_3 = fd.getParameters();
+                String _get = _parameters_3.get((i).intValue());
+                proposal.append(_get);
+                proposal.append(", ");
+              }
+            }
+            EList<String> _parameters_3 = fd.getParameters();
+            EList<String> _parameters_4 = fd.getParameters();
+            int _length_3 = ((Object[])Conversions.unwrapArray(_parameters_4, Object.class)).length;
+            int _minus_1 = (_length_3 - 1);
+            String _get = _parameters_3.get(_minus_1);
+            proposal.append(_get);
+          } else {
+            EList<String> _parameters_5 = fd.getParameters();
+            String _get_1 = _parameters_5.get(0);
+            proposal.append(_get_1);
+          }
+        }
+        proposal.append(")");
+        String _string = proposal.toString();
+        ICompletionProposal _createCompletionProposal = this.createCompletionProposal(_string, context);
+        acceptor.accept(_createCompletionProposal);
+      }
+    }
+  }
+  
+  @Override
+  public void completeVariableCall_CalledVariableName(final EObject model, final Assignment assignment, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
+    super.completeVariableCall_CalledVariableName(model, assignment, context, acceptor);
+    EObject didiModel = model.eContainer();
+    final EObject container = model.eContainer();
+    if ((container instanceof DidiModel)) {
+      TreeIterator<EObject> _eAllContents = ((DidiModel)container).eAllContents();
+      final Procedure1<EObject> _function = new Procedure1<EObject>() {
+        @Override
+        public void apply(final EObject element) {
+          boolean _and = false;
+          if (!(element instanceof VariableDefinition)) {
+            _and = false;
+          } else {
+            boolean _equals = element.equals(model);
+            boolean _not = (!_equals);
+            _and = _not;
+          }
+          if (_and) {
+            EObject _eContainer = element.eContainer();
+            if ((!(_eContainer instanceof DidiModel))) {
+              boolean _isIsGlobal = ((VariableDefinition) element).isIsGlobal();
+              boolean _not_1 = (!_isIsGlobal);
+              if (_not_1) {
+                return;
+              }
+            } else {
+              EList<EObject> _eContents = ((DidiModel)container).eContents();
+              int _indexOf = _eContents.indexOf(model);
+              EList<EObject> _eContents_1 = ((DidiModel)container).eContents();
+              int _indexOf_1 = _eContents_1.indexOf(element);
+              boolean _lessThan = (_indexOf < _indexOf_1);
+              if (_lessThan) {
+                return;
+              }
+            }
+            String _name = ((VariableDefinition) element).getName();
+            ICompletionProposal _createCompletionProposal = DidiProposalProvider.this.createCompletionProposal(_name, context);
+            acceptor.accept(_createCompletionProposal);
+          }
+        }
+      };
+      IteratorExtensions.<EObject>forEach(_eAllContents, _function);
+    } else {
+      TreeIterator<EObject> _eAllContents_1 = container.eAllContents();
+      final Procedure1<EObject> _function_1 = new Procedure1<EObject>() {
+        @Override
+        public void apply(final EObject element) {
+          boolean _and = false;
+          if (!(element instanceof VariableDefinition)) {
+            _and = false;
+          } else {
+            boolean _equals = element.equals(model);
+            boolean _not = (!_equals);
+            _and = _not;
+          }
+          if (_and) {
+            String _name = ((VariableDefinition) element).getName();
+            ICompletionProposal _createCompletionProposal = DidiProposalProvider.this.createCompletionProposal(_name, context);
+            acceptor.accept(_createCompletionProposal);
+          }
+        }
+      };
+      IteratorExtensions.<EObject>forEach(_eAllContents_1, _function_1);
+      while ((!(didiModel instanceof DidiModel))) {
+        EObject _eContainer = didiModel.eContainer();
+        didiModel = _eContainer;
+      }
+      EObject modelContainerBeforeDidiModelVar = model;
+      while ((!(modelContainerBeforeDidiModelVar.eContainer() instanceof DidiModel))) {
+        EObject _eContainer = modelContainerBeforeDidiModelVar.eContainer();
+        modelContainerBeforeDidiModelVar = _eContainer;
+      }
+      final EObject modelContainerBeforeDidiModel = modelContainerBeforeDidiModelVar;
+      final EObject finalDidiModel = didiModel;
+      TreeIterator<EObject> _eAllContents_2 = didiModel.eAllContents();
+      final Procedure1<EObject> _function_2 = new Procedure1<EObject>() {
+        @Override
+        public void apply(final EObject element) {
+          boolean _and = false;
+          if (!(element instanceof VariableDefinition)) {
+            _and = false;
+          } else {
+            boolean _equals = element.equals(model);
+            boolean _not = (!_equals);
+            _and = _not;
+          }
+          if (_and) {
+            EObject elementContainerBeforeDidiModel = element;
+            while ((!(elementContainerBeforeDidiModel.eContainer() instanceof DidiModel))) {
+              EObject _eContainer = elementContainerBeforeDidiModel.eContainer();
+              elementContainerBeforeDidiModel = _eContainer;
+            }
+            if ((((model.eContainer() instanceof ElseFragment) || (model.eContainer() instanceof ElseIfFragment)) && ((element.eContainer() instanceof ElseIfFragment) || (element.eContainer() instanceof IfFragment)))) {
+              EObject _eContainer = model.eContainer();
+              EObject _eContainer_1 = _eContainer.eContainer();
+              EObject _eContainer_2 = element.eContainer();
+              EObject _eContainer_3 = _eContainer_2.eContainer();
+              boolean _equals_1 = _eContainer_1.equals(_eContainer_3);
+              if (_equals_1) {
+                return;
+              }
+            }
+            EList<EObject> _eContents = finalDidiModel.eContents();
+            int _indexOf = _eContents.indexOf(modelContainerBeforeDidiModel);
+            EList<EObject> _eContents_1 = finalDidiModel.eContents();
+            int _indexOf_1 = _eContents_1.indexOf(elementContainerBeforeDidiModel);
+            boolean _lessThan = (_indexOf < _indexOf_1);
+            if (_lessThan) {
+              return;
+            }
+            boolean _and_1 = false;
+            if (!(!(element.eContainer() instanceof DidiModel))) {
+              _and_1 = false;
+            } else {
+              boolean _isIsGlobal = ((VariableDefinition) element).isIsGlobal();
+              boolean _not_1 = (!_isIsGlobal);
+              _and_1 = _not_1;
+            }
+            if (_and_1) {
+              return;
+            }
+            String _name = ((VariableDefinition) element).getName();
+            ICompletionProposal _createCompletionProposal = DidiProposalProvider.this.createCompletionProposal(_name, context);
+            acceptor.accept(_createCompletionProposal);
+          }
+        }
+      };
+      IteratorExtensions.<EObject>forEach(_eAllContents_2, _function_2);
+    }
+  }
 }

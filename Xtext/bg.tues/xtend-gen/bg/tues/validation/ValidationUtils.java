@@ -9,6 +9,7 @@ import bg.tues.didi.ForStatement;
 import bg.tues.didi.FunctionCall;
 import bg.tues.didi.FunctionDefinition;
 import bg.tues.didi.IfFragment;
+import bg.tues.didi.IfStatement;
 import bg.tues.didi.VariableCall;
 import bg.tues.didi.VariableDefinition;
 import bg.tues.didi.WhileStatement;
@@ -36,7 +37,7 @@ public class ValidationUtils {
       return;
     }
     boolean _or = false;
-    if (((((((object instanceof DidiModel) || (object instanceof IfFragment)) || (object instanceof ForStatement)) || (object instanceof WhileStatement)) || (object instanceof FunctionDefinition)) || (object instanceof ElseIfFragment))) {
+    if ((((((((object instanceof DidiModel) || (object instanceof IfFragment)) || (object instanceof IfStatement)) || (object instanceof ForStatement)) || (object instanceof WhileStatement)) || (object instanceof FunctionDefinition)) || (object instanceof ElseIfFragment))) {
       _or = true;
     } else {
       _or = (object instanceof ElseFragment);

@@ -3,10 +3,117 @@
  */
 package bg.tues.ui.contentassist
 
-import bg.tues.ui.contentassist.AbstractDidiProposalProvider
+import bg.tues.didi.DidiModel
+import bg.tues.didi.ElseFragment
+import bg.tues.didi.ElseIfFragment
+import bg.tues.didi.FunctionDefinition
+import bg.tues.didi.IfFragment
+import bg.tues.didi.VariableDefinition
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.swt.graphics.Image
+import org.eclipse.xtext.Assignment
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
  */
 class DidiProposalProvider extends AbstractDidiProposalProvider {
+	
+	override completeFunctionCall_CalledFunctionName(EObject model, Assignment assignment, 
+		ContentAssistContext context, ICompletionProposalAcceptor acceptor
+	) {
+		super.completeFunctionCall_CalledFunctionName(model, assignment, context, acceptor);
+		
+		var container = model.eContainer;
+		while(!(container instanceof DidiModel)) {
+			container = container.eContainer;
+		}
+		var didiModel = container as DidiModel;
+		
+		var functionDefinitions = didiModel.elements.filter(typeof(FunctionDefinition));
+		for(FunctionDefinition fd : functionDefinitions) {
+			var StringBuilder proposal = new StringBuilder(fd.name);
+			proposal.append("(");
+			if(fd.parameters.length > 0) {
+				if(fd.parameters.length > 1) {
+					for(i : 0..< fd.parameters.length - 1) {
+						proposal.append(fd.parameters.get(i));
+						proposal.append(", ");
+					}
+					proposal.append(fd.parameters.get(fd.parameters.length - 1));
+				} else {
+					proposal.append(fd.parameters.get(0));
+				}
+			}
+			proposal.append(")");
+			acceptor.accept(createCompletionProposal(proposal.toString(), context));
+		}
+	}
+	
+	override completeVariableCall_CalledVariableName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeVariableCall_CalledVariableName(model, assignment, context, acceptor);
+		
+		var didiModel = model.eContainer;
+		val container = model.eContainer;
+		
+		if(container instanceof DidiModel) {
+			container.eAllContents.forEach[element | 
+				if(element instanceof VariableDefinition && !element.equals(model)) {
+					if(!(element.eContainer instanceof DidiModel)) {
+						if(!(element as VariableDefinition).isGlobal) {
+							return;
+						}
+					} else if(container.eContents.indexOf(model) < container.eContents.indexOf(element)) {
+						return;
+					}
+					acceptor.accept(createCompletionProposal((element as VariableDefinition).name, context))
+				}];
+		} else {
+			container.eAllContents.forEach[element | 
+				if(element instanceof VariableDefinition && !element.equals(model)) {
+					acceptor.accept(createCompletionProposal((element as VariableDefinition).name, context))
+				}];
+			
+			while(!(didiModel instanceof DidiModel)) {
+				didiModel = didiModel.eContainer;
+			}
+		
+			var modelContainerBeforeDidiModelVar = model;
+			while(!(modelContainerBeforeDidiModelVar.eContainer instanceof DidiModel)) {
+				modelContainerBeforeDidiModelVar = modelContainerBeforeDidiModelVar.eContainer;
+			}
+			
+			val modelContainerBeforeDidiModel = modelContainerBeforeDidiModelVar;
+			val finalDidiModel = didiModel;
+			didiModel.eAllContents.forEach[element |
+				if(element instanceof VariableDefinition && !element.equals(model)) {
+					var elementContainerBeforeDidiModel = element;
+					while(!(elementContainerBeforeDidiModel.eContainer instanceof DidiModel)) {
+						elementContainerBeforeDidiModel = elementContainerBeforeDidiModel.eContainer;
+					}
+					
+					if((model.eContainer instanceof ElseFragment || model.eContainer instanceof ElseIfFragment) 
+						&& (element.eContainer instanceof ElseIfFragment || element.eContainer instanceof IfFragment)
+					) {
+						if(model.eContainer.eContainer.equals(element.eContainer.eContainer)) {
+							return;
+						}
+					}
+					
+					if(finalDidiModel.eContents.indexOf(modelContainerBeforeDidiModel) < finalDidiModel.eContents.indexOf(elementContainerBeforeDidiModel)) {
+						return;
+					}
+					
+					if(!(element.eContainer instanceof DidiModel) && !(element as VariableDefinition).isGlobal) {
+						return;
+					}
+					acceptor.accept(createCompletionProposal((element as VariableDefinition).name, context))
+				}];
+		}
+		
+		
+	}
+	
+	
 }
