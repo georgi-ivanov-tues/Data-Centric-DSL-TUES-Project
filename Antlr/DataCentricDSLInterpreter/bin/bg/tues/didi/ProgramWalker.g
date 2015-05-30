@@ -163,7 +163,7 @@ functionCall returns [Node node]
       function.setParameters(paramSize == 0 ? new ArrayList<Node>() : $exprList.e);
       function.setFunctions(functions);
       
-       Map<String, Object> newContext = new HashMap<String, Object>();
+      Map<String, Object> newContext = new HashMap<String, Object>();
       newContext.put("dataSource", dataSource);
       newContext.put("outputStream", outputStream);
       

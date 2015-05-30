@@ -68,6 +68,7 @@ public class LaunchShortcut implements ILaunchShortcut2 {
 
 	private void executeScript(IPath absolutePath, DCLInterpreter interpreter,
 			PrintStream printStream) throws IOException, SQLException, Exception {
+		System.setErr(printStream);
 		interpreter.execute(absolutePath.toString(), printStream);
 
 	}

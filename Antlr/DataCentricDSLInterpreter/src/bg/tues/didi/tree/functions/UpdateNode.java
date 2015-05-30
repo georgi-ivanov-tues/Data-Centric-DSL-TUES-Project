@@ -2,7 +2,9 @@ package bg.tues.didi.tree.functions;
 
 import java.io.PrintStream;
 import java.sql.Connection;
+import java.sql.SQLDataException;
 import java.sql.SQLException;
+import java.sql.SQLSyntaxErrorException;
 import java.sql.Statement;
 
 import bg.tues.didi.Value;
@@ -32,7 +34,11 @@ public class UpdateNode  implements Node {
 
 	public void executeUpdate(String queryStatement) throws SQLException {
 		Statement statement = connection.createStatement();
-		statement.executeUpdate(queryStatement);
+		try {
+			statement.executeUpdate(queryStatement);
+		} catch (SQLException e) {
+			throw new SQLException("Error on operation Update: " + e.getMessage());
+		}
 		out.println("Operation done");
 	}
 }	

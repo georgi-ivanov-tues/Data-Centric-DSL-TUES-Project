@@ -31,7 +31,13 @@ public class QueryNode  implements Node {
 	
 	public ResultSet executeQuery(String queryStatement) throws SQLException {
 	    Statement statement = connection.createStatement();
-	    ResultSet result = statement.executeQuery(queryStatement);
+	    ResultSet result = null;
+	    try {
+	    	result = statement.executeQuery(queryStatement);
+		} catch (SQLException e) {
+			throw new SQLException("Error on operation Query: " + e.getMessage());
+		}
+	    
 	    return result;
 	  }
 }	

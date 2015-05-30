@@ -299,7 +299,7 @@ Bool
   ;
 
 Number
-  :  Int ('.' Digit*)?
+  :  Int ('.' Digit+)?
   ;
 
 Identifier

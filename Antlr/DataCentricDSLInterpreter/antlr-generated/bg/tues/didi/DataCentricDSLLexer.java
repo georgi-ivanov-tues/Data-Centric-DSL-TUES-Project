@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g 2015-04-19 18:48:02
+// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g 2015-05-30 20:55:02
 
   package bg.tues.didi;
 
@@ -1142,12 +1142,12 @@ public class DataCentricDSLLexer extends Lexer {
 		try {
 			int _type = Number;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g:302:3: ( Int ( '.' ( Digit )* )? )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g:302:6: Int ( '.' ( Digit )* )?
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g:302:3: ( Int ( '.' ( Digit )+ )? )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g:302:6: Int ( '.' ( Digit )+ )?
 			{
 			mInt(); 
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g:302:10: ( '.' ( Digit )* )?
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g:302:10: ( '.' ( Digit )+ )?
 			int alt3=2;
 			int LA3_0 = input.LA(1);
 			if ( (LA3_0=='.') ) {
@@ -1155,10 +1155,11 @@ public class DataCentricDSLLexer extends Lexer {
 			}
 			switch (alt3) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g:302:11: '.' ( Digit )*
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g:302:11: '.' ( Digit )+
 					{
 					match('.'); 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g:302:15: ( Digit )*
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\DataCentricDSL.g:302:15: ( Digit )+
+					int cnt2=0;
 					loop2:
 					while (true) {
 						int alt2=2;
@@ -1183,8 +1184,11 @@ public class DataCentricDSLLexer extends Lexer {
 							break;
 
 						default :
-							break loop2;
+							if ( cnt2 >= 1 ) break loop2;
+							EarlyExitException eee = new EarlyExitException(2, input);
+							throw eee;
 						}
+						cnt2++;
 					}
 
 					}

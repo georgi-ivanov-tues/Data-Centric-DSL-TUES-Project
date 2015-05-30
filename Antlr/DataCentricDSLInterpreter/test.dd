@@ -1,4 +1,12 @@
-println 2 ^ 3;
+//a = 1.0;
+
+//print a;
+
+//update "CREATE TABLE new24 (PERSON VARCHAR(26))";
+update "INSERT INTO new27 VALUES (\'Nedelcho\')";
+//print query "SELECT * FROM people2";
+
+//println 2 ^ 3;
 
 /*
 for(i = 0; i < 10; i++){
