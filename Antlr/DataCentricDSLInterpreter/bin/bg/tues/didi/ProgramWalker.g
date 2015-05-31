@@ -117,12 +117,10 @@ statement returns [Node node]
 
 query returns [Node node]
   : ^('query' expression) {node = new QueryNode($expression.node, dataSource);}
-  | ^('query' functionCall) {node = new QueryNode($functionCall.node, dataSource);}
   ;
 
 update returns [Node node]
   : ^('update' expression) {node = new UpdateNode($expression.node, dataSource, outputStream);}
-  | ^('update' functionCall) {node = new UpdateNode($functionCall.node, dataSource, outputStream);}
   ;
 
 variableCall returns [String value]:
@@ -130,8 +128,7 @@ variableCall returns [String value]:
 ;
 
 assignment returns [Node node] 
-  :  ^(ASSIGNMENT i=Identifier x=indexes? (expression {node = new AssignmentNode($i.text, $x.e, $expression.node, currentScope);}
-  |  functionCall {node = new AssignmentNode($i.text, $x.e, $functionCall.node, currentScope);}))
+  :  ^(ASSIGNMENT i=Identifier x=indexes? (expression {node = new AssignmentNode($i.text, $x.e, $expression.node, currentScope);}))
   |  ^('global' ASSIGNMENT i=Identifier x=indexes? (expression {
         Scope globalScope = currentScope;
         
@@ -139,14 +136,6 @@ assignment returns [Node node]
           globalScope = globalScope.parent();
         }
         node = new AssignmentNode($i.text, $x.e, $expression.node, globalScope);
-        }
-   |  functionCall {
-        Scope globalScope = currentScope;
-        
-        while(!(globalScope.isGlobalScope())){
-          globalScope = globalScope.parent();
-        }
-        node = new AssignmentNode($i.text, $x.e, $functionCall.node, globalScope);
         }))
   ;
 
@@ -177,13 +166,11 @@ functionCall returns [Node node]
   ;
 
 println returns [Node node]
-  :  ^(PRINTLN functionCall) {node = new PrintlnNode($functionCall.node, outputStream);}
-  |  ^(PRINTLN expression?) {node = new PrintlnNode($expression.node, outputStream);}
+  :  ^(PRINTLN expression?) {node = new PrintlnNode($expression.node, outputStream);}
   ;
   
 print returns [Node node]
-  :  ^(PRINT functionCall) {node = new PrintNode($functionCall.node, outputStream);}
-  |  ^(PRINT expression?) {node = new PrintNode($expression.node, outputStream);}
+  : ^(PRINT expression?) {node = new PrintNode($expression.node, outputStream);}
   ;
   
 ifStatement returns [Node node]
@@ -245,6 +232,7 @@ expression returns [Node node]
   |  Null
   |  lookup {node = $lookup.node;}  
   |  query {node = $query.node;}
+  |  functionCall {node = $functionCall.node;}
   ;
 
 incrementation returns [Node node]

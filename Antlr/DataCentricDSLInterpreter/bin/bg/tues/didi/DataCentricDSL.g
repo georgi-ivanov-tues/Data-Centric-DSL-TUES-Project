@@ -101,11 +101,11 @@ statement
   ;
 
 query: 
-  'query'^ (expression | functionCall)
+  'query'^ (expression)
   ;
 
 update:
-  'update'^ (expression | functionCall)
+  'update'^ (expression)
   ;
 
 variableCall
@@ -113,10 +113,8 @@ variableCall
   ;
 
 assignment
-  :  Identifier indexes? '=' (expression -> ^(ASSIGNMENT Identifier indexes? expression)
-  |  functionCall -> ^(ASSIGNMENT Identifier indexes? functionCall))
-  |  'global' Identifier indexes? '=' (expression -> ^('global' ASSIGNMENT Identifier indexes? expression)
-  |  functionCall -> ^('global' ASSIGNMENT Identifier indexes? functionCall))
+  :  Identifier indexes? '=' (expression -> ^(ASSIGNMENT Identifier indexes? expression) )
+  |  'global' Identifier indexes? '=' (expression -> ^('global' ASSIGNMENT Identifier indexes? expression))
   ;
 
 functionCall
@@ -126,13 +124,11 @@ functionCall
   ;
 
 println
-  : Println (expression -> ^(PRINTLN expression)
-  | functionCall -> ^(PRINTLN functionCall) )
+  : Println (expression -> ^(PRINTLN expression))
   ;
   
 print
-  : Print (expression -> ^(PRINT expression)
-  | functionCall -> ^(PRINT functionCall) )
+  : Print (expression -> ^(PRINT expression))
   ;
 
 ifStatement
@@ -231,6 +227,7 @@ atom
   |  Bool
   |  Null
   |  lookup
+  |  functionCall
   ;
 
 list

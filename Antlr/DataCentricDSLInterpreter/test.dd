@@ -1,9 +1,34 @@
+
+update "INSERT INTO PEOPLE2 VALUES (\'Nedelcho\')";
+
+/*
+func addNumbers(x, y) {
+	return x + y;
+}
+
+func tr(){
+	return true;
+}
+
+global z = addNumbers(2,3);
+println z;
+if(addNumbers(2,3) == 5){
+	println "yes!";
+}
+
+//a = addNumbers(2,3);
+
+for(i = 0; i <= addNumbers(2,3); i++){
+	println i;
+}
+
+*/
 //a = 1.0;
 
 //print a;
 
 //update "CREATE TABLE new24 (PERSON VARCHAR(26))";
-update "INSERT INTO new27 VALUES (\'Nedelcho\')";
+//update "INSERT INTO new27 VALUES (\'Nedelcho\')";
 //print query "SELECT * FROM people2";
 
 //println 2 ^ 3;

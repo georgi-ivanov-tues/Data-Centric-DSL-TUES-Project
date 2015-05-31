@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g 2015-05-30 20:55:00
+// $ANTLR 3.5.2 D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g 2015-05-31 21:16:29
 
   package bg.tues.didi;
   import bg.tues.didi.*;
@@ -281,7 +281,7 @@ public class ProgramWalker extends TreeParser {
 				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:101:23: ( expression )?
 				int alt2=2;
 				int LA2_0 = input.LA(1);
-				if ( ((LA2_0 >= Add && LA2_0 <= And)||LA2_0==Bool||LA2_0==Divide||LA2_0==Equals||(LA2_0 >= GT && LA2_0 <= GTEquals)||LA2_0==In||(LA2_0 >= LOOKUP && LA2_0 <= Number)||LA2_0==Or||LA2_0==Pow||(LA2_0 >= Subtract && LA2_0 <= TERNARY)||LA2_0==UNARY_MIN||LA2_0==76) ) {
+				if ( ((LA2_0 >= Add && LA2_0 <= And)||LA2_0==Bool||LA2_0==Divide||LA2_0==Equals||LA2_0==FUNC_CALL||(LA2_0 >= GT && LA2_0 <= GTEquals)||LA2_0==In||(LA2_0 >= LOOKUP && LA2_0 <= Number)||LA2_0==Or||LA2_0==Pow||(LA2_0 >= Subtract && LA2_0 <= TERNARY)||LA2_0==UNARY_MIN||LA2_0==76) ) {
 					alt2=1;
 				}
 				switch (alt2) {
@@ -519,96 +519,28 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "query"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:118:1: query returns [Node node] : ( ^( 'query' expression ) | ^( 'query' functionCall ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:118:1: query returns [Node node] : ^( 'query' expression ) ;
 	public final Node query() throws RecognitionException {
 		Node node = null;
 
 
 		Node expression14 =null;
-		Node functionCall15 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:119:3: ( ^( 'query' expression ) | ^( 'query' functionCall ) )
-			int alt4=2;
-			int LA4_0 = input.LA(1);
-			if ( (LA4_0==76) ) {
-				int LA4_1 = input.LA(2);
-				if ( (LA4_1==DOWN) ) {
-					int LA4_2 = input.LA(3);
-					if ( ((LA4_2 >= Add && LA4_2 <= And)||LA4_2==Bool||LA4_2==Divide||LA4_2==Equals||(LA4_2 >= GT && LA4_2 <= GTEquals)||LA4_2==In||(LA4_2 >= LOOKUP && LA4_2 <= Number)||LA4_2==Or||LA4_2==Pow||(LA4_2 >= Subtract && LA4_2 <= TERNARY)||LA4_2==UNARY_MIN||LA4_2==76) ) {
-						alt4=1;
-					}
-					else if ( (LA4_2==FUNC_CALL) ) {
-						alt4=2;
-					}
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:119:3: ( ^( 'query' expression ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:119:5: ^( 'query' expression )
+			{
+			match(input,76,FOLLOW_76_in_query272); 
+			match(input, Token.DOWN, null); 
+			pushFollow(FOLLOW_expression_in_query274);
+			expression14=expression();
+			state._fsp--;
 
-					else {
-						int nvaeMark = input.mark();
-						try {
-							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
-								input.consume();
-							}
-							NoViableAltException nvae =
-								new NoViableAltException("", 4, 2, input);
-							throw nvae;
-						} finally {
-							input.rewind(nvaeMark);
-						}
-					}
+			match(input, Token.UP, null); 
 
-				}
-
-				else {
-					int nvaeMark = input.mark();
-					try {
-						input.consume();
-						NoViableAltException nvae =
-							new NoViableAltException("", 4, 1, input);
-						throw nvae;
-					} finally {
-						input.rewind(nvaeMark);
-					}
-				}
-
+			node = new QueryNode(expression14, dataSource);
 			}
 
-			else {
-				NoViableAltException nvae =
-					new NoViableAltException("", 4, 0, input);
-				throw nvae;
-			}
-
-			switch (alt4) {
-				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:119:5: ^( 'query' expression )
-					{
-					match(input,76,FOLLOW_76_in_query272); 
-					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_query274);
-					expression14=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new QueryNode(expression14, dataSource);
-					}
-					break;
-				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:120:5: ^( 'query' functionCall )
-					{
-					match(input,76,FOLLOW_76_in_query284); 
-					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_functionCall_in_query286);
-					functionCall15=functionCall();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new QueryNode(functionCall15, dataSource);
-					}
-					break;
-
-			}
 		}
 		catch (RecognitionException re) {
 			reportError(re);
@@ -624,96 +556,28 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "update"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:123:1: update returns [Node node] : ( ^( 'update' expression ) | ^( 'update' functionCall ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:122:1: update returns [Node node] : ^( 'update' expression ) ;
 	public final Node update() throws RecognitionException {
 		Node node = null;
 
 
-		Node expression16 =null;
-		Node functionCall17 =null;
+		Node expression15 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:124:3: ( ^( 'update' expression ) | ^( 'update' functionCall ) )
-			int alt5=2;
-			int LA5_0 = input.LA(1);
-			if ( (LA5_0==77) ) {
-				int LA5_1 = input.LA(2);
-				if ( (LA5_1==DOWN) ) {
-					int LA5_2 = input.LA(3);
-					if ( ((LA5_2 >= Add && LA5_2 <= And)||LA5_2==Bool||LA5_2==Divide||LA5_2==Equals||(LA5_2 >= GT && LA5_2 <= GTEquals)||LA5_2==In||(LA5_2 >= LOOKUP && LA5_2 <= Number)||LA5_2==Or||LA5_2==Pow||(LA5_2 >= Subtract && LA5_2 <= TERNARY)||LA5_2==UNARY_MIN||LA5_2==76) ) {
-						alt5=1;
-					}
-					else if ( (LA5_2==FUNC_CALL) ) {
-						alt5=2;
-					}
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:123:3: ( ^( 'update' expression ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:123:5: ^( 'update' expression )
+			{
+			match(input,77,FOLLOW_77_in_update295); 
+			match(input, Token.DOWN, null); 
+			pushFollow(FOLLOW_expression_in_update297);
+			expression15=expression();
+			state._fsp--;
 
-					else {
-						int nvaeMark = input.mark();
-						try {
-							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
-								input.consume();
-							}
-							NoViableAltException nvae =
-								new NoViableAltException("", 5, 2, input);
-							throw nvae;
-						} finally {
-							input.rewind(nvaeMark);
-						}
-					}
+			match(input, Token.UP, null); 
 
-				}
-
-				else {
-					int nvaeMark = input.mark();
-					try {
-						input.consume();
-						NoViableAltException nvae =
-							new NoViableAltException("", 5, 1, input);
-						throw nvae;
-					} finally {
-						input.rewind(nvaeMark);
-					}
-				}
-
+			node = new UpdateNode(expression15, dataSource, outputStream);
 			}
 
-			else {
-				NoViableAltException nvae =
-					new NoViableAltException("", 5, 0, input);
-				throw nvae;
-			}
-
-			switch (alt5) {
-				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:124:5: ^( 'update' expression )
-					{
-					match(input,77,FOLLOW_77_in_update307); 
-					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_update309);
-					expression16=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new UpdateNode(expression16, dataSource, outputStream);
-					}
-					break;
-				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:125:5: ^( 'update' functionCall )
-					{
-					match(input,77,FOLLOW_77_in_update319); 
-					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_functionCall_in_update321);
-					functionCall17=functionCall();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new UpdateNode(functionCall17, dataSource, outputStream);
-					}
-					break;
-
-			}
 		}
 		catch (RecognitionException re) {
 			reportError(re);
@@ -729,19 +593,19 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "variableCall"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:128:1: variableCall returns [String value] : Identifier ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:126:1: variableCall returns [String value] : Identifier ;
 	public final String variableCall() throws RecognitionException {
 		String value = null;
 
 
-		CommonTree Identifier18=null;
+		CommonTree Identifier16=null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:128:36: ( Identifier )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:129:3: Identifier
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:126:36: ( Identifier )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:127:3: Identifier
 			{
-			Identifier18=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_variableCall340); 
-			value=(Identifier18!=null?Identifier18.getText():null);
+			Identifier16=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_variableCall316); 
+			value=(Identifier16!=null?Identifier16.getText():null);
 			}
 
 		}
@@ -759,53 +623,51 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "assignment"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:132:1: assignment returns [Node node] : ( ^( ASSIGNMENT i= Identifier (x= indexes )? ( expression | functionCall ) ) | ^( 'global' ASSIGNMENT i= Identifier (x= indexes )? ( expression | functionCall ) ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:130:1: assignment returns [Node node] : ( ^( ASSIGNMENT i= Identifier (x= indexes )? ( expression ) ) | ^( 'global' ASSIGNMENT i= Identifier (x= indexes )? ( expression ) ) );
 	public final Node assignment() throws RecognitionException {
 		Node node = null;
 
 
 		CommonTree i=null;
 		java.util.List<Node> x =null;
-		Node expression19 =null;
-		Node functionCall20 =null;
-		Node expression21 =null;
-		Node functionCall22 =null;
+		Node expression17 =null;
+		Node expression18 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:133:3: ( ^( ASSIGNMENT i= Identifier (x= indexes )? ( expression | functionCall ) ) | ^( 'global' ASSIGNMENT i= Identifier (x= indexes )? ( expression | functionCall ) ) )
-			int alt10=2;
-			int LA10_0 = input.LA(1);
-			if ( (LA10_0==ASSIGNMENT) ) {
-				alt10=1;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:131:3: ( ^( ASSIGNMENT i= Identifier (x= indexes )? ( expression ) ) | ^( 'global' ASSIGNMENT i= Identifier (x= indexes )? ( expression ) ) )
+			int alt6=2;
+			int LA6_0 = input.LA(1);
+			if ( (LA6_0==ASSIGNMENT) ) {
+				alt6=1;
 			}
-			else if ( (LA10_0==75) ) {
-				alt10=2;
+			else if ( (LA6_0==75) ) {
+				alt6=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 10, 0, input);
+					new NoViableAltException("", 6, 0, input);
 				throw nvae;
 			}
 
-			switch (alt10) {
+			switch (alt6) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:133:6: ^( ASSIGNMENT i= Identifier (x= indexes )? ( expression | functionCall ) )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:131:6: ^( ASSIGNMENT i= Identifier (x= indexes )? ( expression ) )
 					{
-					match(input,ASSIGNMENT,FOLLOW_ASSIGNMENT_in_assignment360); 
+					match(input,ASSIGNMENT,FOLLOW_ASSIGNMENT_in_assignment336); 
 					match(input, Token.DOWN, null); 
-					i=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_assignment364); 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:133:33: (x= indexes )?
-					int alt6=2;
-					int LA6_0 = input.LA(1);
-					if ( (LA6_0==INDEXES) ) {
-						alt6=1;
+					i=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_assignment340); 
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:131:33: (x= indexes )?
+					int alt4=2;
+					int LA4_0 = input.LA(1);
+					if ( (LA4_0==INDEXES) ) {
+						alt4=1;
 					}
-					switch (alt6) {
+					switch (alt4) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:133:33: x= indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:131:33: x= indexes
 							{
-							pushFollow(FOLLOW_indexes_in_assignment368);
+							pushFollow(FOLLOW_indexes_in_assignment344);
 							x=indexes();
 							state._fsp--;
 
@@ -814,44 +676,14 @@ public class ProgramWalker extends TreeParser {
 
 					}
 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:133:43: ( expression | functionCall )
-					int alt7=2;
-					int LA7_0 = input.LA(1);
-					if ( ((LA7_0 >= Add && LA7_0 <= And)||LA7_0==Bool||LA7_0==Divide||LA7_0==Equals||(LA7_0 >= GT && LA7_0 <= GTEquals)||LA7_0==In||(LA7_0 >= LOOKUP && LA7_0 <= Number)||LA7_0==Or||LA7_0==Pow||(LA7_0 >= Subtract && LA7_0 <= TERNARY)||LA7_0==UNARY_MIN||LA7_0==76) ) {
-						alt7=1;
-					}
-					else if ( (LA7_0==FUNC_CALL) ) {
-						alt7=2;
-					}
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:131:43: ( expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:131:44: expression
+					{
+					pushFollow(FOLLOW_expression_in_assignment348);
+					expression17=expression();
+					state._fsp--;
 
-					else {
-						NoViableAltException nvae =
-							new NoViableAltException("", 7, 0, input);
-						throw nvae;
-					}
-
-					switch (alt7) {
-						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:133:44: expression
-							{
-							pushFollow(FOLLOW_expression_in_assignment372);
-							expression19=expression();
-							state._fsp--;
-
-							node = new AssignmentNode((i!=null?i.getText():null), x, expression19, currentScope);
-							}
-							break;
-						case 2 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:134:6: functionCall
-							{
-							pushFollow(FOLLOW_functionCall_in_assignment381);
-							functionCall20=functionCall();
-							state._fsp--;
-
-							node = new AssignmentNode((i!=null?i.getText():null), x, functionCall20, currentScope);
-							}
-							break;
-
+					node = new AssignmentNode((i!=null?i.getText():null), x, expression17, currentScope);
 					}
 
 					match(input, Token.UP, null); 
@@ -859,23 +691,23 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:135:6: ^( 'global' ASSIGNMENT i= Identifier (x= indexes )? ( expression | functionCall ) )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:132:6: ^( 'global' ASSIGNMENT i= Identifier (x= indexes )? ( expression ) )
 					{
-					match(input,75,FOLLOW_75_in_assignment393); 
+					match(input,75,FOLLOW_75_in_assignment360); 
 					match(input, Token.DOWN, null); 
-					match(input,ASSIGNMENT,FOLLOW_ASSIGNMENT_in_assignment395); 
-					i=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_assignment399); 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:135:42: (x= indexes )?
-					int alt8=2;
-					int LA8_0 = input.LA(1);
-					if ( (LA8_0==INDEXES) ) {
-						alt8=1;
+					match(input,ASSIGNMENT,FOLLOW_ASSIGNMENT_in_assignment362); 
+					i=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_assignment366); 
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:132:42: (x= indexes )?
+					int alt5=2;
+					int LA5_0 = input.LA(1);
+					if ( (LA5_0==INDEXES) ) {
+						alt5=1;
 					}
-					switch (alt8) {
+					switch (alt5) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:135:42: x= indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:132:42: x= indexes
 							{
-							pushFollow(FOLLOW_indexes_in_assignment403);
+							pushFollow(FOLLOW_indexes_in_assignment370);
 							x=indexes();
 							state._fsp--;
 
@@ -884,58 +716,21 @@ public class ProgramWalker extends TreeParser {
 
 					}
 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:135:52: ( expression | functionCall )
-					int alt9=2;
-					int LA9_0 = input.LA(1);
-					if ( ((LA9_0 >= Add && LA9_0 <= And)||LA9_0==Bool||LA9_0==Divide||LA9_0==Equals||(LA9_0 >= GT && LA9_0 <= GTEquals)||LA9_0==In||(LA9_0 >= LOOKUP && LA9_0 <= Number)||LA9_0==Or||LA9_0==Pow||(LA9_0 >= Subtract && LA9_0 <= TERNARY)||LA9_0==UNARY_MIN||LA9_0==76) ) {
-						alt9=1;
-					}
-					else if ( (LA9_0==FUNC_CALL) ) {
-						alt9=2;
-					}
-
-					else {
-						NoViableAltException nvae =
-							new NoViableAltException("", 9, 0, input);
-						throw nvae;
-					}
-
-					switch (alt9) {
-						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:135:53: expression
-							{
-							pushFollow(FOLLOW_expression_in_assignment407);
-							expression21=expression();
-							state._fsp--;
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:132:52: ( expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:132:53: expression
+					{
+					pushFollow(FOLLOW_expression_in_assignment374);
+					expression18=expression();
+					state._fsp--;
 
 
-							        Scope globalScope = currentScope;
-							        
-							        while(!(globalScope.isGlobalScope())){
-							          globalScope = globalScope.parent();
-							        }
-							        node = new AssignmentNode((i!=null?i.getText():null), x, expression21, globalScope);
-							        
-							}
-							break;
-						case 2 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:143:7: functionCall
-							{
-							pushFollow(FOLLOW_functionCall_in_assignment417);
-							functionCall22=functionCall();
-							state._fsp--;
-
-
-							        Scope globalScope = currentScope;
-							        
-							        while(!(globalScope.isGlobalScope())){
-							          globalScope = globalScope.parent();
-							        }
-							        node = new AssignmentNode((i!=null?i.getText():null), x, functionCall22, globalScope);
-							        
-							}
-							break;
-
+					        Scope globalScope = currentScope;
+					        
+					        while(!(globalScope.isGlobalScope())){
+					          globalScope = globalScope.parent();
+					        }
+					        node = new AssignmentNode((i!=null?i.getText():null), x, expression18, globalScope);
+					        
 					}
 
 					match(input, Token.UP, null); 
@@ -959,35 +754,35 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "functionCall"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:153:1: functionCall returns [Node node] : ( ^( FUNC_CALL Identifier ( exprList )? ) | ^( FUNC_CALL Assert expression ) | ^( FUNC_CALL Size expression ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:142:1: functionCall returns [Node node] : ( ^( FUNC_CALL Identifier ( exprList )? ) | ^( FUNC_CALL Assert expression ) | ^( FUNC_CALL Size expression ) );
 	public final Node functionCall() throws RecognitionException {
 		Node node = null;
 
 
-		CommonTree Identifier24=null;
-		java.util.List<Node> exprList23 =null;
+		CommonTree Identifier20=null;
+		java.util.List<Node> exprList19 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:154:3: ( ^( FUNC_CALL Identifier ( exprList )? ) | ^( FUNC_CALL Assert expression ) | ^( FUNC_CALL Size expression ) )
-			int alt12=3;
-			int LA12_0 = input.LA(1);
-			if ( (LA12_0==FUNC_CALL) ) {
-				int LA12_1 = input.LA(2);
-				if ( (LA12_1==DOWN) ) {
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:143:3: ( ^( FUNC_CALL Identifier ( exprList )? ) | ^( FUNC_CALL Assert expression ) | ^( FUNC_CALL Size expression ) )
+			int alt8=3;
+			int LA8_0 = input.LA(1);
+			if ( (LA8_0==FUNC_CALL) ) {
+				int LA8_1 = input.LA(2);
+				if ( (LA8_1==DOWN) ) {
 					switch ( input.LA(3) ) {
 					case Identifier:
 						{
-						alt12=1;
+						alt8=1;
 						}
 						break;
 					case Assert:
 						{
-						alt12=2;
+						alt8=2;
 						}
 						break;
 					case Size:
 						{
-						alt12=3;
+						alt8=3;
 						}
 						break;
 					default:
@@ -997,7 +792,7 @@ public class ProgramWalker extends TreeParser {
 								input.consume();
 							}
 							NoViableAltException nvae =
-								new NoViableAltException("", 12, 2, input);
+								new NoViableAltException("", 8, 2, input);
 							throw nvae;
 						} finally {
 							input.rewind(nvaeMark);
@@ -1010,7 +805,7 @@ public class ProgramWalker extends TreeParser {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 12, 1, input);
+							new NoViableAltException("", 8, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -1021,29 +816,29 @@ public class ProgramWalker extends TreeParser {
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 12, 0, input);
+					new NoViableAltException("", 8, 0, input);
 				throw nvae;
 			}
 
-			switch (alt12) {
+			switch (alt8) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:154:6: ^( FUNC_CALL Identifier ( exprList )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:143:6: ^( FUNC_CALL Identifier ( exprList )? )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall440); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall397); 
 					match(input, Token.DOWN, null); 
-					Identifier24=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_functionCall442); 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:154:29: ( exprList )?
-					int alt11=2;
-					int LA11_0 = input.LA(1);
-					if ( (LA11_0==EXP_LIST) ) {
-						alt11=1;
+					Identifier20=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_functionCall399); 
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:143:29: ( exprList )?
+					int alt7=2;
+					int LA7_0 = input.LA(1);
+					if ( (LA7_0==EXP_LIST) ) {
+						alt7=1;
 					}
-					switch (alt11) {
+					switch (alt7) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:154:29: exprList
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:143:29: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_functionCall444);
-							exprList23=exprList();
+							pushFollow(FOLLOW_exprList_in_functionCall401);
+							exprList19=exprList();
 							state._fsp--;
 
 							}
@@ -1056,13 +851,13 @@ public class ProgramWalker extends TreeParser {
 
 					        
 					        int paramSize = 0;
-					        if(exprList23 == null){
+					        if(exprList19 == null){
 					            paramSize = 0;
 					        }else{
-					            paramSize = exprList23.size();
+					            paramSize = exprList19.size();
 					        }
-					      Function function = new Function(functions.get((Identifier24!=null?Identifier24.getText():null) + paramSize));
-					      function.setParameters(paramSize == 0 ? new ArrayList<Node>() : exprList23);
+					      Function function = new Function(functions.get((Identifier20!=null?Identifier20.getText():null) + paramSize));
+					      function.setParameters(paramSize == 0 ? new ArrayList<Node>() : exprList19);
 					      function.setFunctions(functions);
 					      
 					      Map<String, Object> newContext = new HashMap<String, Object>();
@@ -1077,12 +872,12 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:175:6: ^( FUNC_CALL Assert expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:164:6: ^( FUNC_CALL Assert expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall456); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall413); 
 					match(input, Token.DOWN, null); 
-					match(input,Assert,FOLLOW_Assert_in_functionCall458); 
-					pushFollow(FOLLOW_expression_in_functionCall460);
+					match(input,Assert,FOLLOW_Assert_in_functionCall415); 
+					pushFollow(FOLLOW_expression_in_functionCall417);
 					expression();
 					state._fsp--;
 
@@ -1091,12 +886,12 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:176:6: ^( FUNC_CALL Size expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:165:6: ^( FUNC_CALL Size expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall470); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall427); 
 					match(input, Token.DOWN, null); 
-					match(input,Size,FOLLOW_Size_in_functionCall472); 
-					pushFollow(FOLLOW_expression_in_functionCall474);
+					match(input,Size,FOLLOW_Size_in_functionCall429); 
+					pushFollow(FOLLOW_expression_in_functionCall431);
 					expression();
 					state._fsp--;
 
@@ -1121,113 +916,45 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "println"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:179:1: println returns [Node node] : ( ^( PRINTLN functionCall ) | ^( PRINTLN ( expression )? ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:168:1: println returns [Node node] : ^( PRINTLN ( expression )? ) ;
 	public final Node println() throws RecognitionException {
 		Node node = null;
 
 
-		Node functionCall25 =null;
-		Node expression26 =null;
+		Node expression21 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:180:3: ( ^( PRINTLN functionCall ) | ^( PRINTLN ( expression )? ) )
-			int alt14=2;
-			int LA14_0 = input.LA(1);
-			if ( (LA14_0==PRINTLN) ) {
-				int LA14_1 = input.LA(2);
-				if ( (LA14_1==DOWN) ) {
-					int LA14_2 = input.LA(3);
-					if ( (LA14_2==FUNC_CALL) ) {
-						alt14=1;
-					}
-					else if ( (LA14_2==UP||(LA14_2 >= Add && LA14_2 <= And)||LA14_2==Bool||LA14_2==Divide||LA14_2==Equals||(LA14_2 >= GT && LA14_2 <= GTEquals)||LA14_2==In||(LA14_2 >= LOOKUP && LA14_2 <= Number)||LA14_2==Or||LA14_2==Pow||(LA14_2 >= Subtract && LA14_2 <= TERNARY)||LA14_2==UNARY_MIN||LA14_2==76) ) {
-						alt14=2;
-					}
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:169:3: ( ^( PRINTLN ( expression )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:169:6: ^( PRINTLN ( expression )? )
+			{
+			match(input,PRINTLN,FOLLOW_PRINTLN_in_println451); 
+			if ( input.LA(1)==Token.DOWN ) {
+				match(input, Token.DOWN, null); 
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:169:16: ( expression )?
+				int alt9=2;
+				int LA9_0 = input.LA(1);
+				if ( ((LA9_0 >= Add && LA9_0 <= And)||LA9_0==Bool||LA9_0==Divide||LA9_0==Equals||LA9_0==FUNC_CALL||(LA9_0 >= GT && LA9_0 <= GTEquals)||LA9_0==In||(LA9_0 >= LOOKUP && LA9_0 <= Number)||LA9_0==Or||LA9_0==Pow||(LA9_0 >= Subtract && LA9_0 <= TERNARY)||LA9_0==UNARY_MIN||LA9_0==76) ) {
+					alt9=1;
+				}
+				switch (alt9) {
+					case 1 :
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:169:16: expression
+						{
+						pushFollow(FOLLOW_expression_in_println453);
+						expression21=expression();
+						state._fsp--;
 
-					else {
-						int nvaeMark = input.mark();
-						try {
-							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
-								input.consume();
-							}
-							NoViableAltException nvae =
-								new NoViableAltException("", 14, 2, input);
-							throw nvae;
-						} finally {
-							input.rewind(nvaeMark);
 						}
-					}
+						break;
 
 				}
 
-				else {
-					int nvaeMark = input.mark();
-					try {
-						input.consume();
-						NoViableAltException nvae =
-							new NoViableAltException("", 14, 1, input);
-						throw nvae;
-					} finally {
-						input.rewind(nvaeMark);
-					}
-				}
-
+				match(input, Token.UP, null); 
 			}
 
-			else {
-				NoViableAltException nvae =
-					new NoViableAltException("", 14, 0, input);
-				throw nvae;
+			node = new PrintlnNode(expression21, outputStream);
 			}
 
-			switch (alt14) {
-				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:180:6: ^( PRINTLN functionCall )
-					{
-					match(input,PRINTLN,FOLLOW_PRINTLN_in_println494); 
-					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_functionCall_in_println496);
-					functionCall25=functionCall();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new PrintlnNode(functionCall25, outputStream);
-					}
-					break;
-				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:181:6: ^( PRINTLN ( expression )? )
-					{
-					match(input,PRINTLN,FOLLOW_PRINTLN_in_println507); 
-					if ( input.LA(1)==Token.DOWN ) {
-						match(input, Token.DOWN, null); 
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:181:16: ( expression )?
-						int alt13=2;
-						int LA13_0 = input.LA(1);
-						if ( ((LA13_0 >= Add && LA13_0 <= And)||LA13_0==Bool||LA13_0==Divide||LA13_0==Equals||(LA13_0 >= GT && LA13_0 <= GTEquals)||LA13_0==In||(LA13_0 >= LOOKUP && LA13_0 <= Number)||LA13_0==Or||LA13_0==Pow||(LA13_0 >= Subtract && LA13_0 <= TERNARY)||LA13_0==UNARY_MIN||LA13_0==76) ) {
-							alt13=1;
-						}
-						switch (alt13) {
-							case 1 :
-								// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:181:16: expression
-								{
-								pushFollow(FOLLOW_expression_in_println509);
-								expression26=expression();
-								state._fsp--;
-
-								}
-								break;
-
-						}
-
-						match(input, Token.UP, null); 
-					}
-
-					node = new PrintlnNode(expression26, outputStream);
-					}
-					break;
-
-			}
 		}
 		catch (RecognitionException re) {
 			reportError(re);
@@ -1243,113 +970,45 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "print"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:184:1: print returns [Node node] : ( ^( PRINT functionCall ) | ^( PRINT ( expression )? ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:172:1: print returns [Node node] : ^( PRINT ( expression )? ) ;
 	public final Node print() throws RecognitionException {
 		Node node = null;
 
 
-		Node functionCall27 =null;
-		Node expression28 =null;
+		Node expression22 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:185:3: ( ^( PRINT functionCall ) | ^( PRINT ( expression )? ) )
-			int alt16=2;
-			int LA16_0 = input.LA(1);
-			if ( (LA16_0==PRINT) ) {
-				int LA16_1 = input.LA(2);
-				if ( (LA16_1==DOWN) ) {
-					int LA16_2 = input.LA(3);
-					if ( (LA16_2==FUNC_CALL) ) {
-						alt16=1;
-					}
-					else if ( (LA16_2==UP||(LA16_2 >= Add && LA16_2 <= And)||LA16_2==Bool||LA16_2==Divide||LA16_2==Equals||(LA16_2 >= GT && LA16_2 <= GTEquals)||LA16_2==In||(LA16_2 >= LOOKUP && LA16_2 <= Number)||LA16_2==Or||LA16_2==Pow||(LA16_2 >= Subtract && LA16_2 <= TERNARY)||LA16_2==UNARY_MIN||LA16_2==76) ) {
-						alt16=2;
-					}
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:173:3: ( ^( PRINT ( expression )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:173:5: ^( PRINT ( expression )? )
+			{
+			match(input,PRINT,FOLLOW_PRINT_in_print477); 
+			if ( input.LA(1)==Token.DOWN ) {
+				match(input, Token.DOWN, null); 
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:173:13: ( expression )?
+				int alt10=2;
+				int LA10_0 = input.LA(1);
+				if ( ((LA10_0 >= Add && LA10_0 <= And)||LA10_0==Bool||LA10_0==Divide||LA10_0==Equals||LA10_0==FUNC_CALL||(LA10_0 >= GT && LA10_0 <= GTEquals)||LA10_0==In||(LA10_0 >= LOOKUP && LA10_0 <= Number)||LA10_0==Or||LA10_0==Pow||(LA10_0 >= Subtract && LA10_0 <= TERNARY)||LA10_0==UNARY_MIN||LA10_0==76) ) {
+					alt10=1;
+				}
+				switch (alt10) {
+					case 1 :
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:173:13: expression
+						{
+						pushFollow(FOLLOW_expression_in_print479);
+						expression22=expression();
+						state._fsp--;
 
-					else {
-						int nvaeMark = input.mark();
-						try {
-							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
-								input.consume();
-							}
-							NoViableAltException nvae =
-								new NoViableAltException("", 16, 2, input);
-							throw nvae;
-						} finally {
-							input.rewind(nvaeMark);
 						}
-					}
+						break;
 
 				}
 
-				else {
-					int nvaeMark = input.mark();
-					try {
-						input.consume();
-						NoViableAltException nvae =
-							new NoViableAltException("", 16, 1, input);
-						throw nvae;
-					} finally {
-						input.rewind(nvaeMark);
-					}
-				}
-
+				match(input, Token.UP, null); 
 			}
 
-			else {
-				NoViableAltException nvae =
-					new NoViableAltException("", 16, 0, input);
-				throw nvae;
+			node = new PrintNode(expression22, outputStream);
 			}
 
-			switch (alt16) {
-				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:185:6: ^( PRINT functionCall )
-					{
-					match(input,PRINT,FOLLOW_PRINT_in_print534); 
-					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_functionCall_in_print536);
-					functionCall27=functionCall();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new PrintNode(functionCall27, outputStream);
-					}
-					break;
-				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:186:6: ^( PRINT ( expression )? )
-					{
-					match(input,PRINT,FOLLOW_PRINT_in_print547); 
-					if ( input.LA(1)==Token.DOWN ) {
-						match(input, Token.DOWN, null); 
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:186:14: ( expression )?
-						int alt15=2;
-						int LA15_0 = input.LA(1);
-						if ( ((LA15_0 >= Add && LA15_0 <= And)||LA15_0==Bool||LA15_0==Divide||LA15_0==Equals||(LA15_0 >= GT && LA15_0 <= GTEquals)||LA15_0==In||(LA15_0 >= LOOKUP && LA15_0 <= Number)||LA15_0==Or||LA15_0==Pow||(LA15_0 >= Subtract && LA15_0 <= TERNARY)||LA15_0==UNARY_MIN||LA15_0==76) ) {
-							alt15=1;
-						}
-						switch (alt15) {
-							case 1 :
-								// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:186:14: expression
-								{
-								pushFollow(FOLLOW_expression_in_print549);
-								expression28=expression();
-								state._fsp--;
-
-								}
-								break;
-
-						}
-
-						match(input, Token.UP, null); 
-					}
-
-					node = new PrintNode(expression28, outputStream);
-					}
-					break;
-
-			}
 		}
 		catch (RecognitionException re) {
 			reportError(re);
@@ -1365,84 +1024,84 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "ifStatement"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:189:1: ifStatement returns [Node node] : ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:176:1: ifStatement returns [Node node] : ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) ;
 	public final Node ifStatement() throws RecognitionException {
 		Node node = null;
 
 
 		Node b1 =null;
 		Node b2 =null;
-		Node expression29 =null;
+		Node expression23 =null;
 
 
 		  IfNode ifNode = new IfNode();
 		  node = ifNode;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:194:3: ( ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:194:6: ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:181:3: ( ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:181:6: ^( IF ( ^( EXP expression b1= block ) )+ ( ^( EXP b2= block ) )? )
 			{
-			match(input,IF,FOLLOW_IF_in_ifStatement580); 
+			match(input,IF,FOLLOW_IF_in_ifStatement510); 
 			match(input, Token.DOWN, null); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:195:8: ( ^( EXP expression b1= block ) )+
-			int cnt17=0;
-			loop17:
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:182:8: ( ^( EXP expression b1= block ) )+
+			int cnt11=0;
+			loop11:
 			while (true) {
-				int alt17=2;
-				int LA17_0 = input.LA(1);
-				if ( (LA17_0==EXP) ) {
-					int LA17_1 = input.LA(2);
-					if ( (LA17_1==DOWN) ) {
-						int LA17_3 = input.LA(3);
-						if ( ((LA17_3 >= Add && LA17_3 <= And)||LA17_3==Bool||LA17_3==Divide||LA17_3==Equals||(LA17_3 >= GT && LA17_3 <= GTEquals)||LA17_3==In||(LA17_3 >= LOOKUP && LA17_3 <= Number)||LA17_3==Or||LA17_3==Pow||(LA17_3 >= Subtract && LA17_3 <= TERNARY)||LA17_3==UNARY_MIN||LA17_3==76) ) {
-							alt17=1;
+				int alt11=2;
+				int LA11_0 = input.LA(1);
+				if ( (LA11_0==EXP) ) {
+					int LA11_1 = input.LA(2);
+					if ( (LA11_1==DOWN) ) {
+						int LA11_3 = input.LA(3);
+						if ( ((LA11_3 >= Add && LA11_3 <= And)||LA11_3==Bool||LA11_3==Divide||LA11_3==Equals||LA11_3==FUNC_CALL||(LA11_3 >= GT && LA11_3 <= GTEquals)||LA11_3==In||(LA11_3 >= LOOKUP && LA11_3 <= Number)||LA11_3==Or||LA11_3==Pow||(LA11_3 >= Subtract && LA11_3 <= TERNARY)||LA11_3==UNARY_MIN||LA11_3==76) ) {
+							alt11=1;
 						}
 
 					}
 
 				}
 
-				switch (alt17) {
+				switch (alt11) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:195:9: ^( EXP expression b1= block )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:182:9: ^( EXP expression b1= block )
 					{
-					match(input,EXP,FOLLOW_EXP_in_ifStatement592); 
+					match(input,EXP,FOLLOW_EXP_in_ifStatement522); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_ifStatement594);
-					expression29=expression();
+					pushFollow(FOLLOW_expression_in_ifStatement524);
+					expression23=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_block_in_ifStatement598);
+					pushFollow(FOLLOW_block_in_ifStatement528);
 					b1=block();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					ifNode.addChoice(expression29, b1);  
+					ifNode.addChoice(expression23, b1);  
 					}
 					break;
 
 				default :
-					if ( cnt17 >= 1 ) break loop17;
-					EarlyExitException eee = new EarlyExitException(17, input);
+					if ( cnt11 >= 1 ) break loop11;
+					EarlyExitException eee = new EarlyExitException(11, input);
 					throw eee;
 				}
-				cnt17++;
+				cnt11++;
 			}
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:196:8: ( ^( EXP b2= block ) )?
-			int alt18=2;
-			int LA18_0 = input.LA(1);
-			if ( (LA18_0==EXP) ) {
-				alt18=1;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:183:8: ( ^( EXP b2= block ) )?
+			int alt12=2;
+			int LA12_0 = input.LA(1);
+			if ( (LA12_0==EXP) ) {
+				alt12=1;
 			}
-			switch (alt18) {
+			switch (alt12) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:196:9: ^( EXP b2= block )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:183:9: ^( EXP b2= block )
 					{
-					match(input,EXP,FOLLOW_EXP_in_ifStatement615); 
+					match(input,EXP,FOLLOW_EXP_in_ifStatement545); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_block_in_ifStatement619);
+					pushFollow(FOLLOW_block_in_ifStatement549);
 					b2=block();
 					state._fsp--;
 
@@ -1473,7 +1132,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "forStatement"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:200:1: forStatement returns [Node node] : ^( For a= assignment b= expression c= afterthought d= block ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:187:1: forStatement returns [Node node] : ^( For a= assignment b= expression c= afterthought d= block ) ;
 	public final Node forStatement() throws RecognitionException {
 		Node node = null;
 
@@ -1484,24 +1143,24 @@ public class ProgramWalker extends TreeParser {
 		Node d =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:3: ( ^( For a= assignment b= expression c= afterthought d= block ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:6: ^( For a= assignment b= expression c= afterthought d= block )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:188:3: ( ^( For a= assignment b= expression c= afterthought d= block ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:188:6: ^( For a= assignment b= expression c= afterthought d= block )
 			{
-			match(input,For,FOLLOW_For_in_forStatement664); 
+			match(input,For,FOLLOW_For_in_forStatement594); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_assignment_in_forStatement668);
+			pushFollow(FOLLOW_assignment_in_forStatement598);
 			a=assignment();
 			state._fsp--;
 
-			pushFollow(FOLLOW_expression_in_forStatement672);
+			pushFollow(FOLLOW_expression_in_forStatement602);
 			b=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_afterthought_in_forStatement676);
+			pushFollow(FOLLOW_afterthought_in_forStatement606);
 			c=afterthought();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_forStatement680);
+			pushFollow(FOLLOW_block_in_forStatement610);
 			d=block();
 			state._fsp--;
 
@@ -1525,29 +1184,29 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "afterthought"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:204:1: afterthought returns [Node node] : ( ( Identifier '=' expression ) | incrementation ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:191:1: afterthought returns [Node node] : ( ( Identifier '=' expression ) | incrementation ) ;
 	public final Node afterthought() throws RecognitionException {
 		Node node = null;
 
 
-		CommonTree Identifier30=null;
-		Node expression31 =null;
-		Node incrementation32 =null;
+		CommonTree Identifier24=null;
+		Node expression25 =null;
+		Node incrementation26 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:205:3: ( ( ( Identifier '=' expression ) | incrementation ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:205:5: ( ( Identifier '=' expression ) | incrementation )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:192:3: ( ( ( Identifier '=' expression ) | incrementation ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:192:5: ( ( Identifier '=' expression ) | incrementation )
 			{
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:205:5: ( ( Identifier '=' expression ) | incrementation )
-			int alt19=2;
-			int LA19_0 = input.LA(1);
-			if ( (LA19_0==Identifier) ) {
-				int LA19_1 = input.LA(2);
-				if ( (LA19_1==Assign) ) {
-					alt19=1;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:192:5: ( ( Identifier '=' expression ) | incrementation )
+			int alt13=2;
+			int LA13_0 = input.LA(1);
+			if ( (LA13_0==Identifier) ) {
+				int LA13_1 = input.LA(2);
+				if ( (LA13_1==Assign) ) {
+					alt13=1;
 				}
-				else if ( (LA19_1==Increment||LA19_1==73) ) {
-					alt19=2;
+				else if ( (LA13_1==Increment||LA13_1==73) ) {
+					alt13=2;
 				}
 
 				else {
@@ -1555,7 +1214,7 @@ public class ProgramWalker extends TreeParser {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 19, 1, input);
+							new NoViableAltException("", 13, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -1566,36 +1225,36 @@ public class ProgramWalker extends TreeParser {
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 19, 0, input);
+					new NoViableAltException("", 13, 0, input);
 				throw nvae;
 			}
 
-			switch (alt19) {
+			switch (alt13) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:205:6: ( Identifier '=' expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:192:6: ( Identifier '=' expression )
 					{
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:205:6: ( Identifier '=' expression )
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:205:7: Identifier '=' expression
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:192:6: ( Identifier '=' expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:192:7: Identifier '=' expression
 					{
-					Identifier30=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_afterthought702); 
-					match(input,Assign,FOLLOW_Assign_in_afterthought704); 
-					pushFollow(FOLLOW_expression_in_afterthought706);
-					expression31=expression();
+					Identifier24=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_afterthought632); 
+					match(input,Assign,FOLLOW_Assign_in_afterthought634); 
+					pushFollow(FOLLOW_expression_in_afterthought636);
+					expression25=expression();
 					state._fsp--;
 
-					node = new AssignmentNode((Identifier30!=null?Identifier30.getText():null), expression31, currentScope);
+					node = new AssignmentNode((Identifier24!=null?Identifier24.getText():null), expression25, currentScope);
 					}
 
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:206:5: incrementation
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:193:5: incrementation
 					{
-					pushFollow(FOLLOW_incrementation_in_afterthought716);
-					incrementation32=incrementation();
+					pushFollow(FOLLOW_incrementation_in_afterthought646);
+					incrementation26=incrementation();
 					state._fsp--;
 
-					node = incrementation32;
+					node = incrementation26;
 					}
 					break;
 
@@ -1618,31 +1277,31 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "whileStatement"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:209:1: whileStatement returns [Node node] : ^( While expression block ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:196:1: whileStatement returns [Node node] : ^( While expression block ) ;
 	public final Node whileStatement() throws RecognitionException {
 		Node node = null;
 
 
-		Node expression33 =null;
-		Node block34 =null;
+		Node expression27 =null;
+		Node block28 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:210:3: ( ^( While expression block ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:210:6: ^( While expression block )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:197:3: ( ^( While expression block ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:197:6: ^( While expression block )
 			{
-			match(input,While,FOLLOW_While_in_whileStatement736); 
+			match(input,While,FOLLOW_While_in_whileStatement666); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_expression_in_whileStatement738);
-			expression33=expression();
+			pushFollow(FOLLOW_expression_in_whileStatement668);
+			expression27=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_whileStatement740);
-			block34=block();
+			pushFollow(FOLLOW_block_in_whileStatement670);
+			block28=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new WhileNode(expression33, block34);
+			node = new WhileNode(expression27, block28);
 			}
 
 		}
@@ -1660,41 +1319,41 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "idList"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:213:1: idList returns [java.util.List<String> i] : ^( ID_LIST ( Identifier )+ ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:200:1: idList returns [java.util.List<String> i] : ^( ID_LIST ( Identifier )+ ) ;
 	public final java.util.List<String> idList() throws RecognitionException {
 		java.util.List<String> i = null;
 
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:214:3: ( ^( ID_LIST ( Identifier )+ ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:214:6: ^( ID_LIST ( Identifier )+ )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:3: ( ^( ID_LIST ( Identifier )+ ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:6: ^( ID_LIST ( Identifier )+ )
 			{
-			match(input,ID_LIST,FOLLOW_ID_LIST_in_idList762); 
+			match(input,ID_LIST,FOLLOW_ID_LIST_in_idList692); 
 			match(input, Token.DOWN, null); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:214:16: ( Identifier )+
-			int cnt20=0;
-			loop20:
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:16: ( Identifier )+
+			int cnt14=0;
+			loop14:
 			while (true) {
-				int alt20=2;
-				int LA20_0 = input.LA(1);
-				if ( (LA20_0==Identifier) ) {
-					alt20=1;
+				int alt14=2;
+				int LA14_0 = input.LA(1);
+				if ( (LA14_0==Identifier) ) {
+					alt14=1;
 				}
 
-				switch (alt20) {
+				switch (alt14) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:214:16: Identifier
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:201:16: Identifier
 					{
-					match(input,Identifier,FOLLOW_Identifier_in_idList764); 
+					match(input,Identifier,FOLLOW_Identifier_in_idList694); 
 					}
 					break;
 
 				default :
-					if ( cnt20 >= 1 ) break loop20;
-					EarlyExitException eee = new EarlyExitException(20, input);
+					if ( cnt14 >= 1 ) break loop14;
+					EarlyExitException eee = new EarlyExitException(14, input);
 					throw eee;
 				}
-				cnt20++;
+				cnt14++;
 			}
 
 			match(input, Token.UP, null); 
@@ -1716,7 +1375,7 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "exprList"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:217:1: exprList returns [java.util.List<Node> e] : ^( EXP_LIST (a= expression )+ ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:204:1: exprList returns [java.util.List<Node> e] : ^( EXP_LIST (a= expression )+ ) ;
 	public final java.util.List<Node> exprList() throws RecognitionException {
 		java.util.List<Node> e = null;
 
@@ -1727,26 +1386,26 @@ public class ProgramWalker extends TreeParser {
 		  e = new ArrayList<Node>();
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:221:3: ( ^( EXP_LIST (a= expression )+ ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:221:6: ^( EXP_LIST (a= expression )+ )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:208:3: ( ^( EXP_LIST (a= expression )+ ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:208:6: ^( EXP_LIST (a= expression )+ )
 			{
-			match(input,EXP_LIST,FOLLOW_EXP_LIST_in_exprList790); 
+			match(input,EXP_LIST,FOLLOW_EXP_LIST_in_exprList720); 
 			match(input, Token.DOWN, null); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:221:17: (a= expression )+
-			int cnt21=0;
-			loop21:
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:208:17: (a= expression )+
+			int cnt15=0;
+			loop15:
 			while (true) {
-				int alt21=2;
-				int LA21_0 = input.LA(1);
-				if ( ((LA21_0 >= Add && LA21_0 <= And)||LA21_0==Bool||LA21_0==Divide||LA21_0==Equals||(LA21_0 >= GT && LA21_0 <= GTEquals)||LA21_0==In||(LA21_0 >= LOOKUP && LA21_0 <= Number)||LA21_0==Or||LA21_0==Pow||(LA21_0 >= Subtract && LA21_0 <= TERNARY)||LA21_0==UNARY_MIN||LA21_0==76) ) {
-					alt21=1;
+				int alt15=2;
+				int LA15_0 = input.LA(1);
+				if ( ((LA15_0 >= Add && LA15_0 <= And)||LA15_0==Bool||LA15_0==Divide||LA15_0==Equals||LA15_0==FUNC_CALL||(LA15_0 >= GT && LA15_0 <= GTEquals)||LA15_0==In||(LA15_0 >= LOOKUP && LA15_0 <= Number)||LA15_0==Or||LA15_0==Pow||(LA15_0 >= Subtract && LA15_0 <= TERNARY)||LA15_0==UNARY_MIN||LA15_0==76) ) {
+					alt15=1;
 				}
 
-				switch (alt21) {
+				switch (alt15) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:221:18: a= expression
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:208:18: a= expression
 					{
-					pushFollow(FOLLOW_expression_in_exprList795);
+					pushFollow(FOLLOW_expression_in_exprList725);
 					a=expression();
 					state._fsp--;
 
@@ -1755,11 +1414,11 @@ public class ProgramWalker extends TreeParser {
 					break;
 
 				default :
-					if ( cnt21 >= 1 ) break loop21;
-					EarlyExitException eee = new EarlyExitException(21, input);
+					if ( cnt15 >= 1 ) break loop15;
+					EarlyExitException eee = new EarlyExitException(15, input);
 					throw eee;
 				}
-				cnt21++;
+				cnt15++;
 			}
 
 			match(input, Token.UP, null); 
@@ -1781,157 +1440,163 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "expression"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:224:1: expression returns [Node node] : ( ^( TERNARY expression expression expression ) | ^( In expression expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | query );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:211:1: expression returns [Node node] : ( ^( TERNARY expression expression expression ) | ^( In expression expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | query | functionCall );
 	public final Node expression() throws RecognitionException {
 		Node node = null;
 
 
-		CommonTree Number35=null;
-		CommonTree Bool36=null;
+		CommonTree Number29=null;
+		CommonTree Bool30=null;
 		Node a =null;
 		Node b =null;
-		Node lookup37 =null;
-		Node query38 =null;
+		Node lookup31 =null;
+		Node query32 =null;
+		Node functionCall33 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:225:3: ( ^( TERNARY expression expression expression ) | ^( In expression expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | query )
-			int alt22=23;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:212:3: ( ^( TERNARY expression expression expression ) | ^( In expression expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | query | functionCall )
+			int alt16=24;
 			switch ( input.LA(1) ) {
 			case TERNARY:
 				{
-				alt22=1;
+				alt16=1;
 				}
 				break;
 			case In:
 				{
-				alt22=2;
+				alt16=2;
 				}
 				break;
 			case Or:
 				{
-				alt22=3;
+				alt16=3;
 				}
 				break;
 			case And:
 				{
-				alt22=4;
+				alt16=4;
 				}
 				break;
 			case Equals:
 				{
-				alt22=5;
+				alt16=5;
 				}
 				break;
 			case NEquals:
 				{
-				alt22=6;
+				alt16=6;
 				}
 				break;
 			case GTEquals:
 				{
-				alt22=7;
+				alt16=7;
 				}
 				break;
 			case LTEquals:
 				{
-				alt22=8;
+				alt16=8;
 				}
 				break;
 			case GT:
 				{
-				alt22=9;
+				alt16=9;
 				}
 				break;
 			case LT:
 				{
-				alt22=10;
+				alt16=10;
 				}
 				break;
 			case Add:
 				{
-				alt22=11;
+				alt16=11;
 				}
 				break;
 			case Subtract:
 				{
-				alt22=12;
+				alt16=12;
 				}
 				break;
 			case Multiply:
 				{
-				alt22=13;
+				alt16=13;
 				}
 				break;
 			case Divide:
 				{
-				alt22=14;
+				alt16=14;
 				}
 				break;
 			case Modulus:
 				{
-				alt22=15;
+				alt16=15;
 				}
 				break;
 			case Pow:
 				{
-				alt22=16;
+				alt16=16;
 				}
 				break;
 			case UNARY_MIN:
 				{
-				alt22=17;
+				alt16=17;
 				}
 				break;
 			case NEGATE:
 				{
-				alt22=18;
+				alt16=18;
 				}
 				break;
 			case Number:
 				{
-				alt22=19;
+				alt16=19;
 				}
 				break;
 			case Bool:
 				{
-				alt22=20;
+				alt16=20;
 				}
 				break;
 			case Null:
 				{
-				alt22=21;
+				alt16=21;
 				}
 				break;
 			case LOOKUP:
 				{
-				alt22=22;
+				alt16=22;
 				}
 				break;
 			case 76:
 				{
-				alt22=23;
+				alt16=23;
+				}
+				break;
+			case FUNC_CALL:
+				{
+				alt16=24;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 22, 0, input);
+					new NoViableAltException("", 16, 0, input);
 				throw nvae;
 			}
-			switch (alt22) {
+			switch (alt16) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:225:6: ^( TERNARY expression expression expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:212:6: ^( TERNARY expression expression expression )
 					{
-					match(input,TERNARY,FOLLOW_TERNARY_in_expression820); 
+					match(input,TERNARY,FOLLOW_TERNARY_in_expression750); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression822);
+					pushFollow(FOLLOW_expression_in_expression752);
 					expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression824);
+					pushFollow(FOLLOW_expression_in_expression754);
 					expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression826);
+					pushFollow(FOLLOW_expression_in_expression756);
 					expression();
 					state._fsp--;
 
@@ -1940,15 +1605,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:226:6: ^( In expression expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:213:6: ^( In expression expression )
 					{
-					match(input,In,FOLLOW_In_in_expression835); 
+					match(input,In,FOLLOW_In_in_expression765); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression837);
+					pushFollow(FOLLOW_expression_in_expression767);
 					expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression839);
+					pushFollow(FOLLOW_expression_in_expression769);
 					expression();
 					state._fsp--;
 
@@ -1957,15 +1622,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:227:6: ^( '||' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:214:6: ^( '||' a= expression b= expression )
 					{
-					match(input,Or,FOLLOW_Or_in_expression848); 
+					match(input,Or,FOLLOW_Or_in_expression778); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression852);
+					pushFollow(FOLLOW_expression_in_expression782);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression856);
+					pushFollow(FOLLOW_expression_in_expression786);
 					b=expression();
 					state._fsp--;
 
@@ -1975,15 +1640,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 4 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:228:6: ^( '&&' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:215:6: ^( '&&' a= expression b= expression )
 					{
-					match(input,And,FOLLOW_And_in_expression867); 
+					match(input,And,FOLLOW_And_in_expression797); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression871);
+					pushFollow(FOLLOW_expression_in_expression801);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression875);
+					pushFollow(FOLLOW_expression_in_expression805);
 					b=expression();
 					state._fsp--;
 
@@ -1993,15 +1658,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 5 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:229:6: ^( '==' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:216:6: ^( '==' a= expression b= expression )
 					{
-					match(input,Equals,FOLLOW_Equals_in_expression886); 
+					match(input,Equals,FOLLOW_Equals_in_expression816); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression890);
+					pushFollow(FOLLOW_expression_in_expression820);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression894);
+					pushFollow(FOLLOW_expression_in_expression824);
 					b=expression();
 					state._fsp--;
 
@@ -2011,15 +1676,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 6 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:230:6: ^( '!=' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:217:6: ^( '!=' a= expression b= expression )
 					{
-					match(input,NEquals,FOLLOW_NEquals_in_expression905); 
+					match(input,NEquals,FOLLOW_NEquals_in_expression835); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression909);
+					pushFollow(FOLLOW_expression_in_expression839);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression913);
+					pushFollow(FOLLOW_expression_in_expression843);
 					b=expression();
 					state._fsp--;
 
@@ -2029,15 +1694,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 7 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:231:6: ^( '>=' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:218:6: ^( '>=' a= expression b= expression )
 					{
-					match(input,GTEquals,FOLLOW_GTEquals_in_expression924); 
+					match(input,GTEquals,FOLLOW_GTEquals_in_expression854); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression928);
+					pushFollow(FOLLOW_expression_in_expression858);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression932);
+					pushFollow(FOLLOW_expression_in_expression862);
 					b=expression();
 					state._fsp--;
 
@@ -2047,15 +1712,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 8 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:232:6: ^( '<=' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:219:6: ^( '<=' a= expression b= expression )
 					{
-					match(input,LTEquals,FOLLOW_LTEquals_in_expression943); 
+					match(input,LTEquals,FOLLOW_LTEquals_in_expression873); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression947);
+					pushFollow(FOLLOW_expression_in_expression877);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression951);
+					pushFollow(FOLLOW_expression_in_expression881);
 					b=expression();
 					state._fsp--;
 
@@ -2065,15 +1730,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 9 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:233:6: ^( '>' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:220:6: ^( '>' a= expression b= expression )
 					{
-					match(input,GT,FOLLOW_GT_in_expression962); 
+					match(input,GT,FOLLOW_GT_in_expression892); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression966);
+					pushFollow(FOLLOW_expression_in_expression896);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression970);
+					pushFollow(FOLLOW_expression_in_expression900);
 					b=expression();
 					state._fsp--;
 
@@ -2083,15 +1748,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 10 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:234:6: ^( '<' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:221:6: ^( '<' a= expression b= expression )
 					{
-					match(input,LT,FOLLOW_LT_in_expression981); 
+					match(input,LT,FOLLOW_LT_in_expression911); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression985);
+					pushFollow(FOLLOW_expression_in_expression915);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression989);
+					pushFollow(FOLLOW_expression_in_expression919);
 					b=expression();
 					state._fsp--;
 
@@ -2101,15 +1766,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 11 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:235:6: ^( '+' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:222:6: ^( '+' a= expression b= expression )
 					{
-					match(input,Add,FOLLOW_Add_in_expression1000); 
+					match(input,Add,FOLLOW_Add_in_expression930); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1004);
+					pushFollow(FOLLOW_expression_in_expression934);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1008);
+					pushFollow(FOLLOW_expression_in_expression938);
 					b=expression();
 					state._fsp--;
 
@@ -2119,15 +1784,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 12 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:236:6: ^( '-' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:223:6: ^( '-' a= expression b= expression )
 					{
-					match(input,Subtract,FOLLOW_Subtract_in_expression1019); 
+					match(input,Subtract,FOLLOW_Subtract_in_expression949); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1023);
+					pushFollow(FOLLOW_expression_in_expression953);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1027);
+					pushFollow(FOLLOW_expression_in_expression957);
 					b=expression();
 					state._fsp--;
 
@@ -2137,15 +1802,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 13 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:237:6: ^( '*' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:224:6: ^( '*' a= expression b= expression )
 					{
-					match(input,Multiply,FOLLOW_Multiply_in_expression1038); 
+					match(input,Multiply,FOLLOW_Multiply_in_expression968); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1042);
+					pushFollow(FOLLOW_expression_in_expression972);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1046);
+					pushFollow(FOLLOW_expression_in_expression976);
 					b=expression();
 					state._fsp--;
 
@@ -2155,15 +1820,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 14 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:238:6: ^( '/' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:225:6: ^( '/' a= expression b= expression )
 					{
-					match(input,Divide,FOLLOW_Divide_in_expression1057); 
+					match(input,Divide,FOLLOW_Divide_in_expression987); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1061);
+					pushFollow(FOLLOW_expression_in_expression991);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1065);
+					pushFollow(FOLLOW_expression_in_expression995);
 					b=expression();
 					state._fsp--;
 
@@ -2173,15 +1838,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 15 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:239:6: ^( '%' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:226:6: ^( '%' a= expression b= expression )
 					{
-					match(input,Modulus,FOLLOW_Modulus_in_expression1076); 
+					match(input,Modulus,FOLLOW_Modulus_in_expression1006); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1080);
+					pushFollow(FOLLOW_expression_in_expression1010);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1084);
+					pushFollow(FOLLOW_expression_in_expression1014);
 					b=expression();
 					state._fsp--;
 
@@ -2191,15 +1856,15 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 16 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:240:6: ^( '^' a= expression b= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:227:6: ^( '^' a= expression b= expression )
 					{
-					match(input,Pow,FOLLOW_Pow_in_expression1095); 
+					match(input,Pow,FOLLOW_Pow_in_expression1025); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1099);
+					pushFollow(FOLLOW_expression_in_expression1029);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1103);
+					pushFollow(FOLLOW_expression_in_expression1033);
 					b=expression();
 					state._fsp--;
 
@@ -2209,11 +1874,11 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 17 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:241:6: ^( UNARY_MIN a= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:228:6: ^( UNARY_MIN a= expression )
 					{
-					match(input,UNARY_MIN,FOLLOW_UNARY_MIN_in_expression1114); 
+					match(input,UNARY_MIN,FOLLOW_UNARY_MIN_in_expression1044); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1118);
+					pushFollow(FOLLOW_expression_in_expression1048);
 					a=expression();
 					state._fsp--;
 
@@ -2223,11 +1888,11 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 18 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:242:6: ^( NEGATE a= expression )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:229:6: ^( NEGATE a= expression )
 					{
-					match(input,NEGATE,FOLLOW_NEGATE_in_expression1128); 
+					match(input,NEGATE,FOLLOW_NEGATE_in_expression1058); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1132);
+					pushFollow(FOLLOW_expression_in_expression1062);
 					a=expression();
 					state._fsp--;
 
@@ -2237,43 +1902,53 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 19 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:243:6: Number
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:230:6: Number
 					{
-					Number35=(CommonTree)match(input,Number,FOLLOW_Number_in_expression1142); 
-					node = new AtomNode(Double.parseDouble((Number35!=null?Number35.getText():null)));
+					Number29=(CommonTree)match(input,Number,FOLLOW_Number_in_expression1072); 
+					node = new AtomNode(Double.parseDouble((Number29!=null?Number29.getText():null)));
 					}
 					break;
 				case 20 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:244:6: Bool
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:231:6: Bool
 					{
-					Bool36=(CommonTree)match(input,Bool,FOLLOW_Bool_in_expression1151); 
-					node = new AtomNode(new Boolean((Bool36!=null?Bool36.getText():null)));
+					Bool30=(CommonTree)match(input,Bool,FOLLOW_Bool_in_expression1081); 
+					node = new AtomNode(new Boolean((Bool30!=null?Bool30.getText():null)));
 					}
 					break;
 				case 21 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:245:6: Null
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:232:6: Null
 					{
-					match(input,Null,FOLLOW_Null_in_expression1161); 
+					match(input,Null,FOLLOW_Null_in_expression1091); 
 					}
 					break;
 				case 22 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:246:6: lookup
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:233:6: lookup
 					{
-					pushFollow(FOLLOW_lookup_in_expression1168);
-					lookup37=lookup();
+					pushFollow(FOLLOW_lookup_in_expression1098);
+					lookup31=lookup();
 					state._fsp--;
 
-					node = lookup37;
+					node = lookup31;
 					}
 					break;
 				case 23 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:247:6: query
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:234:6: query
 					{
-					pushFollow(FOLLOW_query_in_expression1179);
-					query38=query();
+					pushFollow(FOLLOW_query_in_expression1109);
+					query32=query();
 					state._fsp--;
 
-					node = query38;
+					node = query32;
+					}
+					break;
+				case 24 :
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:235:6: functionCall
+					{
+					pushFollow(FOLLOW_functionCall_in_expression1118);
+					functionCall33=functionCall();
+					state._fsp--;
+
+					node = functionCall33;
 					}
 					break;
 
@@ -2293,53 +1968,53 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "incrementation"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:250:1: incrementation returns [Node node] : ( variableCall ( '++' | '--' ) ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:238:1: incrementation returns [Node node] : ( variableCall ( '++' | '--' ) ) ;
 	public final Node incrementation() throws RecognitionException {
 		Node node = null;
 
 
-		String variableCall39 =null;
+		String variableCall34 =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:251:3: ( ( variableCall ( '++' | '--' ) ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:251:5: ( variableCall ( '++' | '--' ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:239:3: ( ( variableCall ( '++' | '--' ) ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:239:5: ( variableCall ( '++' | '--' ) )
 			{
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:251:5: ( variableCall ( '++' | '--' ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:251:6: variableCall ( '++' | '--' )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:239:5: ( variableCall ( '++' | '--' ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:239:6: variableCall ( '++' | '--' )
 			{
-			pushFollow(FOLLOW_variableCall_in_incrementation1199);
-			variableCall39=variableCall();
+			pushFollow(FOLLOW_variableCall_in_incrementation1138);
+			variableCall34=variableCall();
 			state._fsp--;
 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:251:19: ( '++' | '--' )
-			int alt23=2;
-			int LA23_0 = input.LA(1);
-			if ( (LA23_0==Increment) ) {
-				alt23=1;
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:239:19: ( '++' | '--' )
+			int alt17=2;
+			int LA17_0 = input.LA(1);
+			if ( (LA17_0==Increment) ) {
+				alt17=1;
 			}
-			else if ( (LA23_0==73) ) {
-				alt23=2;
+			else if ( (LA17_0==73) ) {
+				alt17=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 23, 0, input);
+					new NoViableAltException("", 17, 0, input);
 				throw nvae;
 			}
 
-			switch (alt23) {
+			switch (alt17) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:251:20: '++'
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:239:20: '++'
 					{
-					match(input,Increment,FOLLOW_Increment_in_incrementation1202); 
-					node = new IncrementationNode(variableCall39,1,currentScope);
+					match(input,Increment,FOLLOW_Increment_in_incrementation1141); 
+					node = new IncrementationNode(variableCall34,1,currentScope);
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:252:5: '--'
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:240:5: '--'
 					{
-					match(input,73,FOLLOW_73_in_incrementation1209); 
-					node = new IncrementationNode(variableCall39,-1,currentScope);
+					match(input,73,FOLLOW_73_in_incrementation1148); 
+					node = new IncrementationNode(variableCall34,-1,currentScope);
 					}
 					break;
 
@@ -2364,36 +2039,36 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "lookup"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:256:1: lookup returns [Node node] : ( ^( LOOKUP list ( indexes )? ) | ^( LOOKUP expression ( indexes )? ) | ^( LOOKUP i= Identifier (x= indexes )? ) | ^( LOOKUP String ( indexes )? ) );
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:244:1: lookup returns [Node node] : ( ^( LOOKUP list ( indexes )? ) | ^( LOOKUP expression ( indexes )? ) | ^( LOOKUP i= Identifier (x= indexes )? ) | ^( LOOKUP String ( indexes )? ) );
 	public final Node lookup() throws RecognitionException {
 		Node node = null;
 
 
 		CommonTree i=null;
-		CommonTree String40=null;
+		CommonTree String35=null;
 		java.util.List<Node> x =null;
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:257:3: ( ^( LOOKUP list ( indexes )? ) | ^( LOOKUP expression ( indexes )? ) | ^( LOOKUP i= Identifier (x= indexes )? ) | ^( LOOKUP String ( indexes )? ) )
-			int alt28=4;
-			int LA28_0 = input.LA(1);
-			if ( (LA28_0==LOOKUP) ) {
-				int LA28_1 = input.LA(2);
-				if ( (LA28_1==DOWN) ) {
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:245:3: ( ^( LOOKUP list ( indexes )? ) | ^( LOOKUP expression ( indexes )? ) | ^( LOOKUP i= Identifier (x= indexes )? ) | ^( LOOKUP String ( indexes )? ) )
+			int alt22=4;
+			int LA22_0 = input.LA(1);
+			if ( (LA22_0==LOOKUP) ) {
+				int LA22_1 = input.LA(2);
+				if ( (LA22_1==DOWN) ) {
 					switch ( input.LA(3) ) {
 					case Identifier:
 						{
-						alt28=3;
+						alt22=3;
 						}
 						break;
 					case String:
 						{
-						alt28=4;
+						alt22=4;
 						}
 						break;
 					case LIST:
 						{
-						alt28=1;
+						alt22=1;
 						}
 						break;
 					case Add:
@@ -2401,6 +2076,7 @@ public class ProgramWalker extends TreeParser {
 					case Bool:
 					case Divide:
 					case Equals:
+					case FUNC_CALL:
 					case GT:
 					case GTEquals:
 					case In:
@@ -2420,7 +2096,7 @@ public class ProgramWalker extends TreeParser {
 					case UNARY_MIN:
 					case 76:
 						{
-						alt28=2;
+						alt22=2;
 						}
 						break;
 					default:
@@ -2430,7 +2106,7 @@ public class ProgramWalker extends TreeParser {
 								input.consume();
 							}
 							NoViableAltException nvae =
-								new NoViableAltException("", 28, 2, input);
+								new NoViableAltException("", 22, 2, input);
 							throw nvae;
 						} finally {
 							input.rewind(nvaeMark);
@@ -2443,7 +2119,7 @@ public class ProgramWalker extends TreeParser {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 28, 1, input);
+							new NoViableAltException("", 22, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -2454,31 +2130,31 @@ public class ProgramWalker extends TreeParser {
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 28, 0, input);
+					new NoViableAltException("", 22, 0, input);
 				throw nvae;
 			}
 
-			switch (alt28) {
+			switch (alt22) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:257:6: ^( LOOKUP list ( indexes )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:245:6: ^( LOOKUP list ( indexes )? )
 					{
-					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1233); 
+					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1172); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_list_in_lookup1235);
+					pushFollow(FOLLOW_list_in_lookup1174);
 					list();
 					state._fsp--;
 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:257:20: ( indexes )?
-					int alt24=2;
-					int LA24_0 = input.LA(1);
-					if ( (LA24_0==INDEXES) ) {
-						alt24=1;
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:245:20: ( indexes )?
+					int alt18=2;
+					int LA18_0 = input.LA(1);
+					if ( (LA18_0==INDEXES) ) {
+						alt18=1;
 					}
-					switch (alt24) {
+					switch (alt18) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:257:20: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:245:20: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1237);
+							pushFollow(FOLLOW_indexes_in_lookup1176);
 							indexes();
 							state._fsp--;
 
@@ -2492,25 +2168,25 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:258:6: ^( LOOKUP expression ( indexes )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:246:6: ^( LOOKUP expression ( indexes )? )
 					{
-					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1247); 
+					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1186); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_lookup1249);
+					pushFollow(FOLLOW_expression_in_lookup1188);
 					expression();
 					state._fsp--;
 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:258:26: ( indexes )?
-					int alt25=2;
-					int LA25_0 = input.LA(1);
-					if ( (LA25_0==INDEXES) ) {
-						alt25=1;
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:246:26: ( indexes )?
+					int alt19=2;
+					int LA19_0 = input.LA(1);
+					if ( (LA19_0==INDEXES) ) {
+						alt19=1;
 					}
-					switch (alt25) {
+					switch (alt19) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:258:26: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:246:26: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1251);
+							pushFollow(FOLLOW_indexes_in_lookup1190);
 							indexes();
 							state._fsp--;
 
@@ -2524,22 +2200,22 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:259:6: ^( LOOKUP i= Identifier (x= indexes )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:247:6: ^( LOOKUP i= Identifier (x= indexes )? )
 					{
-					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1262); 
+					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1201); 
 					match(input, Token.DOWN, null); 
-					i=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup1266); 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:259:29: (x= indexes )?
-					int alt26=2;
-					int LA26_0 = input.LA(1);
-					if ( (LA26_0==INDEXES) ) {
-						alt26=1;
+					i=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup1205); 
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:247:29: (x= indexes )?
+					int alt20=2;
+					int LA20_0 = input.LA(1);
+					if ( (LA20_0==INDEXES) ) {
+						alt20=1;
 					}
-					switch (alt26) {
+					switch (alt20) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:259:29: x= indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:247:29: x= indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1270);
+							pushFollow(FOLLOW_indexes_in_lookup1209);
 							x=indexes();
 							state._fsp--;
 
@@ -2558,22 +2234,22 @@ public class ProgramWalker extends TreeParser {
 					}
 					break;
 				case 4 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:265:6: ^( LOOKUP String ( indexes )? )
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:253:6: ^( LOOKUP String ( indexes )? )
 					{
-					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1289); 
+					match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup1228); 
 					match(input, Token.DOWN, null); 
-					String40=(CommonTree)match(input,String,FOLLOW_String_in_lookup1291); 
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:265:22: ( indexes )?
-					int alt27=2;
-					int LA27_0 = input.LA(1);
-					if ( (LA27_0==INDEXES) ) {
-						alt27=1;
+					String35=(CommonTree)match(input,String,FOLLOW_String_in_lookup1230); 
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:253:22: ( indexes )?
+					int alt21=2;
+					int LA21_0 = input.LA(1);
+					if ( (LA21_0==INDEXES) ) {
+						alt21=1;
 					}
-					switch (alt27) {
+					switch (alt21) {
 						case 1 :
-							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:265:22: indexes
+							// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:253:22: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1293);
+							pushFollow(FOLLOW_indexes_in_lookup1232);
 							indexes();
 							state._fsp--;
 
@@ -2585,7 +2261,7 @@ public class ProgramWalker extends TreeParser {
 					match(input, Token.UP, null); 
 
 
-					        node = new AtomNode((String40!=null?String40.getText():null));
+					        node = new AtomNode((String35!=null?String35.getText():null));
 					      
 					}
 					break;
@@ -2606,29 +2282,29 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "list"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:270:1: list returns [Node node] : ^( LIST ( exprList )? ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:258:1: list returns [Node node] : ^( LIST ( exprList )? ) ;
 	public final Node list() throws RecognitionException {
 		Node node = null;
 
 
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:271:3: ( ^( LIST ( exprList )? ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:271:6: ^( LIST ( exprList )? )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:259:3: ( ^( LIST ( exprList )? ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:259:6: ^( LIST ( exprList )? )
 			{
-			match(input,LIST,FOLLOW_LIST_in_list1318); 
+			match(input,LIST,FOLLOW_LIST_in_list1257); 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:271:13: ( exprList )?
-				int alt29=2;
-				int LA29_0 = input.LA(1);
-				if ( (LA29_0==EXP_LIST) ) {
-					alt29=1;
+				// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:259:13: ( exprList )?
+				int alt23=2;
+				int LA23_0 = input.LA(1);
+				if ( (LA23_0==EXP_LIST) ) {
+					alt23=1;
 				}
-				switch (alt29) {
+				switch (alt23) {
 					case 1 :
-						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:271:13: exprList
+						// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:259:13: exprList
 						{
-						pushFollow(FOLLOW_exprList_in_list1320);
+						pushFollow(FOLLOW_exprList_in_list1259);
 						exprList();
 						state._fsp--;
 
@@ -2657,48 +2333,48 @@ public class ProgramWalker extends TreeParser {
 
 
 	// $ANTLR start "indexes"
-	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:274:1: indexes returns [java.util.List<Node> e] : ^( INDEXES ( expression )+ ) ;
+	// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:262:1: indexes returns [java.util.List<Node> e] : ^( INDEXES ( expression )+ ) ;
 	public final java.util.List<Node> indexes() throws RecognitionException {
 		java.util.List<Node> e = null;
 
 
-		Node expression41 =null;
+		Node expression36 =null;
 
 		e = new java.util.ArrayList<Node>();
 		try {
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:276:3: ( ^( INDEXES ( expression )+ ) )
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:276:6: ^( INDEXES ( expression )+ )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:264:3: ( ^( INDEXES ( expression )+ ) )
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:264:6: ^( INDEXES ( expression )+ )
 			{
-			match(input,INDEXES,FOLLOW_INDEXES_in_indexes1346); 
+			match(input,INDEXES,FOLLOW_INDEXES_in_indexes1285); 
 			match(input, Token.DOWN, null); 
-			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:276:16: ( expression )+
-			int cnt30=0;
-			loop30:
+			// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:264:16: ( expression )+
+			int cnt24=0;
+			loop24:
 			while (true) {
-				int alt30=2;
-				int LA30_0 = input.LA(1);
-				if ( ((LA30_0 >= Add && LA30_0 <= And)||LA30_0==Bool||LA30_0==Divide||LA30_0==Equals||(LA30_0 >= GT && LA30_0 <= GTEquals)||LA30_0==In||(LA30_0 >= LOOKUP && LA30_0 <= Number)||LA30_0==Or||LA30_0==Pow||(LA30_0 >= Subtract && LA30_0 <= TERNARY)||LA30_0==UNARY_MIN||LA30_0==76) ) {
-					alt30=1;
+				int alt24=2;
+				int LA24_0 = input.LA(1);
+				if ( ((LA24_0 >= Add && LA24_0 <= And)||LA24_0==Bool||LA24_0==Divide||LA24_0==Equals||LA24_0==FUNC_CALL||(LA24_0 >= GT && LA24_0 <= GTEquals)||LA24_0==In||(LA24_0 >= LOOKUP && LA24_0 <= Number)||LA24_0==Or||LA24_0==Pow||(LA24_0 >= Subtract && LA24_0 <= TERNARY)||LA24_0==UNARY_MIN||LA24_0==76) ) {
+					alt24=1;
 				}
 
-				switch (alt30) {
+				switch (alt24) {
 				case 1 :
-					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:276:17: expression
+					// D:\\Documents\\Programing\\GitHub\\Data-Centric-DSL-TUES-Project\\Antlr\\DataCentricDSLInterpreter\\src\\bg\\tues\\didi\\ProgramWalker.g:264:17: expression
 					{
-					pushFollow(FOLLOW_expression_in_indexes1349);
-					expression41=expression();
+					pushFollow(FOLLOW_expression_in_indexes1288);
+					expression36=expression();
 					state._fsp--;
 
-					e.add(expression41);
+					e.add(expression36);
 					}
 					break;
 
 				default :
-					if ( cnt30 >= 1 ) break loop30;
-					EarlyExitException eee = new EarlyExitException(30, input);
+					if ( cnt24 >= 1 ) break loop24;
+					EarlyExitException eee = new EarlyExitException(24, input);
 					throw eee;
 				}
-				cnt30++;
+				cnt24++;
 			}
 
 			match(input, Token.UP, null); 
@@ -2739,138 +2415,129 @@ public class ProgramWalker extends TreeParser {
 	public static final BitSet FOLLOW_print_in_statement252 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_76_in_query272 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_expression_in_query274 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_76_in_query284 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_functionCall_in_query286 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_77_in_update307 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_update309 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_77_in_update319 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_functionCall_in_update321 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Identifier_in_variableCall340 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ASSIGNMENT_in_assignment360 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_assignment364 = new BitSet(new long[]{0x0247FC49A2080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_indexes_in_assignment368 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_assignment372 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_functionCall_in_assignment381 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_75_in_assignment393 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ASSIGNMENT_in_assignment395 = new BitSet(new long[]{0x0000001000000000L});
-	public static final BitSet FOLLOW_Identifier_in_assignment399 = new BitSet(new long[]{0x0247FC49A2080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_indexes_in_assignment403 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_assignment407 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_functionCall_in_assignment417 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall440 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_functionCall442 = new BitSet(new long[]{0x0000000000400008L});
-	public static final BitSet FOLLOW_exprList_in_functionCall444 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall456 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Assert_in_functionCall458 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_functionCall460 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall470 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Size_in_functionCall472 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_functionCall474 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_PRINTLN_in_println494 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_functionCall_in_println496 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_PRINTLN_in_println507 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_println509 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_PRINT_in_print534 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_functionCall_in_print536 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_PRINT_in_print547 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_print549 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_IF_in_ifStatement580 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_EXP_in_ifStatement592 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_ifStatement594 = new BitSet(new long[]{0x0000000000000200L});
-	public static final BitSet FOLLOW_block_in_ifStatement598 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_EXP_in_ifStatement615 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_block_in_ifStatement619 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_For_in_forStatement664 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_assignment_in_forStatement668 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_forStatement672 = new BitSet(new long[]{0x0000001000000000L});
-	public static final BitSet FOLLOW_afterthought_in_forStatement676 = new BitSet(new long[]{0x0000000000000200L});
-	public static final BitSet FOLLOW_block_in_forStatement680 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Identifier_in_afterthought702 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_Assign_in_afterthought704 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_afterthought706 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_incrementation_in_afterthought716 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_While_in_whileStatement736 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_whileStatement738 = new BitSet(new long[]{0x0000000000000200L});
-	public static final BitSet FOLLOW_block_in_whileStatement740 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_ID_LIST_in_idList762 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_idList764 = new BitSet(new long[]{0x0000001000000008L});
-	public static final BitSet FOLLOW_EXP_LIST_in_exprList790 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_exprList795 = new BitSet(new long[]{0x0247FC4182080468L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_TERNARY_in_expression820 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression822 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression824 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression826 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_In_in_expression835 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression837 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression839 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Or_in_expression848 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression852 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression856 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_And_in_expression867 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression871 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression875 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Equals_in_expression886 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression890 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression894 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_NEquals_in_expression905 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression909 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression913 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_GTEquals_in_expression924 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression928 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression932 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LTEquals_in_expression943 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression947 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression951 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_GT_in_expression962 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression966 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression970 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LT_in_expression981 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression985 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression989 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Add_in_expression1000 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1004 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression1008 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Subtract_in_expression1019 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1023 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression1027 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Multiply_in_expression1038 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1042 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression1046 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Divide_in_expression1057 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1061 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression1065 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Modulus_in_expression1076 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1080 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression1084 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Pow_in_expression1095 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1099 = new BitSet(new long[]{0x0247FC4182080460L,0x00000000000010B0L});
-	public static final BitSet FOLLOW_expression_in_expression1103 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_UNARY_MIN_in_expression1114 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1118 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_NEGATE_in_expression1128 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1132 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Number_in_expression1142 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Bool_in_expression1151 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Null_in_expression1161 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_lookup_in_expression1168 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_query_in_expression1179 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_variableCall_in_incrementation1199 = new BitSet(new long[]{0x0000008000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Increment_in_incrementation1202 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_73_in_incrementation1209 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup1233 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_list_in_lookup1235 = new BitSet(new long[]{0x0000000800000008L});
-	public static final BitSet FOLLOW_indexes_in_lookup1237 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup1247 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_lookup1249 = new BitSet(new long[]{0x0000000800000008L});
-	public static final BitSet FOLLOW_indexes_in_lookup1251 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup1262 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_lookup1266 = new BitSet(new long[]{0x0000000800000008L});
-	public static final BitSet FOLLOW_indexes_in_lookup1270 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup1289 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_String_in_lookup1291 = new BitSet(new long[]{0x0000000800000008L});
-	public static final BitSet FOLLOW_indexes_in_lookup1293 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LIST_in_list1318 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_exprList_in_list1320 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_INDEXES_in_indexes1346 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_indexes1349 = new BitSet(new long[]{0x0247FC4182080468L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_77_in_update295 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_update297 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Identifier_in_variableCall316 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ASSIGNMENT_in_assignment336 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_assignment340 = new BitSet(new long[]{0x0247FC49A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_indexes_in_assignment344 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_assignment348 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_75_in_assignment360 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ASSIGNMENT_in_assignment362 = new BitSet(new long[]{0x0000001000000000L});
+	public static final BitSet FOLLOW_Identifier_in_assignment366 = new BitSet(new long[]{0x0247FC49A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_indexes_in_assignment370 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_assignment374 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall397 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_functionCall399 = new BitSet(new long[]{0x0000000000400008L});
+	public static final BitSet FOLLOW_exprList_in_functionCall401 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall413 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Assert_in_functionCall415 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_functionCall417 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall427 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Size_in_functionCall429 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_functionCall431 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_PRINTLN_in_println451 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_println453 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_PRINT_in_print477 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_print479 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_IF_in_ifStatement510 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_EXP_in_ifStatement522 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_ifStatement524 = new BitSet(new long[]{0x0000000000000200L});
+	public static final BitSet FOLLOW_block_in_ifStatement528 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_EXP_in_ifStatement545 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_block_in_ifStatement549 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_For_in_forStatement594 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_assignment_in_forStatement598 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_forStatement602 = new BitSet(new long[]{0x0000001000000000L});
+	public static final BitSet FOLLOW_afterthought_in_forStatement606 = new BitSet(new long[]{0x0000000000000200L});
+	public static final BitSet FOLLOW_block_in_forStatement610 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Identifier_in_afterthought632 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_Assign_in_afterthought634 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_afterthought636 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_incrementation_in_afterthought646 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_While_in_whileStatement666 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_whileStatement668 = new BitSet(new long[]{0x0000000000000200L});
+	public static final BitSet FOLLOW_block_in_whileStatement670 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_ID_LIST_in_idList692 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_idList694 = new BitSet(new long[]{0x0000001000000008L});
+	public static final BitSet FOLLOW_EXP_LIST_in_exprList720 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_exprList725 = new BitSet(new long[]{0x0247FC41A2080468L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_TERNARY_in_expression750 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression752 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression754 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression756 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_In_in_expression765 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression767 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression769 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Or_in_expression778 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression782 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression786 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_And_in_expression797 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression801 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression805 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Equals_in_expression816 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression820 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression824 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_NEquals_in_expression835 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression839 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression843 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_GTEquals_in_expression854 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression858 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression862 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LTEquals_in_expression873 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression877 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression881 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_GT_in_expression892 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression896 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression900 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LT_in_expression911 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression915 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression919 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Add_in_expression930 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression934 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression938 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Subtract_in_expression949 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression953 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression957 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Multiply_in_expression968 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression972 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression976 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Divide_in_expression987 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression991 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression995 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Modulus_in_expression1006 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1010 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression1014 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Pow_in_expression1025 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1029 = new BitSet(new long[]{0x0247FC41A2080460L,0x00000000000010B0L});
+	public static final BitSet FOLLOW_expression_in_expression1033 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_UNARY_MIN_in_expression1044 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1048 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_NEGATE_in_expression1058 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1062 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Number_in_expression1072 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Bool_in_expression1081 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Null_in_expression1091 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_lookup_in_expression1098 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_query_in_expression1109 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionCall_in_expression1118 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_variableCall_in_incrementation1138 = new BitSet(new long[]{0x0000008000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Increment_in_incrementation1141 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_73_in_incrementation1148 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup1172 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_list_in_lookup1174 = new BitSet(new long[]{0x0000000800000008L});
+	public static final BitSet FOLLOW_indexes_in_lookup1176 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup1186 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_lookup1188 = new BitSet(new long[]{0x0000000800000008L});
+	public static final BitSet FOLLOW_indexes_in_lookup1190 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup1201 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_lookup1205 = new BitSet(new long[]{0x0000000800000008L});
+	public static final BitSet FOLLOW_indexes_in_lookup1209 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup1228 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_String_in_lookup1230 = new BitSet(new long[]{0x0000000800000008L});
+	public static final BitSet FOLLOW_indexes_in_lookup1232 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LIST_in_list1257 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_exprList_in_list1259 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_INDEXES_in_indexes1285 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_indexes1288 = new BitSet(new long[]{0x0247FC41A2080468L,0x00000000000010B0L});
 }
