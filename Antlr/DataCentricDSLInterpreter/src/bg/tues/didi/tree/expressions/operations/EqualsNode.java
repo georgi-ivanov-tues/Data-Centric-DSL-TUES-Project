@@ -35,6 +35,6 @@ public class EqualsNode implements Node {
 
 	@Override
 	public String toString() {
-		return String.format("(%s < %s)", lhs, rhs);
+		return String.format("(%s == %s)", lhs, rhs);
 	}
 }

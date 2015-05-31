@@ -22,7 +22,7 @@ public class PowerNode implements Node {
 			return new Value(Math.pow(a.asDouble(), b.asDouble()));
 		}
 		
-		return null;
+		throw new RuntimeException("Illegal expression: " + this);
 	}
 
 	@Override
