@@ -21,6 +21,7 @@ import bg.tues.didi.Mod;
 import bg.tues.didi.Multiplication;
 import bg.tues.didi.NumberLiteral;
 import bg.tues.didi.PostfixOperation;
+import bg.tues.didi.Power;
 import bg.tues.didi.PrintFunction;
 import bg.tues.didi.QueryFunction;
 import bg.tues.didi.ReturnStatement;
@@ -149,6 +150,9 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 				return; 
 			case DidiPackage.POSTFIX_OPERATION:
 				sequence_PostfixOperation(context, (PostfixOperation) semanticObject); 
+				return; 
+			case DidiPackage.POWER:
+				sequence_Power(context, (Power) semanticObject); 
 				return; 
 			case DidiPackage.PRINT_FUNCTION:
 				sequence_PrintFunction(context, (PrintFunction) semanticObject); 
@@ -536,7 +540,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (left=Mod_Mod_1_0 right=Primary)
+	 *     (left=Mod_Mod_1_0 right=Power)
 	 */
 	protected void sequence_Mod(EObject context, Mod semanticObject) {
 		if(errorAcceptor != null) {
@@ -548,7 +552,7 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getModAccess().getModLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getModAccess().getRightPrimaryParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getModAccess().getRightPowerParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -603,6 +607,25 @@ public class DidiSemanticSequencer extends XbaseSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getPostfixOperationAccess().getCallVariableCallParserRuleCall_1_0(), semanticObject.getCall());
 		feeder.accept(grammarAccess.getPostfixOperationAccess().getOpPostfixOperationOperatorParserRuleCall_2_0(), semanticObject.getOp());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=Power_Power_1_0 right=Primary)
+	 */
+	protected void sequence_Power(EObject context, Power semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DidiPackage.Literals.POWER__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DidiPackage.Literals.POWER__LEFT));
+			if(transientValues.isValueTransient(semanticObject, DidiPackage.Literals.POWER__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DidiPackage.Literals.POWER__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPowerAccess().getPowerLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getPowerAccess().getRightPrimaryParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	

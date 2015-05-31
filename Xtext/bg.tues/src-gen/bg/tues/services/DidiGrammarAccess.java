@@ -526,24 +526,24 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Mod");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cPrimaryParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cPowerParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cModLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final RuleCall cOpModParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightPrimaryParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightPowerParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//Mod returns Expression:
-		//	Primary ({Mod.left=current} OpMod right=Primary)*;
+		//	Power ({Mod.left=current} OpMod right=Power)*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//Primary ({Mod.left=current} OpMod right=Primary)*
+		//Power ({Mod.left=current} OpMod right=Power)*
 		public Group getGroup() { return cGroup; }
 
-		//Primary
-		public RuleCall getPrimaryParserRuleCall_0() { return cPrimaryParserRuleCall_0; }
+		//Power
+		public RuleCall getPowerParserRuleCall_0() { return cPowerParserRuleCall_0; }
 
-		//({Mod.left=current} OpMod right=Primary)*
+		//({Mod.left=current} OpMod right=Power)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{Mod.left=current}
@@ -551,6 +551,42 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 
 		//OpMod
 		public RuleCall getOpModParserRuleCall_1_1() { return cOpModParserRuleCall_1_1; }
+
+		//right=Power
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+
+		//Power
+		public RuleCall getRightPowerParserRuleCall_1_2_0() { return cRightPowerParserRuleCall_1_2_0; }
+	}
+
+	public class PowerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Power");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cPrimaryParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cPowerLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final RuleCall cOpPowerParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightPrimaryParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		
+		//Power returns Expression:
+		//	Primary ({Power.left=current} OpPower right=Primary)*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//Primary ({Power.left=current} OpPower right=Primary)*
+		public Group getGroup() { return cGroup; }
+
+		//Primary
+		public RuleCall getPrimaryParserRuleCall_0() { return cPrimaryParserRuleCall_0; }
+
+		//({Power.left=current} OpPower right=Primary)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{Power.left=current}
+		public Action getPowerLeftAction_1_0() { return cPowerLeftAction_1_0; }
+
+		//OpPower
+		public RuleCall getOpPowerParserRuleCall_1_1() { return cOpPowerParserRuleCall_1_1; }
 
 		//right=Primary
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
@@ -565,16 +601,16 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNumberLiteralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cVariableCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cFunctionCallParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cOpeningBracketParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final RuleCall cAdditionParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final RuleCall cClosingBracketParserRuleCall_3_2 = (RuleCall)cGroup_3.eContents().get(2);
 		
 		//Primary returns Expression:
-		//	NumberLiteral | VariableCall | FunctionCall | OpeningBracket Addition ClosingBracket;
+		//	NumberLiteral // removing brackets until they are supported in the interpreter
+		//	//OpeningBracket Addition ClosingBracket)
+		//	| VariableCall | FunctionCall;
 		@Override public ParserRule getRule() { return rule; }
 
-		//NumberLiteral | VariableCall | FunctionCall | OpeningBracket Addition ClosingBracket
+		//NumberLiteral // removing brackets until they are supported in the interpreter
+		////OpeningBracket Addition ClosingBracket)
+		//| VariableCall | FunctionCall
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NumberLiteral
@@ -585,18 +621,6 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 
 		//FunctionCall
 		public RuleCall getFunctionCallParserRuleCall_2() { return cFunctionCallParserRuleCall_2; }
-
-		//OpeningBracket Addition ClosingBracket
-		public Group getGroup_3() { return cGroup_3; }
-
-		//OpeningBracket
-		public RuleCall getOpeningBracketParserRuleCall_3_0() { return cOpeningBracketParserRuleCall_3_0; }
-
-		//Addition
-		public RuleCall getAdditionParserRuleCall_3_1() { return cAdditionParserRuleCall_3_1; }
-
-		//ClosingBracket
-		public RuleCall getClosingBracketParserRuleCall_3_2() { return cClosingBracketParserRuleCall_3_2; }
 	}
 
 	public class CompoundStatementElements extends AbstractParserRuleElementFinder {
@@ -1114,41 +1138,49 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	public class ConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Condition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cConditionElementsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cConditionElementsConditionElementParserRuleCall_0_0 = (RuleCall)cConditionElementsAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Assignment cOpAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cOpOpCompareParserRuleCall_1_0_0 = (RuleCall)cOpAssignment_1_0.eContents().get(0);
-		private final Assignment cConditionElementsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cConditionElementsConditionElementParserRuleCall_1_1_0 = (RuleCall)cConditionElementsAssignment_1_1.eContents().get(0);
+		private final RuleCall cOpNotParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cConditionElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cConditionElementsConditionElementParserRuleCall_1_0 = (RuleCall)cConditionElementsAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cOpAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cOpOpCompareParserRuleCall_2_0_0 = (RuleCall)cOpAssignment_2_0.eContents().get(0);
+		private final RuleCall cOpNotParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Assignment cConditionElementsAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cConditionElementsConditionElementParserRuleCall_2_2_0 = (RuleCall)cConditionElementsAssignment_2_2.eContents().get(0);
 		
 		//Condition:
-		//	conditionElements+=ConditionElement (op=OpCompare conditionElements+=ConditionElement)?;
+		//	OpNot? conditionElements+=ConditionElement (op=OpCompare OpNot? conditionElements+=ConditionElement)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//conditionElements+=ConditionElement (op=OpCompare conditionElements+=ConditionElement)?
+		//OpNot? conditionElements+=ConditionElement (op=OpCompare OpNot? conditionElements+=ConditionElement)?
 		public Group getGroup() { return cGroup; }
 
+		//OpNot?
+		public RuleCall getOpNotParserRuleCall_0() { return cOpNotParserRuleCall_0; }
+
 		//conditionElements+=ConditionElement
-		public Assignment getConditionElementsAssignment_0() { return cConditionElementsAssignment_0; }
+		public Assignment getConditionElementsAssignment_1() { return cConditionElementsAssignment_1; }
 
 		//ConditionElement
-		public RuleCall getConditionElementsConditionElementParserRuleCall_0_0() { return cConditionElementsConditionElementParserRuleCall_0_0; }
+		public RuleCall getConditionElementsConditionElementParserRuleCall_1_0() { return cConditionElementsConditionElementParserRuleCall_1_0; }
 
-		//(op=OpCompare conditionElements+=ConditionElement)?
-		public Group getGroup_1() { return cGroup_1; }
+		//(op=OpCompare OpNot? conditionElements+=ConditionElement)?
+		public Group getGroup_2() { return cGroup_2; }
 
 		//op=OpCompare
-		public Assignment getOpAssignment_1_0() { return cOpAssignment_1_0; }
+		public Assignment getOpAssignment_2_0() { return cOpAssignment_2_0; }
 
 		//OpCompare
-		public RuleCall getOpOpCompareParserRuleCall_1_0_0() { return cOpOpCompareParserRuleCall_1_0_0; }
+		public RuleCall getOpOpCompareParserRuleCall_2_0_0() { return cOpOpCompareParserRuleCall_2_0_0; }
+
+		//OpNot?
+		public RuleCall getOpNotParserRuleCall_2_1() { return cOpNotParserRuleCall_2_1; }
 
 		//conditionElements+=ConditionElement
-		public Assignment getConditionElementsAssignment_1_1() { return cConditionElementsAssignment_1_1; }
+		public Assignment getConditionElementsAssignment_2_2() { return cConditionElementsAssignment_2_2; }
 
 		//ConditionElement
-		public RuleCall getConditionElementsConditionElementParserRuleCall_1_1_0() { return cConditionElementsConditionElementParserRuleCall_1_1_0; }
+		public RuleCall getConditionElementsConditionElementParserRuleCall_2_2_0() { return cConditionElementsConditionElementParserRuleCall_2_2_0; }
 	}
 
 	public class ConditionElementElements extends AbstractParserRuleElementFinder {
@@ -1359,6 +1391,18 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getPercentSignKeyword() { return cPercentSignKeyword; }
 	}
 
+	public class OpPowerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OpPower");
+		private final Keyword cCircumflexAccentKeyword = (Keyword)rule.eContents().get(1);
+		
+		//OpPower:
+		//	"^";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"^"
+		public Keyword getCircumflexAccentKeyword() { return cCircumflexAccentKeyword; }
+	}
+
 	public class OpAssignmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OpAssignment");
 		private final Keyword cEqualsSignKeyword = (Keyword)rule.eContents().get(1);
@@ -1393,6 +1437,18 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"||"
 		public Keyword getVerticalLineVerticalLineKeyword() { return cVerticalLineVerticalLineKeyword; }
+	}
+
+	public class OpNotElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OpNot");
+		private final Keyword cExclamationMarkKeyword = (Keyword)rule.eContents().get(1);
+		
+		//OpNot:
+		//	"!";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"!"
+		public Keyword getExclamationMarkKeyword() { return cExclamationMarkKeyword; }
 	}
 
 	public class OpCompareElements extends AbstractParserRuleElementFinder {
@@ -1673,6 +1729,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	private final MultiplicationElements pMultiplication;
 	private final DivisionElements pDivision;
 	private final ModElements pMod;
+	private final PowerElements pPower;
 	private final PrimaryElements pPrimary;
 	private final CompoundStatementElements pCompoundStatement;
 	private final FunctionDefinitionElements pFunctionDefinition;
@@ -1696,9 +1753,11 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	private final OpMultiplicationElements pOpMultiplication;
 	private final OpDivisionElements pOpDivision;
 	private final OpModElements pOpMod;
+	private final OpPowerElements pOpPower;
 	private final OpAssignmentElements pOpAssignment;
 	private final OpAndElements pOpAnd;
 	private final OpOrElements pOpOr;
+	private final OpNotElements pOpNot;
 	private final OpCompareElements pOpCompare;
 	private final SemicolonElements pSemicolon;
 	private final OpeningBracketElements pOpeningBracket;
@@ -1747,6 +1806,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMultiplication = new MultiplicationElements();
 		this.pDivision = new DivisionElements();
 		this.pMod = new ModElements();
+		this.pPower = new PowerElements();
 		this.pPrimary = new PrimaryElements();
 		this.pCompoundStatement = new CompoundStatementElements();
 		this.pFunctionDefinition = new FunctionDefinitionElements();
@@ -1770,9 +1830,11 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		this.pOpMultiplication = new OpMultiplicationElements();
 		this.pOpDivision = new OpDivisionElements();
 		this.pOpMod = new OpModElements();
+		this.pOpPower = new OpPowerElements();
 		this.pOpAssignment = new OpAssignmentElements();
 		this.pOpAnd = new OpAndElements();
 		this.pOpOr = new OpOrElements();
+		this.pOpNot = new OpNotElements();
 		this.pOpCompare = new OpCompareElements();
 		this.pSemicolon = new SemicolonElements();
 		this.pOpeningBracket = new OpeningBracketElements();
@@ -1985,7 +2047,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Mod returns Expression:
-	//	Primary ({Mod.left=current} OpMod right=Primary)*;
+	//	Power ({Mod.left=current} OpMod right=Power)*;
 	public ModElements getModAccess() {
 		return pMod;
 	}
@@ -1994,8 +2056,20 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		return getModAccess().getRule();
 	}
 
+	//Power returns Expression:
+	//	Primary ({Power.left=current} OpPower right=Primary)*;
+	public PowerElements getPowerAccess() {
+		return pPower;
+	}
+	
+	public ParserRule getPowerRule() {
+		return getPowerAccess().getRule();
+	}
+
 	//Primary returns Expression:
-	//	NumberLiteral | VariableCall | FunctionCall | OpeningBracket Addition ClosingBracket;
+	//	NumberLiteral // removing brackets until they are supported in the interpreter
+	//	//OpeningBracket Addition ClosingBracket)
+	//	| VariableCall | FunctionCall;
 	public PrimaryElements getPrimaryAccess() {
 		return pPrimary;
 	}
@@ -2124,7 +2198,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Condition:
-	//	conditionElements+=ConditionElement (op=OpCompare conditionElements+=ConditionElement)?;
+	//	OpNot? conditionElements+=ConditionElement (op=OpCompare OpNot? conditionElements+=ConditionElement)?;
 	public ConditionElements getConditionAccess() {
 		return pCondition;
 	}
@@ -2263,6 +2337,16 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpModAccess().getRule();
 	}
 
+	//OpPower:
+	//	"^";
+	public OpPowerElements getOpPowerAccess() {
+		return pOpPower;
+	}
+	
+	public ParserRule getOpPowerRule() {
+		return getOpPowerAccess().getRule();
+	}
+
 	//OpAssignment:
 	//	"=";
 	public OpAssignmentElements getOpAssignmentAccess() {
@@ -2291,6 +2375,16 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getOpOrRule() {
 		return getOpOrAccess().getRule();
+	}
+
+	//OpNot:
+	//	"!";
+	public OpNotElements getOpNotAccess() {
+		return pOpNot;
+	}
+	
+	public ParserRule getOpNotRule() {
+		return getOpNotAccess().getRule();
 	}
 
 	//OpCompare:
@@ -2484,7 +2578,7 @@ public class DidiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal NUMBER_LITERAL:
-	//	"0" | ("1".."9" "0".."9"*) ("." "0".."9"*)?;
+	//	"-"? ("0" | ("1".."9" "0".."9"*) ("." "0".."9"+)?);
 	public TerminalRule getNUMBER_LITERALRule() {
 		return tNUMBER_LITERAL;
 	} 

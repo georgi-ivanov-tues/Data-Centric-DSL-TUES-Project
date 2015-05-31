@@ -240,6 +240,11 @@ public class DidiAdapterFactory extends AdapterFactoryImpl
         return createModAdapter();
       }
       @Override
+      public Adapter casePower(Power object)
+      {
+        return createPowerAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -752,6 +757,21 @@ public class DidiAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link bg.tues.didi.Power <em>Power</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see bg.tues.didi.Power
+   * @generated
+   */
+  public Adapter createPowerAdapter()
   {
     return null;
   }

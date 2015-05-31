@@ -24,6 +24,7 @@ import bg.tues.didi.Mod;
 import bg.tues.didi.Multiplication;
 import bg.tues.didi.NumberLiteral;
 import bg.tues.didi.PostfixOperation;
+import bg.tues.didi.Power;
 import bg.tues.didi.PrintArgument;
 import bg.tues.didi.PrintFunction;
 import bg.tues.didi.QueryFunction;
@@ -283,6 +284,13 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
    * @generated
    */
   private EClass modEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass powerEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1122,6 +1130,36 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getPower()
+  {
+    return powerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPower_Left()
+  {
+    return (EReference)powerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPower_Right()
+  {
+    return (EReference)powerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DidiFactory getDidiFactory()
   {
     return (DidiFactory)getEFactoryInstance();
@@ -1256,6 +1294,10 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
     modEClass = createEClass(MOD);
     createEReference(modEClass, MOD__LEFT);
     createEReference(modEClass, MOD__RIGHT);
+
+    powerEClass = createEClass(POWER);
+    createEReference(powerEClass, POWER__LEFT);
+    createEReference(powerEClass, POWER__RIGHT);
   }
 
   /**
@@ -1316,6 +1358,7 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
     multiplicationEClass.getESuperTypes().add(this.getExpression());
     divisionEClass.getESuperTypes().add(this.getExpression());
     modEClass.getESuperTypes().add(this.getExpression());
+    powerEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(didiModelEClass, DidiModel.class, "DidiModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1427,6 +1470,10 @@ public class DidiPackageImpl extends EPackageImpl implements DidiPackage
     initEClass(modEClass, Mod.class, "Mod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMod_Left(), this.getExpression(), null, "left", null, 0, 1, Mod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMod_Right(), this.getExpression(), null, "right", null, 0, 1, Mod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(powerEClass, Power.class, "Power", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPower_Left(), this.getExpression(), null, "left", null, 0, 1, Power.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPower_Right(), this.getExpression(), null, "right", null, 0, 1, Power.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

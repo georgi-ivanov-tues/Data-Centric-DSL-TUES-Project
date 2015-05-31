@@ -1079,6 +1079,43 @@ public interface DidiPackage extends EPackage
    */
   int MOD_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
+  /**
+   * The meta object id for the '{@link bg.tues.didi.impl.PowerImpl <em>Power</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see bg.tues.didi.impl.PowerImpl
+   * @see bg.tues.didi.impl.DidiPackageImpl#getPower()
+   * @generated
+   */
+  int POWER = 33;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POWER__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POWER__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Power</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POWER_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
 
   /**
    * Returns the meta object for class '{@link bg.tues.didi.DidiModel <em>Model</em>}'.
@@ -1895,6 +1932,38 @@ public interface DidiPackage extends EPackage
   EReference getMod_Right();
 
   /**
+   * Returns the meta object for class '{@link bg.tues.didi.Power <em>Power</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Power</em>'.
+   * @see bg.tues.didi.Power
+   * @generated
+   */
+  EClass getPower();
+
+  /**
+   * Returns the meta object for the containment reference '{@link bg.tues.didi.Power#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see bg.tues.didi.Power#getLeft()
+   * @see #getPower()
+   * @generated
+   */
+  EReference getPower_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link bg.tues.didi.Power#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see bg.tues.didi.Power#getRight()
+   * @see #getPower()
+   * @generated
+   */
+  EReference getPower_Right();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2598,6 +2667,32 @@ public interface DidiPackage extends EPackage
      * @generated
      */
     EReference MOD__RIGHT = eINSTANCE.getMod_Right();
+
+    /**
+     * The meta object literal for the '{@link bg.tues.didi.impl.PowerImpl <em>Power</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see bg.tues.didi.impl.PowerImpl
+     * @see bg.tues.didi.impl.DidiPackageImpl#getPower()
+     * @generated
+     */
+    EClass POWER = eINSTANCE.getPower();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POWER__LEFT = eINSTANCE.getPower_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POWER__RIGHT = eINSTANCE.getPower_Right();
 
   }
 

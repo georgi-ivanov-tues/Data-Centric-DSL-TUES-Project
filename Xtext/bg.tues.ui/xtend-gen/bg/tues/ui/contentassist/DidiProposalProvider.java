@@ -91,6 +91,7 @@ public class DidiProposalProvider extends AbstractDidiProposalProvider {
     EObject didiModel = model.eContainer();
     final EObject container = model.eContainer();
     if ((container instanceof DidiModel)) {
+      final EObject finalDidiModel = didiModel;
       TreeIterator<EObject> _eAllContents = ((DidiModel)container).eAllContents();
       final Procedure1<EObject> _function = new Procedure1<EObject>() {
         @Override
@@ -110,14 +111,28 @@ public class DidiProposalProvider extends AbstractDidiProposalProvider {
               boolean _not_1 = (!_isIsGlobal);
               if (_not_1) {
                 return;
+              } else {
+                EObject elementContainerBeforeDidiModel = element;
+                while ((!(elementContainerBeforeDidiModel.eContainer() instanceof DidiModel))) {
+                  EObject _eContainer_1 = elementContainerBeforeDidiModel.eContainer();
+                  elementContainerBeforeDidiModel = _eContainer_1;
+                }
+                EList<EObject> _eContents = finalDidiModel.eContents();
+                int _indexOf = _eContents.indexOf(model);
+                EList<EObject> _eContents_1 = finalDidiModel.eContents();
+                int _indexOf_1 = _eContents_1.indexOf(elementContainerBeforeDidiModel);
+                boolean _lessThan = (_indexOf < _indexOf_1);
+                if (_lessThan) {
+                  return;
+                }
               }
             } else {
-              EList<EObject> _eContents = ((DidiModel)container).eContents();
-              int _indexOf = _eContents.indexOf(model);
-              EList<EObject> _eContents_1 = ((DidiModel)container).eContents();
-              int _indexOf_1 = _eContents_1.indexOf(element);
-              boolean _lessThan = (_indexOf < _indexOf_1);
-              if (_lessThan) {
+              EList<EObject> _eContents_2 = ((DidiModel)container).eContents();
+              int _indexOf_2 = _eContents_2.indexOf(model);
+              EList<EObject> _eContents_3 = ((DidiModel)container).eContents();
+              int _indexOf_3 = _eContents_3.indexOf(element);
+              boolean _lessThan_1 = (_indexOf_2 < _indexOf_3);
+              if (_lessThan_1) {
                 return;
               }
             }
@@ -159,7 +174,7 @@ public class DidiProposalProvider extends AbstractDidiProposalProvider {
         modelContainerBeforeDidiModelVar = _eContainer;
       }
       final EObject modelContainerBeforeDidiModel = modelContainerBeforeDidiModelVar;
-      final EObject finalDidiModel = didiModel;
+      final EObject finalDidiModel_1 = didiModel;
       TreeIterator<EObject> _eAllContents_2 = didiModel.eAllContents();
       final Procedure1<EObject> _function_2 = new Procedure1<EObject>() {
         @Override
@@ -188,9 +203,9 @@ public class DidiProposalProvider extends AbstractDidiProposalProvider {
                 return;
               }
             }
-            EList<EObject> _eContents = finalDidiModel.eContents();
+            EList<EObject> _eContents = finalDidiModel_1.eContents();
             int _indexOf = _eContents.indexOf(modelContainerBeforeDidiModel);
-            EList<EObject> _eContents_1 = finalDidiModel.eContents();
+            EList<EObject> _eContents_1 = finalDidiModel_1.eContents();
             int _indexOf_1 = _eContents_1.indexOf(elementContainerBeforeDidiModel);
             boolean _lessThan = (_indexOf < _indexOf_1);
             if (_lessThan) {

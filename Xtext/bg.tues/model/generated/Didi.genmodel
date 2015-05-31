@@ -110,5 +110,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Mod/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Mod/right"/>
     </genClasses>
+    <genClasses ecoreClass="Didi.ecore#//Power">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Power/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Didi.ecore#//Power/right"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

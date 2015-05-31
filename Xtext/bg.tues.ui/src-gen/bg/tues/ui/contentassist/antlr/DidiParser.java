@@ -109,7 +109,8 @@ public class DidiParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDivisionAccess().getGroup_1(), "rule__Division__Group_1__0");
 					put(grammarAccess.getModAccess().getGroup(), "rule__Mod__Group__0");
 					put(grammarAccess.getModAccess().getGroup_1(), "rule__Mod__Group_1__0");
-					put(grammarAccess.getPrimaryAccess().getGroup_3(), "rule__Primary__Group_3__0");
+					put(grammarAccess.getPowerAccess().getGroup(), "rule__Power__Group__0");
+					put(grammarAccess.getPowerAccess().getGroup_1(), "rule__Power__Group_1__0");
 					put(grammarAccess.getFunctionDefinitionAccess().getGroup(), "rule__FunctionDefinition__Group__0");
 					put(grammarAccess.getFunctionDefinitionAccess().getGroup_3(), "rule__FunctionDefinition__Group_3__0");
 					put(grammarAccess.getFunctionDefinitionAccess().getGroup_3_1(), "rule__FunctionDefinition__Group_3_1__0");
@@ -123,7 +124,7 @@ public class DidiParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConditionStatementAccess().getGroup(), "rule__ConditionStatement__Group__0");
 					put(grammarAccess.getConditionStatementAccess().getGroup_1(), "rule__ConditionStatement__Group_1__0");
 					put(grammarAccess.getConditionAccess().getGroup(), "rule__Condition__Group__0");
-					put(grammarAccess.getConditionAccess().getGroup_1(), "rule__Condition__Group_1__0");
+					put(grammarAccess.getConditionAccess().getGroup_2(), "rule__Condition__Group_2__0");
 					put(grammarAccess.getPostfixOperationAccess().getGroup(), "rule__PostfixOperation__Group__0");
 					put(grammarAccess.getElseIfAccess().getGroup(), "rule__ElseIf__Group__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
@@ -320,6 +321,7 @@ public class DidiParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationAccess().getRightAssignment_1_2(), "rule__Multiplication__RightAssignment_1_2");
 					put(grammarAccess.getDivisionAccess().getRightAssignment_1_2(), "rule__Division__RightAssignment_1_2");
 					put(grammarAccess.getModAccess().getRightAssignment_1_2(), "rule__Mod__RightAssignment_1_2");
+					put(grammarAccess.getPowerAccess().getRightAssignment_1_2(), "rule__Power__RightAssignment_1_2");
 					put(grammarAccess.getFunctionDefinitionAccess().getNameAssignment_1(), "rule__FunctionDefinition__NameAssignment_1");
 					put(grammarAccess.getFunctionDefinitionAccess().getParametersAssignment_3_0(), "rule__FunctionDefinition__ParametersAssignment_3_0");
 					put(grammarAccess.getFunctionDefinitionAccess().getParametersAssignment_3_1_1(), "rule__FunctionDefinition__ParametersAssignment_3_1_1");
@@ -341,9 +343,9 @@ public class DidiParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForStatementAccess().getStatementsAssignment_10(), "rule__ForStatement__StatementsAssignment_10");
 					put(grammarAccess.getConditionStatementAccess().getConditionsAssignment_0(), "rule__ConditionStatement__ConditionsAssignment_0");
 					put(grammarAccess.getConditionStatementAccess().getConditionsAssignment_1_1(), "rule__ConditionStatement__ConditionsAssignment_1_1");
-					put(grammarAccess.getConditionAccess().getConditionElementsAssignment_0(), "rule__Condition__ConditionElementsAssignment_0");
-					put(grammarAccess.getConditionAccess().getOpAssignment_1_0(), "rule__Condition__OpAssignment_1_0");
-					put(grammarAccess.getConditionAccess().getConditionElementsAssignment_1_1(), "rule__Condition__ConditionElementsAssignment_1_1");
+					put(grammarAccess.getConditionAccess().getConditionElementsAssignment_1(), "rule__Condition__ConditionElementsAssignment_1");
+					put(grammarAccess.getConditionAccess().getOpAssignment_2_0(), "rule__Condition__OpAssignment_2_0");
+					put(grammarAccess.getConditionAccess().getConditionElementsAssignment_2_2(), "rule__Condition__ConditionElementsAssignment_2_2");
 					put(grammarAccess.getPostfixOperationAccess().getCallAssignment_1(), "rule__PostfixOperation__CallAssignment_1");
 					put(grammarAccess.getPostfixOperationAccess().getOpAssignment_2(), "rule__PostfixOperation__OpAssignment_2");
 					put(grammarAccess.getStringLiteralAccess().getValueAssignment(), "rule__StringLiteral__ValueAssignment");

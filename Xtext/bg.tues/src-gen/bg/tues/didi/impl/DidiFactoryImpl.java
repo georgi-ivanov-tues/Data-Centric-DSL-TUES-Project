@@ -97,6 +97,7 @@ public class DidiFactoryImpl extends EFactoryImpl implements DidiFactory
       case DidiPackage.MULTIPLICATION: return createMultiplication();
       case DidiPackage.DIVISION: return createDivision();
       case DidiPackage.MOD: return createMod();
+      case DidiPackage.POWER: return createPower();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -463,6 +464,17 @@ public class DidiFactoryImpl extends EFactoryImpl implements DidiFactory
   {
     ModImpl mod = new ModImpl();
     return mod;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Power createPower()
+  {
+    PowerImpl power = new PowerImpl();
+    return power;
   }
 
   /**

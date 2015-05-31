@@ -23,8 +23,8 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DidiGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_ConditionStatement_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1;
-	protected AbstractElementAlias match_Primary_OpeningBracketParserRuleCall_3_0_a;
-	protected AbstractElementAlias match_Primary_OpeningBracketParserRuleCall_3_0_p;
+	protected AbstractElementAlias match_Condition_OpNotParserRuleCall_0_q;
+	protected AbstractElementAlias match_Condition_OpNotParserRuleCall_2_1_q;
 	protected AbstractElementAlias match_PrintFunction_PrintParserRuleCall_0_0_or_PrintlnParserRuleCall_0_1;
 	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
 	protected AbstractElementAlias match_XExpressionInClosure_SemicolonKeyword_1_1_q;
@@ -37,8 +37,8 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DidiGrammarAccess) access;
 		match_ConditionStatement_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionStatementAccess().getOpAndParserRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getConditionStatementAccess().getOpOrParserRuleCall_1_0_1()));
-		match_Primary_OpeningBracketParserRuleCall_3_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getOpeningBracketParserRuleCall_3_0());
-		match_Primary_OpeningBracketParserRuleCall_3_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getOpeningBracketParserRuleCall_3_0());
+		match_Condition_OpNotParserRuleCall_0_q = new TokenAlias(false, true, grammarAccess.getConditionAccess().getOpNotParserRuleCall_0());
+		match_Condition_OpNotParserRuleCall_2_1_q = new TokenAlias(false, true, grammarAccess.getConditionAccess().getOpNotParserRuleCall_2_1());
 		match_PrintFunction_PrintParserRuleCall_0_0_or_PrintlnParserRuleCall_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPrintFunctionAccess().getPrintParserRuleCall_0_0()), new TokenAlias(false, false, grammarAccess.getPrintFunctionAccess().getPrintlnParserRuleCall_0_1()));
 		match_XBlockExpression_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
 		match_XExpressionInClosure_SemicolonKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getXExpressionInClosureAccess().getSemicolonKeyword_1_1());
@@ -82,8 +82,12 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getOpModToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOpMultiplicationRule())
 			return getOpMultiplicationToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getOpNotRule())
+			return getOpNotToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOpOrRule())
 			return getOpOrToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getOpPowerRule())
+			return getOpPowerToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOpSingleAssignRule())
 			return getOpSingleAssignToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOpSubstractionRule())
@@ -286,6 +290,17 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * OpNot:
+	 * 	'!'
+	 * ;
+	 */
+	protected String getOpNotToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "!";
+	}
+	
+	/**
 	 * OpOr:
 	 * 	'||'
 	 * ;
@@ -294,6 +309,17 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "||";
+	}
+	
+	/**
+	 * OpPower:
+	 * 	'^'
+	 * ;
+	 */
+	protected String getOpPowerToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "^";
 	}
 	
 	/**
@@ -425,10 +451,10 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_ConditionStatement_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1.equals(syntax))
 				emit_ConditionStatement_OpAndParserRuleCall_1_0_0_or_OpOrParserRuleCall_1_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Primary_OpeningBracketParserRuleCall_3_0_a.equals(syntax))
-				emit_Primary_OpeningBracketParserRuleCall_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Primary_OpeningBracketParserRuleCall_3_0_p.equals(syntax))
-				emit_Primary_OpeningBracketParserRuleCall_3_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Condition_OpNotParserRuleCall_0_q.equals(syntax))
+				emit_Condition_OpNotParserRuleCall_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Condition_OpNotParserRuleCall_2_1_q.equals(syntax))
+				emit_Condition_OpNotParserRuleCall_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_PrintFunction_PrintParserRuleCall_0_0_or_PrintlnParserRuleCall_0_1.equals(syntax))
 				emit_PrintFunction_PrintParserRuleCall_0_0_or_PrintlnParserRuleCall_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XBlockExpression_SemicolonKeyword_2_1_q.equals(syntax))
@@ -460,36 +486,23 @@ public class DidiSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     OpeningBracket*
+	 *     OpNot?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) calledFunctionName=IDENTIFIER
-	 *     (rule start) (ambiguity) calledVariableName=IDENTIFIER
-	 *     (rule start) (ambiguity) value=NUMBER_LITERAL
-	 *     (rule start) (ambiguity) value=STRING
-	 *     (rule start) (ambiguity) {Addition.left=}
-	 *     (rule start) (ambiguity) {Division.left=}
-	 *     (rule start) (ambiguity) {Mod.left=}
-	 *     (rule start) (ambiguity) {Multiplication.left=}
-	 *     (rule start) (ambiguity) {Substraction.left=}
+	 *     (rule start) (ambiguity) conditionElements+=ConditionElement
 	 */
-	protected void emit_Primary_OpeningBracketParserRuleCall_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Condition_OpNotParserRuleCall_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     OpeningBracket+
+	 *     OpNot?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) value=STRING
-	 *     (rule start) (ambiguity) {Addition.left=}
-	 *     (rule start) (ambiguity) {Division.left=}
-	 *     (rule start) (ambiguity) {Mod.left=}
-	 *     (rule start) (ambiguity) {Multiplication.left=}
-	 *     (rule start) (ambiguity) {Substraction.left=}
+	 *     op=OpCompare (ambiguity) conditionElements+=ConditionElement
 	 */
-	protected void emit_Primary_OpeningBracketParserRuleCall_3_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Condition_OpNotParserRuleCall_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

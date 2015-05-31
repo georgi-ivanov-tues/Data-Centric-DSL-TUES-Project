@@ -58,11 +58,21 @@ class DidiProposalProvider extends AbstractDidiProposalProvider {
 		val container = model.eContainer;
 		
 		if(container instanceof DidiModel) {
+			val finalDidiModel = didiModel;
 			container.eAllContents.forEach[element | 
 				if(element instanceof VariableDefinition && !element.equals(model)) {
 					if(!(element.eContainer instanceof DidiModel)) {
 						if(!(element as VariableDefinition).isGlobal) {
 							return;
+						} else {
+							var elementContainerBeforeDidiModel = element;
+							while(!(elementContainerBeforeDidiModel.eContainer instanceof DidiModel)) {
+								elementContainerBeforeDidiModel = elementContainerBeforeDidiModel.eContainer;
+							}
+							
+							if(finalDidiModel.eContents.indexOf(model) < finalDidiModel.eContents.indexOf(elementContainerBeforeDidiModel)) {
+								return;
+							}
 						}
 					} else if(container.eContents.indexOf(model) < container.eContents.indexOf(element)) {
 						return;

@@ -81,14 +81,20 @@ Division returns Expression:
 ;
 
 Mod returns Expression:
-	Primary ({Mod.left=current} OpMod right=Primary)*
+	Power ({Mod.left=current} OpMod right=Power)*
+;
+
+Power returns Expression:
+	Primary ({Power.left=current} OpPower right=Primary)*
 ;
 
 Primary returns Expression:
 	(NumberLiteral | 
 	 VariableCall | 
-	 FunctionCall |
-	 OpeningBracket Addition ClosingBracket)
+	 FunctionCall
+	 // removing brackets until they are supported in the interpreter
+	 //OpeningBracket Addition ClosingBracket)
+	 )
 ;
 
 CompoundStatement:
@@ -177,7 +183,7 @@ ConditionStatement:
 ;
 
 Condition:
-	conditionElements+=ConditionElement (op=OpCompare conditionElements+=ConditionElement)?
+	OpNot? conditionElements+=ConditionElement (op=OpCompare OpNot? conditionElements+=ConditionElement)?
 ;
 
 ConditionElement:
@@ -249,6 +255,10 @@ OpMod:
 	'%'
 ;
 
+OpPower:
+	'^'
+;
+
 OpAssignment:
 	'='
 ;
@@ -259,6 +269,10 @@ OpAnd:
 
 OpOr:
 	'||'
+;
+
+OpNot:
+	'!'
 ;
 
 OpCompare:
@@ -343,7 +357,7 @@ Return:
 ;
 
 terminal NUMBER_LITERAL:
-	'0' | (('1'..'9') ('0'..'9')*) ('.' ('0'..'9')*)?
+	('-')? ('0' | (('1'..'9') ('0'..'9')*) ('.' ('0'..'9')+)?)
 ;
 
 terminal IDENTIFIER:
